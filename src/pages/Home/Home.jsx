@@ -9,6 +9,16 @@ const brands = [
     { name: 'Giant', id: 3 },
     { name: 'MMR', id: 4 },
     { name: 'Aurum', id: 5 },
+    { name: 'Factor', id: 6 },
+];
+
+const partnerBrands = [
+    { name: '226ers', id: 11 },
+    { name: 'Cycling Parts', id: 12 },
+    { name: 'Klinpig', id: 13 },
+    { name: 'Garmin', id: 14 },
+    { name: 'Shimano', id: 15 },
+    { name: 'G-Sport', id: 16 },
 ];
 
 const Home = () => {
@@ -110,7 +120,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* BRANDS MARQUEE */}
             <section className="brands-section">
                 <div className="brands-container">
                     <p className="brands-title">
@@ -125,6 +134,27 @@ const Home = () => {
                                 transition={{ delay: index * 0.1 }}
                                 viewport={{ once: true }}
                                 className="brand-item"
+                            >
+                                {brand.name}
+                            </motion.span>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* PARTNER BRANDS MARQUEE */}
+            <section className="brands-section" style={{ borderTop: 'none', padding: '1.5rem' }}>
+                <div className="brands-container">
+                    <div className="brands-grid">
+                        {partnerBrands.map((brand, index) => (
+                            <motion.span
+                                key={brand.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className="brand-item"
+                                style={{ fontSize: '1.5rem', opacity: 0.7 }}
                             >
                                 {brand.name}
                             </motion.span>

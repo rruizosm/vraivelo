@@ -1,13 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import Home from './pages/Home';
-import Workshop from './pages/Workshop';
-import Shop from './pages/Shop';
-import Contact from './pages/Contact';
+import Home from './pages/Home/Home';
+import Workshop from './pages/Workshop/Workshop';
+import Shop from './pages/Shop/Shop';
+import OtherProducts from './pages/OtherProducts/OtherProducts';
+import Contact from './pages/Contact/Contact';
 
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/workshop" element={<Workshop />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/other-products" element={<OtherProducts />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
