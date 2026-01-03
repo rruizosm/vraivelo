@@ -1,0 +1,132 @@
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Bike } from 'lucide-react';
+import './Navbar.css';
+
+const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 20);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => setIsOpen(false), [location]);
+
+    const navLinks = [
+        { name: 'Home', path: '/' },
+        { name: 'Workshop', path: '/workshop' },
+        { name: 'Bikes', path: '/shop' },
+        { name: 'Contact', path: '/contact' },
+    ];
+
+    return (
+        <motion.nav
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className={`navbar ${scrolled ? 'scrolled' : ''}`}
+        >
+            <div className="container navbar-container">
+                {/* Logo */}
+                <Link to="/" className="logo-link group">
+                    <div className="logo-icon-wrapper">
+                        <Bike
+                            className="logo-icon"
+                            size={36}
+                            strokeWidth={1.5}
+                        />
+                        <div className="logo-glow" />
+                    </div>
+                    <span className="logo-text">
+                        vraivēlo
+                    </span>
+                </Link>
+
+                {/* Desktop Nav */}
+                <div className="nav-desktop">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.path}
+                            to={link.path}
+                            className="nav-link group"
+                        >
+                            <span className={`nav-link-text ${location.pathname === link.path ? 'active' : ''}`}>
+                                {link.name}
+                            </span>
+                            {location.pathname === link.path && (
+                                <motion.div
+                                    layoutId="activeNav"
+                                    className="nav-active-dot"
+                                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                />
+                            )}
+                        </Link>
+                    ))}
+                    <Link to="/contact" className="nav-btn-link">
+                        <motion.button
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="nav-btn"
+                        >
+                            Book Service
+                        </motion.button>
+                    </Link>
+                </div>
+
+                {/* Mobile Toggle */}
+                <button
+                    className="mobile-toggle"
+                    onClick={() => setIsOpen(!isOpen)}
+                >
+                    {isOpen ? <X size={20} /> : <Menu size={20} />}
+                </button>
+            </div>
+
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="mobile-menu"
+                    >
+                        <div className="mobile-menu-content">
+                            {navLinks.map((link, index) => (
+                                <motion.div
+                                    key={link.path}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: index * 0.1 }}
+                                >
+                                    <Link
+                                        to={link.path}
+                                        className={`mobile-nav-link ${location.pathname === link.path ? 'active' : ''}`}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </motion.div>
+                            ))}
+                            <motion.button
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.4 }}
+                                className="mobile-nav-btn"
+                            >
+                                Book Service
+                            </motion.button>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.nav>
+    );
+};
+
+export default Navbar;
