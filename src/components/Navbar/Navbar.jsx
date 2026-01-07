@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Bike } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import './Navbar.css';
 
 const Navbar = () => {
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
@@ -18,11 +21,12 @@ const Navbar = () => {
     useEffect(() => setIsOpen(false), [location]);
 
     const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'Workshop', path: '/workshop' },
-        { name: 'Bikes', path: '/shop' },
-        { name: 'Other products', path: '/other-products' },
-        { name: 'Contact', path: '/contact' },
+        { name: t('navbar.home'), path: '/' },
+        { name: t('navbar.workshop'), path: '/workshop' },
+        { name: t('navbar.bikes'), path: '/shop' },
+        { name: t('navbar.other_products'), path: '/other-products' },
+        { name: t('navbar.vraivelo'), path: '/vraivelo' },
+        { name: t('navbar.contact'), path: '/contact' },
     ];
 
     return (
@@ -30,7 +34,7 @@ const Navbar = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className={`navbar ${scrolled ? 'scrolled' : ''}`}
+            className={`navbar ${scrolled ? 'scrolled' : ''} `}
         >
             <div className="container navbar-container">
                 {/* Logo */}
@@ -56,7 +60,7 @@ const Navbar = () => {
                             to={link.path}
                             className="nav-link group"
                         >
-                            <span className={`nav-link-text ${location.pathname === link.path ? 'active' : ''}`}>
+                            <span className={`nav - link - text ${location.pathname === link.path ? 'active' : ''} `}>
                                 {link.name}
                             </span>
                             {location.pathname === link.path && (
@@ -68,24 +72,30 @@ const Navbar = () => {
                             )}
                         </Link>
                     ))}
+
                     <Link to="/contact" className="nav-btn-link">
                         <motion.button
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             className="nav-btn"
                         >
-                            Book Service
+                            {t('navbar.book_service')}
                         </motion.button>
                     </Link>
+
+                    <LanguageSwitcher />
                 </div>
 
                 {/* Mobile Toggle */}
-                <button
-                    className="mobile-toggle"
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    {isOpen ? <X size={20} /> : <Menu size={20} />}
-                </button>
+                <div className="mobile-toggle-wrapper">
+                    <LanguageSwitcher />
+                    <button
+                        className="mobile-toggle"
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        {isOpen ? <X size={20} /> : <Menu size={20} />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu */}
@@ -108,7 +118,7 @@ const Navbar = () => {
                                 >
                                     <Link
                                         to={link.path}
-                                        className={`mobile-nav-link ${location.pathname === link.path ? 'active' : ''}`}
+                                        className={`mobile - nav - link ${location.pathname === link.path ? 'active' : ''} `}
                                     >
                                         {link.name}
                                     </Link>
@@ -120,7 +130,7 @@ const Navbar = () => {
                                 transition={{ delay: 0.4 }}
                                 className="mobile-nav-btn"
                             >
-                                Book Service
+                                {t('navbar.book_service')}
                             </motion.button>
                         </div>
                     </motion.div>

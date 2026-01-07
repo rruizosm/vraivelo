@@ -1,0 +1,31 @@
+{
+    "navbar": {
+        "home": "Inici",
+        "workshop": "Taller",
+        "bikes": "Bicicletes",
+        "other_products": "Altres productes",
+        "vraivelo": "Vraivelo",
+        "contact": "Contacte",
+        "book_service": "Reservar cita"
+    },
+    "vraivelo": {
+        "title": "La Nostra Història",
+        "subtitle": "Nascuts de la passió pel ciclisme i l'artesania, Vraivélo és més que una botiga de bicicletes.",
+        "how_it_started": {
+            "title": "Com Va Començar",
+            "text": "Vraivélo va començar en un petit garatge amb una idea simple: cada bicicleta explica una història. El que va començar com un passatemps de cap de setmana restaurant quadres antics va evolucionar ràpidament cap a una dedicació a temps complet a l'art del ciclisme. Ens vam adonar que hi havia un buit entre les bicicletes modernes produïdes en massa i les màquines amb ànima del passat. El nostre viatge tracta de tancar aquest buit, aportant cura artesanal al rendiment modern."
+        },
+        "who_we_are": {
+            "title": "Qui Som",
+            "text": "Som un equip de ciclistes, mecànics i dissenyadors units pel nostre amor per les dues rodes."
+        },
+        "what_we_do": {
+            "title": "Què Fem",
+            "text": "A Vraivélo, ens especialitzem a donar nova vida a quadres clàssics i construir bicicletes personalitzades que criden l'atenció. Des de restauracions completes vintage fins a muntatges personalitzats moderns, gestionem cada detall amb precisió. També oferim serveis experts de manteniment, assegurant que el teu viatge sigui sempre suau i segur. Creiem en el ciclisme sostenible, reutilitzant components de qualitat on sigui possible i promovent una cultura ciclista que valora la qualitat sobre la quantitat."
+        },
+        "team": {
+            "ruben_role": "Fundador i Mecànic Principal",
+            "ruben_desc": "Mestre artesà amb més de 10 anys d'experiència en restauració de bicicletes i muntatges personalitzats."
+        }
+    }
+}

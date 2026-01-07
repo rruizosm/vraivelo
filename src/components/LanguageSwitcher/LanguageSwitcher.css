@@ -1,0 +1,30 @@
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+}
+
+.language-switcher:hover {
+    color: var(--primary);
+    background-color: var(--bg-elevated);
+}
+
+.language-switcher span.active {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.language-switcher .divider {
+    color: var(--border-light);
+}
+
+/* Specific standard adjustment if needed inside navbar */
+.navbar .language-switcher {
+    margin-left: 1rem;
+}
