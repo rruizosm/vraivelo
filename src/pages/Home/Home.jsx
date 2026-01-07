@@ -1,7 +1,15 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Wrench, ShoppingBag, ShieldCheck, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+
+const heroImages = [
+    "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2070&auto=format&fit=crop", // Cycling peloton/road
+    "https://images.unsplash.com/photo-1534158914592-062992bbe900?q=80&w=2070&auto=format&fit=crop", // Mountain biking
+    "https://images.unsplash.com/photo-1576435728678-38d01d52e3d9?q=80&w=2070&auto=format&fit=crop", // Mechanic workshop
+    "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?q=80&w=2070&auto=format&fit=crop"  // Urban/Fixie vibes
+];
 
 const brands = [
     { name: 'Berria', id: 1 },
@@ -22,17 +30,42 @@ const partnerBrands = [
 ];
 
 const Home = () => {
+    const [currentImage, setCurrentImage] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentImage((prev) => (prev + 1) % heroImages.length);
+        }, 6000);
+
+        return () => clearInterval(timer);
+    }, []);
+
     return (
         <div className="home-container">
             {/* HERO SECTION */}
             <section className="hero-section">
-                {/* Background Layers */}
-                <div className="hero-bg" />
+                {/* Background Loop */}
+                <div className="hero-bg">
+                    <AnimatePresence mode='popLayout'>
+                        <motion.img
+                            key={currentImage}
+                            src={heroImages[currentImage]}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 1.5 }}
+                            className="hero-bg-image"
+                            alt="Cycling background"
+                        />
+                    </AnimatePresence>
+                </div>
+
                 <div className="hero-bg-overlay">
                     <div className="hero-glow-blob-1" />
                     <div className="hero-glow-blob-2" />
                 </div>
-                <div className="hero-radial-overlay" />
+                {/* Darker overlay for text readability over images */}
+                <div className="hero-radial-overlay" style={{ background: 'radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, var(--bg-dark) 90%)' }} />
 
                 {/* Grid Pattern Overlay */}
                 <div className="hero-grid-pattern" />
