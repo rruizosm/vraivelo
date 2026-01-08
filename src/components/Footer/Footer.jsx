@@ -1,4 +1,4 @@
-import { Instagram, MapPin, Phone, Mail, Bike } from 'lucide-react';
+import { Instagram, MapPin, Phone, Mail, Bike, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
@@ -10,11 +10,10 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="footer-brand-col">
                         <div className="brand-logo">
-                            <Bike className="text-[var(--primary)]" />
                             <span>vraivēlo</span>
                         </div>
                         <p className="brand-desc">
-                            Premium cycling workshop and retailer. Official partner of Berria, Liv, Giant, MMR, & Aurum.
+                            Premium cycling workshop and retailer. Official partner of Giant, Berria & MMR.
                             Elevate your ride.
                         </p>
                     </div>
@@ -36,11 +35,15 @@ const Footer = () => {
                         <ul className="footer-contact-list">
                             <li className="contact-item">
                                 <MapPin className="contact-item-icon" size={18} />
-                                <span>123 Cycling Avenue,<br />Bike City, BC 12345</span>
+                                <span>Carrer Pau vila i dinares 10, ,<br />17003 Girona</span>
                             </li>
                             <li className="contact-item">
                                 <Phone className="contact-item-icon" size={18} />
                                 <span>+34 123 456 789</span>
+                            </li>
+                            <li className="contact-item">
+                                <Clock className="contact-item-icon" size={18} />
+                                <span>Monday to Friday:<br /> 9:00 - 13:00<br /> 16:00 - 19:00</span>
                             </li>
                             <li className="contact-item">
                                 <Mail className="contact-item-icon" size={18} />

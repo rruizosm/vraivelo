@@ -6,25 +6,36 @@ import './LanguageSwitcher.css';
 const LanguageSwitcher = () => {
     const { i18n } = useTranslation();
 
-    const toggleLanguage = () => {
-        const langs = ['en', 'es', 'ca'];
-        const currentIndex = langs.indexOf(i18n.language);
-        const nextIndex = (currentIndex + 1) % langs.length;
-        i18n.changeLanguage(langs[nextIndex]);
+    const changeLanguage = (lang) => {
+        i18n.changeLanguage(lang);
     };
 
     return (
-        <button
-            className="language-switcher"
-            onClick={toggleLanguage}
-            aria-label="Switch Language"
-        >
-            <span className={i18n.language === 'en' ? 'active' : ''}>EN</span>
+        <div className="language-switcher">
+            <button
+                className={`lang-btn ${i18n.language === 'en' ? 'active' : ''}`}
+                onClick={() => changeLanguage('en')}
+                aria-label="English"
+            >
+                EN
+            </button>
             <span className="divider">|</span>
-            <span className={i18n.language === 'es' ? 'active' : ''}>ES</span>
+            <button
+                className={`lang-btn ${i18n.language === 'es' ? 'active' : ''}`}
+                onClick={() => changeLanguage('es')}
+                aria-label="Español"
+            >
+                ES
+            </button>
             <span className="divider">|</span>
-            <span className={i18n.language === 'ca' ? 'active' : ''}>CA</span>
-        </button>
+            <button
+                className={`lang-btn ${i18n.language === 'ca' ? 'active' : ''}`}
+                onClick={() => changeLanguage('ca')}
+                aria-label="Català"
+            >
+                CA
+            </button>
+        </div>
     );
 };
 

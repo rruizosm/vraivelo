@@ -34,7 +34,7 @@ const Contact = () => {
                         <ContactCard
                             icon={<MapPin size={24} strokeWidth={1.5} />}
                             title="Visit Our Shop"
-                            lines={["123 Cycling Avenue", "Bike City, BC 12345"]}
+                            lines={["Carrer Pau vila i dinares 10,", "17003 Girona"]}
                         />
                         <ContactCard
                             icon={<Phone size={24} strokeWidth={1.5} />}
@@ -49,7 +49,7 @@ const Contact = () => {
                         <ContactCard
                             icon={<Clock size={24} strokeWidth={1.5} />}
                             title="Opening Hours"
-                            lines={["Mon - Fri: 9:00 - 19:00", "Sat: 10:00 - 14:00", "Sun: Closed"]}
+                            lines={["Monday to Friday:", "9:00 - 13:00", "16:00 - 19:00"]}
                         />
                     </motion.div>
 

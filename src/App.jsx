@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Home from './pages/Home/Home';
 import Workshop from './pages/Workshop/Workshop';
 import Shop from './pages/Shop/Shop';
+import ProductDetail from './pages/ProductDetail/ProductDetail';
 import OtherProducts from './pages/OtherProducts/OtherProducts';
 import Contact from './pages/Contact/Contact';
 import Vraivelo from './pages/Vraivelo/Vraivelo';
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/workshop" element={<Workshop />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/shop/:id" element={<ProductDetail />} />
             <Route path="/other-products" element={<OtherProducts />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/vraivelo" element={<Vraivelo />} />

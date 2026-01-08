@@ -27,5 +27,36 @@
             "ruben_role": "Fundador y Mecánico Principal",
             "ruben_desc": "Maestro artesano con más de 10 años de experiencia en restauración de bicicletas y montajes personalizados."
         }
+    },
+    "product": {
+        "specifications": "Especificaciones",
+        "specs": {
+            "frame": "Cuadro",
+            "groupset": "Grupo",
+            "wheels": "Ruedas",
+            "weight": "Peso",
+            "fork": "Horquilla",
+            "shock": "Amortiguador",
+            "motor": "Motor",
+            "battery": "Batería",
+            "range": "Autonomía",
+            "tires": "Cubiertas",
+            "flip_chip_dropout": "Flip Chip Dropout",
+            "suspension": "Suspensión",
+            "size": "Talla",
+            "material": "Material",
+            "handlebar": "Manillar",
+            "seatpost": "Tija",
+            "saddle": "Sillín",
+            "derailleur_hanger": "Patilla de cambio",
+            "shifters": "Mandos de cambio",
+            "rear_derailleur": "Cambio trasero",
+            "front_derailleur": "Desviador delantero",
+            "crankset": "Bielas",
+            "chain": "Cadena",
+            "cassette": "Cassette",
+            "bottom_bracket": "Eje de pedalier",
+            "brakes": "Frenos"
+        }
     }
 }

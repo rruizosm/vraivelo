@@ -27,5 +27,36 @@
             "ruben_role": "Fundador i Mecànic Principal",
             "ruben_desc": "Mestre artesà amb més de 10 anys d'experiència en restauració de bicicletes i muntatges personalitzats."
         }
+    },
+    "product": {
+        "specifications": "Especificacions",
+        "specs": {
+            "frame": "Quadre",
+            "groupset": "Grup",
+            "wheels": "Rodes",
+            "weight": "Pes",
+            "fork": "Forquilla",
+            "shock": "Amortidor",
+            "motor": "Motor",
+            "battery": "Bateria",
+            "range": "Autonomia",
+            "tires": "Cobertes",
+            "flip_chip_dropout": "Flip Chip Dropout",
+            "suspension": "Suspensió",
+            "size": "Talla",
+            "material": "Material",
+            "handlebar": "Manillar",
+            "seatpost": "Tija",
+            "saddle": "Selló",
+            "derailleur_hanger": "Patilla de canvi",
+            "shifters": "Comandaments de canvi",
+            "rear_derailleur": "Canvi posterior",
+            "front_derailleur": "Desviador davanter",
+            "crankset": "Bieles",
+            "chain": "Cadena",
+            "cassette": "Cassette",
+            "bottom_bracket": "Eix de pedaler",
+            "brakes": "Frens"
+        }
     }
 }

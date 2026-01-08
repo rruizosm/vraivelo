@@ -5,23 +5,34 @@
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-secondary);
-    transition: color 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
 }
 
-.language-switcher:hover {
-    color: var(--primary);
-    background-color: var(--bg-elevated);
+.language-switcher .lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    padding: 0;
 }
 
-.language-switcher span.active {
+.language-switcher .lang-btn:hover {
+    color: var(--primary);
+}
+
+.language-switcher .lang-btn.active {
     color: var(--text-main);
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .language-switcher .divider {
     color: var(--border-light);
+    cursor: default;
 }
 
 /* Specific standard adjustment if needed inside navbar */

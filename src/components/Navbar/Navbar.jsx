@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Bike } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import './Navbar.css';
@@ -39,14 +39,14 @@ const Navbar = () => {
             <div className="container navbar-container">
                 {/* Logo */}
                 <Link to="/" className="logo-link group">
-                    <div className="logo-icon-wrapper">
+                    {/* <div className="logo-icon-wrapper">
                         <Bike
                             className="logo-icon"
                             size={36}
                             strokeWidth={1.5}
                         />
                         <div className="logo-glow" />
-                    </div>
+                    </div> */}
                     <span className="logo-text">
                         vraivēlo
                     </span>

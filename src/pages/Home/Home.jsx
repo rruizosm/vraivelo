@@ -5,28 +5,23 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 
 const heroImages = [
-    "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2070&auto=format&fit=crop", // Cycling peloton/road
-    "https://images.unsplash.com/photo-1534158914592-062992bbe900?q=80&w=2070&auto=format&fit=crop", // Mountain biking
-    "https://images.unsplash.com/photo-1576435728678-38d01d52e3d9?q=80&w=2070&auto=format&fit=crop", // Mechanic workshop
-    "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?q=80&w=2070&auto=format&fit=crop"  // Urban/Fixie vibes
+    "/home_images/vraivelo_home7.jpeg",
+    "/home_images/vraivelo_home10.jpeg",
+    "/home_images/vraivelo_home11.jpeg",
+    "/home_images/vraivelo_home12.jpeg",
 ];
 
 const brands = [
-    { name: 'Berria', id: 1 },
-    { name: 'Liv', id: 2 },
-    { name: 'Giant', id: 3 },
-    { name: 'MMR', id: 4 },
-    { name: 'Aurum', id: 5 },
-    { name: 'Factor', id: 6 },
+    { name: 'Giant', id: 1 },
+    { name: 'Berria', id: 2 },
+    { name: 'MMR', id: 3 },
 ];
 
 const partnerBrands = [
-    { name: '226ers', id: 11 },
-    { name: 'Cycling Parts', id: 12 },
-    { name: 'Klinpig', id: 13 },
-    { name: 'Garmin', id: 14 },
-    { name: 'Shimano', id: 15 },
-    { name: 'G-Sport', id: 16 },
+    { name: 'Julbo', id: 4 },
+    { name: 'Klinpig', id: 5 },
+    { name: '226ers', id: 6 },
+    { name: 'High Level', id: 7 },
 ];
 
 const Home = () => {
@@ -104,7 +99,7 @@ const Home = () => {
                         className="hero-subtitle"
                     >
                         Not just a bike shop. A sanctuary for performance, precision, and passion.
-                        Official partner of <span className="highlight-primary">Giant</span>, <span className="highlight-primary">Berria</span>, <span className="highlight-primary">Aurum</span> & more.
+                        Official partner of <span className="highlight-primary">Giant</span>, <span className="highlight-primary">Berria</span> & <span className="highlight-primary">MMR</span>
                     </motion.p>
 
                     <motion.div

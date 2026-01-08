@@ -27,5 +27,36 @@
             "ruben_role": "Founder & Lead Mechanic",
             "ruben_desc": "Master craftsman with over 10 years of experience in bike restoration and custom builds."
         }
+    },
+    "product": {
+        "specifications": "Specifications",
+        "specs": {
+            "frame": "Frame",
+            "groupset": "Groupset",
+            "wheels": "Wheels",
+            "weight": "Weight",
+            "fork": "Fork",
+            "shock": "Shock",
+            "motor": "Motor",
+            "battery": "Battery",
+            "range": "Range",
+            "tires": "Tires",
+            "flip_chip_dropout": "Flip Chip Dropout",
+            "suspension": "Suspension",
+            "size": "Size",
+            "material": "Material",
+            "handlebar": "Handlebar",
+            "seatpost": "Seatpost",
+            "saddle": "Saddle",
+            "derailleur_hanger": "Derailleur Hanger",
+            "shifters": "Shifters",
+            "rear_derailleur": "Rear Derailleur",
+            "front_derailleur": "Front Derailleur",
+            "crankset": "Crankset",
+            "chain": "Chain",
+            "cassette": "Cassette",
+            "bottom_bracket": "Bottom Bracket",
+            "brakes": "Brakes"
+        }
     }
 }
