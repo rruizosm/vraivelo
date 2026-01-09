@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ZoomIn } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { bikes } from '../../data/bikes';
 import './ProductDetail.css';
@@ -45,6 +45,15 @@ const ProductDetail = () => {
                             {bike.brand.charAt(0)}
                         </span>
                     )}
+                    <button
+                        className="image-zoom-btn"
+                        onClick={() => {
+                            if (bike.image) window.open(bike.image, '_blank');
+                        }}
+                        title={t('product.info') || "View image"}
+                    >
+                        <ZoomIn size={24} />
+                    </button>
                 </motion.div>
 
                 {/* Info Section */}

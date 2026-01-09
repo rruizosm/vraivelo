@@ -3,9 +3,11 @@ import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { bikes, categories } from '../../data/bikes';
+import { useTranslation } from 'react-i18next';
 import './Shop.css';
 
 const Shop = () => {
+    const { t } = useTranslation();
     const brandsList = [...new Set(bikes.map(bike => bike.brand))];
     const navigate = useNavigate();
     const [activeCategory, setActiveCategory] = useState('All');

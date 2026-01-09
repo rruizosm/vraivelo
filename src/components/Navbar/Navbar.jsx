@@ -9,14 +9,7 @@ import './Navbar.css';
 const Navbar = () => {
     const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
-
-    useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 20);
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     useEffect(() => setIsOpen(false), [location]);
 
@@ -34,11 +27,11 @@ const Navbar = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className={`navbar ${scrolled ? 'scrolled' : ''} `}
+            className="navbar scrolled"
         >
             <div className="container navbar-container">
                 {/* Logo */}
-                <Link to="/" className="logo-link group">
+                <Link to="/" className="logo-link group" >
                     {/* <div className="logo-icon-wrapper">
                         <Bike
                             className="logo-icon"

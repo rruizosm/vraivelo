@@ -30,6 +30,7 @@
     },
     "product": {
         "specifications": "Especificaciones",
+        "info": "Más información",
         "specs": {
             "frame": "Cuadro",
             "groupset": "Grupo",
