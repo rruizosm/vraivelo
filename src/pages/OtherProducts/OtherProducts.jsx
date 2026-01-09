@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ShoppingBag } from 'lucide-react';
+import { useCart } from '../../context/CartContext';
 import '../Shop/Shop.css'; // Reuse Shop styles
 
 const categories = ['All', 'Nutrition', 'Components', 'Electronics', 'Clothing', 'Maintenance'];
 
 const products = [
+    // ... existing products ...
     // 226ers (Nutrition)
     { id: 101, brand: '226ers', model: 'Energy Gel Bio', category: 'Nutrition', price: '€2.50', image: 'E', desc: 'Organic energy gel with complex carbohydrates.', new: true },
     { id: 102, brand: '226ers', model: 'Isotonic Drink', category: 'Nutrition', price: '€22.00', image: 'I', desc: 'Hydration powder with mineral salts and vitamins.', new: false },
@@ -39,6 +41,7 @@ const brandsList = [...new Set(products.map(p => p.brand))];
 const OtherProducts = () => {
     const [activeCategory, setActiveCategory] = useState('All');
     const [activeBrands, setActiveBrands] = useState([]);
+    const { addToCart } = useCart();
 
     const toggleBrand = (brand) => {
         if (activeBrands.includes(brand)) {
@@ -131,7 +134,19 @@ const OtherProducts = () => {
                                     <p className="bike-desc">{product.desc}</p>
                                     <div className="bike-price-row">
                                         <span className="bike-price">{product.price}</span>
-                                        <ArrowRight size={18} className="bike-arrow" />
+                                        <button
+                                            className="add-cart-btn-small"
+                                            onClick={() => addToCart({
+                                                id: product.id,
+                                                brand: product.brand,
+                                                model: product.model,
+                                                price: product.price,
+                                                image: null, // No real image url
+                                                type: 'other'
+                                            })}
+                                        >
+                                            <ShoppingBag size={18} />
+                                        </button>
                                     </div>
                                 </div>
                             </motion.div>

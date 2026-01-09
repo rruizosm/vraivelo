@@ -1,30 +1,72 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ZoomIn } from 'lucide-react';
+import { ArrowLeft, ZoomIn, Loader, ShoppingBag } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { bikes } from '../../data/bikes';
+import { supabase } from '../../supabase';
+import { useCart } from '../../context/CartContext';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const { t } = useTranslation();
-    const bike = bikes.find(b => b.id === parseInt(id));
-
+    const { addToCart } = useCart();
+    const [bike, setBike] = useState(null);
+    const [loading, setLoading] = useState(true);
     const [selectedSize, setSelectedSize] = useState(null);
+
+    useEffect(() => {
+        const fetchBike = async () => {
+            try {
+                setLoading(true);
+                const { data, error } = await supabase
+                    .from('bikes')
+                    .select('*')
+                    .eq('id', id)
+                    .single();
+
+                if (error) {
+                    throw error;
+                }
+                setBike(data);
+            } catch (error) {
+                console.error('Error fetching bike:', error);
+                setBike(null);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        if (id) {
+            fetchBike();
+        }
+    }, [id]);
 
 
     // Default options if not provided in data
     const sizes = bike?.sizes || ['S', 'M', 'L', 'XL'];
-
     const specs = bike?.specs || ['Frame: Standard Carbon', 'Groupset: Standard Mix', 'Warranty: 2 Years'];
+
+    if (loading) {
+        return (
+            <div className="product-detail-container flex items-center justify-center min-h-[60vh]">
+                <Loader className="animate-spin text-[var(--primary)]" size={48} />
+            </div>
+        );
+    }
 
     if (!bike) {
         return (
-            <div className="product-detail-container flex items-center justify-center">
+            <div className="product-detail-container flex flex-col items-center justify-center gap-4">
                 <h2>Product not found</h2>
-                <button onClick={() => navigate('/shop')}>Back to Shop</button>
+                <button
+                    onClick={() => navigate('/shop')}
+                    className="flex items-center gap-2 px-6 py-2 bg-[var(--primary)] text-white rounded-full hover:bg-opacity-90 transition-all"
+                >
+                    <ArrowLeft size={20} />
+                    Back to Shop
+                </button>
             </div>
         );
     }
@@ -38,8 +80,13 @@ const ProductDetail = () => {
                     animate={{ opacity: 1, x: 0 }}
                     className="product-image-section"
                 >
-                    {bike.image ? (
-                        <img src={bike.image} alt={bike.model} className="product-detail-image" />
+                    {bike.quantity === 0 && (
+                        <span className="sold-badge">
+                            {t('product.sold')}
+                        </span>
+                    )}
+                    {bike.image_url ? (
+                        <img src={bike.image_url} alt={bike.model} className="product-detail-image" />
                     ) : (
                         <span className="product-placeholder-text">
                             {bike.brand.charAt(0)}
@@ -48,7 +95,7 @@ const ProductDetail = () => {
                     <button
                         className="image-zoom-btn"
                         onClick={() => {
-                            if (bike.image) window.open(bike.image, '_blank');
+                            if (bike.image_url) window.open(bike.image_url, '_blank');
                         }}
                         title={t('product.info') || "View image"}
                     >
@@ -74,18 +121,25 @@ const ProductDetail = () => {
                         <p className="product-price">{bike.price}</p>
                     </div>
 
-                    <p className="product-description">{bike.desc}</p>
+                    <p className="product-description">{bike.description}</p>
 
                     {/* Options */}
                     <div className="product-options">
                         <div className="option-group">
-                            <span className="option-label">Select Size</span>
+                            <div className="option-header">
+                                <span className="option-label">Select Size</span>
+                                {bike.quantity !== undefined && (
+                                    <span className="stock-display">
+                                        {t('product.stock')}: <span className="stock-value">{bike.quantity}</span>
+                                    </span>
+                                )}
+                            </div>
                             <div className="size-selector">
-                                {sizes.map(size => (
+                                {(bike.sizes || ['S', 'M', 'L', 'XL']).map(size => (
                                     <button
                                         key={size}
                                         className={`size-btn ${selectedSize === size ? 'active' : ''}`}
-                                        onClick={() => setSelectedSize(size)}
+                                        onClick={() => setSelectedSize(prev => prev === size ? null : size)}
                                     >
                                         {size}
                                     </button>
@@ -93,10 +147,28 @@ const ProductDetail = () => {
                             </div>
                         </div>
 
-
+                        <button
+                            onClick={() => {
+                                if (selectedSize) {
+                                    addToCart({
+                                        id: bike.id,
+                                        brand: bike.brand,
+                                        model: bike.model,
+                                        price: bike.price,
+                                        image: bike.image_url,
+                                        size: selectedSize,
+                                        type: 'bike',
+                                        maxQuantity: bike.quantity
+                                    });
+                                }
+                            }}
+                            disabled={!selectedSize || bike.quantity === 0}
+                            className={`add-to-cart-btn ${(!selectedSize || bike.quantity === 0) ? 'disabled' : ''}`}
+                        >
+                            <ShoppingBag size={20} />
+                            {bike.quantity === 0 ? t('product.sold') : t('product.add_to_cart') || "Add to Cart"}
+                        </button>
                     </div>
-
-
                 </motion.div>
             </div>
 

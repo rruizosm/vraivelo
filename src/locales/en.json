@@ -31,6 +31,9 @@
     "product": {
         "specifications": "Specifications",
         "info": "More info",
+        "stock": "Stock",
+        "sold": "Sold",
+        "add_to_cart": "Add to Cart",
         "specs": {
             "frame": "Frame",
             "groupset": "Groupset",

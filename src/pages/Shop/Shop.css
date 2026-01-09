@@ -287,3 +287,47 @@
     opacity: 1;
     transform: translateX(0);
 }
+
+.add-cart-btn-small {
+    background-color: var(--bg-elevated);
+    color: var(--text-main);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.add-cart-btn-small:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Sold Badge on Card */
+.sold-badge-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 200%;
+    background-color: rgba(239, 68, 68, 0.9);
+    color: white;
+    padding: 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(4px);
+}
