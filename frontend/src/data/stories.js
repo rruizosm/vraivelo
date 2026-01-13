@@ -1,0 +1,68 @@
+export const stories = [
+    {
+        id: 'start',
+        title: 'ORIGINS',
+        category: 'ORIGINS',
+        image: '/home_images/vraivelo_home1.jpeg',
+        content: `Vraivēlo nace de una vida entera sobre la bicicleta.
+
+David, fundador del taller, creció en Badalona y empezó a pedalear con apenas tres años. Lo que comenzó como una pasión infantil se convirtió en una carrera competitiva en mountain bike y posteriormente carretera, pasando por categorías sub23 y élite hasta llegar a formar parte de un equipo profesional.
+
+![Carrera competitiva](/home_images/vraivelo_home4.jpeg)
+
+Tras cerrar esa etapa deportiva, la bicicleta siguió siendo el centro de todo, esta vez desde el lado técnico. Años de experiencia en talleres y tiendas especializadas permitieron detectar algo claro: faltaba atención real al ciclista y a su bicicleta. Haber vivido el ciclismo desde dentro marcó la diferencia.
+
+![Taller especializado](/home_images/vraivelo_home12.jpeg)
+
+En diciembre de 2023, en Girona, nace Vraivēlo como respuesta a esa necesidad. Un taller creado para cuidar bicicletas con el mismo respeto y exigencia con el que se entrena para competir. Cada ajuste, cada reparación y cada recomendación parten de la experiencia real en entrenamientos, carreras y largas horas sobre la bici.`,
+        size: 'large'
+    },
+    {
+        id: 'who',
+        title: 'WHO WE ARE',
+        category: 'IDENTITY',
+        image: '/home_images/vraivelo_home2.jpeg',
+        content: `At Vraivelo, we are more than just a workshop; we are a hub for cycling culture. Our mission is to provide the highest quality service for all types of cyclists, from weekend warriors to seasoned pros.
+
+We believe in precision, transparency, and passion. Every bike that enters our shop is treated with the utmost care, ensuring that it performs at its absolute best.`,
+        size: 'medium'
+    },
+    {
+        id: 'what',
+        title: 'WHAT WE DO',
+        category: 'MISSION',
+        image: '/home_images/vraivelo_home3.jpeg',
+        content: `We offer a comprehensive range of services tailored to meet the needs of modern cyclists. From basic tune-ups to full custom builds, suspension servicing, and electronic shifting diagnostics.
+
+Our workshop is equipped with state-of-the-art tools and we stay updated with the latest technologies to handle even the most advanced machines.`,
+        size: 'medium'
+    },
+    {
+        id: 'team',
+        title: 'THE TEAM',
+        category: 'PEOPLE',
+        image: '/home_images/vraivelo_home13.jpeg',
+        content: `
+### Ruben Ruiz
+**Role:** Lead Mechanic & Founder
+
+Ruben brings over 15 years of experience in the cycling industry. His attention to detail and deep understanding of bicycle mechanics make him a trusted expert in the field. He specializes in high-end road and gravel bikes.`,
+        size: 'tall'
+    },
+    {
+        id: 'gallery1',
+        title: 'COLLECTION 2024',
+        category: 'GALLERY',
+        image: '/home_images/vraivelo_home9.jpg',
+        content: null,
+        size: 'wide'
+    },
+    {
+        id: 'gallery2',
+        title: 'RIDE LIFE',
+        category: 'LIFESTYLE',
+        image: '/home_images/vraivelo_home7.jpeg',
+        content: null,
+        size: 'medium'
+    }
+];

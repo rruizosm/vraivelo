@@ -1,0 +1,72 @@
+{
+    "navbar": {
+        "home": "Home",
+        "workshop": "Workshop",
+        "bikes": "Bikes",
+        "other_products": "Other Products",
+        "vraivelo": "Vraivelo",
+        "contact": "Contact",
+        "book_service": "Book Service"
+    },
+    "shop": {
+        "filters": {
+            "on_sale": "On Sale",
+            "coming_soon": "Coming Soon"
+        }
+    },
+    "vraivelo": {
+        "title": "Our Story",
+        "subtitle": "Born from a passion for cycling and craftsmanship, Vraivélo is more than just a bike shop.",
+        "how_it_started": {
+            "title": "How It Started",
+            "text": "Vraivélo began in a small garage with a simple idea: that every bicycle tells a story. What started as a weekend hobby of restoring vintage frames quickly evolved into a full-scale dedication to the art of cycling. We realized that there was a gap between modern mass-produced bikes and the soulful machines of the past. Our journey is about bridging that gap, bringing artisanal care to modern performance."
+        },
+        "who_we_are": {
+            "title": "Who We Are",
+            "text": "We are a team of cyclists, mechanics, and designers united by our love for two wheels."
+        },
+        "what_we_do": {
+            "title": "What We Do",
+            "text": "At Vraivélo, we specialize in breathing new life into classic frames and building custom bicycles that turn heads. From full vintage restorations to modern custom builds, we handle every detail with precision. We also offer expert maintenance services, ensuring your ride is always smooth and safe. We believe in sustainable cycling, reusing quality components where possible, and promoting a cycling culture that values quality over quantity."
+        },
+        "team": {
+            "ruben_role": "Founder & Lead Mechanic",
+            "ruben_desc": "Master craftsman with over 10 years of experience in bike restoration and custom builds."
+        }
+    },
+    "product": {
+        "specifications": "Specifications",
+        "info": "More info",
+        "stock": "Stock",
+        "sold": "Sold",
+        "add_to_cart": "Add to Cart",
+        "specs": {
+            "frame": "Frame",
+            "groupset": "Groupset",
+            "wheels": "Wheels",
+            "weight": "Weight",
+            "fork": "Fork",
+            "shock": "Shock",
+            "motor": "Motor",
+            "battery": "Battery",
+            "range": "Range",
+            "tires": "Tires",
+            "flip_chip_dropout": "Flip Chip Dropout",
+            "suspension": "Suspension",
+            "size": "Size",
+            "material": "Material",
+            "handlebar": "Handlebar",
+            "seatpost": "Seatpost",
+            "saddle": "Saddle",
+            "derailleur_hanger": "Derailleur Hanger",
+            "shifters": "Shifters",
+            "rear_derailleur": "Rear Derailleur",
+            "front_derailleur": "Front Derailleur",
+            "crankset": "Crankset",
+            "chain": "Chain",
+            "cassette": "Cassette",
+            "bottom_bracket": "Bottom Bracket",
+            "brakes": "Brakes"
+        }
+    }
+}
