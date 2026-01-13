@@ -457,12 +457,13 @@
 .carousel-dot.active {
     background-color: var(--primary);
     width: 1rem;
+}
 
-    /* Long Description */
-    .product-long-description {
-        margin-bottom: 3rem;
-        font-size: 1.125rem;
-        line-height: 1.8;
-        color: var(--text-secondary);
-        max-width: 800px;
-    }
+/* Long Description */
+.product-long-description {
+    margin-bottom: 3rem;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 800px;
+}
