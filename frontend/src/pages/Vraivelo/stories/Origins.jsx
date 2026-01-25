@@ -13,7 +13,7 @@ const Hero = () => {
         <header className="origins-hero">
             <div className="origins-hero-bg">
                 <img
-                    src="../public/stories/vraivelo_taller.jpeg"
+                    src="/stories/vraivelo_taller.jpeg"
                     alt="Workshop"
                 />
             </div>
@@ -77,24 +77,24 @@ const CompetitiveEra = () => {
                 <div className="origins-images-collage order-1 lg:order-2">
                     <div className="space-y-4 pt-12" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingTop: '3rem' }}>
                         <img
-                            src="../public/david_competitor/14.PNG"
+                            src="/david_competitor/14.PNG"
                             alt="MTB"
                             className="origins-img-rounded origins-img-tall"
                         />
                         <img
-                            src="../public/david_competitor/4.PNG"
+                            src="/david_competitor/4.PNG"
                             alt="Race Action"
                             className="origins-img-rounded origins-img-short"
                         />
                     </div>
                     <div className="space-y-4" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                         <img
-                            src="../public/david_competitor/11.PNG"
+                            src="/david_competitor/11.PNG"
                             alt="Rider"
                             className="origins-img-rounded origins-img-short"
                         />
                         <img
-                            src="../public/david_competitor/8.PNG"
+                            src="/david_competitor/8.PNG"
                             alt="Kit"
                             className="origins-img-rounded origins-img-tall"
                         />
@@ -109,7 +109,7 @@ const QuoteBanner = () => {
     return (
         <section className="origins-quote-banner">
             <img
-                src="../public/david_vraivelo/david_vraivelo_1.jpeg"
+                src="/david_vraivelo/david_vraivelo_1.jpeg"
                 alt="Riding Scene"
                 className="origins-quote-bg"
             />
