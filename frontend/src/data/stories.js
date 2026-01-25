@@ -3,7 +3,7 @@ export const stories = [
         id: 'start',
         title: 'ORIGINS',
         category: 'ORIGINS',
-        image: '/home_images/vraivelo_home1.jpeg',
+        image: '/stories/vraivelo_taller.jpeg',
         content: `Vraivēlo nace de una vida entera sobre la bicicleta.
 
 David, fundador del taller, creció en Badalona y empezó a pedalear con apenas tres años. Lo que comenzó como una pasión infantil se convirtió en una carrera competitiva en mountain bike y posteriormente carretera, pasando por categorías sub23 y élite hasta llegar a formar parte de un equipo profesional.

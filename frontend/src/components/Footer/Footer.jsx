@@ -35,7 +35,7 @@ const Footer = () => {
                         <ul className="footer-contact-list">
                             <li className="contact-item">
                                 <MapPin className="contact-item-icon" size={18} />
-                                <span>Carrer Pau vila i dinares 10, ,<br />17003 Girona</span>
+                                <span>Carrer Pau vila i dinares 10, <br />17003 Girona</span>
                             </li>
                             <li className="contact-item">
                                 <Phone className="contact-item-icon" size={18} />

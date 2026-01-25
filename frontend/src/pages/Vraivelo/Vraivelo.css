@@ -376,3 +376,10 @@
     margin-top: 0.5rem;
     font-style: italic;
 }
+
+/* Specific wrappers */
+.origins-first-image {
+    /* Ready for custom styling */
+    position: relative;
+    /* Example: add specific styles here */
+}
