@@ -18,6 +18,14 @@ En diciembre de 2023, en Girona, nace Vraivēlo como respuesta a esa necesidad. 
         size: 'large'
     },
     {
+        id: 'berria',
+        title: 'VRAIVELO X BERRIA',
+        category: 'COLLABORATION',
+        image: '/vraivelo_berria/Girona/DSC00187.jpeg',
+        content: true,
+        size: 'tall'
+    },
+    {
         id: 'who',
         title: 'WHO WE ARE',
         category: 'IDENTITY',
@@ -64,5 +72,5 @@ Ruben brings over 15 years of experience in the cycling industry. His attention 
         image: '/home_images/vraivelo_home7.jpeg',
         content: null,
         size: 'medium'
-    }
+    },
 ];
