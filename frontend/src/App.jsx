@@ -11,12 +11,14 @@ import Success from './pages/Success/Success';
 import Contact from './pages/Contact/Contact';
 import Vraivelo from './pages/Vraivelo/Vraivelo';
 import StoryDetail from './pages/Vraivelo/StoryDetail';
+import EventFormation from './pages/Events/EventFormation';
 
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart/Cart';
+import EventBanner from './components/EventBanner/EventBanner';
 
 function App() {
   return (
@@ -37,9 +39,11 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/vraivelo" element={<Vraivelo />} />
               <Route path="/vraivelo/:id" element={<StoryDetail />} />
+              <Route path="/event-formation" element={<EventFormation />} />
             </Routes>
           </main>
           <Footer />
+          <EventBanner />
         </div>
       </Router>
     </CartProvider>

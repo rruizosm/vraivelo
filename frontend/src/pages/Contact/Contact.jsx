@@ -1,8 +1,13 @@
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Clock, Send } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import './Contact.css';
 
 const Contact = () => {
+    const location = useLocation();
+    const initialSubject = location.state?.subject || "";
+    const initialMessage = location.state?.message || "";
+
     return (
         <div className="contact-container">
             <div className="contact-content">
@@ -18,7 +23,7 @@ const Contact = () => {
                     <h1 className="contact-title">
                         Let's <span className="text-[var(--primary)]">Connect</span>
                     </h1>
-                    <p className="text-[var(--text-muted)] max-w-xl mx-auto text-lg">
+                    <p className="contact-description">
                         Have a question about a bike? Need to schedule a specific service? We're here to help.
                     </p>
                 </motion.div>
@@ -95,9 +100,11 @@ const Contact = () => {
                                 <select
                                     className="form-input"
                                     style={{ appearance: 'none', cursor: 'pointer' }}
+                                    defaultValue={initialSubject}
                                 >
                                     <option value="">Select a topic</option>
                                     <option value="workshop">Workshop Service</option>
+                                    <option value="formation">Mechanics Formation</option>
                                     <option value="bikes">Bike Inquiry</option>
                                     <option value="parts">Parts & Accessories</option>
                                     <option value="other">Other</option>
@@ -110,6 +117,7 @@ const Contact = () => {
                                     rows="4"
                                     className="form-textarea"
                                     placeholder="Tell us how we can help..."
+                                    defaultValue={initialMessage}
                                 />
                             </div>
 

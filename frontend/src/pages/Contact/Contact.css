@@ -16,6 +16,15 @@
     margin-bottom: 5rem;
 }
 
+.contact-description {
+    color: var(--text-muted);
+    max-width: 36rem;
+    /* max-w-xl */
+    margin: 0 auto;
+    font-size: 1.125rem;
+    /* text-lg */
+}
+
 .contact-badge {
     display: inline-block;
     padding: 0.5rem 1rem;
