@@ -68,5 +68,146 @@
             "bottom_bracket": "Eje de pedalier",
             "brakes": "Frenos"
         }
+    },
+    "workshop": {
+        "badge": "SERVICIOS PROFESIONALES",
+        "title": "Servicios de",
+        "title_highlight": "Taller",
+        "subtitle": "Nuestros mecánicos certificados tratan cada bicicleta como si fuera suya. Precisión, cuidado y velocidad — siempre.",
+        "categories": [
+            {
+                "title": "Puesta a punto y Mecánica",
+                "services": [
+                    {
+                        "title": "Revisión Básica",
+                        "price": "€40",
+                        "description": "Ideal para un mantenimiento regular y rodar con seguridad.",
+                        "popular": false,
+                        "features": [
+                            "Limpieza y lubricación: Dejamos la bici impecable y lista para rodar.",
+                            "Chequeo de salud: Revisamos cuánto les queda de vida a tus piezas (cadena, pastillas, etc.).",
+                            "Ajuste general: Ponemos a punto los frenos, el cambio y la dirección.",
+                            "Apriete de seguridad: Repasamos todos los tornillos con la presión exacta recomendada."
+                        ],
+                        "icon_type": "wrench"
+                    },
+                    {
+                        "title": "Revisión Completa",
+                        "price": "€80",
+                        "description": "La opción estrella para que tu bici se sienta como nueva.",
+                        "popular": true,
+                        "features": [
+                            "Todo lo de la Revisión Básica incluido.",
+                            "Mantenimiento interno: Desmontamos y engrasamos a fondo el pedalier y la dirección para eliminar ruidos.",
+                            "Ruedas perfectas: Revisamos y ajustamos la tensión de los radios para que las ruedas giren rectas.",
+                            "Tratamiento de cadena: Aplicamos cera profesional para que el cambio sea más suave y la transmisión dure más."
+                        ],
+                        "icon_type": "settings"
+                    }
+                ]
+            },
+            {
+                "title": "Suspensiones",
+                "services": [
+                    {
+                        "title": "Mantenimiento básico",
+                        "price": "€60",
+                        "description": "Para mantener la suavidad y evitar fugas.",
+                        "popular": false,
+                        "features": [
+                            "Limpieza general.",
+                            "Cambio de los retenes.",
+                            "Sustitución del aceite de lubricación.",
+                            "Cambio de aceite básico."
+                        ],
+                        "icon_type": "zap"
+                    },
+                    {
+                        "title": "Mantenimiento completo",
+                        "price": "€100",
+                        "description": "Recomendado para el máximo rendimiento.",
+                        "popular": true,
+                        "features": [
+                            "Limpieza general",
+                            "Cambio de los retenes",
+                            "Ajuste del bloqueo remoto",
+                            "Cambio de aceite de cartucho hidráulico",
+                            "Mantenimiento cartucho de aire",
+                            "Cambio de rodamiento del bloqueo remoto"
+                        ],
+                        "icon_type": "settings"
+                    }
+                ]
+            },
+            {
+                "title": "Amortiguador",
+                "services": [
+                    {
+                        "title": "Mantenimiento amortiguador",
+                        "price": "€80",
+                        "description": "Cuida el \"corazón\" de tu bici de doble suspensión.",
+                        "popular": false,
+                        "features": [
+                            "Limpieza integral de todo el sistema.",
+                            "Cambio de juntas tóricas.",
+                            "Sustitución del aceite."
+                        ],
+                        "icon_type": "wrench"
+                    }
+                ]
+            }
+        ],
+        "book_now": "Reservar",
+        "most_popular": "MÁS POPULAR",
+        "custom": {
+            "title": "¿Necesitas Algo Personalizado?",
+            "text": "Ofrecemos servicios a medida para montajes únicos, restauraciones vintage y preparación para competición. Contáctanos para un presupuesto personalizado.",
+            "button": "Pedir Presupuesto"
+        }
+    },
+    "contact": {
+        "badge": "CONTÁCTANOS",
+        "title": "Vamos a",
+        "title_highlight": "Conectar",
+        "description": "¿Tienes alguna pregunta sobre una bici? ¿Necesitas agendar un servicio específico? Estamos aquí para ayudar.",
+        "info": {
+            "visit": "Visita nuestra tienda",
+            "call": "Llámanos",
+            "email": "Envíanos un email",
+            "hours": "Horario de apertura",
+            "hours_text": [
+                "Lunes a Viernes:",
+                "9:00 - 13:00",
+                "16:00 - 19:00"
+            ]
+        },
+        "form": {
+            "title": "Envía un mensaje",
+            "first_name": "Nombre",
+            "last_name": "Apellido",
+            "email": "Correo electrónico",
+            "subject": "Asunto",
+            "service": "Servicio específico (Opcional)",
+            "message": "Mensaje",
+            "placeholders": {
+                "first_name": "Juan",
+                "last_name": "Pérez",
+                "email": "juan@ejemplo.com",
+                "message": "Cuéntanos cómo podemos ayudarte..."
+            },
+            "subjects": {
+                "default": "Selecciona un tema",
+                "workshop": "Servicio de Taller",
+                "formation": "Formación Mecánica",
+                "bikes": "Consulta sobre Bicicletas",
+                "parts": "Recambios y Accesorios",
+                "other": "Otro"
+            },
+            "services": {
+                "default": "Selecciona un servicio detallado",
+                "custom": "Personalizado / No listado"
+            },
+            "submit": "Enviar Mensaje"
+        }
     }
 }

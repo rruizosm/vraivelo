@@ -1,32 +1,22 @@
 import { motion } from 'framer-motion';
 import { Wrench, Settings, Zap, Check } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './Workshop.css';
 
-const services = [
-    {
-        icon: <Wrench size={28} strokeWidth={1.5} />,
-        title: "Basic Tune-Up",
-        price: "€45",
-        popular: false,
-        features: ["Brake Adjustment", "Gear Indexing", "Chain Lubrication", "Safety Check"]
-    },
-    {
-        icon: <Settings size={28} strokeWidth={1.5} />,
-        title: "Advanced Overhaul",
-        price: "€90",
-        popular: true,
-        features: ["Deep Clean", "Bottom Bracket Service", "Headset Service", "Wheel Truing", "Cable Replacement"]
-    },
-    {
-        icon: <Zap size={28} strokeWidth={1.5} />,
-        title: "Pro Race Prep",
-        price: "€150",
-        popular: false,
-        features: ["Full Strip Down", "Ceramic Bearing Upgrade", "Hydraulic Bleed", "Electronic Shifting Diagnostics", "Weight Optimization"]
-    }
-];
-
 const Workshop = () => {
+    const { t } = useTranslation();
+    const serviceCategories = t('workshop.categories', { returnObjects: true });
+
+    // Helper to map icon string to component
+    const getIcon = (type) => {
+        switch (type) {
+            case 'wrench': return <Wrench size={28} strokeWidth={1.5} />;
+            case 'settings': return <Settings size={28} strokeWidth={1.5} />;
+            case 'zap': return <Zap size={28} strokeWidth={1.5} />;
+            default: return <Wrench size={28} strokeWidth={1.5} />;
+        }
+    };
+
     return (
         <div className="workshop-container">
             <div className="workshop-content-container">
@@ -37,61 +27,80 @@ const Workshop = () => {
                     className="workshop-header"
                 >
                     <span className="workshop-badge">
-                        PROFESSIONAL SERVICES
+                        {t('workshop.badge')}
                     </span>
                     <h1 className="workshop-title">
-                        Workshop <span className="text-[var(--primary)]">Services</span>
+                        {t('workshop.title')} <span className="workshop-text-highlight">{t('workshop.title_highlight')}</span>
                     </h1>
                     <p className="workshop-subtitle">
-                        Our certified mechanics treat every bike as if it were their own. Precision, care, and speed — every time.
+                        {t('workshop.subtitle')}
                     </p>
                 </motion.div>
 
-                <div className="services-grid">
-                    {services.map((service, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1, duration: 0.6 }}
-                            className={`service-card ${service.popular ? 'popular' : 'standard'}`}
-                        >
-                            {service.popular && (
-                                <div className="popular-badge">
-                                    MOST POPULAR
-                                </div>
-                            )}
-
-                            <div className="service-card-header">
-                                <div className={`service-icon-wrapper ${service.popular ? 'popular' : 'standard'}`}>
-                                    {service.icon}
-                                </div>
-                                <div className="text-right">
-                                    <div className={`service-price ${service.popular ? 'popular' : ''}`}>
-                                        {service.price}
-                                    </div>
-                                </div>
-                            </div>
-
-                            <h3 className="service-title">{service.title}</h3>
-
-                            <ul className="service-features-list">
-                                {service.features.map((feat, i) => (
-                                    <li key={i} className="service-feature-item">
-                                        <Check size={18} className={`service-feature-icon ${service.popular ? 'popular' : ''}`} />
-                                        {feat}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className={`btn-book-service ${service.popular ? 'btn-book-popular' : 'btn-book-standard'}`}
+                <div className="workshop-categories">
+                    {serviceCategories.map((category, catIndex) => (
+                        <div key={catIndex} className="category-section">
+                            <motion.h2
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: catIndex * 0.2, duration: 0.5 }}
+                                className="category-title"
                             >
-                                Book Now
-                            </motion.button>
-                        </motion.div>
+                                {category.title}
+                            </motion.h2>
+
+                            <div className="services-grid">
+                                {category.services.map((service, index) => (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, y: 30 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: (catIndex * 0.2) + (index * 0.1), duration: 0.6 }}
+                                        className={`service-card ${service.popular ? 'popular' : 'standard'}`}
+                                    >
+                                        {service.popular && (
+                                            <div className="popular-badge">
+                                                {t('workshop.most_popular')}
+                                            </div>
+                                        )}
+
+                                        <div className="service-card-header">
+                                            <div className={`service-icon-wrapper ${service.popular ? 'popular' : 'standard'}`}>
+                                                {getIcon(service.icon_type)}
+                                            </div>
+                                            <div className="text-right">
+                                                <div className={`service-price ${service.popular ? 'popular' : ''}`}>
+                                                    {service.price}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h3 className="service-title">{service.title}</h3>
+
+                                        <p className="service-description mb-6 text-gray-500 text-sm">
+                                            {service.description}
+                                        </p>
+
+                                        <ul className="service-features-list">
+                                            {service.features.map((feat, i) => (
+                                                <li key={i} className="service-feature-item">
+                                                    <Check size={18} className={`service-feature-icon ${service.popular ? 'popular' : ''}`} />
+                                                    <span className="text-sm">{feat}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+
+                                        <motion.button
+                                            whileHover={{ scale: 1.02 }}
+                                            whileTap={{ scale: 0.98 }}
+                                            className={`btn-book-service ${service.popular ? 'btn-book-popular' : 'btn-book-standard'}`}
+                                        >
+                                            {t('workshop.book_now')}
+                                        </motion.button>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
                     ))}
                 </div>
 
@@ -104,10 +113,9 @@ const Workshop = () => {
                 >
                     <div className="custom-info-grid">
                         <div className="custom-info-content">
-                            <h3>Need Something Custom?</h3>
+                            <h3>{t('workshop.custom.title')}</h3>
                             <p>
-                                We offer bespoke services for unique builds, vintage restorations, and competition preparation.
-                                Contact us for a personalized quote.
+                                {t('workshop.custom.text')}
                             </p>
                         </div>
                         <div className="custom-info-actions">
@@ -116,7 +124,7 @@ const Workshop = () => {
                                 whileTap={{ scale: 0.98 }}
                                 className="btn-custom-quote"
                             >
-                                Request Custom Quote
+                                {t('workshop.custom.button')}
                             </motion.button>
                         </div>
                     </div>

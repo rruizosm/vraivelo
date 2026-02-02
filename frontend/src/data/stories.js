@@ -26,14 +26,12 @@ En diciembre de 2023, en Girona, nace Vraivēlo como respuesta a esa necesidad. 
         size: 'tall'
     },
     {
-        id: 'who',
-        title: 'WHO WE ARE',
-        category: 'IDENTITY',
+        id: 'vv_weekend',
+        title: 'VV Weekend',
+        category: 'Vraivelo Weekend',
         image: '/home_images/vraivelo_home2.jpeg',
-        content: `At Vraivelo, we are more than just a workshop; we are a hub for cycling culture. Our mission is to provide the highest quality service for all types of cyclists, from weekend warriors to seasoned pros.
-
-We believe in precision, transparency, and passion. Every bike that enters our shop is treated with the utmost care, ensuring that it performs at its absolute best.`,
-        size: 'medium'
+        content: true,
+        size: 'full'
     },
     {
         id: 'what',

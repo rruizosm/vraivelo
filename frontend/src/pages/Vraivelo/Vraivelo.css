@@ -74,6 +74,11 @@
     grid-column: span 12;
 }
 
+.story-card.full {
+    grid-column: span 12;
+    grid-row: span 1;
+}
+
 /* Tablet & Desktop Spans */
 @media (min-width: 768px) {
     .story-card.medium {

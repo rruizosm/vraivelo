@@ -68,5 +68,146 @@
             "bottom_bracket": "Bottom Bracket",
             "brakes": "Brakes"
         }
+    },
+    "workshop": {
+        "badge": "PROFESSIONAL SERVICES",
+        "title": "Workshop",
+        "title_highlight": "Services",
+        "subtitle": "Our certified mechanics treat every bike as if it were their own. Precision, care, and speed — every time.",
+        "categories": [
+            {
+                "title": "Tune-up and Mechanics",
+                "services": [
+                    {
+                        "title": "Basic Tune-up",
+                        "price": "€40",
+                        "description": "Ideal for regular maintenance and safe riding.",
+                        "popular": false,
+                        "features": [
+                            "Cleaning and lubrication: We leave the bike spotless and ready to roll.",
+                            "Health check: We check the remaining life of your parts (chain, pads, etc.).",
+                            "General adjustment: We tune up brakes, gears, and headset.",
+                            "Safety torque: We check all bolts with the exact recommended pressure."
+                        ],
+                        "icon_type": "wrench"
+                    },
+                    {
+                        "title": "Full Overhaul",
+                        "price": "€80",
+                        "description": "The star option to make your bike feel like new.",
+                        "popular": true,
+                        "features": [
+                            "Everything in the Basic included.",
+                            "Internal maintenance: We dismantle and grease bottom bracket and headset to eliminate noises.",
+                            "Perfect wheels: We check and adjust spoke tension so wheels spin true.",
+                            "Chain treatment: We apply professional wax for smoother shifting and longer drivetrain life."
+                        ],
+                        "icon_type": "settings"
+                    }
+                ]
+            },
+            {
+                "title": "Suspensions",
+                "services": [
+                    {
+                        "title": "Basic Maintenance",
+                        "price": "€60",
+                        "description": "To maintain smoothness and avoid leaks.",
+                        "popular": false,
+                        "features": [
+                            "General cleaning.",
+                            "Seal replacement.",
+                            "Lubrication oil replacement.",
+                            "Basic oil change."
+                        ],
+                        "icon_type": "zap"
+                    },
+                    {
+                        "title": "Full Maintenance",
+                        "price": "€100",
+                        "description": "Recommended for maximum performance.",
+                        "popular": true,
+                        "features": [
+                            "General cleaning.",
+                            "Seal replacement.",
+                            "Remote lockout adjustment.",
+                            "Hydraulic cartridge oil change.",
+                            "Air cartridge maintenance.",
+                            "Remote lockout bearing replacement."
+                        ],
+                        "icon_type": "settings"
+                    }
+                ]
+            },
+            {
+                "title": "Rear Shock",
+                "services": [
+                    {
+                        "title": "Shock Maintenance",
+                        "price": "€80",
+                        "description": "Care for the \"heart\" of your full-suspension bike.",
+                        "popular": false,
+                        "features": [
+                            "Complete system cleaning.",
+                            "O-ring replacement.",
+                            "Oil replacement."
+                        ],
+                        "icon_type": "wrench"
+                    }
+                ]
+            }
+        ],
+        "book_now": "Book Now",
+        "most_popular": "MOST POPULAR",
+        "custom": {
+            "title": "Need Something Custom?",
+            "text": "We offer bespoke services for unique builds, vintage restorations, and competition preparation. Contact us for a personalized quote.",
+            "button": "Request Custom Quote"
+        }
+    },
+    "contact": {
+        "badge": "GET IN TOUCH",
+        "title": "Let's",
+        "title_highlight": "Connect",
+        "description": "Have a question about a bike? Need to schedule a specific service? We're here to help.",
+        "info": {
+            "visit": "Visit Our Shop",
+            "call": "Call Us",
+            "email": "Email Us",
+            "hours": "Opening Hours",
+            "hours_text": [
+                "Monday to Friday:",
+                "9:00 - 13:00",
+                "16:00 - 19:00"
+            ]
+        },
+        "form": {
+            "title": "Send a Message",
+            "first_name": "First Name",
+            "last_name": "Last Name",
+            "email": "Email Address",
+            "subject": "Subject",
+            "service": "Specific Service (Optional)",
+            "message": "Message",
+            "placeholders": {
+                "first_name": "John",
+                "last_name": "Doe",
+                "email": "john@example.com",
+                "message": "Tell us how we can help..."
+            },
+            "subjects": {
+                "default": "Select a topic",
+                "workshop": "Workshop Service",
+                "formation": "Mechanics Formation",
+                "bikes": "Bike Inquiry",
+                "parts": "Parts & Accessories",
+                "other": "Other"
+            },
+            "services": {
+                "default": "Select a detailed service",
+                "custom": "Custom / Not Listed"
+            },
+            "submit": "Send Message"
+        }
     }
 }

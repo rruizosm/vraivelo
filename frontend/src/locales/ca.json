@@ -68,5 +68,146 @@
             "bottom_bracket": "Eix de pedaler",
             "brakes": "Frens"
         }
+    },
+    "workshop": {
+        "badge": "SERVEIS PROFESSIONALS",
+        "title": "Serveis de",
+        "title_highlight": "Taller",
+        "subtitle": "Els nostres mecànics certificats tracten cada bicicleta com si fos la seva. Precisió, cura i velocitat — sempre.",
+        "categories": [
+            {
+                "title": "Posada a punt i Mecànica",
+                "services": [
+                    {
+                        "title": "Revisió Bàsica",
+                        "price": "€40",
+                        "description": "Ideal per a un manteniment regular i rodar amb seguretat.",
+                        "popular": false,
+                        "features": [
+                            "Neteja i lubricació: Deixem la bici impecable i llesta per rodar.",
+                            "Revisió de salut: Revisem quant els queda de vida a les teves peces (cadena, pastilles, etc.).",
+                            "Ajust general: Posem a punt els frens, el canvi i la direcció.",
+                            "Parell de seguretat: Repassem tots els cargols amb la pressió exacta recomanada."
+                        ],
+                        "icon_type": "wrench"
+                    },
+                    {
+                        "title": "Revisió Completa",
+                        "price": "€80",
+                        "description": "L'opció estrella perquè la teva bici se senti com nova.",
+                        "popular": true,
+                        "features": [
+                            "Tot el de la Revisió Bàsica inclòs.",
+                            "Manteniment intern: Desmuntem i engreixem a fons el pedaler i la direcció per eliminar sorolls.",
+                            "Rodes perfectes: Revisem i ajustem la tensió dels radis perquè les rodes girin rectes.",
+                            "Tractament de cadena: Apliquem cera professional perquè el canvi sigui més suau i la transmissió duri més."
+                        ],
+                        "icon_type": "settings"
+                    }
+                ]
+            },
+            {
+                "title": "Suspensions",
+                "services": [
+                    {
+                        "title": "Manteniment bàsic",
+                        "price": "€60",
+                        "description": "Per mantenir la suavitat i evitar fuites.",
+                        "popular": false,
+                        "features": [
+                            "Neteja general.",
+                            "Canvi de retens.",
+                            "Substitució de l'oli de lubricació.",
+                            "Canvi d'oli bàsic."
+                        ],
+                        "icon_type": "zap"
+                    },
+                    {
+                        "title": "Manteniment complet",
+                        "price": "€100",
+                        "description": "Recomanat per al màxim rendiment.",
+                        "popular": true,
+                        "features": [
+                            "Neteja general.",
+                            "Canvi de retens.",
+                            "Ajust del bloqueig remot.",
+                            "Canvi d'oli de cartutx hidràulic.",
+                            "Manteniment cartutx d'aire.",
+                            "Canvi de rodament del bloqueig remot."
+                        ],
+                        "icon_type": "settings"
+                    }
+                ]
+            },
+            {
+                "title": "Amortidor",
+                "services": [
+                    {
+                        "title": "Manteniment amortidor",
+                        "price": "€80",
+                        "description": "Cuida el \"cor\" de la teva bici de doble suspensió.",
+                        "popular": false,
+                        "features": [
+                            "Neteja integral de tot el sistema.",
+                            "Canvi de juntes tòriques.",
+                            "Substitució de l'oli."
+                        ],
+                        "icon_type": "wrench"
+                    }
+                ]
+            }
+        ],
+        "book_now": "Reservar",
+        "most_popular": "MÉS POPULAR",
+        "custom": {
+            "title": "Necessites Alguna Cosa Personalitzada?",
+            "text": "Oferim serveis a mida per a muntatges únics, restauracions vintage i preparació per a competició. Contacta amb nosaltres per a un pressupost personalitzat.",
+            "button": "Demanar Pressupost"
+        }
+    },
+    "contact": {
+        "badge": "CONTACTA'NS",
+        "title": "Anem a",
+        "title_highlight": "Connectar",
+        "description": "Tens alguna pregunta sobre una bici? Necessites agendar un servei específic? Estem aquí per ajudar.",
+        "info": {
+            "visit": "Visita la nostra botiga",
+            "call": "Truca'ns",
+            "email": "Envia'ns un email",
+            "hours": "Horari d'obertura",
+            "hours_text": [
+                "Dilluns a Divendres:",
+                "9:00 - 13:00",
+                "16:00 - 19:00"
+            ]
+        },
+        "form": {
+            "title": "Envia un missatge",
+            "first_name": "Nom",
+            "last_name": "Cognom",
+            "email": "Correu electrònic",
+            "subject": "Assumpte",
+            "service": "Servei específic (Opcional)",
+            "message": "Missatge",
+            "placeholders": {
+                "first_name": "Joan",
+                "last_name": "Garcia",
+                "email": "joan@exemple.com",
+                "message": "Explica'ns com et podem ajudar..."
+            },
+            "subjects": {
+                "default": "Selecciona un tema",
+                "workshop": "Servei de Taller",
+                "formation": "Formació Mecànica",
+                "bikes": "Consulta sobre Bicicletes",
+                "parts": "Recanvis i Accessoris",
+                "other": "Altre"
+            },
+            "services": {
+                "default": "Selecciona un servei detallat",
+                "custom": "Personalitzat / No llistat"
+            },
+            "submit": "Enviar Missatge"
+        }
     }
 }
