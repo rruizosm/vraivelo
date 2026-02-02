@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { Wrench, Settings, Zap, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import './Workshop.css';
 
 const Workshop = () => {
     const { t } = useTranslation();
+    const navigate = useNavigate();
     const serviceCategories = t('workshop.categories', { returnObjects: true });
 
     // Helper to map icon string to component
@@ -94,6 +96,12 @@ const Workshop = () => {
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
                                             className={`btn-book-service ${service.popular ? 'btn-book-popular' : 'btn-book-standard'}`}
+                                            onClick={() => navigate('/contact', {
+                                                state: {
+                                                    subject: 'workshop',
+                                                    service: service.title
+                                                }
+                                            })}
                                         >
                                             {t('workshop.book_now')}
                                         </motion.button>
@@ -123,6 +131,12 @@ const Workshop = () => {
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 className="btn-custom-quote"
+                                onClick={() => navigate('/contact', {
+                                    state: {
+                                        subject: 'workshop',
+                                        service: 'custom'
+                                    }
+                                })}
                             >
                                 {t('workshop.custom.button')}
                             </motion.button>

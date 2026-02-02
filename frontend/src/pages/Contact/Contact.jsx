@@ -11,9 +11,10 @@ const Contact = () => {
     const location = useLocation();
     const initialSubject = location.state?.subject || "";
     const initialMessage = location.state?.message || "";
+    const initialService = location.state?.service || "";
 
     const [subject, setSubject] = useState(initialSubject);
-    const [workshopService, setWorkshopService] = useState("");
+    const [workshopService, setWorkshopService] = useState(initialService);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
