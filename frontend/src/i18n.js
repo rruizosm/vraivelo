@@ -19,7 +19,7 @@ i18n
                 translation: ca
             }
         },
-        lng: 'en', // default language
+        lng: 'es', // default language
         fallbackLng: 'en',
         interpolation: {
             escapeValue: false // react already safes from xss

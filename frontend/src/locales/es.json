@@ -69,6 +69,45 @@
             "brakes": "Frenos"
         }
     },
+    "home": {
+        "hero": {
+            "badge": "DISTRIBUIDOR AUTORIZADO • TALLER EXPERTO",
+            "title": "PEDALEA LA",
+            "title_highlight": "REALIDAD",
+            "subtitle": "Más que una tienda de bicicletas. Un santuario para el rendimiento, la precisión y la pasión.",
+            "explore_btn": "Explorar Bicicletas",
+            "book_btn": "Reservar Taller",
+            "scroll": "Deslizar",
+            "partners_prefix": "Partner oficial de"
+        },
+        "brands": {
+            "title": "Partners de Confianza"
+        },
+        "values": {
+            "title": "¿Por qué",
+            "title_highlight": "Vraivelo?",
+            "subtitle": "Combinamos artesanía experta con una auténtica pasión por el ciclismo.",
+            "cards": {
+                "workshop": {
+                    "title": "Taller Experto",
+                    "desc": "Herramientas de última generación y mecánicos certificados para mantenimiento y reparaciones de primer nivel."
+                },
+                "selection": {
+                    "title": "Selección Premium",
+                    "desc": "Colección curada de las mejores bicicletas y equipamiento profesional del mundo."
+                },
+                "guarantee": {
+                    "title": "Garantía Vraivelo",
+                    "desc": "Respaldamos cada servicio y venta. Calidad y satisfacción, siempre."
+                }
+            }
+        },
+        "cta": {
+            "title": "¿Listo para Elevar tu Nivel?",
+            "text": "Visita nuestro taller o explora nuestra colección de bicicletas premium.",
+            "button": "Contáctanos"
+        }
+    },
     "workshop": {
         "badge": "SERVICIOS PROFESIONALES",
         "title": "Servicios de",

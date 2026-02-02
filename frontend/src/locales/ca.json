@@ -69,6 +69,45 @@
             "brakes": "Frens"
         }
     },
+    "home": {
+        "hero": {
+            "badge": "DISTRIBUÏDOR AUTORITZAT • TALLER EXPERT",
+            "title": "PEDALA LA",
+            "title_highlight": "REALITAT",
+            "subtitle": "Més que una botiga de bicicletes. Un santuari per al rendiment, la precisió i la passió.",
+            "explore_btn": "Explorar Bicicletes",
+            "book_btn": "Reservar Taller",
+            "scroll": "Lliscar",
+            "partners_prefix": "Partner oficial de"
+        },
+        "brands": {
+            "title": "Partners de Confiança"
+        },
+        "values": {
+            "title": "Per què",
+            "title_highlight": "Vraivelo?",
+            "subtitle": "Combinem artesania experta amb una autèntica passió pel ciclisme.",
+            "cards": {
+                "workshop": {
+                    "title": "Taller Expert",
+                    "desc": "Eines d'última generació i mecànics certificats per a manteniment i reparacions de primer nivell."
+                },
+                "selection": {
+                    "title": "Selecció Premium",
+                    "desc": "Col·lecció curada de les millors bicicletes i equipament professional del món."
+                },
+                "guarantee": {
+                    "title": "Garantia Vraivelo",
+                    "desc": "Recolzem cada servei i venda. Qualitat i satisfacció, sempre."
+                }
+            }
+        },
+        "cta": {
+            "title": "A punt per Elevar el teu Nivell?",
+            "text": "Visita el nostre taller o explora la nostra col·lecció de bicicletes prèmium.",
+            "button": "Contacta'ns"
+        }
+    },
     "workshop": {
         "badge": "SERVEIS PROFESSIONALS",
         "title": "Serveis de",

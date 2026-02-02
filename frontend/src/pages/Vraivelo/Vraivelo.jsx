@@ -27,7 +27,10 @@ const Vraivelo = () => {
                         transition={{ delay: index * 0.1 }}
                         className={`story-card ${story.size}`}
                         onClick={() => handleStoryClick(story)}
-                        style={{ backgroundImage: `url(${story.image})` }}
+                        style={{
+                            backgroundImage: `url(${story.image})`,
+                            backgroundPosition: story.backgroundPosition || 'center'
+                        }}
                     >
                         <div className="story-overlay">
                             <span className="story-category">{story.category}</span>

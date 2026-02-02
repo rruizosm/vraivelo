@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Wrench, ShoppingBag, ShieldCheck, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -25,6 +26,7 @@ const partnerBrands = [
 ];
 
 const Home = () => {
+    const { t } = useTranslation();
     const [currentImage, setCurrentImage] = useState(0);
 
     useEffect(() => {
@@ -74,7 +76,7 @@ const Home = () => {
                         className="hero-badge-wrapper"
                     >
                         <span className="hero-badge">
-                            AUTHORIZED DEALER • EXPERT WORKSHOP
+                            {t('home.hero.badge')}
                         </span>
                     </motion.div>
 
@@ -84,10 +86,10 @@ const Home = () => {
                         transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                         className="hero-title"
                     >
-                        RIDE{' '}
+                        {t('home.hero.title')}{' '}
                         <span className="relative inline-block">
                             <span className="text-gradient-reality">
-                                REALITY
+                                {t('home.hero.title_highlight')}
                             </span>
                         </span>
                     </motion.h1>
@@ -98,8 +100,9 @@ const Home = () => {
                         transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         className="hero-subtitle"
                     >
-                        Not just a bike shop. A sanctuary for performance, precision, and passion.
-                        Official partner of <span className="highlight-primary">Giant</span>, <span className="highlight-primary">Berria</span> & <span className="highlight-primary">MMR</span>
+                        {t('home.hero.subtitle')}
+                        <br />
+                        {t('home.hero.partners_prefix')} <span className="highlight-primary">Giant</span>, <span className="highlight-primary">Berria</span> & <span className="highlight-primary">MMR</span>
                     </motion.p>
 
                     <motion.div
@@ -114,7 +117,7 @@ const Home = () => {
                                 whileTap={{ scale: 0.98 }}
                                 className="btn-hero-primary group"
                             >
-                                Explore Bikes
+                                {t('home.hero.explore_btn')}
                                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </motion.button>
                         </Link>
@@ -124,7 +127,7 @@ const Home = () => {
                                 whileTap={{ scale: 0.98 }}
                                 className="btn-hero-outline"
                             >
-                                Book Service <Wrench size={18} />
+                                {t('home.hero.book_btn')} <Wrench size={18} />
                             </motion.button>
                         </Link>
                     </motion.div>
@@ -141,7 +144,7 @@ const Home = () => {
                             transition={{ duration: 2, repeat: Infinity }}
                             className="scroll-indicator-inner"
                         >
-                            <span className="scroll-text">Scroll</span>
+                            <span className="scroll-text">{t('home.hero.scroll')}</span>
                             <ChevronDown size={20} />
                         </motion.div>
                     </motion.div>
@@ -151,7 +154,7 @@ const Home = () => {
             <section className="brands-section">
                 <div className="brands-container">
                     <p className="brands-title">
-                        Trusted Partners
+                        {t('home.brands.title')}
                     </p>
                     <div className="brands-grid">
                         {brands.map((brand, index) => (
@@ -202,30 +205,30 @@ const Home = () => {
                         className="value-props-header"
                     >
                         <h2 className="section-title">
-                            Why <span className="highlight-primary">Vraivelo</span>?
+                            {t('home.values.title')} <span className="highlight-primary">{t('home.values.title_highlight')}</span>
                         </h2>
                         <p className="section-subtitle">
-                            We combine expert craftsmanship with genuine passion for cycling.
+                            {t('home.values.subtitle')}
                         </p>
                     </motion.div>
 
                     <div className="value-props-grid">
                         <ValueCard
                             icon={<Wrench size={32} strokeWidth={1.5} />}
-                            title="Expert Workshop"
-                            desc="State-of-the-art tools and certified mechanics for top-tier maintenance and repairs."
+                            title={t('home.values.cards.workshop.title')}
+                            desc={t('home.values.cards.workshop.desc')}
                             delay={0}
                         />
                         <ValueCard
                             icon={<ShoppingBag size={32} strokeWidth={1.5} />}
-                            title="Premium Selection"
-                            desc="Curated collection of the world's finest bicycles and professional-grade gear."
+                            title={t('home.values.cards.selection.title')}
+                            desc={t('home.values.cards.selection.desc')}
                             delay={0.1}
                         />
                         <ValueCard
                             icon={<ShieldCheck size={32} strokeWidth={1.5} />}
-                            title="Vraivelo Guarantee"
-                            desc="We stand behind every service and sale. Quality and satisfaction, always."
+                            title={t('home.values.cards.guarantee.title')}
+                            desc={t('home.values.cards.guarantee.desc')}
                             delay={0.2}
                         />
                     </div>
@@ -245,7 +248,7 @@ const Home = () => {
                         viewport={{ once: true }}
                         className="cta-title"
                     >
-                        Ready to Elevate Your Ride?
+                        {t('home.cta.title')}
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -254,7 +257,7 @@ const Home = () => {
                         transition={{ delay: 0.1 }}
                         className="cta-text"
                     >
-                        Visit our workshop or explore our collection of premium bicycles.
+                        {t('home.cta.text')}
                     </motion.p>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -268,7 +271,7 @@ const Home = () => {
                                 whileTap={{ scale: 0.98 }}
                                 className="btn-cta"
                             >
-                                Get in Touch
+                                {t('home.cta.button')}
                             </motion.button>
                         </Link>
                     </motion.div>

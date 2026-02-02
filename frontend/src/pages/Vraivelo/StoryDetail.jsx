@@ -23,7 +23,7 @@ const StoryDetail = () => {
             return <Origins />;
         case 'who':
             return <Identity />;
-        case 'what':
+        case 'vv_weekend':
             return <VraiveloWeekend />;
         case 'team':
             return <Team />;

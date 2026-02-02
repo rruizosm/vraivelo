@@ -69,6 +69,45 @@
             "brakes": "Brakes"
         }
     },
+    "home": {
+        "hero": {
+            "badge": "AUTHORIZED DEALER • EXPERT WORKSHOP",
+            "title": "RIDE",
+            "title_highlight": "REALITY",
+            "subtitle": "Not just a bike shop. A sanctuary for performance, precision, and passion.",
+            "explore_btn": "Explore Bikes",
+            "book_btn": "Book Service",
+            "scroll": "Scroll",
+            "partners_prefix": "Official partner of"
+        },
+        "brands": {
+            "title": "Trusted Partners"
+        },
+        "values": {
+            "title": "Why",
+            "title_highlight": "Vraivelo?",
+            "subtitle": "We combine expert craftsmanship with genuine passion for cycling.",
+            "cards": {
+                "workshop": {
+                    "title": "Expert Workshop",
+                    "desc": "State-of-the-art tools and certified mechanics for top-tier maintenance and repairs."
+                },
+                "selection": {
+                    "title": "Premium Selection",
+                    "desc": "Curated collection of the world's finest bicycles and professional-grade gear."
+                },
+                "guarantee": {
+                    "title": "Vraivelo Guarantee",
+                    "desc": "We stand behind every service and sale. Quality and satisfaction, always."
+                }
+            }
+        },
+        "cta": {
+            "title": "Ready to Elevate Your Ride?",
+            "text": "Visit our workshop or explore our collection of premium bicycles.",
+            "button": "Get in Touch"
+        }
+    },
     "workshop": {
         "badge": "PROFESSIONAL SERVICES",
         "title": "Workshop",

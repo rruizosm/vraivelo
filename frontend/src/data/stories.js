@@ -27,11 +27,12 @@ En diciembre de 2023, en Girona, nace Vraivēlo como respuesta a esa necesidad. 
     },
     {
         id: 'vv_weekend',
-        title: 'VV Weekend',
+        title: 'Vraivēlo Weekend',
         category: 'Vraivelo Weekend',
-        image: '/home_images/vraivelo_home2.jpeg',
+        image: '/vraivelo_weekend/vv_5.jpeg',
         content: true,
-        size: 'full'
+        size: 'full',
+        backgroundPosition: 'center 35%'
     },
     {
         id: 'what',

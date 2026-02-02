@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, Wrench, CheckCircle, ChevronRight, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './EventFormation.css';
-import workshopImage from '../../../public/primer_local/local_11.jpeg';
+// Image referenced directly from public folder
+const workshopImage = "/primer_local/local_11.jpeg";
 
 const EventFormation = () => {
     return (
