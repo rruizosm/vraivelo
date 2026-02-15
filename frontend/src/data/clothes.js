@@ -3,7 +3,7 @@ export const clothes = [
         id: "maillot-pro-2025",
         brand: "Vraivelo",
         model: "Maillot Pro Team",
-        category: "Other Products",
+        category: "Clothes",
         price: "85€",
         description: "High-performance cycling jersey designed for professional comfort and aerodynamics. Features breathable fabric and specific cut for racing.",
         long_description: "Experience the ultimate in cycling performance with the Vraivelo Maillot Pro Team 2025. Engineered for the most demanding rides, this jersey combines aerodynamic efficiency with exceptional comfort. The lightweight, moisture-wicking fabric keeps you cool and dry, while the race-fit cut ensures minimal drag. Perfect for competition or your Sunday club run.",

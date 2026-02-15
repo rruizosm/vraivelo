@@ -173,7 +173,7 @@ const Shop = () => {
                                 <div className="bike-info">
                                     <p className="bike-brand">{bike.brand}</p>
                                     <h3 className="bike-model">{bike.model}</h3>
-                                    <p className="bike-desc">{bike.description}</p>
+                                    {/* <p className="bike-desc">{bike.description}</p> */}
                                     <div className="bike-price-row">
                                         <span className="bike-price">{bike.price}</span>
                                         <button

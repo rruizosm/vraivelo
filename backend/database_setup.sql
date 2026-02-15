@@ -27,3 +27,30 @@ create policy "Allow public read access"
 
 -- Optional: Policy for service role to insert/update (backend only)
 -- Implicitly allowed for service_role, but good to know.
+
+-- =============================================
+-- Create the products table (Other Products page)
+-- Matches the existing Supabase 'products' table structure
+-- =============================================
+create table public.products (
+  id bigint primary key,
+  "Product" text not null,
+  "Type" text not null,        -- Category: Clothes, Tires, etc.
+  "Price" text,
+  "Size" text,
+  "Description" text,
+  "Image URL" text,
+  "Color" text,
+  "Specs" text[]              -- Array of spec strings, same format as bikes
+);
+
+-- Enable Row Level Security (RLS)
+alter table public.products enable row level security;
+
+-- Create policy to allow public read access
+create policy "Allow public read access"
+  on public.products
+  for select
+  to anon
+  using (true);
+

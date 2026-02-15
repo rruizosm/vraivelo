@@ -37,19 +37,47 @@ const ProductDetail = () => {
                 }
 
                 // If not found in clothes, fetch from Supabase (bikes)
-                const { data, error } = await supabase
+                const { data: bikeData, error: bikeError } = await supabase
                     .from('bikes')
                     .select('*')
                     .eq('id', id)
                     .single();
 
-                if (error) {
-                    throw error;
+                if (!bikeError && bikeData) {
+                    setBike(bikeData);
+                    setLoading(false);
+                    return;
                 }
-                setBike(data);
+
+                // If not found in bikes, try the products table
+                const { data: productData, error: productError } = await supabase
+                    .from('products')
+                    .select('*')
+                    .eq('id', id)
+                    .single();
+
+                if (!productError && productData) {
+                    // Normalize column names to match component expectations
+                    setBike({
+                        id: productData.id,
+                        model: productData.Product || productData.product,
+                        category: productData.Type || productData.type,
+                        price: productData.Price || productData.price,
+                        size: productData.Size || productData.size,
+                        description: productData.Description || productData.description,
+                        image_url: productData["Image URL"] || productData["image url"] || productData.image_url,
+                        color: productData.Color || productData.color,
+                        specs: productData.Specs || productData.specs,
+                    });
+                    setLoading(false);
+                    return;
+                }
+
+                // Not found anywhere
+                setBike(null);
 
             } catch (error) {
-                console.error('Error fetching bike:', error);
+                console.error('Error fetching product:', error);
                 setBike(null);
             } finally {
                 setLoading(false);
@@ -68,8 +96,32 @@ const ProductDetail = () => {
 
 
     // Default options if not provided in data
-    const sizes = (selectedColor && selectedColor.sizes) || bike?.sizes || ['S', 'M', 'L', 'XL'];
-    const specs = bike?.specs || ['Frame: Standard Carbon', 'Groupset: Standard Mix', 'Warranty: 2 Years'];
+    // Parse sizes: could be an array, a string like "[42,44,46]", or null
+    const parseSizes = () => {
+        if (selectedColor && selectedColor.sizes) return selectedColor.sizes;
+        if (bike?.sizes) {
+            if (Array.isArray(bike.sizes)) return bike.sizes;
+            // Handle string format like "[42,44,46]"
+            if (typeof bike.sizes === 'string' && bike.sizes.startsWith('[')) {
+                try {
+                    return JSON.parse(bike.sizes.replace(/'/g, '"'));
+                } catch { return []; }
+            }
+            return [bike.sizes];
+        }
+        if (bike?.size) {
+            if (Array.isArray(bike.size)) return bike.size;
+            if (typeof bike.size === 'string' && bike.size.startsWith('[')) {
+                try {
+                    return JSON.parse(bike.size.replace(/'/g, '"'));
+                } catch { return []; }
+            }
+            return [bike.size];
+        }
+        return [];
+    };
+    const sizes = parseSizes();
+    const specs = bike?.specs || [];
 
     // Determine current images list
     const currentImages = selectedColor && selectedColor.images && selectedColor.images.length > 0
@@ -142,7 +194,7 @@ const ProductDetail = () => {
                                 />
                             ) : (
                                 <span className="product-placeholder-text">
-                                    {bike.brand.charAt(0)}
+                                    {(bike.brand || bike.model || '?').charAt(0)}
                                 </span>
                             )}
                         </AnimatePresence>
@@ -199,13 +251,15 @@ const ProductDetail = () => {
                     </button>
 
                     <div>
-                        <p className="product-brand">{bike.brand}</p>
+                        {bike.brand && <p className="product-brand">{bike.brand}</p>}
                         <h1 className="product-title">{bike.model}</h1>
-                        <p className="product-category">{bike.category}</p>
+                        {bike.category && <p className="product-category">{bike.category}</p>}
+                        {/* {bike.color && !bike.variants && <p className="text-sm text-gray-400 mt-1">Color: {bike.color}</p>} */}
                         <p className="product-price">{bike.price}</p>
                     </div>
 
-                    <p className="product-description">{bike.description}</p>
+                    {bike.description && <p className="product-description">{bike.description}</p>}
+                    {bike.long_description && <p className="product-description mt-2">{bike.long_description}</p>}
 
                     {/* Options */}
                     <div className="product-options">
@@ -257,7 +311,7 @@ const ProductDetail = () => {
                                 if (selectedSize) {
                                     addToCart({
                                         id: bike.id,
-                                        brand: bike.brand,
+                                        brand: bike.brand || '',
                                         model: bike.model,
                                         price: bike.price,
                                         image: displayImage,
@@ -268,8 +322,8 @@ const ProductDetail = () => {
                                     });
                                 }
                             }}
-                            disabled={!selectedSize || bike.quantity === 0}
-                            className={`add-to-cart-btn ${(!selectedSize || bike.quantity === 0) ? 'disabled' : ''}`}
+                            disabled={(sizes.length > 0 && !selectedSize) || bike.quantity === 0}
+                            className={`add-to-cart-btn ${((sizes.length > 0 && !selectedSize) || bike.quantity === 0) ? 'disabled' : ''}`}
                         >
                             <ShoppingBag size={20} />
                             {bike.quantity === 0 ? t('product.sold') : t('product.add_to_cart') || "Add to Cart"}
@@ -279,30 +333,20 @@ const ProductDetail = () => {
             </div>
 
             {/* Specs Section */}
-            <div className="product-specs-section">
-                {bike.long_description && (
-                    <div className="product-long-description">
-                        <p>{bike.long_description}</p>
-                    </div>
-                )}
-                <div className="product-specs">
-                    <h3 className="specs-title">{t('product.specifications')}</h3>
-                    <div className="specs-grid">
-                        {specs.map((spec, index) => {
-                            const [label, ...valueParts] = spec.split(':');
-                            const value = valueParts.join(':').trim();
-                            const translationKey = `product.specs.${label.toLowerCase().trim().replace(/ /g, '_')}`;
-
-                            return (
+            {specs.length > 0 && (
+                <div className="product-specs-section">
+                    <div className="product-specs">
+                        <h3 className="specs-title">{t('product.specifications')}</h3>
+                        <div className="specs-grid">
+                            {specs.map((spec, index) => (
                                 <div key={index} className="spec-item">
-                                    <span className="spec-label">{t(translationKey, { defaultValue: label })}</span>
-                                    <span className="spec-value">{value || spec}</span>
+                                    <span className="spec-label">{spec}</span>
                                 </div>
-                            );
-                        })}
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };
