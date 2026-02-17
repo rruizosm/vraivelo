@@ -2,11 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, Wrench, CheckCircle, ChevronRight, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './EventFormation.css';
 // Image referenced directly from public folder
 const workshopImage = "/primer_local/local_11.jpeg";
 
 const EventFormation = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="event-formation-container">
             <div className="event-content-wrapper">
@@ -19,13 +22,13 @@ const EventFormation = () => {
                     className="event-hero"
                 >
                     <span className="event-badge">
-                        COMMUNITY EVENT
+                        {t('event_formation.badge')}
                     </span>
                     <h1 className="event-title">
-                        Basics of Bicycle <span className="text-[var(--primary)]">Mechanics</span>
+                        {t('event_formation.title_prefix')} <span className="text-[var(--primary)]">{t('event_formation.title_highlight')}</span>
                     </h1>
                     <p className="event-subtitle">
-                        Join us for a free, hands-on workshop designed to teach you the essential skills to keep your bike rolling smoothly.
+                        {t('event_formation.subtitle')}
                     </p>
                 </motion.div>
 
@@ -40,8 +43,8 @@ const EventFormation = () => {
                         <div className="detail-icon-wrapper blue">
                             <Calendar size={28} strokeWidth={1.5} />
                         </div>
-                        <h3 className="detail-title">Date & Time</h3>
-                        <p className="detail-text">Friday, February 20th, 2026</p>
+                        <h3 className="detail-title">{t('event_formation.date_time')}</h3>
+                        <p className="detail-text">{t('event_formation.date_value')}</p>
                         <p className="detail-text highlight">19:00</p>
                     </motion.div>
 
@@ -54,7 +57,7 @@ const EventFormation = () => {
                         <div className="detail-icon-wrapper red">
                             <MapPin size={28} strokeWidth={1.5} />
                         </div>
-                        <h3 className="detail-title">Location</h3>
+                        <h3 className="detail-title">{t('event_formation.location')}</h3>
                         <p className="detail-text">Vraivēlo</p>
                         <p className="detail-text">Carrer Pau Vila i Dinarès 10, 17003 Girona</p>
                     </motion.div>
@@ -68,10 +71,10 @@ const EventFormation = () => {
                         <div className="detail-icon-wrapper green">
                             <AlertCircle size={28} strokeWidth={1.5} />
                         </div>
-                        <h3 className="detail-title">Cost</h3>
+                        <h3 className="detail-title">{t('event_formation.cost')}</h3>
                         <p className="price-original">€45.00</p>
-                        <p className="price-free">FREE</p>
-                        <p className="price-note">Limited spots available</p>
+                        <p className="price-free">{t('event_formation.free')}</p>
+                        <p className="price-note">{t('event_formation.limited_spots')}</p>
                     </motion.div>
                 </div>
 
@@ -86,9 +89,9 @@ const EventFormation = () => {
                         <span style={{ fontSize: '1.75rem' }}>☕</span>
                     </div>
                     <div className="snack-content">
-                        <h3 className="snack-title">Fuel Up First!</h3>
+                        <h3 className="snack-title">{t('event_formation.snack_title')}</h3>
                         <p className="snack-text">
-                            Join us at 19:00 for an afternoon snack to start with more power!
+                            {t('event_formation.snack_text')}
                         </p>
                     </div>
                 </motion.div>
@@ -100,15 +103,9 @@ const EventFormation = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="section-title">What You Will Learn</h2>
+                        <h2 className="section-title">{t('event_formation.learn_title')}</h2>
                         <div className="learning-list">
-                            {[
-                                "How to clean your bike correctly",
-                                "How to lubricate correctly",
-                                "Repairing a flat tire",
-                                "Adjusting the headset correctly",
-                                "Theory and practice"
-                            ].map((item, index) => (
+                            {(t('event_formation.learn_items', { returnObjects: true }) || []).map((item, index) => (
                                 <motion.div
                                     key={index}
                                     className="learning-item"
@@ -143,20 +140,20 @@ const EventFormation = () => {
                 viewport={{ once: true }}
                 className="event-cta-box"
             >
-                <h2 className="cta-title">Ready to Master Your Bike?</h2>
+                <h2 className="cta-title">{t('event_formation.cta_title')}</h2>
                 <p className="cta-text">
-                    Spots are strictly limited to ensure personal attention for every participant. Reserve your place today.
+                    {t('event_formation.cta_text')}
                 </p>
                 <Link to="/contact" state={{
                     subject: 'formation',
-                    message: "Hi, I'm interested in being part of the Mechanics Workshop."
+                    message: t('event_formation.contact_message')
                 }}>
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="cta-button"
                     >
-                        Register Now <ChevronRight size={20} />
+                        {t('event_formation.register')} <ChevronRight size={20} />
                     </motion.button>
                 </Link>
             </motion.div>

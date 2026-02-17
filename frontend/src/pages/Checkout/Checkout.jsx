@@ -55,8 +55,8 @@ const Checkout = () => {
     if (cartItems.length === 0) {
         return (
             <div className="checkout-container empty">
-                <h2>Your cart is empty</h2>
-                <a href="/shop" className="btn-primary">Return to Shop</a>
+                <h2>{t('checkout_page.empty_title')}</h2>
+                <a href="/shop" className="btn-primary">{t('checkout_page.return_shop')}</a>
             </div>
         );
     }
@@ -68,10 +68,10 @@ const Checkout = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="checkout-content"
             >
-                <h1>Checkout</h1>
+                <h1>{t('checkout_page.title')}</h1>
 
                 <div className="checkout-summary">
-                    <h2>Order Summary</h2>
+                    <h2>{t('checkout_page.order_summary')}</h2>
                     <div className="summary-items">
                         {cartItems.map((item, index) => (
                             <div key={index} className="summary-item">
@@ -82,7 +82,7 @@ const Checkout = () => {
                         ))}
                     </div>
                     <div className="summary-total">
-                        <span>Total:</span>
+                        <span>{t('checkout_page.total')}</span>
                         <span>{cartTotal.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}</span>
                     </div>
                 </div>
@@ -94,11 +94,11 @@ const Checkout = () => {
                     disabled={loading}
                     className="pay-btn"
                 >
-                    {loading ? <Loader className="animate-spin" /> : <><Lock size={18} /> Pay with Stripe</>}
+                    {loading ? <Loader className="animate-spin" /> : <><Lock size={18} /> {t('checkout_page.pay_stripe')}</>}
                 </button>
 
                 <p className="secure-text">
-                    <Lock size={14} /> Payments are secure and encrypted.
+                    <Lock size={14} /> {t('checkout_page.secure_text')}
                 </p>
             </motion.div>
         </div>

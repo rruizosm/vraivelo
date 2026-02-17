@@ -26,50 +26,20 @@ En diciembre de 2023, en Girona, nace Vraivēlo como respuesta a esa necesidad. 
         size: 'tall'
     },
     {
+        id: 'strava_team',
+        title: 'STRAVA TEAM',
+        category: 'COMMUNITY',
+        image: '/stories/strava_team.jpg',
+        content: true,
+        size: 'tall'
+    },
+    {
         id: 'vv_weekend',
         title: 'Vraivēlo Weekend',
         category: 'Vraivelo Weekend',
         image: '/vraivelo_weekend/vv_5.jpeg',
         content: true,
-        size: 'full',
+        size: 'large',
         backgroundPosition: 'center 35%'
-    },
-    {
-        id: 'what',
-        title: 'WHAT WE DO',
-        category: 'MISSION',
-        image: '/home_images/vraivelo_home3.jpeg',
-        content: `We offer a comprehensive range of services tailored to meet the needs of modern cyclists. From basic tune-ups to full custom builds, suspension servicing, and electronic shifting diagnostics.
-
-Our workshop is equipped with state-of-the-art tools and we stay updated with the latest technologies to handle even the most advanced machines.`,
-        size: 'medium'
-    },
-    {
-        id: 'team',
-        title: 'THE TEAM',
-        category: 'PEOPLE',
-        image: '/home_images/vraivelo_home13.jpeg',
-        content: `
-### Ruben Ruiz
-**Role:** Lead Mechanic & Founder
-
-Ruben brings over 15 years of experience in the cycling industry. His attention to detail and deep understanding of bicycle mechanics make him a trusted expert in the field. He specializes in high-end road and gravel bikes.`,
-        size: 'tall'
-    },
-    {
-        id: 'gallery1',
-        title: 'COLLECTION 2024',
-        category: 'GALLERY',
-        image: '/home_images/vraivelo_home9.jpg',
-        content: null,
-        size: 'wide'
-    },
-    {
-        id: 'gallery2',
-        title: 'RIDE LIFE',
-        category: 'LIFESTYLE',
-        image: '/home_images/vraivelo_home7.jpeg',
-        content: null,
-        size: 'medium'
     },
 ];

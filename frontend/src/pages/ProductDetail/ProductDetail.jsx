@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ZoomIn, Loader, ShoppingBag, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ZoomIn, Loader, ShoppingBag, ChevronLeft, ChevronRight, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../../supabase';
 import { useCart } from '../../context/CartContext';
@@ -12,7 +12,7 @@ const ProductDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const { t } = useTranslation();
-    const { addToCart } = useCart();
+    const { addToCart, isCartEnabled } = useCart();
     const [bike, setBike] = useState(null);
     const [loading, setLoading] = useState(true);
     const [selectedSize, setSelectedSize] = useState(null);
@@ -306,28 +306,38 @@ const ProductDetail = () => {
                             </div>
                         </div>
 
-                        <button
-                            onClick={() => {
-                                if (selectedSize) {
-                                    addToCart({
-                                        id: bike.id,
-                                        brand: bike.brand || '',
-                                        model: bike.model,
-                                        price: bike.price,
-                                        image: displayImage,
-                                        size: selectedSize,
-                                        color: selectedColor ? selectedColor.colorName : null,
-                                        type: bike.category === 'Other Products' ? 'clothes' : 'bike',
-                                        maxQuantity: bike.quantity
-                                    });
-                                }
-                            }}
-                            disabled={(sizes.length > 0 && !selectedSize) || bike.quantity === 0}
-                            className={`add-to-cart-btn ${((sizes.length > 0 && !selectedSize) || bike.quantity === 0) ? 'disabled' : ''}`}
-                        >
-                            <ShoppingBag size={20} />
-                            {bike.quantity === 0 ? t('product.sold') : t('product.add_to_cart') || "Add to Cart"}
-                        </button>
+                        {isCartEnabled ? (
+                            <button
+                                onClick={() => {
+                                    if (selectedSize) {
+                                        addToCart({
+                                            id: bike.id,
+                                            brand: bike.brand || '',
+                                            model: bike.model,
+                                            price: bike.price,
+                                            image: displayImage,
+                                            size: selectedSize,
+                                            color: selectedColor ? selectedColor.colorName : null,
+                                            type: bike.category === 'Other Products' ? 'clothes' : 'bike',
+                                            maxQuantity: bike.quantity
+                                        });
+                                    }
+                                }}
+                                disabled={(sizes.length > 0 && !selectedSize) || bike.quantity === 0}
+                                className={`add-to-cart-btn ${((sizes.length > 0 && !selectedSize) || bike.quantity === 0) ? 'disabled' : ''}`}
+                            >
+                                <ShoppingBag size={20} />
+                                {bike.quantity === 0 ? t('product.sold') : t('product.add_to_cart') || "Add to Cart"}
+                            </button>
+                        ) : (
+                            <button
+                                onClick={() => navigate('/contact', { state: { subject: (bike.category === 'Clothes' || bike.category === 'Other Products' || bike.variants) ? 'parts' : 'bikes', message: `${t('product.contact_message') || 'Hi, I\'m interested in'} ${bike.model}` } })}
+                                className="add-to-cart-btn"
+                            >
+                                <Mail size={20} />
+                                {t('product.contact_us') || 'Contact Us'}
+                            </button>
+                        )}
                     </div>
                 </motion.div>
             </div>

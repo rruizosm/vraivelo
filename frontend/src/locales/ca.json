@@ -40,6 +40,8 @@
         "stock": "Stock",
         "sold": "Venuda",
         "add_to_cart": "Afegeix al carretó",
+        "contact_us": "Contacta'ns",
+        "contact_message": "Hola, estic interessat/da en",
         "specs": {
             "frame": "Quadre",
             "groupset": "Grup",
@@ -248,5 +250,142 @@
             },
             "submit": "Enviar Missatge"
         }
+    },
+    "footer": {
+        "brand_desc": "Taller de ciclisme premium i minorista. Partner oficial de Giant, Berria i MMR. Eleva la teva pedalada.",
+        "explore": "Explorar",
+        "workshop_services": "Serveis de Taller",
+        "new_bikes": "Bicicletes Noves",
+        "about_us": "Sobre Nosaltres",
+        "visit_us": "Visita'ns",
+        "follow_us": "Segueix-nos",
+        "hours_label": "Dilluns a Divendres:",
+        "hours_morning": "9:00 - 13:00",
+        "hours_afternoon": "16:00 - 19:00",
+        "copyright": "© {{year}} Vraivelo. Tots els drets reservats."
+    },
+    "cart": {
+        "title": "El teu Carretó",
+        "empty": "El teu carretó és buit",
+        "start_shopping": "Comença a Comprar",
+        "size": "Talla",
+        "max_stock": "Estoc màxim assolit",
+        "total": "Total",
+        "checkout": "Procedir al Pagament"
+    },
+    "checkout_page": {
+        "empty_title": "El teu carretó és buit",
+        "return_shop": "Tornar a la Botiga",
+        "title": "Pagament",
+        "order_summary": "Resum de la Comanda",
+        "total": "Total:",
+        "pay_stripe": "Pagar amb Stripe",
+        "secure_text": "Els pagaments són segurs i xifrats."
+    },
+    "success": {
+        "title": "Pagament Exitós!",
+        "message": "Gràcies per la teva compra. La teva comanda ha estat confirmada.",
+        "continue": "Continuar Comprant"
+    },
+    "other_products": {
+        "badge": "ACCESSORIS I COMPONENTS",
+        "title_prefix": "Altres",
+        "title_highlight": "Productes",
+        "category": "Categoria",
+        "all": "Tots",
+        "clothes": "Roba",
+        "wheels": "Rodes",
+        "new": "NOU",
+        "colors": "Colors:"
+    },
+    "strava": {
+        "badge": "La Comunitat Oficial",
+        "hero_title_1": "Uneix-te al",
+        "hero_title_2": "Pilot",
+        "hero_desc": "Pedala més lluny, més ràpid i junts. Uneix-te a una comunitat que supera límits, comparteix la carretera i celebra cada quilòmetre.",
+        "join_strava": "Uneix-te a Strava",
+        "stats": {
+            "members": "Membres",
+            "weekly_km": "KM Setmanals",
+            "routes": "Rutes"
+        },
+        "story": {
+            "subheading": "El Nostre Club",
+            "heading": "El cor digital de Vraivēlo",
+            "p1": "El club de Strava de Vraivēlo és el punt on comença cada sortida abans que la roda toqui l'asfalt. És el nostre espai comú, on organitzem, compartim i donem forma a tot el que passa fora de la botiga.",
+            "p2": "Cada cap de setmana proposem una sortida de club oberta a la comunitat. A Strava publiquem tota la informació necessària perquè cada ciclista sàpiga què l'espera: quilometratge, desnivell acumulat, tipus de terreny i nivell d'exigència. Creiem que una bona experiència comença amb una bona planificació, i per això cuidem cada detall des del primer moment.",
+            "p3": "Les sortides estan pensades per rodar en grup, compartir carretera i gaudir de l'entorn. Algunes seran més tranquil·les, altres més exigents, però totes mantenen el mateix esperit: pedalar junts, sense presses innecessàries i amb respecte pel ritme del grup.",
+            "p4": "El club de Strava també és un punt de trobada. Un lloc on es creen connexions, es descobreixen noves rutes i es manté viva la motivació durant tot l'any. No importa si véns cada setmana o t'hi uneixes de tant en tant: formar part del club és formar part de la comunitat Vraivēlo.",
+            "p5": "Si t'agrada el ciclisme, les rutes ben pensades i el bon ambient, estàs convidat. Només has d'unir-te al nostre club de Strava i començar a rodar amb nosaltres."
+        },
+        "club": {
+            "title_prefix": "The Vraivēlo",
+            "title_highlight": "Club",
+            "desc": "Més que quilòmetres. Uneix-te al club digital on el teu esforç compta. Tant si persegueixes QOMs/KOMs com si simplement gaudeixes pedalant, aquí és on la nostra comunitat viu online.",
+            "track_title": "Segueix el teu Progrés",
+            "track_desc": "Monitoritza les teves estadístiques setmanals i compara't amb les llegendes locals.",
+            "compete_title": "Competeix en Segments",
+            "compete_desc": "Desafia't en segments exclusius del club i classificacions mensuals.",
+            "updated_title": "Mantén-te al Dia",
+            "updated_desc": "Rep notificacions de properes sortides socials, cafès sobre rodes i esdeveniments directament al teu feed."
+        },
+        "card": {
+            "club_name": "Vraivelo Club",
+            "verified": "Verificat",
+            "follow": "Seguir",
+            "leaderboard": "Classificació",
+            "recent_activity": "Activitat Recent",
+            "sunday_spin": "Cafè Dominical sobre Rodes"
+        },
+        "gallery": {
+            "watermark": "SORTIDES",
+            "title_prefix": "Galeria de",
+            "title_highlight": "Sortides",
+            "subtitle": "Moments espontanis de les nostres aventures de cap de setmana. Des del primer espresso fins a l'sprint final, això és Vraivelo.",
+            "community": "Comunitat",
+            "post_ride_title": "Brindis Post-Sortida",
+            "post_ride_desc": "La millor part de cada sortida és la història compartida després amb una beguda freda."
+        },
+        "cta": {
+            "title_prefix": "A PUNT PER",
+            "title_highlight": "RODAR?",
+            "desc": "Tant si entrenes per a una gran fondo com si busques companys de cafè dominical, hi ha un lloc al pilot per a tu.",
+            "join_club": "Uneix-te al Club a Strava",
+            "follow_ig": "Segueix-nos a Instagram",
+            "copyright": "© 2024 Vraivelo Cycling Club."
+        }
+    },
+    "event_formation": {
+        "badge": "ESDEVENIMENT COMUNITARI",
+        "title_prefix": "Bàsics de Mecànica",
+        "title_highlight": "Ciclista",
+        "subtitle": "Uneix-te a un taller gratuït i pràctic dissenyat per ensenyar-te les habilitats essencials per mantenir la teva bici en perfecte estat.",
+        "date_time": "Data i Hora",
+        "date_value": "Divendres, 20 de febrer de 2026",
+        "location": "Ubicació",
+        "cost": "Cost",
+        "free": "GRATIS",
+        "limited_spots": "Places limitades",
+        "snack_title": "Recarrega Energies!",
+        "snack_text": "Vine a les 19:00 per un snack i començar amb més energia!",
+        "learn_title": "Què Aprendràs",
+        "learn_items": [
+            "Com netejar la teva bici correctament",
+            "Com lubricar correctament",
+            "Reparar una punxada",
+            "Ajustar la direcció correctament",
+            "Teoria i pràctica"
+        ],
+        "cta_title": "A punt per Dominar la teva Bici?",
+        "cta_text": "Les places són estrictament limitades per assegurar atenció personalitzada a cada participant. Reserva el teu lloc avui.",
+        "register": "Inscriu-te Ara",
+        "contact_message": "Hola, estic interessat/da a participar al Taller de Mecànica."
+    },
+    "event_banner": {
+        "title": "Taller de Mecànica Gratuït",
+        "join_us": "Uneix-te el",
+        "date": "15 Feb",
+        "limited": "Places limitades!",
+        "details": "Detalls"
     }
 }

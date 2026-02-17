@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './EventBanner.css';
 
 const EventBanner = () => {
     const [isVisible, setIsVisible] = useState(true);
+    const { t } = useTranslation();
 
     if (!isVisible) return null;
 
@@ -28,12 +30,12 @@ const EventBanner = () => {
                                 </div>
                                 <div className="banner-text-group">
                                     <h4 className="banner-title">
-                                        Free Mechanics Workshop
+                                        {t('event_banner.title')}
                                     </h4>
                                     <p className="banner-subtitle">
-                                        <span className="hidden sm:inline">Join us on </span>
-                                        <span className="banner-date">Feb 15th</span>
-                                        <span className="hidden sm:inline"> • Limited spots!</span>
+                                        <span className="hidden sm:inline">{t('event_banner.join_us')} </span>
+                                        <span className="banner-date">{t('event_banner.date')}</span>
+                                        <span className="hidden sm:inline"> • {t('event_banner.limited')}</span>
                                     </p>
                                 </div>
                             </div>
@@ -45,7 +47,7 @@ const EventBanner = () => {
                                         whileTap={{ scale: 0.95 }}
                                         className="btn-details"
                                     >
-                                        Details
+                                        {t('event_banner.details')}
                                         <ArrowRight size={16} />
                                     </motion.button>
                                 </Link>

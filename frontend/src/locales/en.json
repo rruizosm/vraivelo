@@ -40,6 +40,8 @@
         "stock": "Stock",
         "sold": "Sold",
         "add_to_cart": "Add to Cart",
+        "contact_us": "Contact Us",
+        "contact_message": "Hi, I'm interested in",
         "specs": {
             "frame": "Frame",
             "groupset": "Groupset",
@@ -248,5 +250,142 @@
             },
             "submit": "Send Message"
         }
+    },
+    "footer": {
+        "brand_desc": "Premium cycling workshop and retailer. Official partner of Giant, Berria & MMR. Elevate your ride.",
+        "explore": "Explore",
+        "workshop_services": "Workshop Services",
+        "new_bikes": "New Bikes",
+        "about_us": "About Us",
+        "visit_us": "Visit Us",
+        "follow_us": "Follow Us",
+        "hours_label": "Monday to Friday:",
+        "hours_morning": "9:00 - 13:00",
+        "hours_afternoon": "16:00 - 19:00",
+        "copyright": "© {{year}} Vraivelo. All rights reserved."
+    },
+    "cart": {
+        "title": "Your Cart",
+        "empty": "Your cart is empty",
+        "start_shopping": "Start Shopping",
+        "size": "Size",
+        "max_stock": "Max stock reached",
+        "total": "Total",
+        "checkout": "Proceed to Checkout"
+    },
+    "checkout_page": {
+        "empty_title": "Your cart is empty",
+        "return_shop": "Return to Shop",
+        "title": "Checkout",
+        "order_summary": "Order Summary",
+        "total": "Total:",
+        "pay_stripe": "Pay with Stripe",
+        "secure_text": "Payments are secure and encrypted."
+    },
+    "success": {
+        "title": "Payment Successful!",
+        "message": "Thank you for your purchase. Your order has been confirmed.",
+        "continue": "Continue Shopping"
+    },
+    "other_products": {
+        "badge": "ACCESSORIES & COMPONENTS",
+        "title_prefix": "Other",
+        "title_highlight": "Products",
+        "category": "Category",
+        "all": "All",
+        "clothes": "Clothes",
+        "wheels": "Wheels",
+        "new": "NEW",
+        "colors": "Colors:"
+    },
+    "strava": {
+        "badge": "The Official Community",
+        "hero_title_1": "Join the",
+        "hero_title_2": "Peloton",
+        "hero_desc": "Ride further, faster, and together. Join a community that pushes limits, shares the road, and celebrates every mile.",
+        "join_strava": "Join on Strava",
+        "stats": {
+            "members": "Members",
+            "weekly_km": "Weekly KM",
+            "routes": "Routes"
+        },
+        "story": {
+            "subheading": "Our Club",
+            "heading": "The digital heart of Vraivēlo",
+            "p1": "The Vraivēlo Strava club is the starting point of every ride before the wheels hit the road. It's our shared space, where we organize, share and shape everything that happens outside the shop.",
+            "p2": "Every weekend we propose a club ride open to the community. On Strava we publish all the information each cyclist needs: distance, elevation gain, terrain type and difficulty level. We believe a great experience starts with great planning, so we take care of every detail from the first moment.",
+            "p3": "The rides are designed for group riding, sharing the road and enjoying the scenery. Some will be more relaxed, others more demanding, but all share the same spirit: ride together, no unnecessary rush, and with respect for the group's pace.",
+            "p4": "The Strava club is also a meeting point. A place where connections are made, new routes are discovered and motivation stays alive all year long. It doesn't matter if you come every week or join from time to time: being part of the club means being part of the Vraivēlo community.",
+            "p5": "If you like cycling, well-planned routes and a great atmosphere, you're invited. Just join our Strava club and start riding with us."
+        },
+        "club": {
+            "title_prefix": "The Vraivēlo",
+            "title_highlight": "Club",
+            "desc": "More than just miles. Join the digital clubhouse where your efforts count. Whether you're chasing QOMs/KOMs or just enjoying the spin, this is where our community lives online.",
+            "track_title": "Track Progress",
+            "track_desc": "Monitor your weekly stats and see how you stack up against the local legends.",
+            "compete_title": "Compete on Segments",
+            "compete_desc": "Challenge yourself on club-exclusive segments and monthly leaderboards.",
+            "updated_title": "Stay Updated",
+            "updated_desc": "Get notifications for upcoming social rides, coffee spins, and events directly in your feed."
+        },
+        "card": {
+            "club_name": "Vraivelo Club",
+            "verified": "Verified",
+            "follow": "Follow",
+            "leaderboard": "Leaderboard",
+            "recent_activity": "Recent Activity",
+            "sunday_spin": "Sunday Coffee Spin"
+        },
+        "gallery": {
+            "watermark": "RIDES",
+            "title_prefix": "Social Ride",
+            "title_highlight": "Gallery",
+            "subtitle": "Candid moments from our weekend adventures. From the first espresso to the final sprint, this is what Vraivelo is all about.",
+            "community": "Community",
+            "post_ride_title": "Post-Ride Cheers",
+            "post_ride_desc": "The best part of every ride is the story shared afterwards over a cold drink."
+        },
+        "cta": {
+            "title_prefix": "READY TO",
+            "title_highlight": "RIDE?",
+            "desc": "Whether you're training for a gran fondo or just looking for Sunday coffee buddies, there's a spot in the peloton for you.",
+            "join_club": "Join Club on Strava",
+            "follow_ig": "Follow on Instagram",
+            "copyright": "© 2024 Vraivelo Cycling Club."
+        }
+    },
+    "event_formation": {
+        "badge": "COMMUNITY EVENT",
+        "title_prefix": "Basics of Bicycle",
+        "title_highlight": "Mechanics",
+        "subtitle": "Join us for a free, hands-on workshop designed to teach you the essential skills to keep your bike rolling smoothly.",
+        "date_time": "Date & Time",
+        "date_value": "Friday, February 20th, 2026",
+        "location": "Location",
+        "cost": "Cost",
+        "free": "FREE",
+        "limited_spots": "Limited spots available",
+        "snack_title": "Fuel Up First!",
+        "snack_text": "Join us at 19:00 for an afternoon snack to start with more power!",
+        "learn_title": "What You Will Learn",
+        "learn_items": [
+            "How to clean your bike correctly",
+            "How to lubricate correctly",
+            "Repairing a flat tire",
+            "Adjusting the headset correctly",
+            "Theory and practice"
+        ],
+        "cta_title": "Ready to Master Your Bike?",
+        "cta_text": "Spots are strictly limited to ensure personal attention for every participant. Reserve your place today.",
+        "register": "Register Now",
+        "contact_message": "Hi, I'm interested in being part of the Mechanics Workshop."
+    },
+    "event_banner": {
+        "title": "Free Mechanics Workshop",
+        "join_us": "Join us on",
+        "date": "Feb 15th",
+        "limited": "Limited spots!",
+        "details": "Details"
     }
 }

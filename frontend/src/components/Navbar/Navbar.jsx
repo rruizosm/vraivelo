@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ShoppingBag } from 'lucide-react';
+import { Menu, X, ShoppingBag, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { useCart } from '../../context/CartContext';
@@ -11,7 +11,7 @@ const Navbar = () => {
     const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
-    const { toggleCart, cartCount } = useCart();
+    const { toggleCart, cartCount, isCartEnabled } = useCart();
 
     useEffect(() => setIsOpen(false), [location]);
 
@@ -68,12 +68,18 @@ const Navbar = () => {
                         </Link>
                     ))}
 
-                    <button onClick={toggleCart} className="cart-btn-nav relative">
-                        <ShoppingBag size={20} />
-                        {cartCount > 0 && (
-                            <span className="cart-badge">{cartCount}</span>
-                        )}
-                    </button>
+                    {isCartEnabled ? (
+                        <button onClick={toggleCart} className="cart-btn-nav relative">
+                            <ShoppingBag size={20} />
+                            {cartCount > 0 && (
+                                <span className="cart-badge">{cartCount}</span>
+                            )}
+                        </button>
+                    ) : (
+                        <Link to="/contact" className="cart-btn-nav relative">
+                            <Mail size={20} />
+                        </Link>
+                    )}
 
                     <Link to="/contact" className="nav-btn-link">
                         <motion.button
@@ -90,12 +96,18 @@ const Navbar = () => {
 
                 {/* Mobile Toggle */}
                 <div className="mobile-toggle-wrapper">
-                    <button onClick={toggleCart} className="cart-btn-nav relative mr-2">
-                        <ShoppingBag size={20} />
-                        {cartCount > 0 && (
-                            <span className="cart-badge">{cartCount}</span>
-                        )}
-                    </button>
+                    {isCartEnabled ? (
+                        <button onClick={toggleCart} className="cart-btn-nav relative mr-2">
+                            <ShoppingBag size={20} />
+                            {cartCount > 0 && (
+                                <span className="cart-badge">{cartCount}</span>
+                            )}
+                        </button>
+                    ) : (
+                        <Link to="/contact" className="cart-btn-nav relative mr-2">
+                            <Mail size={20} />
+                        </Link>
+                    )}
                     <LanguageSwitcher />
                     <button
                         className="mobile-toggle"

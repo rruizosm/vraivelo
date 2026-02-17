@@ -40,6 +40,8 @@
         "stock": "Stock",
         "sold": "Vendida",
         "add_to_cart": "Añadir al carrito",
+        "contact_us": "Contáctanos",
+        "contact_message": "Hola, estoy interesado/a en",
         "specs": {
             "frame": "Cuadro",
             "groupset": "Grupo",
@@ -248,5 +250,142 @@
             },
             "submit": "Enviar Mensaje"
         }
+    },
+    "footer": {
+        "brand_desc": "Taller de ciclismo premium y minorista. Partner oficial de Giant, Berria y MMR. Eleva tu pedaleo.",
+        "explore": "Explorar",
+        "workshop_services": "Servicios de Taller",
+        "new_bikes": "Bicicletas Nuevas",
+        "about_us": "Sobre Nosotros",
+        "visit_us": "Visítanos",
+        "follow_us": "Síguenos",
+        "hours_label": "Lunes a Viernes:",
+        "hours_morning": "9:00 - 13:00",
+        "hours_afternoon": "16:00 - 19:00",
+        "copyright": "© {{year}} Vraivelo. Todos los derechos reservados."
+    },
+    "cart": {
+        "title": "Tu Carrito",
+        "empty": "Tu carrito está vacío",
+        "start_shopping": "Empezar a Comprar",
+        "size": "Talla",
+        "max_stock": "Stock máximo alcanzado",
+        "total": "Total",
+        "checkout": "Proceder al Pago"
+    },
+    "checkout_page": {
+        "empty_title": "Tu carrito está vacío",
+        "return_shop": "Volver a la Tienda",
+        "title": "Pago",
+        "order_summary": "Resumen del Pedido",
+        "total": "Total:",
+        "pay_stripe": "Pagar con Stripe",
+        "secure_text": "Los pagos son seguros y están cifrados."
+    },
+    "success": {
+        "title": "¡Pago Exitoso!",
+        "message": "Gracias por tu compra. Tu pedido ha sido confirmado.",
+        "continue": "Seguir Comprando"
+    },
+    "other_products": {
+        "badge": "ACCESORIOS Y COMPONENTES",
+        "title_prefix": "Otros",
+        "title_highlight": "Productos",
+        "category": "Categoría",
+        "all": "Todos",
+        "clothes": "Ropa",
+        "wheels": "Ruedas",
+        "new": "NUEVO",
+        "colors": "Colores:"
+    },
+    "strava": {
+        "badge": "La Comunidad Oficial",
+        "hero_title_1": "Únete al",
+        "hero_title_2": "Pelotón",
+        "hero_desc": "Pedalea más lejos, más rápido y juntos. Únete a una comunidad que supera límites, comparte la carretera y celebra cada kilómetro.",
+        "join_strava": "Unirse en Strava",
+        "stats": {
+            "members": "Miembros",
+            "weekly_km": "KM Semanales",
+            "routes": "Rutas"
+        },
+        "story": {
+            "subheading": "Nuestro Club",
+            "heading": "El corazón digital de Vraivēlo",
+            "p1": "El club de Strava de Vraivēlo es el punto donde empieza cada salida antes de que la rueda toque el asfalto. Es nuestro espacio común, donde organizamos, compartimos y damos forma a todo lo que pasa fuera de la tienda.",
+            "p2": "Cada fin de semana proponemos una salida de club abierta a la comunidad. En Strava publicamos toda la información necesaria para que cada ciclista sepa qué le espera: kilometraje, desnivel acumulado, tipo de terreno y nivel de exigencia. Creemos que una buena experiencia empieza con una buena planificación, y por eso cuidamos cada detalle desde el primer momento.",
+            "p3": "Las salidas están pensadas para rodar en grupo, compartir carretera y disfrutar del entorno. Algunas serán más tranquilas, otras más exigentes, pero todas mantienen el mismo espíritu: pedalear juntos, sin prisas innecesarias y con respeto por el ritmo del grupo.",
+            "p4": "El club de Strava también es un punto de encuentro. Un lugar donde se crean conexiones, se descubren nuevas rutas y se mantiene viva la motivación durante todo el año. No importa si vienes cada semana o te unes de vez en cuando: formar parte del club es formar parte de la comunidad Vraivēlo.",
+            "p5": "Si te gusta el ciclismo, las rutas bien pensadas y el buen ambiente, estás invitado. Solo tienes que unirte a nuestro club de Strava y empezar a rodar con nosotros."
+        },
+        "club": {
+            "title_prefix": "The Vraivēlo",
+            "title_highlight": "Club",
+            "desc": "Más que kilómetros. Únete al club digital donde tu esfuerzo cuenta. Ya sea que persigas QOMs/KOMs o simplemente disfrutes pedaleando, aquí es donde nuestra comunidad vive online.",
+            "track_title": "Sigue tu Progreso",
+            "track_desc": "Monitoriza tus estadísticas semanales y compárate con las leyendas locales.",
+            "compete_title": "Compite en Segmentos",
+            "compete_desc": "Desafíate en segmentos exclusivos del club y clasificaciones mensuales.",
+            "updated_title": "Mantente al Día",
+            "updated_desc": "Recibe notificaciones de próximas salidas sociales, cafés sobre ruedas y eventos directamente en tu feed."
+        },
+        "card": {
+            "club_name": "Vraivelo Club",
+            "verified": "Verificado",
+            "follow": "Seguir",
+            "leaderboard": "Clasificación",
+            "recent_activity": "Actividad Reciente",
+            "sunday_spin": "Café Dominical sobre Ruedas"
+        },
+        "gallery": {
+            "watermark": "SALIDAS",
+            "title_prefix": "Galería de",
+            "title_highlight": "Salidas",
+            "subtitle": "Momentos espontáneos de nuestras aventuras de fin de semana. Desde el primer espresso hasta el sprint final, esto es Vraivelo.",
+            "community": "Comunidad",
+            "post_ride_title": "Brindis Post-Salida",
+            "post_ride_desc": "La mejor parte de cada salida es la historia compartida después con una bebida fría."
+        },
+        "cta": {
+            "title_prefix": "¿LISTO PARA",
+            "title_highlight": "RODAR?",
+            "desc": "Ya sea que entrenes para una gran fondo o busques compañeros de café dominical, hay un puesto en el pelotón para ti.",
+            "join_club": "Unirse al Club en Strava",
+            "follow_ig": "Seguir en Instagram",
+            "copyright": "© 2024 Vraivelo Cycling Club."
+        }
+    },
+    "event_formation": {
+        "badge": "EVENTO COMUNITARIO",
+        "title_prefix": "Básicos de Mecánica",
+        "title_highlight": "Ciclista",
+        "subtitle": "Únete a un taller gratuito y práctico diseñado para enseñarte las habilidades esenciales para mantener tu bici en perfecto estado.",
+        "date_time": "Fecha y Hora",
+        "date_value": "Viernes, 20 de febrero de 2026",
+        "location": "Ubicación",
+        "cost": "Coste",
+        "free": "GRATIS",
+        "limited_spots": "Plazas limitadas",
+        "snack_title": "¡Recarga Energías!",
+        "snack_text": "¡Ven a las 19:00 para un snack y empezar con más energía!",
+        "learn_title": "Qué Aprenderás",
+        "learn_items": [
+            "Cómo limpiar tu bici correctamente",
+            "Cómo lubricar correctamente",
+            "Reparar un pinchazo",
+            "Ajustar la dirección correctamente",
+            "Teoría y práctica"
+        ],
+        "cta_title": "¿Listo para Dominar tu Bici?",
+        "cta_text": "Las plazas son estrictamente limitadas para asegurar atención personalizada a cada participante. Reserva tu lugar hoy.",
+        "register": "Inscríbete Ahora",
+        "contact_message": "Hola, estoy interesado/a en participar en el Taller de Mecánica."
+    },
+    "event_banner": {
+        "title": "Taller de Mecánica Gratuito",
+        "join_us": "Únete el",
+        "date": "15 Feb",
+        "limited": "¡Plazas limitadas!",
+        "details": "Detalles"
     }
 }

@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Origins from './stories/Origins';
-import Identity from './stories/Identity';
 import VraiveloWeekend from './stories/VraiveloWeekend';
-import Team from './stories/Team';
-import Collection from './stories/Collection';
-import Lifestyle from './stories/Lifestyle';
 import VraiveloBerria from './stories/VraiveloBerria';
+import StravaTeam from './stories/StravaTeam';
 
 const StoryDetail = () => {
     const { id } = useParams();
@@ -21,18 +18,12 @@ const StoryDetail = () => {
     switch (id) {
         case 'start':
             return <Origins />;
-        case 'who':
-            return <Identity />;
         case 'vv_weekend':
             return <VraiveloWeekend />;
-        case 'team':
-            return <Team />;
-        case 'gallery1':
-            return <Collection />;
-        case 'gallery2':
-            return <Lifestyle />;
         case 'berria':
             return <VraiveloBerria />;
+        case 'strava_team':
+            return <StravaTeam />;
         default:
             // If the ID is invalid, redirect back to Vraivelo main page
             // We use useEffect to avoid side-effects during render, 

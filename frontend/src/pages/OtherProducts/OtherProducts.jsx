@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { ShoppingBag, Loader } from 'lucide-react';
+import { ShoppingBag, Loader, Mail } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../../supabase';
 import { clothes } from '../../data/clothes';
+import { useTranslation } from 'react-i18next';
 import '../Shop/Shop.css'; // Reuse Shop styles
 
-const ProductCard = ({ product, addToCart, navigate }) => {
+const ProductCard = ({ product, addToCart, navigate, t, isCartEnabled }) => {
     // Local state for the displayed image to allow color preview
     const [currentImage, setCurrentImage] = useState(product.image_url);
 
@@ -33,7 +34,7 @@ const ProductCard = ({ product, addToCart, navigate }) => {
                 )}
                 {product.is_new && (
                     <span className="new-badge">
-                        NEW
+                        {t('other_products.new')}
                     </span>
                 )}
             </div>
@@ -44,7 +45,7 @@ const ProductCard = ({ product, addToCart, navigate }) => {
                 {/* Color Options Preview */}
                 {product.variants && (
                     <div className="flex flax-wrap gap-2 mt-2 mb-2 items-center">
-                        <span className="text-xs text-gray-500 mr-1">Colors:</span>
+                        <span className="text-xs text-gray-500 mr-1">{t('other_products.colors')}</span>
                         {product.variants.map(variant => (
                             <div
                                 key={variant.color}
@@ -62,22 +63,19 @@ const ProductCard = ({ product, addToCart, navigate }) => {
                     </div>
                 )}
 
-                {/* {product.color && !product.variants && (
-                    <p className="text-xs text-gray-500 mt-1">Color: {product.color}</p>
-                )} */}
-
-                {/* {product.description && <p className="bike-desc">{product.description}</p>} */}
                 <div className="bike-price-row">
                     <span className="bike-price">{product.price}</span>
-                    <button
-                        className="add-cart-btn-small"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            navigate(`/shop/${product.id}`);
-                        }}
-                    >
-                        <ShoppingBag size={18} />
-                    </button>
+                    {isCartEnabled && (
+                        <button
+                            className="add-cart-btn-small"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                navigate(`/shop/${product.id}`);
+                            }}
+                        >
+                            <ShoppingBag size={18} />
+                        </button>
+                    )}
                 </div>
             </div>
         </motion.div>
@@ -88,8 +86,9 @@ const OtherProducts = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [activeCategory, setActiveCategory] = useState('All');
-    const { addToCart } = useCart();
+    const { addToCart, isCartEnabled } = useCart();
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     // Fetch products from Supabase
     useEffect(() => {
@@ -133,6 +132,13 @@ const OtherProducts = () => {
     // Combine Supabase products with local clothes data
     const allProducts = [...products, ...clothes];
 
+    // Category key mapping for translation
+    const categoryKeyMap = {
+        'All': 'other_products.all',
+        'Clothes': 'other_products.clothes',
+        'Wheels': 'other_products.wheels',
+    };
+
     // Fixed categories + any additional ones from the data (exclude 'Other Products')
     const baseCategories = ['All', 'Clothes', 'Wheels'];
     const dataCategories = allProducts.map(p => p.category).filter(c => c && c !== 'Other Products');
@@ -163,10 +169,10 @@ const OtherProducts = () => {
                     className="shop-header"
                 >
                     <span className="shop-badge">
-                        ACCESSORIES & COMPONENTS
+                        {t('other_products.badge')}
                     </span>
                     <h1 className="shop-title">
-                        Other <span className="text-[var(--primary)]">Products</span>
+                        {t('other_products.title_prefix')} <span className="text-[var(--primary)]">{t('other_products.title_highlight')}</span>
                     </h1>
                 </motion.div>
 
@@ -174,7 +180,7 @@ const OtherProducts = () => {
                     {/* SIDEBAR FILTERS */}
                     <aside className="shop-sidebar">
                         <div className="filter-group">
-                            <h3 className="filter-title">Category</h3>
+                            <h3 className="filter-title">{t('other_products.category')}</h3>
                             <div className="filter-options">
                                 {categories.map((cat) => (
                                     <button
@@ -182,7 +188,7 @@ const OtherProducts = () => {
                                         onClick={() => setActiveCategory(cat)}
                                         className={`sidebar-filter-btn ${activeCategory === cat ? 'active' : ''}`}
                                     >
-                                        {cat}
+                                        {categoryKeyMap[cat] ? t(categoryKeyMap[cat]) : cat}
                                     </button>
                                 ))}
                             </div>
@@ -197,6 +203,8 @@ const OtherProducts = () => {
                                 product={product}
                                 addToCart={addToCart}
                                 navigate={navigate}
+                                t={t}
+                                isCartEnabled={isCartEnabled}
                             />
                         ))}
                     </div>

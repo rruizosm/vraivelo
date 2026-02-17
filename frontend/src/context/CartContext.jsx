@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { CART_ENABLED } from '../config';
 
 const CartContext = createContext();
 
@@ -9,6 +10,7 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
     // Load cart from local storage on initial render
     const [cartItems, setCartItems] = useState(() => {
+        if (!CART_ENABLED) return [];
         try {
             const storedCart = localStorage.getItem('vraivelo_cart');
             return storedCart ? JSON.parse(storedCart) : [];
@@ -22,10 +24,13 @@ export const CartProvider = ({ children }) => {
 
     // Save cart to local storage whenever it changes
     useEffect(() => {
-        localStorage.setItem('vraivelo_cart', JSON.stringify(cartItems));
+        if (CART_ENABLED) {
+            localStorage.setItem('vraivelo_cart', JSON.stringify(cartItems));
+        }
     }, [cartItems]);
 
     const addToCart = (product) => {
+        if (!CART_ENABLED) return;
         setCartItems(prevItems => {
             const existingItem = prevItems.find(item => item.id === product.id && item.size === product.size && item.type === product.type);
             if (existingItem) {
@@ -45,10 +50,12 @@ export const CartProvider = ({ children }) => {
     };
 
     const removeFromCart = (id, size, type) => {
+        if (!CART_ENABLED) return;
         setCartItems(prevItems => prevItems.filter(item => !(item.id === id && item.size === size && item.type === type)));
     };
 
     const updateQuantity = (id, size, type, newQuantity) => {
+        if (!CART_ENABLED) return;
         if (newQuantity < 1) {
             removeFromCart(id, size, type);
             return;
@@ -68,6 +75,7 @@ export const CartProvider = ({ children }) => {
     };
 
     const toggleCart = () => {
+        if (!CART_ENABLED) return;
         setIsCartOpen(!isCartOpen);
     };
 
@@ -93,7 +101,8 @@ export const CartProvider = ({ children }) => {
             toggleCart,
             clearCart,
             cartTotal,
-            cartCount
+            cartCount,
+            isCartEnabled: CART_ENABLED
         }}>
             {children}
         </CartContext.Provider>

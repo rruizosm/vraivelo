@@ -176,7 +176,7 @@ const Shop = () => {
                                     {/* <p className="bike-desc">{bike.description}</p> */}
                                     <div className="bike-price-row">
                                         <span className="bike-price">{bike.price}</span>
-                                        <button
+                                        {/* <button
                                             className="add-cart-btn-small"
                                             onClick={(e) => {
                                                 e.stopPropagation();
@@ -185,7 +185,7 @@ const Shop = () => {
                                             title={t('product.view_details')}
                                         >
                                             <ShoppingBag size={18} />
-                                        </button>
+                                        </button> */}
                                     </div>
                                 </div>
                             </motion.div>

@@ -1,8 +1,11 @@
 import { Instagram, MapPin, Phone, Mail, Bike, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Footer.css';
 
 const Footer = () => {
+    const { t } = useTranslation();
+
     return (
         <footer className="footer">
             <div className="footer-container">
@@ -13,25 +16,24 @@ const Footer = () => {
                             <span>vraivēlo</span>
                         </div>
                         <p className="brand-desc">
-                            Premium cycling workshop and retailer. Official partner of Giant, Berria & MMR.
-                            Elevate your ride.
+                            {t('footer.brand_desc')}
                         </p>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="footer-col-title">Explore</h4>
+                        <h4 className="footer-col-title">{t('footer.explore')}</h4>
                         <ul className="footer-links-list">
-                            <li><Link to="/workshop" className="footer-link">Workshop Services</Link></li>
-                            <li><Link to="/shop" className="footer-link">New Bikes</Link></li>
-                            <li><Link to="/about" className="footer-link">About Us</Link></li>
-                            <li><Link to="/contact" className="footer-link">Contact</Link></li>
+                            <li><Link to="/workshop" className="footer-link">{t('footer.workshop_services')}</Link></li>
+                            <li><Link to="/shop" className="footer-link">{t('footer.new_bikes')}</Link></li>
+                            <li><Link to="/about" className="footer-link">{t('footer.about_us')}</Link></li>
+                            <li><Link to="/contact" className="footer-link">{t('navbar.contact')}</Link></li>
                         </ul>
                     </div>
 
                     {/* Contact */}
                     <div>
-                        <h4 className="footer-col-title">Visit Us</h4>
+                        <h4 className="footer-col-title">{t('footer.visit_us')}</h4>
                         <ul className="footer-contact-list">
                             <li className="contact-item">
                                 <MapPin className="contact-item-icon" size={18} />
@@ -43,7 +45,7 @@ const Footer = () => {
                             </li>
                             <li className="contact-item">
                                 <Clock className="contact-item-icon" size={18} />
-                                <span>Monday to Friday:<br /> 9:00 - 13:00<br /> 16:00 - 19:00</span>
+                                <span>{t('footer.hours_label')}<br /> {t('footer.hours_morning')}<br /> {t('footer.hours_afternoon')}</span>
                             </li>
                             <li className="contact-item">
                                 <Mail className="contact-item-icon" size={18} />
@@ -54,7 +56,7 @@ const Footer = () => {
 
                     {/* Socials */}
                     <div>
-                        <h4 className="footer-col-title">Follow Us</h4>
+                        <h4 className="footer-col-title">{t('footer.follow_us')}</h4>
                         <div className="social-icons">
                             <a href="#" className="social-link">
                                 <Instagram size={20} />
@@ -65,7 +67,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-copyright">
-                    <p>&copy; {new Date().getFullYear()} Vraivelo. All rights reserved.</p>
+                    <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
                 </div>
             </div>
         </footer>
