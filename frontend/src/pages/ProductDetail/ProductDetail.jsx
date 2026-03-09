@@ -40,14 +40,31 @@ const ProductDetail = () => {
                 }
 
                 // If not found in clothes, fetch from Supabase (bikes)
+                // Left join with bike_variants
                 const { data: bikeData, error: bikeError } = await supabase
                     .from('bikes')
-                    .select('*')
+                    .select('*, bike_variants(*)')
                     .eq('id', id)
                     .single();
 
                 if (!bikeError && bikeData) {
+                    // Format bike_variants to match the standard variant structure used by clothes
+                    if (bikeData.bike_variants && bikeData.bike_variants.length > 0) {
+                        bikeData.variants = bikeData.bike_variants.map(bv => ({
+                            color: bv.color_name.toLowerCase(),
+                            colorName: bv.color_name,
+                            hex: bv.color_hex,
+                            images: bv.image_url ? [bv.image_url] : []
+                        }));
+                    }
+
                     setBike(bikeData);
+
+                    // Default to first variant color if available
+                    if (bikeData.variants && bikeData.variants.length > 0) {
+                        setSelectedColor(bikeData.variants[0]);
+                    }
+
                     setLoading(false);
                     return;
                 }
@@ -69,7 +86,7 @@ const ProductDetail = () => {
                         size: productData.Size || productData.size,
                         description: productData.Description || productData.description,
                         image_url: productData["Image URL"] || productData["image url"] || productData.image_url,
-                        color: productData.Color || productData.color,
+                        color: productData.Colors || productData.colors,
                         specs: productData.Specs || productData.specs,
                     });
                     setLoading(false);
@@ -125,6 +142,31 @@ const ProductDetail = () => {
     };
     const sizes = parseSizes();
     const specs = bike?.specs || [];
+
+    // Parse colors: similar logic to sizes
+    const parseColors = () => {
+        if (bike?.variants) return bike.variants; // From local data (clothes)
+        const bikeColors = bike?.Colors || bike?.colors || bike?.Color || bike?.color;
+
+        if (bikeColors) {
+            if (Array.isArray(bikeColors)) return bikeColors;
+            if (typeof bikeColors === 'string') {
+                try {
+                    return JSON.parse(bikeColors.replace(/'/g, '"'));
+                } catch {
+                    if (bikeColors.includes(',')) {
+                        return bikeColors.split(',').map(c => c.trim());
+                    }
+                    return [bikeColors];
+                }
+            }
+        }
+        return [];
+    };
+    const colors = parseColors();
+
+    console.log("DEBUG: Bike data =", bike);
+    console.log("DEBUG: Parsed colors =", colors);
 
     // Determine current images list
     const currentImages = selectedColor && selectedColor.images && selectedColor.images.length > 0
@@ -288,22 +330,40 @@ const ProductDetail = () => {
                     {/* Options */}
                     <div className="product-options">
 
-                        {/* Color Selection (if variants exist) */}
-                        {bike.variants && (
+                        {/* Color Selection */}
+                        {(bike.variants || colors.length > 0) && (
                             <div className="option-group">
                                 <div className="option-header">
-                                    <span className="option-label">Select Color: <span className="text-[var(--primary)]">{selectedColor?.colorName}</span></span>
+                                    <span className="option-label">Select Color: <span className="text-[var(--primary)]">{selectedColor?.colorName || selectedColor}</span></span>
                                 </div>
                                 <div className="color-selector flex gap-3">
-                                    {bike.variants.map((variant) => (
-                                        <button
-                                            key={variant.color}
-                                            className={`color-btn ${selectedColor?.color === variant.color ? 'active' : ''}`}
-                                            style={{ backgroundColor: variant.hex }}
-                                            onClick={() => setSelectedColor(variant)}
-                                            title={variant.colorName}
-                                        />
-                                    ))}
+                                    {bike.variants ? (
+                                        // Clothes / items with complex variants
+                                        bike.variants.map((variant) => (
+                                            <button
+                                                key={variant.color}
+                                                className={`color-btn ${selectedColor?.color === variant.color ? 'active' : ''}`}
+                                                style={{ backgroundColor: variant.hex }}
+                                                onClick={() => setSelectedColor(variant)}
+                                                title={variant.colorName}
+                                            />
+                                        ))
+                                    ) : (
+                                        // Bikes / items with simple color strings
+                                        colors.map((color, idx) => {
+                                            if (!color) return null;
+                                            return (
+                                                <button
+                                                    key={idx}
+                                                    className={`size-btn ${selectedColor === color ? 'active' : ''}`}
+                                                    onClick={() => setSelectedColor(color)}
+                                                    style={{ textTransform: 'capitalize' }}
+                                                >
+                                                    {color}
+                                                </button>
+                                            );
+                                        })
+                                    )}
                                 </div>
                             </div>
                         )}
@@ -342,7 +402,7 @@ const ProductDetail = () => {
                                             price: isBikeOrProduct ? getDiscountedPrice(bike.price) : bike.price,
                                             image: displayImage,
                                             size: selectedSize,
-                                            color: selectedColor ? selectedColor.colorName : null,
+                                            color: selectedColor?.colorName || (typeof selectedColor === 'string' ? selectedColor : null),
                                             type: bike.category === 'Other Products' ? 'clothes' : 'bike',
                                             maxQuantity: bike.quantity
                                         });

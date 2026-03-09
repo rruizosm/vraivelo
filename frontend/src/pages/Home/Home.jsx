@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Wrench, ShoppingBag, ShieldCheck, ChevronDown } from 'lucide-react';
@@ -31,13 +31,7 @@ const Home = () => {
     const { t } = useTranslation();
     const [currentImage, setCurrentImage] = useState(0);
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentImage((prev) => (prev + 1) % heroImages.length);
-        }, 6000);
 
-        return () => clearInterval(timer);
-    }, []);
 
     return (
         <div className="home-container">
@@ -70,18 +64,19 @@ const Home = () => {
                 {/* Grid Pattern Overlay */}
                 <div className="hero-grid-pattern" />
 
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    className="hero-top-badge"
+                >
+                    <span className="hero-badge">
+                        {t('home.hero.badge')}
+                    </span>
+                </motion.div>
+
                 {/* Content */}
                 <div className="hero-content">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        className="hero-badge-wrapper"
-                    >
-                        <span className="hero-badge">
-                            {t('home.hero.badge')}
-                        </span>
-                    </motion.div>
 
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
@@ -89,12 +84,12 @@ const Home = () => {
                         transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                         className="hero-title"
                     >
-                        {t('home.hero.title')}{' '}
+                        {/* {t('home.hero.title')}{' '}
                         <span className="relative inline-block">
                             <span className="text-gradient-reality">
                                 {t('home.hero.title_highlight')}
                             </span>
-                        </span>
+                        </span> */}
                     </motion.h1>
 
                     <motion.p

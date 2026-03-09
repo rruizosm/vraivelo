@@ -28,6 +28,7 @@ const Shop = () => {
                 const { data, error } = await supabase
                     .from('bikes')
                     .select('*')
+                    .eq('Active', true)
                     .order('brand', { ascending: true });
 
                 if (error) throw error;
