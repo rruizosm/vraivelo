@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Wrench, Settings, Zap, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import SEOHead from '../../components/SEOHead/SEOHead';
 import './Workshop.css';
 
 const Workshop = () => {
@@ -21,6 +22,7 @@ const Workshop = () => {
 
     return (
         <div className="workshop-container">
+            <SEOHead titleKey="seo.workshop.title" descriptionKey="seo.workshop.description" path="/workshop" />
             <div className="workshop-content-container">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

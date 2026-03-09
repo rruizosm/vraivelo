@@ -41,6 +41,9 @@
         "sold": "Vendida",
         "add_to_cart": "Añadir al carrito",
         "contact_us": "Contáctanos",
+        "back_to_shop": "Volver a la Tienda",
+        "back_to_shop": "Volver a la Tienda",
+        "back_to_other_products": "Volver a Otros Productos",
         "contact_message": "Hola, estoy interesado/a en",
         "specs": {
             "frame": "Cuadro",
@@ -101,6 +104,35 @@
                 "guarantee": {
                     "title": "Garantía Vraivelo",
                     "desc": "Respaldamos cada servicio y venta. Calidad y satisfacción, siempre."
+                }
+            }
+        },
+        "reviews": {
+            "title": "Lo que dicen",
+            "title_highlight": "nuestros ciclistas",
+            "subtitle": "Experiencias reales de nuestra comunidad.",
+            "based_on": "Basado en",
+            "reviews_text": "reseñas",
+            "items": {
+                "1": {
+                    "text": "La atencion al cliente es excelente!! David muy amable, he llevado mi bici 2 veces y me ha solucionado el problema el mismo dia... Lo recominedo al 100%.",
+                    "date": "hace 2 semanas",
+                    "name": "Margarita M."
+                },
+                "2": {
+                    "text": "¡Excelente experiencia! La atención en esta tienda es de 10. Me ayudaron a elegir la bici perfecta sin presión y respondiendo todas mis dudas. Laura y David majisimos, un verdadero placer tratar con ellos. Los recomiendo al 100%",
+                    "date": "hace 4 meses",
+                    "name": "Paco C."
+                },
+                "3": {
+                    "text": "Estabamos haciendo, una ruta por la garrotxa, con mis amigos, cuando nos crucemos con ellos. Un grupo de ciclistas, con su furgoneta de soporte. No dudaron a ofrecernos agua, isotonico, en un momento, que lo necesitabamos. Se les notaba, su pasion por el ciclismo e intentar ayudar a cualquier ciclista, como nostros. No dudaria, en poner , en sus manos, mis bicicletas e ir a una de sus salidas, tan bien organizadas. Sois geniales!! Gracias!!!",
+                    "date": "hace 5 meses",
+                    "name": "Pit"
+                },
+                "4": {
+                    "text": "Gran sitio! Me han ayudado a encontrar una tuerca que no encontraba por ningún lado. Y encima todo sonrisas! 🥰",
+                    "date": "hace 3 meses",
+                    "name": "Pablo R."
                 }
             }
         },
@@ -387,5 +419,39 @@
         "date": "15 Feb",
         "limited": "¡Plazas limitadas!",
         "details": "Detalles"
+    },
+    "seo": {
+        "home": {
+            "title": "Vraivelo — Taller de Ciclismo Premium y Tienda de Bicicletas",
+            "description": "Taller de ciclismo premium y distribuidor oficial de Giant, Berria y MMR. Reparaciones expertas, montajes personalizados y equipamiento de calidad."
+        },
+        "shop": {
+            "title": "Tienda de Bicicletas — Vraivelo",
+            "description": "Explora nuestra selección de bicicletas de carretera, MTB, gravel, e-bike e infantiles de Giant, Berria, MMR y Liv."
+        },
+        "other_products": {
+            "title": "Recambios y Accesorios — Vraivelo",
+            "description": "Compra accesorios de ciclismo, componentes, ropa y ruedas de las mejores marcas en Vraivelo."
+        },
+        "workshop": {
+            "title": "Servicios de Taller — Vraivelo",
+            "description": "Reparación profesional de bicicletas, puestas a punto, mantenimiento de suspensiones y montajes personalizados por mecánicos certificados."
+        },
+        "contact": {
+            "title": "Contacto — Vraivelo",
+            "description": "Contacta con Vraivelo. Visita nuestra tienda, llámanos o envíanos un mensaje para consultas sobre bicicletas y reservas de servicio."
+        },
+        "vraivelo": {
+            "title": "Nuestra Historia — Vraivelo",
+            "description": "Descubre la historia detrás de Vraivelo — nacida de la pasión por el ciclismo y la artesanía."
+        },
+        "event_formation": {
+            "title": "Taller de Mecánica — Vraivelo",
+            "description": "Únete a nuestro taller gratuito y práctico de mecánica de bicicletas. Aprende habilidades esenciales de mantenimiento."
+        },
+        "product_detail": {
+            "title": "{{name}} — Vraivelo",
+            "description": "Explora la {{name}} — especificaciones, tallas y precios. Disponible en Vraivelo."
+        }
     }
 }

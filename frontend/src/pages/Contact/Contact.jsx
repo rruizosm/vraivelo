@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Clock, Send } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEOHead from '../../components/SEOHead/SEOHead';
 import './Contact.css';
 import emailjs from '@emailjs/browser';
 
@@ -74,6 +75,7 @@ const Contact = () => {
 
     return (
         <div className="contact-container">
+            <SEOHead titleKey="seo.contact.title" descriptionKey="seo.contact.description" path="/contact" />
             <div className="contact-content">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

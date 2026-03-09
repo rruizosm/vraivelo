@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ZoomIn, Loader, ShoppingBag, ChevronLeft, ChevronRight, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../../supabase';
 import { useCart } from '../../context/CartContext';
 import { clothes } from '../../data/clothes';
+import SEOHead from '../../components/SEOHead/SEOHead';
+import { getDiscountedPrice } from '../../lib/priceUtils';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
+    const location = useLocation();
     const { t } = useTranslation();
     const { addToCart, isCartEnabled } = useCart();
     const [bike, setBike] = useState(null);
@@ -153,11 +156,11 @@ const ProductDetail = () => {
             <div className="product-detail-container flex flex-col items-center justify-center gap-4">
                 <h2>Product not found</h2>
                 <button
-                    onClick={() => navigate('/shop')}
+                    onClick={() => navigate(location.state?.from === 'other-products' ? '/other-products' : '/shop')}
                     className="flex items-center gap-2 px-6 py-2 bg-[var(--primary)] text-white rounded-full hover:bg-opacity-90 transition-all"
                 >
                     <ArrowLeft size={20} />
-                    Back to Shop
+                    {location.state?.from === 'other-products' ? t('product.back_to_other_products') : t('product.back_to_shop')}
                 </button>
             </div>
         );
@@ -165,6 +168,13 @@ const ProductDetail = () => {
 
     return (
         <div className="product-detail-container">
+            <SEOHead
+                titleKey="seo.product_detail.title"
+                descriptionKey="seo.product_detail.description"
+                path={`/shop/${id}`}
+                ogImage={bike.image_url}
+                tOptions={{ name: bike.model }}
+            />
             <div className="product-detail-content">
                 {/* Image Section */}
                 <motion.div
@@ -245,9 +255,9 @@ const ProductDetail = () => {
                     animate={{ opacity: 1, x: 0 }}
                     className="product-info-section"
                 >
-                    <button onClick={() => navigate('/shop')} className="back-btn">
+                    <button onClick={() => navigate(location.state?.from === 'other-products' ? '/other-products' : '/shop')} className="back-btn">
                         <ArrowLeft size={20} />
-                        Back to Shop
+                        {location.state?.from === 'other-products' ? t('product.back_to_other_products') : t('product.back_to_shop')}
                     </button>
 
                     <div>
@@ -255,7 +265,21 @@ const ProductDetail = () => {
                         <h1 className="product-title">{bike.model}</h1>
                         {bike.category && <p className="product-category">{bike.category}</p>}
                         {/* {bike.color && !bike.variants && <p className="text-sm text-gray-400 mt-1">Color: {bike.color}</p>} */}
-                        <p className="product-price">{bike.price}</p>
+                        {(() => {
+                            const isBikeOrProduct = bike.category !== 'Clothes' && bike.category !== 'Other Products';
+                            const hasDiscount = isBikeOrProduct;
+                            const discountedPrice = hasDiscount ? getDiscountedPrice(bike.price) : bike.price;
+
+                            if (!hasDiscount || discountedPrice === bike.price) {
+                                return <p className="product-price">{bike.price}</p>;
+                            }
+                            return (
+                                <div className="flex items-center gap-3 mt-2">
+                                    <span className="product-price-old">{bike.price}</span>
+                                    <span className="product-price-new">{discountedPrice}</span>
+                                </div>
+                            );
+                        })()}
                     </div>
 
                     {bike.description && <p className="product-description">{bike.description}</p>}
@@ -310,11 +334,12 @@ const ProductDetail = () => {
                             <button
                                 onClick={() => {
                                     if (selectedSize) {
+                                        const isBikeOrProduct = bike.category !== 'Clothes' && bike.category !== 'Other Products';
                                         addToCart({
                                             id: bike.id,
                                             brand: bike.brand || '',
                                             model: bike.model,
-                                            price: bike.price,
+                                            price: isBikeOrProduct ? getDiscountedPrice(bike.price) : bike.price,
                                             image: displayImage,
                                             size: selectedSize,
                                             color: selectedColor ? selectedColor.colorName : null,

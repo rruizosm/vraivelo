@@ -41,6 +41,9 @@
         "sold": "Sold",
         "add_to_cart": "Add to Cart",
         "contact_us": "Contact Us",
+        "back_to_shop": "Back to Shop",
+        "back_to_shop": "Back to Shop",
+        "back_to_other_products": "Back to Other Products",
         "contact_message": "Hi, I'm interested in",
         "specs": {
             "frame": "Frame",
@@ -101,6 +104,35 @@
                 "guarantee": {
                     "title": "Vraivelo Guarantee",
                     "desc": "We stand behind every service and sale. Quality and satisfaction, always."
+                }
+            }
+        },
+        "reviews": {
+            "title": "What Our Riders",
+            "title_highlight": "Say",
+            "subtitle": "Real experiences from our community of cyclists.",
+            "based_on": "Based on",
+            "reviews_text": "reviews",
+            "items": {
+                "1": {
+                    "text": "The customer service is excellent! David is very friendly. I've taken my bike in twice and he fixed the problem on the same day... I recommend him 100%.",
+                    "date": "2 months ago",
+                    "name": "Margarita M."
+                },
+                "2": {
+                    "text": "Excellent experience! The service in this store is top notch. They helped me choose the perfect bike without pressure and answered all my questions. Laura and David are super nice, a real pleasure to deal with. I recommend them 100%.",
+                    "date": "3 months ago",
+                    "name": "Paco C."
+                },
+                "3": {
+                    "text": "We were cycling along a route through La Garrotxa with my friends when we came across them. A group of cyclists with their support van. They didn't hesitate to offer us water and isotonic drinks at a time when we really needed them. You could tell they were passionate about cycling and wanted to help any cyclists, like us. I wouldn't hesitate to put my bikes in their hands and go on one of their well-organized rides. You guys are great! Thank you!",
+                    "date": "5 months ago",
+                    "name": "Pit"
+                },
+                "4": {
+                    "text": "Great place! They helped me find a nut that I couldn't find anywhere else. And everyone was so friendly! 🥰",
+                    "date": "3 months ago",
+                    "name": "Pablo R."
                 }
             }
         },
@@ -387,5 +419,39 @@
         "date": "Feb 15th",
         "limited": "Limited spots!",
         "details": "Details"
+    },
+    "seo": {
+        "home": {
+            "title": "Vraivelo — Premium Cycling Workshop & Bike Shop",
+            "description": "Premium cycling workshop and official Giant, Berria & MMR dealer. Expert bike repairs, custom builds, and curated gear in one place."
+        },
+        "shop": {
+            "title": "Shop Bikes — Vraivelo",
+            "description": "Browse our curated selection of road, MTB, gravel, e-bike, and kids' bikes from Giant, Berria, MMR & Liv."
+        },
+        "other_products": {
+            "title": "Parts & Accessories — Vraivelo",
+            "description": "Shop cycling accessories, components, clothing, and wheels from top brands at Vraivelo."
+        },
+        "workshop": {
+            "title": "Workshop Services — Vraivelo",
+            "description": "Professional bike repair, tune-ups, suspension maintenance, and custom builds by certified mechanics."
+        },
+        "contact": {
+            "title": "Contact Us — Vraivelo",
+            "description": "Get in touch with Vraivelo. Visit our shop, call us, or send a message for bike inquiries and service bookings."
+        },
+        "vraivelo": {
+            "title": "Our Story — Vraivelo",
+            "description": "Discover the story behind Vraivelo — born from a passion for cycling and craftsmanship."
+        },
+        "event_formation": {
+            "title": "Mechanics Workshop — Vraivelo",
+            "description": "Join our free hands-on bicycle mechanics workshop. Learn essential bike maintenance skills."
+        },
+        "product_detail": {
+            "title": "{{name}} — Vraivelo",
+            "description": "Explore the {{name}} — specifications, sizes, and pricing. Available at Vraivelo."
+        }
     }
 }

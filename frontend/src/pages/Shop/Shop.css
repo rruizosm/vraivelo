@@ -119,7 +119,7 @@
 .checkbox {
     width: 18px;
     height: 18px;
-    border: 2px solid var(--border-subtle);
+    border: 2px solid black;
     border-radius: 4px;
     transition: all 0.2s ease;
     position: relative;
@@ -275,6 +275,42 @@
     /* Slightly smaller to fit long ranges */
     font-weight: 700;
     color: var(--text-main);
+}
+
+.bike-price-old {
+    font-size: 0.875rem;
+    text-decoration: line-through;
+    color: var(--text-muted, #9ca3af);
+}
+
+.bike-price-new {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: var(--primary);
+    animation: pulse-price 2s infinite;
+}
+
+.discount-tag {
+    background-color: var(--primary);
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+@keyframes pulse-price {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .bike-arrow {

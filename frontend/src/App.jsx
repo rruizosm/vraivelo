@@ -19,11 +19,13 @@ import Footer from './components/Footer/Footer';
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart/Cart';
 import EventBanner from './components/EventBanner/EventBanner';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
   return (
     <CartProvider>
       <Router>
+        <ScrollToTop />
         <div className="app flex flex-col min-h-screen">
           <Navbar />
           <Cart />

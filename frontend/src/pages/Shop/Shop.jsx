@@ -4,6 +4,8 @@ import { ArrowRight, Loader, ShoppingBag } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../../supabase';
 import { useTranslation } from 'react-i18next';
+import SEOHead from '../../components/SEOHead/SEOHead';
+import { getDiscountedPrice } from '../../lib/priceUtils';
 import './Shop.css';
 
 const categories = ['All', 'Road', 'MTB', 'Gravel', 'E-Bike', 'Time Trial', 'Kids'];
@@ -70,6 +72,7 @@ const Shop = () => {
 
     return (
         <div className="shop-container">
+            <SEOHead titleKey="seo.shop.title" descriptionKey="seo.shop.description" path="/shop" />
             <div className="shop-content">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -175,7 +178,18 @@ const Shop = () => {
                                     <h3 className="bike-model">{bike.model}</h3>
                                     {/* <p className="bike-desc">{bike.description}</p> */}
                                     <div className="bike-price-row">
-                                        <span className="bike-price">{bike.price}</span>
+                                        {(() => {
+                                            const discountedPrice = getDiscountedPrice(bike.price);
+                                            if (discountedPrice === bike.price) {
+                                                return <span className="bike-price">{bike.price}</span>;
+                                            }
+                                            return (
+                                                <div className="flex items-center gap-2">
+                                                    <span className="bike-price-old">{bike.price}</span>
+                                                    <span className="bike-price-new">{discountedPrice}</span>
+                                                </div>
+                                            );
+                                        })()}
                                         {/* <button
                                             className="add-cart-btn-small"
                                             onClick={(e) => {

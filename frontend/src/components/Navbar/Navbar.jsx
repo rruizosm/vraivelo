@@ -76,9 +76,10 @@ const Navbar = () => {
                             )}
                         </button>
                     ) : (
-                        <Link to="/contact" className="cart-btn-nav relative">
-                            <Mail size={20} />
-                        </Link>
+                        // <Link to="/contact" className="cart-btn-nav relative">
+                        //     <Mail size={20} />
+                        // </Link>
+                        <></>
                     )}
 
                     <Link to="/contact" className="nav-btn-link">

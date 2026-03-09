@@ -1,0 +1,137 @@
+.google-reviews-section {
+    padding: 6rem 1.5rem;
+    background: transparent;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.google-reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.google-reviews-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.google-rating-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.google-score {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.google-stars {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.google-count {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.google-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+}
+
+.google-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .google-reviews-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.google-review-card {
+    background-color: white;
+    border: 1px solid var(--border-subtle);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.google-review-card:hover {
+    border-color: var(--border-active);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.reviewer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.review-date {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.review-google-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+}
+
+.review-stars {
+    display: flex;
+    gap: 0.15rem;
+}
+
+.review-text {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}

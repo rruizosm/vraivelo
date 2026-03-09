@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { stories } from '../../data/stories';
+import SEOHead from '../../components/SEOHead/SEOHead';
 import './Vraivelo.css';
 
 const Vraivelo = () => {
@@ -18,6 +19,7 @@ const Vraivelo = () => {
 
     return (
         <div className="vraivelo-page">
+            <SEOHead titleKey="seo.vraivelo.title" descriptionKey="seo.vraivelo.description" path="/vraivelo" />
             <div className="stories-grid">
                 {stories.map((story, index) => (
                     <motion.div

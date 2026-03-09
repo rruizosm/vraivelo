@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { supabase } from '../../supabase';
 import { clothes } from '../../data/clothes';
 import { useTranslation } from 'react-i18next';
+import SEOHead from '../../components/SEOHead/SEOHead';
 import '../Shop/Shop.css'; // Reuse Shop styles
 
 const ProductCard = ({ product, addToCart, navigate, t, isCartEnabled }) => {
@@ -13,7 +14,7 @@ const ProductCard = ({ product, addToCart, navigate, t, isCartEnabled }) => {
     const [currentImage, setCurrentImage] = useState(product.image_url);
 
     const handleProductClick = () => {
-        navigate(`/shop/${product.id}`);
+        navigate(`/shop/${product.id}`, { state: { from: 'other-products' } });
     };
 
     return (
@@ -70,7 +71,7 @@ const ProductCard = ({ product, addToCart, navigate, t, isCartEnabled }) => {
                             className="add-cart-btn-small"
                             onClick={(e) => {
                                 e.stopPropagation();
-                                navigate(`/shop/${product.id}`);
+                                navigate(`/shop/${product.id}`, { state: { from: 'other-products' } });
                             }}
                         >
                             <ShoppingBag size={18} />
@@ -162,6 +163,7 @@ const OtherProducts = () => {
 
     return (
         <div className="shop-container">
+            <SEOHead titleKey="seo.other_products.title" descriptionKey="seo.other_products.description" path="/other-products" />
             <div className="shop-content">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

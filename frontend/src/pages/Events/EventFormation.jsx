@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, Wrench, CheckCircle, ChevronRight, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEOHead from '../../components/SEOHead/SEOHead';
 import './EventFormation.css';
 // Image referenced directly from public folder
 const workshopImage = "/primer_local/local_11.jpeg";
@@ -12,6 +13,7 @@ const EventFormation = () => {
 
     return (
         <div className="event-formation-container">
+            <SEOHead titleKey="seo.event_formation.title" descriptionKey="seo.event_formation.description" path="/event-formation" />
             <div className="event-content-wrapper">
 
                 {/* Hero Section */}

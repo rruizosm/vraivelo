@@ -3,12 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Wrench, ShoppingBag, ShieldCheck, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEOHead from '../../components/SEOHead/SEOHead';
+import GoogleReviews from '../../components/GoogleReviews/GoogleReviews';
 import './Home.css';
 
 const heroImages = [
     "/home_images/vraivelo_home7.jpeg",
     "/home_images/vraivelo_home10.jpeg",
-    "/home_images/vraivelo_home11.jpeg",
+    "/vraivelo_berria/Girona/DSC00320.jpeg",
     "/home_images/vraivelo_home12.jpeg",
 ];
 
@@ -39,6 +41,7 @@ const Home = () => {
 
     return (
         <div className="home-container">
+            <SEOHead titleKey="seo.home.title" descriptionKey="seo.home.description" path="/" />
             {/* HERO SECTION */}
             <section className="hero-section">
                 {/* Background Loop */}
@@ -234,6 +237,9 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* GOOGLE REVIEWS SECTION */}
+            <GoogleReviews />
 
             {/* CTA SECTION */}
             <section className="cta-section">
