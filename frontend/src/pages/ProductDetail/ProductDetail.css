@@ -178,7 +178,7 @@
 .option-label {
     font-size: 0.9rem;
     font-weight: 700;
-    color: var(--text-main);
+    /* color: var(--text-main); */
     text-transform: uppercase;
 }
 
@@ -296,7 +296,6 @@
     text-transform: uppercase;
     color: var(--text-secondary);
     letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
 }
 
 .spec-value {

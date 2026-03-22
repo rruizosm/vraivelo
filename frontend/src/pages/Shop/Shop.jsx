@@ -15,10 +15,16 @@ const Shop = () => {
     const navigate = useNavigate();
     const [bikes, setBikes] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [activeCategory, setActiveCategory] = useState('All');
-    const [activeBrands, setActiveBrands] = useState([]);
-    const [showOnSale, setShowOnSale] = useState(false);
-    const [showComingSoon, setShowComingSoon] = useState(false);
+    const [activeCategory, setActiveCategory] = useState(() => sessionStorage.getItem('shop_activeCategory') || 'All');
+    const [activeBrands, setActiveBrands] = useState(() => {
+        const saved = sessionStorage.getItem('shop_activeBrands');
+        return saved ? JSON.parse(saved) : [];
+    });
+
+    useEffect(() => {
+        sessionStorage.setItem('shop_activeCategory', activeCategory);
+        sessionStorage.setItem('shop_activeBrands', JSON.stringify(activeBrands));
+    }, [activeCategory, activeBrands]);
 
     // Fetch bikes from Supabase
     useEffect(() => {
@@ -57,10 +63,8 @@ const Shop = () => {
     const filteredBikes = bikes.filter(bike => {
         const matchCategory = activeCategory === 'All' || bike.category === activeCategory;
         const matchBrand = activeBrands.length === 0 || activeBrands.includes(bike.brand);
-        const matchSale = showOnSale ? bike.on_sale : true;
-        const matchComingSoon = showComingSoon ? bike.coming_soon : true;
 
-        return matchCategory && matchBrand && matchSale && matchComingSoon;
+        return matchCategory && matchBrand;
     });
 
     if (loading) {
@@ -91,27 +95,6 @@ const Shop = () => {
                 <div className="shop-layout">
                     {/* SIDEBAR FILTERS */}
                     <aside className="shop-sidebar">
-                        {/* NEW FILTERS: On Sale & Coming Soon */}
-                        <div className="filter-group">
-                            <h3 className="filter-title">{t('navbar.bikes')}</h3>
-                            <div className="filter-options">
-                                <button
-                                    onClick={() => setShowOnSale(!showOnSale)}
-                                    className={`sidebar-filter-btn ${showOnSale ? 'active' : ''}`}
-                                >
-                                    <div className={`checkbox ${showOnSale ? 'checked' : ''}`} />
-                                    {t('shop.filters.on_sale')}
-                                </button>
-                                <button
-                                    onClick={() => setShowComingSoon(!showComingSoon)}
-                                    className={`sidebar-filter-btn ${showComingSoon ? 'active' : ''}`}
-                                >
-                                    <div className={`checkbox ${showComingSoon ? 'checked' : ''}`} />
-                                    {t('shop.filters.coming_soon')}
-                                </button>
-                            </div>
-                        </div>
-
                         <div className="filter-group">
                             <h3 className="filter-title">Category</h3>
                             <div className="filter-options">
@@ -121,6 +104,7 @@ const Shop = () => {
                                         onClick={() => setActiveCategory(cat)}
                                         className={`sidebar-filter-btn ${activeCategory === cat ? 'active' : ''}`}
                                     >
+                                        <div className={`checkbox ${activeCategory === cat ? 'checked' : ''}`} />
                                         {cat}
                                     </button>
                                 ))}
@@ -179,18 +163,7 @@ const Shop = () => {
                                     <h3 className="bike-model">{bike.model}</h3>
                                     {/* <p className="bike-desc">{bike.description}</p> */}
                                     <div className="bike-price-row">
-                                        {(() => {
-                                            const discountedPrice = getDiscountedPrice(bike.price);
-                                            if (discountedPrice === bike.price) {
-                                                return <span className="bike-price">{bike.price}</span>;
-                                            }
-                                            return (
-                                                <div className="flex items-center gap-2">
-                                                    <span className="bike-price-old">{bike.price}</span>
-                                                    <span className="bike-price-new">{discountedPrice}</span>
-                                                </div>
-                                            );
-                                        })()}
+                                        <span className="bike-price-new">{bike.price}</span>
                                         {/* <button
                                             className="add-cart-btn-small"
                                             onClick={(e) => {

@@ -317,8 +317,8 @@ const ProductDetail = () => {
                             }
                             return (
                                 <div className="flex items-center gap-3 mt-2">
-                                    <span className="product-price-old">{bike.price}</span>
-                                    <span className="product-price-new">{discountedPrice}</span>
+                                    <span className="product-price-new">{bike.price}</span>
+                                    {/* <span className="product-price-new">{discountedPrice}</span> */}
                                 </div>
                             );
                         })()}
@@ -371,11 +371,11 @@ const ProductDetail = () => {
                         <div className="option-group">
                             <div className="option-header">
                                 <span className="option-label">Select Size</span>
-                                {bike.quantity !== undefined && (
+                                {/* {bike.quantity !== undefined && (
                                     <span className="stock-display">
                                         {t('product.stock')}: <span className="stock-value">{bike.quantity}</span>
                                     </span>
-                                )}
+                                )} */}
                             </div>
                             <div className="size-selector">
                                 {sizes.map(size => (

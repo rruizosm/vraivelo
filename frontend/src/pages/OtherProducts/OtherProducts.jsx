@@ -86,7 +86,11 @@ const ProductCard = ({ product, addToCart, navigate, t, isCartEnabled }) => {
 const OtherProducts = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [activeCategory, setActiveCategory] = useState('All');
+    const [activeCategory, setActiveCategory] = useState(() => sessionStorage.getItem('otherProducts_activeCategory') || 'All');
+
+    useEffect(() => {
+        sessionStorage.setItem('otherProducts_activeCategory', activeCategory);
+    }, [activeCategory]);
     const { addToCart, isCartEnabled } = useCart();
     const navigate = useNavigate();
     const { t } = useTranslation();
