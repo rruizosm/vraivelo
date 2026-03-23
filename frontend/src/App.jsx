@@ -12,6 +12,9 @@ import Contact from './pages/Contact/Contact';
 import Vraivelo from './pages/Vraivelo/Vraivelo';
 import StoryDetail from './pages/Vraivelo/StoryDetail';
 import EventFormation from './pages/Events/EventFormation';
+import Mechanics from './pages/Workshop/Mechanics/Mechanics';
+import Suspensions from './pages/Workshop/Suspensions/Suspensions';
+import RearShock from './pages/Workshop/RearShock/RearShock';
 
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -33,6 +36,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/workshop" element={<Workshop />} />
+              <Route path="/workshop/mechanics" element={<Mechanics />} />
+              <Route path="/workshop/suspensions" element={<Suspensions />} />
+              <Route path="/workshop/rear-shock" element={<RearShock />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/shop/:id" element={<ProductDetail />} />
               <Route path="/other-products" element={<OtherProducts />} />

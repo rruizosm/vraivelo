@@ -21,7 +21,6 @@ const Navbar = () => {
         { name: t('navbar.bikes'), path: '/shop' },
         { name: t('navbar.other_products'), path: '/other-products' },
         { name: t('navbar.vraivelo'), path: '/vraivelo' },
-        { name: t('navbar.contact'), path: '/contact' },
     ];
 
     return (

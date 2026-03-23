@@ -146,6 +146,68 @@
         "title": "Serveis de",
         "title_highlight": "Taller",
         "subtitle": "David tracta cada bicicleta com si fos la seva. Precisió, cura i velocitat — sempre.",
+        "discipline": {
+            "title_1": "Selecciona la teva",
+            "title_2": "Disciplina de Servei",
+            "subtitle": "Tria una categoria de taller especialitzada. Els nostres mecànics estan certificats per a ajustos d'alt rendiment en tots els principals components de bicicletes de muntanya i carretera.",
+            "become_member": "Fes-te Membre vraivelo",
+            "view_services": "Veure Serveis",
+            "cards": {
+                "mechanics": {
+                    "badge": "Essencial",
+                    "title": "Mecànica i Posada a Punt",
+                    "desc": "Neteja integral de la transmissió, verificació de parell de collament i ajustos precisos del canvi per al rendiment diari."
+                },
+                "suspensions": {
+                    "badge": "Avançat",
+                    "title": "Suspensions",
+                    "desc": "Manteniment de botelles, ajust de volum d'aire i reconstruccions completes de cartutxos per a forquilles Fox, RockShox i Öhlins."
+                },
+                "rear_shock": {
+                    "badge": "Expert",
+                    "title": "Amortidor Posterior",
+                    "desc": "Manteniment de cambra d'aire, càrrega de nitrogen i re-valvulat de sistemes a mida per un control absolut de la tracció posterior."
+                }
+            }
+        },
+        "membership": {
+            "title_1": "vraivēlo",
+            "title_2": "Plans de Subscripció",
+            "join_now": "Uneix-te Ara",
+            "recommended": "Recomanat",
+            "premium": "Premium",
+            "plans": {
+                "peloton": {
+                    "name": "Pilot de Pilot",
+                    "price": "69€",
+                    "period": "/any",
+                    "f1": "Ajustaments bàsics gratuïts",
+                    "f2": "10% de descompte en peces",
+                    "f3": "Reserva prioritària al taller",
+                    "f4": "Accés a esdeveniments oficials i grup privat"
+                },
+                "pro": {
+                    "name": "Rendiment Pro",
+                    "price": "129€",
+                    "period": "/any",
+                    "f1": "1 inspecció completa anual GRATIS (valor superior a 60€)",
+                    "f2": "Servei prioritari: 48–72 hores",
+                    "f3": "Descomptes: 15% mà d'obra + 10% accessoris",
+                    "f4": "50% de descompte en Social Rides, cafè inclòs",
+                    "f5": "50% de descompte en cursos de formació"
+                },
+                "elite": {
+                    "name": "Fàbrica d'Elit",
+                    "price": "249€",
+                    "period": "/any",
+                    "f1": "2 inspeccions completes anuals GRATIS",
+                    "f2": "Prioritat VIP al taller de 24 hores",
+                    "f3": "20% de descompte en mà d'obra, roba i peces",
+                    "f4": "Prioritat en caps de setmana vraivēlo i sessions d'entrenament",
+                    "f5": "1 experiència exclusiva a l'any GRATIS"
+                }
+            }
+        },
         "categories": [
             {
                 "title": "Posada a punt i Mecànica",

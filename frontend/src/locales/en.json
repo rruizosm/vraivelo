@@ -146,6 +146,68 @@
         "title": "Workshop",
         "title_highlight": "Services",
         "subtitle": "David treats every bike as if it were their own. Precision, care, and speed — every time.",
+        "discipline": {
+            "title_1": "Select Your",
+            "title_2": "Service Discipline",
+            "subtitle": "Choose a specialized workshop category. Our mechanics are certified for high-performance tuning across all major mountain and road bicycle components.",
+            "become_member": "Become a vraivelo Member",
+            "view_services": "View Services",
+            "cards": {
+                "mechanics": {
+                    "badge": "Essential",
+                    "title": "Tune-up and Mechanics",
+                    "desc": "Comprehensive drivetrain cleaning, bolt torque verification, and precision shifting adjustments for daily performance."
+                },
+                "suspensions": {
+                    "badge": "Advanced",
+                    "title": "Suspensions",
+                    "desc": "Lower leg service, air spring volume tuning, and full damper rebuilds for Fox, RockShox, and Öhlins forks."
+                },
+                "rear_shock": {
+                    "badge": "Expert",
+                    "title": "Rear Shock",
+                    "desc": "Air sleeve maintenance, nitrogen charging, and bespoke shim stack re-valving for absolute rear-end traction control."
+                }
+            }
+        },
+        "membership": {
+            "title_1": "vraivēlo",
+            "title_2": "Membership Plans",
+            "join_now": "Join Now",
+            "recommended": "Recommended",
+            "premium": "Premium",
+            "plans": {
+                "peloton": {
+                    "name": "Peloton Rider",
+                    "price": "69€",
+                    "period": "/year",
+                    "f1": "Free basic adjustments",
+                    "f2": "10% parts discount",
+                    "f3": "Workshop priority booking",
+                    "f4": "Access to official events and a private group"
+                },
+                "pro": {
+                    "name": "Pro Performance",
+                    "price": "129€",
+                    "period": "/year",
+                    "f1": "1 FREE annual full inspection (worth over €60)",
+                    "f2": "Priority service: 48–72 hours",
+                    "f3": "Discounts: 15% off labor + 10% off clothing and accessories",
+                    "f4": "50% off Social Rides, including coffee",
+                    "f5": "50% off training courses"
+                },
+                "elite": {
+                    "name": "Elite Factory",
+                    "price": "249€",
+                    "period": "/year",
+                    "f1": "2 FREE comprehensive annual inspections",
+                    "f2": "VIP Priority at the 24-Hour Repair Shop",
+                    "f3": "20% off labor, clothing, and parts",
+                    "f4": "Priority on vraivēlo weekends and training sessions",
+                    "f5": "1 exclusive experience per year for FREE"
+                }
+            }
+        },
         "categories": [
             {
                 "title": "Tune-up and Mechanics",

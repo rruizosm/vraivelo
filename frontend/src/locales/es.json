@@ -146,6 +146,68 @@
         "title": "Servicios de",
         "title_highlight": "Taller",
         "subtitle": "David trata cada bicicleta como si fuera suya. Precisión, cuidado y velocidad — siempre.",
+        "discipline": {
+            "title_1": "Selecciona tu",
+            "title_2": "Disciplina de Servicio",
+            "subtitle": "Elige una categoría de taller especializada. Nuestros mecánicos están certificados para el ajuste de alto rendimiento en todos los principales componentes de bicicletas de montaña y carretera.",
+            "become_member": "Hazte Miembro vraivelo",
+            "view_services": "Ver Servicios",
+            "cards": {
+                "mechanics": {
+                    "badge": "Esencial",
+                    "title": "Puesta a Punto y Mecánica",
+                    "desc": "Limpieza integral de la transmisión, verificación de apriete de tornillería y ajustes precisos del cambio para el rendimiento diario."
+                },
+                "suspensions": {
+                    "badge": "Avanzado",
+                    "title": "Suspensiones",
+                    "desc": "Mantenimiento de botellas, ajuste de volumen de aire y reconstrucciones completas de cartuchos para horquillas Fox, RockShox y Öhlins."
+                },
+                "rear_shock": {
+                    "badge": "Experto",
+                    "title": "Amortiguador Trasero",
+                    "desc": "Mantenimiento de cámara de aire, carga de nitrógeno y re-valvulado de sistemas a medida para un control absoluto de la tracción trasera."
+                }
+            }
+        },
+        "membership": {
+            "title_1": "vraivēlo",
+            "title_2": "Planes de Membresía",
+            "join_now": "Únete Ahora",
+            "recommended": "Recomendado",
+            "premium": "Premium",
+            "plans": {
+                "peloton": {
+                    "name": "Piloto de Pelotón",
+                    "price": "69€",
+                    "period": "/año",
+                    "f1": "Ajustes básicos gratuitos",
+                    "f2": "10% de descuento en piezas",
+                    "f3": "Reserva prioritaria en el taller",
+                    "f4": "Acceso a eventos oficiales y grupo privado"
+                },
+                "pro": {
+                    "name": "Rendimiento Pro",
+                    "price": "129€",
+                    "period": "/año",
+                    "f1": "1 inspección completa anual GRATIS (valor superior a 60€)",
+                    "f2": "Servicio prioritario: 48–72 horas",
+                    "f3": "Descuentos: 15% en mano de obra + 10% en ropa y accesorios",
+                    "f4": "50% de descuento en Social Rides, incluyendo café",
+                    "f5": "50% de descuento en cursos de formación"
+                },
+                "elite": {
+                    "name": "Fábrica Élite",
+                    "price": "249€",
+                    "period": "/año",
+                    "f1": "2 inspecciones completas anuales GRATIS",
+                    "f2": "Prioridad VIP en taller de reparación de 24 horas",
+                    "f3": "20% de descuento en mano de obra, ropa y piezas",
+                    "f4": "Prioridad en fines de semana vraivēlo y sesiones de entrenamiento",
+                    "f5": "1 experiencia exclusiva al año GRATIS"
+                }
+            }
+        },
         "categories": [
             {
                 "title": "Puesta a punto y Mecánica",
