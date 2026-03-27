@@ -3,14 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Play, Volume2, Settings, Maximize2 } from 'lucide-react'; // Using Lucide icons instead of Material Symbols
 import './VraiveloWeekend.css';
-import vv_1 from '../../../../public/vraivelo_weekend/vv_1.jpeg'
-import vv_2 from '../../../../public/vraivelo_weekend/vv_2.jpeg'
-import vv_3 from '../../../../public/vraivelo_weekend/vv_3.jpeg'
-import vv_4 from '../../../../public/vraivelo_weekend/vv_4.jpeg'
-import vv_5 from '../../../../public/vraivelo_weekend/vv_5.jpeg'
-import vv_6 from '../../../../public/vraivelo_weekend/vv_6.jpeg'
-import vv_7 from '../../../../public/vraivelo_weekend/vv_7.jpeg'
-import vv_8 from '../../../../public/vraivelo_weekend/vv_8.jpeg'
+
 
 const VraiveloWeekend = () => {
     return (
@@ -76,28 +69,28 @@ const VraiveloWeekend = () => {
                 {/* Image Grid */}
                 <div className="weekend-gallery-grid">
                     <div className="weekend-gallery-item square">
-                        <img src={vv_1} alt="" />
+                        <img src="/vraivelo_weekend/vv_1.jpeg" alt="" />
                     </div>
                     <div className="weekend-gallery-item square">
-                        <img src={vv_2} alt="" />
+                        <img src="/vraivelo_weekend/vv_2.jpeg" alt="" />
                     </div>
                     <div className="weekend-gallery-item square">
-                        <img src={vv_3} alt="" />
+                        <img src="/vraivelo_weekend/vv_3.jpeg" alt="" />
                     </div>
                     <div className="weekend-gallery-item wide">
-                        <img src={vv_4} alt="" />
+                        <img src="/vraivelo_weekend/vv_4.jpeg" alt="" />
                     </div>
                     <div className="weekend-gallery-item video-col">
-                        <img src={vv_5} alt="" />
+                        <img src="/vraivelo_weekend/vv_5.jpeg" alt="" />
                     </div>
                     <div className="weekend-gallery-item video-col">
-                        <img src={vv_6} alt="" />
+                        <img src="/vraivelo_weekend/vv_6.jpeg" alt="" />
                     </div>
                     <div className="weekend-gallery-item video-col">
-                        <img src={vv_7} alt="" />
+                        <img src="/vraivelo_weekend/vv_7.jpeg" alt="" />
                     </div>
                     <div className="weekend-gallery-item video-col">
-                        <img src={vv_8} alt="" />
+                        <img src="/vraivelo_weekend/vv_8.jpeg" alt="" />
                     </div>
                 </div>
             </div>

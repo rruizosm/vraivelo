@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Origins from './stories/Origins';
-import VraiveloWeekend from './stories/VraiveloWeekend';
-import VraiveloBerria from './stories/VraiveloBerria';
-import StravaTeam from './stories/StravaTeam';
+import Origins from './stories/Origins/Origins';
+import VraiveloWeekend from './stories/VraiveloWeekend/VraiveloWeekend';
+import VraiveloBerria from './stories/VraiveloBerria/VraiveloBerria';
+import StravaTeam from './stories/StravaTeam/StravaTeam';
+import Calendar from './stories/Calendar/Calendar';
 
 const StoryDetail = () => {
     const { id } = useParams();
@@ -24,6 +25,8 @@ const StoryDetail = () => {
             return <VraiveloBerria />;
         case 'strava_team':
             return <StravaTeam />;
+        case 'calendar':
+            return <Calendar />;
         default:
             // If the ID is invalid, redirect back to Vraivelo main page
             // We use useEffect to avoid side-effects during render, 
