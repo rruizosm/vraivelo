@@ -192,9 +192,10 @@
                     "period": "/año",
                     "f1": "1 inspección completa anual GRATIS (valor superior a 60€)",
                     "f2": "Servicio prioritario: 48–72 horas",
-                    "f3": "Descuentos: 15% en mano de obra + 10% en ropa y accesorios",
+                    "f3": "Descuentos: 10% en mano de obra + 10% en ropa y accesorios",
                     "f4": "50% de descuento en Social Rides, incluyendo café",
-                    "f5": "50% de descuento en cursos de formación"
+                    "f5": "50% de descuento en cursos de formación",
+                    "f6": "Descuentos exclusivos para serguro de bicicleta"
                 },
                 "elite": {
                     "name": "Fábrica Élite",
@@ -335,6 +336,7 @@
                 "formation": "Formación Mecánica",
                 "bikes": "Consulta sobre Bicicletas",
                 "parts": "Recambios y Accesorios",
+                "event": "Eventos",
                 "other": "Otro"
             },
             "services": {
@@ -452,12 +454,13 @@
         "badge": "EVENTO COMUNITARIO",
         "title_prefix": "Básicos de Mecánica",
         "title_highlight": "Ciclista",
-        "subtitle": "Únete a un taller gratuito y práctico diseñado para enseñarte las habilidades esenciales para mantener tu bici en perfecto estado.",
+        "subtitle": "Únete a un taller práctico diseñado para enseñarte las habilidades esenciales para mantener tu bici en perfecto estado.",
         "date_time": "Fecha y Hora",
-        "date_value": "Viernes, 20 de febrero de 2026",
+        "date_value": "Jueves, 16 de abril de 2026",
         "location": "Ubicación",
         "cost": "Coste",
-        "free": "GRATIS",
+        "free": "GRATIS (Socios)",
+        "regular_price": "10€ (No socios)",
         "limited_spots": "Plazas limitadas",
         "snack_title": "¡Recarga Energías!",
         "snack_text": "¡Ven a las 19:00 para un snack y empezar con más energía!",
@@ -475,9 +478,9 @@
         "contact_message": "Hola, estoy interesado/a en participar en el Taller de Mecánica."
     },
     "event_banner": {
-        "title": "Taller de Mecánica Gratuito",
+        "title": "Taller de Mecánica",
         "join_us": "Únete el",
-        "date": "15 Feb",
+        "date": "16 Abril",
         "limited": "¡Plazas limitadas!",
         "details": "Detalles"
     },
@@ -508,7 +511,7 @@
         },
         "event_formation": {
             "title": "Taller de Mecánica — Vraivelo",
-            "description": "Únete a nuestro taller gratuito y práctico de mecánica de bicicletas. Aprende habilidades esenciales de mantenimiento."
+            "description": "Únete a nuestro taller práctico de mecánica de bicicletas. Aprende habilidades esenciales de mantenimiento."
         },
         "product_detail": {
             "title": "{{name}} — Vraivelo",

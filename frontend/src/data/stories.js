@@ -46,7 +46,7 @@ En diciembre de 2023, en Girona, nace Vraivēlo como respuesta a esa necesidad. 
         id: 'calendar',
         title: 'CALENDAR',
         category: 'CALENDAR',
-        image: '/stories/calendar.jpg',
+        image: '/vraivelo_berria/Girona/DSC00343.jpeg',
         content: true,
         size: 'large',
         backgroundPosition: 'center 35%'

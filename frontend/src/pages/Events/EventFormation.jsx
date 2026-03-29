@@ -74,9 +74,9 @@ const EventFormation = () => {
                             <AlertCircle size={28} strokeWidth={1.5} />
                         </div>
                         <h3 className="detail-title">{t('event_formation.cost')}</h3>
-                        <p className="price-original">€45.00</p>
-                        <p className="price-free">{t('event_formation.free')}</p>
-                        <p className="price-note">{t('event_formation.limited_spots')}</p>
+                        <p className="price-free" style={{ marginBottom: "0.25rem", fontSize: "1.5rem" }}>{t('event_formation.free')}</p>
+                        <p className="price-free" style={{ fontSize: "1.2rem", color: "var(--cal-color-on-surface-variant)" }}>{t('event_formation.regular_price')}</p>
+                        <p className="price-note" style={{ marginTop: "0.75rem" }}>{t('event_formation.limited_spots')}</p>
                     </motion.div>
                 </div>
 

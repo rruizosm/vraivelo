@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Mail } from 'lucide-react';
 import './Calendar.css';
 
 const MonthBlock = ({ monthName, startingEmptyDays, totalDays, highlightDays = [] }) => {
@@ -47,8 +49,7 @@ const EventCard = ({ event }) => {
                     <p className="cal-event-desc">{event.description}</p>
                 </div>
                 <div className="cal-event-actions">
-                    <button className="cal-btn-primary">Reservar</button>
-                    <a href="#" className="cal-btn-link">Ver más</a>
+                    <Link to="/contact" state={{ subject: 'event' }} className="cal-btn-primary">¡Quiero saber más!</Link>
                 </div>
             </div>
         </div>
@@ -127,7 +128,7 @@ const calendarMonthsData = [
 
 const eventsData = [
     {
-        imgSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuAZAp80VntOmCOJvOMeRLPp7vNlB9bAWSj4ZVHGIYD6NVL-Us3zxn_IdVqvwor8oMo9QuE_BY6n2y6msUJTyuKueYmJnkxTk5cjgvA45Wppwb8DTvukRi7UaBhXDTJ8q7fnZBJsklWeMiTdweLn0jW_EQ2tCbU6eN-Lem5alJT-ef8Kq7b8vOwsoCfQP5VUjtkV0_jsiyxUAP-OsV8LWCQsVFyVjDr-UkExg16ZXADCSWkS4-xpBNprmJqiKohA1rxZetHulkr67GE",
+        imgSrc: "/stories/strava_team.jpg",
         imgAlt: "cinematic shot of cyclists riding",
         type: "Road",
         date: "11 Abril",
@@ -135,7 +136,7 @@ const eventsData = [
         description: "Una salida matutina por los puertos clásicos. Velocidad controlada, café obligatorio al terminar."
     },
     {
-        imgSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuCdmNwUwFVUd6fZrBVVpgSr6vvWuglrzQLHfG3rXX-csTWk2AOhBx4UVPplTiErzZ7Vgx993uXtoz0ZHZcY_PzVaYP7zr2K0sQRAQKlS6vIqhtXPDwd_Jm0iTPAW-YjiRBCMgcy17rEYZHkJAjeYGdY-2HuGs22SnTpuPiQOfZN5NSuHqWwdQz-1CKcHW0EgurccuVOgq75GW15bdaQb_9lG3hjlKtejiDVQEhvQXBbjGfnA0IKiCNEZSsG1HOUybkdAca0ywiHAyM",
+        imgSrc: "/stories/formacion.png",
         imgAlt: "close up of bicycle gears",
         type: "Taller",
         date: "16 Abril",
@@ -143,7 +144,7 @@ const eventsData = [
         description: "Aprende los ajustes fundamentales y reparación de pinchazos en ruta con nuestros mecánicos expertos."
     },
     {
-        imgSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuB5Lqfj6pIYfZbTNjsQWhM71dmWtYn9zmFZwyicNU9khrDjKnp0YoKmEnCjxbWQupttlguD7IdFT9k_14Ir9TaD2uK_Xx25q032h28lS8cbOHy8aanDFUgZAKaBHYo-ilPCbA4lnmR0iCl4Q8_E6iOz2aP5G9N58XWqzYZdtrZ5Ks6A1fhbs3NzwLJaR8yY_kLKE794cJN3DUQ5ENG4WoDEDCoRGgFrNawPUvYjd1UqUQqpL-AaZ8LGaaCP0ViDimU_91Prpe3KGy4",
+        imgSrc: "/vraivelo_berria/Girona/DSC00347.jpeg",
         imgAlt: "gravel bike",
         type: "Gravel",
         date: "17 Mayo",
@@ -151,7 +152,7 @@ const eventsData = [
         description: "Explora caminos secundarios y pistas forestales en nuestra salida mensual de gravel."
     },
     {
-        imgSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-S7TCcvra9oDN52ox9C9l8sL5xmjOvqt3-aKiQz13dedbGLSvNfwWwCXYsVIkZ90t1NSuVLzIiCsvG0Ix3pgK5gvphRx6HUs2fpjIk9aJazIhOXc1xf1EbImoGucENEXPmLb4r9Ebag8m0dt81PAt5VYCD7nZXg8oCL0Z-QHh5TjOP6WuNCZ54Hw3yU8c6hhn9irlMQMm2whhWXf9Szu6YEtQFfe7LoCoiDm_oQvh4v-rAuqsixq5UCkoVCFd_v2SSPE-xHoA2zA",
+        imgSrc: "/vraivelo_weekend/vv_3.jpeg",
         imgAlt: "group of cyclists",
         type: "Weekend",
         date: "06-07 Junio",
@@ -159,42 +160,58 @@ const eventsData = [
         description: "Dos días de ruta épica con estancia en hotel boutique y gastronomía local curada."
     },
     {
-        imgSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-S7TCcvra9oDN52ox9C9l8sL5xmjOvqt3-aKiQz13dedbGLSvNfwWwCXYsVIkZ90t1NSuVLzIiCsvG0Ix3pgK5gvphRx6HUs2fpjIk9aJazIhOXc1xf1EbImoGucENEXPmLb4r9Ebag8m0dt81PAt5VYCD7nZXg8oCL0Z-QHh5TjOP6WuNCZ54Hw3yU8c6hhn9irlMQMm2whhWXf9Szu6YEtQFfe7LoCoiDm_oQvh4v-rAuqsixq5UCkoVCFd_v2SSPE-xHoA2zA",
+        imgSrc: "/stories/social_ride_2.jpg",
         imgAlt: "group of cyclists",
         type: "Gravel",
-        date: "5 Julio",
+        date: "4 Julio",
         title: "Social Ride gravel",
         description: "Explora caminos secundarios y pistas forestales en nuestra salida mensual de gravel."
     },
     {
-        imgSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-S7TCcvra9oDN52ox9C9l8sL5xmjOvqt3-aKiQz13dedbGLSvNfwWwCXYsVIkZ90t1NSuVLzIiCsvG0Ix3pgK5gvphRx6HUs2fpjIk9aJazIhOXc1xf1EbImoGucENEXPmLb4r9Ebag8m0dt81PAt5VYCD7nZXg8oCL0Z-QHh5TjOP6WuNCZ54Hw3yU8c6hhn9irlMQMm2whhWXf9Szu6YEtQFfe7LoCoiDm_oQvh4v-rAuqsixq5UCkoVCFd_v2SSPE-xHoA2zA",
+        imgSrc: "/vraivelo_berria/Girona/DSC00333.jpeg",
+        imgAlt: "group of cyclists",
+        type: "Road",
+        date: "22 Agosto",
+        title: "Social Ride carretera",
+        description: "Una salida matutina por los puertos clásicos. Velocidad controlada, café obligatorio al terminar."
+    },
+    {
+        imgSrc: "/vraivelo_weekend/vv_6.jpeg",
         imgAlt: "group of cyclists",
         type: "Weekend",
-        date: "06-07 Junio",
+        date: "05-06 Septiembre",
         title: "Vraivelo Weekend",
         description: "Dos días de ruta épica con estancia en hotel boutique y gastronomía local curada."
     },
     {
-        imgSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-S7TCcvra9oDN52ox9C9l8sL5xmjOvqt3-aKiQz13dedbGLSvNfwWwCXYsVIkZ90t1NSuVLzIiCsvG0Ix3pgK5gvphRx6HUs2fpjIk9aJazIhOXc1xf1EbImoGucENEXPmLb4r9Ebag8m0dt81PAt5VYCD7nZXg8oCL0Z-QHh5TjOP6WuNCZ54Hw3yU8c6hhn9irlMQMm2whhWXf9Szu6YEtQFfe7LoCoiDm_oQvh4v-rAuqsixq5UCkoVCFd_v2SSPE-xHoA2zA",
+        imgSrc: "/stories/social_ride_3.jpg",
         imgAlt: "group of cyclists",
         type: "Weekend",
-        date: "06-07 Junio",
-        title: "Vraivelo Weekend",
-        description: "Dos días de ruta épica con estancia en hotel boutique y gastronomía local curada."
+        date: "03 Octubre",
+        title: "Social Ride Gravel",
+        description: "Explora caminos secundarios y pistas forestales en nuestra salida mensual de gravel."
     },
     {
-        imgSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-S7TCcvra9oDN52ox9C9l8sL5xmjOvqt3-aKiQz13dedbGLSvNfwWwCXYsVIkZ90t1NSuVLzIiCsvG0Ix3pgK5gvphRx6HUs2fpjIk9aJazIhOXc1xf1EbImoGucENEXPmLb4r9Ebag8m0dt81PAt5VYCD7nZXg8oCL0Z-QHh5TjOP6WuNCZ54Hw3yU8c6hhn9irlMQMm2whhWXf9Szu6YEtQFfe7LoCoiDm_oQvh4v-rAuqsixq5UCkoVCFd_v2SSPE-xHoA2zA",
+        imgSrc: "/vraivelo_weekend/vv_1.jpeg",
         imgAlt: "group of cyclists",
         type: "Weekend",
-        date: "06-07 Junio",
-        title: "Vraivelo Weekend",
-        description: "Dos días de ruta épica con estancia en hotel boutique y gastronomía local curada."
+        date: "07 Noviembre",
+        title: "Social Ride Carretera",
+        description: "Explora caminos secundarios y pistas forestales en nuestra salida mensual de gravel."
+    },
+    {
+        imgSrc: "/stories/social_ride_4.jpg",
+        imgAlt: "group of cyclists",
+        type: "Weekend",
+        date: "05 Diciembre",
+        title: "Social Ride Carretera",
+        description: "Explora caminos secundarios y pistas forestales en nuestra salida mensual de gravel."
     }
 ];
 
 const Calendar = () => {
     return (
-        <main className="cal-main">
+        <section className="cal-main">
             {/* Hero Section */}
             <section className="cal-first-section">
                 <section className="cal-max-width cal-hero-section">
@@ -240,7 +257,7 @@ const Calendar = () => {
                     ))}
                 </div>
             </section>
-        </main>
+        </section>
     );
 };
 

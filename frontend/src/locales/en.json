@@ -192,9 +192,10 @@
                     "period": "/year",
                     "f1": "1 FREE annual full inspection (worth over €60)",
                     "f2": "Priority service: 48–72 hours",
-                    "f3": "Discounts: 15% off labor + 10% off clothing and accessories",
+                    "f3": "Discounts: 10% off labor + 10% off clothing and accessories",
                     "f4": "50% off Social Rides, including coffee",
-                    "f5": "50% off training courses"
+                    "f5": "50% off training courses",
+                    "f6": "Exclusive discounts on bicycle insurance"
                 },
                 "elite": {
                     "name": "Elite Factory",
@@ -335,6 +336,7 @@
                 "formation": "Mechanics Formation",
                 "bikes": "Bike Inquiry",
                 "parts": "Parts & Accessories",
+                "event": "Events",
                 "other": "Other"
             },
             "services": {
@@ -454,10 +456,11 @@
         "title_highlight": "Mechanics",
         "subtitle": "Join us for a free, hands-on workshop designed to teach you the essential skills to keep your bike rolling smoothly.",
         "date_time": "Date & Time",
-        "date_value": "Friday, February 20th, 2026",
+        "date_value": "Thursday, April 16th, 2026",
         "location": "Location",
         "cost": "Cost",
-        "free": "FREE",
+        "free": "FREE (Partners)",
+        "regular_price": "10€ (Non-partners)",
         "limited_spots": "Limited spots available",
         "snack_title": "Fuel Up First!",
         "snack_text": "Join us at 19:00 for an afternoon snack to start with more power!",
@@ -475,9 +478,9 @@
         "contact_message": "Hi, I'm interested in being part of the Mechanics Workshop."
     },
     "event_banner": {
-        "title": "Free Mechanics Workshop",
+        "title": "Mechanics Workshop",
         "join_us": "Join us on",
-        "date": "Feb 15th",
+        "date": "April 16th",
         "limited": "Limited spots!",
         "details": "Details"
     },
@@ -508,7 +511,7 @@
         },
         "event_formation": {
             "title": "Mechanics Workshop — Vraivelo",
-            "description": "Join our free hands-on bicycle mechanics workshop. Learn essential bike maintenance skills."
+            "description": "Join our hands-on bicycle mechanics workshop. Learn essential bike maintenance skills."
         },
         "product_detail": {
             "title": "{{name}} — Vraivelo",

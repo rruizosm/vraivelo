@@ -192,9 +192,10 @@
                     "period": "/any",
                     "f1": "1 inspecció completa anual GRATIS (valor superior a 60€)",
                     "f2": "Servei prioritari: 48–72 hores",
-                    "f3": "Descomptes: 15% mà d'obra + 10% accessoris",
+                    "f3": "Descomptes: 10% mà d'obra + 10% accessoris",
                     "f4": "50% de descompte en Social Rides, cafè inclòs",
-                    "f5": "50% de descompte en cursos de formació"
+                    "f5": "50% de descompte en cursos de formació",
+                    "f6": "Descomptes exclusius per a assegurança de bicicleta"
                 },
                 "elite": {
                     "name": "Fàbrica d'Elit",
@@ -335,6 +336,7 @@
                 "formation": "Formació Mecànica",
                 "bikes": "Consulta sobre Bicicletes",
                 "parts": "Recanvis i Accessoris",
+                "events": "Esdeveniments",
                 "other": "Altre"
             },
             "services": {
@@ -454,10 +456,11 @@
         "title_highlight": "Ciclista",
         "subtitle": "Uneix-te a un taller gratuït i pràctic dissenyat per ensenyar-te les habilitats essencials per mantenir la teva bici en perfecte estat.",
         "date_time": "Data i Hora",
-        "date_value": "Divendres, 20 de febrer de 2026",
+        "date_value": "Dijous, 16 d'abril de 2026",
         "location": "Ubicació",
         "cost": "Cost",
-        "free": "GRATIS",
+        "free": "GRATIS (Socis)",
+        "regular_price": "10€ (No socis)",
         "limited_spots": "Places limitades",
         "snack_title": "Recarrega Energies!",
         "snack_text": "Vine a les 19:00 per un snack i començar amb més energia!",
@@ -475,9 +478,9 @@
         "contact_message": "Hola, estic interessat/da a participar al Taller de Mecànica."
     },
     "event_banner": {
-        "title": "Taller de Mecànica Gratuït",
+        "title": "Taller de Mecànica",
         "join_us": "Uneix-te el",
-        "date": "15 Feb",
+        "date": "16 Abril",
         "limited": "Places limitades!",
         "details": "Detalls"
     },
@@ -508,7 +511,7 @@
         },
         "event_formation": {
             "title": "Taller de Mecànica — Vraivelo",
-            "description": "Uneix-te al nostre taller gratuït i pràctic de mecànica de bicicletes. Aprèn habilitats essencials de manteniment."
+            "description": "Uneix-te al nostre taller pràctic de mecànica de bicicletes. Aprèn habilitats essencials de manteniment."
         },
         "product_detail": {
             "title": "{{name}} — Vraivelo",

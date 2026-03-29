@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight, Wrench } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './EventBanner.css';
 
 const EventBanner = () => {
     const [isVisible, setIsVisible] = useState(true);
     const { t } = useTranslation();
+    const location = useLocation();
 
+    if (location.pathname !== '/') return null;
     if (!isVisible) return null;
 
     return (

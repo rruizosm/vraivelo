@@ -183,6 +183,7 @@ const Contact = () => {
                                     <option value="formation">{t('contact.form.subjects.formation')}</option>
                                     <option value="bikes">{t('contact.form.subjects.bikes')}</option>
                                     <option value="parts">{t('contact.form.subjects.parts')}</option>
+                                    <option value="event">{t('contact.form.subjects.event')}</option>
                                     <option value="other">{t('contact.form.subjects.other')}</option>
                                 </select>
                             </div>
