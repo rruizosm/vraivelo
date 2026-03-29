@@ -58,9 +58,10 @@ const Footer = () => {
                     <div>
                         <h4 className="footer-col-title">{t('footer.follow_us')}</h4>
                         <div className="social-icons">
-                            <a href="#" className="social-link">
+                            <a href="https://www.instagram.com/vraivelo/" className="social-link">
                                 <Instagram size={20} />
                             </a>
+                            @vraivelo
                             {/* Add more socials if needed */}
                         </div>
                     </div>

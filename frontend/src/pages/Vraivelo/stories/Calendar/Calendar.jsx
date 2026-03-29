@@ -196,7 +196,7 @@ const Calendar = () => {
     return (
         <main className="cal-main">
             {/* Hero Section */}
-            <section style={{ backgroundColor: 'lightblue' }}>
+            <section className="cal-first-section">
                 <section className="cal-max-width cal-hero-section">
                     <div className="cal-hero-content">
                         <h1 className="cal-hero-title">Calendario 2026</h1>
