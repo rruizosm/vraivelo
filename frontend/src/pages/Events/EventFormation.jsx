@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import SEOHead from '../../components/SEOHead/SEOHead';
 import './EventFormation.css';
 // Image referenced directly from public folder
-const workshopImage = "/primer_local/local_11.jpeg";
+const workshopImage = "/david_vraivelo/taller.png";
 
 const EventFormation = () => {
     const { t } = useTranslation();

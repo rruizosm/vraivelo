@@ -5,6 +5,7 @@ import VraiveloWeekend from './stories/VraiveloWeekend/VraiveloWeekend';
 import VraiveloBerria from './stories/VraiveloBerria/VraiveloBerria';
 import StravaTeam from './stories/StravaTeam/StravaTeam';
 import Calendar from './stories/Calendar/Calendar';
+import Licenses from './stories/Licenses/Licenses';
 
 const StoryDetail = () => {
     const { id } = useParams();
@@ -27,6 +28,8 @@ const StoryDetail = () => {
             return <StravaTeam />;
         case 'calendar':
             return <Calendar />;
+        case 'licenses':
+            return <Licenses />;
         default:
             // If the ID is invalid, redirect back to Vraivelo main page
             // We use useEffect to avoid side-effects during render, 

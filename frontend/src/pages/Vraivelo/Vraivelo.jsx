@@ -31,7 +31,9 @@ const Vraivelo = () => {
                         onClick={() => handleStoryClick(story)}
                         style={{
                             backgroundImage: `url(${story.image})`,
-                            backgroundPosition: story.backgroundPosition || 'center'
+                            backgroundPosition: story.backgroundPosition || 'center',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: story.backgroundSize || 'cover'
                         }}
                     >
                         <div className="story-overlay">

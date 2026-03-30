@@ -50,5 +50,15 @@ En diciembre de 2023, en Girona, nace Vraivēlo como respuesta a esa necesidad. 
         content: true,
         size: 'large',
         backgroundPosition: 'center 35%'
+    },
+    {
+        id: 'licenses',
+        title: 'LICENSES',
+        category: 'LICENSES',
+        image: '/stories/federacio.png',
+        content: true,
+        size: 'tall',
+        backgroundPosition: 'center 30%',
+        backgroundSize: 'contain'
     }
 ];
