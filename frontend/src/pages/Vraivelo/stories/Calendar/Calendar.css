@@ -3,34 +3,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 
 :root {
-  --cal-color-primary: #006594;
-  --cal-color-primary-dim: #005882;
-  --cal-color-on-primary: #f5f9ff;
-  --cal-color-primary-container: #7ec8ff;
-  --cal-color-on-primary-container: #004060;
+  --cal-color-primary: var(--primary-deep);
+  --cal-color-primary-dim: var(--primary-deep);
+  --cal-color-on-primary: var(--color-f5f9ff);
+  --cal-color-primary-container: var(--color-7ec8ff);
+  --cal-color-on-primary-container: var(--primary-deep);
 
-  --cal-color-secondary-fixed: #fdd7f5;
-  --cal-color-secondary-fixed-dim: #efc9e7;
-  --cal-color-on-secondary-fixed: #51374e;
+  --cal-color-secondary-fixed: var(--color-fdd7f5);
+  --cal-color-secondary-fixed-dim: var(--color-efc9e7);
+  --cal-color-on-secondary-fixed: var(--color-51374e);
 
-  --cal-color-tertiary-fixed: #f9d8d1;
-  --cal-color-tertiary-fixed-dim: #ebcbc4;
-  --cal-color-on-tertiary-fixed: #4e3834;
+  --cal-color-tertiary-fixed: var(--bg-error-light);
+  --cal-color-tertiary-fixed-dim: var(--bg-error-light);
+  --cal-color-on-tertiary-fixed: var(--color-4e3834);
 
-  --cal-color-surface: #f8f9fa;
-  --cal-color-on-surface: #2e3335;
-  --cal-color-on-surface-variant: #5a6062;
-  --cal-color-surface-container-high: #e5e9eb;
+  --cal-color-surface: var(--bg-elevated);
+  --cal-color-on-surface: var(--text-main);
+  --cal-color-on-surface-variant: var(--text-secondary);
+  --cal-color-surface-container-high: var(--border-light);
 
-  --cal-color-outline: #767c7e;
-  --cal-color-outline-variant: #aeb3b5;
+  --cal-color-outline: var(--text-muted);
+  --cal-color-outline-variant: var(--text-subtle);
 
-  --cal-color-background: #f8f9fa;
-  --cal-color-on-background: #2e3335;
+  --cal-color-background: var(--bg-elevated);
+  --cal-color-on-background: var(--text-main);
 }
 
 .cal-main {
-  font-family: 'Manrope', sans-serif;
+  /* removed local font-family */
   background-color: var(--cal-color-surface);
   color: var(--cal-color-on-surface);
   -webkit-font-smoothing: antialiased;
@@ -50,7 +50,7 @@
 
 /* Typography Helpers */
 .cal-font-serif {
-  font-family: 'Noto Serif', serif;
+  /* removed local font-family */
 }
 
 /* Material Icons */
@@ -101,7 +101,7 @@
 }
 
 .cal-hero-title {
-  font-family: 'Noto Serif', serif;
+  /* removed local font-family */
   font-size: 2.75rem;
   color: var(--cal-color-on-background);
   margin-bottom: 1.5rem;
@@ -186,7 +186,7 @@
 }
 
 .cal-month-title {
-  font-family: 'Noto Serif', serif;
+  /* removed local font-family */
   font-size: clamp(1rem, 2vh, 1.25rem);
   color: var(--cal-color-primary);
   border-bottom: 1px solid rgba(174, 179, 181, 0.2);
@@ -252,7 +252,7 @@
 }
 
 .cal-events-title {
-  font-family: 'Noto Serif', serif;
+  /* removed local font-family */
   font-size: 1.875rem;
   margin-bottom: 3rem;
   color: var(--cal-color-on-background);
@@ -340,7 +340,7 @@
 }
 
 .cal-event-date {
-  font-family: 'Noto Serif', serif;
+  /* removed local font-family */
   font-size: 1.5rem;
   display: block;
   margin-bottom: 0.5rem;
@@ -405,7 +405,7 @@
 }
 
 .cal-btn-more {
-  font-family: 'Noto Serif', serif;
+  /* removed local font-family */
   font-size: 1.25rem;
   color: var(--cal-color-primary);
   display: inline-flex;

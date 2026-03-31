@@ -1,41 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 
 :root {
-    --color-background: #f5fafb;
-    --color-on-background: #293436;
-    --color-primary: #006976;
-    --color-on-primary: #edfcff;
-    --color-surface-dim: #cedddf;
-    --color-secondary-container: #c8f6ff;
-    --color-on-secondary-container: #335f66;
-    --color-on-surface-variant: #556163;
-    --color-surface-container-high: #dfeaec;
-    --color-surface-container-lowest: #ffffff;
-    --color-surface-container-highest: #d8e5e7;
-    --color-tertiary-container: #ffa852;
-    --color-on-tertiary-container: #572f00;
-    --color-outline-variant: #a8b4b6;
-    --color-outline: #717d7f;
-    --color-surface-container-low: #eef5f6;
-    --color-on-surface: #293436;
-    --color-error-container: #f56965;
-    --color-primary-container: #5fe0f6;
-    --color-surface-variant: #d8e5e7;
+    --color-background: var(--bg-elevated);
+    --color-on-background: var(--text-main);
+    --color-primary: var(--primary-deep);
+    --color-on-primary: var(--primary-light);
+    --color-surface-dim: var(--primary-light);
+    --color-secondary-container: var(--primary-light);
+    --color-on-secondary-container: var(--primary-deep);
+    --color-on-surface-variant: var(--text-secondary);
+    --color-surface-container-high: var(--primary-light);
+    --color-surface-container-lowest: var(--global-white);
+    --color-surface-container-highest: var(--primary-light);
+    --color-tertiary-container: var(--accent-orange);
+    --color-on-tertiary-container: var(--color-572f00);
+    --color-outline-variant: var(--text-subtle);
+    --color-outline: var(--text-muted);
+    --color-surface-container-low: var(--primary-light);
+    --color-on-surface: var(--text-main);
+    --color-error-container: var(--accent-red);
+    --color-primary-container: var(--primary);
+    --color-surface-variant: var(--primary-light);
 
-    --font-headline: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --font-serif: 'Noto Serif', serif;
+    /* removed local font var */
+    /* removed local font var */
+    /* removed local font var */
 }
 
 .licenses-page {
     background-color: var(--color-background);
     color: var(--color-on-background);
-    font-family: var(--font-body);
+    /* removed local font-family */
 }
 
 .licenses-page ::selection {
     background-color: var(--color-primary-container);
-    color: #004d57;
+    color: var(--primary-deep);
     /* on-primary-container */
 }
 
@@ -108,7 +108,7 @@
     border-radius: 9999px;
     background-color: var(--color-secondary-container);
     color: var(--color-on-secondary-container);
-    font-family: var(--font-headline);
+    /* removed local font-family */
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -116,7 +116,7 @@
 }
 
 .licenses-title {
-    font-family: var(--font-serif);
+    /* removed local font-family */
     font-size: 3.75rem;
     line-height: 1.1;
     color: var(--color-on-background);
@@ -153,7 +153,7 @@
     color: var(--color-on-primary);
     padding: 1rem 2.5rem;
     border-radius: 9999px;
-    font-family: var(--font-headline);
+    /* removed local font-family */
     font-weight: 700;
     font-size: 0.875rem;
     text-transform: uppercase;
@@ -177,7 +177,7 @@
     color: var(--color-on-surface);
     padding: 1rem 2.5rem;
     border-radius: 9999px;
-    font-family: var(--font-headline);
+    /* removed local font-family */
     font-weight: 700;
     font-size: 0.875rem;
     text-transform: uppercase;
@@ -220,7 +220,7 @@
 }
 
 .licenses-options-title-col h2 {
-    font-family: var(--font-serif);
+    /* removed local font-family */
     font-size: 2.25rem;
     color: var(--color-on-background);
     margin: 0;
@@ -241,10 +241,10 @@
 
 .licenses-discount-tag {
     padding: 0.5rem 1rem;
-    background-color: #ffd700;
+    background-color: var(--accent-gold);
     border-radius: 9999px;
     font-size: 0.75rem;
-    font-family: var(--font-headline);
+    /* removed local font-family */
 }
 
 .licenses-grid {
@@ -297,20 +297,20 @@
 }
 
 .license-price {
-    font-family: var(--font-serif);
+    /* removed local font-family */
     font-size: 2.25rem;
     color: var(--color-primary);
 }
 
 .license-price-period {
     font-size: 0.75rem;
-    font-family: var(--font-body);
+    /* removed local font-family */
     color: var(--color-outline);
     margin-left: 0.5rem;
 }
 
 .license-card h3 {
-    font-family: var(--font-serif);
+    /* removed local font-family */
     font-size: 1.875rem;
     margin: 0;
     margin-bottom: 1rem;
@@ -356,7 +356,7 @@
     border: 1px solid var(--color-primary);
     background: transparent;
     color: var(--color-primary);
-    font-family: var(--font-headline);
+    /* removed local font-family */
     font-size: 0.875rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -394,7 +394,7 @@
 
 .license-price-large {
     font-size: 1.875rem;
-    font-family: var(--font-serif);
+    /* removed local font-family */
     color: var(--color-on-background);
     margin-bottom: 2rem;
 }
@@ -443,7 +443,7 @@
 .license-link {
     margin-top: 2rem;
     color: var(--color-primary);
-    font-family: var(--font-headline);
+    /* removed local font-family */
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -641,7 +641,7 @@
 
 .stats-number {
     color: white;
-    font-family: var(--font-serif);
+    /* removed local font-family */
     font-size: 2.25rem;
     margin-bottom: 0.5rem;
 }
@@ -662,7 +662,7 @@
 }
 
 .licenses-info-title {
-    font-family: var(--font-serif);
+    /* removed local font-family */
     font-size: 3rem;
     color: var(--color-on-background);
     line-height: 1.1;
@@ -690,7 +690,7 @@
     align-items: center;
     justify-content: center;
     color: var(--color-primary);
-    font-family: var(--font-serif);
+    /* removed local font-family */
     font-style: italic;
     font-size: 1.25rem;
 }
@@ -728,7 +728,7 @@
 }
 
 .licenses-cta-container h2 {
-    font-family: var(--font-serif);
+    /* removed local font-family */
     font-size: 3rem;
     color: var(--color-on-background);
     margin: 0;

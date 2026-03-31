@@ -11,7 +11,7 @@
   --bg-card-hover: #FFFFFF;
   --bg-elevated: #F1F5F9;
 
-  --primary: #00B4D8;
+  --primary: #006878;
   /* Slightly darker cyan for better contrast on light */
   --primary-dark: #0096C7;
   --primary-glow: rgba(0, 180, 216, 0.15);
@@ -28,6 +28,19 @@
   /* Medium gray */
   --text-subtle: #A0AEC0;
   /* Light gray */
+
+  /* Missing semantic colors from refactor extraction */
+  --global-white: #FFFFFF;
+  --global-black: #000000;
+  --primary-deep: #006876;
+  --primary-light: #BBE7F1;
+  --accent-gold: #D4AF37;
+  --accent-orange: #F47B25;
+  --accent-red: #FF3366;
+  --success-green: #10B981;
+  --bg-warning-light: #FFFBEB;
+  --bg-error-light: #FEF2F2;
+  --bg-success-light: #F0FDF4;
 
   /* Borders */
   --border-subtle: rgba(0, 0, 0, 0.06);

@@ -50,7 +50,7 @@
     background-position: center;
     overflow: hidden;
     cursor: pointer;
-    background-color: #f0f0f0;
+    background-color: var(--bg-elevated);
     /* Fallback */
 }
 
@@ -346,7 +346,7 @@
     font-size: 1.25rem;
     line-height: 1.8;
     color: var(--text-secondary);
-    font-family: 'Proxima Nova', system-ui, sans-serif;
+    /* removed local font-family */
     /* Example font */
 }
 

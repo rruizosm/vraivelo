@@ -5,24 +5,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 :root {
-    --berria-primary: #2b8cee;
-    --berria-bg-light: #f6f7f8;
-    --berria-bg-dark: #101922;
-    --berria-text-main: #111418;
-    --berria-text-white: #ffffff;
-    --berria-slate-900: #0f172a;
-    --berria-slate-800: #1e293b;
-    --berria-slate-700: #334155;
-    --berria-slate-600: #475569;
-    --berria-slate-500: #64748b;
-    --berria-slate-400: #94a3b8;
-    --berria-slate-300: #cbd5e1;
-    --berria-slate-200: #e2e8f0;
-    --berria-slate-100: #f1f5f9;
+    --berria-primary: var(--primary-dark);
+    --berria-bg-light: var(--bg-elevated);
+    --berria-bg-dark: var(--text-main);
+    --berria-text-main: var(--text-main);
+    --berria-text-white: var(--global-white);
+    --berria-slate-900: var(--text-main);
+    --berria-slate-800: var(--color-1e293b);
+    --berria-slate-700: var(--text-secondary);
+    --berria-slate-600: var(--text-secondary);
+    --berria-slate-500: var(--text-muted);
+    --berria-slate-400: var(--text-subtle);
+    --berria-slate-300: var(--border-light);
+    --berria-slate-200: var(--border-light);
+    --berria-slate-100: var(--bg-elevated);
 }
 
 .berria-page {
-    font-family: 'Lexend', sans-serif;
+    /* removed local font-family */
     color: var(--berria-text-main);
     background-color: var(--berria-bg-light);
     width: 100%;
@@ -448,7 +448,7 @@
 .berria-footer {
     width: 100%;
     background-color: white;
-    border-top: 1px solid #dbe0e6;
+    border-top: 1px solid var(--border-light);
     padding: 8rem 1.5rem;
 }
 

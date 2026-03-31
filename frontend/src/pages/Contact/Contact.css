@@ -176,7 +176,7 @@
     border-radius: 0.75rem;
     color: var(--text-main);
     transition: all 0.3s ease;
-    font-family: inherit;
+    /* removed local font-family */
     font-size: 1rem;
 }
 

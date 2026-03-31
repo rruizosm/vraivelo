@@ -38,7 +38,7 @@
 }
 
 .rs-hero-category {
-  font-family: var(--font-label);
+  /* removed local font-family */
   color: var(--color-primary);
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -47,7 +47,7 @@
 }
 
 .rs-hero-title {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 3.75rem; 
   font-weight: 700;
   color: var(--color-on-surface);
@@ -66,7 +66,7 @@
   font-size: 1.25rem; 
   max-width: 36rem; 
   line-height: 1.625; 
-  font-family: var(--font-body);
+  /* removed local font-family */
 }
 
 .rs-hero-img-col {
@@ -102,7 +102,7 @@
 }
 
 .rs-hero-badge-text {
-  font-family: var(--font-label);
+  /* removed local font-family */
   color: var(--color-on-tertiary-container);
   font-weight: 700;
   font-size: 0.875rem; 
@@ -144,7 +144,7 @@
 }
 
 .rs-bento-main-bg-text {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 3rem; 
   font-weight: 700;
   color: var(--color-primary);
@@ -158,7 +158,7 @@
 }
 
 .rs-bento-main-title {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 2.25rem; 
   font-weight: 700;
   color: var(--color-on-surface);
@@ -168,7 +168,7 @@
 .rs-bento-main-subtitle {
   color: var(--color-on-surface-variant);
   font-weight: 500;
-  font-family: var(--font-body);
+  /* removed local font-family */
 }
 
 .rs-bento-main-grid {
@@ -183,7 +183,7 @@
 }
 
 .rs-bento-list-title {
-  font-family: var(--font-label);
+  /* removed local font-family */
   font-size: 0.75rem; 
   font-weight: 700;
   text-transform: uppercase;
@@ -213,7 +213,7 @@
 
 .rs-bento-list-text {
   color: var(--color-on-surface);
-  font-family: var(--font-body);
+  /* removed local font-family */
 }
 
 .rs-bento-pricing {
@@ -239,7 +239,7 @@
 }
 
 .rs-bento-pricing-label {
-  font-family: var(--font-label);
+  /* removed local font-family */
   font-size: 0.75rem; 
   font-weight: 700;
   text-transform: uppercase;
@@ -249,7 +249,7 @@
 }
 
 .rs-bento-pricing-value {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 3.75rem; 
   font-weight: 700;
   color: var(--color-on-surface);
@@ -260,7 +260,7 @@
   color: var(--color-on-surface-variant);
   font-style: italic;
   margin-top: 0.5rem; 
-  font-family: var(--font-body);
+  /* removed local font-family */
 }
 
 .rs-btn-book {
@@ -269,7 +269,7 @@
   color: var(--color-on-primary);
   padding: 1rem 2.5rem; 
   border-radius: 9999px; 
-  font-family: var(--font-label);
+  /* removed local font-family */
   font-weight: 700;
   font-size: 1.125rem; 
   letter-spacing: 0.025em; 
@@ -301,7 +301,7 @@
 }
 
 .rs-sidebar-title {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 1.25rem; 
   font-weight: 700;
   margin-bottom: 1rem; 
@@ -311,7 +311,7 @@
   font-size: 0.875rem; 
   color: var(--color-on-surface-variant);
   line-height: 1.625; 
-  font-family: var(--font-body);
+  /* removed local font-family */
 }
 
 .rs-sidebar-card2 {
@@ -334,14 +334,14 @@
 
 .rs-sidebar-lead-val {
   font-weight: 700;
-  font-family: var(--font-body);
+  /* removed local font-family */
 }
 
 .rs-sidebar-lead-extra {
   font-size: 0.75rem; 
   color: var(--color-on-surface-variant);
   margin-top: 1rem; 
-  font-family: var(--font-body);
+  /* removed local font-family */
 }
 
 .rs-sidebar-img-container {
@@ -368,7 +368,7 @@
 }
 
 .rs-specs-title {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 1.875rem; 
   font-weight: 700;
   margin-bottom: 3rem; 
@@ -398,7 +398,7 @@
 }
 
 .rs-spec-step {
-  font-family: var(--font-label);
+  /* removed local font-family */
   font-size: 0.625rem; 
   text-transform: uppercase;
   font-weight: 700;
@@ -410,5 +410,5 @@
 .rs-spec-name {
   font-weight: 700;
   color: var(--color-on-surface);
-  font-family: var(--font-body);
+  /* removed local font-family */
 }

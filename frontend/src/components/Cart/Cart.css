@@ -178,7 +178,7 @@
 }
 
 .remove-item-btn:hover {
-    color: #ef4444;
+    color: var(--accent-red);
 }
 
 .cart-footer {

@@ -38,7 +38,7 @@
 }
 
 .suspensions-hero-category {
-  font-family: var(--font-label);
+  /* removed local font-family */
   color: var(--color-primary);
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -47,7 +47,7 @@
 }
 
 .suspensions-hero-title {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 3.75rem; 
   font-weight: 700;
   letter-spacing: -0.05em; 
@@ -60,7 +60,7 @@
 }
 
 .suspensions-hero-desc {
-  font-family: var(--font-body);
+  /* removed local font-family */
   font-size: 1.25rem; 
   color: var(--color-on-surface-variant);
   max-width: 32rem; 
@@ -113,14 +113,14 @@
 }
 
 .suspensions-glass-val {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 2.25rem; 
   font-weight: 700;
   color: var(--color-primary);
 }
 
 .suspensions-glass-desc {
-  font-family: var(--font-body);
+  /* removed local font-family */
   font-size: 0.875rem; 
   color: var(--color-on-surface-variant);
   margin-top: 0.5rem; 
@@ -162,14 +162,14 @@
 }
 
 .suspensions-card-title {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 1.875rem; 
   font-weight: 700;
   margin-bottom: 0.5rem; 
 }
 
 .suspensions-card-subtitle {
-  font-family: var(--font-label);
+  /* removed local font-family */
   color: var(--color-primary);
   font-weight: 500;
 }
@@ -179,14 +179,14 @@
 }
 
 .suspensions-card-price {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 2.25rem; 
   font-weight: 700;
 }
 
 .suspensions-card-price-label {
   font-size: 0.75rem; 
-  font-family: var(--font-label);
+  /* removed local font-family */
   color: var(--color-on-surface-variant);
   text-transform: uppercase;
   letter-spacing: 0.1em; 
@@ -213,7 +213,7 @@
 }
 
 .suspensions-card-feature-text {
-  font-family: var(--font-body);
+  /* removed local font-family */
   color: var(--color-on-surface-variant);
 }
 
@@ -235,7 +235,7 @@
   border-radius: 9999px; 
   border: 2px solid var(--color-primary);
   color: var(--color-primary);
-  font-family: var(--font-label);
+  /* removed local font-family */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em; 
@@ -271,7 +271,7 @@
 }
 
 .suspensions-card-badge-text {
-  font-family: var(--font-label);
+  /* removed local font-family */
   color: var(--color-on-tertiary-container);
   font-weight: 700;
   font-size: 0.75rem; 
@@ -295,7 +295,7 @@
   border-radius: 9999px; 
   background: linear-gradient(to right, var(--color-primary), var(--color-primary-container));
   color: var(--color-on-primary);
-  font-family: var(--font-label);
+  /* removed local font-family */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em; 
@@ -332,7 +332,7 @@
 }
 
 .suspensions-process-title {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 2.25rem; 
   font-weight: 700;
   line-height: 1.25; 
@@ -361,14 +361,14 @@
 }
 
 .suspensions-step-number {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   color: var(--color-primary-container);
   font-weight: 700;
   font-size: 1.25rem; 
 }
 
 .suspensions-step-title {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-weight: 700;
   font-size: 1.125rem; 
   margin-top: 0.5rem; 

@@ -13,7 +13,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    font-family: inherit;
+    /* removed local font-family */
     font-size: inherit;
     font-weight: 600;
     color: var(--text-secondary);

@@ -23,7 +23,7 @@
 }
 
 .success-icon {
-    color: #10b981;
+    color: var(--success-green);
     /* Green */
 }
 

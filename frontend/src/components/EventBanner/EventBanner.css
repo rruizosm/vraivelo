@@ -144,8 +144,8 @@
 }
 
 .btn-close:hover {
-    color: #ef4444;
+    color: var(--accent-red);
     /* red-500 */
-    background-color: #fef2f2;
+    background-color: var(--bg-error-light);
     /* red-50 */
 }

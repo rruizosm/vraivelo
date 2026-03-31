@@ -178,7 +178,7 @@
 .option-label {
     font-size: 0.9rem;
     font-weight: 700;
-    /* color: var(--text-main); */
+    color: var(--text-main);
     text-transform: uppercase;
 }
 

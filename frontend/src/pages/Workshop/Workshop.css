@@ -1,24 +1,24 @@
 .workshop-page {
-  --color-primary-container: #00acc1;
-  --color-primary: #006876;
-  --color-on-surface-variant: #3d494b;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #eff5f6;
-  --color-tertiary-container: #da8a36;
-  --color-on-tertiary-container: #502b00;
-  --color-secondary-container: #bbe7f1;
-  --color-on-secondary-container: #3f6971;
-  --color-on-primary: #ffffff;
-  --color-background: #f5fafc;
-  --color-on-surface: #171d1e;
+  --color-primary-container: var(--primary-dark);
+  --color-primary: var(--primary-deep);
+  --color-on-surface-variant: var(--text-secondary);
+  --color-surface-container-lowest: var(--global-white);
+  --color-surface-container-low: var(--bg-elevated);
+  --color-tertiary-container: var(--accent-gold);
+  --color-on-tertiary-container: var(--color-502b00);
+  --color-secondary-container: var(--primary-light);
+  --color-on-secondary-container: var(--primary-deep);
+  --color-on-primary: var(--global-white);
+  --color-background: var(--bg-elevated);
+  --color-on-surface: var(--text-main);
 
-  --font-headline: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-label: "Space Grotesk", sans-serif;
+  /* removed local font var */
+  /* removed local font var */
+  /* removed local font var */
 
   background-color: var(--color-background);
   color: var(--color-on-surface);
-  font-family: var(--font-body);
+  /* removed local font-family */
 }
 
 .workshop-page ::selection {
@@ -51,7 +51,7 @@
 }
 
 .workshop-title {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: -0.025em;
@@ -64,7 +64,7 @@
 
 .workshop-subtitle {
   color: var(--color-on-surface-variant);
-  font-family: var(--font-body);
+  /* removed local font-family */
   font-size: 1.125rem;
   line-height: 1.625;
 }
@@ -160,7 +160,7 @@
 
 .workshop-badge {
   font-size: 10px;
-  font-family: var(--font-label);
+  /* removed local font-family */
   font-weight: 700;
   padding: 0.25rem 0.5rem;
   border-radius: 9999px;
@@ -180,7 +180,7 @@
 }
 
 .workshop-card-title {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
@@ -188,7 +188,7 @@
 
 .workshop-card-desc {
   color: var(--color-on-surface-variant);
-  font-family: var(--font-body);
+  /* removed local font-family */
   font-size: 0.875rem;
   margin-bottom: 2rem;
   line-height: 1.625;
@@ -200,7 +200,7 @@
   color: var(--color-on-secondary-container);
   padding: 0.75rem 0;
   border-radius: 9999px;
-  font-family: var(--font-label);
+  /* removed local font-family */
   font-weight: 700;
   font-size: 0.875rem;
   transition: all 0.2s;
@@ -267,12 +267,12 @@
 }
 
 .workshop-membership-title {
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-size: 2.25rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-main);
   margin-bottom: 0.5rem;
-  border-left: 4px solid #1B818A;
+  border-left: 4px solid var(--primary-deep);
   padding-left: 1rem;
   line-height: 1.25;
 }
@@ -284,7 +284,7 @@
 }
 
 .workshop-membership-title-highlight {
-  color: #1B818A;
+  color: var(--primary-deep);
 }
 
 .workshop-membership-btn-container {
@@ -292,10 +292,10 @@
 }
 
 .workshop-membership-btn-main {
-  background: linear-gradient(135deg, #e6c27a 0%, #d4af37 100%);
-  color: #111827;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold) 100%);
+  color: var(--text-main);
   font-weight: 600;
-  font-family: var(--font-body);
+  /* removed local font-family */
   font-size: 1.125rem;
   padding: 1rem 2.5rem;
   border-radius: 9999px;
@@ -326,7 +326,7 @@
   left: 0;
   right: 0;
   height: 180px;
-  background-color: #1B818A;
+  background-color: var(--primary-deep);
   z-index: 0;
   transform: translateY(-50%);
   display: none;
@@ -379,7 +379,7 @@
 
 /* Shared Card Styles */
 .workshop-plan-card {
-  background-color: #ffffff;
+  background-color: var(--global-white);
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
@@ -391,11 +391,11 @@
 }
 
 .workshop-plan-basic {
-  border-top: 8px solid #d1d5db;
+  border-top: 8px solid var(--border-light);
 }
 
 .workshop-plan-pro {
-  border-top: 8px solid #D4AF37;
+  border-top: 8px solid var(--accent-gold);
 }
 
 @media (min-width: 1024px) {
@@ -413,10 +413,10 @@
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  background: linear-gradient(135deg, #e6c27a 0%, #d4af37 100%);
-  color: #111827;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold) 100%);
+  color: var(--text-main);
   font-size: 0.75rem;
-  font-family: var(--font-label);
+  /* removed local font-family */
   font-weight: 700;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
@@ -429,10 +429,10 @@
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  background-color: #1f2937;
-  color: #d1d5db;
+  background-color: var(--text-main);
+  color: var(--border-light);
   font-size: 0.75rem;
-  font-family: var(--font-label);
+  /* removed local font-family */
   font-weight: 700;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
@@ -446,8 +446,8 @@
 }
 
 .workshop-plan-header-elite {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--global-black);
+  color: var(--global-white);
   padding: 1.5rem 1.5rem 2rem 1.5rem;
   position: relative;
   border-top-left-radius: 1rem;
@@ -466,41 +466,41 @@
 }
 
 .workshop-plan-icon-basic {
-  background: linear-gradient(135deg, #f3f4f6 0%, #d1d5db 100%);
-  color: #374151;
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--border-light) 100%);
+  color: var(--text-secondary);
 }
 
 .workshop-plan-icon-pro {
-  background: linear-gradient(135deg, #e6c27a 0%, #d4af37 100%);
-  color: #111827;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold) 100%);
+  color: var(--text-main);
 }
 
 .workshop-plan-icon-elite {
-  background-color: #1f2937;
-  color: #ffffff;
+  background-color: var(--text-main);
+  color: var(--global-white);
 }
 
 .workshop-plan-name {
   font-size: 1.5rem;
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-weight: 700;
-  color: #111827;
+  color: var(--text-main);
   margin-bottom: 1rem;
 }
 
 .workshop-plan-name-elite {
-  color: #ffffff;
+  color: var(--global-white);
   margin-bottom: 0.5rem;
 }
 
 .workshop-plan-price-wrap {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border-light);
   padding-bottom: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
 .workshop-plan-price-wrap-elite {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border-light);
   padding-bottom: 1.5rem;
   margin-bottom: 1.5rem;
   padding-top: 1rem;
@@ -508,15 +508,15 @@
 
 .workshop-plan-price {
   font-size: 3rem;
-  font-family: var(--font-headline);
+  /* removed local font-family */
   font-weight: 700;
-  color: #111827;
+  color: var(--text-main);
 }
 
 .workshop-plan-period {
   font-size: 1.25rem;
-  font-family: var(--font-body);
-  color: #6b7280;
+  /* removed local font-family */
+  color: var(--text-muted);
 }
 
 .workshop-plan-body-elite {
@@ -524,7 +524,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-color: #ffffff;
+  background-color: var(--global-white);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
@@ -548,25 +548,25 @@
 .workshop-plan-feature-icon {
   width: 1.25rem;
   height: 1.25rem;
-  color: #1B818A;
+  color: var(--primary-deep);
   margin-right: 0.75rem;
   flex-shrink: 0;
   margin-top: 0.125rem;
 }
 
 .workshop-plan-feature-text {
-  color: #374151;
-  font-family: var(--font-body);
+  color: var(--text-secondary);
+  /* removed local font-family */
 }
 
 .workshop-plan-btn {
   width: 100%;
-  background-color: #1B818A;
-  color: #ffffff;
+  background-color: var(--primary-deep);
+  color: var(--global-white);
   padding: 0.75rem 0;
   border-radius: 9999px;
   font-weight: 500;
-  font-family: var(--font-body);
+  /* removed local font-family */
   transition: background-color 0.3s;
   display: flex;
   justify-content: center;
@@ -577,7 +577,7 @@
 }
 
 .workshop-plan-btn:hover {
-  background-color: #116168;
+  background-color: var(--primary-deep);
 }
 
 .workshop-plan-btn-icon {

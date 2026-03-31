@@ -98,23 +98,23 @@
 }
 
 .detail-icon-wrapper.blue {
-    background-color: #eff6ff;
+    background-color: var(--primary-light);
     /* blue-50 */
-    color: #3b82f6;
+    color: var(--primary-dark);
     /* blue-500 */
 }
 
 .detail-icon-wrapper.red {
-    background-color: #fef2f2;
+    background-color: var(--bg-error-light);
     /* red-50 */
-    color: #ef4444;
+    color: var(--accent-red);
     /* red-500 */
 }
 
 .detail-icon-wrapper.green {
-    background-color: #f0fdf4;
+    background-color: var(--bg-success-light);
     /* green-50 */
-    color: #22c55e;
+    color: var(--success-green);
     /* green-500 */
 }
 
@@ -141,7 +141,7 @@
 .price-free {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #16a34a;
+    color: var(--success-green);
     /* green-600 */
 }
 
@@ -155,9 +155,9 @@
 .snack-card {
     margin-bottom: 4rem;
     padding: 1.5rem;
-    background: linear-gradient(135deg, #fffbeb 0%, #fff7ed 100%);
+    background: linear-gradient(135deg, var(--bg-warning-light) 0%, var(--bg-warning-light) 100%);
     /* amber-50 to orange-50 */
-    border: 1px solid #fed7aa;
+    border: 1px solid var(--bg-warning-light);
     /* orange-200 */
     border-radius: 1rem;
     display: flex;
@@ -170,9 +170,9 @@
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 9999px;
-    background-color: #fff7ed;
+    background-color: var(--bg-warning-light);
     /* orange-50 */
-    border: 2px solid #fdba74;
+    border: 2px solid var(--bg-warning-light);
     /* orange-300 */
     display: flex;
     align-items: center;
@@ -187,13 +187,13 @@
 .snack-title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #9a3412;
+    color: var(--accent-orange);
     /* orange-800 */
     margin-bottom: 0.25rem;
 }
 
 .snack-text {
-    color: #c2410c;
+    color: var(--accent-orange);
     /* orange-700 */
     font-weight: 500;
 }
@@ -269,7 +269,7 @@
 .equipment-card-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom right, #111827, #1f2937);
+    background: linear-gradient(to bottom right, var(--text-main), var(--text-main));
     /* gray-900 to gray-800 */
     display: flex;
     align-items: center;
@@ -324,14 +324,14 @@
 }
 
 .equipment-text {
-    color: #d1d5db;
+    color: var(--border-light);
     /* gray-300 */
     margin-bottom: 1.5rem;
 }
 
 .equipment-note {
     font-size: 0.875rem;
-    color: #9ca3af;
+    color: var(--text-subtle);
     /* gray-400 */
     font-style: italic;
 }
@@ -390,6 +390,6 @@
 }
 
 .cta-button:hover {
-    background-color: #f9fafb;
+    background-color: var(--bg-elevated);
     /* gray-50 */
 }

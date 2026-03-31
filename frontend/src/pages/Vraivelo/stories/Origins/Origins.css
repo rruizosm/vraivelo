@@ -2,18 +2,18 @@
 
 /* Global / Shared Variables */
 :root {
-    --origins-primary: #00a9d4;
-    --origins-primary-dark: #008db1;
-    --origins-slate-900: #0f172a;
-    --origins-slate-800: #1e293b;
-    --origins-slate-600: #475569;
-    --origins-slate-500: #64748b;
-    --origins-slate-400: #94a3b8;
-    --origins-slate-50: #f8fafc;
+    --origins-primary: var(--primary);
+    --origins-primary-dark: var(--primary-dark);
+    --origins-slate-900: var(--text-main);
+    --origins-slate-800: var(--color-1e293b);
+    --origins-slate-600: var(--text-secondary);
+    --origins-slate-500: var(--text-muted);
+    --origins-slate-400: var(--text-subtle);
+    --origins-slate-50: var(--bg-elevated);
 }
 
 .origins-page {
-    font-family: 'Inter', sans-serif;
+    /* removed local font-family */
     /* Assuming Inter or system font */
     color: var(--origins-slate-900);
 }
@@ -440,7 +440,7 @@
     background-color: var(--origins-slate-50);
     padding: 0.75rem 1.25rem;
     border-radius: 9999px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-light);
 }
 
 .origins-feature-check {
@@ -453,7 +453,7 @@
 .origins-feature-label {
     font-size: 0.875rem;
     font-weight: 600;
-    color: #334155;
+    color: var(--text-secondary);
 }
 
 /* --- CTA Section --- */
@@ -538,7 +538,7 @@
 
 .origins-btn-secondary {
     background-color: white;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-light);
     color: var(--origins-slate-800);
     padding: 1rem 2.5rem;
     border-radius: 9999px;
