@@ -22,7 +22,6 @@ const Workshop = () => {
                                 <div className="workshop-header-bar"></div>
                                 <h1 className="workshop-title">
                                     {t('workshop.discipline.title_1')} <br />
-                                    <span>{t('workshop.discipline.title_2')}</span>
                                 </h1>
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', marginTop: '1rem', marginBottom: '1rem' }}>
@@ -137,7 +136,6 @@ const Workshop = () => {
                     <div className="workshop-membership-hero">
                         <div className="workshop-membership-title-container">
                             <h2 className="workshop-membership-title">
-                                {t('workshop.membership.title_1')}<br />
                                 <span className="workshop-membership-title-highlight">{t('workshop.membership.title_2')}</span>
                             </h2>
                         </div>
@@ -216,6 +214,10 @@ const Workshop = () => {
                                         <li className="workshop-plan-feature">
                                             <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
                                             <span className="workshop-plan-feature-text">{t('workshop.membership.plans.pro.f5')}</span>
+                                        </li>
+                                        <li className="workshop-plan-feature">
+                                            <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
+                                            <span className="workshop-plan-feature-text">{t('workshop.membership.plans.pro.f6')}</span>
                                         </li>
                                     </ul>
                                     <button className="workshop-plan-btn" onClick={() => navigate('/contact', { state: { subject: 'workshop', service: 'Membership: Pro Performance' } })}>

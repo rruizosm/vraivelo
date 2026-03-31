@@ -82,7 +82,7 @@
     position: relative;
     z-index: 10;
     text-align: center;
-    padding: 8rem 1rem 0;
+    padding: 16rem 1rem 0;
     margin: 0 auto;
     max-width: var(--container-width);
 }
@@ -102,8 +102,8 @@
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.1em;
-    color: black;
-    background-color: rgba(0, 180, 216, 0.3);
+    color: white;
+    background-color: rgba(0, 180, 216, 0.6);
     border-radius: 9999px;
     border: 1px solid rgba(0, 180, 216, 0.2);
 }
@@ -128,7 +128,7 @@
 }
 
 .hero-subtitle {
-    font-size: 1.125rem;
+    font-size: 2rem;
     color: white;
     max-width: 42rem;
     margin: 0 auto 3rem;
@@ -137,12 +137,12 @@
 
 @media (min-width: 768px) {
     .hero-subtitle {
-        font-size: 1.25rem;
+        font-size: 1.4rem;
     }
 }
 
 .highlight-primary {
-    color: var(--primary);
+    color: var(--accent-gold);
     font-weight: 600;
 }
 
@@ -183,7 +183,7 @@
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 2rem;
-    color: var(--primary-dark);
+    color: white;
     font-weight: 700;
     border-radius: 9999px;
     border: 2px solid var(--primary);

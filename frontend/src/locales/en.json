@@ -147,9 +147,8 @@
         "title_highlight": "Services",
         "subtitle": "David treats every bike as if it were their own. Precision, care, and speed — every time.",
         "discipline": {
-            "title_1": "Select Your",
-            "title_2": "Service Discipline",
-            "subtitle": "Choose a specialized workshop category. Our mechanics are certified for high-performance tuning across all major mountain and road bicycle components.",
+            "title_1": "Select your service",
+            "subtitle": "Choose a specialized service from the shop. David is certified to perform high-performance tune-ups on all major components of mountain, gravel, road, and electric bikes.",
             "become_member": "Become a vraivelo Member",
             "view_services": "View Services",
             "cards": {
@@ -160,12 +159,12 @@
                 },
                 "suspensions": {
                     "badge": "Advanced",
-                    "title": "Suspensions",
+                    "title": "Fork Maintenance",
                     "desc": "Lower leg service, air spring volume tuning, and full damper rebuilds for Fox, RockShox, and Öhlins forks."
                 },
                 "rear_shock": {
                     "badge": "Expert",
-                    "title": "Rear Shock",
+                    "title": "Shock Absorber Maintenance",
                     "desc": "Air sleeve maintenance, nitrogen charging, and bespoke shim stack re-valving for absolute rear-end traction control."
                 }
             }

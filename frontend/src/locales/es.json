@@ -147,9 +147,8 @@
         "title_highlight": "Taller",
         "subtitle": "David trata cada bicicleta como si fuera suya. Precisión, cuidado y velocidad — siempre.",
         "discipline": {
-            "title_1": "Selecciona tu",
-            "title_2": "Disciplina de Servicio",
-            "subtitle": "Elige una categoría de taller especializada. Nuestros mecánicos están certificados para el ajuste de alto rendimiento en todos los principales componentes de bicicletas de montaña y carretera.",
+            "title_1": "Selecciona tu servicio",
+            "subtitle": "Elige un servicio especializado del taller. David está certificado para realizar puestas a punto de alto rendimiento en todos los componentes principales de bicicletas de montaña, de gravel, de carretera y eléctricas.",
             "become_member": "Hazte Miembro vraivelo",
             "view_services": "Ver Servicios",
             "cards": {
@@ -160,12 +159,12 @@
                 },
                 "suspensions": {
                     "badge": "Avanzado",
-                    "title": "Suspensiones",
+                    "title": "Mantenimiento Horquillas",
                     "desc": "Mantenimiento de botellas, ajuste de volumen de aire y reconstrucciones completas de cartuchos para horquillas Fox, RockShox y Öhlins."
                 },
                 "rear_shock": {
                     "badge": "Experto",
-                    "title": "Amortiguador Trasero",
+                    "title": "Mantenimiento Amortiguadores",
                     "desc": "Mantenimiento de cámara de aire, carga de nitrógeno y re-valvulado de sistemas a medida para un control absoluto de la tracción trasera."
                 }
             }
@@ -178,7 +177,7 @@
             "premium": "Premium",
             "plans": {
                 "peloton": {
-                    "name": "Piloto de Pelotón",
+                    "name": "Pelotón Rider",
                     "price": "69€",
                     "period": "/año",
                     "f1": "Ajustes básicos gratuitos",
@@ -187,7 +186,7 @@
                     "f4": "Acceso a eventos oficiales y grupo privado"
                 },
                 "pro": {
-                    "name": "Rendimiento Pro",
+                    "name": "Pro Performance",
                     "price": "129€",
                     "period": "/año",
                     "f1": "1 inspección completa anual GRATIS (valor superior a 60€)",
@@ -198,7 +197,7 @@
                     "f6": "Descuentos exclusivos para serguro de bicicleta"
                 },
                 "elite": {
-                    "name": "Fábrica Élite",
+                    "name": "Elite Factory",
                     "price": "249€",
                     "period": "/año",
                     "f1": "2 inspecciones completas anuales GRATIS",
