@@ -10,10 +10,35 @@ import './Navbar.css';
 const Navbar = () => {
     const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
     const location = useLocation();
     const { toggleCart, cartCount, isCartEnabled } = useCart();
 
-    useEffect(() => setIsOpen(false), [location]);
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            
+            // Show if scrolling up OR at the very top (within threshold)
+            if (currentScrollY < lastScrollY || currentScrollY < 100) {
+                setIsVisible(true);
+            } 
+            // Hide if scrolling down AND past the top threshold
+            else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                setIsVisible(false);
+            }
+            
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
+
+    useEffect(() => {
+        setIsOpen(false);
+        setIsVisible(true); // Ensure visible on route change
+    }, [location]);
 
     const navLinks = [
         { name: t('navbar.home'), path: '/' },
@@ -26,9 +51,11 @@ const Navbar = () => {
     return (
         <motion.nav
             initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="navbar scrolled"
+            animate={{ 
+                y: isVisible ? 0 : -100,
+                transition: { duration: 0.3 }
+            }}
+            className={`navbar scrolled ${isVisible ? 'visible' : 'hidden'}`}
         >
             <div className="container navbar-container">
                 {/* Logo */}

@@ -1,0 +1,10 @@
+﻿frontend/public/david_vraivelo/taller.png
+frontend/public/stories/federacio.png
+frontend/public/stories/licenses.jpg
+frontend/public/stories/licenses_story.JPG
+frontend/src/data/stories.js
+frontend/src/pages/Events/EventFormation.jsx
+frontend/src/pages/Vraivelo/StoryDetail.jsx
+frontend/src/pages/Vraivelo/Vraivelo.jsx
+frontend/src/pages/Vraivelo/stories/Licenses/Licenses.css
+frontend/src/pages/Vraivelo/stories/Licenses/Licenses.jsx

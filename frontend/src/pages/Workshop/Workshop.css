@@ -28,45 +28,26 @@
 .workshop-main {
   max-width: 80rem;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: clamp(4rem, 10vh, 6rem) 1.5rem;
 }
 
 .workshop-header {
-  margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
   max-width: 42rem;
 }
 
-.workshop-header-top {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.workshop-header-bar {
-  width: 0.25rem;
-  height: 3rem;
-  background-color: var(--color-primary-container);
-
-}
-
 .workshop-title {
-  /* removed local font-family */
-  font-size: 3rem;
+  font-size: clamp(2.25rem, 8vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.25;
   color: var(--primary);
 }
 
-.workshop-title span {
-  color: var(--color-primary);
-}
-
 .workshop-grid {
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
@@ -85,11 +66,8 @@
   transition: all 0.3s;
 }
 
-.workshop-card:hover {
-  transform: translateY(-0.5rem);
-}
-
-.workshop-card-offset-1 {
+.workshop-card-offset-1,
+.workshop-card-offset-2 {
   margin-top: 0;
 }
 
@@ -97,13 +75,6 @@
   .workshop-card-offset-1 {
     margin-top: 2rem;
   }
-}
-
-.workshop-card-offset-2 {
-  margin-top: 0;
-}
-
-@media (min-width: 768px) {
   .workshop-card-offset-2 {
     margin-top: 4rem;
   }

@@ -134,9 +134,24 @@ button {
 
 /* Container */
 .container {
+  width: 100%;
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 clamp(1rem, 4vw, 3rem);
+  padding: 0 clamp(1rem, 5vw, 3rem);
+}
+
+/* Global Responsive Fixes */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  /* Typography scale down for mobile */
+  h1 { font-size: clamp(2.25rem, 10vw, 3.5rem); }
+  h2 { font-size: clamp(1.75rem, 8vw, 2.5rem); }
+  h3 { font-size: clamp(1.25rem, 6vw, 1.75rem); }
 }
 
 /* Utility Classes */
