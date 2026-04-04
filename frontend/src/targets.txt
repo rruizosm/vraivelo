@@ -1,0 +1,6 @@
+C:\Users\ruben\OneDrive\Escritorio\Vraivelo\frontend\src\pages\Vraivelo\stories\Calendar\Calendar.jsx
+C:\Users\ruben\OneDrive\Escritorio\Vraivelo\frontend\src\pages\Vraivelo\stories\Licenses\Licenses.jsx
+C:\Users\ruben\OneDrive\Escritorio\Vraivelo\frontend\src\pages\Vraivelo\stories\Origins\Origins.jsx
+C:\Users\ruben\OneDrive\Escritorio\Vraivelo\frontend\src\pages\Vraivelo\stories\StravaTeam\StravaTeam.jsx
+C:\Users\ruben\OneDrive\Escritorio\Vraivelo\frontend\src\pages\Vraivelo\stories\VraiveloBerria\VraiveloBerria.jsx
+C:\Users\ruben\OneDrive\Escritorio\Vraivelo\frontend\src\pages\Vraivelo\stories\VraiveloWeekend\VraiveloWeekend.jsx

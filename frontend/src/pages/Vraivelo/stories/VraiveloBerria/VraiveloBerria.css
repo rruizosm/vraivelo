@@ -71,7 +71,7 @@
 .berria-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4), var(--berria-bg-light));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.4) 80%, var(--berria-bg-light) 100%);
 }
 
 .berria-hero-content {
@@ -117,7 +117,7 @@
     display: block;
     width: fit-content;
     margin: 0 auto 1.5rem auto;
-    color: var(--berria-primary);
+    color: white;
     font-weight: 700;
     letter-spacing: 0.4em;
     text-transform: uppercase;

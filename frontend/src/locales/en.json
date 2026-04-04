@@ -4,7 +4,7 @@
         "workshop": "Workshop",
         "bikes": "Bikes",
         "other_products": "Other Products",
-        "vraivelo": "Vraivelo",
+        "vraivelo": "Vraivēlo",
         "contact": "Contact",
         "book_service": "Book Service"
     },
@@ -15,11 +15,12 @@
         }
     },
     "vraivelo": {
+        "read_story": "Read Story",
         "title": "Our Story",
-        "subtitle": "Born from a passion for cycling and craftsmanship, Vraivélo is more than just a bike shop.",
+        "subtitle": "Born from a passion for cycling and craftsmanship, Vraivēlo is more than just a bike shop.",
         "how_it_started": {
             "title": "How It Started",
-            "text": "Vraivélo began in a small garage with a simple idea: that every bicycle tells a story. What started as a weekend hobby of restoring vintage frames quickly evolved into a full-scale dedication to the art of cycling. We realized that there was a gap between modern mass-produced bikes and the soulful machines of the past. Our journey is about bridging that gap, bringing artisanal care to modern performance."
+            "text": "Vraivēlo began in a small garage with a simple idea: that every bicycle tells a story. What started as a weekend hobby of restoring vintage frames quickly evolved into a full-scale dedication to the art of cycling. We realized that there was a gap between modern mass-produced bikes and the soulful machines of the past. Our journey is about bridging that gap, bringing artisanal care to modern performance."
         },
         "who_we_are": {
             "title": "Who We Are",
@@ -27,7 +28,7 @@
         },
         "what_we_do": {
             "title": "What We Do",
-            "text": "At Vraivélo, we specialize in breathing new life into classic frames and building custom bicycles that turn heads. From full vintage restorations to modern custom builds, we handle every detail with precision. We also offer expert maintenance services, ensuring your ride is always smooth and safe. We believe in sustainable cycling, reusing quality components where possible, and promoting a cycling culture that values quality over quantity."
+            "text": "At Vraivēlo, we specialize in breathing new life into classic frames and building custom bicycles that turn heads. From full vintage restorations to modern custom builds, we handle every detail with precision. We also offer expert maintenance services, ensuring your ride is always smooth and safe. We believe in sustainable cycling, reusing quality components where possible, and promoting a cycling culture that values quality over quantity."
         },
         "team": {
             "ruben_role": "Founder & Lead Mechanic",
@@ -40,6 +41,8 @@
         "stock": "Stock",
         "sold": "Sold",
         "add_to_cart": "Add to Cart",
+        "available_sizes": "AVAILABLE SIZES",
+        "available_colors": "AVAILABLE COLORS",
         "contact_us": "Contact Us",
         "back_to_shop": "Back to Shop",
         "back_to_other_products": "Back to Other Products",
@@ -89,7 +92,7 @@
         },
         "values": {
             "title": "Why",
-            "title_highlight": "Vraivelo?",
+            "title_highlight": "Vraivēlo?",
             "subtitle": "We combine expert craftsmanship with genuine passion for cycling.",
             "cards": {
                 "workshop": {
@@ -101,7 +104,7 @@
                     "desc": "Curated collection of the world's finest bicycles and professional-grade gear."
                 },
                 "guarantee": {
-                    "title": "Vraivelo Guarantee",
+                    "title": "Vraivēlo Guarantee",
                     "desc": "We stand behind every service and sale. Quality and satisfaction, always."
                 }
             }
@@ -149,12 +152,12 @@
         "discipline": {
             "title_1": "Select your service",
             "subtitle": "Choose a specialized service from the shop. David is certified to perform high-performance tune-ups on all major components of mountain, gravel, road, and electric bikes.",
-            "become_member": "Become a vraivelo Member",
+            "become_member": "Become a Vraivēlo Member",
             "view_services": "View Services",
             "cards": {
                 "mechanics": {
                     "badge": "Essential",
-                    "title": "Tune-up and Mechanics",
+                    "title": "Tune-up and Maintenance",
                     "desc": "Comprehensive drivetrain cleaning, bolt torque verification, and precision shifting adjustments for daily performance."
                 },
                 "suspensions": {
@@ -170,7 +173,7 @@
             }
         },
         "membership": {
-            "title_1": "vraivēlo",
+            "title_1": "Vraivēlo",
             "title_2": "Membership Plans",
             "join_now": "Join Now",
             "recommended": "Recommended",
@@ -293,6 +296,167 @@
         ],
         "book_now": "Book Now",
         "most_popular": "MOST POPULAR",
+        "suspensions_page": {
+            "hero": {
+                "category": "Mechanical Excellence",
+                "title": "Fork Maintenance",
+                "desc": "Elevating your ride through clinical precision. Our specialized fork workshop focuses on hydraulic integrity, friction reduction, and bespoke tuning for elite performance."
+            },
+            "services": {
+                "basic": {
+                    "title": "Basic Maintenance",
+                    "subtitle": "Standard Interval Service",
+                    "features": [
+                        "General external cleaning & inspection",
+                        "Lower leg fluid replacement",
+                        "Foam ring saturation",
+                        "Full damper bleed & rebuild"
+                    ],
+                    "btn": "Select Plan"
+                },
+                "premium": {
+                    "badge": "Most Popular",
+                    "title": "Full Maintenance",
+                    "subtitle": "Annual Performance Rebuild",
+                    "features": [
+                        "Complete ultrasonic cleaning",
+                        "Full seal & wiper replacement",
+                        "Hydraulic damper rebuild & vacuum bleed",
+                        "Bushing play calibration",
+                        "Nitrogen charging (if applicable)"
+                    ],
+                    "btn": "Book Full Service"
+                }
+            },
+            "process": {
+                "title": "The Precision <br/> Protocol.",
+                "steps": {
+                    "1": {
+                        "title": "Diagnostic Intake",
+                        "desc": "We measure sag, rebound speeds, and compression damping before any work begins to establish a performance baseline."
+                    },
+                    "2": {
+                        "title": "Surgical Clean",
+                        "desc": "Components are stripped and placed in an ultrasonic bath to remove micro-particulates that standard cleaning misses."
+                    },
+                    "3": {
+                        "title": "Fluid Dynamics",
+                        "desc": "We use premium Motorex or Maxima oils, precisely measured to manufacturer specs for consistent thermal stability."
+                    },
+                    "4": {
+                        "title": "Dyno Testing",
+                        "desc": "Every rebuilt unit is tested on our hand-operated dyno to ensure clicker settings and lockout functions are perfect."
+                    }
+                }
+            },
+            "glass_panel": {
+                "val": "0.01mm",
+                "desc": "The tolerance we maintain for air-spring piston alignment."
+            }
+        },
+        "rear_shock_page": {
+            "hero": {
+                "category": "Suspension Excellence",
+                "title": "Rear Shock <br/>Engineering.",
+                "desc": "Precision tuning for high-performance damping. We treat every shock absorber as a unique mechanical masterpiece, restoring factory performance through clinical maintenance.",
+                "badge": "Certified Workshop"
+            },
+            "bento": {
+                "main": {
+                    "bg_text": "01",
+                    "title": "Shock Maintenance",
+                    "subtitle": "Standard Interval 50h/100h Service",
+                    "list_title": "Service Scope",
+                    "features": [
+                        "Complete clinical cleaning of all internal damping systems",
+                        "Full O-ring and dynamic seal replacement with premium kits",
+                        "Vacuum-bled oil replacement for cavitation-free performance",
+                        "Bushings inspection and tolerance verification"
+                    ],
+                    "pricing_label": "Total Investment",
+                    "pricing_extra": "+ Parts (Seal Kits approx. 25€)",
+                    "btn": "Book Maintenance"
+                },
+                "sidebar": {
+                    "guarantee": {
+                        "title": "Precision Guarantee",
+                        "desc": "Every shock serviced at the Atelier undergoes a 24-hour nitrogen pressure test and dyno-simulation to ensure no leaks and consistent damping curves."
+                    },
+                    "lead_time": {
+                        "title": "Lead Time",
+                        "val": "48 - 72 Hours",
+                        "extra": "Express same-day service available for +40€."
+                    }
+                }
+            },
+            "specs": {
+                "title": "Service Matrix",
+                "steps": {
+                    "1": {
+                        "step": "Step 01",
+                        "name": "Degrease & Strip"
+                    },
+                    "2": {
+                        "step": "Step 02",
+                        "name": "Internal Inspection"
+                    },
+                    "3": {
+                        "step": "Step 03",
+                        "name": "IFP Charging"
+                    },
+                    "4": {
+                        "step": "Step 04",
+                        "name": "Torque Calibration"
+                    }
+                }
+            }
+        },
+        "mechanics_page": {
+            "hero": {
+                "category": "Mechanical Excellence",
+                "title": "Tune-ups <br />& Maintenance",
+                "desc": "Our workshop specializes in high-performance maintenance. We treat every bicycle as a masterpiece of engineering, ensuring every gear shift is silent and every brake pull is surgical."
+            },
+            "services": {
+                "basic": {
+                    "title": "Basic Tune-up",
+                    "subtitle": "Routine maintenance for daily riders.",
+                    "features": [
+                        "Drivetrain indexing & adjustment",
+                        "Brake safety inspection & alignment",
+                        "Frame wipe-down & inspection",
+                        "Tire pressure & wear check"
+                    ],
+                    "btn": "Book Basic Service"
+                },
+                "premium": {
+                    "badge": "Most Popular",
+                    "title": "Full Overhaul",
+                    "subtitle": "Complete disassembly & restoration.",
+                    "features": [
+                        "Full drivetrain deep clean (Sonic bath)",
+                        "Bottom bracket & headset service",
+                        "Wheel truing (Precision radial/lateral)",
+                        "Replacement of all inner cables",
+                        "Full component torque verification"
+                    ],
+                    "btn": "Book Full Overhaul"
+                }
+            },
+            "specs": {
+                "title": "Engineering is in the details.",
+                "desc": "Our workshop uses professional-grade torque wrenches, ultrasonic cleaners, and genuine manufacturers' parts to ensure your warranty remains intact and your performance maximized.",
+                "tolerance": "Tolerance",
+                "turnaround": "Turnaround",
+                "certified": "Certified",
+                "parts": "Parts"
+            },
+            "cta": {
+                "title": "Ready to Ride?",
+                "subtitle": "Schedule your atelier visit today.",
+                "btn": "Check Availability"
+            }
+        },
         "custom": {
             "title": "Need Something Custom?",
             "text": "We offer bespoke services for unique builds, vintage restorations, and competition preparation. Contact us for a personalized quote.",
@@ -335,6 +499,8 @@
                 "formation": "Mechanics Formation",
                 "bikes": "Bike Inquiry",
                 "parts": "Parts & Accessories",
+                "member": "Vraivēlo Member",
+                "licenses": "Cycling Licenses",
                 "event": "Events",
                 "other": "Other"
             },
@@ -346,17 +512,18 @@
         }
     },
     "footer": {
-        "brand_desc": "Premium cycling workshop and retailer. Official partner of Giant, Berria & MMR. Elevate your ride.",
+        "brand_desc": "Premium cycling workshop and retailer. Official partner of Giant & Berria. Elevate your ride.",
         "explore": "Explore",
-        "workshop_services": "Workshop Services",
-        "new_bikes": "New Bikes",
-        "about_us": "About Us",
+        "workshop_services": "Workshop",
+        "new_bikes": "Bikes",
+        "other_products": "Other Products",
+        "vraivelo": "Vraivēlo",
         "visit_us": "Visit Us",
         "follow_us": "Follow Us",
         "hours_label": "Monday to Friday:",
         "hours_morning": "9:00 - 13:00",
         "hours_afternoon": "16:00 - 19:00",
-        "copyright": "© {{year}} Vraivelo. All rights reserved."
+        "copyright": "© {{year}} Vraivēlo. All rights reserved."
     },
     "cart": {
         "title": "Your Cart",
@@ -424,7 +591,7 @@
             "updated_desc": "Get notifications for upcoming social rides, coffee spins, and events directly in your feed."
         },
         "card": {
-            "club_name": "Vraivelo Club",
+            "club_name": "Vraivēlo Club",
             "verified": "Verified",
             "follow": "Follow",
             "leaderboard": "Leaderboard",
@@ -435,7 +602,7 @@
             "watermark": "RIDES",
             "title_prefix": "Social Ride",
             "title_highlight": "Gallery",
-            "subtitle": "Candid moments from our weekend adventures. From the first espresso to the final sprint, this is what Vraivelo is all about.",
+            "subtitle": "Candid moments from our weekend adventures. From the first espresso to the final sprint, this is what Vraivēlo is all about.",
             "community": "Community",
             "post_ride_title": "Post-Ride Cheers",
             "post_ride_desc": "The best part of every ride is the story shared afterwards over a cold drink."
@@ -446,7 +613,7 @@
             "desc": "Whether you're training for a gran fondo or just looking for Sunday coffee buddies, there's a spot in the peloton for you.",
             "join_club": "Join Club on Strava",
             "follow_ig": "Follow on Instagram",
-            "copyright": "© 2024 Vraivelo Cycling Club."
+            "copyright": "© 2024 Vraivēlo Cycling Club."
         }
     },
     "event_formation": {
@@ -485,36 +652,300 @@
     },
     "seo": {
         "home": {
-            "title": "Vraivelo — Premium Cycling Workshop & Bike Shop",
-            "description": "Premium cycling workshop and official Giant, Berria & MMR dealer. Expert bike repairs, custom builds, and curated gear in one place."
+            "title": "Vraivēlo — Premium Cycling Workshop & Bike Shop",
+            "description": "Premium cycling workshop and official Giant & Berria dealer. Expert bike repairs, custom builds, and curated gear in one place."
         },
         "shop": {
-            "title": "Shop Bikes — Vraivelo",
-            "description": "Browse our curated selection of road, MTB, gravel, e-bike, and kids' bikes from Giant, Berria, MMR & Liv."
+            "title": "Shop Bikes — Vraivēlo",
+            "description": "Browse our curated selection of road, MTB, gravel, e-bike, and kids' bikes from Giant & Berria."
         },
         "other_products": {
-            "title": "Parts & Accessories — Vraivelo",
-            "description": "Shop cycling accessories, components, clothing, and wheels from top brands at Vraivelo."
+            "title": "Parts & Accessories — Vraivēlo",
+            "description": "Shop cycling accessories, components, clothing, and wheels from top brands at Vraivēlo."
         },
         "workshop": {
-            "title": "Workshop Services — Vraivelo",
+            "title": "Workshop Services — Vraivēlo",
             "description": "Professional bike repair, tune-ups, suspension maintenance, and custom builds by certified mechanics."
         },
         "contact": {
-            "title": "Contact Us — Vraivelo",
-            "description": "Get in touch with Vraivelo. Visit our shop, call us, or send a message for bike inquiries and service bookings."
+            "title": "Contact Us — Vraivēlo",
+            "description": "Get in touch with Vraivēlo. Visit our shop, call us, or send a message for bike inquiries and service bookings."
         },
         "vraivelo": {
-            "title": "Our Story — Vraivelo",
-            "description": "Discover the story behind Vraivelo — born from a passion for cycling and craftsmanship."
+            "title": "Our Story — Vraivēlo",
+            "description": "Discover the story behind Vraivēlo — born from a passion for cycling and craftsmanship."
         },
         "event_formation": {
-            "title": "Mechanics Workshop — Vraivelo",
+            "title": "Mechanics Workshop — Vraivēlo",
             "description": "Join our hands-on bicycle mechanics workshop. Learn essential bike maintenance skills."
         },
         "product_detail": {
-            "title": "{{name}} — Vraivelo",
-            "description": "Explore the {{name}} — specifications, sizes, and pricing. Available at Vraivelo."
+            "title": "{{name}} — Vraivēlo",
+            "description": "Explore the {{name}} — specifications, sizes, and pricing. Available at Vraivēlo."
+        }
+    },
+    "origins": {
+        "hero": {
+            "back": "Back to stories",
+            "title": "ORIGINS",
+            "desc": "From competitive racing to precision mechanics. The story behind the workshop."
+        },
+        "intro": {
+            "title": "<vraiWhite>Vraivēlo</vraiWhite> was born from a lifetime spent on the bicycle.",
+            "text": "David, founder of the workshop, grew up in Badalona and started pedaling barely three years later. What began as a childhood passion turned into a competitive career in mountain biking and later road cycling, moving through sub23 and elite categories to become part of a professional team."
+        },
+        "competitive": {
+            "label": "The Competitive Era",
+            "heading": "Pushing Limits on the Track",
+            "text": "Competitive cycling demands more than just physical endurance; it requires a deep understanding of the machine. Years of pushing bikes to their limits in grueling conditions taught David the crucial relationship between rider and equipment.",
+            "quote": "\"Every adjustment, every repair, and every recommendation comes from real experience in training, races, and long hours on the bike.\"",
+            "author": "— David, Founder"
+        },
+        "quote_banner": {
+            "title": "\"Having lived cycling from within marked the difference.\""
+        },
+        "building": {
+            "label": "A New Chapter",
+            "heading": "Bridging the Gap",
+            "text_1": "After closing that sporting chapter, the bicycle remained the center of everything, this time from the technical side. Years of experience in workshops and specialized stores allowed for the detection of something clear: there was a lack of real attention to the cyclist and their bicycle.",
+            "text_2": "In December 2023, in Girona, <vrai>Vraivēlo</vrai> was born as a response to that need. A workshop created to care for bicycles with the same respect and demand with which one trains to compete.",
+            "features": [
+                "Expert Mechanics",
+                "Pro-level Care",
+                "Girona Based"
+            ]
+        },
+        "bridging": {
+            "label": "A New Challenge",
+            "heading": "Vraivēlo Grows",
+            "text_1": "Only a year after opening our doors, <vrai>Vraivēlo</vrai> experienced unstoppable growth. The recognition of our hard work and the high demand meant that our original shop was becoming too small for the growing community that placed its trust in us. We knew we had to find a space that truly lived up to that trust.",
+            "text_2": "This led us to our new location at <bold>Carrer Pau Vila i Dinarès 10</bold>. This move marked the beginning of an exciting new chapter: while continuing to provide a high-quality workshop, we evolved to offer our clients the very best in bicycles, components, and cycling apparel.",
+            "text_3": "This project fuels our passion to keep working and delivering the excellence that defines <vrai>Vraivēlo</vrai>. With this new stage come new sporting and professional challenges, all driven by the same goal: to offer our customers nothing but the best.",
+            "features": [
+                "Expert Mechanics",
+                "Pro-level Care",
+                "Girona Based",
+                "Bike Shop"
+            ],
+            "badge": "Specialized Workshop"
+        }
+    },
+    "calendar": {
+        "hero": {
+            "title": "Calendar 2026",
+            "desc": "Join the Vraivēlo community on the road and gravel. A curated journey through breathtaking landscapes, designed for cyclists who value precision, effort, and camaraderie.",
+            "legend": {
+                "road": "Road",
+                "gravel": "Gravel",
+                "workshop": "Workshop",
+                "weekend": "Vraivēlo Weekend"
+            }
+        },
+        "events_title": "Upcoming Gatherings",
+        "btn": "I want to know more!",
+        "months": {
+            "Abril": "April",
+            "Mayo": "May",
+            "Junio": "June",
+            "Julio": "July",
+            "Agosto": "August",
+            "Septiembre": "September",
+            "Octubre": "October",
+            "Diciembre": "December"
+        },
+        "eventsData": {
+            "0": {
+                "type": "Road",
+                "title": "Road Social Ride",
+                "desc": "A morning spin through the classic climbs. Controlled pace, mandatory coffee finish."
+            },
+            "1": {
+                "type": "Workshop",
+                "title": "Basic Mechanic Training",
+                "desc": "Learn fundamental adjustments and roadside puncture repair with our expert mechanics."
+            },
+            "2": {
+                "type": "Gravel",
+                "title": "Gravel Social Ride",
+                "desc": "Explore backroads and forest trails on our monthly gravel excursion."
+            },
+            "3": {
+                "type": "Weekend",
+                "title": "Vraivēlo Weekend",
+                "desc": "Two days of epic riding with a boutique hotel stay and curated local gastronomy."
+            },
+            "4": {
+                "type": "Gravel",
+                "title": "Gravel Social Ride",
+                "desc": "Explore backroads and forest trails on our monthly gravel excursion."
+            },
+            "5": {
+                "type": "Road",
+                "title": "Road Social Ride",
+                "desc": "A morning spin through the classic climbs. Controlled pace, mandatory coffee finish."
+            },
+            "6": {
+                "type": "Weekend",
+                "title": "Vraivēlo Weekend",
+                "desc": "Two days of epic riding with a boutique hotel stay and curated local gastronomy."
+            },
+            "7": {
+                "type": "Weekend",
+                "title": "Gravel Social Ride",
+                "desc": "Explore backroads and forest trails on our monthly gravel excursion."
+            },
+            "8": {
+                "type": "Weekend",
+                "title": "Road Social Ride",
+                "desc": "Explore backroads and forest trails on our monthly gravel excursion."
+            },
+            "9": {
+                "type": "Weekend",
+                "title": "Road Social Ride",
+                "desc": "Explore backroads and forest trails on our monthly gravel excursion."
+            }
+        }
+    },
+    "berria": {
+        "hero": {
+            "badge": "Girona Experience • Nov 2025",
+            "title": "Vraivēlo x Berria",
+            "desc": "A retrospective look at our exclusive collaboration in the heart of Catalonia, where professional workshop expertise met high-performance bike engineering."
+        },
+        "article": {
+            "subheading": "The Collaboration",
+            "heading": "Berria Demo Tour in Vraivēlo",
+            "p1": "There are days that perfectly sum up what we are, and the Berria Demo Tour at Vraivēlo was one of them.",
+            "p2": "When Berria asked us to be part of their Demo Tour, we were clear from the start: we wanted it to be an open, close event, true to our way of understanding cycling. Not just coming to test bikes, but creating a full experience around them.",
+            "p3": "That day, Vraivēlo became the starting and returning point. The place where bikes were tuned, doubts settled, coffees shared, and that mix of nerves and curiosity before riding filled the air. Right from the early hours, the workshop filled up with cyclists eager to test, learn, and enjoy—many of them regulars, and others discovering us for the first time. The routes were designed to bring out the best in each bike. Small groups, staggered starts, and varied laps around Girona, blending quiet roads with stretches where you can truly understand how a bike responds when you push it. No rush, no pressure—just kilometers to feel real sensations.",
+            "p4": "Throughout the day, along with the Berria team, we made sure everything flowed perfectly: adjustments, sizing changes, suggestions, and constant support. Because for us, a demo isn't just about hopping onto a new bike; it's about understanding if it fits you, your riding style, and what you’re looking for when you head out to train or have fun.",
+            "p5": "The Demo Tour with Berria fit naturally because we share the same vision: cycling is lived on the road but built in community. At the end of the day, when the bikes went back on their racks and the shop reclaimed its calm, the feeling lingered of having experienced something special. A simple day, done well, and highly aligned with what Vraivēlo is: a space where the bike takes the stage, but the people matter even more.",
+            "p6": "Stay tuned because we will soon have a new edition of the Berria Demo Tour."
+        },
+        "stats": {
+            "s1_val": "4",
+            "s1_label": "Models Tested",
+            "s2_val": "13",
+            "s2_label": "Assistants",
+            "s3_val": "After Ride",
+            "s3_label": "Good coffee & company"
+        },
+        "features": {
+            "f1_title": "Product Testing",
+            "f1_desc": "Exclusive access to Berria's latest carbon technology, rigorously tested on varied terrain.",
+            "f2_title": "Girona's Scenic Routes",
+            "f2_desc": "Daily organized rides through medieval villages and coastal cliffs, guided by Vraivēlo experts.",
+            "f3_title": "Workshop Expertise",
+            "f3_desc": "On-site mechanical support and personalized setup optimization by the Vraivēlo crew."
+        },
+        "gallery": {
+            "title": "Visual Journal",
+            "subtitle": "Capturing the Berria performance in the Girona landscape",
+            "c1": "Berria Belador Detail",
+            "c2": "Enjoying the company",
+            "c3": "Morning in Girona",
+            "c4": "The Girona Pelotón",
+            "c5": "Last details",
+            "c6": "Talk before leaving"
+        },
+        "footer": {
+            "quote": "\"Thank you to everyone who joined us for the Vraivēlo x Berria Girona Experience. We are proud to have shared these roads and these machines with you.\"",
+            "copyright": "© 2025 Vraivēlo x Berria. All rights reserved."
+        }
+    },
+    "weekend": {
+        "headline": "Vraivēlo Weekend",
+        "subtitle_1": "A weekend trip to France",
+        "p1": "Last year we organized a different kind of ride from Vraivēlo. It wasn't just another route, but a little two-day adventure designed to enjoy cycling with calm, safety, and a great atmosphere.",
+        "p2": "The ride was structured and guided by David for a small group of 8 cyclists. We limited spots to control the pace, minimize risks, and ensure everyone had the best possible experience. The route was planned from the start: schedules, stages, and stops, ending in France.",
+        "p3": "We left together from the shop and, from the very first kilometer, something special hung in the air. Backroads, shifting landscapes, and the feeling of sharing more than just distance. It was a demanding route both physically and mentally, but we always rode tightly and looked out for each other. All weekend long we had an assistance car providing constant support: food, drinks, logistics, and spare clothes when the weather turned against us—because yes, the rain wanted a piece of the adventure too. Thanks to that, all we had to do was pedal and enjoy.",
+        "p4": "At night we stayed at a hotel where we recovered our strength and shared stories from the day. The next morning we started the ride back, tired but satisfied to have lived out something so unique. It wasn't an easy ride, nor was it meant to be. It was a real, well-organized experience shared among people with the same passion for cycling.",
+        "subtitle_2": "What's coming next",
+        "p5": "After an experience like that, it was impossible not to think about doing it again. This year we are preparing <1>two Vraivēlo Weekends</1>, fresh adventures on the bike with the same attention to detail, same group spirit, and same eagerness to enjoy the journey.",
+        "p6": "If you don't want to miss it, stay tuned to our social media at <1>@Vraivēlo</1> on Instagram and our <1>Strava</1> club, where we'll share all the updates.",
+        "gallery": {
+            "title": "Event Gallery",
+            "btn": "View All Photos"
+        }
+    },
+    "licenses": {
+        "hero": {
+            "title": "Your Passion, Protected",
+            "subtitle": "At Vraivēlo, we make your federation easy. Choose the license that best suits your goals, from competitive racing to recreational cycling.",
+            "cta": "See Licenses"
+        },
+        "grid": {
+            "title": "2025 License Options",
+            "subtitle": "We manage your registration with the Catalan Cycling Federation (FCC) so you only have to worry about pedaling."
+        },
+        "cards": {
+            "competitive": {
+                "badge": "MOST POPULAR",
+                "period": "/year",
+                "title": "Competitive License",
+                "desc": "The complete option for those looking to measure their performance in official races.",
+                "features": [
+                    "Validated for UCI and National calendars",
+                    "Full medical coverage + unlimited RC",
+                    "Access to official rankings and podiums",
+                    "Partner Vraivēlo: -10€ Discount"
+                ]
+            },
+            "noncompetitive": {
+                "badge": "UCI / INTERNATIONAL",
+                "period": "/year",
+                "title": "UCI Cyclotourist",
+                "desc": "For cyclists participating in international gran fondos outside of Spain.",
+                "features": [
+                    "Scope: International / UCI",
+                    "Insurance: Accidents + RC",
+                    "Partner Vraivēlo: -10€ Discount"
+                ]
+            },
+            "cicloturista": {
+                "badge": "CATALONIA",
+                "period": "/year",
+                "title": "Local Cyclotourist",
+                "desc": "Ideal for club rides and recreational sportives within Catalonia.",
+                "features": [
+                    "Scope: Catalonia",
+                    "Insurance: Accidents + RC",
+                    "Perfect for group rides",
+                    "Partner Vraivēlo: -10€ Discount"
+                ]
+            },
+            "targeta": {
+                "badge": "BASIC",
+                "period": "/year",
+                "title": "Bike Card",
+                "desc": "Essential coverage for the urban or recreational cyclist seeking peace of mind.",
+                "features": [
+                    "Civil Liability Insurance",
+                    "Assistance: Plus 24h/7d",
+                    "* Does not include medical coverage",
+                    "Partner Vraivēlo: -10€ Discount"
+                ]
+            }
+        },
+        "info": {
+            "title": "Why Federate with Vraivēlo?",
+            "b1": {
+                "title": "Direct Processing",
+                "desc": "We handle the entire administrative process with the FCC, saving you time and hassle."
+            },
+            "b2": {
+                "title": "Expert Advice",
+                "desc": "We help you choose the right modality based on your event calendar and insurance needs."
+            },
+            "b3": {
+                "title": "Community & Perks",
+                "desc": "Join our official club and enjoy exclusive discounts in-store and on workshop services."
+            }
+        },
+        "cta": {
+            "title": "Ready for your next adventure?",
+            "desc": "Contact us and we will process your license in less than 48 business hours.",
+            "btn": "APPLY NOW"
         }
     }
 }

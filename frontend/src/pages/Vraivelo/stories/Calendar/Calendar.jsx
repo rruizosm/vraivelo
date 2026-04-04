@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './Calendar.css';
 
 const MonthBlock = ({ monthName, startingEmptyDays, totalDays, highlightDays = [] }) => {
@@ -31,7 +32,8 @@ const MonthBlock = ({ monthName, startingEmptyDays, totalDays, highlightDays = [
     );
 };
 
-const EventCard = ({ event }) => {
+const EventCard = ({ event, index }) => {
+    const { t } = useTranslation();
     return (
         <div className="cal-event-card">
             <div className="cal-event-img-container">
@@ -40,16 +42,16 @@ const EventCard = ({ event }) => {
                     className="cal-event-img"
                     alt={event.imgAlt}
                 />
-                <div className={`cal-event-tag cal-tag-${event.type.toLowerCase()}`}>{event.type}</div>
+                <div className={`cal-event-tag cal-tag-${event.type.toLowerCase()}`}>{t(`calendar.eventsData.${index}.type`)}</div>
             </div>
             <div className="cal-event-content">
                 <div>
                     <span className="cal-event-date">{event.date}</span>
-                    <h4 className="cal-event-name">{event.title}</h4>
-                    <p className="cal-event-desc">{event.description}</p>
+                    <h4 className="cal-event-name">{t(`calendar.eventsData.${index}.title`)}</h4>
+                    <p className="cal-event-desc">{t(`calendar.eventsData.${index}.desc`)}</p>
                 </div>
                 <div className="cal-event-actions">
-                    <Link to="/contact" state={{ subject: 'event' }} className="cal-btn-primary">¡Quiero saber más!</Link>
+                    <Link to="/contact" state={{ subject: 'event' }} className="cal-btn-primary">{t('calendar.btn')}</Link>
                 </div>
             </div>
         </div>
@@ -210,29 +212,35 @@ const eventsData = [
 ];
 
 const Calendar = () => {
+    const { t } = useTranslation();
+
     return (
         <section className="cal-main">
             {/* Hero Section */}
             <section className="cal-first-section">
                 <section className="cal-max-width cal-hero-section">
                     <div className="cal-hero-content">
-                        <h1 className="cal-hero-title">Calendario 2026</h1>
+                        <h1 className="cal-hero-title">{t('calendar.hero.title')}</h1>
                         <p className="cal-hero-desc">
-                            Únete a la comunidad Vraivelo en la carretera y el gravel. Un viaje curado a través de los paisajes más impresionantes, diseñado para ciclistas que valoran la precisión, el esfuerzo y la camaradería.
+                            {t('calendar.hero.desc')}
                         </p>
                     </div>
                     <div className="cal-hero-legend">
                         <div className="cal-legend-item">
-                            <span className="cal-legend-dot val-bg-secondary-fixed-dim"></span>
-                            <span className="cal-legend-text">Carretera</span>
+                            <span className="cal-legend-dot val-bg-road"></span>
+                            <span className="cal-legend-text">{t('calendar.hero.legend.road')}</span>
                         </div>
                         <div className="cal-legend-item">
-                            <span className="cal-legend-dot val-bg-tertiary-fixed-dim"></span>
-                            <span className="cal-legend-text">Gravel</span>
+                            <span className="cal-legend-dot val-bg-gravel"></span>
+                            <span className="cal-legend-text">{t('calendar.hero.legend.gravel')}</span>
                         </div>
                         <div className="cal-legend-item">
-                            <span className="cal-legend-dot val-bg-primary-container"></span>
-                            <span className="cal-legend-text">Taller</span>
+                            <span className="cal-legend-dot val-bg-taller"></span>
+                            <span className="cal-legend-text">{t('calendar.hero.legend.workshop')}</span>
+                        </div>
+                        <div className="cal-legend-item">
+                            <span className="cal-legend-dot val-bg-weekend"></span>
+                            <span className="cal-legend-text">{t('calendar.hero.legend.weekend')}</span>
                         </div>
                     </div>
                 </section>
@@ -241,7 +249,7 @@ const Calendar = () => {
                 <section className="cal-max-width cal-grid-section">
                     <div className="cal-grid-container">
                         {calendarMonthsData.map((data, index) => (
-                            <MonthBlock key={index} {...data} />
+                            <MonthBlock key={index} {...data} monthName={t(`calendar.months.${data.monthName}`, { defaultValue: data.monthName })} />
                         ))}
                     </div>
                 </section>
@@ -249,11 +257,11 @@ const Calendar = () => {
 
             {/* Event Details Section */}
             <section className="cal-max-width cal-events-wrapper">
-                <h2 className="cal-events-title">Próximos Encuentros</h2>
+                <h2 className="cal-events-title">{t('calendar.events_title')}</h2>
 
                 <div className="cal-event-list">
                     {eventsData.map((event, index) => (
-                        <EventCard key={index} event={event} />
+                        <EventCard key={index} event={event} index={index} />
                     ))}
                 </div>
             </section>

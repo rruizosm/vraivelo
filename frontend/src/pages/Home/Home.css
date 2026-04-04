@@ -31,6 +31,7 @@
     /* Behind overlays but above bg color */
     filter: brightness(0.6) saturate(1.1);
     /* Slight dim for text readability */
+    object-position: center 20%;
 }
 
 .hero-bg-overlay {

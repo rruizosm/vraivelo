@@ -1,11 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Play, Volume2, Settings, Maximize2 } from 'lucide-react'; // Using Lucide icons instead of Material Symbols
+import { ArrowLeft, Play, Volume2, Settings, Maximize2 } from 'lucide-react';
+import { useTranslation, Trans } from 'react-i18next';
 import './VraiveloWeekend.css';
 
 
 const VraiveloWeekend = () => {
+    const { t } = useTranslation();
     return (
         <div className="weekend-story-page">
             {/* Media Player Section - Full Viewport */}
@@ -33,37 +35,42 @@ const VraiveloWeekend = () => {
                 {/* Headline Section */}
                 <div className="weekend-headline-section">
                     <h1 className="weekend-headline">
-                        Vraivēlo Weekend
+                        {t('weekend.headline')}
                     </h1>
-                    <h3 className='weekend-headline-subtitle'>Un fin de semana rumbo a Francia</h3>
+                    <h3 className='weekend-headline-subtitle'>{t('weekend.subtitle_1')}</h3>
                 </div>
 
                 {/* Body Text */}
                 <div className="weekend-body-section">
                     <p className="weekend-body-text">
-                        El año pasado organizamos una salida diferente desde Vraivēlo. No se trataba de una ruta más, sino de una pequeña aventura en dos días, pensada para disfrutar del ciclismo con calma, seguridad y buen ambiente.
-                        <br /><br />La salida fue programada y guiada por David, con un grupo reducido de 8 ciclistas. Limitamos las plazas para poder controlar el ritmo, minimizar riesgos y asegurarnos de que todos viviéramos la experiencia de la mejor manera posible. El recorrido estaba planificado desde el inicio: horarios, etapas y paradas, con destino final en Francia.
-                        <br /><br />Salimos juntos desde la tienda y, desde el primer kilómetro, se respiraba algo especial. Carreteras secundarias, paisajes que iban cambiando poco a poco y la sensación de estar compartiendo algo más que kilómetros. La ruta fue exigente, tanto física como mentalmente, pero siempre rodando en grupo y apoyándonos unos a otros. Durante todo el fin de semana contamos con coche de asistencia, que nos dio soporte constante. Comida, bebida, apoyo logístico y ropa de recambio cuando el tiempo se complicó —porque sí, la lluvia también quiso formar parte de la aventura—. Gracias a esto, los ciclistas solo tuvimos que preocuparnos de pedalear y disfrutar.
-                        <br /><br />Por la noche nos alojamos en un hotel, donde tocó recuperar fuerzas, compartir anécdotas del día. Al día siguiente emprendimos el camino de vuelta, con el cansancio acumulado, pero con la satisfacción de haber vivido algo especial. No fue una salida fácil, ni pretendía serlo. Fue una experiencia real, bien organizada y compartida entre personas con la misma pasión por el ciclismo.
+                        {t('weekend.p1')}
+                        <br /><br />{t('weekend.p2')}
+                        <br /><br />{t('weekend.p3')}
+                        <br /><br />{t('weekend.p4')}
                     </p>
                 </div>
                 <div className="weekend-headline-section">
                     <h3 className="weekend-headline-subtitle">
-                        Lo que se viene
+                        {t('weekend.subtitle_2')}
                     </h3>
                 </div>
                 <div className='weekend-body-section'>
                     <p className='weekend-body-text'>
-                        Después de vivir algo así, era imposible no pensar en repetir. Este año estamos preparando <b style={{ color: '#000000' }}>dos Vraivēlo Weekends</b>, nuevas aventuras sobre la bicicleta, con el mismo cuidado por los detalles, el mismo espíritu de grupo y las mismas ganas de disfrutar del camino.
-                        <br /><br />Si no quieres perdértelo, mantente atento a nuestras redes en <b style={{ color: '#000000' }}>@vraivelo</b> en Instagram y a nuestro club de <b style={{ color: '#000000' }}>Strava</b>, donde iremos compartiendo todas las novedades.
+                        <Trans i18nKey="weekend.p5">
+                            Después de vivir algo así, era imposible no pensar en repetir. Este año estamos preparando <b style={{ color: '#000000' }}>dos Vraivēlo Weekends</b>, nuevas aventuras sobre la bicicleta, con el mismo cuidado por los detalles, el mismo espíritu de grupo y las mismas ganas de disfrutar del camino.
+                        </Trans>
+                        <br /><br />
+                        <Trans i18nKey="weekend.p6">
+                            Si no quieres perdértelo, mantente atento a nuestras redes en <b style={{ color: '#000000' }}>@vraivelo</b> en Instagram y a nuestro club de <b style={{ color: '#000000' }}>Strava</b>, donde iremos compartiendo todas las novedades.
+                        </Trans>
                     </p>
                 </div>
 
                 {/* Gallery Section Header */}
                 <div className="weekend-gallery-header">
-                    <h2>Event Gallery</h2>
+                    <h2>{t('weekend.gallery.title')}</h2>
                     <div className="weekend-separator"></div>
-                    <a href="#" className="weekend-view-all">View All Photos</a>
+                    <a href="#" className="weekend-view-all">{t('weekend.gallery.btn')}</a>
                 </div>
 
                 {/* Image Grid */}

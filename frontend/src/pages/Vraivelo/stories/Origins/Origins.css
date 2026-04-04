@@ -54,20 +54,26 @@
 .origins-back-link {
     display: inline-flex;
     align-items: center;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 2.5rem;
-    /* mb-10 */
-    transition: color 0.3s;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-size: 0.625rem;
-    /* text-[10px] */
-    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
     text-decoration: none;
+    transition: all 0.2s;
+    margin-bottom: 2rem;
 }
 
 .origins-back-link:hover {
-    color: white;
+    background: white;
+    color: var(--origins-slate-900);
 }
 
 .origins-back-link svg {
@@ -148,7 +154,7 @@
 
 /* --- Intro Section --- */
 .origins-intro {
-    background-color: white;
+    background-color: #F5DEB3;
     padding: 3rem 0;
     position: relative;
     z-index: 20;
@@ -284,6 +290,7 @@
     color: var(--origins-slate-800);
     font-size: 1.125rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     line-height: 1.625;
 }
 

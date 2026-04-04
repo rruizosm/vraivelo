@@ -1,7 +1,11 @@
-import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import './Licenses.css';
 
 const Licenses = () => {
+    const { t } = useTranslation();
+    const navigate = useNavigate();
+
     return (
         <div className="licenses-page">
             {/* Hero Section */}
@@ -16,12 +20,12 @@ const Licenses = () => {
                 <div className="licenses-hero-gradient"></div>
                 <div className="licenses-hero-content">
                     <div className="licenses-hero-text">
-                        <h1 className="licenses-title">Federarse en Ciclismo.</h1>
+                        <h1 className="licenses-title">{t('licenses.hero.title')}</h1>
                         <p className="licenses-subtitle">
-                            La seguridad de rodar protegido. Únete a la comunidad de la Federació Catalana de Ciclisme y accede a competiciones, seguros especializados y ventajas exclusivas Vraivelo.
+                            {t('licenses.hero.subtitle')}
                         </p>
                         <div className="licenses-hero-actions">
-                            <a className="licenses-btn-primary editorial-shadow" href="#licencias">Explorar Opciones</a>
+                            <a className="licenses-btn-primary editorial-shadow" href="#licencias">{t('licenses.hero.cta')}</a>
                         </div>
                     </div>
                 </div>
@@ -31,8 +35,8 @@ const Licenses = () => {
             <section className="licenses-options-section" id="licencias">
                 <div className="licenses-options-header">
                     <div className="licenses-options-title-col">
-                        <h2>Descubre todas las licencias disponibles</h2>
-                        <p>Cuatro modalidades diseñadas para adaptarse a tu nivel de compromiso y estilo de vida sobre las dos ruedas.</p>
+                        <h2>{t('licenses.grid.title')}</h2>
+                        <p>{t('licenses.grid.subtitle')}</p>
                     </div>
                 </div>
 
@@ -41,23 +45,23 @@ const Licenses = () => {
                     <div className="license-card competitive editorial-shadow">
                         <div>
                             <div className="license-card-header">
-                                <span className="license-tag-compet">Ideal para dorsal</span>
-                                <span className="license-price">142€<span className="license-price-period">/ año</span></span>
+                                <span className="license-tag-compet">{t('licenses.cards.competitive.badge')}</span>
+                                <span className="license-price">142€<span className="license-price-period">{t('licenses.cards.competitive.period')}</span></span>
                             </div>
-                            <h3>Licencia Competitiva</h3>
-                            <p className="license-desc">Para Elit, Master 30/40/50 que buscan el máximo nivel de exigencia en competición oficial.</p>
+                            <h3>{t('licenses.cards.competitive.title')}</h3>
+                            <p className="license-desc">{t('licenses.cards.competitive.desc')}</p>
                             <ul className="license-features">
                                 <li>
-                                    <span className="material-symbols-outlined">verified</span> Validada para calendario UCI y Nacional
+                                    <span className="material-symbols-outlined">verified</span> {t('licenses.cards.competitive.features.0')}
                                 </li>
                                 <li>
-                                    <span className="material-symbols-outlined">medical_services</span> Cobertura médica completa + RC ilimitada
+                                    <span className="material-symbols-outlined">medical_services</span> {t('licenses.cards.competitive.features.1')}
                                 </li>
                                 <li>
-                                    <span className="material-symbols-outlined">emoji_events</span> Acceso a rankings y podios oficiales
+                                    <span className="material-symbols-outlined">emoji_events</span> {t('licenses.cards.competitive.features.2')}
                                 </li>
                                 <li>
-                                    <span className="material-symbols-outlined">sell</span> Soci Vraivelo: -10€ Dto.
+                                    <span className="material-symbols-outlined">sell</span> {t('licenses.cards.competitive.features.3')}
                                 </li>
                             </ul>
                         </div>
@@ -67,20 +71,20 @@ const Licenses = () => {
                     <div className="license-card competitive editorial-shadow">
                         <div>
                             <div className="license-card-header">
-                                <span className="license-tag-compet">Ideal cicloturismo</span>
-                                <span className="license-price">142€<span className="license-price-period">/ año</span></span>
+                                <span className="license-tag-compet">{t('licenses.cards.noncompetitive.badge')}</span>
+                                <span className="license-price">142€<span className="license-price-period">{t('licenses.cards.noncompetitive.period')}</span></span>
                             </div>
-                            <h3>Licencia no Competitiva UCI</h3>
-                            <p className="license-desc">Libertad total para tus entrenamientos y marchas fuera de Cataluña.</p>
+                            <h3>{t('licenses.cards.noncompetitive.title')}</h3>
+                            <p className="license-desc">{t('licenses.cards.noncompetitive.desc')}</p>
                             <ul className="license-features">
                                 <li>
-                                    <span className="material-symbols-outlined">public</span> Ámbito: Internacional / UCI
+                                    <span className="material-symbols-outlined">public</span> {t('licenses.cards.noncompetitive.features.0')}
                                 </li>
                                 <li>
-                                    <span className="material-symbols-outlined">security</span> Seguro: Accidentes + RC
+                                    <span className="material-symbols-outlined">security</span> {t('licenses.cards.noncompetitive.features.1')}
                                 </li>
                                 <li>
-                                    <span className="material-symbols-outlined">sell</span> Soci Vraivelo: -10€ Dto.
+                                    <span className="material-symbols-outlined">sell</span> {t('licenses.cards.noncompetitive.features.2')}
                                 </li>
                             </ul>
                         </div>
@@ -90,23 +94,23 @@ const Licenses = () => {
                     <div className="license-card competitive editorial-shadow">
                         <div>
                             <div className="license-card-header">
-                                <span className="license-tag-compet">Ideal marchas</span>
-                                <span className="license-price">123€<span className="license-price-period">/ año</span></span>
+                                <span className="license-tag-compet">{t('licenses.cards.cicloturista.badge')}</span>
+                                <span className="license-price">123€<span className="license-price-period">{t('licenses.cards.cicloturista.period')}</span></span>
                             </div>
-                            <h3>Cicloturista FCC</h3>
-                            <p className="license-desc">Perfecta para disfrutar de las marchas catalanas y salidas grupales sin el estrés de la competición.</p>
+                            <h3>{t('licenses.cards.cicloturista.title')}</h3>
+                            <p className="license-desc">{t('licenses.cards.cicloturista.desc')}</p>
                             <ul className="license-features">
                                 <li>
-                                    <span className="material-symbols-outlined">map</span> Ámbito: Cataluña
+                                    <span className="material-symbols-outlined">map</span> {t('licenses.cards.cicloturista.features.0')}
                                 </li>
                                 <li>
-                                    <span className="material-symbols-outlined">security</span> Seguro: Accidentes + RC
+                                    <span className="material-symbols-outlined">security</span> {t('licenses.cards.cicloturista.features.1')}
                                 </li>
                                 <li>
-                                    <span className="material-symbols-outlined">groups</span> Perfecto para salidas grupales
+                                    <span className="material-symbols-outlined">groups</span> {t('licenses.cards.cicloturista.features.2')}
                                 </li>
                                 <li>
-                                    <span className="material-symbols-outlined">sell</span> Soci Vraivelo: -10€ Dto.
+                                    <span className="material-symbols-outlined">sell</span> {t('licenses.cards.cicloturista.features.3')}
                                 </li>
                             </ul>
                         </div>
@@ -116,23 +120,23 @@ const Licenses = () => {
                     <div className="license-card competitive editorial-shadow">
                         <div>
                             <div className="license-card-header">
-                                <span className="license-tag-compet">Para moverte con tranquilidad</span>
-                                <span className="license-price">44€/55€<span className="license-price-period">/ año</span></span>
+                                <span className="license-tag-compet">{t('licenses.cards.targeta.badge')}</span>
+                                <span className="license-price">44€/55€<span className="license-price-period">{t('licenses.cards.targeta.period')}</span></span>
                             </div>
-                            <h3>Targeta Bici</h3>
-                            <p className="license-desc">Tu escudo en la ciudad. Pensada para el ciclista urbano y recreacional que prioriza la Responsabilidad Civil.</p>
+                            <h3>{t('licenses.cards.targeta.title')}</h3>
+                            <p className="license-desc">{t('licenses.cards.targeta.desc')}</p>
                             <ul className="license-features">
                                 <li>
-                                    <span className="material-symbols-outlined">security</span> Seguro Responsabilidad Civil
+                                    <span className="material-symbols-outlined">security</span> {t('licenses.cards.targeta.features.0')}
                                 </li>
                                 <li>
-                                    <span className="material-symbols-outlined">support_agent</span> Asistencia: Plus 24h/7d
+                                    <span className="material-symbols-outlined">support_agent</span> {t('licenses.cards.targeta.features.1')}
                                 </li>
                                 <li style={{ fontWeight: 600 }}>
-                                    <span className="material-symbols-outlined">info</span> * No incluye cobertura médica
+                                    <span className="material-symbols-outlined">info</span> {t('licenses.cards.targeta.features.2')}
                                 </li>
                                 <li>
-                                    <span className="material-symbols-outlined">sell</span> Soci Vraivelo: -10€ Dto.
+                                    <span className="material-symbols-outlined">sell</span> {t('licenses.cards.targeta.features.3')}
                                 </li>
                             </ul>
                         </div>
@@ -149,27 +153,27 @@ const Licenses = () => {
                         </div>
                     </div>
                     <div className="licenses-info-text-col">
-                        <h2 className="licenses-info-title">¿Por qué federarse es el mejor "upgrade" para tu bici?</h2>
+                        <h2 className="licenses-info-title">{t('licenses.info.title')}</h2>
                         <div className="licenses-benefits-list">
                             <div className="licenses-benefit-item">
                                 <div className="benefit-number">01</div>
                                 <div className="benefit-content">
-                                    <h4>Seguro de Accidentes</h4>
-                                    <p>Asistencia médica ilimitada en centros concertados. Olvídate de copagos o límites en caso de caída entrenando.</p>
+                                    <h4>{t('licenses.info.b1.title')}</h4>
+                                    <p>{t('licenses.info.b1.desc')}</p>
                                 </div>
                             </div>
                             <div className="licenses-benefit-item">
                                 <div className="benefit-number">02</div>
                                 <div className="benefit-content">
-                                    <h4>Defensa Jurídica</h4>
-                                    <p>Acceso a servicios legales especializados en accidentes de tráfico para proteger tus derechos como ciclista.</p>
+                                    <h4>{t('licenses.info.b2.title')}</h4>
+                                    <p>{t('licenses.info.b2.desc')}</p>
                                 </div>
                             </div>
                             <div className="licenses-benefit-item">
                                 <div className="benefit-number">03</div>
                                 <div className="benefit-content">
-                                    <h4>Apoyo al Ciclismo Base</h4>
-                                    <p>Tu cuota ayuda a mantener las escuelas de ciclismo y el mantenimiento de rutas en toda Cataluña.</p>
+                                    <h4>{t('licenses.info.b3.title')}</h4>
+                                    <p>{t('licenses.info.b3.desc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -180,10 +184,15 @@ const Licenses = () => {
             {/* CTA Section */}
             <section className="licenses-cta-section">
                 <div className="licenses-cta-container">
-                    <h2>¿Listo para dar el paso?</h2>
-                    <p>Nuestro equipo en el taller te ayudará con todo el papeleo. Puedes tramitarla online ahora mismo o pasar por Vraivelo para asesorarte.</p>
+                    <h2>{t('licenses.cta.title')}</h2>
+                    <p>{t('licenses.cta.desc')}</p>
                     <div className="licenses-cta-buttons">
-                        <button className="licenses-btn-secondary">Contactar con la Tienda</button>
+                        <button
+                            className="licenses-btn-secondary"
+                            onClick={() => navigate('/contact', { state: { subject: 'licenses' } })}
+                        >
+                            {t('licenses.cta.btn')}
+                        </button>
                     </div>
                 </div>
                 <div className="licenses-cta-divider"></div>

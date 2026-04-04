@@ -21,18 +21,19 @@ const Footer = () => {
                     </div>
 
                     {/* Quick Links */}
-                    <div>
+                    <div className="footer-brand-col">
                         <h4 className="footer-col-title">{t('footer.explore')}</h4>
                         <ul className="footer-links-list">
                             <li><Link to="/workshop" className="footer-link">{t('footer.workshop_services')}</Link></li>
                             <li><Link to="/shop" className="footer-link">{t('footer.new_bikes')}</Link></li>
-                            <li><Link to="/about" className="footer-link">{t('footer.about_us')}</Link></li>
+                            <li><Link to="/other-products" className="footer-link">{t('footer.other_products')}</Link></li>
+                            <li><Link to="/vraivelo" className="footer-link">{t('footer.vraivelo')}</Link></li>
                             <li><Link to="/contact" className="footer-link">{t('navbar.contact')}</Link></li>
                         </ul>
                     </div>
 
                     {/* Contact */}
-                    <div>
+                    <div className="footer-brand-col">
                         <h4 className="footer-col-title">{t('footer.visit_us')}</h4>
                         <ul className="footer-contact-list">
                             <li className="contact-item">
@@ -47,22 +48,18 @@ const Footer = () => {
                                 <Clock className="contact-item-icon" size={18} />
                                 <span>{t('footer.hours_label')}<br /> {t('footer.hours_morning')}<br /> {t('footer.hours_afternoon')}</span>
                             </li>
-                            <li className="contact-item">
-                                <Mail className="contact-item-icon" size={18} />
-                                <span>info@vraivelo.com</span>
-                            </li>
+
                         </ul>
                     </div>
 
                     {/* Socials */}
-                    <div>
+                    <div className="footer-brand-col">
                         <h4 className="footer-col-title">{t('footer.follow_us')}</h4>
                         <div className="social-icons">
-                            <a href="https://www.instagram.com/vraivelo/" className="social-link">
+                            <a href="https://www.instagram.com/vraivelo/" target="_blank" rel="noopener noreferrer" className="social-link">
                                 <Instagram size={20} />
+                                <span className="social-handle">@vraivelo</span>
                             </a>
-                            @vraivelo
-                            {/* Add more socials if needed */}
                         </div>
                     </div>
                 </div>

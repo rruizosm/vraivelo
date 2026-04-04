@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { ShoppingBag, Loader, Mail } from 'lucide-react';
+import { ShoppingBag, Loader, Mail, ChevronDown, ChevronUp } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../../supabase';
@@ -87,6 +87,11 @@ const OtherProducts = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [activeCategory, setActiveCategory] = useState(() => sessionStorage.getItem('otherProducts_activeCategory') || 'All');
+    const [expandedFilters, setExpandedFilters] = useState({ category: true });
+
+    const toggleSection = (section) => {
+        setExpandedFilters(prev => ({ ...prev, [section]: !prev[section] }));
+    };
 
     useEffect(() => {
         sessionStorage.setItem('otherProducts_activeCategory', activeCategory);
@@ -111,17 +116,29 @@ const OtherProducts = () => {
 
                 // Normalize Supabase column names to component format
                 // Handle both PascalCase and lowercase column names
-                const normalized = (data || []).map(p => ({
-                    id: p.id,
-                    model: p.Product || p.product,
-                    category: p.Type || p.type,
-                    price: p.Price || p.price,
-                    size: p.Size || p.size,
-                    description: p.Description || p.description,
-                    image_url: p["Image URL"] || p["image url"] || p.image_url,
-                    color: p.Color || p.color,
-                    specs: p.Specs || p.specs,
-                }));
+                const normalized = (data || []).map(p => {
+                    const category = p.Type || p.type;
+                    let specs = p.Specs || p.specs || [];
+                    
+                    if (typeof specs === 'string') {
+                        try { specs = JSON.parse(specs.replace(/'/g, '"')); } catch { specs = [specs]; }
+                    }
+                    if (category === 'Wheels') {
+                        specs = [...specs, 'Hub: DT SWISS'];
+                    }
+
+                    return {
+                        id: p.id,
+                        model: p.Product || p.product,
+                        category: category,
+                        price: p.Price || p.price,
+                        size: p.Size || p.size,
+                        description: p.Description || p.description,
+                        image_url: p["Image URL"] || p["image url"] || p.image_url,
+                        color: p.Color || p.color,
+                        specs: specs,
+                    };
+                });
 
                 setProducts(normalized);
             } catch (error) {
@@ -185,34 +202,46 @@ const OtherProducts = () => {
                 <div className="shop-layout">
                     {/* SIDEBAR FILTERS */}
                     <aside className="shop-sidebar">
-                        <div className="filter-group">
-                            <h3 className="filter-title">{t('other_products.category')}</h3>
-                            <div className="filter-options">
-                                {categories.map((cat) => (
-                                    <button
-                                        key={cat}
-                                        onClick={() => setActiveCategory(cat)}
-                                        className={`sidebar-filter-btn ${activeCategory === cat ? 'active' : ''}`}
-                                    >
-                                        {categoryKeyMap[cat] ? t(categoryKeyMap[cat]) : cat}
-                                    </button>
-                                ))}
-                            </div>
+                        {/* Category Filter */}
+                        <div className="filter-group accordion-group">
+                            <button className="filter-accordion-header" onClick={() => toggleSection('category')}>
+                                <h3 className="filter-title">{t('other_products.category')}</h3>
+                                {expandedFilters.category ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                            </button>
+                            {expandedFilters.category && (
+                                <div className="filter-options-content">
+                                    {categories.map((cat) => (
+                                        <button
+                                            key={cat}
+                                            onClick={() => setActiveCategory(cat)}
+                                            className={`sidebar-filter-btn ${activeCategory === cat ? 'active' : ''}`}
+                                        >
+                                            <div className={`checkbox ${activeCategory === cat ? 'checked' : ''}`} />
+                                            {categoryKeyMap[cat] ? t(categoryKeyMap[cat]) : cat}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </aside>
 
                     {/* PRODUCTS GRID */}
-                    <div className="bikes-grid">
-                        {filteredProducts.map((product) => (
-                            <ProductCard
-                                key={product.id}
-                                product={product}
-                                addToCart={addToCart}
-                                navigate={navigate}
-                                t={t}
-                                isCartEnabled={isCartEnabled}
-                            />
-                        ))}
+                    <div style={{ width: '100%' }}>
+                        <div style={{ paddingBottom: '1rem', marginBottom: '1rem', borderBottom: '1px solid #e2e8f0', color: '#64748b', fontSize: '0.875rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                            {filteredProducts.length} {filteredProducts.length === 1 ? 'Product' : 'Products'} Listed
+                        </div>
+                        <div className="bikes-grid">
+                            {filteredProducts.map((product) => (
+                                <ProductCard
+                                    key={product.id}
+                                    product={product}
+                                    addToCart={addToCart}
+                                    navigate={navigate}
+                                    t={t}
+                                    isCartEnabled={isCartEnabled}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -6,9 +6,11 @@ import {
     ChevronDown,
     CheckCircle2
 } from 'lucide-react';
+import { Trans, useTranslation } from 'react-i18next';
 import './Origins.css';
 
 const Hero = () => {
+    const { t } = useTranslation();
     return (
         <header className="origins-hero">
             <div className="origins-hero-bg">
@@ -19,13 +21,13 @@ const Hero = () => {
             </div>
             <div className="origins-hero-content">
                 <Link to="/vraivelo" className="origins-back-link">
-                    <ArrowLeft /> Back to stories
+                    <ArrowLeft /> {t('origins.hero.back')}
                 </Link>
                 <h1 className="origins-hero-title">
-                    ORIGINS
+                    {t('origins.hero.title')}
                 </h1>
                 <p className="origins-hero-desc">
-                    From competitive racing to precision mechanics. The story behind the workshop.
+                    {t('origins.hero.desc')}
                 </p>
                 <div className="origins-scrolldown">
                     <ChevronDown />
@@ -36,42 +38,41 @@ const Hero = () => {
 };
 
 const IntroSection = () => {
+    const { t } = useTranslation();
     return (
         <section className="origins-intro">
             <div className="origins-intro-container">
                 <div className="origins-separator"></div>
                 <h2 className="origins-intro-title">
-                    <span style={{ color: '#00a9d4', fontWeight: 600 }}>Vraivēlo</span> was born from a lifetime spent on the bicycle.
+                    <Trans i18nKey="origins.intro.title" components={{ vraiWhite: <span style={{ color: 'var(--primary)', fontWeight: 600 }} /> }}>
+                        <vraiWhite>Vraivēlo</vraiWhite> was born from a lifetime spent on the bicycle.
+                    </Trans>
                 </h2>
                 <p className="origins-intro-text">
-                    David, founder of the workshop, grew up in Badalona and started pedaling barely three years later.
-                    What began as a childhood passion turned into a competitive career in mountain biking and later
-                    road cycling, moving through sub23 and elite categories to become part of a professional team.
+                    {t('origins.intro.text')}
                 </p>
             </div>
-        </section>
+        </section >
     );
 };
 
 const CompetitiveEra = () => {
+    const { t } = useTranslation();
     return (
         <section className="origins-competitive">
             <div className="origins-grid">
                 <div className="order-2 lg:order-1">
-                    <span className="origins-label">The Competitive Era</span>
+                    <span className="origins-label">{t('origins.competitive.label')}</span>
                     <h3 className="origins-heading">
-                        Pushing Limits on the Track
+                        {t('origins.competitive.heading')}
                     </h3>
                     <p className="origins-text">
-                        Competitive cycling demands more than just physical endurance; it requires a deep understanding of the machine.
-                        Years of pushing bikes to their limits in grueling conditions taught David the crucial relationship
-                        between rider and equipment.
+                        {t('origins.competitive.text')}
                     </p>
                     <div className="origins-quote-block">
-                        "Every adjustment, every repair, and every recommendation comes from real experience in training,
-                        races, and long hours on the bike."
+                        {t('origins.competitive.quote')}
                     </div>
-                    <span className="origins-author">— David, Founder</span>
+                    <span className="origins-author">{t('origins.competitive.author')}</span>
                 </div>
 
                 <div className="origins-images-collage order-1 lg:order-2">
@@ -106,6 +107,7 @@ const CompetitiveEra = () => {
 };
 
 const QuoteBanner = () => {
+    const { t } = useTranslation();
     return (
         <section className="origins-quote-banner">
             <img
@@ -115,7 +117,7 @@ const QuoteBanner = () => {
             />
             <div className="origins-quote-content">
                 <h2 className="origins-quote-title">
-                    "Having lived cycling from within marked the difference."
+                    {t('origins.quote_banner.title')}
                 </h2>
             </div>
         </section>
@@ -123,6 +125,7 @@ const QuoteBanner = () => {
 };
 
 const GallerySection = () => {
+    const { t } = useTranslation();
     const images = [
         "/david_vraivelo/local.jpeg",
         "/david_vraivelo/local_2.jpeg",
@@ -138,41 +141,37 @@ const GallerySection = () => {
         return () => clearInterval(timer);
     }, [images.length]);
 
+    const features = t('origins.bridging.features', { returnObjects: true }) || [];
+
     return (
         <section className="origins-bridging reversed">
             <div className="origins-grid">
                 {/* Empty Text Column */}
                 <div className="space-y-10" style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
                     <div>
-                        <span className="origins-label">A New Challenge</span>
-                        <h3 className="origins-heading">Vraivēlo Grows</h3>
+                        <span className="origins-label">{t('origins.bridging.label')}</span>
+                        <h3 className="origins-heading">{t('origins.bridging.heading')}</h3>
                         <div className="origins-text">
                             <p style={{ marginBottom: '1.5rem' }}>
-                                Only a year after opening our doors, <span style={{ color: '#00a9d4', fontWeight: 600 }}>Vraivēlo</span> experienced unstoppable growth.
-                                The recognition of our hard work and the high demand meant that our original shop was becoming
-                                too small for the growing community that placed its trust in us. We knew we had to find a space
-                                that truly lived up to that trust
+                                <Trans i18nKey="origins.bridging.text_1" components={{ vrai: <span style={{ color: 'var(--primary)', fontWeight: 600 }} /> }}>
+                                    Only a year after opening our doors, <vrai>Vraivēlo</vrai> experienced unstoppable growth. The recognition of our hard work and the high demand meant that our original shop was becoming too small for the growing community that placed its trust in us. We knew we had to find a space that truly lived up to that trust.
+                                </Trans>
                             </p>
                             <p style={{ marginBottom: '1.5rem' }}>
-                                This led us to our new location at <strong>Carrer Pau vila i dinares 10</strong>. This move marked the beginning of an exciting new
-                                chapter: while continuing to provide a high-quality workshop, we evolved to offer our clients the
-                                very best in bicycles, components, and cycling apparel.
+                                <Trans i18nKey="origins.bridging.text_2" components={{ bold: <span style={{ fontWeight: 600 }} /> }}>
+                                    This led us to our new location at <bold>Carrer Pau vila i dinares 10</bold>. This move marked the beginning of an exciting new chapter: while continuing to provide a high-quality workshop, we evolved to offer our clients the very best in bicycles, components, and cycling apparel.
+                                </Trans>
                             </p>
                             <p>
-                                This project fuels our passion to keep working and delivering the excellence that defines <span style={{ color: '#00a9d4', fontWeight: 600 }}>Vraivēlo</span>.
-                                With this new stage come new sporting and professional challenges, all driven by the same goal: to
-                                offer our customers nothing but the best.
+                                <Trans i18nKey="origins.bridging.text_3" components={{ vrai: <span style={{ color: 'var(--primary)', fontWeight: 600 }} /> }}>
+                                    This project fuels our passion to keep working and delivering the excellence that defines <vrai>Vraivēlo</vrai>. With this new stage come new sporting and professional challenges, all driven by the same goal: to offer our customers nothing but the best.
+                                </Trans>
                             </p>
                         </div>
                     </div>
 
                     <div className="origins-features-list">
-                        {[
-                            "Expert Mechanics",
-                            "Pro-level Care",
-                            "Girona Based",
-                            "Bike Shop",
-                        ].map((feature) => (
+                        {Array.isArray(features) && features.map((feature) => (
                             <div key={feature} className="origins-feature-item">
                                 <CheckCircle2 className="origins-feature-check" />
                                 <span className="origins-feature-label">{feature}</span>
@@ -201,6 +200,7 @@ const GallerySection = () => {
 };
 
 const BridgingTheGap = () => {
+    const { t } = useTranslation();
     const images = [
         "/primer_local/local_11.jpeg",
         "/primer_local/local_3.jpeg",
@@ -216,6 +216,8 @@ const BridgingTheGap = () => {
         }, 4000);
         return () => clearInterval(timer);
     }, [images.length]);
+
+    const features = t('origins.building.features', { returnObjects: true }) || [];
 
     return (
         <section className="origins-bridging">
@@ -234,35 +236,28 @@ const BridgingTheGap = () => {
                         />
                     </AnimatePresence>
                     <div className="origins-badge">
-                        <span className="origins-badge-text">Specialized Workshop</span>
+                        <span className="origins-badge-text">{t('origins.bridging.badge')}</span>
                     </div>
                 </div>
 
                 <div className="space-y-10" style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
                     <div>
-                        <span className="origins-label">A New Chapter</span>
-                        <h3 className="origins-heading">Bridging the Gap</h3>
+                        <span className="origins-label">{t('origins.building.label')}</span>
+                        <h3 className="origins-heading">{t('origins.building.heading')}</h3>
                         <div className="origins-text">
                             <p style={{ marginBottom: '1.5rem' }}>
-                                After closing that sporting chapter, the bicycle remained the center of everything,
-                                this time from the technical side. Years of experience in workshops and specialized stores
-                                allowed for the detection of something clear: there was a lack of real attention
-                                to the cyclist and their bicycle.
+                                {t('origins.building.text_1')}
                             </p>
                             <p>
-                                In December 2023, in Girona, <span style={{ color: '#00a9d4', fontWeight: 600 }}>Vraivēlo</span> was born as a response to that need.
-                                A workshop created to care for bicycles with the same respect and demand
-                                with which one trains to compete.
+                                <Trans i18nKey="origins.building.text_2" components={{ vrai: <span style={{ color: 'var(--primary)', fontWeight: 600 }} /> }}>
+                                    In December 2023, in Girona, <vrai>Vraivēlo</vrai> was born as a response to that need. A workshop created to care for bicycles with the same respect and demand with which one trains to compete.
+                                </Trans>
                             </p>
                         </div>
                     </div>
 
                     <div className="origins-features-list">
-                        {[
-                            "Expert Mechanics",
-                            "Pro-level Care",
-                            "Girona Based"
-                        ].map((feature) => (
+                        {Array.isArray(features) && features.map((feature) => (
                             <div key={feature} className="origins-feature-item">
                                 <CheckCircle2 className="origins-feature-check" />
                                 <span className="origins-feature-label">{feature}</span>
@@ -271,7 +266,7 @@ const BridgingTheGap = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

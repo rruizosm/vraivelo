@@ -112,11 +112,7 @@ const Contact = () => {
                             title={t('contact.info.call')}
                             lines={["+34 657 317 270"]}
                         />
-                        <ContactCard
-                            icon={<Mail size={24} strokeWidth={1.5} />}
-                            title={t('contact.info.email')}
-                            lines={["info@vraivelo.com"]}
-                        />
+
                         <ContactCard
                             icon={<Clock size={24} strokeWidth={1.5} />}
                             title={t('contact.info.hours')}
@@ -162,9 +158,8 @@ const Contact = () => {
                                     type="email"
                                     name="email"
                                     className="form-input"
-                                    value="info@vraivelo.com"
-                                    readOnly
-                                    style={{ opacity: 0.7, cursor: 'not-allowed' }}
+                                    placeholder={t('contact.form.placeholders.email')}
+                                    required
                                 />
                             </div>
 
@@ -183,6 +178,8 @@ const Contact = () => {
                                     <option value="formation">{t('contact.form.subjects.formation')}</option>
                                     <option value="bikes">{t('contact.form.subjects.bikes')}</option>
                                     <option value="parts">{t('contact.form.subjects.parts')}</option>
+                                    <option value="member">{t('contact.form.subjects.member')}</option>
+                                    <option value="licenses">{t('contact.form.subjects.licenses')}</option>
                                     <option value="event">{t('contact.form.subjects.event')}</option>
                                     <option value="other">{t('contact.form.subjects.other')}</option>
                                 </select>

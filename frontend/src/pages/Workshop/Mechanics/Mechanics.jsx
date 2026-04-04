@@ -1,11 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import SEOHead from '../../../components/SEOHead/SEOHead';
 import '../Workshop.css';
 import './Mechanics.css';
 
 const Mechanics = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     return (
         <div className="workshop-page mechanics-page">
@@ -18,17 +20,15 @@ const Mechanics = () => {
                         <div>
                             <div className="mechanics-hero-label">
                                 <div className="mechanics-hero-bar"></div>
-                                <span className="mechanics-hero-category">Mechanical Excellence</span>
+                                <span className="mechanics-hero-category">{t('workshop.mechanics_page.hero.category')}</span>
                             </div>
-                            <h1 className="mechanics-hero-title">
-                                Precision <br />Tune-ups
-                            </h1>
+                            <h1 className="mechanics-hero-title" dangerouslySetInnerHTML={{ __html: t('workshop.mechanics_page.hero.title') }} />
                             <p className="mechanics-hero-desc">
-                                Our atelier specializes in high-performance maintenance. We treat every bicycle as a masterpiece of engineering, ensuring every gear shift is silent and every brake pull is surgical.
+                                {t('workshop.mechanics_page.hero.desc')}
                             </p>
                         </div>
                         <div className="mechanics-hero-image-wrapper">
-                            <img alt="Bicycle Workshop" className="mechanics-hero-image" data-alt="Close up of a professional bike mechanic working on a drivetrain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHE6cCi5Oq2pVlORlHyry9Bvxyw2iwbsaAUzXQOtdlHAJh-xSyuIuUle8ExYEQoIxZsgZ_68jkfOsBB_yV7DmW4LLmESz3h4F18rpQlABBNbSQwUuc-z8ncucNhl0AeW1Gs18IM56p1y_BiEC7PcuoA-7RHBF_cC3smdbKxHSEPcoH0-X3O1kffxk9B6PlnuA0dGGdAcRbxITLvuSjX_GeHliACJ8QnUJFQ_rDulWEOKBVUkDfFB9g_pONZJh25NAWDzbjH6qv6Eo" />
+                            <img alt="Bicycle Workshop" className="mechanics-hero-image" data-alt="Close up of a professional bike mechanic working on a drivetrain" src="/david_vraivelo/taller.png" />
                             <div className="mechanics-hero-image-overlay"></div>
                         </div>
                     </div>
@@ -41,81 +41,81 @@ const Mechanics = () => {
                         <div className="mechanics-card-basic">
                             <div className="mechanics-card-header">
                                 <div>
-                                    <h2 className="mechanics-card-title">Basic Tune-up</h2>
-                                    <p className="mechanics-card-subtitle">Routine maintenance for daily riders.</p>
+                                    <h2 className="mechanics-card-title">{t('workshop.mechanics_page.services.basic.title')}</h2>
+                                    <p className="mechanics-card-subtitle">{t('workshop.mechanics_page.services.basic.subtitle')}</p>
                                 </div>
                                 <div className="mechanics-card-price">40€</div>
                             </div>
-                            
+
                             <div className="mechanics-card-features">
                                 <div className="mechanics-card-feature">
                                     <span className="material-symbols-outlined mechanics-card-feature-icon">settings</span>
-                                    <span className="mechanics-card-feature-text">Drivetrain indexing &amp; adjustment</span>
+                                    <span className="mechanics-card-feature-text">{t('workshop.mechanics_page.services.basic.features.0')}</span>
                                 </div>
                                 <div className="mechanics-card-feature">
                                     <span className="material-symbols-outlined mechanics-card-feature-icon">emergency_home</span>
-                                    <span className="mechanics-card-feature-text">Brake safety inspection &amp; alignment</span>
+                                    <span className="mechanics-card-feature-text">{t('workshop.mechanics_page.services.basic.features.1')}</span>
                                 </div>
                                 <div className="mechanics-card-feature">
                                     <span className="material-symbols-outlined mechanics-card-feature-icon">cleaning_services</span>
-                                    <span className="mechanics-card-feature-text">Frame wipe-down &amp; inspection</span>
+                                    <span className="mechanics-card-feature-text">{t('workshop.mechanics_page.services.basic.features.2')}</span>
                                 </div>
                                 <div className="mechanics-card-feature">
                                     <span className="material-symbols-outlined mechanics-card-feature-icon">tire_repair</span>
-                                    <span className="mechanics-card-feature-text">Tire pressure &amp; wear check</span>
+                                    <span className="mechanics-card-feature-text">{t('workshop.mechanics_page.services.basic.features.3')}</span>
                                 </div>
                             </div>
-                            
-                            <button 
+
+                            <button
                                 className="mechanics-btn-basic"
-                                onClick={() => navigate('/contact', { state: { subject: 'workshop', service: 'Basic Tune-up' } })}
+                                onClick={() => navigate('/contact', { state: { subject: 'workshop', service: t('workshop.mechanics_page.services.basic.title') } })}
                             >
-                                Book Basic Service
+                                {t('workshop.mechanics_page.services.basic.btn')}
                             </button>
                         </div>
 
                         {/* Full Overhaul Card */}
                         <div className="mechanics-card-premium">
                             <div className="mechanics-card-badge">
-                                Most Popular
+                                {t('workshop.mechanics_page.services.premium.badge')}
                             </div>
-                            
+
                             <div className="mechanics-card-header">
                                 <div>
-                                    <h2 className="mechanics-card-title-premium">Full Overhaul</h2>
-                                    <p className="mechanics-card-subtitle">Complete disassembly &amp; restoration.</p>
+                                    <h2 className="mechanics-card-title-premium">{t('workshop.mechanics_page.services.premium.title')}</h2>
+                                    <p className="mechanics-card-subtitle">{t('workshop.mechanics_page.services.premium.subtitle')}</p>
                                 </div>
                                 <div className="mechanics-card-price">80€</div>
                             </div>
-                            
+
                             <div className="mechanics-card-features">
                                 <div className="mechanics-card-feature">
                                     <span className="material-symbols-outlined mechanics-card-feature-icon-premium">precision_manufacturing</span>
-                                    <span className="mechanics-card-feature-text-premium">Full drivetrain deep clean (Sonic bath)</span>
+                                    <span className="mechanics-card-feature-text-premium">{t('workshop.mechanics_page.services.premium.features.0')}</span>
                                 </div>
                                 <div className="mechanics-card-feature">
                                     <span className="material-symbols-outlined mechanics-card-feature-icon-premium">build_circle</span>
-                                    <span className="mechanics-card-feature-text-premium">Bottom bracket &amp; headset service</span>
+                                    <span className="mechanics-card-feature-text-premium">{t('workshop.mechanics_page.services.premium.features.1')}</span>
                                 </div>
                                 <div className="mechanics-card-feature">
                                     <span className="material-symbols-outlined mechanics-card-feature-icon-premium">blur_on</span>
-                                    <span className="mechanics-card-feature-text-premium">Wheel truing (Precision radial/lateral)</span>
+                                    <span className="mechanics-card-feature-text-premium">{t('workshop.mechanics_page.services.premium.features.2')}</span>
                                 </div>
                                 <div className="mechanics-card-feature">
                                     <span className="material-symbols-outlined mechanics-card-feature-icon-premium">cable</span>
-                                    <span className="mechanics-card-feature-text-premium">Replacement of all inner cables</span>
+                                    <span className="mechanics-card-feature-text-premium">{t('workshop.mechanics_page.services.premium.features.3')}</span>
                                 </div>
                                 <div className="mechanics-card-feature">
                                     <span className="material-symbols-outlined mechanics-card-feature-icon-premium">verified</span>
-                                    <span className="mechanics-card-feature-text-premium">Full component torque verification</span>
+                                    <span className="mechanics-card-feature-text-premium">{t('workshop.mechanics_page.services.premium.features.4')}</span>
                                 </div>
                             </div>
-                            
-                            <button 
+
+                            <button
                                 className="mechanics-btn-premium"
-                                onClick={() => navigate('/contact', { state: { subject: 'workshop', service: 'Full Overhaul' } })}
-                                >
-                                Book Full Overhaul
+                                onClick={() => navigate('/contact', { state: { subject: 'workshop', service: t('workshop.mechanics_page.services.premium.title') } })}
+                            >
+                                {t('workshop.mechanics_page.services.premium.btn')}
                             </button>
                         </div>
                     </div>
@@ -125,42 +125,42 @@ const Mechanics = () => {
                 <section className="mechanics-specs">
                     <div className="mechanics-specs-main">
                         <div>
-                            <h3 className="mechanics-specs-title">Engineering is in the details.</h3>
+                            <h3 className="mechanics-specs-title">{t('workshop.mechanics_page.specs.title')}</h3>
                             <p className="mechanics-specs-desc">
-                                Our workshop uses professional-grade torque wrenches, ultrasonic cleaners, and genuine manufacturers' parts to ensure your warranty remains intact and your performance maximized.
+                                {t('workshop.mechanics_page.specs.desc')}
                             </p>
                         </div>
-                        
+
                         <div className="mechanics-specs-grid">
                             <div>
                                 <div className="mechanics-specs-value">0.01mm</div>
-                                <div className="mechanics-specs-label">Tolerance</div>
+                                <div className="mechanics-specs-label">{t('workshop.mechanics_page.specs.tolerance')}</div>
                             </div>
                             <div>
                                 <div className="mechanics-specs-value">24h</div>
-                                <div className="mechanics-specs-label">Turnaround</div>
+                                <div className="mechanics-specs-label">{t('workshop.mechanics_page.specs.turnaround')}</div>
                             </div>
                             <div>
                                 <div className="mechanics-specs-value">100%</div>
-                                <div className="mechanics-specs-label">Certified</div>
+                                <div className="mechanics-specs-label">{t('workshop.mechanics_page.specs.certified')}</div>
                             </div>
                             <div>
                                 <div className="mechanics-specs-value">Genuine</div>
-                                <div className="mechanics-specs-label">Parts</div>
+                                <div className="mechanics-specs-label">{t('workshop.mechanics_page.specs.parts')}</div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="mechanics-cta-card">
                         <div className="mechanics-cta-content">
                             <span className="material-symbols-outlined mechanics-cta-icon">calendar_month</span>
-                            <h4 className="mechanics-cta-title">Ready to Ride?</h4>
-                            <p className="mechanics-cta-subtitle">Schedule your atelier visit today.</p>
-                            <a 
+                            <h4 className="mechanics-cta-title">{t('workshop.mechanics_page.cta.title')}</h4>
+                            <p className="mechanics-cta-subtitle">{t('workshop.mechanics_page.cta.subtitle')}</p>
+                            <a
                                 className="mechanics-cta-link"
                                 onClick={(e) => { e.preventDefault(); navigate('/contact', { state: { subject: 'workshop' } }); }}
                             >
-                                Check Availability
+                                {t('workshop.mechanics_page.cta.btn')}
                             </a>
                         </div>
                         {/* Ghost image in background */}

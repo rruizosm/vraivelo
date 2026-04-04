@@ -1,14 +1,90 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { ArrowRight, Loader, ShoppingBag, ChevronDown, ChevronUp } from 'lucide-react';
+import { Loader, ChevronDown, ChevronUp, Search } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../../supabase';
 import { useTranslation } from 'react-i18next';
 import SEOHead from '../../components/SEOHead/SEOHead';
-import { getDiscountedPrice } from '../../lib/priceUtils';
 import './Shop.css';
 
-const categories = ['All', 'Road', 'MTB', 'Gravel', 'E-Bike', 'Time Trial', 'Kids'];
+const categories = ['All', 'Road', 'MTB', 'Gravel', 'eBike', 'Kids'];
+
+// ─── Per-card component so each card has its own hover-color state ────────────
+const BikeCard = ({ bike, index, navigate, t }) => {
+    const variants = (bike.bike_variants || []).map(bv => ({
+        color: bv.color_name,
+        hex: bv.color_hex,
+        image: bv.image_url,
+    }));
+    const hasVariants = variants.length > 1;
+
+    const [previewImage, setPreviewImage] = useState(bike.image_url || null);
+    const [activeVariant, setActiveVariant] = useState(null);
+
+    const handleSwatchEnter = (v) => {
+        setActiveVariant(v.color);
+        if (v.image) setPreviewImage(v.image);
+    };
+
+    const handleSwatchLeave = () => {
+        setActiveVariant(null);
+        setPreviewImage(bike.image_url || null);
+    };
+
+    return (
+        <motion.div
+            key={bike.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.05 }}
+            className="bike-card group"
+            onClick={() => navigate(`/shop/${bike.id}`)}
+        >
+            <div className="bike-image-wrapper">
+                {bike.quantity === 0 && (
+                    <span className="sold-badge-card">{t('product.sold')}</span>
+                )}
+                {previewImage ? (
+                    <img src={previewImage} alt={bike.model} className="bike-image" />
+                ) : (
+                    <span className="bike-placeholder-text">{bike.brand.charAt(0)}</span>
+                )}
+                {bike.is_new && bike.quantity !== 0 && (
+                    <span className="new-badge">NEW</span>
+                )}
+            </div>
+
+            <div className="bike-info">
+                <p className="bike-brand">{bike.brand}</p>
+                <h3 className="bike-model">{bike.model}</h3>
+
+                <div className="bike-price-row">
+                    <span className="bike-price-new">{bike.price}</span>
+
+                    {/* Color swatches */}
+                    {hasVariants && (
+                        <div
+                            className="bike-card-swatches"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {variants.map((v) => (
+                                <div
+                                    key={v.color}
+                                    className={`bike-card-swatch ${activeVariant === v.color ? 'active' : ''
+                                        }`}
+                                    style={{ backgroundColor: v.hex || '#ccc' }}
+                                    title={v.color}
+                                    onMouseEnter={() => handleSwatchEnter(v)}
+                                    onMouseLeave={handleSwatchLeave}
+                                />
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </div>
+        </motion.div>
+    );
+};
 
 const Shop = () => {
     const { t } = useTranslation();
@@ -31,6 +107,7 @@ const Shop = () => {
         category: true,
         brand: true
     });
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         sessionStorage.setItem('shop_activeCategory', activeCategory);
@@ -45,7 +122,7 @@ const Shop = () => {
                 setLoading(true);
                 const { data, error } = await supabase
                     .from('bikes')
-                    .select('*')
+                    .select('*, bike_variants(*)')
                     .eq('Active', true)
                     .order('brand', { ascending: true });
 
@@ -93,13 +170,17 @@ const Shop = () => {
     const filteredBikes = bikes.filter(bike => {
         const matchCategory = activeCategory === 'All' || bike.category === activeCategory;
         const matchBrand = activeBrands.length === 0 || activeBrands.includes(bike.brand);
-        const matchMaterial = activeMaterials.length === 0 || activeMaterials.some(mat => 
+        const matchMaterial = activeMaterials.length === 0 || activeMaterials.some(mat =>
             String(bike.frame_material || bike.description || bike.model).toLowerCase().includes(mat.toLowerCase())
         );
         const bikePrice = parsePrice(bike.price);
         const matchPrice = bikePrice >= priceRange[0] && bikePrice <= priceRange[1];
+        const q = searchQuery.trim().toLowerCase();
+        const matchSearch = !q ||
+            (bike.brand || '').toLowerCase().includes(q) ||
+            (bike.model || '').toLowerCase().includes(q);
 
-        return matchCategory && matchBrand && matchMaterial && matchPrice;
+        return matchCategory && matchBrand && matchMaterial && matchPrice && matchSearch;
     });
 
     if (loading) {
@@ -130,7 +211,7 @@ const Shop = () => {
                 <div className="shop-layout">
                     {/* SIDEBAR FILTERS */}
                     <aside className="shop-sidebar">
-                        
+
                         {/* Frame Material Filter */}
                         <div className="filter-group accordion-group">
                             <button className="filter-accordion-header" onClick={() => toggleSection('material')}>
@@ -207,7 +288,7 @@ const Shop = () => {
                                 <div className="filter-options-content">
                                     <div className="range-slider-container">
                                         <div className="range-slider-track">
-                                            <div className="range-slider-fill" style={{ left: `${(priceRange[0]/15000)*100}%`, width: `${((priceRange[1]-priceRange[0])/15000)*100}%` }}></div>
+                                            <div className="range-slider-fill" style={{ left: `${(priceRange[0] / 15000) * 100}%`, width: `${((priceRange[1] - priceRange[0]) / 15000) * 100}%` }}></div>
                                         </div>
                                         <input type="range" min="0" max="15000" step="500" value={priceRange[0]} onChange={(e) => {
                                             const val = Math.min(Number(e.target.value), priceRange[1] - 500);
@@ -229,59 +310,37 @@ const Shop = () => {
 
                     {/* BIKES GRID AREA */}
                     <div style={{ width: '100%' }}>
+                        {/* Search Bar */}
+                        <div className="shop-search-bar">
+                            <Search size={18} className="shop-search-icon" />
+                            <input
+                                id="shop-search-input"
+                                type="text"
+                                className="shop-search-input"
+                                placeholder="Search by brand or model…"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                            {searchQuery && (
+                                <button className="shop-search-clear" onClick={() => setSearchQuery('')} aria-label="Clear search">
+                                    ✕
+                                </button>
+                            )}
+                        </div>
                         <div style={{ paddingBottom: '1rem', marginBottom: '1rem', borderBottom: '1px solid #e2e8f0', color: '#64748b', fontSize: '0.875rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                             {filteredBikes.length} {filteredBikes.length === 1 ? 'Bike' : 'Bikes'} Listed
                         </div>
                         <div className="bikes-grid">
                             {filteredBikes.map((bike, index) => (
-                            <motion.div
-                                key={bike.id}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.05 }}
-                                className="bike-card group"
-                                onClick={() => navigate(`/shop/${bike.id}`)}
-                            >
-                                <div className="bike-image-wrapper">
-                                    {bike.quantity === 0 && (
-                                        <span className="sold-badge-card">
-                                            {t('product.sold')}
-                                        </span>
-                                    )}
-                                    {bike.image_url ? (
-                                        <img src={bike.image_url} alt={bike.model} className="bike-image" />
-                                    ) : (
-                                        <span className="bike-placeholder-text">
-                                            {bike.brand.charAt(0)}
-                                        </span>
-                                    )}
-                                    {bike.is_new && bike.quantity !== 0 && (
-                                        <span className="new-badge">
-                                            NEW
-                                        </span>
-                                    )}
-                                </div>
-                                <div className="bike-info">
-                                    <p className="bike-brand">{bike.brand}</p>
-                                    <h3 className="bike-model">{bike.model}</h3>
-                                    {/* <p className="bike-desc">{bike.description}</p> */}
-                                    <div className="bike-price-row">
-                                        <span className="bike-price-new">{bike.price}</span>
-                                        {/* <button
-                                            className="add-cart-btn-small"
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                navigate(`/shop/${bike.id}`);
-                                            }}
-                                            title={t('product.view_details')}
-                                        >
-                                            <ShoppingBag size={18} />
-                                        </button> */}
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
+                                <BikeCard
+                                    key={bike.id}
+                                    bike={bike}
+                                    index={index}
+                                    navigate={navigate}
+                                    t={t}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

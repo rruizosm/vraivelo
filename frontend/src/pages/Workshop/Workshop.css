@@ -228,7 +228,6 @@
   position: relative;
   padding-bottom: 2.5rem;
   margin-top: 1rem;
-  min-height: calc(100dvh - 5rem);
   scroll-margin-top: 5rem;
 }
 
@@ -380,9 +379,7 @@
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  height: 100%;
   position: relative;
-  overflow: hidden;
 }
 
 .workshop-plan-basic {
@@ -436,14 +433,14 @@
 }
 
 /* Card Headers */
-.workshop-plan-header {
+/* .workshop-plan-header {
   margin-bottom: 1.5rem;
-}
+} */
 
 .workshop-plan-header-elite {
   background-color: var(--global-black);
   color: var(--global-white);
-  padding: 1.5rem 1.5rem 2rem 1.5rem;
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
   position: relative;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -496,9 +493,9 @@
 
 .workshop-plan-price-wrap-elite {
   border-bottom: 1px solid var(--border-light);
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 
 .workshop-plan-price {
@@ -528,9 +525,8 @@
 .workshop-plan-features {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   list-style: none;
   padding: 0;
 }

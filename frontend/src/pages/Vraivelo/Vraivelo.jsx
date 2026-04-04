@@ -8,8 +8,10 @@ import SEOHead from '../../components/SEOHead/SEOHead';
 import './Vraivelo.css';
 
 const Vraivelo = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const navigate = useNavigate();
+    
+    const currentStories = stories[i18n.language] || stories.en;
 
     const handleStoryClick = (story) => {
         if (story.content) {
@@ -21,7 +23,7 @@ const Vraivelo = () => {
         <div className="vraivelo-page">
             <SEOHead titleKey="seo.vraivelo.title" descriptionKey="seo.vraivelo.description" path="/vraivelo" />
             <div className="stories-grid">
-                {stories.map((story, index) => (
+                {currentStories.map((story, index) => (
                     <motion.div
                         key={story.id}
                         initial={{ opacity: 0, y: 20 }}
@@ -41,7 +43,7 @@ const Vraivelo = () => {
                             <h2 className="story-title">{story.title}</h2>
                             {story.content && (
                                 <button className="read-more-btn">
-                                    Read Story <ArrowRight size={16} />
+                                    {t('vraivelo.read_story', 'Read Story')} <ArrowRight size={16} />
                                 </button>
                             )}
                         </div>

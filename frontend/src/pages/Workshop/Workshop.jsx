@@ -176,7 +176,7 @@ const Workshop = () => {
                                             <span className="workshop-plan-feature-text">{t('workshop.membership.plans.peloton.f4')}</span>
                                         </li>
                                     </ul>
-                                    <button className="workshop-plan-btn" onClick={() => navigate('/contact', { state: { subject: 'workshop', service: 'Membership: Pelotón Rider' } })}>
+                                    <button className="workshop-plan-btn" onClick={() => navigate('/contact', { state: { subject: 'member', service: t('workshop.membership.plans.peloton.name') } })}>
                                         {t('workshop.membership.join_now')} <span className="workshop-plan-btn-icon">→</span>
                                     </button>
                                 </div>
@@ -220,7 +220,7 @@ const Workshop = () => {
                                             <span className="workshop-plan-feature-text">{t('workshop.membership.plans.pro.f6')}</span>
                                         </li>
                                     </ul>
-                                    <button className="workshop-plan-btn" onClick={() => navigate('/contact', { state: { subject: 'workshop', service: 'Membership: Pro Performance' } })}>
+                                    <button className="workshop-plan-btn" onClick={() => navigate('/contact', { state: { subject: 'member', service: t('workshop.membership.plans.pro.name') } })}>
                                         {t('workshop.membership.join_now')} <span className="workshop-plan-btn-icon">→</span>
                                     </button>
                                 </div>
@@ -261,7 +261,7 @@ const Workshop = () => {
                                                 <span className="workshop-plan-feature-text">{t('workshop.membership.plans.elite.f5')}</span>
                                             </li>
                                         </ul>
-                                        <button className="workshop-plan-btn" onClick={() => navigate('/contact', { state: { subject: 'workshop', service: 'Membership: Elite Factory' } })}>
+                                        <button className="workshop-plan-btn" onClick={() => navigate('/contact', { state: { subject: 'member', service: t('workshop.membership.plans.elite.name') } })}>
                                             {t('workshop.membership.join_now')} <span className="workshop-plan-btn-icon">→</span>
                                         </button>
                                     </div>

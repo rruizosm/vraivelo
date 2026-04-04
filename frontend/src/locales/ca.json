@@ -4,7 +4,7 @@
         "workshop": "Taller",
         "bikes": "Bicicletes",
         "other_products": "Altres productes",
-        "vraivelo": "Vraivelo",
+        "eraivelo": "Vraivēlo",
         "contact": "Contacte",
         "book_service": "Reservar cita"
     },
@@ -15,11 +15,12 @@
         }
     },
     "vraivelo": {
+        "read_story": "Llegir història",
         "title": "La Nostra Història",
-        "subtitle": "Nascuts de la passió pel ciclisme i l'artesania, Vraivélo és més que una botiga de bicicletes.",
+        "subtitle": "Nascuts de la passió pel ciclisme i l'artesania, Vraivēlo és més que una botiga de bicicletes.",
         "how_it_started": {
             "title": "Com Va Començar",
-            "text": "Vraivélo va començar en un petit garatge amb una idea simple: cada bicicleta explica una història. El que va començar com un passatemps de cap de setmana restaurant quadres antics va evolucionar ràpidament cap a una dedicació a temps complet a l'art del ciclisme. Ens vam adonar que hi havia un buit entre les bicicletes modernes produïdes en massa i les màquines amb ànima del passat. El nostre viatge tracta de tancar aquest buit, aportant cura artesanal al rendiment modern."
+            "text": "Vraivēlo va començar en un petit garatge amb una idea simple: cada bicicleta explica una història. El que va començar com un passatemps de cap de setmana restaurant quadres antics va evolucionar ràpidament cap a una dedicació a temps complet a l'art del ciclisme. Ens vam adonar que hi havia un buit entre les bicicletes modernes produïdes en massa i les màquines amb ànima del passat. El nostre viatge tracta de tancar aquest buit, aportant cura artesanal al rendiment modern."
         },
         "who_we_are": {
             "title": "Qui Som",
@@ -27,7 +28,7 @@
         },
         "what_we_do": {
             "title": "Què Fem",
-            "text": "A Vraivélo, ens especialitzem a donar nova vida a quadres clàssics i construir bicicletes personalitzades que criden l'atenció. Des de restauracions completes vintage fins a muntatges personalitzats moderns, gestionem cada detall amb precisió. També oferim serveis experts de manteniment, assegurant que el teu viatge sigui sempre suau i segur. Creiem en el ciclisme sostenible, reutilitzant components de qualitat on sigui possible i promovent una cultura ciclista que valora la qualitat sobre la quantitat."
+            "text": "A Vraivēlo, ens especialitzem a donar nova vida a quadres clàssics i construir bicicletes personalitzades que criden l'atenció. Des de restauracions completes vintage fins a muntatges personalitzats moderns, gestionem cada detall amb precisió. També oferim serveis experts de manteniment, assegurant que el teu viatge sigui sempre suau i segur. Creiem en el ciclisme sostenible, reutilitzant components de qualitat on sigui possible i promovent una cultura ciclista que valora la qualitat sobre la quantitat."
         },
         "team": {
             "ruben_role": "Fundador i Mecànic Principal",
@@ -40,6 +41,8 @@
         "stock": "Stock",
         "sold": "Venuda",
         "add_to_cart": "Afegeix al carretó",
+        "available_sizes": "TALLES DISPONIBLES",
+        "available_colors": "COLORS DISPONIBLES",
         "contact_us": "Contacta'ns",
         "back_to_shop": "Tornar a la Botiga",
         "back_to_other_products": "Tornar a Altres Productes",
@@ -89,7 +92,7 @@
         },
         "values": {
             "title": "Per què",
-            "title_highlight": "Vraivelo?",
+            "title_highlight": "Vraivēlo?",
             "subtitle": "Combinem artesania experta amb una autèntica passió pel ciclisme.",
             "cards": {
                 "workshop": {
@@ -101,7 +104,7 @@
                     "desc": "Col·lecció curada de les millors bicicletes i equipament professional del món."
                 },
                 "guarantee": {
-                    "title": "Garantia Vraivelo",
+                    "title": "Garantia Vraivēlo",
                     "desc": "Recolzem cada servei i venda. Qualitat i satisfacció, sempre."
                 }
             }
@@ -149,12 +152,12 @@
         "discipline": {
             "title_1": "Selecciona el teu servei",
             "subtitle": "Tria un servei especialitzat del taller. En David està certificat per realitzar preparacions d'alt rendiment en tots els components principals de bicicletes de muntanya, de grava, de carretera i elèctriques.",
-            "become_member": "Fes-te Membre vraivelo",
+            "become_member": "Fes-te Membre Vraivēlo",
             "view_services": "Veure Serveis",
             "cards": {
                 "mechanics": {
                     "badge": "Essencial",
-                    "title": "Mecànica i Posada a Punt",
+                    "title": "Posada a Punt i Manteniment",
                     "desc": "Neteja integral de la transmissió, verificació de parell de collament i ajustos precisos del canvi per al rendiment diari."
                 },
                 "suspensions": {
@@ -293,6 +296,167 @@
         ],
         "book_now": "Reservar",
         "most_popular": "MÉS POPULAR",
+        "suspensions_page": {
+            "hero": {
+                "category": "Mecànica d'Excel·lència",
+                "title": "Manteniment de Forquilles.",
+                "desc": "Elevant la teva experiència de conducció amb precisió clínica. El nostre taller especialitzat en forquilles se centra en la integritat hidràulica, reducció de friccions i configuracions a mida per a un rendiment d'elit."
+            },
+            "services": {
+                "basic": {
+                    "title": "Manteniment Bàsic",
+                    "subtitle": "Servei d'interval estàndard",
+                    "features": [
+                        "Neteja i inspecció externa general",
+                        "Substitució de líquid de les botelles",
+                        "Saturació d'anells d'escuma",
+                        "Sagnat i reconstrucció completa del cartutx"
+                    ],
+                    "btn": "Seleccionar Pla"
+                },
+                "premium": {
+                    "badge": "Més Popular",
+                    "title": "Manteniment Complet",
+                    "subtitle": "Revisió anual de rendiment",
+                    "features": [
+                        "Neteja ultrasònica completa",
+                        "Substitució completa de retens i guardapols",
+                        "Reconstrucció del cartutx hidràulic i sagnat al buit",
+                        "Calibració del joc de casquets",
+                        "Càrrega de nitrogen (si és aplicable)"
+                    ],
+                    "btn": "Reservar Servei Complet"
+                }
+            },
+            "process": {
+                "title": "El Protocol <br/> de Precisió.",
+                "steps": {
+                    "1": {
+                        "title": "Diagnòstic d'Entrada",
+                        "desc": "Mesurem el sag, velocitats de rebot i compressió abans de començar qualsevol treball per establir una base de rendiment."
+                    },
+                    "2": {
+                        "title": "Neteja Quirúrgica",
+                        "desc": "Els components es desmunten i s'introdueixen en un bany ultrasònic per eliminar les micro-partícules que la neteja estàndard no assoleix."
+                    },
+                    "3": {
+                        "title": "Dinàmica de Fluids",
+                        "desc": "Utilitzem olis prèmium Motorex o Maxima, mesurats amb precisió segons les especificacions del fabricant per a una estabilitat tèrmica consistent."
+                    },
+                    "4": {
+                        "title": "Prova en Bancada",
+                        "desc": "Cada unitat reconstruïda es prova a la nostra bancada manual per garantir que els clics i els bloquejos funcionin a la perfecció."
+                    }
+                }
+            },
+            "glass_panel": {
+                "val": "0.01mm",
+                "desc": "La tolerància que mantenim per a l'alineació del pistó d'aire."
+            }
+        },
+        "rear_shock_page": {
+            "hero": {
+                "category": "Excel·lència en Suspensió",
+                "title": "Manteniment <br/> d'Amortidors",
+                "desc": "Ajust de precisió per a un rendiment d'alt nivell. Tractem cada amortidor com una obra mestra mecànica única, restaurant el rendiment de fàbrica a través d'un manteniment clínic.",
+                "badge": "Taller Certificat"
+            },
+            "bento": {
+                "main": {
+                    "bg_text": "01",
+                    "title": "Manteniment de l'Amortidor",
+                    "subtitle": "Servei d'interval estàndard de 50h/100h",
+                    "list_title": "Abast del Servei",
+                    "features": [
+                        "Neteja clínica completa de tots els sistemes d'amortiguació interns",
+                        "Substitució completa de juntes tòriques i segells dinàmics amb kits prèmium",
+                        "Substitució d'oli amb sagnat al buit per a un rendiment sense cavitació",
+                        "Inspecció de casquets i verificació de toleràncies"
+                    ],
+                    "pricing_label": "Inversió Total",
+                    "pricing_extra": "+ Recanvis (Kits de retens aprox. 25€)",
+                    "btn": "Reservar Manteniment"
+                },
+                "sidebar": {
+                    "guarantee": {
+                        "title": "Garantia de Precisió",
+                        "desc": "Cada amortidor revisat al Taller se sotmet a una prova de pressió de nitrogen de 24 hores i simulació en banc per assegurar que no hi hagi fuites i que les corbes d'amortiguació siguin consistents."
+                    },
+                    "lead_time": {
+                        "title": "Temps d'Entrega",
+                        "val": "48 - 72 Hores",
+                        "extra": "Servei exprés el mateix dia disponible per +40€."
+                    }
+                }
+            },
+            "specs": {
+                "title": "Matriu de Servei",
+                "steps": {
+                    "1": {
+                        "step": "Pas 01",
+                        "name": "Desengreixament i Desmuntatge"
+                    },
+                    "2": {
+                        "step": "Pas 02",
+                        "name": "Inspecció Interna"
+                    },
+                    "3": {
+                        "step": "Pas 03",
+                        "name": "Càrrega d'IFP"
+                    },
+                    "4": {
+                        "step": "Pas 04",
+                        "name": "Calibració de Parell"
+                    }
+                }
+            }
+        },
+        "mechanics_page": {
+            "hero": {
+                "category": "Mecànica d'Excel·lència",
+                "title": "Posades a Punt<br />i Manteniment",
+                "desc": "El nostre taller s'especialitza en manteniment d'alt rendiment. Tractem cada bicicleta com una obra mestra de l'enginyeria, assegurant que cada canvi de marxa sigui silenciós i cada frenada quirúrgica."
+            },
+            "services": {
+                "basic": {
+                    "title": "Revisió Bàsica",
+                    "subtitle": "Manteniment rutinari per a ciclistes diaris.",
+                    "features": [
+                        "Ajust i sincronització de la transmissió",
+                        "Inspecció de seguretat i alineació de frens",
+                        "Neteja i revisió del quadre",
+                        "Revisió de pressió i desgast de pneumàtics"
+                    ],
+                    "btn": "Reservar Servei Bàsic"
+                },
+                "premium": {
+                    "badge": "Més Popular",
+                    "title": "Revisió Completa",
+                    "subtitle": "Desmuntatge complet i restauració.",
+                    "features": [
+                        "Neteja profunda de transmissió (Bany ultrasònic)",
+                        "Manteniment d'eix de pedaler i direcció",
+                        "Centrat de rodes (Precisió radial/lateral)",
+                        "Substitució de tots els cables interns",
+                        "Verificació del parell de collament en tots els components"
+                    ],
+                    "btn": "Reservar Revisió Completa"
+                }
+            },
+            "specs": {
+                "title": "L'enginyeria està en els detalls.",
+                "desc": "El nostre taller utilitza claus dinamomètriques de nivell professional, netejadors ultrasònics i peces originals dels fabricants per assegurar que la teva garantia es mantingui intacta i el teu rendiment al màxim.",
+                "tolerance": "Tolerància",
+                "turnaround": "Entrega",
+                "certified": "Certificat",
+                "parts": "Recanvis"
+            },
+            "cta": {
+                "title": "A punt per Rodar?",
+                "subtitle": "Programa la teva visita a l'atelier avui mateix.",
+                "btn": "Comprovar Disponibilitat"
+            }
+        },
         "custom": {
             "title": "Necessites Alguna Cosa Personalitzada?",
             "text": "Oferim serveis a mida per a muntatges únics, restauracions vintage i preparació per a competició. Contacta amb nosaltres per a un pressupost personalitzat.",
@@ -334,7 +498,9 @@
                 "workshop": "Servei de Taller",
                 "formation": "Formació Mecànica",
                 "bikes": "Consulta sobre Bicicletes",
-                "parts": "Recanvis i Accessoris",
+                "parts": "Peces i Accessoris",
+                "member": "Soci Vraivēlo",
+                "licenses": "Llicències de Ciclisme",
                 "events": "Esdeveniments",
                 "other": "Altre"
             },
@@ -346,17 +512,18 @@
         }
     },
     "footer": {
-        "brand_desc": "Taller de ciclisme premium i minorista. Partner oficial de Giant, Berria i MMR. Eleva la teva pedalada.",
+        "brand_desc": "Taller de ciclisme premium i minorista. Partner oficial de Giant i Berria. Eleva la teva pedalada.",
         "explore": "Explorar",
-        "workshop_services": "Serveis de Taller",
-        "new_bikes": "Bicicletes Noves",
-        "about_us": "Sobre Nosaltres",
+        "workshop_services": "Taller",
+        "new_bikes": "Bicicletes",
+        "other_products": "Altres Productes",
+        "vraivelo": "Vraivēlo",
         "visit_us": "Visita'ns",
         "follow_us": "Segueix-nos",
         "hours_label": "Dilluns a Divendres:",
         "hours_morning": "9:00 - 13:00",
         "hours_afternoon": "16:00 - 19:00",
-        "copyright": "© {{year}} Vraivelo. Tots els drets reservats."
+        "copyright": "© {{year}} Vraivēlo. Tots els drets reservats."
     },
     "cart": {
         "title": "El teu Carretó",
@@ -395,7 +562,7 @@
     "strava": {
         "badge": "La Comunitat Oficial",
         "hero_title_1": "Uneix-te al",
-        "hero_title_2": "Pilot",
+        "hero_title_2": "Pelotó",
         "hero_desc": "Pedala més lluny, més ràpid i junts. Uneix-te a una comunitat que supera límits, comparteix la carretera i celebra cada quilòmetre.",
         "join_strava": "Uneix-te a Strava",
         "stats": {
@@ -424,7 +591,7 @@
             "updated_desc": "Rep notificacions de properes sortides socials, cafès sobre rodes i esdeveniments directament al teu feed."
         },
         "card": {
-            "club_name": "Vraivelo Club",
+            "club_name": "Vraivēlo Club",
             "verified": "Verificat",
             "follow": "Seguir",
             "leaderboard": "Classificació",
@@ -435,7 +602,7 @@
             "watermark": "SORTIDES",
             "title_prefix": "Galeria de",
             "title_highlight": "Sortides",
-            "subtitle": "Moments espontanis de les nostres aventures de cap de setmana. Des del primer espresso fins a l'sprint final, això és Vraivelo.",
+            "subtitle": "Moments espontanis de les nostres aventures de cap de setmana. Des del primer espresso fins a l'sprint final, això és Vraivēlo.",
             "community": "Comunitat",
             "post_ride_title": "Brindis Post-Sortida",
             "post_ride_desc": "La millor part de cada sortida és la història compartida després amb una beguda freda."
@@ -446,7 +613,7 @@
             "desc": "Tant si entrenes per a una gran fondo com si busques companys de cafè dominical, hi ha un lloc al pilot per a tu.",
             "join_club": "Uneix-te al Club a Strava",
             "follow_ig": "Segueix-nos a Instagram",
-            "copyright": "© 2024 Vraivelo Cycling Club."
+            "copyright": "© 2024 Vraivēlo Cycling Club."
         }
     },
     "event_formation": {
@@ -485,36 +652,300 @@
     },
     "seo": {
         "home": {
-            "title": "Vraivelo — Taller de Ciclisme Premium i Botiga de Bicicletes",
-            "description": "Taller de ciclisme premium i distribuïdor oficial de Giant, Berria i MMR. Reparacions expertes, muntatges personalitzats i equipament de qualitat."
+            "title": "Vraivēlo — Taller de Ciclisme Premium i Botiga de Bicicletes",
+            "description": "Taller de ciclisme premium i distribuïdor oficial de Giant i Berria. Reparacions expertes, muntatges personalitzats i equipament de qualitat."
         },
         "shop": {
-            "title": "Botiga de Bicicletes — Vraivelo",
-            "description": "Explora la nostra selecció de bicicletes de carretera, MTB, gravel, e-bike i infantils de Giant, Berria, MMR i Liv."
+            "title": "Botiga de Bicicletes — Vraivēlo",
+            "description": "Explora la nostra selecció de bicicletes de carretera, MTB, gravel, e-bike i infantils de Giant i Berria."
         },
         "other_products": {
-            "title": "Recanvis i Accessoris — Vraivelo",
-            "description": "Compra accessoris de ciclisme, components, roba i rodes de les millors marques a Vraivelo."
+            "title": "Recanvis i Accessoris — Vraivēlo",
+            "description": "Compra accessoris de ciclisme, components, roba i rodes de les millors marques a Vraivēlo."
         },
         "workshop": {
-            "title": "Serveis de Taller — Vraivelo",
+            "title": "Serveis de Taller — Vraivēlo",
             "description": "Reparació professional de bicicletes, posades a punt, manteniment de suspensions i muntatges personalitzats per mecànics certificats."
         },
         "contact": {
-            "title": "Contacte — Vraivelo",
-            "description": "Contacta amb Vraivelo. Visita la nostra botiga, truca'ns o envia'ns un missatge per a consultes sobre bicicletes i reserves de servei."
+            "title": "Contacte — Vraivēlo",
+            "description": "Contacta amb Vraivēlo. Visita la nostra botiga, truca'ns o envia'ns un missatge per a consultes sobre bicicletes i reserves de servei."
         },
         "vraivelo": {
-            "title": "La Nostra Història — Vraivelo",
-            "description": "Descobreix la història darrere de Vraivelo — nascuda de la passió pel ciclisme i l'artesania."
+            "title": "La Nostra Història — Vraivēlo",
+            "description": "Descobreix la història darrere de Vraivēlo — nascuda de la passió pel ciclisme i l'artesania."
         },
         "event_formation": {
-            "title": "Taller de Mecànica — Vraivelo",
+            "title": "Taller de Mecànica — Vraivēlo",
             "description": "Uneix-te al nostre taller pràctic de mecànica de bicicletes. Aprèn habilitats essencials de manteniment."
         },
         "product_detail": {
-            "title": "{{name}} — Vraivelo",
-            "description": "Explora la {{name}} — especificacions, talles i preus. Disponible a Vraivelo."
+            "title": "{{name}} — Vraivēlo",
+            "description": "Explora la {{name}} — especificacions, talles i preus. Disponible a Vraivēlo."
+        }
+    },
+    "origins": {
+        "hero": {
+            "back": "Tornar a històries",
+            "title": "ORÍGENS",
+            "desc": "De la competició al detall mecànic. La història darrere del taller."
+        },
+        "intro": {
+            "title": "<vraiWhite>Vraivēlo</vraiWhite> neix de tota una vida sobre la bicicleta.",
+            "text": "En David, fundador del taller, va créixer a Badalona i va començar a pedalar amb només tres anys. El que va començar com una afició a la infància es va convertir en una carrera competitiva en mountain bike i després en ciclisme de carretera, passant per categories sub23 i elit fins a formar part d'un equip professional."
+        },
+        "competitive": {
+            "label": "L'Era Competitiva",
+            "heading": "Al Límit a la Ruta",
+            "text": "El ciclisme de competició no només exigeix resistència física; requereix entendre profundament la màquina. Anys de portar les bicicletes al límit en condicions exigents van ensenyar a en David la relació crucial entre el ciclista i el seu equip.",
+            "quote": "\"Cada ajust, cada reparació i cada recomanació neix de l'experiència real als entrenaments, carreres i llargues hores sobre el selló.\"",
+            "author": "— David, Fundador"
+        },
+        "quote_banner": {
+            "title": "\"Haver viscut el ciclisme des de dins va marcar la diferència.\""
+        },
+        "building": {
+            "label": "Un Nou Capítol",
+            "heading": "El Pont Cap al Taller",
+            "text_1": "En tancar aquell capítol esportiu, la bicicleta va continuar sent el centre de tot, aquesta vegada des de l'aspecte tècnic. Anys d'experiència en tallers i botigues especialitzades van deixar una cosa ben clara: faltava una atenció veritablement propera i directa cap al ciclista i la seva bicicleta.",
+            "text_2": "Al desembre de 2023, a Girona, neix <vrai>Vraivēlo</vrai> com a resposta a aquesta necessitat. Un taller creat per cuidar la bicicleta amb el mateix respecte i nivell d'exigència amb el qual hom s'entrena per competir.",
+            "features": [
+                "Mecànica Experta",
+                "Assistència Pro",
+                "Des de Girona"
+            ]
+        },
+        "bridging": {
+            "label": "Un Nou Repte",
+            "heading": "Vraivēlo Creix",
+            "text_1": "Molt poc després d'obrir les portes, <vrai>Vraivēlo</vrai> va experimentar un creixement imparable. El reconeixement a la nostra feina i l'alta demanda van fer que el taller original es quedés petit per a una comunitat en plena expansió. Sabíem que necessitàvem un espai a l'altura d'aquesta confiança.",
+            "text_2": "Això ens va portar a la nostra nova ubicació al <bold>Carrer Pau Vila i Dinarès 10</bold>. Aquest trasllat va suposar l'inici d'un capítol emocionant: sense deixar de banda el nostre taller prèmium, vam evolucionar per oferir també el millor en venda de bicicletes, components i roba ciclista.",
+            "text_3": "Aquest projecte alimenta la nostra il·lusió per continuar treballant i garantint l'excel·lència que defineix a <vrai>Vraivēlo</vrai>. Amb aquesta nova etapa arriben nous reptes esportius i professionals, amb l'objectiu de sempre: oferir només el millor als nostres clients.",
+            "features": [
+                "Mecànica Experta",
+                "Assistència Pro",
+                "Des de Girona",
+                "Boutique Ciclista"
+            ],
+            "badge": "Taller Especialitzat"
+        }
+    },
+    "calendar": {
+        "hero": {
+            "title": "Calendari 2026",
+            "desc": "Uneix-te a la comunitat Vraivēlo a l'asfalt i al gravel. Un viatge detallat a través dels millors paisatges, dissenyat per a ciclistes que valoren la precisió, l'esforç i el companyerisme.",
+            "legend": {
+                "road": "Carretera",
+                "gravel": "Gravel",
+                "workshop": "Taller",
+                "weekend": "Vraivēlo Weekend"
+            }
+        },
+        "events_title": "Properes Trobades",
+        "btn": "Vull saber-ne més!",
+        "months": {
+            "Abril": "Abril",
+            "Mayo": "Maig",
+            "Junio": "Juny",
+            "Julio": "Juliol",
+            "Agosto": "Agost",
+            "Septiembre": "Setembre",
+            "Octubre": "Octubre",
+            "Diciembre": "Desembre"
+        },
+        "eventsData": {
+            "0": {
+                "type": "Road",
+                "title": "Social Ride carretera",
+                "desc": "Una sortida matinal pels ports clàssics. Velocitat controlada, cafè obligatori en acabar."
+            },
+            "1": {
+                "type": "Taller",
+                "title": "Formació mecànica bàsica",
+                "desc": "Aprèn els ajustos fonamentals i la reparació de punxades en ruta amb els nostres mecànics experts."
+            },
+            "2": {
+                "type": "Gravel",
+                "title": "Social Ride gravel",
+                "desc": "Explora camins secundaris i pistes forestals a la nostra sortida mensual de gravel."
+            },
+            "3": {
+                "type": "Weekend",
+                "title": "Vraivēlo Weekend",
+                "desc": "Dos dies de ruta èpica amb estada en hotel boutique i gastronomia local seleccionada."
+            },
+            "4": {
+                "type": "Gravel",
+                "title": "Social Ride gravel",
+                "desc": "Explora camins secundaris i pistes forestals a la nostra sortida mensual de gravel."
+            },
+            "5": {
+                "type": "Road",
+                "title": "Social Ride carretera",
+                "desc": "Una sortida matinal pels ports clàssics. Velocitat controlada, cafè obligatori en acabar."
+            },
+            "6": {
+                "type": "Weekend",
+                "title": "Vraivēlo Weekend",
+                "desc": "Dos dies de ruta èpica amb estada en hotel boutique i gastronomia local seleccionada."
+            },
+            "7": {
+                "type": "Weekend",
+                "title": "Social Ride Gravel",
+                "desc": "Explora camins secundaris i pistes forestals a la nostra sortida mensual de gravel."
+            },
+            "8": {
+                "type": "Weekend",
+                "title": "Social Ride Carretera",
+                "desc": "Explora camins secundaris i pistes forestals a la nostra sortida mensual de gravel."
+            },
+            "9": {
+                "type": "Weekend",
+                "title": "Social Ride Carretera",
+                "desc": "Explora camins secundaris i pistes forestals a la nostra sortida mensual de gravel."
+            }
+        }
+    },
+    "berria": {
+        "hero": {
+            "badge": "Girona Experience • Nov 2025",
+            "title": "Vraivēlo x Berria",
+            "desc": "Una mirada retrospectiva a la nostra col·laboració exclusiva al cor de Catalunya, on l'experiència del taller professional es va trobar amb l'enginyeria de bicicletes d'alt rendiment."
+        },
+        "article": {
+            "subheading": "La Col·laboració",
+            "heading": "Berria Demo Tour a Vraivēlo",
+            "p1": "Hi ha dies que resumeixen molt bé què som, el Berria Demo Tour a Vraivēlo va ser un d'ells.",
+            "p2": "Quan des de Berria ens van proposar formar part del seu Demo Tour, ho teníem clar des del principi: volíem que fos una jornada oberta, propera i fidel a la nostra manera d'entendre el ciclisme. No només venir a provar bicicletes, sinó crear una experiència completa al seu voltant.",
+            "p3": "Vraivēlo es va convertir aquell dia en el punt de partida i de tornada. El lloc on s'ajustaven bicis, es resolien dubtes, es compartien cafès i es respirava aquella barreja de nervis i curiositat prèvia a sortir a rodar. Des de primera hora, el taller es va omplir de ciclistes amb ganes de provar, aprendre i gaudir, molts d'ells habituals de la casa i d'altres que ens descobrien per primera vegada. Les rutes van ser dissenyades per treure el millor de cada bicicleta. Grups petits, sortides esglaonades i recorreguts variats pels voltants de Girona, combinant carreteres tranquil·les i trams on realment pots entendre com respon una bici quan pedales de veritat. No hi havia presses ni pressió, només quilòmetres per sentir sensacions reals.",
+            "p4": "Durant tota la jornada, des de Vraivēlo juntament amb l'equip de Berria, ens vam assegurar que tot fluís: ajustos, canvis de talla, recomanacions i acompanyament constant. Perquè per a nosaltres, un test no és només pujar-te a una bicicleta nova, és entendre si encaixa amb tu, amb la teva manera de rodar i amb el que busques quan surts a entrenar o a divertir-te.",
+            "p5": "El Demo Tour amb Berria va encaixar de manera natural perquè compartim una mateixa visió: el ciclisme es viu a la carretera, però es construeix en comunitat. Al final del dia, quan les bicicletes van tornar als seus suports i la botiga va recuperar la calma, va quedar la sensació d'haver viscut una cosa especial. Un dia senzill, ben fet i molt alineat amb el que és Vraivēlo: un espai on la bici és la protagonista, però les persones ho són encara més.",
+            "p6": "Molt atents, perquè aviat tindrem una nova edició del Berria Demo Tour."
+        },
+        "stats": {
+            "s1_val": "4",
+            "s1_label": "Models Provats",
+            "s2_val": "13",
+            "s2_label": "Assistents",
+            "s3_val": "After Ride",
+            "s3_label": "Bon cafè i companyia"
+        },
+        "features": {
+            "f1_title": "Test de Producte",
+            "f1_desc": "Accés exclusiu a l'última tecnologia de carboni de Berria, provada rigorosament en terrenys variats.",
+            "f2_title": "Rutes Escèniques a Girona",
+            "f2_desc": "Rutes organitzades diàries a través de pobles medievals i penya-segats costaners, guiades per experts de Vraivēlo.",
+            "f3_title": "Experiència de Taller",
+            "f3_desc": "Suport mecànic in situ i optimització de configuració personalitzada per l'equip de Vraivēlo."
+        },
+        "gallery": {
+            "title": "Diari Visual",
+            "subtitle": "Capturant el rendiment de Berria al paisatge de Girona",
+            "c1": "Detall Berria Belador",
+            "c2": "Gaudint de la companyia",
+            "c3": "Matí a Girona",
+            "c4": "El Pelotó de Girona",
+            "c5": "Últims detalls",
+            "c6": "Xerrada abans de sortir"
+        },
+        "footer": {
+            "quote": "\"Gràcies a tothom qui ens ha acompanyat en l'Experiència Vraivēlo x Berria Girona. Estem orgullosos d'haver compartit aquestes carreteres i aquestes màquines amb vosaltres.\"",
+            "copyright": "© 2025 Vraivēlo x Berria. Tots els drets reservats."
+        }
+    },
+    "weekend": {
+        "headline": "Vraivēlo Weekend",
+        "subtitle_1": "Un cap de setmana rumb a França",
+        "p1": "L'any passat vam organitzar una sortida diferent des de Vraivēlo. No es tractava d'una ruta més, sinó d'una petita aventura en dos dies, pensada per gaudir del ciclisme amb calma, seguretat i bon ambient.",
+        "p2": "La sortida va ser programada i guiada per en David, amb un grup reduït de 8 ciclistes. Vam limitar les places per poder controlar el ritme, minimitzar riscos i assegurar-nos que tots visquéssim l'experiència de la millor manera possible. El recorregut estava planificat des de l'inici: horaris, etapes i parades, amb destinació final a França.",
+        "p3": "Vam sortir junts des de la botiga i, des del primer quilòmetre, es respirava una cosa especial. Carreteres secundàries, paisatges que anaven canviant a poc a poc i la sensació d'estar compartint molt més que quilòmetres. La ruta va ser exigent, tant físicament com mental, però sempre rodant en grup i donant-nos suport els uns als altres. Durant tot el cap de setmana vam comptar amb cotxe d'assistència, que ens va donar suport constant. Menjar, beguda, suport logístic i roba de recanvi quan el temps es va complicar —perquè sí, la pluja també va voler formar part de l'aventura—. Gràcies a això, els ciclistes només ens vam haver de preocupar de pedalar i gaudir.",
+        "p4": "A la nit ens vam allotjar en un hotel, on va tocar recuperar forces i compartir anècdotes del dia. L'endemà vam emprendre el camí de tornada, amb el cansament acumulat, però amb la satisfacció d'haver viscut una cosa especial. No va ser una sortida fàcil, ni pretenia ser-ho. Va ser una experiència real, ben organitzada i compartida entre persones amb la mateixa passió pel ciclisme.",
+        "subtitle_2": "El que vindrà",
+        "p5": "Després de viure alguna cosa així, era impossible no pensar en repetir. Aquest any estem preparant <1>dos Vraivēlo Weekends</1>, noves aventures sobre la bicicleta, amb la mateixa cura pels detalls, el mateix esperit de grup i les mateixes ganes de gaudir del camí.",
+        "p6": "Si no t'ho vols perdre, estigues atent a les nostres xarxes a <1>@Vraivēlo</1> a Instagram i al nostre club d'<1>Strava</1>, on anirem compartint totes les novetats.",
+        "gallery": {
+            "title": "Galeria de l'Esdeveniment",
+            "btn": "Veure Totes les Fotos"
+        }
+    },
+    "licenses": {
+        "hero": {
+            "title": "La Teva Passió, Protegida",
+            "subtitle": "A Vraivēlo facilitem la teva federació. Tria la llicència que millor s'adapti als teus objectius, des de la competició fins al cicloturisme recreatiu.",
+            "cta": "Veure Llicències"
+        },
+        "grid": {
+            "title": "Opcions de Llicència 2025",
+            "subtitle": "Gestionem la teva alta a la Federació Catalana de Ciclisme perquè tu només hagis de preocupar-te de pedalar."
+        },
+        "cards": {
+            "competitive": {
+                "badge": "MÉS POPULAR",
+                "period": "/any",
+                "title": "Llicència Competitiva",
+                "desc": "L'opció completa per a aquells que busquen mesurar el seu rendiment en curses oficials.",
+                "features": [
+                    "Validada per a calendari UCI i Nacional",
+                    "Cobertura mèdica completa + RC il·limitada",
+                    "Accés a rànquings i podis oficials",
+                    "Soci Vraivēlo: -10€ Dto."
+                ]
+            },
+            "noncompetitive": {
+                "badge": "UCI / INTERNACIONAL",
+                "period": "/any",
+                "title": "Cicloturista UCI",
+                "desc": "Per a ciclistes que participen en marxes internacionals fora d'Espanya.",
+                "features": [
+                    "Àmbit: Internacional / UCI",
+                    "Assegurança: Accidents + RC",
+                    "Soci Vraivēlo: -10€ Dto."
+                ]
+            },
+            "cicloturista": {
+                "badge": "CATALUNYA",
+                "period": "/any",
+                "title": "Cicloturista Local",
+                "desc": "Ideal per a sortides amb el club i marxes cicloturistes dins de Catalunya.",
+                "features": [
+                    "Àmbit: Catalunya",
+                    "Assegurança: Accidents + RC",
+                    "Perfecte per a sortides grupals",
+                    "Soci Vraivēlo: -10€ Dto."
+                ]
+            },
+            "targeta": {
+                "badge": "BÀSIC",
+                "period": "/any",
+                "title": "Targeta Bici",
+                "desc": "Cobertura essencial per al ciclista urbà o recreatiu que busca tranquil·litat.",
+                "features": [
+                    "Assegurança Responsabilitat Civil",
+                    "Assistència: Plus 24h/7d",
+                    "* No inclou cobertura mèdica",
+                    "Soci Vraivēlo: -10€ Dto."
+                ]
+            }
+        },
+        "info": {
+            "title": "Per què Federar-se amb Vraivēlo?",
+            "b1": {
+                "title": "Tramitació Directa",
+                "desc": "Ens encarreguem de tot el procés administratiu amb la FCC, estalviant-te temps i complicacions."
+            },
+            "b2": {
+                "title": "Assessorament Expert",
+                "desc": "T'ajudem a triar la modalitat correcta segons el teu calendari d'esdeveniments i necessitats d'assegurança."
+            },
+            "b3": {
+                "title": "Comunitat i Avantatges",
+                "desc": "Forma part del nostre club oficial i gaudeix de descomptes exclusius a la botiga i serveis de taller."
+            }
+        },
+        "cta": {
+            "title": "Llest per a la teva propera aventura?",
+            "desc": "Escriu-nos i tramitarem la teva llicència en menys de 48 hores laborals.",
+            "btn": "SOL·LICITAR ARA"
         }
     }
 }

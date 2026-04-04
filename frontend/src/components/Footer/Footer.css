@@ -50,7 +50,7 @@
 }
 
 .footer-col-title {
-    color: var(--text-main);
+    color: var(--primary);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -101,20 +101,27 @@
 }
 
 .social-link {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background-color: var(--bg-elevated);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    /* background-color: var(--bg-elevated); */
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
     color: var(--text-secondary);
     transition: all 0.3s ease;
+    text-decoration: none;
+    width: fit-content;
 }
 
 .social-link:hover {
     background-color: var(--primary);
     color: white;
+}
+
+.social-handle {
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 .footer-copyright {

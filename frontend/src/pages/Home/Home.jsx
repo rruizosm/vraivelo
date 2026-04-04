@@ -17,7 +17,6 @@ const heroImages = [
 const brands = [
     { name: 'Giant', id: 1 },
     { name: 'Berria', id: 2 },
-    { name: 'MMR', id: 3 },
 ];
 
 const partnerBrands = [
@@ -40,7 +39,7 @@ const Home = () => {
             <section className="hero-section">
                 {/* Background Loop */}
                 <div className="hero-bg">
-                    <AnimatePresence mode='popLayout'>
+                    {/* <AnimatePresence mode='popLayout'>
                         <motion.img
                             key={currentImage}
                             src={heroImages[currentImage]}
@@ -51,18 +50,9 @@ const Home = () => {
                             className="hero-bg-image"
                             alt="Cycling background"
                         />
-                    </AnimatePresence>
+                    </AnimatePresence> */}
+                    <img src="/david_vraivelo/taller.png" alt="Cycling background" className="hero-bg-image" />
                 </div>
-
-                <div className="hero-bg-overlay">
-                    <div className="hero-glow-blob-1" />
-                    <div className="hero-glow-blob-2" />
-                </div>
-                {/* Darker overlay for text readability over images */}
-                <div className="hero-radial-overlay" style={{ background: 'radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, var(--bg-dark) 90%)' }} />
-
-                {/* Grid Pattern Overlay */}
-                <div className="hero-grid-pattern" />
 
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -100,7 +90,7 @@ const Home = () => {
                     >
                         {t('home.hero.subtitle')}
                         <br />
-                        {t('home.hero.partners_prefix')} <span className="highlight-primary">Giant</span>, <span className="highlight-primary">Berria</span> & <span className="highlight-primary">MMR</span>
+                        {t('home.hero.partners_prefix')} <span className="highlight-primary">Giant</span> & <span className="highlight-primary">Berria</span>
                     </motion.p>
 
                     <motion.div

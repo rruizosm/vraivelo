@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { useTranslation, Trans } from 'react-i18next';
 import './VraiveloBerria.css';
 
 const VraiveloBerria = () => {
+    const { t } = useTranslation();
 
     // Smooth scroll for anchor links
     const handleScroll = (e, id) => {
@@ -29,14 +31,14 @@ const VraiveloBerria = () => {
                         </div>
                         <div className="berria-hero-content">
                             <Link to="/vraivelo" className="berria-back-link">
-                                <ArrowLeft /> Back to stories
+                                <ArrowLeft /> {t('origins.hero.back')}
                             </Link>
-                            <span className="berria-badge">Girona Experience • Oct 2024</span>
+                            <span className="berria-badge">{t('berria.hero.badge')}</span>
                             <h1 className="berria-hero-title">
-                                Vraivelo x Berria
+                                {t('berria.hero.title')}
                             </h1>
                             <p className="berria-hero-desc">
-                                A retrospective look at our exclusive collaboration in the heart of Catalonia, where professional workshop expertise met high-performance bike engineering.
+                                {t('berria.hero.desc')}
                             </p>
                         </div>
                     </section>
@@ -44,42 +46,41 @@ const VraiveloBerria = () => {
                     <div id="story" className="berria-story-container">
                         <article className="berria-article">
                             <div className="berria-article-header">
-                                <h2 className="berria-subheading">The Collaboration</h2>
+                                <h2 className="berria-subheading">{t('berria.article.subheading')}</h2>
                                 <h3 className="berria-heading">
-                                    Berria Demo Tour en Vraivēlo
-
+                                    {t('berria.article.heading')}
                                 </h3>
                                 <div className="berria-divider"></div>
                             </div>
                             <div className="berria-prose">
                                 <p>
-                                    Hay días que resumen muy bien lo que somos, el Berria Demo Tour en Vraivēlo fue uno de ellos.
-                                    <br /><br />Cuando desde Berria nos propusieron formar parte de su Demo Tour, lo tuvimos claro desde el principio: queríamos que fuera una jornada abierta, cercana y fiel a nuestra manera de entender el ciclismo. No solo venir a probar bicicletas, sino crear una experiencia completa alrededor de ellas.
-                                    <br /><br />Vraivēlo se convirtió ese día en el punto de partida y de regreso. El lugar donde se ajustaban bicis, se resolvían dudas, se compartían cafés y se respiraba esa mezcla de nervios y curiosidad previa a salir a rodar. Desde primera hora, el taller se llenó de ciclistas con ganas de probar, aprender y disfrutar, muchos de ellos habituales de la casa y otros que nos descubrían por primera vez. Las rutas estaban pensadas para sacar lo mejor de cada bicicleta. Grupos pequeños, salidas escalonadas y recorridos variados por los alrededores de Girona, combinando carreteras tranquilas y tramos donde realmente puedes entender cómo responde una bici cuando pedaleas de verdad. No había prisas ni presión, solo kilómetros para sentir sensaciones reales.
+                                    {t('berria.article.p1')}
+                                    <br /><br />{t('berria.article.p2')}
+                                    <br /><br />{t('berria.article.p3')}
                                 </p>
                                 <div className="berria-stats-grid">
                                     <div className="berria-stat-card">
                                         <span className="material-symbols-outlined berria-stat-icon">directions_bike</span>
-                                        <span className="berria-stat-value">4</span>
-                                        <span className="berria-stat-label">Models Tested</span>
+                                        <span className="berria-stat-value">{t('berria.stats.s1_val')}</span>
+                                        <span className="berria-stat-label">{t('berria.stats.s1_label')}</span>
                                     </div>
                                     <div className="berria-stat-card">
                                         <span className="material-symbols-outlined berria-stat-icon">explore</span>
-                                        <span className="berria-stat-value">13</span>
-                                        <span className="berria-stat-label">Assistants</span>
+                                        <span className="berria-stat-value">{t('berria.stats.s2_val')}</span>
+                                        <span className="berria-stat-label">{t('berria.stats.s2_label')}</span>
                                     </div>
                                     <div className="berria-stat-card">
                                         <span className="material-symbols-outlined berria-stat-icon">settings_suggest</span>
-                                        <span className="berria-stat-value">After Ride</span>
-                                        <span className="berria-stat-label">Good coffe & company</span>
+                                        <span className="berria-stat-value">{t('berria.stats.s3_val')}</span>
+                                        <span className="berria-stat-label">{t('berria.stats.s3_label')}</span>
                                     </div>
                                 </div>
                                 <p>
-                                    Durante toda la jornada, desde Vraivēlo junto con el equipo de Berria, nos encargamos de que todo fluyera: ajustes, cambios de talla, recomendaciones y acompañamiento constante. Porque para nosotros, una demo no es solo subirte a una bicicleta nueva, es entender si encaja contigo, con tu forma de rodar y con lo que buscas cuando sales a entrenar o a disfrutar.
+                                    {t('berria.article.p4')}
                                     <br /><br />
-                                    El Demo Tour con Berria encajó de forma natural porque compartimos una misma visión: el ciclismo se vive en la carretera, pero se construye en comunidad. Al final del día, cuando las bicicletas volvieron a sus soportes y la tienda recuperó la calma, quedó la sensación de haber vivido algo especial. Un día sencillo, bien hecho, y muy alineado con lo que es Vraivēlo: un espacio donde la bici es la protagonista, pero las personas lo son aún más.
+                                    {t('berria.article.p5')}
                                     <br /><br />
-                                    Muy atentos porque pronto tendremos una nueva edición de Berria Demo Tour.
+                                    {t('berria.article.p6')}
                                 </p>
                             </div>
                         </article>
@@ -90,8 +91,8 @@ const VraiveloBerria = () => {
                                     <span className="material-symbols-outlined berria-feature-icon">biotech</span>
                                 </div>
                                 <div className="berria-feature-content">
-                                    <h4>Product Testing</h4>
-                                    <p>Exclusive access to Berria's latest carbon technology, rigorously tested on varied terrain.</p>
+                                    <h4>{t('berria.features.f1_title')}</h4>
+                                    <p>{t('berria.features.f1_desc')}</p>
                                 </div>
                             </div>
                             <div className="berria-feature-row">
@@ -99,8 +100,8 @@ const VraiveloBerria = () => {
                                     <span className="material-symbols-outlined berria-feature-icon">map</span>
                                 </div>
                                 <div className="berria-feature-content">
-                                    <h4>Girona's Scenic Routes</h4>
-                                    <p>Daily organized rides through medieval villages and coastal cliffs, guided by Vraivelo experts.</p>
+                                    <h4>{t('berria.features.f2_title')}</h4>
+                                    <p>{t('berria.features.f2_desc')}</p>
                                 </div>
                             </div>
                             <div className="berria-feature-row">
@@ -108,8 +109,8 @@ const VraiveloBerria = () => {
                                     <span className="material-symbols-outlined berria-feature-icon">build_circle</span>
                                 </div>
                                 <div className="berria-feature-content">
-                                    <h4>Workshop Expertise</h4>
-                                    <p>On-site mechanical support and personalized setup optimization by the Vraivelo crew.</p>
+                                    <h4>{t('berria.features.f3_title')}</h4>
+                                    <p>{t('berria.features.f3_desc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -118,45 +119,45 @@ const VraiveloBerria = () => {
                     <section id="gallery" className="berria-gallery-section">
                         <div className="berria-gallery-container">
                             <div className="berria-gallery-header">
-                                <h2 className="berria-gallery-title">Visual Journal</h2>
-                                <p className="berria-gallery-subtitle">Capturing the Berria performance in the Girona landscape</p>
+                                <h2 className="berria-gallery-title">{t('berria.gallery.title')}</h2>
+                                <p className="berria-gallery-subtitle">{t('berria.gallery.subtitle')}</p>
                             </div>
                             <div className="berria-gallery-grid">
                                 <div className="berria-gallery-item">
                                     <div className="berria-img-card aspect-4-5">
-                                        <img alt="Berria bike detail" src="/vraivelo_berria/Girona/DSC00322.jpeg" />
+                                        <img alt={t('berria.gallery.c1')} src="/vraivelo_berria/Girona/DSC00322.jpeg" />
                                     </div>
-                                    <p className="berria-img-caption">Berria Belador Detail</p>
+                                    <p className="berria-img-caption">{t('berria.gallery.c1')}</p>
                                 </div>
                                 <div className="berria-gallery-item md-offset">
                                     <div className="berria-img-card aspect-4-5">
-                                        <img alt="Cyclist in Girona" src="/vraivelo_berria/Girona/DSC00346.jpeg" />
+                                        <img alt={t('berria.gallery.c2')} src="/vraivelo_berria/Girona/DSC00346.jpeg" />
                                     </div>
-                                    <p className="berria-img-caption">Els Angels Descent</p>
+                                    <p className="berria-img-caption">{t('berria.gallery.c2')}</p>
                                 </div>
                                 <div className="berria-gallery-item md-span-2">
                                     <div className="berria-img-card aspect-video">
-                                        <img alt="Girona landscape" src="/vraivelo_berria/Girona/DSC00343.jpeg" />
+                                        <img alt={t('berria.gallery.c3')} src="/vraivelo_berria/Girona/DSC00343.jpeg" />
                                     </div>
-                                    <p className="berria-img-caption">Morning in Girona</p>
+                                    <p className="berria-img-caption">{t('berria.gallery.c3')}</p>
                                 </div>
                                 <div className="berria-gallery-item">
                                     <div className="berria-img-card aspect-square">
-                                        <img alt="Group ride" src="/vraivelo_berria/Girona/DSC00369.jpeg" />
+                                        <img alt={t('berria.gallery.c4')} src="/vraivelo_berria/Girona/DSC00369.jpeg" />
                                     </div>
-                                    <p className="berria-img-caption">The Girona Pelotón</p>
+                                    <p className="berria-img-caption">{t('berria.gallery.c4')}</p>
                                 </div>
                                 <div className="berria-gallery-item">
                                     <div className="berria-img-card aspect-square">
-                                        <img alt="Social moment" src="/vraivelo_berria/Girona/DSC00245.jpeg" />
+                                        <img alt={t('berria.gallery.c5')} src="/vraivelo_berria/Girona/DSC00245.jpeg" />
                                     </div>
-                                    <p className="berria-img-caption">Post-Ride Discussion</p>
+                                    <p className="berria-img-caption">{t('berria.gallery.c5')}</p>
                                 </div>
                                 <div className="berria-gallery-item md-span-2">
                                     <div className="berria-img-card fixed-h-600">
-                                        <img alt="Vraivelo support" src="/vraivelo_berria/Girona/DSC00329.jpeg" />
+                                        <img alt={t('berria.gallery.c6')} src="/vraivelo_berria/Girona/DSC00329.jpeg" />
                                     </div>
-                                    <p className="berria-img-caption">Scenic Testing Routes</p>
+                                    <p className="berria-img-caption">{t('berria.gallery.c6')}</p>
                                 </div>
                             </div>
                         </div>
@@ -178,15 +179,11 @@ const VraiveloBerria = () => {
                         </div>
                         <div className="berria-footer-text-group">
                             <p className="berria-footer-quote">
-                                "Thank you to everyone who joined us for the Vraivelo x Berria Girona Experience. We are proud to have shared these roads and these machines with you."
+                                {t('berria.footer.quote')}
                             </p>
-                            <div className="berria-social-links">
-                                <a className="berria-social-link" href="#"><span className="material-symbols-outlined berria-social-icon">public</span></a>
-                                <a className="berria-social-link" href="#"><span className="material-symbols-outlined berria-social-icon">camera</span></a>
-                                <a className="berria-social-link" href="#"><span className="material-symbols-outlined berria-social-icon">mail</span></a>
-                            </div>
+
                             <p className="berria-copyright">
-                                © 2024 Vraivelo x Berria. All rights reserved.
+                                {t('berria.footer.copyright')}
                             </p>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ const ProductDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const { addToCart, isCartEnabled } = useCart();
     const [bike, setBike] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -77,17 +77,35 @@ const ProductDetail = () => {
                     .single();
 
                 if (!productError && productData) {
+                    const category = productData.Type || productData.type;
+                    let specs = productData.Specs || productData.specs || [];
+
+                    if (typeof specs === 'string') {
+                        try { specs = JSON.parse(specs.replace(/'/g, '"')); } catch { specs = [specs]; }
+                    }
+                    if (category === 'Wheels') {
+                        specs = [...specs, 'Hub: DT SWISS'];
+                    }
+
                     // Normalize column names to match component expectations
                     setBike({
                         id: productData.id,
                         model: productData.Product || productData.product,
-                        category: productData.Type || productData.type,
+                        category: category,
                         price: productData.Price || productData.price,
                         size: productData.Size || productData.size,
                         description: productData.Description || productData.description,
                         image_url: productData["Image URL"] || productData["image url"] || productData.image_url,
                         color: productData.Colors || productData.colors,
-                        specs: productData.Specs || productData.specs,
+                        specs: specs,
+                        // Localization Schema (Fallback mapping for Products table)
+                        description_es: productData.description_es || productData.Description_es || productData.Description_ES,
+                        description_ca: productData.description_ca || productData.Description_ca || productData.Description_CA,
+                        long_description: productData.long_description || productData.Long_description,
+                        long_description_es: productData.long_description_es || productData.Long_description_es || productData.Long_description_ES,
+                        long_description_ca: productData.long_description_ca || productData.Long_description_ca || productData.Long_description_CA,
+                        specs_es: productData.specs_es || productData.Specs_es || productData.Specs_ES,
+                        specs_cat: productData.specs_cat || productData.Specs_cat || productData.Specs_CAT,
                     });
                     setLoading(false);
                     return;
@@ -141,7 +159,31 @@ const ProductDetail = () => {
         return [];
     };
     const sizes = parseSizes();
-    const specs = bike?.specs || [];
+
+    // Dynamically map text fields via i18n
+    const currentLang = i18n?.language?.toLowerCase().split('-')[0] || 'en';
+    const descLangKey = currentLang === 'ca' ? 'cat' : currentLang;
+    const displayDescription =
+        bike?.[`description_${descLangKey}`] ||
+        bike?.[`description_${currentLang}`] ||
+        bike?.description;
+    const displayLongDescription =
+        bike?.[`long_description_${descLangKey}`] ||
+        bike?.[`long_description_${currentLang}`] ||
+        bike?.long_description;
+
+    let displaySpecs = bike?.specs || [];
+    if (currentLang !== 'en') {
+        const specLangKey = currentLang === 'ca' ? 'cat' : currentLang;
+        const localizedSpecs = bike?.[`specs_${specLangKey}`] || bike?.[`Specs_${specLangKey}`];
+        if (localizedSpecs) {
+            if (typeof localizedSpecs === 'string') {
+                try { displaySpecs = JSON.parse(localizedSpecs.replace(/'/g, '"')); } catch { displaySpecs = [localizedSpecs]; }
+            } else if (Array.isArray(localizedSpecs)) {
+                displaySpecs = localizedSpecs;
+            }
+        }
+    }
 
     // Parse colors: similar logic to sizes
     const parseColors = () => {
@@ -165,8 +207,6 @@ const ProductDetail = () => {
     };
     const colors = parseColors();
 
-    console.log("DEBUG: Bike data =", bike);
-    console.log("DEBUG: Parsed colors =", colors);
 
     // Determine current images list
     const currentImages = selectedColor && selectedColor.images && selectedColor.images.length > 0
@@ -218,78 +258,89 @@ const ProductDetail = () => {
                 tOptions={{ name: bike.model }}
             />
             <div className="product-detail-content">
-                {/* Image Section */}
-                <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    className="product-image-section relative group"
-                >
-                    {bike.quantity === 0 && (
-                        <span className="sold-badge">
-                            {t('product.sold')}
-                        </span>
-                    )}
-
-                    {/* Image Carousel */}
-                    <div className="relative w-full h-full flex items-center justify-center">
-                        <AnimatePresence mode='wait'>
-                            {displayImage ? (
-                                <motion.img
-                                    key={displayImage}
-                                    src={displayImage}
-                                    alt={bike.model}
-                                    className="product-detail-image"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{ duration: 0.2 }}
-                                />
-                            ) : (
-                                <span className="product-placeholder-text">
-                                    {(bike.brand || bike.model || '?').charAt(0)}
-                                </span>
-                            )}
-                        </AnimatePresence>
-                    </div>
-
-                    {/* Carousel Controls */}
-                    {currentImages.length > 1 && (
-                        <>
-                            <button
-                                onClick={prevImage}
-                                className="carousel-btn left"
-                            >
-                                <ChevronLeft size={24} />
-                            </button>
-                            <button
-                                onClick={nextImage}
-                                className="carousel-btn right"
-                            >
-                                <ChevronRight size={24} />
-                            </button>
-
-                            {/* Pagination Dots */}
-                            <div className="carousel-dots">
-                                {currentImages.map((_, idx) => (
-                                    <div
-                                        key={idx}
-                                        className={`carousel-dot ${idx === currentImageIndex ? 'active' : ''}`}
-                                    />
-                                ))}
-                            </div>
-                        </>
-                    )}
-
-                    <button
-                        className="image-zoom-btn"
-                        onClick={() => {
-                            if (displayImage) window.open(displayImage, '_blank');
-                        }}
-                        title={t('product.info') || "View image"}
+                {/* Left column: image + description */}
+                <div className="product-left-column">
+                    {/* Image Section */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="product-image-section relative group"
                     >
-                        <ZoomIn size={24} />
-                    </button>
-                </motion.div>
+                        {bike.quantity === 0 && (
+                            <span className="sold-badge">
+                                {t('product.sold')}
+                            </span>
+                        )}
+
+                        {/* Image Carousel */}
+                        <div className="relative w-full h-full flex items-center justify-center">
+                            <AnimatePresence mode='wait'>
+                                {displayImage ? (
+                                    <motion.img
+                                        key={displayImage}
+                                        src={displayImage}
+                                        alt={bike.model}
+                                        className="product-detail-image"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                    />
+                                ) : (
+                                    <span className="product-placeholder-text">
+                                        {(bike.brand || bike.model || '?').charAt(0)}
+                                    </span>
+                                )}
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Carousel Controls */}
+                        {currentImages.length > 1 && (
+                            <>
+                                <button
+                                    onClick={prevImage}
+                                    className="carousel-btn left"
+                                >
+                                    <ChevronLeft size={24} />
+                                </button>
+                                <button
+                                    onClick={nextImage}
+                                    className="carousel-btn right"
+                                >
+                                    <ChevronRight size={24} />
+                                </button>
+
+                                {/* Pagination Dots */}
+                                <div className="carousel-dots">
+                                    {currentImages.map((_, idx) => (
+                                        <div
+                                            key={idx}
+                                            className={`carousel-dot ${idx === currentImageIndex ? 'active' : ''}`}
+                                        />
+                                    ))}
+                                </div>
+                            </>
+                        )}
+
+                        <button
+                            className="image-zoom-btn"
+                            onClick={() => {
+                                if (displayImage) window.open(displayImage, '_blank');
+                            }}
+                            title={t('product.info') || "View image"}
+                        >
+                            <ZoomIn size={24} />
+                        </button>
+                    </motion.div>
+
+                    {/* Description below image */}
+                    {(displayDescription || displayLongDescription) && (
+                        <div className="product-description-below">
+                            {displayDescription && <p className="product-description">{displayDescription}</p>}
+                            {displayLongDescription && <p className="product-description" style={{ marginTop: '0.75rem' }}>{displayLongDescription}</p>}
+                        </div>
+                    )}
+                </div>
 
                 {/* Info Section */}
                 <motion.div
@@ -305,6 +356,7 @@ const ProductDetail = () => {
                     <div>
                         {bike.brand && <p className="product-brand">{bike.brand}</p>}
                         <h1 className="product-title">{bike.model}</h1>
+                        {bike.category === 'Wheels' && <p style={{ color: '#64748b', fontSize: '0.875rem', fontWeight: 500, marginTop: '0.25rem', marginBottom: '0.5rem', letterSpacing: '0.025em' }}>Hub: DT SWISS</p>}
                         {bike.category && <p className="product-category">{bike.category}</p>}
                         {/* {bike.color && !bike.variants && <p className="text-sm text-gray-400 mt-1">Color: {bike.color}</p>} */}
                         {(() => {
@@ -324,8 +376,6 @@ const ProductDetail = () => {
                         })()}
                     </div>
 
-                    {bike.description && <p className="product-description">{bike.description}</p>}
-                    {bike.long_description && <p className="product-description mt-2">{bike.long_description}</p>}
 
                     {/* Options */}
                     <div className="product-options">
@@ -334,7 +384,7 @@ const ProductDetail = () => {
                         {(bike.variants || colors.length > 0) && (
                             <div className="option-group">
                                 <div className="option-header">
-                                    <span className="option-label">Select Color: <span className="text-[var(--primary)]">{selectedColor?.colorName || selectedColor}</span></span>
+                                    <span className="option-label">{t('product.available_colors')}: <span style={{ color: 'var(--primary)' }}>{selectedColor?.colorName || selectedColor}</span></span>
                                 </div>
                                 <div className="color-selector flex gap-3">
                                     {bike.variants ? (
@@ -368,27 +418,24 @@ const ProductDetail = () => {
                             </div>
                         )}
 
-                        <div className="option-group">
-                            <div className="option-header">
-                                <span className="option-label">Select Size</span>
-                                {/* {bike.quantity !== undefined && (
-                                    <span className="stock-display">
-                                        {t('product.stock')}: <span className="stock-value">{bike.quantity}</span>
-                                    </span>
-                                )} */}
+                        {sizes && sizes.length > 0 && (
+                            <div className="option-group">
+                                <div className="option-header">
+                                    <span className="option-label">{t('product.available_sizes')}</span>
+                                </div>
+                                <div className="size-selector">
+                                    {sizes.map(size => (
+                                        <button
+                                            key={size}
+                                            className={`size-btn ${selectedSize === size ? 'active' : ''}`}
+                                            onClick={() => setSelectedSize(prev => prev === size ? null : size)}
+                                        >
+                                            {size}
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
-                            <div className="size-selector">
-                                {sizes.map(size => (
-                                    <button
-                                        key={size}
-                                        className={`size-btn ${selectedSize === size ? 'active' : ''}`}
-                                        onClick={() => setSelectedSize(prev => prev === size ? null : size)}
-                                    >
-                                        {size}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
+                        )}
 
                         {isCartEnabled ? (
                             <button
@@ -416,7 +463,7 @@ const ProductDetail = () => {
                             </button>
                         ) : (
                             <button
-                                onClick={() => navigate('/contact', { state: { subject: (bike.category === 'Clothes' || bike.category === 'Other Products' || bike.variants) ? 'parts' : 'bikes', message: `${t('product.contact_message') || 'Hi, I\'m interested in'} ${bike.model}` } })}
+                                onClick={() => navigate('/contact', { state: { subject: (bike.category === 'Clothes' || bike.category === 'Other Products') ? 'parts' : 'bikes', message: `${t('product.contact_message') || 'Hi, I\'m interested in'} ${bike.model}` } })}
                                 className="add-to-cart-btn"
                             >
                                 <Mail size={20} />
@@ -428,12 +475,12 @@ const ProductDetail = () => {
             </div>
 
             {/* Specs Section */}
-            {specs.length > 0 && (
+            {displaySpecs.length > 0 && (
                 <div className="product-specs-section">
                     <div className="product-specs">
                         <h3 className="specs-title">{t('product.specifications')}</h3>
                         <div className="specs-grid">
-                            {specs.map((spec, index) => (
+                            {displaySpecs.map((spec, index) => (
                                 <div key={index} className="spec-item">
                                     <span className="spec-label">{spec}</span>
                                 </div>

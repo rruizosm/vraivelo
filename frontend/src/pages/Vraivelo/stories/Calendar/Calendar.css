@@ -3,30 +3,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 
 :root {
-  --cal-color-primary: var(--primary-deep);
-  --cal-color-primary-dim: var(--primary-deep);
-  --cal-color-on-primary: var(--color-f5f9ff);
-  --cal-color-primary-container: var(--color-7ec8ff);
-  --cal-color-on-primary-container: var(--primary-deep);
-
-  --cal-color-secondary-fixed: var(--color-fdd7f5);
-  --cal-color-secondary-fixed-dim: var(--color-efc9e7);
-  --cal-color-on-secondary-fixed: var(--color-51374e);
-
-  --cal-color-tertiary-fixed: var(--bg-error-light);
-  --cal-color-tertiary-fixed-dim: var(--bg-error-light);
-  --cal-color-on-tertiary-fixed: var(--color-4e3834);
-
-  --cal-color-surface: var(--bg-elevated);
+  --cal-color-primary: var(--primary);
+  --cal-color-surface: var(--bg-card);
   --cal-color-on-surface: var(--text-main);
   --cal-color-on-surface-variant: var(--text-secondary);
-  --cal-color-surface-container-high: var(--border-light);
-
+  --cal-color-surface-container-high: var(--bg-elevated);
   --cal-color-outline: var(--text-muted);
-  --cal-color-outline-variant: var(--text-subtle);
-
-  --cal-color-background: var(--bg-elevated);
+  --cal-color-background: var(--bg-dark);
   --cal-color-on-background: var(--text-main);
+
+  /* Event Type Colors */
+  --cal-road-bg: var(--primary-light);
+  --cal-road-color: var(--primary);
+
+  --cal-gravel-bg: var(--bg-warning-light);
+  --cal-gravel-color: var(--accent-orange);
+
+  --cal-taller-bg: var(--bg-success-light);
+  --cal-taller-color: var(--success-green);
+
+  --cal-weekend-bg: var(--bg-error-light);
+  --cal-weekend-color: var(--accent-red);
 }
 
 .cal-main {
@@ -58,17 +55,25 @@
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
-/* Values */
-.val-bg-secondary-fixed-dim {
-  background-color: var(--cal-color-secondary-fixed-dim);
+/* Legend Utility Classes */
+.val-bg-road {
+  background-color: var(--cal-road-bg);
+  border: 1px solid var(--cal-road-color);
 }
 
-.val-bg-tertiary-fixed-dim {
-  background-color: var(--cal-color-tertiary-fixed-dim);
+.val-bg-gravel {
+  background-color: var(--cal-gravel-bg);
+  border: 1px solid var(--cal-gravel-color);
 }
 
-.val-bg-primary-container {
-  background-color: var(--cal-color-primary-container);
+.val-bg-taller {
+  background-color: var(--cal-taller-bg);
+  border: 1px solid var(--cal-taller-color);
+}
+
+.val-bg-weekend {
+  background-color: var(--cal-weekend-bg);
+  border: 1px solid var(--cal-weekend-color);
 }
 
 .cal-first-section {
@@ -222,25 +227,33 @@
 }
 
 .cal-day-cell.highlight-carretera {
-  background-color: var(--cal-color-secondary-fixed-dim);
+  background-color: var(--cal-road-bg);
+  border: 1px solid var(--cal-road-color);
+  color: var(--cal-road-color);
   border-radius: 9999px;
   font-weight: 700;
 }
 
 .cal-day-cell.highlight-gravel {
-  background-color: var(--cal-color-tertiary-fixed-dim);
+  background-color: var(--cal-gravel-bg);
+  border: 1px solid var(--cal-gravel-color);
+  color: var(--cal-gravel-color);
   border-radius: 9999px;
   font-weight: 700;
 }
 
 .cal-day-cell.highlight-taller {
-  background-color: var(--cal-color-primary-container);
+  background-color: var(--cal-taller-bg);
+  border: 1px solid var(--cal-taller-color);
+  color: var(--cal-taller-color);
   border-radius: 9999px;
   font-weight: 700;
 }
 
 .cal-day-cell.highlight-weekend {
-  background-color: var(--cal-color-secondary-fixed);
+  background-color: var(--cal-weekend-bg);
+  border: 1px solid var(--cal-weekend-color);
+  color: var(--cal-weekend-color);
   border-radius: 9999px;
   font-weight: 700;
 }
@@ -310,23 +323,23 @@
 }
 
 .cal-tag-road {
-  background-color: var(--cal-color-secondary-fixed);
-  color: var(--cal-color-on-secondary-fixed);
+  background-color: var(--cal-road-bg);
+  color: var(--cal-road-color);
 }
 
 .cal-tag-taller {
-  background-color: var(--cal-color-primary-container);
-  color: var(--cal-color-on-primary-container);
+  background-color: var(--cal-taller-bg);
+  color: var(--cal-taller-color);
 }
 
 .cal-tag-gravel {
-  background-color: var(--cal-color-tertiary-fixed);
-  color: var(--cal-color-on-tertiary-fixed);
+  background-color: var(--cal-gravel-bg);
+  color: var(--cal-gravel-color);
 }
 
 .cal-tag-weekend {
-  background-color: var(--cal-color-secondary-fixed);
-  color: var(--cal-color-on-secondary-fixed);
+  background-color: var(--cal-weekend-bg);
+  color: var(--cal-weekend-color);
 }
 
 .cal-event-content {
@@ -370,7 +383,7 @@
 
 .cal-btn-primary {
   display: inline-block;
-  background-color: var(--cal-color-primary);
+  background-color: var(--primary-light);
   color: var(--cal-color-on-primary);
   padding: 0.5rem 2rem;
   border-radius: 9999px;

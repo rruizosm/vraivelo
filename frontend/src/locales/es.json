@@ -4,7 +4,7 @@
         "workshop": "Taller",
         "bikes": "Bicicletas",
         "other_products": "Otros productos",
-        "vraivelo": "Vraivelo",
+        "vraivelo": "Vraivēlo",
         "contact": "Contacto",
         "book_service": "Reservar cita"
     },
@@ -15,11 +15,12 @@
         }
     },
     "vraivelo": {
+        "read_story": "Leer historia",
         "title": "Nuestra Historia",
-        "subtitle": "Nacidos de la pasión por el ciclismo y la artesanía, Vraivélo es más que una tienda de bicicletas.",
+        "subtitle": "Nacidos de la pasión por el ciclismo y la artesanía, Vraivēlo es más que una tienda de bicicletas.",
         "how_it_started": {
             "title": "Cómo Empezó",
-            "text": "Vraivélo comenzó en un pequeño garaje con una idea simple: cada bicicleta cuenta una historia. Lo que empezó como un pasatiempo de fin de semana restaurando cuadros antiguos evolucionó rápidamente hacia una dedicación a tiempo completo al arte del ciclismo. Nos dimos cuenta de que había una brecha entre las bicicletas modernas producidas en masa y las máquinas con alma del pasado. Nuestro viaje trata de cerrar esa brecha, aportando cuidado artesanal al rendimiento moderno."
+            "text": "Vraivēlo comenzó en un pequeño garaje con una idea simple: cada bicicleta cuenta una historia. Lo que empezó como un pasatiempo de fin de semana restaurando cuadros antiguos evolucionó rápidamente hacia una dedicación a tiempo completo al arte del ciclismo. Nos dimos cuenta de que había una brecha entre las bicicletas modernas producidas en masa y las máquinas con alma del pasado. Nuestro viaje trata de cerrar esa brecha, aportando cuidado artesanal al rendimiento moderno."
         },
         "who_we_are": {
             "title": "Quiénes Somos",
@@ -27,7 +28,7 @@
         },
         "what_we_do": {
             "title": "Qué Hacemos",
-            "text": "En Vraivélo, nos especializamos en dar nueva vida a cuadros clásicos y construir bicicletas personalizadas que llaman la atención. Desde restauraciones completas vintage hasta montajes personalizados modernos, manejamos cada detalle con precisión. También ofrecemos servicios expertos de mantenimiento, asegurando que tu viaje sea siempre suave y seguro. Creemos en el ciclismo sostenible, reutilizando componentes de calidad donde sea posible y promoviendo una cultura ciclista que valora la calidad sobre la cantidad."
+            "text": "En Vraivēlo, nos especializamos en dar nueva vida a cuadros clásicos y construir bicicletas personalizadas que llaman la atención. Desde restauraciones completas vintage hasta montajes personalizados modernos, manejamos cada detalle con precisión. También ofrecemos servicios expertos de mantenimiento, asegurando que tu viaje sea siempre suave y seguro. Creemos en el ciclismo sostenible, reutilizando componentes de calidad donde sea posible y promoviendo una cultura ciclista que valora la calidad sobre la cantidad."
         },
         "team": {
             "ruben_role": "Fundador y Mecánico Principal",
@@ -40,6 +41,8 @@
         "stock": "Stock",
         "sold": "Vendida",
         "add_to_cart": "Añadir al carrito",
+        "available_sizes": "TALLAS DISPONIBLES",
+        "available_colors": "COLORES DISPONIBLES",
         "contact_us": "Contáctanos",
         "back_to_shop": "Volver a la Tienda",
         "back_to_other_products": "Volver a Otros Productos",
@@ -89,7 +92,7 @@
         },
         "values": {
             "title": "¿Por qué",
-            "title_highlight": "Vraivelo?",
+            "title_highlight": "Vraivēlo?",
             "subtitle": "Combinamos artesanía experta con una auténtica pasión por el ciclismo.",
             "cards": {
                 "workshop": {
@@ -101,7 +104,7 @@
                     "desc": "Colección curada de las mejores bicicletas y equipamiento profesional del mundo."
                 },
                 "guarantee": {
-                    "title": "Garantía Vraivelo",
+                    "title": "Garantía Vraivēlo",
                     "desc": "Respaldamos cada servicio y venta. Calidad y satisfacción, siempre."
                 }
             }
@@ -149,18 +152,18 @@
         "discipline": {
             "title_1": "Selecciona tu servicio",
             "subtitle": "Elige un servicio especializado del taller. David está certificado para realizar puestas a punto de alto rendimiento en todos los componentes principales de bicicletas de montaña, de gravel, de carretera y eléctricas.",
-            "become_member": "Hazte Miembro vraivelo",
+            "become_member": "Hazte Miembro Vraivēlo",
             "view_services": "Ver Servicios",
             "cards": {
                 "mechanics": {
                     "badge": "Esencial",
-                    "title": "Puesta a Punto y Mecánica",
+                    "title": "Puesta a Punto y Mantenimiento",
                     "desc": "Limpieza integral de la transmisión, verificación de apriete de tornillería y ajustes precisos del cambio para el rendimiento diario."
                 },
                 "suspensions": {
                     "badge": "Avanzado",
                     "title": "Mantenimiento Horquillas",
-                    "desc": "Mantenimiento de botellas, ajuste de volumen de aire y reconstrucciones completas de cartuchos para horquillas Fox, RockShox y Öhlins."
+                    "desc": "Mantenimiento de horquillas, ajuste de volumen de aire y reconstrucciones completas de cartuchos para horquillas Fox, RockShox y Öhlins."
                 },
                 "rear_shock": {
                     "badge": "Experto",
@@ -170,7 +173,7 @@
             }
         },
         "membership": {
-            "title_1": "vraivēlo",
+            "title_1": "Vraivēlo",
             "title_2": "Planes de Membresía",
             "join_now": "Únete Ahora",
             "recommended": "Recomendado",
@@ -293,6 +296,167 @@
         ],
         "book_now": "Reservar",
         "most_popular": "MÁS POPULAR",
+        "suspensions_page": {
+            "hero": {
+                "category": "Excelente Mecánica",
+                "title": "Mantenimiento de Horquillas",
+                "desc": "Elevando tu experiencia de conducción con precisión clínica. Nuestro taller especializado en horquillas se centra en la integridad hidráulica, reducción de fricciones y configuraciones a medida para un rendimiento de élite."
+            },
+            "services": {
+                "basic": {
+                    "title": "Mantenimiento Básico",
+                    "subtitle": "Servicio de intervalo estándar",
+                    "features": [
+                        "Limpieza e inspección externa general",
+                        "Sustitución de líquido de las botellas",
+                        "Saturación de anillos de espuma",
+                        "Sangrado y reconstrucción completa del cartucho"
+                    ],
+                    "btn": "Seleccionar Plan"
+                },
+                "premium": {
+                    "badge": "Más Popular",
+                    "title": "Mantenimiento Completo",
+                    "subtitle": "Revisión anual de rendimiento",
+                    "features": [
+                        "Limpieza ultrasónica completa",
+                        "Sustitución completa de retenes y guardapolvos",
+                        "Reconstrucción del cartucho hidráulico y sangrado al vacío",
+                        "Calibración del juego de casquillos",
+                        "Carga de nitrógeno (si es aplicable)"
+                    ],
+                    "btn": "Reservar Servicio Completo"
+                }
+            },
+            "process": {
+                "title": "El Protocolo <br/> de Precisión.",
+                "steps": {
+                    "1": {
+                        "title": "Diagnóstico de Entrada",
+                        "desc": "Medimos el sag, velocidades de rebote y compresión antes de empezar cualquier trabajo para establecer una base de rendimiento."
+                    },
+                    "2": {
+                        "title": "Limpieza Quirúrgica",
+                        "desc": "Los componentes se desmontan y se introducen en un baño ultrasónico para eliminar las micro-partículas que la limpieza estándar no alcanza."
+                    },
+                    "3": {
+                        "title": "Dinámica de Fluidos",
+                        "desc": "Utilizamos aceites premium Motorex o Maxima, medidos con precisión según las especificaciones del fabricante para una estabilidad térmica consistente."
+                    },
+                    "4": {
+                        "title": "Prueba en Bancada",
+                        "desc": "Cada unidad reconstruida se prueba en nuestra bancada de desarrollo manual para garantizar que los clics y bloqueos funcionen a la perfección."
+                    }
+                }
+            },
+            "glass_panel": {
+                "val": "0.01mm",
+                "desc": "La tolerancia que mantenemos para la alineación del pistón de aire."
+            }
+        },
+        "rear_shock_page": {
+            "hero": {
+                "category": "Excelencia en Suspensión",
+                "title": "Mantenimiento <br/> de Amortiguadores",
+                "desc": "Ajuste de precisión para amortiguación de alto rendimiento. Tratamos cada amortiguador como una obra maestra mecánica única, restaurando el rendimiento de fábrica a través de un mantenimiento clínico.",
+                "badge": "Taller Certificado"
+            },
+            "bento": {
+                "main": {
+                    "bg_text": "01",
+                    "title": "Mantenimiento del Amortiguador",
+                    "subtitle": "Servicio de intervalo estándar de 50h/100h",
+                    "list_title": "Alcance del Servicio",
+                    "features": [
+                        "Limpieza clínica completa de todos los sistemas de amortiguación internos",
+                        "Sustitución completa de juntas tóricas y sellos dinámicos con kits premium",
+                        "Sustitución de aceite con sangrado al vacío para un rendimiento sin cavitación",
+                        "Inspección de casquillos y verificación de tolerancias"
+                    ],
+                    "pricing_label": "Inversión Total",
+                    "pricing_extra": "+ Recambios (Kits de retenes aprox. 25€)",
+                    "btn": "Reservar Mantenimiento"
+                },
+                "sidebar": {
+                    "guarantee": {
+                        "title": "Garantía de Precisión",
+                        "desc": "Cada amortiguador revisado en el Taller se somete a una prueba de presión de nitrógeno de 24 horas y simulación en banco para asegurar que no haya fugas y curvas de compresión consistentes."
+                    },
+                    "lead_time": {
+                        "title": "Tiempo de Entrega",
+                        "val": "48 - 72 Horas",
+                        "extra": "Servicio exprés en el mismo día disponible por +40€."
+                    }
+                }
+            },
+            "specs": {
+                "title": "Matriz de Servicio",
+                "steps": {
+                    "1": {
+                        "step": "Paso 01",
+                        "name": "Desengrase y Desmontaje"
+                    },
+                    "2": {
+                        "step": "Paso 02",
+                        "name": "Inspección Interna"
+                    },
+                    "3": {
+                        "step": "Paso 03",
+                        "name": "Carga de IFP"
+                    },
+                    "4": {
+                        "step": "Paso 04",
+                        "name": "Calibración de Par"
+                    }
+                }
+            }
+        },
+        "mechanics_page": {
+            "hero": {
+                "category": "Excelente Mecánica",
+                "title": "Puesta a Punto<br />y Mantenimiento",
+                "desc": "Nuestro taller se especializa en mantenimiento de alto rendimiento. Tratamos cada bicicleta como una obra maestra de ingeniería, asegurando que cada cambio de marcha sea silencioso y cada frenada quirúrgica."
+            },
+            "services": {
+                "basic": {
+                    "title": "Revisión Básica",
+                    "subtitle": "Mantenimiento rutinario para ciclistas diarios.",
+                    "features": [
+                        "Ajuste y sincronización de la transmisión",
+                        "Inspección de seguridad y alineación de frenos",
+                        "Limpieza y revisión del cuadro",
+                        "Revisión de presión y desgaste de neumáticos"
+                    ],
+                    "btn": "Reservar Servicio Básico"
+                },
+                "premium": {
+                    "badge": "Más Popular",
+                    "title": "Revisión Completa",
+                    "subtitle": "Desmontaje completo y restauración.",
+                    "features": [
+                        "Limpieza profunda de transmisión (Baño ultrasónico)",
+                        "Mantenimiento de eje de pedalier y dirección",
+                        "Centrado de ruedas (Precisión radial/lateral)",
+                        "Sustitución de todos los cables internos",
+                        "Verificación del par de apriete en todos los componentes"
+                    ],
+                    "btn": "Reservar Revisión Completa"
+                }
+            },
+            "specs": {
+                "title": "La ingeniería está en los detalles.",
+                "desc": "Nuestro taller utiliza llaves dinamométricas de nivel profesional, limpiadores ultrasónicos y piezas originales de los fabricantes para asegurar que tu garantía se mantenga intacta y tu rendimiento al máximo.",
+                "tolerance": "Tolerancia",
+                "turnaround": "Entrega",
+                "certified": "Certificado",
+                "parts": "Repuestos"
+            },
+            "cta": {
+                "title": "¿Listo para Rodar?",
+                "subtitle": "Programa tu visita al atelier hoy mismo.",
+                "btn": "Comprobar Disponibilidad"
+            }
+        },
         "custom": {
             "title": "¿Necesitas Algo Personalizado?",
             "text": "Ofrecemos servicios a medida para montajes únicos, restauraciones vintage y preparación para competición. Contáctanos para un presupuesto personalizado.",
@@ -334,7 +498,9 @@
                 "workshop": "Servicio de Taller",
                 "formation": "Formación Mecánica",
                 "bikes": "Consulta sobre Bicicletas",
-                "parts": "Recambios y Accesorios",
+                "parts": "Piezas y Accesorios",
+                "member": "Socio Vraivēlo",
+                "licenses": "Licencias de Ciclismo",
                 "event": "Eventos",
                 "other": "Otro"
             },
@@ -346,17 +512,18 @@
         }
     },
     "footer": {
-        "brand_desc": "Taller de ciclismo premium y minorista. Partner oficial de Giant, Berria y MMR. Eleva tu pedaleo.",
+        "brand_desc": "Taller de ciclismo premium y minorista. Partner oficial de Giant y Berria. Eleva tu pedaleo.",
         "explore": "Explorar",
-        "workshop_services": "Servicios de Taller",
-        "new_bikes": "Bicicletas Nuevas",
-        "about_us": "Sobre Nosotros",
+        "workshop_services": "Taller",
+        "new_bikes": "Bicicletas",
+        "other_products": "Otros Productos",
+        "vraivelo": "Vraivēlo",
         "visit_us": "Visítanos",
         "follow_us": "Síguenos",
         "hours_label": "Lunes a Viernes:",
         "hours_morning": "9:00 - 13:00",
         "hours_afternoon": "16:00 - 19:00",
-        "copyright": "© {{year}} Vraivelo. Todos los derechos reservados."
+        "copyright": "© {{year}} Vraivēlo. Todos los derechos reservados."
     },
     "cart": {
         "title": "Tu Carrito",
@@ -424,7 +591,7 @@
             "updated_desc": "Recibe notificaciones de próximas salidas sociales, cafés sobre ruedas y eventos directamente en tu feed."
         },
         "card": {
-            "club_name": "Vraivelo Club",
+            "club_name": "Vraivēlo Club",
             "verified": "Verificado",
             "follow": "Seguir",
             "leaderboard": "Clasificación",
@@ -435,7 +602,7 @@
             "watermark": "SALIDAS",
             "title_prefix": "Galería de",
             "title_highlight": "Salidas",
-            "subtitle": "Momentos espontáneos de nuestras aventuras de fin de semana. Desde el primer espresso hasta el sprint final, esto es Vraivelo.",
+            "subtitle": "Momentos espontáneos de nuestras aventuras de fin de semana. Desde el primer espresso hasta el sprint final, esto es Vraivēlo.",
             "community": "Comunidad",
             "post_ride_title": "Brindis Post-Salida",
             "post_ride_desc": "La mejor parte de cada salida es la historia compartida después con una bebida fría."
@@ -446,7 +613,7 @@
             "desc": "Ya sea que entrenes para una gran fondo o busques compañeros de café dominical, hay un puesto en el pelotón para ti.",
             "join_club": "Unirse al Club en Strava",
             "follow_ig": "Seguir en Instagram",
-            "copyright": "© 2024 Vraivelo Cycling Club."
+            "copyright": "© 2024 Vraivēlo Cycling Club."
         }
     },
     "event_formation": {
@@ -485,36 +652,300 @@
     },
     "seo": {
         "home": {
-            "title": "Vraivelo — Taller de Ciclismo Premium y Tienda de Bicicletas",
-            "description": "Taller de ciclismo premium y distribuidor oficial de Giant, Berria y MMR. Reparaciones expertas, montajes personalizados y equipamiento de calidad."
+            "title": "Vraivēlo — Taller de Ciclismo Premium y Tienda de Bicicletas",
+            "description": "Taller de ciclismo premium y distribuidor oficial de Giant y Berria. Reparaciones expertas, montajes personalizados y equipamiento de calidad."
         },
         "shop": {
-            "title": "Tienda de Bicicletas — Vraivelo",
-            "description": "Explora nuestra selección de bicicletas de carretera, MTB, gravel, e-bike e infantiles de Giant, Berria, MMR y Liv."
+            "title": "Tienda de Bicicletas — Vraivēlo",
+            "description": "Explora nuestra selección de bicicletas de carretera, MTB, gravel, e-bike e infantiles de Giant y Berria."
         },
         "other_products": {
-            "title": "Recambios y Accesorios — Vraivelo",
-            "description": "Compra accesorios de ciclismo, componentes, ropa y ruedas de las mejores marcas en Vraivelo."
+            "title": "Recambios y Accesorios — Vraivēlo",
+            "description": "Compra accesorios de ciclismo, componentes, ropa y ruedas de las mejores marcas en Vraivēlo."
         },
         "workshop": {
-            "title": "Servicios de Taller — Vraivelo",
+            "title": "Servicios de Taller — Vraivēlo",
             "description": "Reparación profesional de bicicletas, puestas a punto, mantenimiento de suspensiones y montajes personalizados por mecánicos certificados."
         },
         "contact": {
-            "title": "Contacto — Vraivelo",
-            "description": "Contacta con Vraivelo. Visita nuestra tienda, llámanos o envíanos un mensaje para consultas sobre bicicletas y reservas de servicio."
+            "title": "Contacto — Vraivēlo",
+            "description": "Contacta con Vraivēlo. Visita nuestra tienda, llámanos o envíanos un mensaje para consultas sobre bicicletas y reservas de servicio."
         },
         "vraivelo": {
-            "title": "Nuestra Historia — Vraivelo",
-            "description": "Descubre la historia detrás de Vraivelo — nacida de la pasión por el ciclismo y la artesanía."
+            "title": "Nuestra Historia — Vraivēlo",
+            "description": "Descubre la historia detrás de Vraivēlo — nacida de la pasión por el ciclismo y la artesanía."
         },
         "event_formation": {
-            "title": "Taller de Mecánica — Vraivelo",
+            "title": "Taller de Mecánica — Vraivēlo",
             "description": "Únete a nuestro taller práctico de mecánica de bicicletas. Aprende habilidades esenciales de mantenimiento."
         },
         "product_detail": {
-            "title": "{{name}} — Vraivelo",
-            "description": "Explora la {{name}} — especificaciones, tallas y precios. Disponible en Vraivelo."
+            "title": "{{name}} — Vraivēlo",
+            "description": "Explora la {{name}} — especificaciones, tallas y precios. Disponible en Vraivēlo."
+        }
+    },
+    "origins": {
+        "hero": {
+            "back": "Volver a historias",
+            "title": "ORÍGENES",
+            "desc": "De la competición al detalle mecánico. La historia detrás del taller."
+        },
+        "intro": {
+            "title": "<vraiWhite>Vraivēlo</vraiWhite> nace de toda una vida sobre la bicicleta.",
+            "text": "David, fundador del taller, creció en Badalona y empezó a pedalear con apenas tres años. Lo que comenzó como una afición en la infancia se convirtió en una carrera competitiva en mountain bike y luego en ciclismo de carretera, pasando por categorías sub23 y élite hasta formar parte de un equipo profesional."
+        },
+        "competitive": {
+            "label": "La Era Competitiva",
+            "heading": "Al Límite en la Ruta",
+            "text": "El ciclismo de competición no solo exige resistencia física; requiere entender profundamente la máquina. Años de llevar las bicicletas al límite en condiciones exigentes le enseñaron a David la relación crucial entre el ciclista y su equipo.",
+            "quote": "\"Cada ajuste, cada reparación y cada recomendación nace de la experiencia real en entrenamientos, carreras y largas horas sobre el sillín.\"",
+            "author": "— David, Fundador"
+        },
+        "quote_banner": {
+            "title": "\"Haber vivido el ciclismo desde dentro marcó la diferencia.\""
+        },
+        "building": {
+            "label": "Un Nuevo Capítulo",
+            "heading": "El Puente Hacia el Taller",
+            "text_1": "Al cerrar ese capítulo deportivo, la bicicleta siguió siendo el centro de todo, esta vez desde el aspecto técnico. Años de experiencia en talleres y tiendas especializadas dejaron algo claro: faltaba una atención verdaderamente cercana y directa hacia el ciclista y su bicicleta.",
+            "text_2": "En diciembre de 2023, en Girona, nace <vrai>Vraivēlo</vrai> como respuesta a esa necesidad. Un taller creado para cuidar la bicicleta con el mismo respeto y nivel de exigencia con el que uno entrena para competir.",
+            "features": [
+                "Mecánica Experta",
+                "Asistencia Pro",
+                "Desde Girona"
+            ]
+        },
+        "bridging": {
+            "label": "Un Nuevo Reto",
+            "heading": "Vraivēlo Crece",
+            "text_1": "Tan solo un año después de abrir nuestras puertas, <vrai>Vraivēlo</vrai> experimentó un crecimiento imparable. El reconocimiento a nuestro trabajo y la alta demanda hicieron que el taller original se quedara pequeño para una comunidad en plena expansión. Sabíamos que necesitábamos un espacio a la altura de esa confianza.",
+            "text_2": "Esto nos llevó a nuestra nueva ubicación en <bold>Carrer Pau Vila i Dinarès 10</bold>. Este traslado supuso el inicio de un capítulo emocionante: sin dejar de lado nuestro taller premium, evolucionamos para ofrecer también lo mejor en venta de bicicletas, componentes y ropa ciclista.",
+            "text_3": "Este proyecto alimenta nuestra ilusión por seguir trabajando y garantizando la excelencia que define a <vrai>Vraivēlo</vrai>. Con esta nueva etapa llegan nuevos retos deportivos y profesionales, con el objetivo de siempre: ofrecer solo lo mejor a nuestros clientes.",
+            "features": [
+                "Mecánica Experta",
+                "Asistencia Pro",
+                "Desde Girona",
+                "Boutique Ciclista"
+            ],
+            "badge": "Taller Especializado"
+        }
+    },
+    "calendar": {
+        "hero": {
+            "title": "Calendario 2026",
+            "desc": "Únete a la comunidad Vraivēlo en la carretera y el gravel. Un viaje curado a través de los paisajes más impresionantes, diseñado para ciclistas que valoran la precisión, el esfuerzo y la camaradería.",
+            "legend": {
+                "road": "Carretera",
+                "gravel": "Gravel",
+                "workshop": "Taller",
+                "weekend": "Vraivēlo Weekend"
+            }
+        },
+        "events_title": "Próximos Encuentros",
+        "btn": "¡Quiero saber más!",
+        "months": {
+            "Abril": "Abril",
+            "Mayo": "Mayo",
+            "Junio": "Junio",
+            "Julio": "Julio",
+            "Agosto": "Agosto",
+            "Septiembre": "Septiembre",
+            "Octubre": "Octubre",
+            "Diciembre": "Diciembre"
+        },
+        "eventsData": {
+            "0": {
+                "type": "Road",
+                "title": "Social Ride carretera",
+                "desc": "Una salida matutina por los puertos clásicos. Velocidad controlada, café obligatorio al terminar."
+            },
+            "1": {
+                "type": "Taller",
+                "title": "Formación mecánica básica",
+                "desc": "Aprende los ajustes fundamentales y reparación de pinchazos en ruta con nuestros mecánicos expertos."
+            },
+            "2": {
+                "type": "Gravel",
+                "title": "Social Ride gravel",
+                "desc": "Explora caminos secundarios y pistas forestales en nuestra salida mensual de gravel."
+            },
+            "3": {
+                "type": "Weekend",
+                "title": "Vraivēlo Weekend",
+                "desc": "Dos días de ruta épica con estancia en hotel boutique y gastronomía local curada."
+            },
+            "4": {
+                "type": "Gravel",
+                "title": "Social Ride gravel",
+                "desc": "Explora caminos secundarios y pistas forestales en nuestra salida mensual de gravel."
+            },
+            "5": {
+                "type": "Road",
+                "title": "Social Ride carretera",
+                "desc": "Una salida matutina por los puertos clásicos. Velocidad controlada, café obligatorio al terminar."
+            },
+            "6": {
+                "type": "Weekend",
+                "title": "Vraivēlo Weekend",
+                "desc": "Dos días de ruta épica con estancia en hotel boutique y gastronomía local curada."
+            },
+            "7": {
+                "type": "Weekend",
+                "title": "Social Ride Gravel",
+                "desc": "Explora caminos secundarios y pistas forestales en nuestra salida mensual de gravel."
+            },
+            "8": {
+                "type": "Weekend",
+                "title": "Social Ride Carretera",
+                "desc": "Explora caminos secundarios y pistas forestales en nuestra salida mensual de gravel."
+            },
+            "9": {
+                "type": "Weekend",
+                "title": "Social Ride Carretera",
+                "desc": "Explora caminos secundarios y pistas forestales en nuestra salida mensual de gravel."
+            }
+        }
+    },
+    "berria": {
+        "hero": {
+            "badge": "Girona Experience • Nov 2025",
+            "title": "Vraivēlo x Berria",
+            "desc": "Una mirada retrospectiva a nuestra colaboración exclusiva en el corazón de Cataluña, donde la experiencia del taller profesional se encontró con la ingeniería de bicicletas de alto rendimiento."
+        },
+        "article": {
+            "subheading": "La Colaboración",
+            "heading": "Berria Demo Tour en Vraivēlo",
+            "p1": "Hay días que resumen muy bien lo que somos, el Berria Demo Tour en Vraivēlo fue uno de ellos.",
+            "p2": "Cuando desde Berria nos propusieron formar parte de su Demo Tour, lo tuvimos claro desde el principio: queríamos que fuera una jornada abierta, cercana y fiel a nuestra manera de entender el ciclismo. No solo venir a probar bicicletas, sino crear una experiencia completa alrededor de ellas.",
+            "p3": "Vraivēlo se convirtió ese día en el punto de partida y de regreso. El lugar donde se ajustaban bicis, se resolvían dudas, se compartían cafés y se respiraba esa mezcla de nervios y curiosidad previa a salir a rodar. Desde primera hora, el taller se llenó de ciclistas con ganas de probar, aprender y disfrutar, muchos de ellos habituales de la casa y otros que nos descubrían por primera vez. Las rutas estaban pensadas para sacar lo mejor de cada bicicleta. Grupos pequeños, salidas escalonadas y recorridos variados por los alrededores de Girona, combinando carreteras tranquilas y tramos donde realmente puedes entender cómo responde una bici cuando pedaleas de verdad. No había prisas ni presión, solo kilómetros para sentir sensaciones reales.",
+            "p4": "Durante toda la jornada, desde Vraivēlo junto con el equipo de Berria, nos encargamos de que todo fluyera: ajustes, cambios de talla, recomendaciones y acompañamiento constante. Porque para nosotros, una demo no es solo subirte a una bicicleta nueva, es entender si encaja contigo, con tu forma de rodar y con lo que buscas cuando sales a entrenar o a disfrutar.",
+            "p5": "El Demo Tour con Berria encajó de forma natural porque compartimos una misma visión: el ciclismo se vive en la carretera, pero se construye en comunidad. Al final del día, cuando las bicicletas volvieron a sus soportes y la tienda recuperó la calma, quedó la sensación de haber vivido algo especial. Un día sencillo, bien hecho, y muy alineado con lo que es Vraivēlo: un espacio donde la bici es la protagonista, pero las personas lo son aún más.",
+            "p6": "Muy atentos porque pronto tendremos una nueva edición de Berria Demo Tour."
+        },
+        "stats": {
+            "s1_val": "4",
+            "s1_label": "Modelos Probados",
+            "s2_val": "13",
+            "s2_label": "Asistentes",
+            "s3_val": "After Ride",
+            "s3_label": "Buen café y compañía"
+        },
+        "features": {
+            "f1_title": "Test de Producto",
+            "f1_desc": "Acceso exclusivo a la última tecnología de carbono de Berria, rigurosamente probada en terrenos variados.",
+            "f2_title": "Rutas Escénicas en Girona",
+            "f2_desc": "Rutas organizadas diarias a través de pueblos medievales y acantilados costeros, guiadas por expertos de Vraivēlo.",
+            "f3_title": "Experiencia de Taller",
+            "f3_desc": "Soporte mecánico in situ y optimización de configuración personalizada por el equipo de Vraivēlo."
+        },
+        "gallery": {
+            "title": "Diario Visual",
+            "subtitle": "Capturando el rendimiento de Berria en el paisaje de Girona",
+            "c1": "Detalle Berria Belador",
+            "c2": "Disfrutando la compañía",
+            "c3": "Mañana en Girona",
+            "c4": "El Pelotón de Girona",
+            "c5": "Últimos detalles",
+            "c6": "Charla antes de salir"
+        },
+        "footer": {
+            "quote": "\"Gracias a todos los que nos acompañaron en la Experiencia Vraivēlo x Berria Girona. Estamos orgullosos de haber compartido estas carreteras y estas máquinas con vosotros.\"",
+            "copyright": "© 2025 Vraivēlo x Berria. Todos los derechos reservados."
+        }
+    },
+    "weekend": {
+        "headline": "Vraivēlo Weekend",
+        "subtitle_1": "Un fin de semana rumbo a Francia",
+        "p1": "El año pasado organizamos una salida diferente desde Vraivēlo. No se trataba de una ruta más, sino de una pequeña aventura en dos días, pensada para disfrutar del ciclismo con calma, seguridad y buen ambiente.",
+        "p2": "La salida fue programada y guiada por David, con un grupo reducido de 8 ciclistas. Limitamos las plazas para poder controlar el ritmo, minimizar riesgos y asegurarnos de que todos viviéramos la experiencia de la mejor manera posible. El recorrido estaba planificado desde el inicio: horarios, etapas y paradas, con destino final en Francia.",
+        "p3": "Salimos juntos desde la tienda y, desde el primer kilómetro, se respiraba algo especial. Carreteras secundarias, paisajes que iban cambiando poco a poco y la sensación de estar compartiendo algo más que kilómetros. La ruta fue exigente, tanto física como mentalmente, pero siempre rodando en grupo y apoyándonos unos a otros. Durante todo el fin de semana contamos con coche de asistencia, que nos dio soporte constante. Comida, bebida, apoyo logístico y ropa de recambio cuando el tiempo se complicó —porque sí, la lluvia también quiso formar parte de la aventura—. Gracias a esto, los ciclistas solo tuvimos que preocuparnos de pedalear y disfrutar.",
+        "p4": "Por la noche nos alojamos en un hotel, donde tocó recuperar fuerzas, compartir anécdotas del día. Al día siguiente emprendimos el camino de vuelta, con el cansancio acumulado, pero con la satisfacción de haber vivido algo especial. No fue una salida fácil, ni pretendía serlo. Fue una experiencia real, bien organizada y compartida entre personas con la misma pasión por el ciclismo.",
+        "subtitle_2": "Lo que se viene",
+        "p5": "Después de vivir algo así, era imposible no pensar en repetir. Este año estamos preparando <1>dos Vraivēlo Weekends</1>, nuevas aventuras sobre la bicicleta, con el mismo cuidado por los detalles, el mismo espíritu de grupo y las mismas ganas de disfrutar del camino.",
+        "p6": "Si no quieres perdértelo, mantente atento a nuestras redes en <1>@Vraivēlo</1> en Instagram y a nuestro club de <1>Strava</1>, donde iremos compartiendo todas las novedades.",
+        "gallery": {
+            "title": "Galería del Evento",
+            "btn": "Ver Todas las Fotos"
+        }
+    },
+    "licenses": {
+        "hero": {
+            "title": "Tu Pasión, Protegida",
+            "subtitle": "En Vraivēlo facilitamos tu federación. Elige la licencia que mejor se adapte a tus objetivos, desde la competición hasta el cicloturismo recreativo.",
+            "cta": "Ver Licencias"
+        },
+        "grid": {
+            "title": "Opciones de Licencia 2025",
+            "subtitle": "Gestionamos tu alta en la Federació Catalana de Ciclisme para que tú solo tengas que preocuparte de pedalear."
+        },
+        "cards": {
+            "competitive": {
+                "badge": "MÁS POPULAR",
+                "period": "/año",
+                "title": "Licencia Competitiva",
+                "desc": "La opción completa para quienes buscan medir su rendimiento en carreras oficiales.",
+                "features": [
+                    "Validada para calendario UCI y Nacional",
+                    "Cobertura médica completa + RC ilimitada",
+                    "Acceso a rankings y podios oficiales",
+                    "Socio Vraivēlo: -10€ Dto."
+                ]
+            },
+            "noncompetitive": {
+                "badge": "UCI / INTERNACIONAL",
+                "period": "/año",
+                "title": "Cicloturista UCI",
+                "desc": "Para ciclistas que participan en marchas internacionales fuera de España.",
+                "features": [
+                    "Ámbito: Internacional / UCI",
+                    "Seguro: Accidentes + RC",
+                    "Socio Vraivēlo: -10€ Dto."
+                ]
+            },
+            "cicloturista": {
+                "badge": "CATALUÑA",
+                "period": "/año",
+                "title": "Cicloturista Local",
+                "desc": "Ideal para salidas con el club y marchas cicloturistas dentro de Cataluña.",
+                "features": [
+                    "Ámbito: Cataluña",
+                    "Seguro: Accidentes + RC",
+                    "Perfecto para salidas grupales",
+                    "Socio Vraivēlo: -10€ Dto."
+                ]
+            },
+            "targeta": {
+                "badge": "BÁSICO",
+                "period": "/año",
+                "title": "Tarjeta Bici",
+                "desc": "Cobertura esencial para el ciclista urbano o recreativo que busca tranquilidad.",
+                "features": [
+                    "Seguro Responsabilidad Civil",
+                    "Asistencia: Plus 24h/7d",
+                    "* No incluye cobertura médica",
+                    "Socio Vraivēlo: -10€ Dto."
+                ]
+            }
+        },
+        "info": {
+            "title": "¿Por qué Federarse con Vraivēlo?",
+            "b1": {
+                "title": "Tramitación Directa",
+                "desc": "Nos encargamos de todo el proceso administrativo con la FCC, ahorrándote tiempo y complicaciones."
+            },
+            "b2": {
+                "title": "Asesoramiento Experto",
+                "desc": "Te ayudamos a elegir la modalidad correcta según tu calendario de eventos y necesidades de seguro."
+            },
+            "b3": {
+                "title": "Comunidad y Ventajas",
+                "desc": "Forma parte de nuestro club oficial y disfruta de descuentos exclusivos en tienda y servicios de taller."
+            }
+        },
+        "cta": {
+            "title": "¿Listo para tu próxima aventura?",
+            "desc": "Escríbenos y tramitaremos tu licencia en menos de 48 horas laborales.",
+            "btn": "SOLICITAR AHORA"
         }
     }
 }
