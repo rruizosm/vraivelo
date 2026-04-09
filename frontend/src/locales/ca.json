@@ -11,8 +11,9 @@
     "shop": {
         "filters": {
             "on_sale": "En oferta",
-            "coming_soon": "Pròximament"
-        }
+            "coming_soon": "Aviat"
+        },
+        "search_placeholder": "Cerca per marca o model…"
     },
     "vraivelo": {
         "read_story": "Llegir història",
@@ -46,6 +47,8 @@
         "contact_us": "Contacta'ns",
         "back_to_shop": "Tornar a la Botiga",
         "back_to_other_products": "Tornar a Altres Productes",
+        "finance_option": "Possibilitat de finançar total o parcialment",
+        "trade_in_option": "Possibilitat d'entregar la teva bicicleta antiga com a part de pagament",
         "contact_message": "Hola, estic interessat/da en",
         "specs": {
             "frame": "Quadre",
@@ -101,7 +104,7 @@
                 },
                 "selection": {
                     "title": "Selecció Premium",
-                    "desc": "Col·lecció curada de les millors bicicletes i equipament professional del món."
+                    "desc": "Una selecció acurada de les millors bicicletes del món i de l'equipament professional."
                 },
                 "guarantee": {
                     "title": "Garantia Vraivēlo",
@@ -380,7 +383,7 @@
                 "sidebar": {
                     "guarantee": {
                         "title": "Garantia de Precisió",
-                        "desc": "Cada amortidor revisat al Taller se sotmet a una prova de pressió de nitrogen de 24 hores i simulació en banc per assegurar que no hi hagi fuites i que les corbes d'amortiguació siguin consistents."
+                        "desc": "Utilitzem només lubricants d'alta gamma i kits de servei originals. Després del muntatge, cada amortidor sotmet una inspecció tècnica final per assegurar que els dials i els bloquejadors funcionin amb una precisió del 100%."
                     },
                     "lead_time": {
                         "title": "Temps d'Entrega",
@@ -557,7 +560,8 @@
         "clothes": "Roba",
         "wheels": "Rodes",
         "new": "NOU",
-        "colors": "Colors:"
+        "colors": "Colors:",
+        "search_placeholder": "Cerca per marca o model (ex: maillot, High Level)..."
     },
     "strava": {
         "badge": "La Comunitat Oficial",

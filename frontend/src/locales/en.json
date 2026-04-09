@@ -12,7 +12,8 @@
         "filters": {
             "on_sale": "On Sale",
             "coming_soon": "Coming Soon"
-        }
+        },
+        "search_placeholder": "Search by brand or model…"
     },
     "vraivelo": {
         "read_story": "Read Story",
@@ -46,6 +47,8 @@
         "contact_us": "Contact Us",
         "back_to_shop": "Back to Shop",
         "back_to_other_products": "Back to Other Products",
+        "finance_option": "Possibility to finance in full or in part",
+        "trade_in_option": "Possibility to trade in your old bike",
         "contact_message": "Hi, I'm interested in",
         "specs": {
             "frame": "Frame",
@@ -101,7 +104,7 @@
                 },
                 "selection": {
                     "title": "Premium Selection",
-                    "desc": "Curated collection of the world's finest bicycles and professional-grade gear."
+                    "desc": "A careful selection of the world's finest bicycles and professional equipment."
                 },
                 "guarantee": {
                     "title": "Vraivēlo Guarantee",
@@ -380,7 +383,7 @@
                 "sidebar": {
                     "guarantee": {
                         "title": "Precision Guarantee",
-                        "desc": "Every shock serviced at the Atelier undergoes a 24-hour nitrogen pressure test and dyno-simulation to ensure no leaks and consistent damping curves."
+                        "desc": "We use only high-end lubricants and genuine service kits. After assembly, each shock absorber undergoes a final technical inspection to ensure that the dials and locks function with 100% precision."
                     },
                     "lead_time": {
                         "title": "Lead Time",
@@ -557,7 +560,8 @@
         "clothes": "Clothes",
         "wheels": "Wheels",
         "new": "NEW",
-        "colors": "Colors:"
+        "colors": "Colors:",
+        "search_placeholder": "Search by brand or model (e.g. maillot, High Level)..."
     },
     "strava": {
         "badge": "The Official Community",

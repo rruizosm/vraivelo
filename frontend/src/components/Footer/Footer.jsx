@@ -1,4 +1,4 @@
-import { Instagram, MapPin, Phone, Mail, Bike, Clock } from 'lucide-react';
+import { Instagram, Youtube, MapPin, Phone, Mail, Bike, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './Footer.css';
@@ -58,7 +58,11 @@ const Footer = () => {
                         <div className="social-icons">
                             <a href="https://www.instagram.com/vraivelo/" target="_blank" rel="noopener noreferrer" className="social-link">
                                 <Instagram size={20} />
-                                <span className="social-handle">@vraivelo</span>
+                                <span className="social-handle">@vraivēlo</span>
+                            </a>
+                            <a href="https://www.youtube.com/@VRAIVELO" target="_blank" rel="noopener noreferrer" className="social-link">
+                                <Youtube size={20} />
+                                <span className="social-handle">@vraivēlo</span>
                             </a>
                         </div>
                     </div>

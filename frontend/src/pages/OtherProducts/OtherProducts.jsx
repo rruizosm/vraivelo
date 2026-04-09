@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { ShoppingBag, Loader, Mail, ChevronDown, ChevronUp } from 'lucide-react';
+import { ShoppingBag, Loader, Mail, ChevronDown, ChevronUp, Search } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../../supabase';
@@ -65,7 +65,7 @@ const ProductCard = ({ product, addToCart, navigate, t, isCartEnabled }) => {
                 )}
 
                 <div className="bike-price-row">
-                    <span className="bike-price">{product.price}</span>
+                    <span className="bike-price-new">{product.price}</span>
                     {isCartEnabled && (
                         <button
                             className="add-cart-btn-small"
@@ -88,6 +88,7 @@ const OtherProducts = () => {
     const [loading, setLoading] = useState(true);
     const [activeCategory, setActiveCategory] = useState(() => sessionStorage.getItem('otherProducts_activeCategory') || 'All');
     const [expandedFilters, setExpandedFilters] = useState({ category: true });
+    const [searchQuery, setSearchQuery] = useState('');
 
     const toggleSection = (section) => {
         setExpandedFilters(prev => ({ ...prev, [section]: !prev[section] }));
@@ -108,6 +109,7 @@ const OtherProducts = () => {
                 const { data, error } = await supabase
                     .from('products')
                     .select('*')
+                    .eq('Active', true)
                     .order('id', { ascending: true });
 
                 if (error) throw error;
@@ -119,7 +121,7 @@ const OtherProducts = () => {
                 const normalized = (data || []).map(p => {
                     const category = p.Type || p.type;
                     let specs = p.Specs || p.specs || [];
-                    
+
                     if (typeof specs === 'string') {
                         try { specs = JSON.parse(specs.replace(/'/g, '"')); } catch { specs = [specs]; }
                     }
@@ -137,6 +139,13 @@ const OtherProducts = () => {
                         image_url: p["Image URL"] || p["image url"] || p.image_url,
                         color: p.Color || p.color,
                         specs: specs,
+                        // Localization Schema
+                        description_spanish: p.description_spanish,
+                        description_english: p.description_english,
+                        description_catalan: p.description_catalan,
+                        specs_spanish: p.specs_spanish,
+                        specs_english: p.specs_english,
+                        specs_catalan: p.specs_catalan,
                     };
                 });
 
@@ -171,7 +180,12 @@ const OtherProducts = () => {
             product.category === activeCategory ||
             (activeCategory === 'Clothes' && product.category === 'Other Products');
 
-        return matchCategory;
+        const q = searchQuery.trim().toLowerCase();
+        const matchSearch = !q ||
+            (product.brand || '').toLowerCase().includes(q) ||
+            (product.model || '').toLowerCase().includes(q);
+
+        return matchCategory && matchSearch;
     });
 
     if (loading) {
@@ -227,6 +241,23 @@ const OtherProducts = () => {
 
                     {/* PRODUCTS GRID */}
                     <div style={{ width: '100%' }}>
+                        {/* Search Bar */}
+                        <div className="shop-search-bar">
+                            <Search size={18} className="shop-search-icon" />
+                            <input
+                                id="shop-search-input"
+                                type="text"
+                                className="shop-search-input"
+                                placeholder={t('other_products.search_placeholder')}
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                            {searchQuery && (
+                                <button className="shop-search-clear" onClick={() => setSearchQuery('')} aria-label="Clear search">
+                                    ✕
+                                </button>
+                            )}
+                        </div>
                         <div style={{ paddingBottom: '1rem', marginBottom: '1rem', borderBottom: '1px solid #e2e8f0', color: '#64748b', fontSize: '0.875rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                             {filteredProducts.length} {filteredProducts.length === 1 ? 'Product' : 'Products'} Listed
                         </div>

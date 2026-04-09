@@ -69,21 +69,26 @@
     flex-direction: column;
     gap: 2.5rem;
     position: sticky;
-    top: 6rem;          /* clears the navbar; adjust if your navbar height differs */
+    top: 6rem;
+    /* clears the navbar; adjust if your navbar height differs */
     max-height: calc(100vh - 7rem);
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: var(--border-light) transparent;
-    padding-right: 0.25rem; /* breathing room next to the scrollbar */
-    align-self: start;  /* keeps it from stretching to the grid height */
+    padding-right: 0.25rem;
+    /* breathing room next to the scrollbar */
+    align-self: start;
+    /* keeps it from stretching to the grid height */
 }
 
 .shop-sidebar::-webkit-scrollbar {
     width: 4px;
 }
+
 .shop-sidebar::-webkit-scrollbar-track {
     background: transparent;
 }
+
 .shop-sidebar::-webkit-scrollbar-thumb {
     background-color: var(--border-light);
     border-radius: 9999px;
@@ -109,7 +114,8 @@
     border: none;
     padding: 0.5rem 0;
     cursor: pointer;
-    color: var(--text-main); /* dark navy */
+    color: var(--text-main);
+    /* dark navy */
 }
 
 .filter-accordion-header:hover {
@@ -138,6 +144,7 @@
     height: 48px;
     margin-top: 0.5rem;
 }
+
 .range-slider-track {
     position: absolute;
     top: 50%;
@@ -148,12 +155,14 @@
     background-color: var(--border-light);
     border-radius: 9999px;
 }
+
 .range-slider-fill {
     position: absolute;
     height: 100%;
     background-color: var(--text-main);
     border-radius: 9999px;
 }
+
 .range-slider-container input[type="range"] {
     position: absolute;
     top: 50%;
@@ -168,9 +177,11 @@
     margin: 0;
     z-index: 2;
 }
+
 .range-slider-container input[type="range"]:focus {
     outline: none;
 }
+
 .range-slider-container input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -181,16 +192,19 @@
     background: var(--global-white);
     border: 4px solid var(--text-main);
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+
 .range-slider-container input[type="range"]::-webkit-slider-thumb:hover {
     transform: scale(1.15);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+
 .range-slider-container input[type="range"]::-webkit-slider-thumb:active {
     transform: scale(0.95);
 }
+
 .range-slider-labels {
     display: flex;
     justify-content: space-between;
@@ -311,6 +325,7 @@
 .bike-image {
     width: 100%;
     height: 100%;
+    max-height: 300px;
     object-fit: contain;
     background-color: white;
     padding: 1rem;
@@ -467,7 +482,7 @@
     outline: 2px solid transparent;
     cursor: pointer;
     transition: transform 0.18s ease, outline-color 0.18s ease, border-color 0.18s ease;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
     flex-shrink: 0;
 }
 

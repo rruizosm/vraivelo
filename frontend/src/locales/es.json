@@ -12,7 +12,8 @@
         "filters": {
             "on_sale": "En oferta",
             "coming_soon": "Próximamente"
-        }
+        },
+        "search_placeholder": "Buscar por marca o modelo…"
     },
     "vraivelo": {
         "read_story": "Leer historia",
@@ -46,6 +47,8 @@
         "contact_us": "Contáctanos",
         "back_to_shop": "Volver a la Tienda",
         "back_to_other_products": "Volver a Otros Productos",
+        "finance_option": "Posibilidad de financiar total o parcialmente",
+        "trade_in_option": "Posibilidad de entregar tu bicicleta antigua como parte de pago",
         "contact_message": "Hola, estoy interesado/a en",
         "specs": {
             "frame": "Cuadro",
@@ -101,7 +104,7 @@
                 },
                 "selection": {
                     "title": "Selección Premium",
-                    "desc": "Colección curada de las mejores bicicletas y equipamiento profesional del mundo."
+                    "desc": "Una cuidadosa elección de las mejores bicicletas y equipamiento profesional del mundo."
                 },
                 "guarantee": {
                     "title": "Garantía Vraivēlo",
@@ -380,7 +383,7 @@
                 "sidebar": {
                     "guarantee": {
                         "title": "Garantía de Precisión",
-                        "desc": "Cada amortiguador revisado en el Taller se somete a una prueba de presión de nitrógeno de 24 horas y simulación en banco para asegurar que no haya fugas y curvas de compresión consistentes."
+                        "desc": "Utilizamos exclusivamente lubricantes de alta gama y kits de servicio originales. Tras el montaje, cada amortiguador pasa por una inspección técnica final para certificar que el funcionamiento de los diales y bloqueos sea 100% preciso."
                     },
                     "lead_time": {
                         "title": "Tiempo de Entrega",
@@ -557,7 +560,8 @@
         "clothes": "Ropa",
         "wheels": "Ruedas",
         "new": "NUEVO",
-        "colors": "Colores:"
+        "colors": "Colores:",
+        "search_placeholder": "Buscar por marca o modelo (ej: maillot, High Level)..."
     },
     "strava": {
         "badge": "La Comunidad Oficial",

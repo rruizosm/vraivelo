@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ZoomIn, Loader, ShoppingBag, ChevronLeft, ChevronRight, Mail } from 'lucide-react';
+import { ArrowLeft, ChevronRight, ChevronLeft, ZoomIn, Banknote, RefreshCcw, Loader, ShoppingBag, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../../supabase';
 import { useCart } from '../../context/CartContext';
@@ -57,6 +57,8 @@ const ProductDetail = () => {
                             images: bv.image_url ? [bv.image_url] : []
                         }));
                     }
+                    // Identity flag for bikes
+                    bikeData.isBikeData = true;
 
                     setBike(bikeData);
 
@@ -98,14 +100,16 @@ const ProductDetail = () => {
                         image_url: productData["Image URL"] || productData["image url"] || productData.image_url,
                         color: productData.Colors || productData.colors,
                         specs: specs,
-                        // Localization Schema (Fallback mapping for Products table)
-                        description_es: productData.description_es || productData.Description_es || productData.Description_ES,
-                        description_ca: productData.description_ca || productData.Description_ca || productData.Description_CA,
+                        // Localization Schema (Supporting both legacy and new column names)
+                        description_es: productData.description_es || productData.Description_es || productData.description_spanish,
+                        description_en: productData.description_en || productData.Description_en || productData.description_english,
+                        description_ca: productData.description_ca || productData.Description_ca || productData.description_catalan,
                         long_description: productData.long_description || productData.Long_description,
                         long_description_es: productData.long_description_es || productData.Long_description_es || productData.Long_description_ES,
                         long_description_ca: productData.long_description_ca || productData.Long_description_ca || productData.Long_description_CA,
-                        specs_es: productData.specs_es || productData.Specs_es || productData.Specs_ES,
-                        specs_cat: productData.specs_cat || productData.Specs_cat || productData.Specs_CAT,
+                        specs_es: productData.specs || productData.Specs || productData.specs,
+                        specs_en: productData.specs_en || productData.Specs_en || productData.specs_english,
+                        specs_ca: productData.specs_ca || productData.Specs_ca || productData.specs_catalan,
                     });
                     setLoading(false);
                     return;
@@ -162,8 +166,12 @@ const ProductDetail = () => {
 
     // Dynamically map text fields via i18n
     const currentLang = i18n?.language?.toLowerCase().split('-')[0] || 'en';
+    const langMap = { 'es': 'spanish', 'en': 'english', 'ca': 'catalan' };
+    const fullLangName = langMap[currentLang];
     const descLangKey = currentLang === 'ca' ? 'cat' : currentLang;
+
     const displayDescription =
+        bike?.[`description_${fullLangName}`] ||
         bike?.[`description_${descLangKey}`] ||
         bike?.[`description_${currentLang}`] ||
         bike?.description;
@@ -173,15 +181,21 @@ const ProductDetail = () => {
         bike?.long_description;
 
     let displaySpecs = bike?.specs || [];
-    if (currentLang !== 'en') {
-        const specLangKey = currentLang === 'ca' ? 'cat' : currentLang;
-        const localizedSpecs = bike?.[`specs_${specLangKey}`] || bike?.[`Specs_${specLangKey}`];
-        if (localizedSpecs) {
-            if (typeof localizedSpecs === 'string') {
-                try { displaySpecs = JSON.parse(localizedSpecs.replace(/'/g, '"')); } catch { displaySpecs = [localizedSpecs]; }
-            } else if (Array.isArray(localizedSpecs)) {
-                displaySpecs = localizedSpecs;
-            }
+    const fullSpecName = langMap[currentLang];
+    const specLangKey = currentLang === 'ca' ? 'cat' : currentLang;
+
+    const localizedSpecs =
+        bike?.[`specs_${fullSpecName}`] ||
+        bike?.[`Specs_${fullSpecName}`] ||
+        bike?.[`specs_${specLangKey}`] ||
+        bike?.[`Specs_${specLangKey}`] ||
+        bike?.[`specs_${currentLang}`];
+
+    if (localizedSpecs) {
+        if (typeof localizedSpecs === 'string') {
+            try { displaySpecs = JSON.parse(localizedSpecs.replace(/'/g, '"')); } catch { displaySpecs = [localizedSpecs]; }
+        } else if (Array.isArray(localizedSpecs)) {
+            displaySpecs = localizedSpecs;
         }
     }
 
@@ -333,13 +347,6 @@ const ProductDetail = () => {
                         </button>
                     </motion.div>
 
-                    {/* Description below image */}
-                    {(displayDescription || displayLongDescription) && (
-                        <div className="product-description-below">
-                            {displayDescription && <p className="product-description">{displayDescription}</p>}
-                            {displayLongDescription && <p className="product-description" style={{ marginTop: '0.75rem' }}>{displayLongDescription}</p>}
-                        </div>
-                    )}
                 </div>
 
                 {/* Info Section */}
@@ -365,12 +372,42 @@ const ProductDetail = () => {
                             const discountedPrice = hasDiscount ? getDiscountedPrice(bike.price) : bike.price;
 
                             if (!hasDiscount || discountedPrice === bike.price) {
-                                return <p className="product-price">{bike.price}</p>;
+                                return (
+                                    <>
+                                        <p className="product-price">{bike.price}</p>
+                                        {bike.isBikeData && (
+                                            <div className="purchase-perks-banner">
+                                                <div className="perk-item">
+                                                    <Banknote size={18} className="perk-icon" />
+                                                    <span>{t('product.finance_option')}</span>
+                                                </div>
+                                                <div className="perk-item">
+                                                    <RefreshCcw size={18} className="perk-icon" />
+                                                    <span>{t('product.trade_in_option')}</span>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </>
+                                );
                             }
                             return (
-                                <div className="flex items-center gap-3 mt-2">
-                                    <span className="product-price-new">{bike.price}</span>
-                                    {/* <span className="product-price-new">{discountedPrice}</span> */}
+                                <div className="flex flex-col mt-2">
+                                    <div className="flex items-center gap-3">
+                                        <span className="product-price-new">{bike.price}</span>
+                                        {/* <span className="product-price-new">{discountedPrice}</span> */}
+                                    </div>
+                                    {bike.isBikeData && (
+                                        <div className="purchase-perks-banner">
+                                            <div className="perk-item">
+                                                <Banknote size={18} className="perk-icon" />
+                                                <span>{t('product.finance_option')}</span>
+                                            </div>
+                                            <div className="perk-item">
+                                                <RefreshCcw size={18} className="perk-icon" />
+                                                <span>{t('product.trade_in_option')}</span>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             );
                         })()}
@@ -473,6 +510,16 @@ const ProductDetail = () => {
                     </div>
                 </motion.div>
             </div>
+
+            {/* Description Section */}
+            {(displayDescription || displayLongDescription) && (
+                <div className="product-description-section" style={{ maxWidth: 'var(--container-width)', margin: '4rem auto 0', padding: '0 1.5rem' }}>
+                    <div className="product-description-below" style={{ borderTop: 'none', paddingTop: 0 }}>
+                        {displayDescription && <p className="product-description">{displayDescription}</p>}
+                        {displayLongDescription && <p className="product-description" style={{ marginTop: '0.75rem' }}>{displayLongDescription}</p>}
+                    </div>
+                </div>
+            )}
 
             {/* Specs Section */}
             {displaySpecs.length > 0 && (

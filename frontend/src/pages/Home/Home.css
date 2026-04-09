@@ -92,7 +92,7 @@
 .hero-top-badge {
     position: absolute;
     top: clamp(4rem, 10vh, 6rem);
-    left: 50%;
+    /* left: 50%; */
     transform: translateX(-50%);
     z-index: 20;
     width: max-content;

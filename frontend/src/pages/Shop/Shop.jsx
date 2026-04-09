@@ -317,7 +317,7 @@ const Shop = () => {
                                 id="shop-search-input"
                                 type="text"
                                 className="shop-search-input"
-                                placeholder="Search by brand or model…"
+                                placeholder={t('shop.search_placeholder')}
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                             />

@@ -97,7 +97,8 @@
 
 .social-icons {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .social-link {
