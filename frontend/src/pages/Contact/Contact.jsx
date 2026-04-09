@@ -32,12 +32,14 @@ const Contact = () => {
         const formData = new FormData(e.target);
         const firstName = formData.get('firstName');
         const lastName = formData.get('lastName');
+        const email = formData.get('email');
         const msgSubject = formData.get('subject');
+        const formService = formData.get('service');
         const message = formData.get('message');
 
         // Validation
-        if (!firstName || !lastName || !msgSubject || !message) {
-            alert(t('contact.form.validation_error') || "Please fill in all required fields.");
+        if (!firstName || !lastName || !email || !msgSubject || !message) {
+            alert(t('contact.form.validation_error', { defaultValue: "Please fill in all required fields." }));
             return;
         }
 
@@ -54,7 +56,46 @@ const Contact = () => {
 
         setIsSubmitting(true);
 
-        emailjs.sendForm(serviceID, templateID, e.target, publicKey)
+        // Map subject to Spanish
+        let spanishSubject = '';
+        if (msgSubject && msgSubject !== '') {
+            spanishSubject = t(`contact.form.subjects.${msgSubject}`, { lng: 'es' });
+        } else {
+            spanishSubject = t('contact.form.subjects.default', { lng: 'es' });
+        }
+
+        // Map service to Spanish
+        let spanishService = formService || '';
+        if (spanishService === 'custom') {
+            spanishService = t('contact.form.services.custom', { lng: 'es' });
+        } else if (spanishService) {
+            const allServices = getAllServices();
+            const serviceIndex = allServices.findIndex(s => s.title === spanishService);
+            if (serviceIndex !== -1) {
+                const workshopCategoriesEs = t('workshop.categories', { returnObjects: true, lng: 'es' });
+                const allServicesEs = Array.isArray(workshopCategoriesEs) ? workshopCategoriesEs.flatMap(cat => cat.services || []) : [];
+                if (allServicesEs[serviceIndex]) {
+                    spanishService = allServicesEs[serviceIndex].title;
+                }
+            }
+        }
+
+        const currentTime = new Date().toLocaleString('es-ES', { 
+            dateStyle: 'medium', 
+            timeStyle: 'medium' 
+        });
+
+        const templateParams = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            subject: spanishSubject,
+            service: spanishService,
+            message: message,
+            time: currentTime
+        };
+
+        emailjs.send(serviceID, templateID, templateParams, publicKey)
             .then((result) => {
                 setIsSubmitting(false);
                 setIsSuccess(true);

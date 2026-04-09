@@ -7,10 +7,10 @@
 .product-detail-content {
     max-width: var(--container-width);
     margin: 0 auto;
-    /* padding: 0 1.5rem; */
+    padding: 0 1.5rem;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
     align-items: start;
 }
 
@@ -32,7 +32,7 @@
 .product-image-section {
     background-color: white;
     border-radius: 2rem;
-    padding: 3rem;
+    padding: 2rem 1.5rem;
     border: 1px solid var(--border-subtle);
     display: flex;
     align-items: center;
@@ -40,25 +40,26 @@
     box-shadow: var(--shadow-sm);
     position: relative;
     overflow: hidden;
-    /* Added to clip the diagonal ribbon */
+}
+
+@media (min-width: 768px) {
+    .product-image-section {
+        padding: 3rem;
+    }
 }
 
 /* ... existing styles ... */
 
-/* Sold Badge */
 .sold-badge {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
-    /* Bottom-left to top-right */
     width: 150%;
-    /* Span across the container */
     background-color: rgba(239, 68, 68, 0.9);
     color: white;
-    padding: 1rem 0;
-    /* Vertical padding only */
-    font-size: 2rem;
+    padding: 0.5rem 0;
+    font-size: 1.25rem;
     font-weight: 800;
     text-transform: uppercase;
     text-align: center;
@@ -68,9 +69,15 @@
     letter-spacing: 0.1em;
     backdrop-filter: blur(4px);
     border: 4px solid white;
-    /* Optional: keep or remove based on ribbon look */
     border-left: none;
     border-right: none;
+}
+
+@media (min-width: 768px) {
+    .sold-badge {
+        padding: 1rem 0;
+        font-size: 2rem;
+    }
 }
 
 .product-detail-image {
@@ -104,10 +111,16 @@
 }
 
 .product-title {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .product-title {
+        font-size: 3rem;
+    }
 }
 
 .product-category {
@@ -511,11 +524,21 @@
 
 /* Long Description */
 .product-long-description {
-    margin-bottom: 3rem;
-    font-size: 1.125rem;
-    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
     color: var(--text-secondary);
     max-width: 800px;
+    padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .product-long-description {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        padding: 0;
+        margin-bottom: 3rem;
+    }
 }
 
 /* Purchase Perks Banner (Finance & Trade-in) */

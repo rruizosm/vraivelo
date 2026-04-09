@@ -77,8 +77,8 @@
 
 .contact-card {
     display: flex;
-    gap: 1.25rem;
-    padding: 1.5rem;
+    gap: 1rem;
+    padding: 1.25rem;
     border-radius: 1rem;
     background-color: white;
     border: 1px solid var(--border-subtle);
@@ -117,11 +117,21 @@
 
 /* Form */
 .contact-form-col {
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 1.5rem;
     background-color: white;
     border: 1px solid var(--border-subtle);
     box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 768px) {
+    .contact-card {
+        gap: 1.25rem;
+        padding: 1.5rem;
+    }
+    .contact-form-col {
+        padding: 2.5rem;
+    }
 }
 
 @media (min-width: 1024px) {

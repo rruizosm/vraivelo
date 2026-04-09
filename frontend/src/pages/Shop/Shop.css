@@ -67,18 +67,24 @@
 .shop-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-    position: sticky;
-    top: 6rem;
-    /* clears the navbar; adjust if your navbar height differs */
-    max-height: calc(100vh - 7rem);
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border-light) transparent;
-    padding-right: 0.25rem;
-    /* breathing room next to the scrollbar */
-    align-self: start;
-    /* keeps it from stretching to the grid height */
+    gap: 1.5rem;
+    position: relative;
+    max-height: none;
+    overflow-y: visible;
+}
+
+@media (min-width: 1024px) {
+    .shop-sidebar {
+        gap: 2.5rem;
+        position: sticky;
+        top: 6rem;
+        max-height: calc(100vh - 7rem);
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--border-light) transparent;
+        padding-right: 0.25rem;
+        align-self: start;
+    }
 }
 
 .shop-sidebar::-webkit-scrollbar {
