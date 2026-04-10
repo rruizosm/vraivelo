@@ -121,8 +121,6 @@ const OtherProducts = () => {
 
                 if (error) throw error;
 
-                console.log('Raw Supabase data:', data);
-
                 // Normalize Supabase column names to component format
                 // Handle both PascalCase and lowercase column names
                 const normalized = (data || []).map(p => {
