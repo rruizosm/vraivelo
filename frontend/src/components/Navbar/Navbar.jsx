@@ -49,12 +49,7 @@ const Navbar = () => {
     ];
 
     return (
-        <motion.nav
-            initial={{ y: -100 }}
-            animate={{ 
-                y: isVisible ? 0 : -100,
-                transition: { duration: 0.3 }
-            }}
+        <nav
             className={`navbar scrolled ${isVisible ? 'visible' : 'hidden'}`}
         >
             <div className="container navbar-container">
@@ -183,7 +178,7 @@ const Navbar = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </motion.nav>
+        </nav>
     );
 };
 
