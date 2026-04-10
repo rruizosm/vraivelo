@@ -2,10 +2,14 @@
 
 .mechanics-main {
   max-width: 80rem;
-  /* 7xl */
   margin: 0 auto;
-  padding: 5rem 2rem;
-  /* py-20 px-8 */
+  padding: 2rem 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .mechanics-main {
+    padding: 5rem 2rem;
+  }
 }
 
 /* Hero Section */
@@ -58,17 +62,19 @@
 }
 
 .mechanics-hero-title {
-  /* removed local font-family */
-  font-size: 3.75rem;
-  /* text-6xl */
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--color-on-surface);
   line-height: 1.25;
-  /* leading-tight */
   letter-spacing: -0.025em;
-  /* tracking-tight */
-  margin-bottom: 2rem;
-  /* mb-8 */
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .mechanics-hero-title {
+    font-size: 3.75rem;
+    margin-bottom: 2rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -136,11 +142,15 @@
 .mechanics-card-basic {
   background-color: var(--color-surface-container-low);
   border: 3px solid var(--color-surface-container-highest);
-  padding: 2.5rem;
-  /* p-10 */
+  padding: 1.5rem;
   border-radius: 0.5rem;
-  /* rounded-lg */
   transition: background-color 0.3s;
+}
+
+@media (min-width: 768px) {
+  .mechanics-card-basic {
+    padding: 2.5rem;
+  }
 }
 
 .mechanics-card-basic:hover {
@@ -243,16 +253,18 @@
 /* Premium Card (Full Overhaul) */
 .mechanics-card-premium {
   background-color: var(--color-surface-container-highest);
-  padding: 2.5rem;
-  /* p-10 */
+  padding: 1.5rem;
   border-radius: 0.5rem;
-  /* rounded-lg */
   position: relative;
   margin-top: 3rem;
-  /* mt-12 */
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  /* shadow-xl */
   border-top: 4px solid var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .mechanics-card-premium {
+    padding: 2.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -336,13 +348,17 @@
 .mechanics-specs-main {
   background-color: var(--color-primary);
   color: var(--color-on-primary);
-  padding: 3rem;
-  /* p-12 */
+  padding: 1.5rem;
   border-radius: 0.5rem;
-  /* rounded-lg */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .mechanics-specs-main {
+    padding: 3rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -376,9 +392,15 @@
 
 .mechanics-specs-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
-  /* gap-8 */
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 480px) {
+  .mechanics-specs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -407,15 +429,19 @@
 /* Call to Action Container */
 .mechanics-cta-card {
   background-color: var(--color-surface-container-low);
-  padding: 3rem;
-  /* p-12 */
+  padding: 2rem 1.5rem;
   border-radius: 0.5rem;
-  /* rounded-lg */
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .mechanics-cta-card {
+    padding: 3rem;
+  }
 }
 
 .mechanics-cta-content {

@@ -95,6 +95,7 @@ const ProductDetail = () => {
                         model: productData.Product || productData.product,
                         category: category,
                         price: productData.Price || productData.price,
+                        old_price: productData.OldPrice || productData.oldprice || null,
                         size: productData.Size || productData.size,
                         description: productData.Description || productData.description,
                         image_url: productData["Image URL"] || productData["image url"] || productData.image_url,
@@ -374,7 +375,12 @@ const ProductDetail = () => {
                             if (!hasDiscount || discountedPrice === bike.price) {
                                 return (
                                     <>
-                                        <p className="product-price">{bike.price}</p>
+                                        {bike.old_price && (
+                                            <p style={{ textDecoration: 'line-through', color: '#9ca3af', fontSize: '1.1rem', marginBottom: '0.25rem', fontWeight: 500 }}>
+                                                {bike.old_price}
+                                            </p>
+                                        )}
+                                        <p className="product-price" style={bike.old_price ? { marginTop: 0 } : {}}>{bike.price}</p>
                                         {bike.isBikeData && (
                                             <div className="purchase-perks-banner">
                                                 <div className="perk-item">
@@ -392,6 +398,11 @@ const ProductDetail = () => {
                             }
                             return (
                                 <div className="flex flex-col mt-2">
+                                    {bike.old_price && (
+                                        <span style={{ textDecoration: 'line-through', color: '#9ca3af', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.25rem' }}>
+                                            {bike.old_price}
+                                        </span>
+                                    )}
                                     <div className="flex items-center gap-3">
                                         <span className="product-price-new">{bike.price}</span>
                                         {/* <span className="product-price-new">{discountedPrice}</span> */}

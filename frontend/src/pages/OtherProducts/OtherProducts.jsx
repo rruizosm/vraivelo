@@ -65,7 +65,14 @@ const ProductCard = ({ product, addToCart, navigate, t, isCartEnabled }) => {
                 )}
 
                 <div className="bike-price-row">
-                    <span className="bike-price-new">{product.price}</span>
+                    <div className="flex flex-col justify-center">
+                        {product.old_price && (
+                            <span style={{ textDecoration: 'line-through', color: '#9ca3af', fontSize: '1rem', lineHeight: '1', marginBottom: '0.2rem' }}>
+                                {product.old_price}
+                            </span>
+                        )}
+                        <span className="bike-price-new" style={product.old_price ? { lineHeight: '1' } : {}}>{product.price}</span>
+                    </div>
                     {isCartEnabled && (
                         <button
                             className="add-cart-btn-small"
@@ -134,6 +141,7 @@ const OtherProducts = () => {
                         model: p.Product || p.product,
                         category: category,
                         price: p.Price || p.price,
+                        old_price: p.OldPrice || p.oldprice || null,
                         size: p.Size || p.size,
                         description: p.Description || p.description,
                         image_url: p["Image URL"] || p["image url"] || p.image_url,
@@ -170,8 +178,17 @@ const OtherProducts = () => {
         'Wheels': 'other_products.wheels',
     };
 
-    // Fixed categories + any additional ones from the data (exclude 'Other Products')
-    const baseCategories = ['All', 'Clothes', 'Wheels'];
+    // Helper to dynamically translate category names from DB if needed
+    const translateCategory = (cat) => {
+        if (categoryKeyMap[cat]) return t(categoryKeyMap[cat]);
+        const dynamicKey = `other_products.${cat.toLowerCase().replace(/\s+/g, '_')}`;
+        const translated = t(dynamicKey);
+        // If translation is the key itself (meaning it was not found), return the original category text
+        return translated !== dynamicKey ? translated : cat;
+    };
+
+    // We only define 'All' as fixed. The rest come dynamically from the data
+    const baseCategories = ['All'];
     const dataCategories = allProducts.map(p => p.category).filter(c => c && c !== 'Other Products');
     const categories = [...new Set([...baseCategories, ...dataCategories])];
 
@@ -231,7 +248,7 @@ const OtherProducts = () => {
                                             className={`sidebar-filter-btn ${activeCategory === cat ? 'active' : ''}`}
                                         >
                                             <div className={`checkbox ${activeCategory === cat ? 'checked' : ''}`} />
-                                            {categoryKeyMap[cat] ? t(categoryKeyMap[cat]) : cat}
+                                            {translateCategory(cat)}
                                         </button>
                                     ))}
                                 </div>
@@ -259,7 +276,7 @@ const OtherProducts = () => {
                             )}
                         </div>
                         <div style={{ paddingBottom: '1rem', marginBottom: '1rem', borderBottom: '1px solid #e2e8f0', color: '#64748b', fontSize: '0.875rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                            {filteredProducts.length} {filteredProducts.length === 1 ? 'Product' : 'Products'} Listed
+                            {filteredProducts.length} {filteredProducts.length === 1 ? t('other_products.product_listed') : t('other_products.products_listed')}
                         </div>
                         <div className="bikes-grid">
                             {filteredProducts.map((product) => (

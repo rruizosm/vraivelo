@@ -561,7 +561,16 @@
         "wheels": "Rodes",
         "new": "NOU",
         "colors": "Colors:",
-        "search_placeholder": "Cerca per marca o model (ex: maillot, High Level)..."
+        "search_placeholder": "Cerca per marca o model (ex: maillot, High Level)...",
+        "product_listed": "Producte Llistat",
+        "products_listed": "Productes Llistats",
+        "components": "Components",
+        "accessories": "Accessoris",
+        "parts": "Peces",
+        "frames": "Quadres",
+        "gear": "Equipament",
+        "maintenance": "Manteniment",
+        "food": "Nutrició"
     },
     "strava": {
         "badge": "La Comunitat Oficial",

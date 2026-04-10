@@ -3,7 +3,13 @@
 .rs-main {
   max-width: 80rem;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 2rem 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .rs-main {
+    padding: 5rem 2rem;
+  }
 }
 
 /* Hero Section */
@@ -50,16 +56,22 @@
 }
 
 .rs-hero-title {
-  /* removed local font-family */
-  font-size: 3.2rem;
+  font-size: 2.25rem;
   font-weight: 700;
   color: var(--color-on-surface);
-  line-height: 0.9;
+  line-height: 1.1;
   letter-spacing: -0.05em;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 768px) {
+  .rs-hero-title {
+    font-size: 4rem;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+  }
+}
+@media (min-width: 1024px) {
   .rs-hero-title {
     font-size: 5rem;
   }
@@ -133,9 +145,15 @@
   background-color: var(--color-surface-container-low);
   border: 2px solid var(--color-surface-container-highest);
   border-radius: 0.5rem;
-  padding: 3rem;
+  padding: 1.5rem;
   position: relative;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .rs-bento-main {
+    padding: 3rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -310,7 +328,13 @@
 .rs-sidebar-card1 {
   background-color: var(--color-surface-container-highest);
   border-radius: 0.5rem;
-  padding: 2rem;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .rs-sidebar-card1 {
+    padding: 2rem;
+  }
 }
 
 .rs-sidebar-title {
@@ -330,7 +354,13 @@
 .rs-sidebar-card2 {
   background-color: var(--color-surface-container);
   border-radius: 0.5rem;
-  padding: 2rem;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .rs-sidebar-card2 {
+    padding: 2rem;
+  }
 }
 
 .rs-sidebar-lead-time {

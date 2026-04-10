@@ -561,7 +561,16 @@
         "wheels": "Ruedas",
         "new": "NUEVO",
         "colors": "Colores:",
-        "search_placeholder": "Buscar por marca o modelo (ej: maillot, High Level)..."
+        "search_placeholder": "Buscar por marca o modelo (ej: maillot, High Level)...",
+        "product_listed": "Producto Listado",
+        "products_listed": "Productos Listados",
+        "components": "Componentes",
+        "accessories": "Accesorios",
+        "parts": "Piezas",
+        "frames": "Cuadros",
+        "gear": "Equipamiento",
+        "maintenance": "Mantenimiento",
+        "food": "Nutrición"
     },
     "strava": {
         "badge": "La Comunidad Oficial",
