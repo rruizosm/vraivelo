@@ -635,7 +635,7 @@
         "title_highlight": "Mechanics",
         "subtitle": "Join us for a free, hands-on workshop designed to teach you the essential skills to keep your bike rolling smoothly.",
         "date_time": "Date & Time",
-        "date_value": "Thursday, April 23rd, 2026",
+        "date_value": "Thursday, April 21st, 2026",
         "location": "Location",
         "cost": "Cost",
         "free": "FREE (Partners)",
@@ -659,7 +659,7 @@
     "event_banner": {
         "title": "Mechanics Workshop",
         "join_us": "Join us on",
-        "date": "April 23rd",
+        "date": "April 21st",
         "limited": "Limited spots!",
         "details": "Details"
     },
