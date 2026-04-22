@@ -77,7 +77,7 @@ const Workshop = () => {
                         {/* Card 2: Suspensions */}
                         <div className="workshop-card workshop-card-offset-0">
                             <div className="workshop-card-image-wrapper">
-                                <img alt="Detail of a front suspension fork" className="workshop-card-image" data-alt="Close up of mountain bike suspension fork" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-JIvKXUaopcCv6bDrNu7gB36yXcI9p9t1c6Mn7e3qpQ2TFDWe8StMOasYS5gwQ43ixmETPDsNkAt49hr6FmjCbCW6fp82rULhbmqywfvMgbiV5F7ctqXZRDnCy2N3ROlBMbgnreNpy1XJwl9cgA5WSpK8eAW8uzHPrInWtH7FqpIf7IppD9fPBlti67XCCNsZWWhPNhq0tZWl1xkgPk0clxik7_WHTBZWThgQ2c__3AAdFuGp9xjJBH-yAK3Z941pmMrKbQragnE" />
+                                <img alt="Detail of a front suspension fork" className="workshop-card-image" data-alt="Close up of mountain bike suspension fork" src="/assets/horquilla.png" />
                             </div>
                             <div className="workshop-card-content">
                                 <div className="workshop-card-header">
@@ -105,7 +105,7 @@ const Workshop = () => {
                         {/* Card 3: Rear Shock */}
                         <div className="workshop-card workshop-card-offset-0">
                             <div className="workshop-card-image-wrapper">
-                                <img alt="Rear mountain bike shock absorber" className="workshop-card-image" data-alt="Technical view of a rear shock absorber" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHFOeISpRsD7H1LAo_8okbl8jzohLe3P6Cy7ftPCps83EZGn3R5clCq3mQNwsWRoaaToxqRWR7RzvekQHw7hu98swtsbXgTm63jbOaBSBXdBV8abgGzQq_bef-cMaXMnZLY7owv62rRlsl_vRiRffafEZ6-h9zfELq6nLoa9wCKiUBdpVMGEurdLRFzKy3KLAz9BXeUBx8qguVhMtNCxZp_YnjkyRQVmaAGsTZtwsloz9n0wmUKmKcUc4bOCx6Q1VJzwKzceLbRfs" />
+                                <img alt="Rear mountain bike shock absorber" className="workshop-card-image" data-alt="Technical view of a rear shock absorber" src="/assets/amortiguador.png" />
                             </div>
                             <div className="workshop-card-content">
                                 <div className="workshop-card-header">
