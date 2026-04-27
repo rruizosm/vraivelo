@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowRight, Wrench } from 'lucide-react';
+import { X, ArrowRight, Bike } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './EventBanner.css';
@@ -28,7 +28,7 @@ const EventBanner = () => {
 
                             <div className="banner-content-left">
                                 <div className="banner-icon-wrapper">
-                                    <Wrench size={22} />
+                                    <Bike size={22} />
                                 </div>
                                 <div className="banner-text-group">
                                     <h4 className="banner-title">

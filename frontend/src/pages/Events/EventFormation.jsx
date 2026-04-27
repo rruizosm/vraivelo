@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import SEOHead from '../../components/SEOHead/SEOHead';
 import './EventFormation.css';
 // Image referenced directly from public folder
-const workshopImage = "/david_vraivelo/taller.png";
+const workshopImage = "/berria/berria_event.webp";
 
 const EventFormation = () => {
     const { t } = useTranslation();
@@ -27,7 +27,7 @@ const EventFormation = () => {
                         {t('event_formation.badge')}
                     </span>
                     <h1 className="event-title">
-                        {t('event_formation.title_prefix')} <span className="text-[var(--primary)]">{t('event_formation.title_highlight')}</span>
+                        {t('event_formation.title_prefix')} <span className="event-title-highlight">{t('event_formation.title_highlight')}</span>
                     </h1>
                     <p className="event-subtitle">
                         {t('event_formation.subtitle')}
@@ -75,7 +75,7 @@ const EventFormation = () => {
                         </div>
                         <h3 className="detail-title">{t('event_formation.cost')}</h3>
                         <p className="price-free" style={{ marginBottom: "0.25rem", fontSize: "1.5rem" }}>{t('event_formation.free')}</p>
-                        <p className="price-free" style={{ fontSize: "1.2rem", color: "var(--cal-color-on-surface-variant)" }}>{t('event_formation.regular_price')}</p>
+                        {/* <p className="price-free" style={{ fontSize: "1.2rem", color: "var(--cal-color-on-surface-variant)" }}>{t('event_formation.regular_price')}</p> */}
                         <p className="price-note" style={{ marginTop: "0.75rem" }}>{t('event_formation.limited_spots')}</p>
                     </motion.div>
                 </div>
@@ -147,7 +147,7 @@ const EventFormation = () => {
                     {t('event_formation.cta_text')}
                 </p>
                 <Link to="/contact" state={{
-                    subject: 'formation',
+                    subject: 'berria_event',
                     message: t('event_formation.contact_message')
                 }}>
                     <motion.button

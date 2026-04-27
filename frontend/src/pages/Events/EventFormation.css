@@ -1,4 +1,7 @@
 .event-formation-container {
+    --event-orange: #FF6B00;
+    --event-orange-dark: #E65A00;
+    --event-orange-light: rgba(255, 107, 0, 0.15);
     padding-top: 6rem;
     padding-bottom: 4rem;
     min-height: 100vh;
@@ -21,12 +24,16 @@
     display: inline-block;
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
-    background-color: var(--primary-glow);
-    color: var(--primary-dark);
+    background-color: var(--event-orange-light);
+    color: var(--event-orange-dark);
     font-size: 0.875rem;
     font-weight: 600;
     margin-bottom: 1rem;
     letter-spacing: 0.025em;
+}
+
+.event-title-highlight {
+    color: var(--event-orange);
 }
 
 .event-title {
@@ -97,25 +104,11 @@
     margin-bottom: 1rem;
 }
 
-.detail-icon-wrapper.blue {
-    background-color: var(--primary-light);
-    /* blue-50 */
-    color: var(--primary-dark);
-    /* blue-500 */
-}
-
-.detail-icon-wrapper.red {
-    background-color: var(--bg-error-light);
-    /* red-50 */
-    color: var(--accent-red);
-    /* red-500 */
-}
-
+.detail-icon-wrapper.blue,
+.detail-icon-wrapper.red,
 .detail-icon-wrapper.green {
-    background-color: var(--bg-success-light);
-    /* green-50 */
-    color: var(--success-green);
-    /* green-500 */
+    background-color: var(--event-orange-light);
+    color: var(--event-orange);
 }
 
 .detail-title {
@@ -141,8 +134,7 @@
 .price-free {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--success-green);
-    /* green-600 */
+    color: var(--event-orange);
 }
 
 .price-note {
@@ -155,10 +147,8 @@
 .snack-card {
     margin-bottom: 4rem;
     padding: 1.5rem;
-    background: linear-gradient(135deg, var(--bg-warning-light) 0%, var(--bg-warning-light) 100%);
-    /* amber-50 to orange-50 */
-    border: 1px solid var(--bg-warning-light);
-    /* orange-200 */
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.05) 0%, rgba(255, 107, 0, 0.1) 100%);
+    border: 1px solid rgba(255, 107, 0, 0.2);
     border-radius: 1rem;
     display: flex;
     align-items: center;
@@ -170,10 +160,8 @@
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 9999px;
-    background-color: var(--bg-warning-light);
-    /* orange-50 */
-    border: 2px solid var(--bg-warning-light);
-    /* orange-300 */
+    background-color: rgba(255, 107, 0, 0.1);
+    border: 2px solid rgba(255, 107, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,14 +175,12 @@
 .snack-title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--accent-orange);
-    /* orange-800 */
+    color: var(--event-orange-dark);
     margin-bottom: 0.25rem;
 }
 
 .snack-text {
-    color: var(--accent-orange);
-    /* orange-700 */
+    color: var(--event-orange);
     font-weight: 500;
 }
 
@@ -246,7 +232,7 @@
     /* Ensures the SVG itself is centered if it behaves like a block */
     align-items: center;
     justify-content: center;
-    color: var(--primary);
+    color: var(--event-orange);
     margin-top: 0;
     /* Removing the top margin to allow true centering */
 }
@@ -338,14 +324,14 @@
 
 /* CTA Section */
 .event-cta-box {
-    background: linear-gradient(to right, var(--primary-dark), var(--primary));
+    background: linear-gradient(to right, color-mix(in srgb, var(--event-orange-dark) 50%, transparent), color-mix(in srgb, var(--event-orange) 50%, transparent));
     border-radius: 1.5rem;
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
     color: white;
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 10px 25px -5px rgba(255, 107, 0, 0.4);
 }
 
 @media (min-width: 768px) {
@@ -377,7 +363,7 @@
 
 .cta-button {
     background-color: white;
-    color: var(--primary-dark);
+    color: var(--event-orange);
     padding: 1rem 2rem;
     border-radius: 0.75rem;
     font-weight: 700;

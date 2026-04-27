@@ -499,12 +499,11 @@
             "subjects": {
                 "default": "Select a topic",
                 "workshop": "Workshop Service",
-                "formation": "Mechanics Formation",
                 "bikes": "Bike Inquiry",
                 "parts": "Parts & Accessories",
                 "member": "Vraivēlo Member",
                 "licenses": "Cycling Licenses",
-                "event": "Events",
+                "berria_event": "Berria Nexxen Event",
                 "other": "Other"
             },
             "services": {
@@ -630,37 +629,37 @@
         }
     },
     "event_formation": {
-        "badge": "COMMUNITY EVENT",
-        "title_prefix": "Basics of Bicycle",
-        "title_highlight": "Mechanics",
-        "subtitle": "Join us for a free, hands-on workshop designed to teach you the essential skills to keep your bike rolling smoothly.",
+        "badge": "BERRIA EVENT",
+        "title_prefix": "Presentation",
+        "title_highlight": "Berria Nexxen",
+        "subtitle": "Discover the new Berria Nexxen with the Avinox M2S system. Join us to learn all the details.",
         "date_time": "Date & Time",
-        "date_value": "Thursday, April 21st, 2026",
-        "location": "Location",
+        "date_value": "April 30th",
+        "location": "Vraivēlo",
         "cost": "Cost",
-        "free": "FREE (Partners)",
-        "regular_price": "10€ (Non-partners)",
-        "limited_spots": "Limited spots available",
-        "snack_title": "Fuel Up First!",
-        "snack_text": "Join us at 19:00 for an afternoon snack to start with more power!",
-        "learn_title": "What You Will Learn",
+        "free": "FREE",
+        "regular_price": "Open entry",
+        "limited_spots": "Limited spots",
+        "snack_title": "Snacks at 19:00",
+        "snack_text": "Introduction at 19:15 to start discovering the Berria Nexxen.",
+        "learn_title": "What we will see",
         "learn_items": [
-            "How to clean your bike correctly",
-            "How to lubricate correctly",
-            "Repairing a flat tire",
-            "Adjusting the headset correctly",
-            "Theory and practice"
+            "Configuration",
+            "Frame",
+            "Display",
+            "Battery",
+            "Avinox M2S"
         ],
-        "cta_title": "Ready to Master Your Bike?",
-        "cta_text": "Spots are strictly limited to ensure personal attention for every participant. Reserve your place today.",
+        "cta_title": "Ready to discover it?",
+        "cta_text": "Spots are limited to ensure a great experience. Reserve your place today.",
         "register": "Register Now",
-        "contact_message": "Hi, I'm interested in being part of the Mechanics Workshop."
+        "contact_message": "Hi, I'm interested in attending the Berria Nexxen presentation."
     },
     "event_banner": {
-        "title": "Mechanics Workshop",
-        "join_us": "Join us on",
-        "date": "April 21st",
-        "limited": "Limited spots!",
+        "title": "Discover the new Berria Nexxen",
+        "join_us": "Join us for the event on",
+        "date": "April 30th",
+        "limited": "Exclusive launch!",
         "details": "Details"
     },
     "seo": {

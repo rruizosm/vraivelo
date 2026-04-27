@@ -80,9 +80,9 @@ const Contact = () => {
             }
         }
 
-        const currentTime = new Date().toLocaleString('es-ES', { 
-            dateStyle: 'medium', 
-            timeStyle: 'medium' 
+        const currentTime = new Date().toLocaleString('es-ES', {
+            dateStyle: 'medium',
+            timeStyle: 'medium'
         });
 
         const templateParams = {
@@ -216,12 +216,11 @@ const Contact = () => {
                                 >
                                     <option value="">{t('contact.form.subjects.default')}</option>
                                     <option value="workshop">{t('contact.form.subjects.workshop')}</option>
-                                    <option value="formation">{t('contact.form.subjects.formation')}</option>
                                     <option value="bikes">{t('contact.form.subjects.bikes')}</option>
                                     <option value="parts">{t('contact.form.subjects.parts')}</option>
                                     <option value="member">{t('contact.form.subjects.member')}</option>
                                     <option value="licenses">{t('contact.form.subjects.licenses')}</option>
-                                    <option value="event">{t('contact.form.subjects.event')}</option>
+                                    <option value="berria_event">{t('contact.form.subjects.berria_event')}</option>
                                     <option value="other">{t('contact.form.subjects.other')}</option>
                                 </select>
                             </div>

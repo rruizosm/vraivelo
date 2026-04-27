@@ -18,6 +18,7 @@ import RearShock from './pages/Workshop/RearShock/RearShock';
 
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import EventBanner from './components/EventBanner/EventBanner';
 
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart/Cart';
@@ -29,6 +30,7 @@ function App() {
     <CartProvider>
       <Router>
         <ScrollToTop />
+        <EventBanner />
         <div className="app flex flex-col min-h-screen">
           <Navbar />
           <Cart />

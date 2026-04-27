@@ -1,4 +1,7 @@
 .event-banner-wrapper {
+    --event-orange: #FF6B00;
+    --event-orange-dark: #E65A00;
+    --event-orange-light: rgba(255, 107, 0, 0.15);
     position: fixed;
     bottom: 0;
     left: 0;
@@ -25,8 +28,8 @@
     background-color: color-mix(in srgb, var(--bg-card) 90%, transparent);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(0, 180, 216, 0.3);
-    /* primary/30 */
+    border: 1px solid rgba(255, 107, 0, 0.3);
+    /* event-orange/30 */
     box-shadow: var(--shadow-lg);
     border-radius: 1rem;
     /* rounded-2xl */
@@ -49,10 +52,10 @@
     height: 3rem;
     width: 3rem;
     border-radius: 9999px;
-    background: linear-gradient(to bottom right, rgba(34, 211, 238, 0.2), rgba(59, 130, 246, 0.2));
+    background: var(--event-orange-light);
     align-items: center;
     justify-content: center;
-    color: var(--primary);
+    color: var(--event-orange);
     flex-shrink: 0;
 }
 
@@ -94,7 +97,7 @@
 
 .banner-date {
     font-weight: 500;
-    color: var(--primary-dark);
+    color: var(--event-orange-dark);
 }
 
 .banner-actions {
@@ -106,12 +109,12 @@
 
 .btn-details {
     padding: 0.625rem 1rem;
-    background: linear-gradient(to right, var(--primary), var(--primary-dark));
+    background: linear-gradient(to right, var(--event-orange), var(--event-orange-dark));
     color: white;
     font-size: 0.75rem;
     font-weight: 600;
     border-radius: 0.75rem;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 6px -1px rgba(255, 107, 0, 0.1), 0 2px 4px -1px rgba(255, 107, 0, 0.06);
     display: flex;
     align-items: center;
     gap: 0.5rem;

@@ -499,12 +499,11 @@
             "subjects": {
                 "default": "Selecciona un tema",
                 "workshop": "Servei de Taller",
-                "formation": "Formació Mecànica",
                 "bikes": "Consulta sobre Bicicletes",
                 "parts": "Peces i Accessoris",
                 "member": "Soci Vraivēlo",
                 "licenses": "Llicències de Ciclisme",
-                "events": "Esdeveniments",
+                "berria_event": "Esdeveniment Berria Nexxen",
                 "other": "Altre"
             },
             "services": {
@@ -630,37 +629,37 @@
         }
     },
     "event_formation": {
-        "badge": "ESDEVENIMENT COMUNITARI",
-        "title_prefix": "Bàsics de Mecànica",
-        "title_highlight": "Ciclista",
-        "subtitle": "Uneix-te a un taller gratuït i pràctic dissenyat per ensenyar-te les habilitats essencials per mantenir la teva bici en perfecte estat.",
+        "badge": "ESDEVENIMENT BERRIA",
+        "title_prefix": "Presentació",
+        "title_highlight": "Nova Nexxen",
+        "subtitle": "Descobreix la nova Berria Nexxen amb el sistema Avinox M2S. T'esperem per conèixer tots els detalls.",
         "date_time": "Data i Hora",
-        "date_value": "Dijous, 23 d'abril de 2026",
-        "location": "Ubicació",
+        "date_value": "30 d'abril",
+        "location": "Vraivēlo",
         "cost": "Cost",
-        "free": "GRATIS (Socis)",
-        "regular_price": "10€ (No socis)",
+        "free": "GRATIS",
+        "regular_price": "Entrada lliure",
         "limited_spots": "Places limitades",
-        "snack_title": "Recarrega Energies!",
-        "snack_text": "Vine a les 19:00 per un snack i començar amb més energia!",
-        "learn_title": "Què Aprendràs",
+        "snack_title": "Pica pica 19:00",
+        "snack_text": "Introducció a les 19:15 per començar a conèixer la Berria Nexxen.",
+        "learn_title": "Què veurem",
         "learn_items": [
-            "Com netejar la teva bici correctament",
-            "Com lubricar correctament",
-            "Reparar una punxada",
-            "Ajustar la direcció correctament",
-            "Teoria i pràctica"
+            "Configuració",
+            "Quadre",
+            "Display",
+            "Batería",
+            "Avinox M2S"
         ],
-        "cta_title": "A punt per Dominar la teva Bici?",
-        "cta_text": "Les places són estrictament limitades per assegurar atenció personalitzada a cada participant. Reserva el teu lloc avui.",
+        "cta_title": "A punt per descobrir-la?",
+        "cta_text": "Les places són limitades per assegurar l'atenció a cada participant. Reserva el teu lloc.",
         "register": "Inscriu-te Ara",
-        "contact_message": "Hola, estic interessat/da a participar al Taller de Mecànica."
+        "contact_message": "Hola, estic interessat/da en assistir a la presentació de la Berria Nexxen."
     },
     "event_banner": {
-        "title": "Taller de Mecànica",
-        "join_us": "Uneix-te el",
-        "date": "23 Abril",
-        "limited": "Places limitades!",
+        "title": "Descobreix la nova Berria Nexxen",
+        "join_us": "Uneix-te a l'esdeveniment",
+        "date": "30 d'abril",
+        "limited": "Llançament exclusiu!",
         "details": "Detalls"
     },
     "seo": {
