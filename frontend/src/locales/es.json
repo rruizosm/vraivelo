@@ -542,7 +542,7 @@
         "title": "Pago",
         "order_summary": "Resumen del Pedido",
         "total": "Total:",
-        "pay_stripe": "Pagar con Stripe",
+        "pay": "Pagar",
         "secure_text": "Los pagos son seguros y están cifrados."
     },
     "success": {

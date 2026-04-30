@@ -542,7 +542,7 @@
         "title": "Pagament",
         "order_summary": "Resum de la Comanda",
         "total": "Total:",
-        "pay_stripe": "Pagar amb Stripe",
+        "pay": "Pagar",
         "secure_text": "Els pagaments són segurs i xifrats."
     },
     "success": {
@@ -631,7 +631,7 @@
     "event_formation": {
         "badge": "ESDEVENIMENT BERRIA",
         "title_prefix": "Presentació",
-        "title_highlight": "Nova Nexxen",
+        "title_highlight": "Berria Nexxen",
         "subtitle": "Descobreix la nova Berria Nexxen amb el sistema Avinox M2S. T'esperem per conèixer tots els detalls.",
         "date_time": "Data i Hora",
         "date_value": "30 d'abril",

@@ -142,7 +142,6 @@ const Workshop = () => {
                     </div>
 
                     <div className="workshop-pricing-section">
-                        <div className="workshop-pricing-stripe"></div>
                         <div className="workshop-pricing-container">
                             <div className="workshop-pricing-grid">
 

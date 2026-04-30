@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useCart } from '../../context/CartContext';
 import { supabase } from '../../supabase';
-import { stripePromise } from '../../lib/stripe';
 import { motion } from 'framer-motion';
 import { Loader, Lock } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -29,9 +28,6 @@ const Checkout = () => {
             if (functionError) throw functionError;
             if (data?.error) throw new Error(data.error);
 
-            // 2. Redirect to Stripe Checkout
-            console.log("Redirecting to Stripe with session:", data.sessionId);
-            // 2. Redirect to Stripe Checkout using the URL from the backend
             if (data?.url) {
                 console.log("Redirecting to:", data.url);
                 window.location.href = data.url;
@@ -94,7 +90,7 @@ const Checkout = () => {
                     disabled={loading}
                     className="pay-btn"
                 >
-                    {loading ? <Loader className="animate-spin" /> : <><Lock size={18} /> {t('checkout_page.pay_stripe')}</>}
+                    {loading ? <Loader className="animate-spin" /> : <><Lock size={18} /> {t('checkout_page.pay')}</>}
                 </button>
 
                 <p className="secure-text">

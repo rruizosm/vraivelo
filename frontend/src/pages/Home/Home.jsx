@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Wrench, ShoppingBag, ShieldCheck, ChevronDown } from 'lucide-react';
@@ -6,13 +5,6 @@ import { Link } from 'react-router-dom';
 import SEOHead from '../../components/SEOHead/SEOHead';
 import GoogleReviews from '../../components/GoogleReviews/GoogleReviews';
 import './Home.css';
-
-const heroImages = [
-    "/home_images/vraivelo_home7.jpeg",
-    "/home_images/vraivelo_home10.jpeg",
-    "/vraivelo_berria/Girona/DSC00320.jpeg",
-    "/home_images/vraivelo_home12.jpeg",
-];
 
 const brands = [
     { name: 'Giant', id: 1 },
@@ -28,8 +20,6 @@ const partnerBrands = [
 
 const Home = () => {
     const { t } = useTranslation();
-    const [currentImage, setCurrentImage] = useState(0);
-
 
 
     return (
@@ -39,18 +29,6 @@ const Home = () => {
             <section className="hero-section">
                 {/* Background Loop */}
                 <div className="hero-bg">
-                    {/* <AnimatePresence mode='popLayout'>
-                        <motion.img
-                            key={currentImage}
-                            src={heroImages[currentImage]}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 1.5 }}
-                            className="hero-bg-image"
-                            alt="Cycling background"
-                        />
-                    </AnimatePresence> */}
                     <img src="/david_vraivelo/taller.png" alt="Cycling background" className="hero-bg-image" />
                 </div>
 
@@ -74,12 +52,6 @@ const Home = () => {
                         transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                         className="hero-title"
                     >
-                        {/* {t('home.hero.title')}{' '}
-                        <span className="relative inline-block">
-                            <span className="text-gradient-reality">
-                                {t('home.hero.title_highlight')}
-                            </span>
-                        </span> */}
                     </motion.h1>
 
                     <motion.p

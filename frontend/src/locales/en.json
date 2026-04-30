@@ -542,7 +542,7 @@
         "title": "Checkout",
         "order_summary": "Order Summary",
         "total": "Total:",
-        "pay_stripe": "Pay with Stripe",
+        "pay": "Pay",
         "secure_text": "Payments are secure and encrypted."
     },
     "success": {

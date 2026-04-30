@@ -285,24 +285,6 @@
   padding-bottom: 1rem;
 }
 
-.workshop-pricing-stripe {
-  position: absolute;
-  top: 55%;
-  left: 0;
-  right: 0;
-  height: 180px;
-  background-color: var(--primary-deep);
-  z-index: 0;
-  transform: translateY(-50%);
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .workshop-pricing-stripe {
-    display: block;
-  }
-}
-
 .workshop-pricing-container {
   max-width: 80rem;
   margin: 0 auto;

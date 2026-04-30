@@ -30,7 +30,6 @@ function App() {
     <CartProvider>
       <Router>
         <ScrollToTop />
-        <EventBanner />
         <div className="app flex flex-col min-h-screen">
           <Navbar />
           <Cart />
@@ -49,7 +48,6 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/vraivelo" element={<Vraivelo />} />
               <Route path="/vraivelo/:id" element={<StoryDetail />} />
-              <Route path="/event-formation" element={<EventFormation />} />
             </Routes>
           </main>
           <Footer />
