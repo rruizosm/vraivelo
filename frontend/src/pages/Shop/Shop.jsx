@@ -171,7 +171,7 @@ const Shop = () => {
         const matchCategory = activeCategory === 'All' || bike.category === activeCategory;
         const matchBrand = activeBrands.length === 0 || activeBrands.includes(bike.brand);
         const matchMaterial = activeMaterials.length === 0 || activeMaterials.some(mat =>
-            String(bike.frame_material || bike.description || bike.model).toLowerCase().includes(mat.toLowerCase())
+            (bike.Material || '').toLowerCase() === mat.toLowerCase()
         );
         const bikePrice = parsePrice(bike.price);
         const matchPrice = bikePrice >= priceRange[0] && bikePrice <= priceRange[1];
