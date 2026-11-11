@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { stories } from '../../data/stories';
 import SEOHead from '../../components/SEOHead/SEOHead';
 import './Vraivelo.css';
@@ -40,7 +40,13 @@ const Vraivelo = () => {
                     >
                         <div className="story-overlay">
                             <span className="story-category">{story.category}</span>
-                            <h2 className="story-title">{story.title}</h2>
+                            <h2 className="story-title">
+                                {story.content ? (
+                                    <Link to={`/vraivelo/${story.id}/`} onClick={(e) => e.stopPropagation()} style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        {story.title}
+                                    </Link>
+                                ) : story.title}
+                            </h2>
                             {story.content && (
                                 <button className="read-more-btn">
                                     {t('vraivelo.read_story', 'Read Story')} <ArrowRight size={16} />

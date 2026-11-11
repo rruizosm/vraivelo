@@ -664,36 +664,53 @@
     },
     "seo": {
         "home": {
-            "title": "Vraivēlo — Premium Cycling Workshop & Bike Shop",
-            "description": "Premium cycling workshop and official Giant & Berria dealer. Expert bike repairs, custom builds, and curated gear in one place."
+            "title": "Bike Shop & Bike Workshop in Girona | Vraivelo",
+            "h1": "Bike shop and bike repair workshop in Girona",
+            "description": "Bike shop and repair workshop in Girona, Spain. Official Giant and Berria dealer: road, gravel, MTB and e-bikes. Bike repairs and suspension service."
         },
         "shop": {
-            "title": "Shop Bikes — Vraivēlo",
-            "description": "Browse our curated selection of road, MTB, gravel, e-bike, and kids' bikes from Giant & Berria."
+            "title": "Giant & Berria Bikes in Girona | Vraivelo",
+            "description": "Road, MTB, gravel, e-bikes and kids' bikes from Giant and Berria at our bike shop in Girona. Check sizes, colours and availability."
         },
         "other_products": {
-            "title": "Parts & Accessories — Vraivēlo",
-            "description": "Shop cycling accessories, components, clothing, and wheels from top brands at Vraivēlo."
+            "title": "Cycling Parts & Accessories in Girona | Vraivelo",
+            "description": "Wheels, components, clothing and cycling accessories from top brands at our bike shop in Girona."
         },
         "workshop": {
-            "title": "Workshop Services — Vraivēlo",
-            "description": "Professional bike repair, tune-ups, suspension maintenance, and custom builds by certified mechanics."
+            "title": "Bike Repair Workshop in Girona | Vraivelo",
+            "description": "Bike repair workshop in Girona: servicing, tune-ups, fork and shock maintenance and custom builds. Book an appointment."
+        },
+        "workshop_mechanics": {
+            "title": "Bike Repair & Tune-Ups in Girona | Vraivelo",
+            "description": "Servicing, tune-ups and repairs for road, gravel, MTB and e-bikes at our workshop in Girona."
+        },
+        "workshop_suspensions": {
+            "title": "Suspension Fork Service in Girona | Vraivelo",
+            "description": "Suspension fork maintenance and repair at our workshop in Girona, with custom setup for the way you ride."
+        },
+        "workshop_rear_shock": {
+            "title": "Rear Shock Service in Girona | Vraivelo",
+            "description": "MTB rear shock maintenance and repair at our workshop in Girona, with custom setup for the way you ride."
         },
         "contact": {
-            "title": "Contact Us — Vraivēlo",
-            "description": "Get in touch with Vraivēlo. Visit our shop, call us, or send a message for bike inquiries and service bookings."
+            "title": "Contact & Directions | Vraivelo Girona",
+            "description": "Visit us at Carrer Pau Vila i Dinarès 10, Girona. Call +34 657 317 270 or send us a message about bikes and workshop bookings."
         },
         "vraivelo": {
-            "title": "Our Story — Vraivēlo",
-            "description": "Discover the story behind Vraivēlo — born from a passion for cycling and craftsmanship."
+            "title": "Our Story & Community | Vraivelo Girona",
+            "description": "Meet Vraivelo: the story, team, events and cycling community behind our bike shop and workshop in Girona."
         },
         "event_formation": {
-            "title": "Mechanics Workshop — Vraivēlo",
+            "title": "Mechanics Workshop — Vraivelo",
             "description": "Join our hands-on bicycle mechanics workshop. Learn essential bike maintenance skills."
         },
         "product_detail": {
-            "title": "{{name}} — Vraivēlo",
-            "description": "Explore the {{name}} — specifications, sizes, and pricing. Available at Vraivēlo."
+            "title": "{{name}} | Vraivelo Girona",
+            "description": "{{name}} available at Vraivelo, bike shop in Girona. Check specifications, sizes and price."
+        },
+        "story": {
+            "title": "{{name}} | Vraivelo Girona",
+            "description": "{{name}}: stories, events and cycling community from Vraivelo in Girona."
         }
     },
     "origins": {

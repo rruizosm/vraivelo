@@ -8,10 +8,13 @@ import { useCart } from '../../context/CartContext';
 import { clothes } from '../../data/clothes';
 import SEOHead from '../../components/SEOHead/SEOHead';
 import { getDiscountedPrice } from '../../lib/priceUtils';
+import { productPath, productIdFromParam } from '../../lib/productUrl';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
-    const { id } = useParams();
+    const { id: slugParam } = useParams();
+    // Clothes use a readable string id; bikes/products use "<name-slug>-<numeric id>"
+    const id = clothes.some(c => c.id === slugParam) ? slugParam : productIdFromParam(slugParam);
     const navigate = useNavigate();
     const location = useLocation();
     const { t, i18n } = useTranslation();
@@ -136,6 +139,14 @@ const ProductDetail = () => {
     useEffect(() => {
         setCurrentImageIndex(0);
     }, [selectedColor]);
+
+    // Old or mistyped URLs (/shop/316, wrong slug) -> replace with the canonical one
+    useEffect(() => {
+        if (!bike) return;
+        const canonical = productPath(bike);
+        const current = location.pathname.endsWith('/') ? location.pathname : `${location.pathname}/`;
+        if (current !== canonical) navigate(canonical, { replace: true, state: location.state });
+    }, [bike, location.pathname, location.state, navigate]);
 
 
     // Default options if not provided in data
@@ -268,9 +279,13 @@ const ProductDetail = () => {
             <SEOHead
                 titleKey="seo.product_detail.title"
                 descriptionKey="seo.product_detail.description"
-                path={`/shop/${id}`}
+                path={productPath(bike)}
                 ogImage={bike.image_url}
                 tOptions={{ name: bike.model }}
+                description={
+                    (bike[`description_${i18n.language}`] || (i18n.language === 'en' ? bike.description : null) || '')
+                        .replace(/\s+/g, ' ').trim().slice(0, 160) || undefined
+                }
             />
             <div className="product-detail-content">
                 {/* Left column: image + description */}

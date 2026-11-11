@@ -11,7 +11,7 @@ const Suspensions = () => {
 
     return (
         <div className="workshop-page suspensions-page">
-            <SEOHead titleKey="seo.workshop.title" descriptionKey="seo.workshop.description" path="/workshop/suspensions" />
+            <SEOHead titleKey="seo.workshop_suspensions.title" descriptionKey="seo.workshop_suspensions.description" path="/workshop/suspensions" />
 
             <main className="suspensions-main">
                 {/* Hero Section */}

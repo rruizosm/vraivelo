@@ -52,6 +52,8 @@ const Home = () => {
                         transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                         className="hero-title"
                     >
+                        {/* Visually hidden: the hero is image-led, but the page needs a real H1 for search engines and screen readers */}
+                        <span className="sr-only">{t('seo.home.h1')}</span>
                     </motion.h1>
 
                     <motion.p

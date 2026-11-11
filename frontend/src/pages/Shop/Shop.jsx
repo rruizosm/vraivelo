@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Loader, ChevronDown, ChevronUp, Search } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../../supabase';
 import { useTranslation } from 'react-i18next';
 import SEOHead from '../../components/SEOHead/SEOHead';
+import { productPath } from '../../lib/productUrl';
 import './Shop.css';
 
 const categories = ['All', 'Road', 'MTB', 'Gravel', 'eBike', 'Kids'];
@@ -38,7 +39,7 @@ const BikeCard = ({ bike, index, navigate, t }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05 }}
             className="bike-card group"
-            onClick={() => navigate(`/shop/${bike.id}`)}
+            onClick={() => navigate(productPath(bike))}
         >
             <div className="bike-image-wrapper">
                 {bike.quantity === 0 && (
@@ -56,7 +57,11 @@ const BikeCard = ({ bike, index, navigate, t }) => {
 
             <div className="bike-info">
                 <p className="bike-brand">{bike.brand}</p>
-                <h3 className="bike-model">{bike.model}</h3>
+                <h3 className="bike-model">
+                    <Link to={productPath(bike)} onClick={(e) => e.stopPropagation()} style={{ color: 'inherit', textDecoration: 'none' }}>
+                        {bike.model}
+                    </Link>
+                </h3>
 
                 <div className="bike-price-row">
                     <span className="bike-price-new">{bike.price}</span>

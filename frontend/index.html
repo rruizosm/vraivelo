@@ -10,43 +10,56 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vraivelo | Premium Cycling Workshop</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&display=swap"
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     rel="stylesheet" />
 
-  <!-- Base SEO Meta Tags -->
-  <meta name="description"
-    content="Vraivelo — Premium cycling workshop and official Giant & Berria dealer in Girona. Expert bike repairs, custom builds, and curated gear." />
   <meta name="author" content="Vraivelo" />
   <meta name="theme-color" content="#0a0a0f" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://vraivelo.com/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
-  <!-- Open Graph Defaults (overridden per-page by react-helmet-async) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Vraivelo" />
-  <meta property="og:image" content="https://vraivelo.com/vv_logo_2.png" />
+  <!--
+    Per-page SEO block. scripts/prerender.mjs replaces everything between these markers
+    with the tags for each route at build time; react-helmet-async takes over the
+    data-rh tags in the browser.
+  -->
+  <!--seo:start-->
+  <title>Tienda y Taller de Bicicletas en Girona | Vraivelo</title>
+  <meta name="description" content="Tienda de bicicletas y taller en Girona. Distribuidor oficial Giant y Berria: bicis de carretera, gravel, MTB y eléctricas. Reparación y suspensiones." data-rh="true" />
+  <link rel="canonical" href="https://vraivelo.com/" data-rh="true" />
+  <meta property="og:type" content="website" data-rh="true" />
+  <meta property="og:site_name" content="Vraivelo" data-rh="true" />
+  <meta property="og:url" content="https://vraivelo.com/" data-rh="true" />
+  <meta property="og:title" content="Tienda y Taller de Bicicletas en Girona | Vraivelo" data-rh="true" />
+  <meta property="og:description" content="Tienda de bicicletas y taller en Girona. Distribuidor oficial Giant y Berria: bicis de carretera, gravel, MTB y eléctricas. Reparación y suspensiones." data-rh="true" />
+  <meta property="og:image" content="https://vraivelo.com/vv_logo_2.png" data-rh="true" />
+  <meta property="og:locale" content="es_ES" data-rh="true" />
+  <!--seo:end-->
 
-  <!-- Structured Data: LocalBusiness -->
+  <!-- Structured Data: local bike shop (shown in every page) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "BikeStore",
+    "@id": "https://vraivelo.com/#business",
     "name": "Vraivelo",
-    "description": "Premium cycling workshop and bike shop. Official dealer of Giant & Berria.",
-    "url": "https://vraivelo.com",
+    "alternateName": "Vraivēlo",
+    "description": "Tienda y taller de bicicletas en Girona. Distribuidor oficial de Giant y Berria: bicicletas de carretera, gravel, MTB y eléctricas, reparación y mantenimiento de suspensiones.",
+    "url": "https://vraivelo.com/",
     "logo": "https://vraivelo.com/vv_logo_2.png",
-    "image": "https://vraivelo.com/vv_logo_2.png",
+    "image": "https://vraivelo.com/david_vraivelo/taller.png",
     "telephone": "+34 657 317 270",
     "email": "info@vraivelo.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Carrer Pau Vila i Dinarès 10",
       "addressLocality": "Girona",
+      "addressRegion": "Girona",
       "postalCode": "17003",
       "addressCountry": "ES"
     },
@@ -55,6 +68,11 @@
       "latitude": 41.9794,
       "longitude": 2.8214
     },
+    "areaServed": ["Girona", "Gironès", "Costa Brava"],
+    "brand": [
+      { "@type": "Brand", "name": "Giant" },
+      { "@type": "Brand", "name": "Berria" }
+    ],
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -69,13 +87,16 @@
         "closes": "19:00"
       }
     ],
-    "sameAs": []
+    "sameAs": [
+      "https://www.instagram.com/vraivelo/",
+      "https://www.youtube.com/@VRAIVELO"
+    ]
   }
   </script>
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root"><!--seo:shell--></div>
   <script type="module" src="/src/entry.jsx"></script>
 </body>
 

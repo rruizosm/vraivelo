@@ -664,36 +664,53 @@
     },
     "seo": {
         "home": {
-            "title": "Vraivēlo — Taller de Ciclismo Premium y Tienda de Bicicletas",
-            "description": "Taller de ciclismo premium y distribuidor oficial de Giant y Berria. Reparaciones expertas, montajes personalizados y equipamiento de calidad."
+            "title": "Tienda y Taller de Bicicletas en Girona | Vraivelo",
+            "h1": "Tienda y taller de bicicletas en Girona",
+            "description": "Tienda de bicicletas y taller en Girona. Distribuidor oficial Giant y Berria: bicis de carretera, gravel, MTB y eléctricas. Reparación y suspensiones."
         },
         "shop": {
-            "title": "Tienda de Bicicletas — Vraivēlo",
-            "description": "Explora nuestra selección de bicicletas de carretera, MTB, gravel, e-bike e infantiles de Giant y Berria."
+            "title": "Bicicletas Giant y Berria en Girona | Vraivelo",
+            "description": "Bicicletas de carretera, MTB, gravel, eléctricas e infantiles Giant y Berria en nuestra tienda de Girona. Consulta tallas, colores y disponibilidad."
         },
         "other_products": {
-            "title": "Recambios y Accesorios — Vraivēlo",
-            "description": "Compra accesorios de ciclismo, componentes, ropa y ruedas de las mejores marcas en Vraivēlo."
+            "title": "Recambios y Accesorios de Ciclismo en Girona | Vraivelo",
+            "description": "Ruedas, componentes, ropa y accesorios de ciclismo de las mejores marcas en nuestra tienda de bicicletas de Girona."
         },
         "workshop": {
-            "title": "Servicios de Taller — Vraivēlo",
-            "description": "Reparación profesional de bicicletas, puestas a punto, mantenimiento de suspensiones y montajes personalizados por mecánicos certificados."
+            "title": "Taller de Bicicletas en Girona | Vraivelo",
+            "description": "Taller de bicicletas en Girona: reparación, puesta a punto, mantenimiento de horquillas y amortiguadores y montajes a medida. Pide cita."
+        },
+        "workshop_mechanics": {
+            "title": "Reparación y Puesta a Punto de Bicicletas en Girona | Vraivelo",
+            "description": "Revisiones, puesta a punto y reparación de bicicletas de carretera, gravel, MTB y eléctricas en nuestro taller de Girona."
+        },
+        "workshop_suspensions": {
+            "title": "Mantenimiento de Horquillas en Girona | Vraivelo",
+            "description": "Mantenimiento y reparación de horquillas de suspensión en nuestro taller de Girona, con ajuste a medida para tu forma de rodar."
+        },
+        "workshop_rear_shock": {
+            "title": "Mantenimiento de Amortiguadores en Girona | Vraivelo",
+            "description": "Mantenimiento y reparación de amortiguadores traseros de MTB en nuestro taller de Girona, con ajuste a medida para tu forma de rodar."
         },
         "contact": {
-            "title": "Contacto — Vraivēlo",
-            "description": "Contacta con Vraivēlo. Visita nuestra tienda, llámanos o envíanos un mensaje para consultas sobre bicicletas y reservas de servicio."
+            "title": "Contacto y Cómo Llegar | Vraivelo Girona",
+            "description": "Visítanos en Carrer Pau Vila i Dinarès 10, Girona. Llámanos al +34 657 317 270 o escríbenos para consultas sobre bicicletas y citas de taller."
         },
         "vraivelo": {
-            "title": "Nuestra Historia — Vraivēlo",
-            "description": "Descubre la historia detrás de Vraivēlo — nacida de la pasión por el ciclismo y la artesanía."
+            "title": "Nuestra Historia y Comunidad | Vraivelo Girona",
+            "description": "Conoce Vraivelo: la historia, el equipo, los eventos y la comunidad ciclista detrás de nuestra tienda y taller de bicicletas en Girona."
         },
         "event_formation": {
-            "title": "Taller de Mecánica — Vraivēlo",
+            "title": "Taller de Mecánica — Vraivelo",
             "description": "Únete a nuestro taller práctico de mecánica de bicicletas. Aprende habilidades esenciales de mantenimiento."
         },
         "product_detail": {
-            "title": "{{name}} — Vraivēlo",
-            "description": "Explora la {{name}} — especificaciones, tallas y precios. Disponible en Vraivēlo."
+            "title": "{{name}} | Vraivelo Girona",
+            "description": "{{name}} disponible en Vraivelo, tienda de bicicletas en Girona. Consulta especificaciones, tallas y precio."
+        },
+        "story": {
+            "title": "{{name}} | Vraivelo Girona",
+            "description": "{{name}}: historias, eventos y comunidad ciclista de Vraivelo en Girona."
         }
     },
     "origins": {

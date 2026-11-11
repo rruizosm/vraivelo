@@ -5,13 +5,26 @@ const SITE_NAME = 'Vraivelo';
 const SITE_URL = 'https://vraivelo.com';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/vv_logo_2.png`;
 
-const SEOHead = ({ titleKey, descriptionKey, path = '', ogImage, ogType = 'website', tOptions = {} }) => {
+// Amplify serves the prerendered pages at "/route/" (it 301-redirects "/route" to it),
+// so canonical URLs always end with a slash to match the URL Google actually indexes.
+export const canonicalPath = (path = '/') => {
+    if (!path || path === '/') return '/';
+    return path.endsWith('/') ? path : `${path}/`;
+};
+
+const absoluteUrl = (url) => {
+    if (!url) return DEFAULT_OG_IMAGE;
+    if (/^https?:\/\//.test(url)) return url;
+    return `${SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
+};
+
+const SEOHead = ({ titleKey, descriptionKey, title: rawTitle, description: rawDescription, path = '', ogImage, ogType = 'website', tOptions = {}, noindex = false }) => {
     const { t, i18n } = useTranslation();
 
-    const title = t(titleKey, tOptions);
-    const description = t(descriptionKey, tOptions);
-    const canonicalUrl = `${SITE_URL}${path}`;
-    const image = ogImage || DEFAULT_OG_IMAGE;
+    const title = rawTitle || t(titleKey, tOptions);
+    const description = rawDescription || t(descriptionKey, tOptions);
+    const canonicalUrl = `${SITE_URL}${canonicalPath(path)}`;
+    const image = absoluteUrl(ogImage);
 
     return (
         <Helmet>
@@ -21,6 +34,7 @@ const SEOHead = ({ titleKey, descriptionKey, path = '', ogImage, ogType = 'websi
             {/* Primary Meta Tags */}
             <title>{title}</title>
             <meta name="description" content={description} />
+            {noindex && <meta name="robots" content="noindex, follow" />}
 
             {/* Canonical */}
             <link rel="canonical" href={canonicalUrl} />

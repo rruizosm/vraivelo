@@ -2,11 +2,12 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { ShoppingBag, Loader, Mail, ChevronDown, ChevronUp, Search } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../../supabase';
 import { clothes } from '../../data/clothes';
 import { useTranslation } from 'react-i18next';
 import SEOHead from '../../components/SEOHead/SEOHead';
+import { productPath } from '../../lib/productUrl';
 import '../Shop/Shop.css'; // Reuse Shop styles
 
 const ProductCard = ({ product, addToCart, navigate, t, isCartEnabled }) => {
@@ -14,7 +15,7 @@ const ProductCard = ({ product, addToCart, navigate, t, isCartEnabled }) => {
     const [currentImage, setCurrentImage] = useState(product.image_url);
 
     const handleProductClick = () => {
-        navigate(`/shop/${product.id}`, { state: { from: 'other-products' } });
+        navigate(productPath(product), { state: { from: 'other-products' } });
     };
 
     return (
@@ -41,7 +42,11 @@ const ProductCard = ({ product, addToCart, navigate, t, isCartEnabled }) => {
             </div>
             <div className="bike-info">
                 {product.brand && <p className="bike-brand">{product.brand}</p>}
-                <h3 className="bike-model">{product.model}</h3>
+                <h3 className="bike-model">
+                    <Link to={productPath(product)} state={{ from: 'other-products' }} onClick={(e) => e.stopPropagation()} style={{ color: 'inherit', textDecoration: 'none' }}>
+                        {product.model}
+                    </Link>
+                </h3>
 
                 {/* Color Options Preview */}
                 {product.variants && (
@@ -78,7 +83,7 @@ const ProductCard = ({ product, addToCart, navigate, t, isCartEnabled }) => {
                             className="add-cart-btn-small"
                             onClick={(e) => {
                                 e.stopPropagation();
-                                navigate(`/shop/${product.id}`, { state: { from: 'other-products' } });
+                                navigate(productPath(product), { state: { from: 'other-products' } });
                             }}
                         >
                             <ShoppingBag size={18} />

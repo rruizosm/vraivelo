@@ -11,7 +11,7 @@ const RearShock = () => {
 
     return (
         <div className="workshop-page rs-page">
-            <SEOHead titleKey="seo.workshop.title" descriptionKey="seo.workshop.description" path="/workshop/rear-shock" />
+            <SEOHead titleKey="seo.workshop_rear_shock.title" descriptionKey="seo.workshop_rear_shock.description" path="/workshop/rear-shock" />
 
             <main className="rs-main">
                 {/* Hero Section */}
