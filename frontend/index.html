@@ -11,6 +11,17 @@
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!--
+    www -> apex. Amplify's domain redirect rule either did not match or also redirected
+    the JS/CSS assets (breaking the app), so the page itself sends www visitors to the
+    canonical host. Canonical tags already point to https://vraivelo.com.
+  -->
+  <script>
+    if (location.hostname === 'www.vraivelo.com') {
+      location.replace('https://vraivelo.com' + location.pathname + location.search + location.hash);
+    }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
