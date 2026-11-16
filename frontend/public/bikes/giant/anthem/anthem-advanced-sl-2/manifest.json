@@ -1,0 +1,263 @@
+{
+  "id": 309,
+  "name": "Giant Anthem SL2",
+  "brand": "giant",
+  "family": "anthem",
+  "model": "anthem-advanced-sl-2",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "title": "Anthem Advanced SL 2 (2026) | XC Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "mariana-blue",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "studio/mariana-blue-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/hgyz9ytw481t5o3wf0yx/MY26AnthemAdvancedSL2_ColorAMarianaBlue.jpg"
+    },
+    {
+      "color": "mariana-blue",
+      "view": "three-quarter-rear",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "studio/mariana-blue-three-quarter-rear.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/en5iirhlavhaxjgamp1p/MY26AnthemAdvancedSL2_ColorAMarianaBlue-Rear.jpg"
+    },
+    {
+      "color": "mariana-blue",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "studio/mariana-blue-detail-5.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/hlkvylmexuxru7xfk32b/MY26AnthemAdvancedSL2_ColorAMarianaBlue-D5.jpg"
+    },
+    {
+      "color": "mariana-blue",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "studio/mariana-blue-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/k4w3cinfidsbkzkt2hjj/MY26AnthemAdvancedSL2_ColorAMarianaBlue-D4.jpg"
+    },
+    {
+      "color": "mariana-blue",
+      "view": "detail-10",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "studio/mariana-blue-detail-10.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/emhkcmhv1awf0pfqaij5/MY26AnthemAdvancedSL2_ColorAMarianaBlue-D10.jpg"
+    },
+    {
+      "color": "mariana-blue",
+      "view": "detail-11",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "studio/mariana-blue-detail-11.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/zamngt2age4mpqyvrb4v/MY26AnthemAdvancedSL2_ColorAMarianaBlue-D11.jpg"
+    },
+    {
+      "color": "mariana-blue",
+      "view": "detail-9",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "studio/mariana-blue-detail-9.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/izqb6pimdbzzte8bxllh/MY26AnthemAdvancedSL2_ColorAMarianaBlue-D9.jpg"
+    },
+    {
+      "color": "mariana-blue",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "studio/mariana-blue-detail-1.webp",
+      "width": 2000,
+      "height": 1455,
+      "source": "https://images2.giant-bicycles.com/atrphfjpsvfqsty76kkl/MY26AnthemAdvancedSL2_ColorAMarianaBlue-D1.jpg"
+    },
+    {
+      "color": "mariana-blue",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "studio/mariana-blue-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/fm1ojrdtognwbmsl1ube/MY26AnthemAdvancedSL2_ColorAMarianaBlue-D2.jpg"
+    },
+    {
+      "color": "mariana-blue",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "studio/mariana-blue-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ttgrczw1t2zrlftitapr/MY26AnthemAdvancedSL2_ColorAMarianaBlue-D3.jpg"
+    },
+    {
+      "color": "mariana-blue",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "studio/mariana-blue-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/og765bdyiyvyqgxvzpdo/MY26AnthemAdvancedSL2_ColorAMarianaBlue-D6.jpg"
+    },
+    {
+      "color": "mariana-blue",
+      "view": "detail-8",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "studio/mariana-blue-detail-8.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/csynemrpgyix7jj3kdzv/MY26AnthemAdvancedSL2_ColorAMarianaBlue-D8.jpg"
+    }
+  ],
+  "lifestyle": [
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/01.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/wgkmpazic0gfrfy7yxfq/MY26_Anthem_Advanced_SL_2_ColorA_Product_WebRes_01.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/02.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/eltmbt7cugbkrpfews2g/MY26_Anthem_Advanced_SL_2_ColorA_Product_WebRes_03.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/03.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/mlazzljtbvj6mtgf0vfl/MY26_Anthem_Advanced_SL_2_ColorA_Product_WebRes_16.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/04.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/iolrgenjlboqj225a2ro/MY26_Anthem_Advanced_SL_2_ColorA_Product_WebRes_11.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/05.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/lmbf90cnipecyixjfafp/MY26_Anthem_Advanced_SL_2_ColorA_Product_WebRes_15.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/06.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/b7gh6benfzqtyudlcmp8/MY26_Anthem_Advanced_SL_2_ColorA_Product_WebRes_19.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/07.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://images2.giant-bicycles.com/rv1n8h504sfn5ycoiwnl/MY26_Anthem_Advanced_SL_2_XCA_Action_WebRes_26.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/08.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://images2.giant-bicycles.com/efv5piwi8lgu5mxwlv5w/MY26_Anthem_Advanced_SL_2_XCA_Action_WebRes_25.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/09.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/z7cy73t1s9vzks9bouux/MY26_Anthem_Advanced_SL_2_XCA_Action_WebRes_34.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/10.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://images2.giant-bicycles.com/mi5muhaaa1kyfsopx4gj/MY26_Anthem_Advanced_SL_2_XCA_Action_WebRes_37.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/11.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/vgqqcesnw9yszwyn4rwj/MY26_Anthem_Advanced_SL_2_XCA_Action_WebRes_43.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/12.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://images2.giant-bicycles.com/yjjn4vna1vrbrplevjkr/MY26_Anthem_Advanced_SL_2_XCA_Action_WebRes_42.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/13.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://images2.giant-bicycles.com/boy7sizt3wmp7r7tnvng/MY26_Anthem_Advanced_SL_2_XCA_Action_WebRes_48.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/14.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://images2.giant-bicycles.com/lfshvpmzr19srdxpg953/MY26_Anthem_Advanced_SL_2_XCA_Action_WebRes_51.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/15.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://images2.giant-bicycles.com/wyju6dhxo7almct01b3q/MY26_Anthem_Advanced_SL_2_XCA_Action_WebRes_54.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/16.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/bvzjkpvtzmj5m3dbja7m/MY26_Anthem_Advanced_SL_2_XCA_Action_WebRes_57.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/17.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://images2.giant-bicycles.com/xb3h5sdvgeobbqnhl9pp/MY26_Anthem_Advanced_SL_2_XCA_Action_WebRes_58.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-2",
+      "file": "lifestyle/18.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://images2.giant-bicycles.com/bbrkry3afmijglmqyr7c/MY26_Anthem_Advanced_SL_2_XCA_Action_WebRes_62.jpg"
+    }
+  ],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "mariana-blue-icicle-white.jpg",
+  "catalog": [
+    {
+      "color": "Mariana Blue/Icicle White",
+      "hex": "#14222B",
+      "file": "mariana-blue-icicle-white.jpg"
+    }
+  ],
+  "cutouts": []
+}

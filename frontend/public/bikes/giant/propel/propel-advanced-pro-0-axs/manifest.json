@@ -1,0 +1,109 @@
+{
+  "id": 325,
+  "name": "Giant Propel Advanced PRO 0 AXS",
+  "brand": "giant",
+  "family": "propel",
+  "model": "propel-advanced-pro-0-axs",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-axs-2027",
+      "title": "Propel Advanced Pro 0-AXS (2027) | Aero Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "obsidian-pulse",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-axs-2027",
+      "file": "studio/obsidian-pulse-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/u9r0a1uqpr0rustxbxbn/MY27PropelAdvancedPro0-AXS_ColorAObsidianPulse.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "three-quarter-rear",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-axs-2027",
+      "file": "studio/obsidian-pulse-three-quarter-rear.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/t0x4jrfhx3rt1vr7dkts/MY27PropelAdvancedPro0-AXS_ColorAObsidianPulse-Rear.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-axs-2027",
+      "file": "studio/obsidian-pulse-detail-2.webp",
+      "width": 1600,
+      "height": 1200,
+      "source": "https://images2.giant-bicycles.com/p7av1wglqnvtgm47xd4u/MY27PropelAdvancedPro0-AXS_ColorAObsidianPulse-D2.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-axs-2027",
+      "file": "studio/obsidian-pulse-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ejnzzlmk6ljgdu22uncj/MY27PropelAdvancedPro0-AXS_ColorAObsidianPulse-D3.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-axs-2027",
+      "file": "studio/obsidian-pulse-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/f326far36wqfb2qf1evy/MY27PropelAdvancedPro0-AXS_ColorAObsidianPulse-D1.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-axs-2027",
+      "file": "studio/obsidian-pulse-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ab6k36dmnb4raqibspfw/MY27PropelAdvancedPro0-AXS_ColorAObsidianPulse-D4.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-axs-2027",
+      "file": "studio/obsidian-pulse-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/qns5s2kwrrjq2xkul3b4/MY27PropelAdvancedPro0-AXS_ColorAObsidianPulse-D6.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-axs-2027",
+      "file": "studio/obsidian-pulse-detail-5.webp",
+      "width": 1600,
+      "height": 1200,
+      "source": "https://images2.giant-bicycles.com/hsajyx6euzmqhswhxni1/MY27PropelAdvancedPro0-AXS_ColorAObsidianPulse-D5.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-7",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-axs-2027",
+      "file": "studio/obsidian-pulse-detail-7.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/nekqvcdjktk9vp97czfb/MY27PropelAdvancedPro0-AXS_ColorAObsidianPulse-D7.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "obsidian-pulse.jpg",
+  "catalog": [
+    {
+      "color": "Obsidian Pulse",
+      "hex": "#2B2322",
+      "file": "obsidian-pulse.jpg"
+    }
+  ],
+  "cutouts": []
+}

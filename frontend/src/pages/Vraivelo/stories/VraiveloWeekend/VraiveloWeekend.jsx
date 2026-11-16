@@ -1,107 +1,86 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Play, Volume2, Settings, Maximize2 } from 'lucide-react';
 import { useTranslation, Trans } from 'react-i18next';
-import './VraiveloWeekend.css';
+import {
+    StoryPage, StoryHero, StorySection, StoryHeading, StoryProse, StorySplit, StoryPhoto,
+    StoryGallery, StoryCTA, StoryButton,
+} from '../StoryKit';
 
+const W = '/vraivelo_weekend/';
+const bold = { b: <strong />, 1: <strong /> };
 
 const VraiveloWeekend = () => {
     const { t } = useTranslation();
+
     return (
-        <div className="weekend-story-page">
-            {/* Media Player Section - Full Viewport */}
-            {/* Media Player Section - Full Viewport */}
-            <div className="weekend-media-player">
-                <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/GmX04cXlMf4?autoplay=0&controls=1&rel=0"
-                    title="Vraivelo Weekend Video"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-                ></iframe>
-            </div>
+        <StoryPage id="vv_weekend">
+            <StoryHero
+                image={`${W}vv_5.jpeg`}
+                position="center 40%"
+                eyebrow={t('weekend.eyebrow')}
+                title={t('weekend.headline')}
+                desc={t('weekend.subtitle_1')}
+            >
+                <StoryButton href="#weekend-video" light>{t('weekend.watch_video')}</StoryButton>
+            </StoryHero>
 
-            <div className="weekend-container">
-                {/* Back Link Overlay
-                <div className="weekend-header-overlay">
-                    <Link to="/vraivelo" className="weekend-back-link-light">
-                        <ArrowLeft size={20} /> Back to stories
-                    </Link>
-                </div> */}
-                {/* Headline Section */}
-                <div className="weekend-headline-section">
-                    <h1 className="weekend-headline">
-                        {t('weekend.headline')}
-                    </h1>
-                    <h3 className='weekend-headline-subtitle'>{t('weekend.subtitle_1')}</h3>
-                </div>
+            <StorySection>
+                <StorySplit
+                    reverse
+                    sticky
+                    media={<StoryPhoto src="/stories/web/weekend-viaducto.webp" alt={t('weekend.photo_alt')} position="center 60%" />}
+                >
+                    <StoryHeading eyebrow={t('weekend.story_eyebrow')} title={t('weekend.subtitle_1')} />
+                    <StoryProse lead>
+                        <p>{t('weekend.p1')}</p>
+                        <p>{t('weekend.p2')}</p>
+                        <p>{t('weekend.p3')}</p>
+                        <p>{t('weekend.p4')}</p>
+                    </StoryProse>
+                </StorySplit>
+            </StorySection>
 
-                {/* Body Text */}
-                <div className="weekend-body-section">
-                    <p className="weekend-body-text">
-                        {t('weekend.p1')}
-                        <br /><br />{t('weekend.p2')}
-                        <br /><br />{t('weekend.p3')}
-                        <br /><br />{t('weekend.p4')}
-                    </p>
+            {/* The video of the trip */}
+            <StorySection tone="dark" id="weekend-video">
+                <StoryHeading light eyebrow={t('weekend.video_eyebrow')} title={t('weekend.video_title')} />
+                <div className="sk-video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/GmX04cXlMf4?rel=0"
+                        title={t('weekend.video_title')}
+                        loading="lazy"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    />
                 </div>
-                <div className="weekend-headline-section">
-                    <h3 className="weekend-headline-subtitle">
-                        {t('weekend.subtitle_2')}
-                    </h3>
-                </div>
-                <div className='weekend-body-section'>
-                    <p className='weekend-body-text'>
-                        <Trans i18nKey="weekend.p5">
-                            Después de vivir algo así, era imposible no pensar en repetir. Este año estamos preparando <b style={{ color: '#000000' }}>dos Vraivēlo Weekends</b>, nuevas aventuras sobre la bicicleta, con el mismo cuidado por los detalles, el mismo espíritu de grupo y las mismas ganas de disfrutar del camino.
-                        </Trans>
-                        <br /><br />
-                        <Trans i18nKey="weekend.p6">
-                            Si no quieres perdértelo, mantente atento a nuestras redes en <b style={{ color: '#000000' }}>@vraivelo</b> en Instagram y a nuestro club de <b style={{ color: '#000000' }}>Strava</b>, donde iremos compartiendo todas las novedades.
-                        </Trans>
-                    </p>
-                </div>
+            </StorySection>
 
-                {/* Gallery Section Header */}
-                <div className="weekend-gallery-header">
-                    <h2>{t('weekend.gallery.title')}</h2>
-                    <div className="weekend-separator"></div>
-                    <a href="#" className="weekend-view-all">{t('weekend.gallery.btn')}</a>
-                </div>
+            <StorySection tone="beige">
+                <StoryHeading eyebrow={t('weekend.gallery.title')} title={t('weekend.gallery_title')} />
+                <StoryGallery
+                    images={[
+                        { src: '/stories/web/weekend-4.webp', span: 'big' },
+                        { src: `${W}vv_1.jpeg`, span: 'tall' },
+                        { src: `${W}vv_2.jpeg`, span: 'tall' },
+                        { src: '/stories/web/weekend-3.webp', span: 'tall' },
+                        { src: `${W}vv_6.jpeg`, span: 'tall' },
+                        { src: `${W}vv_7.jpeg`, span: 'tall' },
+                        { src: '/stories/web/weekend-8.webp', span: 'tall' },
+                    ].map((img) => ({ ...img, alt: t('weekend.gallery_alt') }))}
+                />
+            </StorySection>
 
-                {/* Image Grid */}
-                <div className="weekend-gallery-grid">
-                    <div className="weekend-gallery-item square">
-                        <img src="/vraivelo_weekend/vv_1.jpeg" alt="" />
-                    </div>
-                    <div className="weekend-gallery-item square">
-                        <img src="/vraivelo_weekend/vv_2.jpeg" alt="" />
-                    </div>
-                    <div className="weekend-gallery-item square">
-                        <img src="/vraivelo_weekend/vv_3.jpeg" alt="" />
-                    </div>
-                    <div className="weekend-gallery-item wide">
-                        <img src="/vraivelo_weekend/vv_4.jpeg" alt="" />
-                    </div>
-                    <div className="weekend-gallery-item video-col">
-                        <img src="/vraivelo_weekend/vv_5.jpeg" alt="" />
-                    </div>
-                    <div className="weekend-gallery-item video-col">
-                        <img src="/vraivelo_weekend/vv_6.jpeg" alt="" />
-                    </div>
-                    <div className="weekend-gallery-item video-col">
-                        <img src="/vraivelo_weekend/vv_7.jpeg" alt="" />
-                    </div>
-                    <div className="weekend-gallery-item video-col">
-                        <img src="/vraivelo_weekend/vv_8.jpeg" alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>
+            <StoryCTA
+                eyebrow={t('weekend.subtitle_2')}
+                title={t('weekend.cta_title')}
+                text={(
+                    <>
+                        <p><Trans i18nKey="weekend.p5" components={bold} /></p>
+                        <p><Trans i18nKey="weekend.p6" components={bold} /></p>
+                    </>
+                )}
+            >
+                <StoryButton href="https://www.instagram.com/vraivelo/" light>Instagram</StoryButton>
+                <StoryButton href="https://www.strava.com/clubs/1327818" light>Strava</StoryButton>
+            </StoryCTA>
+        </StoryPage>
     );
 };
 

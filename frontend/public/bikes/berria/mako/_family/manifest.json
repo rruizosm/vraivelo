@@ -1,0 +1,108 @@
+{
+  "brand": "berria",
+  "family": "mako",
+  "sources": [
+    "https://berriabikes.com/pages/mako-evo"
+  ],
+  "collected": "2026-11-15",
+  "lifestyle": [
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/01.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://berriabikes.com/cdn/shop/files/Berria_Bikes_-_new_Mako_Evo_-_Action_pictures3.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/03.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://berriabikes.com/cdn/shop/files/2025.WC.Araxa_04.05_XCC-6897.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/04.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://berriabikes.com/cdn/shop/files/DSC06267_r._jpg.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/05.webp",
+      "width": 1920,
+      "height": 2401,
+      "source": "https://berriabikes.com/cdn/shop/files/DSC06269_r.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/06.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://berriabikes.com/cdn/shop/files/DSC06225.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/07.webp",
+      "width": 2000,
+      "height": 1083,
+      "source": "https://berriabikes.com/cdn/shop/files/DSC1174_b2144363-33da-4e07-bf0f-afbca1ebc381.png"
+    },
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/08.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://berriabikes.com/cdn/shop/files/Berria_Bikes_-_new_Mako_Evo_-_Action_pictures6.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/09.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://berriabikes.com/cdn/shop/files/Berria_Bikes_-_new_Mako_Evo_-_Action_pictures8.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/10.webp",
+      "width": 2000,
+      "height": 1675,
+      "source": "https://berriabikes.com/cdn/shop/files/DSC1209.png"
+    },
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/11.webp",
+      "width": 1920,
+      "height": 2019,
+      "source": "https://berriabikes.com/cdn/shop/files/DSC1221.png"
+    },
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/12.webp",
+      "width": 2000,
+      "height": 1334,
+      "source": "https://berriabikes.com/cdn/shop/files/DSC1196.png"
+    },
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/13.webp",
+      "width": 2000,
+      "height": 1933,
+      "source": "https://berriabikes.com/cdn/shop/files/DSC1176.png"
+    },
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/14.webp",
+      "width": 2000,
+      "height": 1334,
+      "source": "https://berriabikes.com/cdn/shop/files/DSC1194.png"
+    },
+    {
+      "page": "https://berriabikes.com/pages/mako-evo",
+      "file": "lifestyle/15.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://berriabikes.com/cdn/shop/files/Berria_Bikes_-_new_Mako_Evo_-_Action_pictures7.jpg"
+    }
+  ]
+}

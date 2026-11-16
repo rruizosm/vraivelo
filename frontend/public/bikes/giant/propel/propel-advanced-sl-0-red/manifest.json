@@ -1,0 +1,221 @@
+{
+  "id": 330,
+  "name": "Giant Propel Advanced SL 0-Red",
+  "brand": "giant",
+  "family": "propel",
+  "model": "propel-advanced-sl-0-red",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-red-2027",
+      "title": "Propel Advanced SL 0-Red (2027) | Aero Race Bici | Giant Bicycles España"
+    },
+    {
+      "url": "https://www.giant-bicycles.com/es/propel-advanced-sl-0--red-",
+      "title": "Propel Advanced SL 0 (RED) (2026) | Aero Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "superspeed-blue",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-red-2027",
+      "file": "studio/superspeed-blue-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/j2c5ehwjiwkxlxtxknee/MY27PropelAdvancedSL0-Red_ColorASuperspeedBlue.jpg"
+    },
+    {
+      "color": "superspeed-blue",
+      "view": "three-quarter-front",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-red-2027",
+      "file": "studio/superspeed-blue-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/d9qaefxa7kcxkpxpwrxr/MY27PropelAdvancedSL0-Red_ColorASuperspeedBlue-Front.jpg"
+    },
+    {
+      "color": "superspeed-blue",
+      "view": "three-quarter-rear",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-red-2027",
+      "file": "studio/superspeed-blue-three-quarter-rear.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/t8r4unzzgouojecqznz8/MY27PropelAdvancedSL0-Red_ColorASuperspeedBlue-Rear.jpg"
+    },
+    {
+      "color": "superspeed-blue",
+      "view": "detail-11",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-red-2027",
+      "file": "studio/superspeed-blue-detail-11.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/rlzofjoyvastyus4nqcl/MY27PropelAdvancedSL0-Red_ColorASuperspeedBlue-D11.jpg"
+    },
+    {
+      "color": "superspeed-blue",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-red-2027",
+      "file": "studio/superspeed-blue-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/jwwa2elyr51xlbjzomsh/MY27PropelAdvancedSL0-Red_ColorASuperspeedBlue-D-4.jpg"
+    },
+    {
+      "color": "superspeed-blue",
+      "view": "detail-12",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-red-2027",
+      "file": "studio/superspeed-blue-detail-12.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/tzszi5hw0vt1n87prdhd/MY27PropelAdvancedSL0-Red_ColorASuperspeedBlue-D-12.jpg"
+    },
+    {
+      "color": "superspeed-blue",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-red-2027",
+      "file": "studio/superspeed-blue-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/j2wqmjugiqx72ihgrbo6/MY27PropelAdvancedSL0-Red_ColorASuperspeedBlue-D-3.jpg"
+    },
+    {
+      "color": "superspeed-blue",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-red-2027",
+      "file": "studio/superspeed-blue-detail-5.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/dflnqsbcm1w1dy5yses1/MY27PropelAdvancedSL0-Red_ColorASuperspeedBlue-D-5.jpg"
+    },
+    {
+      "color": "superspeed-blue",
+      "view": "detail-10",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-red-2027",
+      "file": "studio/superspeed-blue-detail-10.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/c72ivz6ok9mzotkitkv5/MY27PropelAdvancedSL0-Red_ColorASuperspeedBlue-D-10.jpg"
+    },
+    {
+      "color": "superspeed-blue",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-red-2027",
+      "file": "studio/superspeed-blue-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/yysf4tmldy8tzugcnyf6/MY27PropelAdvancedSL0-Red_ColorASuperspeedBlue-D-2.jpg"
+    },
+    {
+      "color": "superspeed-blue",
+      "view": "detail-7",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-red-2027",
+      "file": "studio/superspeed-blue-detail-7.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/hjdf8teeuripe9mtaagr/MY27PropelAdvancedSL0-Red_ColorASuperspeedBlue-D-7.jpg"
+    },
+    {
+      "color": "superspeed-blue",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-red-2027",
+      "file": "studio/superspeed-blue-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/nhw5vwmhyfmx5fbahyw5/MY27PropelAdvancedSL0-Red_ColorASuperspeedBlue-D-6.jpg"
+    },
+    {
+      "color": "arctic-light",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0--red-",
+      "file": "studio/arctic-light-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/flgcirskxglfd0a1hisv/MY26PropelAdvancedSL0-Red_ColorAArcticLight.jpg"
+    },
+    {
+      "color": "arctic-light",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0--red-",
+      "file": "studio/arctic-light-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ntclurb9bo4k0r6agnzc/MY26PropelAdvancedSL0-Red_ColorAArcticLight-D6.jpg"
+    },
+    {
+      "color": "arctic-light",
+      "view": "detail-8",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0--red-",
+      "file": "studio/arctic-light-detail-8.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/fh8gkjptnwiabcloduju/MY26PropelAdvancedSL0-Red_ColorAArcticLight-D8.jpg"
+    },
+    {
+      "color": "arctic-light",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0--red-",
+      "file": "studio/arctic-light-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ebji1w7qvkzekvidjaql/MY26PropelAdvancedSL0-Red_ColorAArcticLight-D3.jpg"
+    },
+    {
+      "color": "arctic-light",
+      "view": "detail-9",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0--red-",
+      "file": "studio/arctic-light-detail-9.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/bclue6kncr36upnajyta/MY26PropelAdvancedSL0-Red_ColorAArcticLight-D9.jpg"
+    },
+    {
+      "color": "arctic-light",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0--red-",
+      "file": "studio/arctic-light-detail-5.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/sijy3mzt6jxbleizqvsl/MY26PropelAdvancedSL0-Red_ColorAArcticLight-D5.jpg"
+    },
+    {
+      "color": "arctic-light",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0--red-",
+      "file": "studio/arctic-light-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/z9nkfwe9efnfidem4fwl/MY26PropelAdvancedSL0-Red_ColorAArcticLight-D1.jpg"
+    },
+    {
+      "color": "arctic-light",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0--red-",
+      "file": "studio/arctic-light-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/nc6czubcuf1zl0jjkjkv/MY26PropelAdvancedSL0-Red_ColorAArcticLight-D4.jpg"
+    },
+    {
+      "color": "arctic-light",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0--red-",
+      "file": "studio/arctic-light-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/pbx4zuygkxd3frjq1z83/MY26PropelAdvancedSL0-Red_ColorAArcticLight-D2.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "superspeed-blue.jpg",
+  "catalog": [
+    {
+      "color": "Superspeed Blue",
+      "hex": "#01C1C2",
+      "file": "superspeed-blue.jpg"
+    }
+  ],
+  "cutouts": []
+}

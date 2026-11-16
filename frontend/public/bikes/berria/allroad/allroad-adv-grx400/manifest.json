@@ -1,0 +1,31 @@
+{
+  "id": 106,
+  "name": "Berria Allroad Adv GRX400",
+  "brand": "berria",
+  "family": "allroad",
+  "model": "allroad-adv-grx400",
+  "match": "closest",
+  "sources": [
+    {
+      "url": "https://berriabikes.com/products/allroad-grx400-2027",
+      "title": "ALLROAD GRX400"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "chalk-grey-black",
+      "view": "side",
+      "page": "https://berriabikes.com/products/allroad-grx400-2027",
+      "file": "studio/chalk-grey-black-side.webp",
+      "width": 1790,
+      "height": 1248,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Gravel-Allroad-Grx400-Berriabikes-001.png"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "cover.webp",
+  "catalog": [],
+  "cutouts": []
+}

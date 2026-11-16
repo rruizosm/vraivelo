@@ -1,0 +1,127 @@
+{
+  "id": 310,
+  "name": "Giant Anthem SL1",
+  "brand": "giant",
+  "family": "anthem",
+  "model": "anthem-advanced-sl-1",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/anthem-advanced-sl-1",
+      "title": "Anthem Advanced SL 1 (2026) | XC Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "rainbow-black",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-1",
+      "file": "studio/rainbow-black-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/v6m4ogbnfa7e0avztyvp/MY26AnthemAdvancedSL1_ColorARainbowBlack.jpg"
+    },
+    {
+      "color": "rainbow-black",
+      "view": "three-quarter-front",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-1",
+      "file": "studio/rainbow-black-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/isc97oozgzuiti9yeijp/MY26AnthemAdvancedSL1_ColorARainbowBlack-Front.jpg"
+    },
+    {
+      "color": "rainbow-black",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-1",
+      "file": "studio/rainbow-black-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/hf9wt8lskor5ll5peqgd/MY26AnthemAdvancedSL1_ColorARainbowBlack-D4.jpg"
+    },
+    {
+      "color": "rainbow-black",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-1",
+      "file": "studio/rainbow-black-detail-5.webp",
+      "width": 1600,
+      "height": 1200,
+      "source": "https://images2.giant-bicycles.com/jbmcra27mfnxn1nfmblv/MY26AnthemAdvancedSL1_ColorARainbowBlack-D5.jpg"
+    },
+    {
+      "color": "rainbow-black",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-1",
+      "file": "studio/rainbow-black-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/zb9xodemvb7jss4njedj/MY26AnthemAdvancedSL1_ColorARainbowBlack-D1.jpg"
+    },
+    {
+      "color": "rainbow-black",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-1",
+      "file": "studio/rainbow-black-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/cl5wtr0fcmrqajvcpbdv/MY26AnthemAdvancedSL1_ColorARainbowBlack-D3.jpg"
+    },
+    {
+      "color": "rainbow-black",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-1",
+      "file": "studio/rainbow-black-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ltzbiriaffnrpxxaxxi7/MY26AnthemAdvancedSL1_ColorARainbowBlack-D2.jpg"
+    },
+    {
+      "color": "rainbow-black",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-1",
+      "file": "studio/rainbow-black-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/gixhfcfovllifkajncjy/MY26AnthemAdvancedSL1_ColorARainbowBlack-D6.jpg"
+    },
+    {
+      "color": "rainbow-black",
+      "view": "detail-7",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-1",
+      "file": "studio/rainbow-black-detail-7.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/u99r2rislyvkcvgvvxng/MY26AnthemAdvancedSL1_ColorARainbowBlack-D7.jpg"
+    },
+    {
+      "color": "rainbow-black",
+      "view": "detail-8",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-1",
+      "file": "studio/rainbow-black-detail-8.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/kg7a9zepqgb299vmo9yq/MY26AnthemAdvancedSL1_ColorARainbowBlack-D8.jpg"
+    },
+    {
+      "color": "rainbow-black",
+      "view": "detail-13",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-1",
+      "file": "studio/rainbow-black-detail-13.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/rjq1kj6do7gjfnhmgt8h/MY26AnthemAdvancedSL1_ColorARainbowBlack-D13.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "rainbow-black-rainbow-charcoal.jpg",
+  "catalog": [
+    {
+      "color": "Rainbow Black/Rainbow Charcoal",
+      "hex": "#414244",
+      "file": "rainbow-black-rainbow-charcoal.jpg"
+    }
+  ],
+  "cutouts": []
+}

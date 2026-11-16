@@ -1,0 +1,31 @@
+{
+  "id": 109,
+  "name": "Berria Taurus Adv SX",
+  "brand": "berria",
+  "family": "taurus",
+  "model": "taurus-adv-sx",
+  "match": "closest",
+  "sources": [
+    {
+      "url": "https://berriabikes.com/products/taurus-s100-2027",
+      "title": "TAURUS S100"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "blue-crush",
+      "view": "side",
+      "page": "https://berriabikes.com/products/taurus-s100-2027",
+      "file": "studio/blue-crush-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Mountain-Taurus-S100-Berriabikes-001.png"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "cover.webp",
+  "catalog": [],
+  "cutouts": []
+}

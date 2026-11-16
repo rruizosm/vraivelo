@@ -147,7 +147,7 @@ const EventFormation = () => {
                     {t('event_formation.cta_text')}
                 </p>
                 <Link to="/contact" state={{
-                    subject: 'berria_event',
+                    subject: 'other',
                     message: t('event_formation.contact_message')
                 }}>
                     <motion.button

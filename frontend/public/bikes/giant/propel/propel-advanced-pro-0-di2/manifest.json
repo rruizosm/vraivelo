@@ -1,0 +1,131 @@
+{
+  "id": 326,
+  "name": "Giant Propel Advanced PRO 0 Di2",
+  "brand": "giant",
+  "family": "propel",
+  "model": "propel-advanced-pro-0-di2",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-di2-2027",
+      "title": "Propel Advanced Pro 0-Di2 (2027) | Aero Race Bici | Giant Bicycles España"
+    },
+    {
+      "url": "https://www.giant-bicycles.com/es/propel-advanced-pro-0--di2-",
+      "title": "Propel Advanced Pro 0 (Di2) (2026) | Aero Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "obsidian-pulse",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-di2-2027",
+      "file": "studio/obsidian-pulse-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ijoqdwyslb8pvmf8vzd9/MY27PropelAdvancedPro0-Di2_ColorAObsidianPulse.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "three-quarter-front",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-di2-2027",
+      "file": "studio/obsidian-pulse-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/emwjtzwxmqdq5hd8ntsy/MY27PropelAdvancedPro0-Di2_ColorAObsidianPulse-Front.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-di2-2027",
+      "file": "studio/obsidian-pulse-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/j4yp6aiclp8rwuegkwb6/MY27PropelAdvancedPro0-Di2_ColorAObsidianPulse-D2.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-di2-2027",
+      "file": "studio/obsidian-pulse-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/qosyw81vkabsenpzpfqt/MY27PropelAdvancedPro0-Di2_ColorAObsidianPulse-D3.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-di2-2027",
+      "file": "studio/obsidian-pulse-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/fz99gvajvloekg1ssgtd/MY27PropelAdvancedPro0-Di2_ColorAObsidianPulse-D1.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-di2-2027",
+      "file": "studio/obsidian-pulse-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/wyqxzmf9i3tilbiynkx2/MY27PropelAdvancedPro0-Di2_ColorAObsidianPulse-D4.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-di2-2027",
+      "file": "studio/obsidian-pulse-detail-5.webp",
+      "width": 1600,
+      "height": 1200,
+      "source": "https://images2.giant-bicycles.com/dbebhx92i4zpd646hijf/MY27PropelAdvancedPro0-Di2_ColorAObsidianPulse-D5.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-di2-2027",
+      "file": "studio/obsidian-pulse-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/oe0niu1lxpgwz9ckc60p/MY27PropelAdvancedPro0-Di2_ColorAObsidianPulse-D6.jpg"
+    },
+    {
+      "color": "obsidian-pulse",
+      "view": "detail-7",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0-di2-2027",
+      "file": "studio/obsidian-pulse-detail-7.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/svqnhargnyf1qr3uzwrw/MY27PropelAdvancedPro0-Di2_ColorAObsidianPulse-D7.jpg"
+    },
+    {
+      "color": "abyss-black",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0--di2-",
+      "file": "studio/abyss-black-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/f1krsfgnscotrffzoagj/MY26PropelAdvancedPro0-Di2_ColorBAbyssBlack.jpg"
+    },
+    {
+      "color": "abyss-black",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-0--di2-",
+      "file": "studio/abyss-black-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/yhbgnl1t0u5p5pi9ircy/MY26PropelAdvancedPro0-Di2_ColorBAbyssBlack-D1.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "abyss-teal-fluorescent-mint-obsidian-pulse.jpg",
+  "catalog": [
+    {
+      "color": "Abyss Teal/Fluorescent Mint, Obsidian Pulse",
+      "hex": "#1A1513",
+      "file": "abyss-teal-fluorescent-mint-obsidian-pulse.jpg"
+    }
+  ],
+  "cutouts": []
+}

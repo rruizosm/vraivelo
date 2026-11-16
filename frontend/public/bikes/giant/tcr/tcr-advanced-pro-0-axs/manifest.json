@@ -1,0 +1,39 @@
+{
+  "id": 338,
+  "name": "Giant TCR Advanced PRO 0 AXS",
+  "brand": "giant",
+  "family": "tcr",
+  "model": "tcr-advanced-pro-0-axs",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/tcr-advanced-pro-0--axs-",
+      "title": "TCR Advanced Pro 0 (AXS) (2026) | Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "midnight-moon",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-0--axs-",
+      "file": "studio/midnight-moon-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/wa52h5d3yixax6z69acl/MY26TCRAdvancedPro0-AXS_ColorBMidnightMoon.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "midnight-moon.jpg",
+  "catalog": [
+    {
+      "color": "Midnight Moon",
+      "hex": "#646A76",
+      "file": "midnight-moon.jpg"
+    }
+  ],
+  "cutouts": [
+    "cutout-midnight-moon.png"
+  ]
+}

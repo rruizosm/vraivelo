@@ -23,6 +23,10 @@ import dotenv from 'dotenv';
 import { clothes } from '../src/data/clothes.js';
 import { storiesEs } from '../src/data/stories_es.js';
 import { productPath } from '../src/lib/productUrl.js';
+import { BIKE_CATEGORIES } from '../src/lib/categories.js';
+import { parsePrice as parseNumber, formatPrice } from '../src/lib/price.js';
+import { FEATURED_BIKE_IDS } from '../src/config.js';
+import { withBikeImages } from '../src/lib/bikeImages.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -107,7 +111,7 @@ async function loadCatalog() {
     }
     const supabase = createClient(url, key);
     const [b, p] = await Promise.all([
-        supabase.from('bikes').select('*'),
+        supabase.from('bikes').select('*, bike_variants(*)'),
         supabase.from('products').select('*'),
     ]);
     if (b.error) console.warn('[prerender] bikes:', b.error.message);
@@ -128,7 +132,8 @@ function buildPages({ bikes, products }) {
         });
 
     // Only what the shop actually shows (Active = true), like Shop.jsx / OtherProducts.jsx
-    const activeBikes = bikes.filter((b) => b.Active !== false);
+    // image_url resolved to public/bikes/ (old DB paths still work via src/lib/bikeImages.js)
+    const activeBikes = bikes.filter((b) => b.Active !== false).map(withBikeImages);
     const activeProducts = products.filter((p) => p.Active !== false);
 
     // ProductDetail looks the id up in clothes → bikes → products, so a product whose id
@@ -144,15 +149,51 @@ function buildPages({ bikes, products }) {
         return true;
     });
 
-    const bikeLinks = activeBikes.map((b) => [productPath(b), b.model]);
+    const withPrice = (name, price) => {
+        const n = parseNumber(price);
+        return n ? `${name} – ${formatPrice(n)}` : name;
+    };
+    const bikeLinks = activeBikes.map((b) => [productPath(b), withPrice(b.model, b.price)]);
+    const categoryLinks = BIKE_CATEGORIES
+        .filter((c) => activeBikes.some((b) => b.category === c.key))
+        .map((c) => [`/shop/${c.slug}/`, es.shop.cat[c.slug].h1]);
+    const featuredLinks = FEATURED_BIKE_IDS
+        .map((id) => activeBikes.find((b) => b.id === id))
+        .filter(Boolean)
+        .map((b) => [productPath(b), withPrice(b.model, b.price)]);
     const productLinks = [
         ...reachableProducts.map((p) => [productPath(p), p.Product || p.product]),
         ...clothes.map((c) => [productPath(c), c.model]),
     ];
     const storyLinks = storiesEs.filter((s) => s.content).map((s) => [`/vraivelo/${s.id}/`, titleCase(s.title)]);
 
-    staticPage('/', 'home', { priority: '1.0', changefreq: 'weekly' });
-    staticPage('/shop/', 'shop', { links: bikeLinks, priority: '0.9', changefreq: 'weekly' });
+    staticPage('/', 'home', { links: [...categoryLinks, ...featuredLinks], priority: '1.0', changefreq: 'weekly' });
+    staticPage('/shop/', 'shop', {
+        h1: es.shop.h1,
+        intro: es.shop.intro,
+        links: [...categoryLinks, ...bikeLinks],
+        priority: '0.9',
+        changefreq: 'weekly',
+    });
+
+    // One landing page per bike category (/shop/carretera/, /shop/gravel/ ...)
+    for (const c of BIKE_CATEGORIES) {
+        const list = activeBikes.filter((b) => b.category === c.key);
+        if (!list.length) continue;
+        const text = es.shop.cat[c.slug];
+        pages.push({
+            route: `/shop/${c.slug}/`,
+            title: seo[`shop_${c.slug}`].title,
+            description: seo[`shop_${c.slug}`].description,
+            h1: text.h1,
+            intro: text.intro,
+            image: list.find((b) => b.image_url)?.image_url,
+            links: list.map((b) => [productPath(b), withPrice(b.model, b.price)]),
+            breadcrumb: [['Bicicletas', '/shop/'], [text.name]],
+            priority: '0.8',
+            changefreq: 'weekly',
+        });
+    }
     staticPage('/other-products/', 'other_products', { links: productLinks, priority: '0.8', changefreq: 'weekly' });
     staticPage('/workshop/', 'workshop', { priority: '0.9', changefreq: 'monthly' });
     staticPage('/workshop/mechanics/', 'workshop_mechanics', { priority: '0.8', changefreq: 'monthly' });
@@ -176,8 +217,10 @@ function buildPages({ bikes, products }) {
         });
     }
 
-    const productPage = ({ item, name, brand, category, price, description, longDescription, specs, sizes, image, inStock, parent }) => {
+    const productPage = ({ item, name, brand, category, price, description, longDescription, specs, sizes, image, gallery = [], inStock, parents }) => {
         const route = productPath(item);
+        // main photo + one per colour, for the Product schema and the image sitemap
+        const images = [...new Set([image, ...gallery].filter(Boolean).map(abs))];
         const typeLabel = CATEGORY_ES[category] || category;
         const desc = description
             ? clip(`${name}: ${description}`)
@@ -187,7 +230,7 @@ function buildPages({ bikes, products }) {
             '@context': 'https://schema.org',
             '@type': 'Product',
             name,
-            image: [abs(image)],
+            image: images.length ? images : [abs(image)],
             description: clip(longDescription || description || desc, 1000),
             ...(brand ? { brand: { '@type': 'Brand', name: brand } } : {}),
             ...(typeLabel ? { category: typeLabel } : {}),
@@ -212,13 +255,14 @@ function buildPages({ bikes, products }) {
             h1: name,
             intro: [brand, typeLabel, price].filter(Boolean).join(' · '),
             image,
+            images,
             imageAlt: [name, typeLabel].filter(Boolean).join(' – '),
             paragraphs: [description, longDescription].filter((t, i, a) => t && a.indexOf(t) === i),
             specs: toList(specs),
             sizes: toList(sizes),
             ogType: 'product',
             jsonLd,
-            breadcrumb: [parent, [name]],
+            breadcrumb: [...parents, [name]],
             priority: '0.7',
             changefreq: 'weekly',
         });
@@ -226,6 +270,10 @@ function buildPages({ bikes, products }) {
 
     const BIKES = ['Bicicletas', '/shop/'];
     const OTHER = ['Recambios y accesorios', '/other-products/'];
+    const categoryCrumb = (key) => {
+        const c = BIKE_CATEGORIES.find((x) => x.key === key);
+        return c ? [es.shop.cat[c.slug].name, `/shop/${c.slug}/`] : null;
+    };
 
     for (const b of activeBikes) {
         productPage({
@@ -239,8 +287,9 @@ function buildPages({ bikes, products }) {
             specs: b.specs_es || b.specs,
             sizes: b.sizes,
             image: b.image_url,
+            gallery: (b.bike_variants || []).map((v) => v.image_url),
             inStock: b.quantity !== 0,
-            parent: BIKES,
+            parents: [BIKES, categoryCrumb(b.category)].filter(Boolean),
         });
     }
     for (const p of reachableProducts) {
@@ -256,7 +305,7 @@ function buildPages({ bikes, products }) {
             sizes: p.Size || p.size,
             image: p['Image URL'] || p['image url'] || p.image_url,
             inStock: p.quantity !== 0,
-            parent: OTHER,
+            parents: [OTHER],
         });
     }
     for (const c of clothes) {
@@ -271,8 +320,9 @@ function buildPages({ bikes, products }) {
             specs: c.specs,
             sizes: c.variants?.[0]?.sizes,
             image: c.variants?.[0]?.images?.[0] || c.image_url,
+            gallery: (c.variants || []).flatMap((v) => v.images || []),
             inStock: true,
-            parent: OTHER,
+            parents: [OTHER],
         });
     }
 
@@ -338,7 +388,7 @@ function shellFor(page) {
             .map(([name, href]) => ` › ${href ? `<a href="${href}">${esc(name)}</a>` : esc(name)}`)
             .join('')}</nav>`
         : '';
-    return `<div class="seo-shell" style="max-width:960px;margin:0 auto;padding:96px 16px 48px;font-family:Inter,system-ui,sans-serif;color:#475569;background:#f8fafc;min-height:100vh">
+    return `<div class="seo-shell" style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">
 <header><a href="/" style="color:#0f172a;font-weight:700;text-decoration:none">Vraivelo</a><nav aria-label="principal">${linkList(NAV)}</nav></header>
 <main>${crumbs}<h1 style="color:#0f172a">${esc(page.h1)}</h1>${page.intro ? `<p>${esc(page.intro)}</p>` : ''}${page.paragraphs ? productBody(page) : `<p>${esc(page.description)}</p>`}${page.links?.length ? linkList(page.links) : ''}</main>
 <footer><p>Vraivelo · Carrer Pau Vila i Dinarès 10, 17003 Girona · <a href="tel:+34657317270">+34 657 317 270</a> · <a href="mailto:info@vraivelo.com">info@vraivelo.com</a></p></footer>
@@ -361,12 +411,15 @@ function sitemap(pages) {
     <loc>${SITE}${canonicalPath(p.route)}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
-    <priority>${p.priority}</priority>
+    <priority>${p.priority}</priority>${(p.images || (p.image ? [abs(p.image)] : []))
+        .map((src) => `\n    <image:image><image:loc>${esc(src)}</image:loc></image:image>`)
+        .join('')}
   </url>`
         )
         .join('\n');
+    // image:image entries help product photos show up in Google Images
     return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${urls}
 </urlset>
 `;

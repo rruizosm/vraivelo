@@ -1,0 +1,37 @@
+{
+  "id": 313,
+  "name": "Giant TCR Advanced 2",
+  "brand": "giant",
+  "family": "tcr",
+  "model": "tcr-advanced-2",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/tcr-advanced-2--pro-compact-",
+      "title": "TCR Advanced 2 (Pro Compact) (2026) | Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "stealth-chrome",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-2--pro-compact-",
+      "file": "studio/stealth-chrome-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/urlfaixx9sdk3bii6q1p/MY26TCRAdvanced2-PC_ColorAStealthChrome.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "stealth-chrome.jpg",
+  "catalog": [
+    {
+      "color": "Stealth Chrome",
+      "hex": "#3D3C3A",
+      "file": "stealth-chrome.jpg"
+    }
+  ],
+  "cutouts": []
+}

@@ -1,0 +1,52 @@
+{
+  "brand": "berria",
+  "family": "belador",
+  "sources": [
+    "https://berriabikes.com/pages/belador"
+  ],
+  "collected": "2026-11-15",
+  "lifestyle": [
+    {
+      "page": "https://berriabikes.com/pages/belador",
+      "file": "lifestyle/01.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://berriabikes.com/cdn/shop/files/Belador_1.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/belador",
+      "file": "lifestyle/02.webp",
+      "width": 2000,
+      "height": 1331,
+      "source": "https://berriabikes.com/cdn/shop/files/preview_images/Belador_2.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/belador",
+      "file": "lifestyle/03.webp",
+      "width": 2000,
+      "height": 1111,
+      "source": "https://berriabikes.com/cdn/shop/files/belador-mas-efectiva-01.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/belador",
+      "file": "lifestyle/04.webp",
+      "width": 2000,
+      "height": 903,
+      "source": "https://berriabikes.com/cdn/shop/files/belador-tecnologia-berria-01-01_2x_4b57177a-57bf-427e-8eb2-3c3b0971b872.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/belador",
+      "file": "lifestyle/05.webp",
+      "width": 2000,
+      "height": 903,
+      "source": "https://berriabikes.com/cdn/shop/files/belador-tecnologia-berria-02-01_2x_faab5446-ee37-4101-9a9b-f5823ae7c045.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/belador",
+      "file": "lifestyle/06.webp",
+      "width": 2000,
+      "height": 903,
+      "source": "https://berriabikes.com/cdn/shop/files/belador-tecnologia-berria-03-01_2x_3d599141-b3b5-4b6b-8124-000294c74e5d.jpg"
+    }
+  ]
+}

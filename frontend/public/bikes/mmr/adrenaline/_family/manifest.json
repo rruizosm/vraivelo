@@ -1,0 +1,59 @@
+{
+  "brand": "mmr",
+  "family": "adrenaline",
+  "sources": [
+    "https://mmrbikes.com/collections/adrenaline"
+  ],
+  "collected": "2026-11-15",
+  "lifestyle": [
+    {
+      "page": "https://mmrbikes.com/collections/adrenaline",
+      "file": "lifestyle/01.webp",
+      "width": 2000,
+      "height": 521,
+      "source": "https://mmrbikes.com/cdn/shop/files/coleccion-adrenaline-27-desktop.jpg"
+    },
+    {
+      "page": "https://mmrbikes.com/collections/adrenaline",
+      "file": "lifestyle/02.webp",
+      "width": 1001,
+      "height": 701,
+      "source": "https://mmrbikes.com/cdn/shop/files/coleccion-adrenaline-27-mobile.jpg"
+    },
+    {
+      "page": "https://mmrbikes.com/collections/adrenaline",
+      "file": "lifestyle/03.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://mmrbikes.com/cdn/shop/files/adrenaline-00-plus-campagnolo-studio_1_6effe766-bd86-4e05-9c09-94e05c2df385.jpg"
+    },
+    {
+      "page": "https://mmrbikes.com/collections/adrenaline",
+      "file": "lifestyle/04.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://mmrbikes.com/cdn/shop/files/adrenaline-00-black-27-studio_11.jpg"
+    },
+    {
+      "page": "https://mmrbikes.com/collections/adrenaline",
+      "file": "lifestyle/05.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://mmrbikes.com/cdn/shop/files/adrenaline-10-black-27-studio_1.jpg"
+    },
+    {
+      "page": "https://mmrbikes.com/collections/adrenaline",
+      "file": "lifestyle/06.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://mmrbikes.com/cdn/shop/files/adrenaline-30-olive-27-studio_1.jpg"
+    },
+    {
+      "page": "https://mmrbikes.com/collections/adrenaline",
+      "file": "lifestyle/07.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://mmrbikes.com/cdn/shop/files/adrenaline-70-olive-27-studio_1.jpg"
+    }
+  ]
+}

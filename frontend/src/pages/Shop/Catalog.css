@@ -1,0 +1,942 @@
+/* Catalogue pages: bikes (/shop/, /shop/<category>/) and /other-products/, plus the card used
+   wherever a bike or product is listed. Same language as the Home and Workshop: uppercase
+   eyebrows, heavy titles, ink + amber, beige (#F4F2EE) surfaces. */
+
+/* card tokens: also set on .sh-grid so the cards look and move the same outside the
+   catalogue (e.g. "Otras bicicletas" on the product page) */
+.sh-page,
+.sh-grid {
+    --sh-beige: #F4F2EE;
+    --sh-text: #2D3036;
+    --sh-muted: #5B606A;
+    --sh-amber-ink: #A35F00;
+    --sh-line: rgba(11, 13, 16, 0.12);
+    --sh-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sh-page {
+    background: #fff;
+    color: var(--ink);
+    padding-bottom: clamp(4rem, 10vh, 6rem);
+}
+
+.sh-page .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ───────── Header ───────── */
+.sh-header {
+    padding: calc(var(--nav-h) + clamp(1rem, 2.5vh, 1.75rem)) clamp(1.25rem, 5vw, 4.5rem) 0;
+}
+
+.sh-breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0 0 clamp(1.5rem, 4vh, 2.5rem);
+    padding: 0;
+    list-style: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.sh-breadcrumb li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--sh-muted);
+}
+
+.sh-breadcrumb a {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.sh-breadcrumb a:hover,
+.sh-breadcrumb a:focus-visible {
+    text-decoration: underline;
+    text-decoration-color: var(--amber);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+.sh-breadcrumb svg { color: var(--sh-muted); }
+
+.sh-hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: clamp(22rem, 58vh, 34rem);
+    overflow: hidden;
+    background: var(--ink);
+    color: #fff;
+    isolation: isolate;
+}
+
+.sh-hero-img {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: sh-hero-in 1.6s var(--sh-ease) both;
+}
+
+@keyframes sh-hero-in {
+    from { transform: scale(1.08); }
+    to { transform: scale(1); }
+}
+
+/* bottom-up for the text block, plus a left-side wash on wide screens */
+.sh-hero-shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(to top, rgba(11, 13, 16, 0.92) 0%, rgba(11, 13, 16, 0.6) 40%, rgba(11, 13, 16, 0.15) 75%, rgba(11, 13, 16, 0.25) 100%),
+        linear-gradient(to right, rgba(11, 13, 16, 0.55) 0%, rgba(11, 13, 16, 0) 65%);
+}
+
+.sh-intro {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    padding: clamp(1.75rem, 4vw, 3.25rem);
+}
+
+@media (min-width: 1024px) {
+    .sh-intro {
+        grid-template-columns: 1fr 26rem;
+        align-items: end;
+        column-gap: 3rem;
+    }
+
+    .sh-eyebrow { grid-column: 1 / -1; }
+}
+
+.sh-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--amber);
+}
+
+.sh-eyebrow-bar {
+    width: 2.25rem;
+    height: 3px;
+    background: var(--amber);
+}
+
+.sh-title {
+    max-width: 16ch;
+    margin: 0;
+    font-size: clamp(2.25rem, 5.5vw, 5.5rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: #fff;
+    text-shadow: 0 2px 24px rgba(11, 13, 16, 0.35);
+}
+
+.sh-lead {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sh-hero-img { animation: none; }
+}
+
+/* category navigation: big pills, the current one in ink */
+.sh-cats {
+    position: relative; /* offsetParent for centring the active pill */
+    display: flex;
+    gap: 0.5rem;
+    margin-top: clamp(2rem, 5vh, 3rem);
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--sh-line);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.sh-cats::-webkit-scrollbar { display: none; }
+
+.sh-cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    padding: 0.7rem 1.2rem;
+    border: 1.5px solid var(--sh-line);
+    border-radius: 999px;
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.sh-cat small {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--sh-amber-ink);
+}
+
+.sh-cat:hover,
+.sh-cat:focus-visible { border-color: var(--ink); }
+
+.sh-cat.is-active {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: #fff;
+}
+
+.sh-cat.is-active small { color: var(--amber); }
+
+.sh-cat:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+}
+
+/* ───────── Layout ───────── */
+.sh-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem clamp(1.25rem, 5vw, 4.5rem) 0;
+}
+
+@media (min-width: 1024px) {
+    .sh-layout {
+        grid-template-columns: 16.5rem minmax(0, 1fr);
+        gap: clamp(2rem, 4vw, 3.5rem);
+        align-items: start;
+        padding-top: 2rem;
+    }
+}
+
+/* ───────── Filters ───────── */
+.sh-filters {
+    display: none;
+    flex-direction: column;
+    gap: 1.75rem;
+    padding: 1.5rem;
+    background: var(--sh-beige);
+}
+
+.sh-filters.is-open { display: flex; }
+
+@media (min-width: 1024px) {
+    .sh-filters {
+        display: flex;
+        position: sticky;
+        top: calc(var(--nav-h) + 1.5rem);
+        max-height: calc(100vh - var(--nav-h) - 3rem);
+        overflow-y: auto;
+    }
+
+    .sh-filters-done { display: none; }
+}
+
+.sh-filters-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--ink);
+}
+
+.sh-filters-title {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+
+.sh-clear {
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--amber);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    cursor: pointer;
+}
+
+.sh-clear--big { font-size: 0.85rem; }
+
+.sh-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+}
+
+.sh-group-title {
+    margin-bottom: 0.6rem;
+    padding: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sh-amber-ink);
+}
+
+/* custom checkbox row */
+.sh-option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 0.5rem;
+    margin: 0 -0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.sh-option:hover { background: rgba(11, 13, 16, 0.05); }
+
+.sh-option input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.sh-check {
+    position: relative;
+    flex-shrink: 0;
+    width: 1.15rem;
+    height: 1.15rem;
+    border: 2px solid var(--ink);
+    background: #fff;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.sh-check::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    width: 0.3rem;
+    height: 0.6rem;
+    border: solid var(--ink);
+    border-width: 0 2.5px 2.5px 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    transition: transform 0.2s var(--sh-ease);
+}
+
+.sh-option.is-checked .sh-check {
+    background: var(--amber);
+    border-color: var(--amber);
+}
+
+.sh-option.is-checked .sh-check::after { transform: translate(-50%, -50%) rotate(45deg) scale(1); }
+
+.sh-option input:focus-visible + .sh-check {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+}
+
+.sh-option-label { flex: 1; }
+
+.sh-option-count {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--sh-muted);
+}
+
+.sh-option.is-empty { opacity: 0.45; }
+
+/* price range: two native ranges over one track */
+.sh-range {
+    position: relative;
+    height: 1.75rem;
+}
+
+.sh-range-track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    transform: translateY(-50%);
+    background: rgba(11, 13, 16, 0.15);
+}
+
+.sh-range-fill {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: var(--ink);
+}
+
+.sh-range input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    margin: 0;
+    background: none;
+    pointer-events: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.sh-range input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    background: var(--amber);
+    cursor: grab;
+    pointer-events: auto;
+    transition: transform 0.2s ease;
+}
+
+.sh-range input::-moz-range-thumb {
+    width: 1rem;
+    height: 1rem;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    background: var(--amber);
+    cursor: grab;
+    pointer-events: auto;
+}
+
+.sh-range input::-webkit-slider-thumb:hover { transform: scale(1.15); }
+
+.sh-range input:focus-visible::-webkit-slider-thumb {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+}
+
+.sh-range-labels {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0 0;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+.sh-filters-done {
+    padding: 0.9rem 1.25rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--ink);
+    color: #fff;
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* ───────── Toolbar ───────── */
+.sh-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.sh-search {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 1.25rem;
+    border: 1.5px solid var(--sh-line);
+    border-radius: 999px;
+    color: var(--sh-muted);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sh-search:focus-within {
+    border-color: var(--ink);
+    box-shadow: 0 0 0 3px rgba(255, 164, 27, 0.35);
+}
+
+.sh-search input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.95rem 0;
+    border: 0;
+    outline: none;
+    background: none;
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--ink);
+}
+
+.sh-toolbar-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1rem;
+}
+
+.sh-count {
+    flex: 1;
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+
+.sh-filters-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.sh-filters-toggle[aria-expanded='true'] {
+    background: var(--ink);
+    color: #fff;
+}
+
+.sh-filters-badge {
+    display: grid;
+    place-items: center;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    padding: 0 0.3rem;
+    border-radius: 999px;
+    background: var(--amber);
+    color: var(--ink);
+    font-size: 0.7rem;
+}
+
+@media (min-width: 1024px) {
+    .sh-filters-toggle { display: none; }
+}
+
+.sh-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sh-sort-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sh-muted);
+}
+
+.sh-sort select {
+    padding: 0.6rem 2.25rem 0.6rem 1rem;
+    border: 1.5px solid var(--sh-line);
+    border-radius: 999px;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230B0D10' stroke-width='3'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 0.9rem center;
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    appearance: none;
+    cursor: pointer;
+}
+
+.sh-sort select:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+    .sh-sort-label { display: none; }
+}
+
+.sh-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sh-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.6rem 0.45rem 0.9rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--sh-beige);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.sh-chip:hover,
+.sh-chip:focus-visible { background: var(--amber); }
+
+/* ───────── Grid & cards ───────── */
+.sh-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+    gap: 1rem;
+}
+
+.sh-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--sh-line);
+    transition: transform 0.5s var(--sh-ease), box-shadow 0.5s var(--sh-ease), border-color 0.3s ease;
+}
+
+.sh-card:hover,
+.sh-card:focus-within {
+    transform: translateY(-6px);
+    border-color: var(--ink);
+    box-shadow: 0 24px 48px -28px rgba(11, 13, 16, 0.55);
+}
+
+.sh-card-media {
+    position: relative;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 3;
+    padding: 1.25rem;
+    overflow: hidden;
+    background: var(--sh-beige);
+}
+
+/* catalogue shots have white backgrounds: multiply blends them into the beige */
+.sh-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    transition: transform 0.7s var(--sh-ease);
+}
+
+.sh-card:hover .sh-card-media img,
+.sh-card:focus-within .sh-card-media img {
+    transform: scale(1.07) translateY(-2%);
+}
+
+.sh-card-placeholder {
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(11, 13, 16, 0.15);
+}
+
+.sh-card-badges {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    display: flex;
+    gap: 0.4rem;
+}
+
+.sh-badge {
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.sh-badge--new { background: var(--amber); color: var(--ink); }
+.sh-badge--sold { background: var(--ink); color: #fff; }
+
+/* "Ver bicicleta" bar slides up from the bottom of the photo on hover */
+.sh-card-reveal {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.75rem;
+    background: var(--ink);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transform: translateY(101%);
+    transition: transform 0.45s var(--sh-ease);
+}
+
+.sh-card-reveal svg { color: var(--amber); }
+
+.sh-card:hover .sh-card-reveal,
+.sh-card:focus-within .sh-card-reveal { transform: translateY(0); }
+
+.sh-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.15rem 1.25rem 1.25rem;
+}
+
+.sh-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.6rem;
+    margin: 0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sh-muted);
+}
+
+.sh-card-brand {
+    color: var(--sh-amber-ink);
+    font-weight: 800;
+}
+
+.sh-card-title {
+    margin: 0;
+    font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+}
+
+.sh-card-link {
+    color: inherit;
+    text-decoration: none;
+    background-image: linear-gradient(var(--amber), var(--amber));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0 3px;
+    transition: background-size 0.45s var(--sh-ease);
+}
+
+/* stretched link: the whole card is clickable */
+.sh-card-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.sh-card:hover .sh-card-link,
+.sh-card-link:focus-visible { background-size: 100% 3px; }
+
+.sh-card-link:focus-visible { outline: none; }
+
+.sh-card:has(.sh-card-link:focus-visible) {
+    outline: 3px solid var(--amber);
+    outline-offset: 2px;
+}
+
+.sh-card-foot {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--sh-line);
+}
+
+.sh-card-price {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+}
+
+.sh-swatches {
+    position: relative;
+    z-index: 2; /* above the stretched link */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.sh-swatch {
+    display: block;
+    width: 1.1rem;
+    height: 1.1rem;
+    padding: 0;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(11, 13, 16, 0.25);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sh-swatch:hover,
+.sh-swatch:focus-visible,
+.sh-swatch.is-active {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 2px var(--ink);
+    outline: none;
+}
+
+.sh-card-arrow {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-left: auto;
+    border-radius: 50%;
+    background: var(--sh-beige);
+    color: var(--ink);
+    transition: background 0.35s ease, transform 0.45s var(--sh-ease);
+}
+
+.sh-swatches + .sh-card-arrow { margin-left: 0; }
+
+.sh-card:hover .sh-card-arrow,
+.sh-card:focus-within .sh-card-arrow {
+    background: var(--amber);
+    transform: rotate(45deg);
+}
+
+/* loading + empty */
+.sh-skeleton {
+    aspect-ratio: 4 / 4.4;
+    background: linear-gradient(90deg, var(--sh-beige) 0%, #ECE9E3 50%, var(--sh-beige) 100%);
+    background-size: 200% 100%;
+    animation: sh-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes sh-shimmer {
+    from { background-position: 100% 0; }
+    to { background-position: -100% 0; }
+}
+
+.sh-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: clamp(2rem, 6vh, 3.5rem);
+    background: var(--sh-beige);
+}
+
+.sh-empty-title {
+    margin: 0;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sh-card,
+    .sh-card-media img,
+    .sh-card-reveal,
+    .sh-card-link,
+    .sh-card-arrow { transition: none; }
+    .sh-card:hover,
+    .sh-card:focus-within { transform: none; }
+    .sh-card:hover .sh-card-media img { transform: none; }
+    .sh-skeleton { animation: none; }
+}
+
+/* ───────── "Otros productos": no filter sidebar, results use the full width ───────── */
+.sh-results--wide {
+    padding: 2rem clamp(1.25rem, 5vw, 4.5rem) 0;
+}
+
+.sh-results--wide .sh-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+}
+
+/* category pills can also be buttons */
+button.sh-cat {
+    background: #fff;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+button.sh-cat.is-active { background: var(--ink); }
+
+.sh-search-clear {
+    display: grid;
+    place-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--sh-beige);
+    color: var(--ink);
+    cursor: pointer;
+}
+
+.sh-search-clear:hover { background: var(--amber); }
+
+.sh-card-price-old {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--sh-muted);
+}

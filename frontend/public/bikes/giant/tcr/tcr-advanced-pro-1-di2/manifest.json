@@ -1,0 +1,171 @@
+{
+  "id": 316,
+  "name": "Giant TCR Advanced PRO 1 Di2",
+  "brand": "giant",
+  "family": "tcr",
+  "model": "tcr-advanced-pro-1-di2",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1-di2-2025",
+      "title": "TCR Advanced Pro 1 Di2 (2025) | Race Bici | Giant Bicycles España"
+    },
+    {
+      "url": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1--di2-",
+      "title": "TCR Advanced Pro 1 (Di2) (2026) | Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "carbon-chrome",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1-di2-2025",
+      "file": "studio/carbon-chrome-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ebjdaisjonb0dc5kqpuu/MY25TCRAdvancedPro1-Di2_ColorACarbon_Chrome.jpg"
+    },
+    {
+      "color": "carbon-chrome",
+      "view": "three-quarter-front",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1-di2-2025",
+      "file": "studio/carbon-chrome-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/pbtrkcnfctfa5fllxxvn/MY25TCRAdvancedPro1-Di2_ColorACarbon_Chrome_Front.jpg"
+    },
+    {
+      "color": "carbon-chrome",
+      "view": "detail-9",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1-di2-2025",
+      "file": "studio/carbon-chrome-detail-9.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/y6vmdrkellyjloofhbyj/MY25TCRAdvancedPro1-Di2_ColorACarbon_Chrome-D9.jpg"
+    },
+    {
+      "color": "carbon-chrome",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1-di2-2025",
+      "file": "studio/carbon-chrome-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/jduepkjrgvgedshfx9rw/MY25TCRAdvancedPro1-Di2_ColorACarbon_Chrome-D2.jpg"
+    },
+    {
+      "color": "carbon-chrome",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1-di2-2025",
+      "file": "studio/carbon-chrome-detail-5.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/vaoils8wquippkigknen/MY25TCRAdvancedPro1-Di2_ColorACarbon_Chrome-D5.jpg"
+    },
+    {
+      "color": "carbon-chrome",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1-di2-2025",
+      "file": "studio/carbon-chrome-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ennymo3g81abrl1lzoqn/MY25TCRAdvancedPro1-Di2_ColorACarbon_Chrome-D1.jpg"
+    },
+    {
+      "color": "tech-silver",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1--di2-",
+      "file": "studio/tech-silver-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ejchxpm4rov8pinuvmgj/MY26TCRAdvancedPro1-Di2_ColorATechSilver1.jpg"
+    },
+    {
+      "color": "tech-silver",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1--di2-",
+      "file": "studio/tech-silver-detail-5.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/x34sqj44rabsterqme4w/MY26TCRAdvancedPro1-Di2_ColorATechSilver-D5.jpg"
+    },
+    {
+      "color": "tech-silver",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1--di2-",
+      "file": "studio/tech-silver-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/mwzt9hngteq49o5xq1wb/MY26TCRAdvancedPro1-Di2_ColorATechSilver-D3.jpg"
+    },
+    {
+      "color": "tech-silver",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1--di2-",
+      "file": "studio/tech-silver-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/iefevgqytoa2tk075j0y/MY26TCRAdvancedPro1-Di2_ColorATechSilver-D6.jpg"
+    },
+    {
+      "color": "tech-silver",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1--di2-",
+      "file": "studio/tech-silver-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/gykktu5oavtrja6r1q8k/MY26TCRAdvancedPro1-Di2_ColorATechSilver-D2.jpg"
+    },
+    {
+      "color": "tech-silver",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1--di2-",
+      "file": "studio/tech-silver-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/jwf1sq9eocjf1aqybvog/MY26TCRAdvancedPro1-Di2_ColorATechSilver-D4.jpg"
+    }
+  ],
+  "lifestyle": [
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1-di2-2025",
+      "file": "lifestyle/01.webp",
+      "width": 1920,
+      "height": 1281,
+      "source": "https://images2.giant-bicycles.com/p8ew9epcxdoh9sfiso59/MY25_TCR_Advanced_Pro_1_Di2_WebRes_46.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1-di2-2025",
+      "file": "lifestyle/02.webp",
+      "width": 2000,
+      "height": 1334,
+      "source": "https://images2.giant-bicycles.com/tsysky7i7z0myuwzcfav/MY25_TCR_Advanced_Pro_1_Di2_WebRes_32.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1-di2-2025",
+      "file": "lifestyle/03.webp",
+      "width": 2000,
+      "height": 1334,
+      "source": "https://images2.giant-bicycles.com/loplp3uzzfdmboa4e8x7/MY25_TCR_Advanced_Pro_1_Di2_WebRes_42.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-1-di2-2025",
+      "file": "lifestyle/04.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/p6joljj4ojewsogy1j6n/MY25_TCR_Advanced_Pro_1_Di2_WebRes_08.jpg"
+    }
+  ],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "carbon-chrome.jpg",
+  "catalog": [
+    {
+      "color": "Carbon / Chrome",
+      "hex": "#0B0C0F",
+      "file": "carbon-chrome.jpg"
+    }
+  ],
+  "cutouts": [
+    "cutout-tech-silver.png"
+  ]
+}

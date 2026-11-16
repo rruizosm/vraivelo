@@ -1,0 +1,37 @@
+{
+  "id": 320,
+  "name": "Giant TCR Advanced SL 0 Dura-Ace ",
+  "brand": "giant",
+  "family": "tcr",
+  "model": "tcr-advanced-sl-0-dura-ace",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/tcr-advanced-sl-0--dura-ace-",
+      "title": "TCR Advanced SL 0 (Dura-Ace) (2026) | Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "mariana-blue",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-sl-0--dura-ace-",
+      "file": "studio/mariana-blue-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/cjxkfwkc9fkl3obuoyi4/MY26TCRAdvancedSL0-DA_ColorAMarianaBlue.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "mariana-blue-iris.jpg",
+  "catalog": [
+    {
+      "color": "Mariana Blue/Iris",
+      "hex": "#041729",
+      "file": "mariana-blue-iris.jpg"
+    }
+  ],
+  "cutouts": []
+}

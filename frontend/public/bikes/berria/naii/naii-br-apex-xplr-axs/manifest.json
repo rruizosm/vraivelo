@@ -1,0 +1,32 @@
+{
+  "id": 120,
+  "name": "Berria Naii BR Apex XPLR AXS",
+  "brand": "berria",
+  "family": "naii",
+  "model": "naii-br-apex-xplr-axs",
+  "match": "family",
+  "sources": [],
+  "collected": "2026-11-15",
+  "studio": [],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "blue.webp",
+  "catalog": [
+    {
+      "color": "BLACK-Collection",
+      "hex": "#000000",
+      "file": "black.webp"
+    },
+    {
+      "color": "BLUE OCEAN-IrisSelect",
+      "hex": "#0039b0",
+      "file": "blue.webp"
+    },
+    {
+      "color": "DESERT STORM-ALMAGRA-HYAWATTA-IrisSelect",
+      "hex": "#925106",
+      "file": "orange.webp"
+    }
+  ],
+  "cutouts": []
+}

@@ -1,0 +1,119 @@
+{
+  "id": 701,
+  "name": "Liv STP 24 FS",
+  "brand": "liv",
+  "family": "stp",
+  "model": "stp-24-fs",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.liv-cycling.com/es/stp-24-liv",
+      "title": "STP 24 Liv (2026) | Mujeres Dirt Jumper Bici | Liv Cycling España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "alpine-green",
+      "view": "side",
+      "page": "https://www.liv-cycling.com/es/stp-24-liv",
+      "file": "studio/alpine-green-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/fmaulrlun50p2oa0gixu/MY26STP24-LIV_ColorAAlpineGreen.jpg"
+    },
+    {
+      "color": "alpine-green",
+      "view": "three-quarter-rear",
+      "page": "https://www.liv-cycling.com/es/stp-24-liv",
+      "file": "studio/alpine-green-three-quarter-rear.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/b0gdi7deul6cjrzbcit9/MY26STP24-LIV_ColorAAlpineGreen-Rear.jpg"
+    },
+    {
+      "color": "alpine-green",
+      "view": "detail-4",
+      "page": "https://www.liv-cycling.com/es/stp-24-liv",
+      "file": "studio/alpine-green-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/oihjdkngpisroyz0jouv/MY26STP24-LIV_ColorAAlpineGreen-D4.jpg"
+    },
+    {
+      "color": "alpine-green",
+      "view": "detail-5",
+      "page": "https://www.liv-cycling.com/es/stp-24-liv",
+      "file": "studio/alpine-green-detail-5.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/hexxsfy3hspf5iwjltjv/MY26STP24-LIV_ColorAAlpineGreen-D5.jpg"
+    },
+    {
+      "color": "alpine-green",
+      "view": "detail-3",
+      "page": "https://www.liv-cycling.com/es/stp-24-liv",
+      "file": "studio/alpine-green-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/jqbxnqrx7dqomtj3baps/MY26STP24-LIV_ColorAAlpineGreen-D3.jpg"
+    },
+    {
+      "color": "alpine-green",
+      "view": "detail-2",
+      "page": "https://www.liv-cycling.com/es/stp-24-liv",
+      "file": "studio/alpine-green-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/szzauawjrzdylt1oa5fe/MY26STP24-LIV_ColorAAlpineGreen-D2.jpg"
+    }
+  ],
+  "lifestyle": [
+    {
+      "page": "https://www.liv-cycling.com/es/stp-24-liv",
+      "file": "lifestyle/01.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/a5henbmt7swnngxtpcx1/MY26STP24-LIV_ColorAAlpineGreen_B.jpg"
+    },
+    {
+      "page": "https://www.liv-cycling.com/es/stp-24-liv",
+      "file": "lifestyle/02.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/oas6toxrz9i6hwn2nnkg/MY26STP24-LIV_ColorAAlpineGreen-D1_B.jpg"
+    },
+    {
+      "page": "https://www.liv-cycling.com/es/stp-24-liv",
+      "file": "lifestyle/03.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/lzvugsolbr5soe9tawr5/MY26STP24-LIV_ColorAAlpineGreen-D2_B.jpg"
+    },
+    {
+      "page": "https://www.liv-cycling.com/es/stp-24-liv",
+      "file": "lifestyle/04.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://images2.giant-bicycles.com/sy9g8jsjmsndaikar479/LIV_STP_24-1846.jpg"
+    },
+    {
+      "page": "https://www.liv-cycling.com/es/stp-24-liv",
+      "file": "lifestyle/05.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://images2.giant-bicycles.com/ngausqjijpcdvvrylzjp/LIV_STP_24-9493.jpg"
+    },
+    {
+      "page": "https://www.liv-cycling.com/es/stp-24-liv",
+      "file": "lifestyle/06.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/mm4i17eegrx73hk27eoj/LIV_STP_24-19351.jpg"
+    }
+  ],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "cover.png",
+  "catalog": [],
+  "cutouts": []
+}

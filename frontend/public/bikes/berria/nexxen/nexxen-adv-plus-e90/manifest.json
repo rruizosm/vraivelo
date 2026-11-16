@@ -1,0 +1,65 @@
+{
+  "id": 113,
+  "name": "Berria Belador NEXXEN ADV+ E90",
+  "brand": "berria",
+  "family": "nexxen",
+  "model": "nexxen-adv-plus-e90",
+  "match": "closest",
+  "sources": [
+    {
+      "url": "https://berriabikes.com/products/nexxen-pro-e90-2027",
+      "title": "NEXXEN PRO E90"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "silver-frost",
+      "view": "side",
+      "page": "https://berriabikes.com/products/nexxen-pro-e90-2027",
+      "file": "studio/silver-frost-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Ebikes-Mountain-Nexxen-Pro-E90-Berriabikes-001.png"
+    },
+    {
+      "color": "dark-grey",
+      "view": "side",
+      "page": "https://berriabikes.com/products/nexxen-pro-e90-2027",
+      "file": "studio/dark-grey-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Ebikes-Mountain-Nexxen-Pro-E90-Berriabikes-002.png"
+    },
+    {
+      "color": "black",
+      "view": "side",
+      "page": "https://berriabikes.com/products/nexxen-pro-e90-2027",
+      "file": "studio/black-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Ebikes-Mountain-Nexxen-Pro-E90-Berriabikes-003.png"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "purple.webp",
+  "catalog": [
+    {
+      "color": "SILVER FROST-IrisSelect",
+      "hex": "#d9e1e2",
+      "file": "silver.webp"
+    },
+    {
+      "color": "INDIGO-IrisSelect",
+      "hex": "#702f8a",
+      "file": "purple.webp"
+    },
+    {
+      "color": "DARK GREY-Collection",
+      "hex": "#53565a",
+      "file": "black.webp"
+    }
+  ],
+  "cutouts": []
+}

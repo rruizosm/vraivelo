@@ -1,0 +1,66 @@
+{
+  "brand": "mmr",
+  "family": "simun",
+  "sources": [
+    "https://mmrbikes.com/collections/simun"
+  ],
+  "collected": "2026-11-15",
+  "lifestyle": [
+    {
+      "page": "https://mmrbikes.com/collections/simun",
+      "file": "lifestyle/01.webp",
+      "width": 2000,
+      "height": 521,
+      "source": "https://mmrbikes.com/cdn/shop/files/Simun2x-100.jpg"
+    },
+    {
+      "page": "https://mmrbikes.com/collections/simun",
+      "file": "lifestyle/02.webp",
+      "width": 1001,
+      "height": 1001,
+      "source": "https://mmrbikes.com/cdn/shop/files/Simun_mobile_2x-100.jpg"
+    },
+    {
+      "page": "https://mmrbikes.com/collections/simun",
+      "file": "lifestyle/03.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://mmrbikes.com/cdn/shop/files/SIMUN_00_PLUS_ok_P.jpg"
+    },
+    {
+      "page": "https://mmrbikes.com/collections/simun",
+      "file": "lifestyle/04.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://mmrbikes.com/cdn/shop/files/SIMUN_00_GRADIENT_GREEN_082090_P_3dc78cfc-b80b-4b12-ab6c-8cd1294239cd.jpg"
+    },
+    {
+      "page": "https://mmrbikes.com/collections/simun",
+      "file": "lifestyle/05.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://mmrbikes.com/cdn/shop/files/SIMUN_10_ELECTRIC_PURPLE_082524_P_3687d1fa-acee-4f57-b3ea-1cc943ca1df2.jpg"
+    },
+    {
+      "page": "https://mmrbikes.com/collections/simun",
+      "file": "lifestyle/06.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://mmrbikes.com/cdn/shop/files/SIMUN_30_SOFT_BEIGE_082532_P-2_abd60b31-fc54-4f0e-8f8f-3a7bdedd3c1b.jpg"
+    },
+    {
+      "page": "https://mmrbikes.com/collections/simun",
+      "file": "lifestyle/07.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://mmrbikes.com/cdn/shop/files/SIMUN_50_DARK_GREY_082095_P-_ajustada_7b75cd62-e8e3-4651-8cae-6d9a1affd3d5.jpg"
+    },
+    {
+      "page": "https://mmrbikes.com/collections/simun",
+      "file": "lifestyle/08.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://mmrbikes.com/cdn/shop/files/SIMUN_70_SOFT_BEIGE_082106_P_f4ca85c8-8612-4621-878a-cb45e918b7c1.jpg"
+    }
+  ]
+}

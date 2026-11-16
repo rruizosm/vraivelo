@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap');
+/* Outfit (the site typeface) is loaded from index.html */
 
 :root {
   /* Colors - Premium Light Palette */
@@ -56,6 +56,11 @@
   /* Spacing & Layout */
   --container-width: 1280px;
   --header-height: 80px;
+  --nav-h: 72px;
+  /* warm accent: complements the teal bikes in the photos */
+  --amber: #FFA41B;
+  --amber-hover: #FFB547;
+  --ink: #0B0D10;
 
   /* Radii */
   --radius-sm: 8px;

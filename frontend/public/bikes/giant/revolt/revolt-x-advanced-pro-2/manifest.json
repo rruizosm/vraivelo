@@ -1,0 +1,125 @@
+{
+  "id": 337,
+  "name": "Giant Revolt X Advanced PRO 2",
+  "brand": "giant",
+  "family": "revolt",
+  "model": "revolt-x-advanced-pro-2",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/revolt-x-advanced-pro-2-2024",
+      "title": "Revolt X Advanced Pro 2 (2024) | Gravel Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "black-sea-sparkle",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/revolt-x-advanced-pro-2-2024",
+      "file": "studio/black-sea-sparkle-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/peeapkthjc1tuasop2io/MY24RevoltXAdvancedPro2_ColorABlack_SeaSparkle.jpg"
+    },
+    {
+      "color": "black-sea-sparkle",
+      "view": "three-quarter-front",
+      "page": "https://www.giant-bicycles.com/es/revolt-x-advanced-pro-2-2024",
+      "file": "studio/black-sea-sparkle-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/imqvyu8vqoct8s8wbfok/MY24RevoltXAdvancedPro2_ColorABlack_SeaSparkle_Front.jpg"
+    },
+    {
+      "color": "black-sea-sparkle",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/revolt-x-advanced-pro-2-2024",
+      "file": "studio/black-sea-sparkle-detail-5.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/uqqia3iucvm65fwjg94r/MY24RevoltXAdvancedPro2_ColorABlack_SeaSparkle_D-5.jpg"
+    },
+    {
+      "color": "black-sea-sparkle",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/revolt-x-advanced-pro-2-2024",
+      "file": "studio/black-sea-sparkle-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/hyzqaepuqnpcijxowncd/MY24RevoltXAdvancedPro2_ColorABlack_SeaSparkle-D4.jpg"
+    },
+    {
+      "color": "black-sea-sparkle",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/revolt-x-advanced-pro-2-2024",
+      "file": "studio/black-sea-sparkle-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/jbif3smvwvbspyzy3jfu/MY24RevoltXAdvancedPro2_ColorABlack_SeaSparkle_D-6.jpg"
+    },
+    {
+      "color": "black-sea-sparkle",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/revolt-x-advanced-pro-2-2024",
+      "file": "studio/black-sea-sparkle-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/rdbgiruaonhigtxruvrb/MY24RevoltXAdvancedPro2_ColorABlack_SeaSparkle_D-2.jpg"
+    }
+  ],
+  "lifestyle": [
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt-x-advanced-pro-2-2024",
+      "file": "lifestyle/01.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/xhjyjdxmmsxuzjcvsxvi/MY24-Revolt-X-Advanced-Pro-2_Color-A-Black_Sea-Sparkle-B.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt-x-advanced-pro-2-2024",
+      "file": "lifestyle/02.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/mlyycnyo2gj9kmrpt8i9/MY24-Revolt-X-Advanced-Pro-2_Color-A-Black_Sea-Sparkle_Front_B.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt-x-advanced-pro-2-2024",
+      "file": "lifestyle/03.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/myjw0y2rljtkgomf82vp/MY24RevoltXAdvancedPro2_ColorABlack_SeaSparkle_D-5_B.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt-x-advanced-pro-2-2024",
+      "file": "lifestyle/04.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/xupoqtyjsdzd8cxjagjf/MY24RevoltXAdvancedPro2_ColorABlack_SeaSparkle-D3_B.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt-x-advanced-pro-2-2024",
+      "file": "lifestyle/05.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ovdbh2otuxgt3yrsirfo/MY24RevoltXAdvancedPro2_ColorABlack_SeaSparkle_D-6_B.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt-x-advanced-pro-2-2024",
+      "file": "lifestyle/06.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/jifculgyfgrdkcsz5ycp/MY24RevoltXAdvancedPro2_ColorABlack_SeaSparkle_D-2_B.jpg"
+    }
+  ],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "black-sea-sparkle.jpg",
+  "catalog": [
+    {
+      "color": "Black/Sea Sparkle",
+      "hex": "#1E1F22",
+      "file": "black-sea-sparkle.jpg"
+    }
+  ],
+  "cutouts": []
+}

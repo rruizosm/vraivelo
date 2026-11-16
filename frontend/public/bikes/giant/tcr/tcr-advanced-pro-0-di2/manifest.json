@@ -1,0 +1,90 @@
+{
+  "id": 317,
+  "name": "Giant TCR Advanced PRO 0 Di2",
+  "brand": "giant",
+  "family": "tcr",
+  "model": "tcr-advanced-pro-0-di2",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/tcr-advanced-pro-0-di2-2025",
+      "title": "TCR Advanced Pro 0 Di2 (2025) | Race Bici | Giant Bicycles España"
+    },
+    {
+      "url": "https://www.giant-bicycles.com/es/tcr-advanced-pro-0--di2-",
+      "title": "TCR Advanced Pro 0 (Di2) (2026) | Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "mercury",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-0-di2-2025",
+      "file": "studio/mercury-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/fvrrjccgtag7cevkfpy7/MY25TCRAdvancedPro0-Di2_ColorBMercury.jpg"
+    },
+    {
+      "color": "mercury",
+      "view": "three-quarter-rear",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-0-di2-2025",
+      "file": "studio/mercury-three-quarter-rear.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/zcgqtaexceowszshidng/MY25TCRAdvancedPro0-Di2_ColorBMercury_Rear.jpg"
+    },
+    {
+      "color": "mercury",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-0-di2-2025",
+      "file": "studio/mercury-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/wzdqsrj7mg1o6n32dm9t/MY25TCRAdvancedPro0-Di2_ColorBMercury-D1.jpg"
+    },
+    {
+      "color": "carbon",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-0--di2-",
+      "file": "studio/carbon-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/qmr3inruugqewmc9yd2k/MY26TCRAdvancedPro0-Di2_ColorACarbon.jpg"
+    }
+  ],
+  "lifestyle": [
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-0-di2-2025",
+      "file": "lifestyle/01.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/dxydzgq7px16inv8xkkq/MY25-TCR-Advanced-Pro-0-Di2_Color-B-Mercury_B.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-0-di2-2025",
+      "file": "lifestyle/02.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://images2.giant-bicycles.com/ac5a6aoaqggkrbshisck/MY25-TCR-Advanced-Pro-0-Di2_Color-B-Mercury_Rear_B.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-pro-0-di2-2025",
+      "file": "lifestyle/03.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/fykqslmsjfl2hrhwrolp/MY25TCRAdvancedPro0-Di2_ColorBMercury-D1_B.jpg"
+    }
+  ],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "mercury-glare-chrome.jpg",
+  "catalog": [
+    {
+      "color": "Mercury / Glare Chrome",
+      "hex": "#98A1B2",
+      "file": "mercury-glare-chrome.jpg"
+    }
+  ],
+  "cutouts": []
+}

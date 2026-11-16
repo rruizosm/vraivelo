@@ -1,0 +1,73 @@
+{
+  "brand": "berria",
+  "family": "naii",
+  "sources": [
+    "https://berriabikes.com/pages/naii-fast-gravel-bike"
+  ],
+  "collected": "2026-11-15",
+  "lifestyle": [
+    {
+      "page": "https://berriabikes.com/pages/naii-fast-gravel-bike",
+      "file": "lifestyle/01.webp",
+      "width": 2000,
+      "height": 917,
+      "source": "https://berriabikes.com/cdn/shop/files/HERO-NAII-2027.png"
+    },
+    {
+      "page": "https://berriabikes.com/pages/naii-fast-gravel-bike",
+      "file": "lifestyle/03.webp",
+      "width": 2000,
+      "height": 818,
+      "source": "https://berriabikes.com/cdn/shop/files/naii_horizontal01.png"
+    },
+    {
+      "page": "https://berriabikes.com/pages/naii-fast-gravel-bike",
+      "file": "lifestyle/04.webp",
+      "width": 1400,
+      "height": 1400,
+      "source": "https://berriabikes.com/cdn/shop/files/berria_naii-biker.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/naii-fast-gravel-bike",
+      "file": "lifestyle/05.webp",
+      "width": 1400,
+      "height": 1400,
+      "source": "https://berriabikes.com/cdn/shop/files/berria_naii-land.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/naii-fast-gravel-bike",
+      "file": "lifestyle/06.webp",
+      "width": 2000,
+      "height": 789,
+      "source": "https://berriabikes.com/cdn/shop/files/horizontal02.png"
+    },
+    {
+      "page": "https://berriabikes.com/pages/naii-fast-gravel-bike",
+      "file": "lifestyle/07.webp",
+      "width": 1348,
+      "height": 1040,
+      "source": "https://berriabikes.com/cdn/shop/files/slider-naii-baja.png"
+    },
+    {
+      "page": "https://berriabikes.com/pages/naii-fast-gravel-bike",
+      "file": "lifestyle/08.webp",
+      "width": 2000,
+      "height": 1334,
+      "source": "https://berriabikes.com/cdn/shop/files/berria_naii-es-velocidad.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/naii-fast-gravel-bike",
+      "file": "lifestyle/09.webp",
+      "width": 2000,
+      "height": 1334,
+      "source": "https://berriabikes.com/cdn/shop/files/berria_top-tube-big-02.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/naii-fast-gravel-bike",
+      "file": "lifestyle/10.webp",
+      "width": 2000,
+      "height": 997,
+      "source": "https://berriabikes.com/cdn/shop/files/horizontal03.png"
+    }
+  ]
+}

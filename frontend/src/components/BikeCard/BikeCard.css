@@ -1,0 +1,79 @@
+/* BikeCard.css — compact bike card used on the home page and in "related bikes" */
+.vb-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--border-subtle);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.vb-card:hover,
+.vb-card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.vb-card-img {
+    aspect-ratio: 4 / 3;
+    background: var(--bg-elevated);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+}
+
+.vb-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.vb-card:hover .vb-card-img img {
+    transform: scale(1.05);
+}
+
+.vb-card-placeholder {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-subtle);
+}
+
+.vb-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem 1.125rem 1.25rem;
+    flex: 1;
+}
+
+.vb-card-brand {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.vb-card-model {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.vb-card-price {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--text-main);
+}

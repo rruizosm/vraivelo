@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ChevronRight, ChevronLeft, ZoomIn, Banknote, RefreshCcw, Loader, ShoppingBag, Mail } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, ChevronRight, ChevronLeft, ZoomIn, Banknote, RefreshCcw, ShoppingBag, Mail, Phone, ShieldCheck, Wrench } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../../supabase';
 import { useCart } from '../../context/CartContext';
@@ -9,6 +9,12 @@ import { clothes } from '../../data/clothes';
 import SEOHead from '../../components/SEOHead/SEOHead';
 import { getDiscountedPrice } from '../../lib/priceUtils';
 import { productPath, productIdFromParam } from '../../lib/productUrl';
+import { parsePrice, formatPrice } from '../../lib/price';
+import { categoryPath, categoryByKey } from '../../lib/categories';
+import { withBikeImages } from '../../lib/bikeImages';
+import { materialKey, modelName } from '../../lib/bikes';
+import { loadBikeIndex, galleryFor, lifestyleFor, groupSpecs, keySpecs, parseSpec } from '../../lib/bikeDetail';
+import BikeCard from '../Shop/BikeCard';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -24,6 +30,9 @@ const ProductDetail = () => {
     const [selectedSize, setSelectedSize] = useState(null);
     const [selectedColor, setSelectedColor] = useState(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [hoverImageIndex, setHoverImageIndex] = useState(null); // thumbnail under the cursor (preview only)
+    const [related, setRelated] = useState([]);
+    const [indexEntry, setIndexEntry] = useState(null);
 
     useEffect(() => {
         const fetchBike = async () => {
@@ -44,11 +53,12 @@ const ProductDetail = () => {
 
                 // If not found in clothes, fetch from Supabase (bikes)
                 // Left join with bike_variants
-                const { data: bikeData, error: bikeError } = await supabase
+                const { data: rawBike, error: bikeError } = await supabase
                     .from('bikes')
                     .select('*, bike_variants(*)')
                     .eq('id', id)
                     .single();
+                const bikeData = withBikeImages(rawBike);
 
                 if (!bikeError && bikeData) {
                     // Format bike_variants to match the standard variant structure used by clothes
@@ -138,7 +148,28 @@ const ProductDetail = () => {
     // Reset image index when color changes
     useEffect(() => {
         setCurrentImageIndex(0);
+        setHoverImageIndex(null);
     }, [selectedColor]);
+
+    // Other bikes of the same category, closest in price first (internal links + upsell)
+    useEffect(() => {
+        if (!bike?.isBikeData || !bike.category) { setRelated([]); return; }
+        let cancelled = false;
+        const current = parsePrice(bike.price) ?? 0;
+        supabase
+            .from('bikes')
+            .select('id,brand,model,category,price,image_url')
+            .eq('Active', true)
+            .eq('category', bike.category)
+            .neq('id', bike.id)
+            .limit(30)
+            .then(({ data }) => {
+                if (cancelled || !data) return;
+                const gap = (b) => Math.abs((parsePrice(b.price) ?? Infinity) - current);
+                setRelated([...data].sort((a, b) => gap(a) - gap(b)).slice(0, 4).map(withBikeImages));
+            });
+        return () => { cancelled = true; };
+    }, [bike]);
 
     // Old or mistyped URLs (/shop/316, wrong slug) -> replace with the canonical one
     useEffect(() => {
@@ -149,60 +180,40 @@ const ProductDetail = () => {
     }, [bike, location.pathname, location.state, navigate]);
 
 
-    // Default options if not provided in data
-    // Parse sizes: could be an array, a string like "[42,44,46]", or null
-    const parseSizes = () => {
-        if (selectedColor && selectedColor.sizes) return selectedColor.sizes;
-        if (bike?.sizes) {
-            if (Array.isArray(bike.sizes)) return bike.sizes;
-            // Handle string format like "[42,44,46]"
-            if (typeof bike.sizes === 'string' && bike.sizes.startsWith('[')) {
-                try {
-                    return JSON.parse(bike.sizes.replace(/'/g, '"'));
-                } catch { return []; }
-            }
-            return [bike.sizes];
-        }
-        if (bike?.size) {
-            if (Array.isArray(bike.size)) return bike.size;
-            if (typeof bike.size === 'string' && bike.size.startsWith('[')) {
-                try {
-                    return JSON.parse(bike.size.replace(/'/g, '"'));
-                } catch { return []; }
-            }
-            return [bike.size];
-        }
-        return [];
-    };
-    const sizes = parseSizes();
+    // Bike gallery + lifestyle photos from public/bikes/index.json
+    useEffect(() => {
+        if (!bike?.isBikeData) { setIndexEntry(null); return; }
+        let cancelled = false;
+        loadBikeIndex().then((index) => { if (!cancelled) setIndexEntry(index.get(bike.id) || null); });
+        return () => { cancelled = true; };
+    }, [bike]);
 
-    // Dynamically map text fields via i18n
+    // ── Sizes: array, "[42,44,46]" string or a single value ──────────────────
+    const toList = (value) => {
+        if (!value) return [];
+        if (Array.isArray(value)) return value;
+        if (typeof value === 'string' && value.startsWith('[')) {
+            try { return JSON.parse(value.replace(/'/g, '"')); } catch { return []; }
+        }
+        return [value];
+    };
+    const sizes = selectedColor?.sizes || (toList(bike?.sizes).length ? toList(bike?.sizes) : toList(bike?.size));
+
+    // ── Texts in the current language ────────────────────────────────────────
     const currentLang = i18n?.language?.toLowerCase().split('-')[0] || 'en';
-    const langMap = { 'es': 'spanish', 'en': 'english', 'ca': 'catalan' };
+    const langMap = { es: 'spanish', en: 'english', ca: 'catalan' };
     const fullLangName = langMap[currentLang];
-    const descLangKey = currentLang === 'ca' ? 'cat' : currentLang;
+    const shortLang = currentLang === 'ca' ? 'cat' : currentLang;
 
     const displayDescription =
-        bike?.[`description_${fullLangName}`] ||
-        bike?.[`description_${descLangKey}`] ||
-        bike?.[`description_${currentLang}`] ||
-        bike?.description;
+        bike?.[`description_${fullLangName}`] || bike?.[`description_${shortLang}`] || bike?.[`description_${currentLang}`] || bike?.description;
     const displayLongDescription =
-        bike?.[`long_description_${descLangKey}`] ||
-        bike?.[`long_description_${currentLang}`] ||
-        bike?.long_description;
+        bike?.[`long_description_${shortLang}`] || bike?.[`long_description_${currentLang}`] || bike?.long_description;
 
     let displaySpecs = bike?.specs || [];
-    const fullSpecName = langMap[currentLang];
-    const specLangKey = currentLang === 'ca' ? 'cat' : currentLang;
-
     const localizedSpecs =
-        bike?.[`specs_${fullSpecName}`] ||
-        bike?.[`Specs_${fullSpecName}`] ||
-        bike?.[`specs_${specLangKey}`] ||
-        bike?.[`Specs_${specLangKey}`] ||
-        bike?.[`specs_${currentLang}`];
-
+        bike?.[`specs_${fullLangName}`] || bike?.[`Specs_${fullLangName}`] || bike?.[`specs_${shortLang}`]
+        || bike?.[`Specs_${shortLang}`] || bike?.[`specs_${currentLang}`];
     if (localizedSpecs) {
         if (typeof localizedSpecs === 'string') {
             try { displaySpecs = JSON.parse(localizedSpecs.replace(/'/g, '"')); } catch { displaySpecs = [localizedSpecs]; }
@@ -210,72 +221,86 @@ const ProductDetail = () => {
             displaySpecs = localizedSpecs;
         }
     }
+    if (typeof displaySpecs === 'string') displaySpecs = [displaySpecs];
 
-    // Parse colors: similar logic to sizes
+    // ── Colours: variants (bikes, clothes) or plain colour names (products) ──
     const parseColors = () => {
-        if (bike?.variants) return bike.variants; // From local data (clothes)
-        const bikeColors = bike?.Colors || bike?.colors || bike?.Color || bike?.color;
-
-        if (bikeColors) {
-            if (Array.isArray(bikeColors)) return bikeColors;
-            if (typeof bikeColors === 'string') {
-                try {
-                    return JSON.parse(bikeColors.replace(/'/g, '"'));
-                } catch {
-                    if (bikeColors.includes(',')) {
-                        return bikeColors.split(',').map(c => c.trim());
-                    }
-                    return [bikeColors];
-                }
-            }
+        if (bike?.variants) return bike.variants;
+        const raw = bike?.Colors || bike?.colors || bike?.Color || bike?.color;
+        if (!raw) return [];
+        if (Array.isArray(raw)) return raw;
+        try { return JSON.parse(String(raw).replace(/'/g, '"')); } catch {
+            return String(raw).includes(',') ? String(raw).split(',').map((c) => c.trim()) : [raw];
         }
-        return [];
     };
     const colors = parseColors();
+    const selectedColorName = selectedColor?.colorName || (typeof selectedColor === 'string' ? selectedColor : null);
 
+    // ── Images for the selected colour ───────────────────────────────────────
+    const baseImages = selectedColor?.images?.length ? selectedColor.images : (bike?.image_url ? [bike.image_url] : []);
+    const currentImages = bike?.isBikeData
+        ? galleryFor(indexEntry, baseImages[0], selectedColorName, bike.variants?.length || 0)
+        : baseImages;
+    const displayImage = currentImages[Math.min(currentImageIndex, currentImages.length - 1)] || null;
+    // hovering a thumbnail previews it; leaving goes back to the selected one; clicking selects it
+    const shownIndex = hoverImageIndex !== null && hoverImageIndex < currentImages.length ? hoverImageIndex : currentImageIndex;
+    const stageImage = currentImages[Math.min(shownIndex, currentImages.length - 1)] || null;
+    const lifestyle = bike?.isBikeData ? lifestyleFor(indexEntry, 4) : [];
 
-    // Determine current images list
-    const currentImages = selectedColor && selectedColor.images && selectedColor.images.length > 0
-        ? selectedColor.images
-        : (bike?.image_url ? [bike.image_url] : []);
+    const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % currentImages.length);
+    const prevImage = () => setCurrentImageIndex((prev) => (prev - 1 + currentImages.length) % currentImages.length);
 
-    // Determine displayed image
-    const displayImage = currentImages.length > 0 ? currentImages[currentImageIndex] : null;
+    const isOtherProduct = location.state?.from === 'other-products' || (!!bike && !bike.isBikeData);
+    const backTo = isOtherProduct ? '/other-products' : '/shop';
+    const backLabel = isOtherProduct ? t('product.back_to_other_products') : t('product.back_to_shop');
 
-    const nextImage = () => {
-        setCurrentImageIndex((prev) => (prev + 1) % currentImages.length);
-    };
-
-    const prevImage = () => {
-        setCurrentImageIndex((prev) => (prev - 1 + currentImages.length) % currentImages.length);
-    };
-
+    // Opened directly (no router state): remember it's a non-bike so the navbar highlights the right section
+    useEffect(() => {
+        if (bike && !bike.isBikeData && location.state?.from !== 'other-products') {
+            navigate(location.pathname, { replace: true, state: { from: 'other-products' } });
+        }
+    }, [bike, location.pathname, location.state, navigate]);
 
     if (loading) {
         return (
-            <div className="product-detail-container flex items-center justify-center min-h-[60vh]">
-                <Loader className="animate-spin text-[var(--primary)]" size={48} />
+            <div className="pd-page pd-page--loading" aria-busy="true">
+                <div className="pd-skeleton pd-skeleton--media" />
+                <div className="pd-skeleton pd-skeleton--info" />
             </div>
         );
     }
 
     if (!bike) {
         return (
-            <div className="product-detail-container flex flex-col items-center justify-center gap-4">
-                <h2>Product not found</h2>
-                <button
-                    onClick={() => navigate(location.state?.from === 'other-products' ? '/other-products' : '/shop')}
-                    className="flex items-center gap-2 px-6 py-2 bg-[var(--primary)] text-white rounded-full hover:bg-opacity-90 transition-all"
-                >
-                    <ArrowLeft size={20} />
-                    {location.state?.from === 'other-products' ? t('product.back_to_other_products') : t('product.back_to_shop')}
-                </button>
+            <div className="pd-page pd-notfound">
+                <h1 className="pd-title">{t('product.not_found')}</h1>
+                <Link to={backTo} className="pd-back"><ArrowLeft size={16} /> {backLabel}</Link>
             </div>
         );
     }
 
+    const isPartsOrClothes = bike.category === 'Clothes' || bike.category === 'Other Products';
+    const category = categoryByKey(bike.category);
+    const matKey = materialKey(bike.Material);
+    const numericPrice = parsePrice(bike.price);
+    const displayPrice = numericPrice ? formatPrice(numericPrice) : bike.price;
+    const soldOut = bike.quantity === 0;
+    // bikes: grouped (frame, drivetrain…); clothes and parts: one plain list
+    const specGroups = bike.isBikeData
+        ? groupSpecs(displaySpecs)
+        : [{ group: 'all', items: displaySpecs.filter(Boolean).map(parseSpec) }].filter((g) => g.items.length);
+    const highlights = bike.isBikeData ? keySpecs(displaySpecs) : [];
+    const contactMessage = [
+        `${t('product.contact_message')} ${bike.model}`,
+        selectedColorName && `${t('product.color')}: ${selectedColorName}`,
+        selectedSize && `${t('product.size')}: ${selectedSize}`,
+    ].filter(Boolean).join(' · ');
+    const goContact = () => navigate('/contact', {
+        state: { subject: isPartsOrClothes ? 'parts' : 'bikes', message: contactMessage },
+    });
+
     return (
-        <div className="product-detail-container">
+        <div className="pd-page">
             <SEOHead
                 titleKey="seo.product_detail.title"
                 descriptionKey="seo.product_detail.description"
@@ -287,279 +312,339 @@ const ProductDetail = () => {
                         .replace(/\s+/g, ' ').trim().slice(0, 160) || undefined
                 }
             />
-            <div className="product-detail-content">
-                {/* Left column: image + description */}
-                <div className="product-left-column">
-                    {/* Image Section */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="product-image-section relative group"
-                    >
-                        {bike.quantity === 0 && (
-                            <span className="sold-badge">
-                                {t('product.sold')}
-                            </span>
-                        )}
 
-                        {/* Image Carousel */}
-                        <div className="relative w-full h-full flex items-center justify-center">
-                            <AnimatePresence mode='wait'>
-                                {displayImage ? (
-                                    <motion.img
-                                        key={displayImage}
-                                        src={displayImage}
-                                        alt={bike.model}
-                                        className="product-detail-image"
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                        transition={{ duration: 0.2 }}
-                                    />
-                                ) : (
-                                    <span className="product-placeholder-text">
-                                        {(bike.brand || bike.model || '?').charAt(0)}
-                                    </span>
-                                )}
-                            </AnimatePresence>
-                        </div>
+            {/* Breadcrumb */}
+            <nav className="pd-breadcrumb" aria-label={t('shop.breadcrumb_label')}>
+                <ol>
+                    <li><Link to="/">{t('shop.breadcrumb_home')}</Link></li>
+                    {bike.isBikeData ? (
+                        <>
+                            <li><ChevronRight size={14} aria-hidden="true" /><Link to="/shop/">{t('shop.breadcrumb_bikes')}</Link></li>
+                            {category && (
+                                <li><ChevronRight size={14} aria-hidden="true" /><Link to={categoryPath(bike.category)}>{t(`shop.cat.${category.slug}.name`)}</Link></li>
+                            )}
+                        </>
+                    ) : (
+                        <li><ChevronRight size={14} aria-hidden="true" /><Link to="/other-products/">{t('footer.other_products')}</Link></li>
+                    )}
+                    <li><ChevronRight size={14} aria-hidden="true" /><span aria-current="page">{modelName(bike) || bike.model}</span></li>
+                </ol>
+            </nav>
 
-                        {/* Carousel Controls */}
+            <div className="pd-main">
+                {/* ── Gallery ── */}
+                <motion.section
+                    className="pd-gallery"
+                    aria-label={t('product.gallery')}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                >
+                    <div className={`pd-stage${currentImages.length > 1 ? ' pd-stage--thumbs' : ''}`}>
+                        {soldOut && <span className="pd-badge pd-badge--sold">{t('product.sold')}</span>}
+                        {bike.is_new && !soldOut && <span className="pd-badge pd-badge--new">{t('shop.new')}</span>}
+
+                        <AnimatePresence mode="wait">
+                            {stageImage ? (
+                                <motion.img
+                                    key={stageImage}
+                                    src={stageImage}
+                                    alt={`${bike.model}${selectedColorName ? ` – ${selectedColorName}` : ''}`}
+                                    className="pd-stage-img"
+                                    initial={{ opacity: 0, scale: 0.985 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.16 }}
+                                />
+                            ) : (
+                                <span className="pd-placeholder" aria-hidden="true">{(bike.brand || bike.model || '?').charAt(0)}</span>
+                            )}
+                        </AnimatePresence>
+
                         {currentImages.length > 1 && (
                             <>
-                                <button
-                                    onClick={prevImage}
-                                    className="carousel-btn left"
-                                >
-                                    <ChevronLeft size={24} />
+                                <button type="button" className="pd-nav pd-nav--prev" onClick={prevImage} aria-label={t('product.prev_image')}>
+                                    <ChevronLeft size={22} />
                                 </button>
-                                <button
-                                    onClick={nextImage}
-                                    className="carousel-btn right"
-                                >
-                                    <ChevronRight size={24} />
+                                <button type="button" className="pd-nav pd-nav--next" onClick={nextImage} aria-label={t('product.next_image')}>
+                                    <ChevronRight size={22} />
                                 </button>
-
-                                {/* Pagination Dots */}
-                                <div className="carousel-dots">
-                                    {currentImages.map((_, idx) => (
-                                        <div
-                                            key={idx}
-                                            className={`carousel-dot ${idx === currentImageIndex ? 'active' : ''}`}
-                                        />
-                                    ))}
-                                </div>
+                                <span className="pd-counter" aria-hidden="true">
+                                    {String(shownIndex + 1).padStart(2, '0')} / {String(currentImages.length).padStart(2, '0')}
+                                </span>
                             </>
                         )}
 
-                        <button
-                            className="image-zoom-btn"
-                            onClick={() => {
-                                if (displayImage) window.open(displayImage, '_blank');
-                            }}
-                            title={t('product.info') || "View image"}
-                        >
-                            <ZoomIn size={24} />
-                        </button>
-                    </motion.div>
-
-                </div>
-
-                {/* Info Section */}
-                <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    className="product-info-section"
-                >
-                    <button onClick={() => navigate(location.state?.from === 'other-products' ? '/other-products' : '/shop')} className="back-btn">
-                        <ArrowLeft size={20} />
-                        {location.state?.from === 'other-products' ? t('product.back_to_other_products') : t('product.back_to_shop')}
-                    </button>
-
-                    <div>
-                        {bike.brand && <p className="product-brand">{bike.brand}</p>}
-                        <h1 className="product-title">{bike.model}</h1>
-                        {bike.category === 'Wheels' && <p style={{ color: '#64748b', fontSize: '0.875rem', fontWeight: 500, marginTop: '0.25rem', marginBottom: '0.5rem', letterSpacing: '0.025em' }}>Hub: DT SWISS</p>}
-                        {bike.category && <p className="product-category">{bike.category}</p>}
-                        {/* {bike.color && !bike.variants && <p className="text-sm text-gray-400 mt-1">Color: {bike.color}</p>} */}
-                        {(() => {
-                            const isBikeOrProduct = bike.category !== 'Clothes' && bike.category !== 'Other Products';
-                            const hasDiscount = isBikeOrProduct;
-                            const discountedPrice = hasDiscount ? getDiscountedPrice(bike.price) : bike.price;
-
-                            if (!hasDiscount || discountedPrice === bike.price) {
-                                return (
-                                    <>
-                                        {bike.old_price && (
-                                            <p style={{ textDecoration: 'line-through', color: '#9ca3af', fontSize: '1.1rem', marginBottom: '0.25rem', fontWeight: 500 }}>
-                                                {bike.old_price}
-                                            </p>
-                                        )}
-                                        <p className="product-price" style={bike.old_price ? { marginTop: 0 } : {}}>{bike.price}</p>
-                                        {bike.isBikeData && (
-                                            <div className="purchase-perks-banner">
-                                                <div className="perk-item">
-                                                    <Banknote size={18} className="perk-icon" />
-                                                    <span>{t('product.finance_option')}</span>
-                                                </div>
-                                                <div className="perk-item">
-                                                    <RefreshCcw size={18} className="perk-icon" />
-                                                    <span>{t('product.trade_in_option')}</span>
-                                                </div>
-                                            </div>
-                                        )}
-                                    </>
-                                );
-                            }
-                            return (
-                                <div className="flex flex-col mt-2">
-                                    {bike.old_price && (
-                                        <span style={{ textDecoration: 'line-through', color: '#9ca3af', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.25rem' }}>
-                                            {bike.old_price}
-                                        </span>
-                                    )}
-                                    <div className="flex items-center gap-3">
-                                        <span className="product-price-new">{bike.price}</span>
-                                        {/* <span className="product-price-new">{discountedPrice}</span> */}
-                                    </div>
-                                    {bike.isBikeData && (
-                                        <div className="purchase-perks-banner">
-                                            <div className="perk-item">
-                                                <Banknote size={18} className="perk-icon" />
-                                                <span>{t('product.finance_option')}</span>
-                                            </div>
-                                            <div className="perk-item">
-                                                <RefreshCcw size={18} className="perk-icon" />
-                                                <span>{t('product.trade_in_option')}</span>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            );
-                        })()}
-                    </div>
-
-
-                    {/* Options */}
-                    <div className="product-options">
-
-                        {/* Color Selection */}
-                        {(bike.variants || colors.length > 0) && (
-                            <div className="option-group">
-                                <div className="option-header">
-                                    <span className="option-label">{t('product.available_colors')}: <span style={{ color: 'var(--primary)' }}>{selectedColor?.colorName || selectedColor}</span></span>
-                                </div>
-                                <div className="color-selector flex gap-3">
-                                    {bike.variants ? (
-                                        // Clothes / items with complex variants
-                                        bike.variants.map((variant) => (
-                                            <button
-                                                key={variant.color}
-                                                className={`color-btn ${selectedColor?.color === variant.color ? 'active' : ''}`}
-                                                style={{ backgroundColor: variant.hex }}
-                                                onClick={() => setSelectedColor(variant)}
-                                                title={variant.colorName}
-                                            />
-                                        ))
-                                    ) : (
-                                        // Bikes / items with simple color strings
-                                        colors.map((color, idx) => {
-                                            if (!color) return null;
-                                            return (
-                                                <button
-                                                    key={idx}
-                                                    className={`size-btn ${selectedColor === color ? 'active' : ''}`}
-                                                    onClick={() => setSelectedColor(color)}
-                                                    style={{ textTransform: 'capitalize' }}
-                                                >
-                                                    {color}
-                                                </button>
-                                            );
-                                        })
-                                    )}
-                                </div>
-                            </div>
+                        {/* thumbnails inside the photo, along the bottom */}
+                        {currentImages.length > 1 && (
+                            <ul className="pd-thumbs" onMouseLeave={() => setHoverImageIndex(null)}>
+                                {currentImages.map((src, idx) => (
+                                    <li key={src}>
+                                        <button
+                                            type="button"
+                                            className={`pd-thumb${idx === currentImageIndex ? ' is-active' : ''}${idx === hoverImageIndex && idx !== currentImageIndex ? ' is-preview' : ''}`}
+                                            onMouseEnter={() => setHoverImageIndex(idx)}
+                                            onFocus={() => setHoverImageIndex(idx)}
+                                            onBlur={() => setHoverImageIndex(null)}
+                                            onClick={() => { setCurrentImageIndex(idx); setHoverImageIndex(null); }}
+                                            aria-label={t('product.show_image', { n: idx + 1 })}
+                                            aria-current={idx === currentImageIndex ? 'true' : undefined}
+                                        >
+                                            <img src={src} alt="" decoding="async" />
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
                         )}
 
-                        {sizes && sizes.length > 0 && (
-                            <div className="option-group">
-                                <div className="option-header">
-                                    <span className="option-label">{t('product.available_sizes')}</span>
+                        {stageImage && (
+                            <a className="pd-zoom" href={stageImage} target="_blank" rel="noopener noreferrer" aria-label={t('product.open_image')}>
+                                <ZoomIn size={18} />
+                            </a>
+                        )}
+                    </div>
+
+                </motion.section>
+
+                {/* ── Info panel ── */}
+                <motion.section
+                    className="pd-info"
+                    aria-labelledby="pd-title"
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+                >
+                    <p className="pd-eyebrow">
+                        <span className="pd-eyebrow-bar" aria-hidden="true" />
+                        {[bike.brand, category && t(`shop.cat.${category.slug}.name`), matKey && t(`shop.filter.${matKey}`)].filter(Boolean).join(' · ') || bike.category}
+                    </p>
+                    <h1 id="pd-title" className="pd-title">
+                        {bike.brand && <span className="sr-only">{bike.brand} </span>}
+                        {modelName(bike) || bike.model}
+                    </h1>
+                    {bike.category === 'Wheels' && <p className="pd-subtitle">Hub: DT SWISS</p>}
+
+                    <div className="pd-price">
+                        {bike.old_price && <span className="pd-price-old">{bike.old_price}</span>}
+                        <span className="pd-price-value">{displayPrice}</span>
+                        {soldOut && <span className="pd-price-sold">{t('product.sold')}</span>}
+                    </div>
+
+                    {highlights.length > 0 && (
+                        <dl className="pd-highlights">
+                            {highlights.map((h) => (
+                                <div key={h.key}>
+                                    <dt>{t(`product.highlight.${h.key}`)}</dt>
+                                    <dd>{h.value}</dd>
                                 </div>
-                                <div className="size-selector">
-                                    {sizes.map(size => (
+                            ))}
+                        </dl>
+                    )}
+
+                    {/* Colour + size side by side on wide screens */}
+                    {(colors.length > 0 || sizes.length > 0) && (
+                        <div className={`pd-options${colors.length > 0 && sizes.length > 0 ? ' pd-options--2' : ''}`}>
+                        {/* Colour */}
+                        {colors.length > 0 && (
+                            <div className="pd-option">
+                                <p className="pd-option-label">
+                                    {t('product.color')}
+                                    {selectedColorName && <span className="pd-option-value">{selectedColorName}</span>}
+                                </p>
+                                <div className="pd-colors" role="radiogroup" aria-label={t('product.color')}>
+                                    {bike.variants ? bike.variants.map((variant) => {
+                                        const active = selectedColor?.color === variant.color;
+                                        return (
+                                            <button
+                                                key={variant.color}
+                                                type="button"
+                                                role="radio"
+                                                aria-checked={active}
+                                                aria-label={variant.colorName}
+                                                title={variant.colorName}
+                                                className={`pd-color${active ? ' is-active' : ''}`}
+                                                onClick={() => setSelectedColor(variant)}
+                                            >
+                                                <span className="pd-color-dot" style={{ backgroundColor: variant.hex || '#ccc' }} />
+                                                {variant.images?.[0] && <img src={variant.images[0]} alt="" loading="lazy" decoding="async" />}
+                                            </button>
+                                        );
+                                    }) : colors.filter(Boolean).map((color) => (
                                         <button
-                                            key={size}
-                                            className={`size-btn ${selectedSize === size ? 'active' : ''}`}
-                                            onClick={() => setSelectedSize(prev => prev === size ? null : size)}
+                                            key={color}
+                                            type="button"
+                                            role="radio"
+                                            aria-checked={selectedColor === color}
+                                            className={`pd-pill${selectedColor === color ? ' is-active' : ''}`}
+                                            onClick={() => setSelectedColor(color)}
                                         >
-                                            {size}
+                                            {color}
                                         </button>
                                     ))}
                                 </div>
                             </div>
                         )}
 
+                        {/* Size */}
+                        {sizes.length > 0 && (
+                            <div className="pd-option">
+                                <p className="pd-option-label">
+                                    {t('product.size')}
+                                    {selectedSize && <span className="pd-option-value">{selectedSize}</span>}
+                                </p>
+                                <div className="pd-sizes" role="radiogroup" aria-label={t('product.size')}>
+                                    {sizes.map((size) => (
+                                        <button
+                                            key={size}
+                                            type="button"
+                                            role="radio"
+                                            aria-checked={selectedSize === size}
+                                            className={`pd-pill${selectedSize === size ? ' is-active' : ''}`}
+                                            onClick={() => setSelectedSize((prev) => (prev === size ? null : size))}
+                                        >
+                                            {size}
+                                        </button>
+                                    ))}
+                                </div>
+
+                            </div>
+                        )}
+                        </div>
+                    )}
+                    {bike.isBikeData && sizes.length > 0 && <p className="pd-option-help">{t('product.size_help')}</p>}
+
+                    {/* Actions */}
+                    <div className="pd-actions">
                         {isCartEnabled ? (
                             <button
+                                type="button"
+                                className="pd-cta"
+                                disabled={(sizes.length > 0 && !selectedSize) || soldOut}
                                 onClick={() => {
-                                    if (selectedSize) {
-                                        const isBikeOrProduct = bike.category !== 'Clothes' && bike.category !== 'Other Products';
-                                        addToCart({
-                                            id: bike.id,
-                                            brand: bike.brand || '',
-                                            model: bike.model,
-                                            price: isBikeOrProduct ? getDiscountedPrice(bike.price) : bike.price,
-                                            image: displayImage,
-                                            size: selectedSize,
-                                            color: selectedColor?.colorName || (typeof selectedColor === 'string' ? selectedColor : null),
-                                            type: bike.category === 'Other Products' ? 'clothes' : 'bike',
-                                            maxQuantity: bike.quantity
-                                        });
-                                    }
+                                    if (!selectedSize && sizes.length > 0) return;
+                                    addToCart({
+                                        id: bike.id,
+                                        brand: bike.brand || '',
+                                        model: bike.model,
+                                        price: isPartsOrClothes ? bike.price : getDiscountedPrice(bike.price),
+                                        image: displayImage,
+                                        size: selectedSize,
+                                        color: selectedColorName,
+                                        type: bike.category === 'Other Products' ? 'clothes' : 'bike',
+                                        maxQuantity: bike.quantity,
+                                    });
                                 }}
-                                disabled={(sizes.length > 0 && !selectedSize) || bike.quantity === 0}
-                                className={`add-to-cart-btn ${((sizes.length > 0 && !selectedSize) || bike.quantity === 0) ? 'disabled' : ''}`}
                             >
-                                <ShoppingBag size={20} />
-                                {bike.quantity === 0 ? t('product.sold') : t('product.add_to_cart') || "Add to Cart"}
+                                <span className="pd-cta-label">{soldOut ? t('product.sold') : t('product.add_to_cart')}</span>
+                                <span className="pd-cta-icon" aria-hidden="true"><ShoppingBag size={18} /></span>
                             </button>
                         ) : (
-                            <button
-                                onClick={() => navigate('/contact', { state: { subject: (bike.category === 'Clothes' || bike.category === 'Other Products') ? 'parts' : 'bikes', message: `${t('product.contact_message') || 'Hi, I\'m interested in'} ${bike.model}` } })}
-                                className="add-to-cart-btn"
-                            >
-                                <Mail size={20} />
-                                {t('product.contact_us') || 'Contact Us'}
+                            <button type="button" className="pd-cta" onClick={goContact}>
+                                <span className="pd-cta-label">{t(isPartsOrClothes ? 'product.contact_us' : 'product.ask_availability')}</span>
+                                <span className="pd-cta-icon" aria-hidden="true"><ArrowUpRight size={20} /></span>
                             </button>
                         )}
+                        <a href="tel:+34657317270" className="pd-call">
+                            <Phone size={16} aria-hidden="true" /> {t('product.call_us')} · +34 657 317 270
+                        </a>
                     </div>
-                </motion.div>
+
+                    <ul className="pd-perks">
+                        {bike.isBikeData && (
+                            <>
+                                <li><Banknote size={18} aria-hidden="true" /> {t('product.finance_option')}</li>
+                                <li><RefreshCcw size={18} aria-hidden="true" /> {t('product.trade_in_option')}</li>
+                            </>
+                        )}
+                        <li><ShieldCheck size={18} aria-hidden="true" /> {t('product.official_dealer')}</li>
+                        <li><Wrench size={18} aria-hidden="true" /> {t('product.own_workshop')}</li>
+                    </ul>
+                </motion.section>
+
+                {/* Description: under the photo on wide screens, after the info panel on phones */}
+                {(displayDescription || displayLongDescription) && (
+                    <section className="pd-about" aria-labelledby="pd-about-title">
+                        <p className="pd-section-eyebrow" id="pd-about-title">
+                            <span className="pd-eyebrow-bar" aria-hidden="true" />
+                            {t(bike.isBikeData ? 'product.about' : 'product.about_product')}
+                        </p>
+                        <div className="pd-about-text">
+                            {displayDescription && <p className="pd-about-lead">{displayDescription}</p>}
+                            {displayLongDescription && <p>{displayLongDescription}</p>}
+                        </div>
+                    </section>
+                )}
             </div>
 
-            {/* Description Section */}
-            {(displayDescription || displayLongDescription) && (
-                <div className="product-description-section" style={{ maxWidth: 'var(--container-width)', margin: '4rem auto 0', padding: '0 1.5rem' }}>
-                    <div className="product-description-below" style={{ borderTop: 'none', paddingTop: 0 }}>
-                        {displayDescription && <p className="product-description">{displayDescription}</p>}
-                        {displayLongDescription && <p className="product-description" style={{ marginTop: '0.75rem' }}>{displayLongDescription}</p>}
-                    </div>
-                </div>
-            )}
+            {/* Specifications, grouped */}
+            {specGroups.length > 0 && (
+                <section className="pd-specs" aria-labelledby="pd-specs-title">
+                    <div className="pd-specs-inner">
+                        <div className="pd-specs-head">
+                            <p className="pd-section-eyebrow pd-section-eyebrow--light">
+                                <span className="pd-eyebrow-bar" aria-hidden="true" />
+                                {t('product.specs_eyebrow')}
+                            </p>
+                            <h2 id="pd-specs-title" className="pd-specs-title">{t('product.specifications')}</h2>
+                        </div>
 
-            {/* Specs Section */}
-            {displaySpecs.length > 0 && (
-                <div className="product-specs-section">
-                    <div className="product-specs">
-                        <h3 className="specs-title">{t('product.specifications')}</h3>
-                        <div className="specs-grid">
-                            {displaySpecs.map((spec, index) => (
-                                <div key={index} className="spec-item">
-                                    <span className="spec-label">{spec}</span>
+                        <div className="pd-spec-groups">
+                            {specGroups.map(({ group, items }) => (
+                                <div key={group} className="pd-spec-group">
+                                    {group !== 'all' && <h3 className="pd-spec-group-title">{t(`product.spec_group.${group}`)}</h3>}
+                                    <dl className="pd-spec-list">
+                                        {items.map((s, i) => (
+                                            <div key={i} className={`pd-spec${s.label ? '' : ' pd-spec--plain'}`}>
+                                                {s.label && <dt>{s.label}</dt>}
+                                                <dd>{s.value}</dd>
+                                            </div>
+                                        ))}
+                                    </dl>
                                 </div>
                             ))}
                         </div>
                     </div>
+                </section>
+            )}
+
+            {/* Lifestyle strip */}
+            {lifestyle.length > 0 && (
+                <section className={`pd-ride pd-ride--${lifestyle.length}`} aria-label={t('product.on_the_road')}>
+                    {lifestyle.map((src, i) => (
+                        <figure key={src} className={`pd-ride-item pd-ride-item--${i}`}>
+                            <img src={src} alt={i === 0 ? t('product.on_the_road_alt', { name: bike.model }) : ''} loading="lazy" decoding="async" />
+                        </figure>
+                    ))}
+                </section>
+            )}
+
+            {/* Related bikes */}
+            {related.length > 0 && (
+                <section className="pd-related" aria-labelledby="pd-related-title">
+                    <div className="pd-related-head">
+                        <h2 id="pd-related-title" className="pd-related-title">{t('product.related_title')}</h2>
+                        <Link to={categoryPath(bike.category)} className="pd-related-all">
+                            {t('product.view_all_bikes')} <ArrowUpRight size={16} aria-hidden="true" />
+                        </Link>
+                    </div>
+                    <div className="sh-grid pd-related-grid">
+                        {related.map((b, i) => (
+                            <BikeCard key={b.id} bike={b} index={i} t={t} headingLevel={3} />
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            {/* Phones: price + contact always within reach */}
+            {!isCartEnabled && numericPrice && (
+                <div className="pd-sticky">
+                    <div className="pd-sticky-price">
+                        <span>{t('product.price_label')}</span>
+                        <strong>{formatPrice(numericPrice)}</strong>
+                    </div>
+                    <button type="button" onClick={goContact} className="pd-sticky-btn">
+                        <Mail size={16} aria-hidden="true" /> {t('product.contact_us')}
+                    </button>
                 </div>
             )}
         </div>

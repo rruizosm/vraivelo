@@ -1,0 +1,136 @@
+{
+  "id": 311,
+  "name": "Giant Anthem SL0",
+  "brand": "giant",
+  "family": "anthem",
+  "model": "anthem-advanced-sl-0",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/anthem-advanced-sl-0",
+      "title": "Anthem Advanced SL 0 (2026) | XC Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "raw-carbon",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-0",
+      "file": "studio/raw-carbon-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/jrdzu5eb2zuk56qmftln/MY26AnthemAdvancedSL0_ColorARawCarbon.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "three-quarter-front",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-0",
+      "file": "studio/raw-carbon-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/nxcf7zzoy2h581szvfmt/MY26AnthemAdvancedSL0_ColorARawCarbon-Front1.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-0",
+      "file": "studio/raw-carbon-detail-5.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/uk6kdkxpzlps4mioqgej/MY26AnthemAdvancedSL0_ColorARawCarbon-D5.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-0",
+      "file": "studio/raw-carbon-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/fps06jr5teuzkyymukyb/MY26AnthemAdvancedSL0_ColorARawCarbon-D3.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-17",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-0",
+      "file": "studio/raw-carbon-detail-17.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/fvrej0jfkwgrgqlxfm47/MY26AnthemAdvancedSL0_ColorARawCarbon-D17.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-10",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-0",
+      "file": "studio/raw-carbon-detail-10.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/iwl69iznseqis4pgwhbj/MY26AnthemAdvancedSL0_ColorARawCarbon-D10.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-0",
+      "file": "studio/raw-carbon-detail-1.webp",
+      "width": 2000,
+      "height": 1455,
+      "source": "https://images2.giant-bicycles.com/qovsrl0jfpsztgm2k6uz/MY26AnthemAdvancedSL0_ColorARawCarbon-D1.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-15",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-0",
+      "file": "studio/raw-carbon-detail-15.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/khf88jcfhuuoc9c4kunw/MY26AnthemAdvancedSL0_ColorARawCarbon-D15.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-13",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-0",
+      "file": "studio/raw-carbon-detail-13.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/iwmeps8bybljtnvso5de/MY26AnthemAdvancedSL0_ColorARawCarbon-D13.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-8",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-0",
+      "file": "studio/raw-carbon-detail-8.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/deujhq2bncfhkpvgzsoj/MY26AnthemAdvancedSL0_ColorARawCarbon-D8.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-0",
+      "file": "studio/raw-carbon-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/baytwskkg4yy6edadeu0/MY26AnthemAdvancedSL0_ColorARawCarbon-D6.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-7",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-0",
+      "file": "studio/raw-carbon-detail-7.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/glxfsxkuux4epbnvyhre/MY26AnthemAdvancedSL0_ColorARawCarbon-D7.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "gloss-raw-carbon-matte-raw-carbon.jpg",
+  "catalog": [
+    {
+      "color": "Gloss Raw Carbon/Matte Raw Carbon",
+      "hex": "#2C2B30",
+      "file": "gloss-raw-carbon-matte-raw-carbon.jpg"
+    }
+  ],
+  "cutouts": []
+}

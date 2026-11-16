@@ -1,0 +1,87 @@
+{
+  "brand": "berria",
+  "family": "allroad",
+  "sources": [
+    "https://berriabikes.com/pages/allroad"
+  ],
+  "collected": "2026-11-15",
+  "lifestyle": [
+    {
+      "page": "https://berriabikes.com/pages/allroad",
+      "file": "lifestyle/01.webp",
+      "width": 1920,
+      "height": 1279,
+      "source": "https://berriabikes.com/cdn/shop/files/Allroad_1_8cf107e0-bce1-4b68-a044-56a63e5a5501.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/allroad",
+      "file": "lifestyle/02.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://berriabikes.com/cdn/shop/files/Allroad_3.png"
+    },
+    {
+      "page": "https://berriabikes.com/pages/allroad",
+      "file": "lifestyle/03.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://berriabikes.com/cdn/shop/files/Allroad_2-b.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/allroad",
+      "file": "lifestyle/04.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://berriabikes.com/cdn/shop/files/Allroad_4.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/allroad",
+      "file": "lifestyle/05.webp",
+      "width": 1920,
+      "height": 1279,
+      "source": "https://berriabikes.com/cdn/shop/files/Allroad_5.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/allroad",
+      "file": "lifestyle/06.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://berriabikes.com/cdn/shop/files/Allroad_7.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/allroad",
+      "file": "lifestyle/07.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "https://berriabikes.com/cdn/shop/files/A745316.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/allroad",
+      "file": "lifestyle/08.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "https://berriabikes.com/cdn/shop/files/A746011_M.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/allroad",
+      "file": "lifestyle/09.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "https://berriabikes.com/cdn/shop/files/A745959_M.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/allroad",
+      "file": "lifestyle/10.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "https://berriabikes.com/cdn/shop/files/A745925_M.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/allroad",
+      "file": "lifestyle/11.webp",
+      "width": 1920,
+      "height": 1283,
+      "source": "https://berriabikes.com/cdn/shop/files/DSC00111_M.jpg"
+    }
+  ]
+}

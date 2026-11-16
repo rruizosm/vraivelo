@@ -1,0 +1,60 @@
+{
+  "id": 118,
+  "name": "Berria BR Red AXS PWM",
+  "brand": "berria",
+  "family": "belador",
+  "model": "belador-br-red-axs-pwm",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://berriabikes.com/products/belador-br-red-axs-pwm-2027",
+      "title": "BELADOR BR RED AXS PWM"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "naked-carbon-brushed-chrome",
+      "view": "side",
+      "page": "https://berriabikes.com/products/belador-br-red-axs-pwm-2027",
+      "file": "studio/naked-carbon-brushed-chrome-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Carretera-Belador-Br-Red-Axs-Pwm-Berriabikes-001.png"
+    },
+    {
+      "color": "naked-carbon-cuprum-rs",
+      "view": "side",
+      "page": "https://berriabikes.com/products/belador-br-red-axs-pwm-2027",
+      "file": "studio/naked-carbon-cuprum-rs-side.webp",
+      "width": 1720,
+      "height": 1199,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Carretera-Belador-Br-Red-Axs-Pwm-Berriabikes-002.png"
+    },
+    {
+      "color": "naked-carbon-hunter-green-cuprum-rs",
+      "view": "side",
+      "page": "https://berriabikes.com/products/belador-br-red-axs-pwm-2027",
+      "file": "studio/naked-carbon-hunter-green-cuprum-rs-side.webp",
+      "width": 1720,
+      "height": 1199,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Carretera-Belador-Br-Red-Axs-Pwm-Berriabikes-003.png"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "black.webp",
+  "catalog": [
+    {
+      "color": "BLACK-Collection",
+      "hex": "#000000",
+      "file": "black.webp"
+    },
+    {
+      "color": "RED FIRE-IrisSelect",
+      "hex": "#ba0c2f",
+      "file": "red.webp"
+    }
+  ],
+  "cutouts": []
+}

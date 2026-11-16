@@ -1,8 +1,26 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, ArrowDown, Check, Star } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import SEOHead from '../../components/SEOHead/SEOHead';
+import StatementBlock from '../../components/StatementBlock/StatementBlock';
 import './Workshop.css';
+
+// Workshop services, in display order. Copy lives in workshop.discipline.cards.<key>;
+// photos are in public/workshop/ (own photos of the shop and of David riding).
+const SERVICES = [
+    { key: 'mechanics', to: '/workshop/mechanics', image: '/workshop/puesta-a-punto.webp', position: '22% 50%' },
+    { key: 'suspensions', to: '/workshop/suspensions', image: '/workshop/horquillas.webp', position: 'center 55%' },
+    { key: 'rear_shock', to: '/workshop/rear-shock', image: '/workshop/amortiguadores.webp', position: 'center 60%' },
+];
+
+// Yearly membership plans. `features` = how many fN keys the plan has in workshop.membership.plans.<key>.
+// `featured` marks the plan we recommend (shown dark, raised and with the ribbon).
+const PLANS = [
+    { key: 'peloton', features: 4 },
+    { key: 'pro', features: 6, featured: true },
+    { key: 'elite', features: 5 },
+];
 
 const Workshop = () => {
     const navigate = useNavigate();
@@ -12,264 +30,144 @@ const Workshop = () => {
         <div className="workshop-page">
             <SEOHead titleKey="seo.workshop.title" descriptionKey="seo.workshop.description" path="/workshop" />
 
-            {/* Main Content: Service Matrix */}
-            <main className="workshop-main">
-
-                <section className="workshop-membership">
-                    <header className="workshop-header" style={{ maxWidth: '100%' }}>
-                        <div className="workshop-header-top" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', width: '100%', gap: '1rem' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                <div className="workshop-header-bar"></div>
-                                <h1 className="workshop-title">
-                                    {t('workshop.discipline.title_1')} <br />
-                                </h1>
-                            </div>
-                            <div style={{ display: 'flex', alignItems: 'center', marginTop: '1rem', marginBottom: '1rem' }}>
-                                <button
-                                    className="workshop-membership-btn-main"
-                                    style={{ margin: 0, display: 'inline-block', width: 'auto', whiteSpace: 'nowrap' }}
-                                    onClick={() => {
-                                        const section = document.getElementById('membership-plans');
-                                        if (section) {
-                                            section.scrollIntoView({ behavior: 'smooth' });
-                                        }
-                                    }}
-                                >
-                                    {t('workshop.discipline.become_member')}
-                                </button>
-                            </div>
-                        </div>
-                        <p className="workshop-subtitle" style={{ maxWidth: '42rem' }}>
-                            {t('workshop.discipline.subtitle')}
-                        </p>
-                    </header>
-
-                    {/* Service Matrix: Three Workshop Types */}
-                    <div className="workshop-grid">
-                        {/* Card 1: Tune-up and Mechanics */}
-                        <div className="workshop-card workshop-card-offset-0">
-                            <div className="workshop-card-image-wrapper">
-                                <img alt="Mechanic working on a road bike frame" className="workshop-card-image" style={{ objectPosition: 'center 40%' }} data-alt="Professional mechanic adjusting a high-end bicycle" src="/david_vraivelo/workshop.png" />
-                            </div>
-                            <div className="workshop-card-content">
-                                <div className="workshop-card-header">
-                                    <div className="workshop-card-icon-wrapper">
-                                        <span className="workshop-card-icon material-symbols-outlined">build</span>
-                                    </div>
-                                    <span className="workshop-badge workshop-badge-essential">
-                                        {t('workshop.discipline.cards.mechanics.badge')}
-                                    </span>
-                                </div>
-                                <h3 className="workshop-card-title">{t('workshop.discipline.cards.mechanics.title')}</h3>
-                                <p className="workshop-card-desc">
-                                    {t('workshop.discipline.cards.mechanics.desc')}
-                                </p>
-                                <button
-                                    className="workshop-card-button"
-                                    onClick={() => navigate('/workshop/mechanics')}
-                                >
-                                    {t('workshop.discipline.view_services')}
-                                    <span className="material-symbols-outlined">arrow_forward</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Card 2: Suspensions */}
-                        <div className="workshop-card workshop-card-offset-0">
-                            <div className="workshop-card-image-wrapper">
-                                <img alt="Detail of a front suspension fork" className="workshop-card-image" data-alt="Close up of mountain bike suspension fork" src="/assets/horquilla.png" />
-                            </div>
-                            <div className="workshop-card-content">
-                                <div className="workshop-card-header">
-                                    <div className="workshop-card-icon-wrapper">
-                                        <span className="workshop-card-icon material-symbols-outlined">fork_left</span>
-                                    </div>
-                                    <span className="workshop-badge workshop-badge-advanced">
-                                        {t('workshop.discipline.cards.suspensions.badge')}
-                                    </span>
-                                </div>
-                                <h3 className="workshop-card-title">{t('workshop.discipline.cards.suspensions.title')}</h3>
-                                <p className="workshop-card-desc">
-                                    {t('workshop.discipline.cards.suspensions.desc')}
-                                </p>
-                                <button
-                                    className="workshop-card-button"
-                                    onClick={() => navigate('/workshop/suspensions')}
-                                >
-                                    {t('workshop.discipline.view_services')}
-                                    <span className="material-symbols-outlined">arrow_forward</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Card 3: Rear Shock */}
-                        <div className="workshop-card workshop-card-offset-0">
-                            <div className="workshop-card-image-wrapper">
-                                <img alt="Rear mountain bike shock absorber" className="workshop-card-image" data-alt="Technical view of a rear shock absorber" src="/assets/amortiguador.png" />
-                            </div>
-                            <div className="workshop-card-content">
-                                <div className="workshop-card-header">
-                                    <div className="workshop-card-icon-wrapper">
-                                        <span className="workshop-card-icon material-symbols-outlined">settings_input_component</span>
-                                    </div>
-                                    <span className="workshop-badge workshop-badge-expert">
-                                        {t('workshop.discipline.cards.rear_shock.badge')}
-                                    </span>
-                                </div>
-                                <h3 className="workshop-card-title">{t('workshop.discipline.cards.rear_shock.title')}</h3>
-                                <p className="workshop-card-desc">
-                                    {t('workshop.discipline.cards.rear_shock.desc')}
-                                </p>
-                                <button
-                                    className="workshop-card-button"
-                                    onClick={() => navigate('/workshop/rear-shock')}
-                                >
-                                    {t('workshop.discipline.view_services')}
-                                    <span className="material-symbols-outlined">arrow_forward</span>
-                                </button>
-                            </div>
-                        </div>
+            {/* SERVICES: one big photo block per workshop service (same look as the Home boxes) */}
+            <section className="ws-services" aria-labelledby="ws-title">
+                <div className="ws-header">
+                    <p className="ws-eyebrow">
+                        <span className="ws-eyebrow-bar" aria-hidden="true" />
+                        {t('workshop.discipline.eyebrow')}
+                    </p>
+                    <h1 id="ws-title" className="ws-title">{t('workshop.discipline.title_1')}</h1>
+                    <div className="ws-aside">
+                        <a href="#membership-plans" className="ws-member">
+                            <span className="ws-member-label">{t('workshop.discipline.become_member')}</span>
+                            <span className="ws-member-icon" aria-hidden="true">
+                                <ArrowDown size={20} />
+                            </span>
+                        </a>
                     </div>
-                </section>
-                {/* Membership Plans Section */}
-                <section id="membership-plans" className="workshop-membership">
-                    <div className="workshop-membership-hero">
-                        <div className="workshop-membership-title-container">
-                            <h2 className="workshop-membership-title">
-                                <span className="workshop-membership-title-highlight">{t('workshop.membership.title_2')}</span>
-                            </h2>
-                        </div>
-                    </div>
+                </div>
 
-                    <div className="workshop-pricing-section">
-                        <div className="workshop-pricing-container">
-                            <div className="workshop-pricing-grid">
+                <div className="ws-grid">
+                    {SERVICES.map((svc, i) => (
+                        <motion.div
+                            key={svc.key}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: '-60px' }}
+                            transition={{ duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                        >
+                            <Link to={svc.to} className="ws-box">
+                                <img
+                                    className="ws-box-img"
+                                    src={svc.image}
+                                    alt={t(`workshop.discipline.cards.${svc.key}.image_alt`)}
+                                    style={{ objectPosition: svc.position }}
+                                    loading={i === 0 ? 'eager' : 'lazy'}
+                                    decoding="async"
+                                />
+                                <span className="ws-box-shade" aria-hidden="true" />
 
-                                {/* Card 1: Pelotón Rider */}
-                                <div className="workshop-plan-card workshop-plan-basic">
-                                    <div className="workshop-plan-header">
-                                        <div className="workshop-plan-icon-wrapper workshop-plan-icon-basic">
-                                            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ width: '24px', height: '24px' }} xmlns="http://www.w3.org/2000/svg"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                        </div>
-                                        <h3 className="workshop-plan-name">{t('workshop.membership.plans.peloton.name')}</h3>
-                                        <div className="workshop-plan-price-wrap">
-                                            <span className="workshop-plan-price">{t('workshop.membership.plans.peloton.price')}</span>
-                                            <span className="workshop-plan-period">{t('workshop.membership.plans.peloton.period')}</span>
-                                        </div>
-                                    </div>
-                                    <ul className="workshop-plan-features">
-                                        <li className="workshop-plan-feature">
-                                            <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                            <span className="workshop-plan-feature-text">{t('workshop.membership.plans.peloton.f1')}</span>
-                                        </li>
-                                        <li className="workshop-plan-feature">
-                                            <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                            <span className="workshop-plan-feature-text">{t('workshop.membership.plans.peloton.f2')}</span>
-                                        </li>
-                                        <li className="workshop-plan-feature">
-                                            <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                            <span className="workshop-plan-feature-text">{t('workshop.membership.plans.peloton.f3')}</span>
-                                        </li>
-                                        <li className="workshop-plan-feature">
-                                            <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                            <span className="workshop-plan-feature-text">{t('workshop.membership.plans.peloton.f4')}</span>
-                                        </li>
-                                    </ul>
-                                    <button className="workshop-plan-btn" onClick={() => navigate('/contact', { state: { subject: 'member', service: t('workshop.membership.plans.peloton.name') } })}>
-                                        {t('workshop.membership.join_now')} <span className="workshop-plan-btn-icon">→</span>
-                                    </button>
-                                </div>
+                                <span className="ws-box-top">
+                                    <span className="ws-box-index">0{i + 1}</span>
+                                    <span className="ws-box-badge">{t(`workshop.discipline.cards.${svc.key}.badge`)}</span>
+                                </span>
 
-                                {/* Card 2: Pro Performance */}
-                                <div className="workshop-plan-card workshop-plan-pro">
-                                    <div className="workshop-plan-badge-pro">{t('workshop.membership.recommended')}</div>
-                                    <div className="workshop-plan-header">
-                                        <div className="workshop-plan-icon-wrapper workshop-plan-icon-pro">
-                                            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ width: '24px', height: '24px' }} xmlns="http://www.w3.org/2000/svg"><path d="M13 10V3L4 14h7v7l9-11h-7z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                        </div>
-                                        <h3 className="workshop-plan-name">{t('workshop.membership.plans.pro.name')}</h3>
-                                        <div className="workshop-plan-price-wrap">
-                                            <span className="workshop-plan-price">{t('workshop.membership.plans.pro.price')}</span>
-                                            <span className="workshop-plan-period">{t('workshop.membership.plans.pro.period')}</span>
-                                        </div>
-                                    </div>
-                                    <ul className="workshop-plan-features">
-                                        <li className="workshop-plan-feature">
-                                            <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                            <span className="workshop-plan-feature-text">{t('workshop.membership.plans.pro.f1')}</span>
-                                        </li>
-                                        <li className="workshop-plan-feature">
-                                            <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                            <span className="workshop-plan-feature-text">{t('workshop.membership.plans.pro.f2')}</span>
-                                        </li>
-                                        <li className="workshop-plan-feature">
-                                            <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                            <span className="workshop-plan-feature-text">{t('workshop.membership.plans.pro.f3')}</span>
-                                        </li>
-                                        <li className="workshop-plan-feature">
-                                            <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                            <span className="workshop-plan-feature-text">{t('workshop.membership.plans.pro.f4')}</span>
-                                        </li>
-                                        <li className="workshop-plan-feature">
-                                            <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                            <span className="workshop-plan-feature-text">{t('workshop.membership.plans.pro.f5')}</span>
-                                        </li>
-                                        <li className="workshop-plan-feature">
-                                            <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                            <span className="workshop-plan-feature-text">{t('workshop.membership.plans.pro.f6')}</span>
-                                        </li>
-                                    </ul>
-                                    <button className="workshop-plan-btn" onClick={() => navigate('/contact', { state: { subject: 'member', service: t('workshop.membership.plans.pro.name') } })}>
-                                        {t('workshop.membership.join_now')} <span className="workshop-plan-btn-icon">→</span>
-                                    </button>
-                                </div>
+                                <span className="ws-box-bottom">
+                                    <span className="ws-box-title">{t(`workshop.discipline.cards.${svc.key}.title`)}</span>
+                                    <span className="ws-box-desc">{t(`workshop.discipline.cards.${svc.key}.desc`)}</span>
+                                    <span className="ws-box-cta">
+                                        {t('workshop.discipline.view_services')}
+                                        <span className="ws-box-arrow" aria-hidden="true">
+                                            <ArrowUpRight size={20} />
+                                        </span>
+                                    </span>
+                                </span>
+                            </Link>
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
 
-                                {/* Card 3: Elite Factory */}
-                                <div className="workshop-plan-card workshop-plan-elite">
-                                    <div className="workshop-plan-header-elite">
-                                        <div className="workshop-plan-badge-elite">{t('workshop.membership.premium')}</div>
-                                        <div className="workshop-plan-icon-wrapper workshop-plan-icon-elite">
-                                            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ width: '24px', height: '24px' }} xmlns="http://www.w3.org/2000/svg"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                        </div>
-                                        <h3 className="workshop-plan-name-elite">{t('workshop.membership.plans.elite.name')}</h3>
-                                    </div>
-                                    <div className="workshop-plan-body-elite">
-                                        <div className="workshop-plan-price-wrap-elite">
-                                            <span className="workshop-plan-price">{t('workshop.membership.plans.elite.price')}</span>
-                                            <span className="workshop-plan-period">{t('workshop.membership.plans.elite.period')}</span>
-                                        </div>
-                                        <ul className="workshop-plan-features">
-                                            <li className="workshop-plan-feature">
-                                                <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                                <span className="workshop-plan-feature-text">{t('workshop.membership.plans.elite.f1')}</span>
-                                            </li>
-                                            <li className="workshop-plan-feature">
-                                                <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                                <span className="workshop-plan-feature-text">{t('workshop.membership.plans.elite.f2')}</span>
-                                            </li>
-                                            <li className="workshop-plan-feature">
-                                                <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                                <span className="workshop-plan-feature-text">{t('workshop.membership.plans.elite.f3')}</span>
-                                            </li>
-                                            <li className="workshop-plan-feature">
-                                                <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                                <span className="workshop-plan-feature-text">{t('workshop.membership.plans.elite.f4')}</span>
-                                            </li>
-                                            <li className="workshop-plan-feature">
-                                                <svg className="workshop-plan-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                                                <span className="workshop-plan-feature-text">{t('workshop.membership.plans.elite.f5')}</span>
-                                            </li>
-                                        </ul>
-                                        <button className="workshop-plan-btn" onClick={() => navigate('/contact', { state: { subject: 'member', service: t('workshop.membership.plans.elite.name') } })}>
-                                            {t('workshop.membership.join_now')} <span className="workshop-plan-btn-icon">→</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
+            {/* CARE: same statement block as the Home, about how carefully we treat each bike */}
+            <StatementBlock
+                id="care-title"
+                k="workshop.care"
+                t={t}
+                footerEnd={(
+                    <Link to="/contact" className="sl-brands sl-cta">
+                        {t('workshop.care.cta')}
+                        <ArrowUpRight size={22} aria-hidden="true" />
+                    </Link>
+                )}
+            />
+
+            {/* MEMBERSHIP: three yearly plans; Pro Performance is the one we recommend */}
+            <section id="membership-plans" className="mp-section" aria-labelledby="mp-title">
+                <div className="mp-header">
+                    <p className="mp-eyebrow">
+                        <span className="ws-eyebrow-bar" aria-hidden="true" />
+                        {t('workshop.membership.eyebrow')}
+                    </p>
+                    <h2 id="mp-title" className="mp-title">{t('workshop.membership.title_2')}</h2>
+                    <p className="mp-subtitle">{t('workshop.membership.subtitle')}</p>
+                </div>
+
+                <div className="mp-grid">
+                    {PLANS.map((plan, i) => {
+                        const base = `workshop.membership.plans.${plan.key}`;
+                        const name = t(`${base}.name`);
+                        return (
+                            <motion.article
+                                key={plan.key}
+                                className={`mp-card${plan.featured ? ' mp-card--featured' : ''}`}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: '-60px' }}
+                                transition={{ duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                            >
+                                {plan.featured && (
+                                    <p className="mp-ribbon">
+                                        <Star size={14} fill="currentColor" aria-hidden="true" />
+                                        {t('workshop.membership.recommended')}
+                                    </p>
+                                )}
+
+                                <header className="mp-card-head">
+                                    <span className="mp-card-index">0{i + 1}</span>
+                                    <h3 className="mp-card-name">{name}</h3>
+                                    <p className="mp-card-tagline">{t(`${base}.tagline`)}</p>
+                                </header>
+
+                                <p className="mp-price">
+                                    <span className="mp-price-value">{t(`${base}.price`)}</span>
+                                    <span className="mp-price-period">{t(`${base}.period`)}</span>
+                                </p>
+
+                                <ul className="mp-features">
+                                    {Array.from({ length: plan.features }, (_, n) => (
+                                        <li key={n} className="mp-feature">
+                                            <Check size={18} strokeWidth={2.5} aria-hidden="true" />
+                                            <span>{t(`${base}.f${n + 1}`)}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <button
+                                    type="button"
+                                    className="mp-btn"
+                                    onClick={() => navigate('/contact', { state: { subject: 'member', service: name } })}
+                                >
+                                    <span>{t('workshop.membership.join_now')}</span>
+                                    <span className="mp-btn-icon" aria-hidden="true">
+                                        <ArrowUpRight size={18} />
+                                    </span>
+                                </button>
+                            </motion.article>
+                        );
+                    })}
+                </div>
+            </section>
         </div>
     );
 };

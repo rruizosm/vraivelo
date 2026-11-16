@@ -1,60 +1,61 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import './Calendar.css';
+import { motion } from 'framer-motion';
+import { StoryPage, StoryHero, StorySection, StoryHeading, StoryCTA, StoryButton } from '../StoryKit';
 
-const MonthBlock = ({ monthName, startingEmptyDays, totalDays, highlightDays = [] }) => {
-    const days = [];
-    for (let i = 0; i < startingEmptyDays; i++) {
-        days.push(<div key={`empty-${i}`}></div>);
-    }
-    for (let i = 1; i <= totalDays; i++) {
-        const highlight = highlightDays.find(h => h.day === i);
-        const className = `cal-day-cell${highlight ? ` highlight-${highlight.type}` : ''}`;
-        days.push(<div key={`day-${i}`} className={className}>{i}</div>);
-    }
+// type in the data → colour/legend key
+const TYPE_KEY = { carretera: 'road', road: 'road', gravel: 'gravel', taller: 'workshop', weekend: 'weekend' };
+const WEEKDAYS = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
 
+const MonthBlock = ({ monthName, startingEmptyDays, totalDays, highlightDays = [], t }) => {
+    const cells = [];
+    for (let i = 0; i < startingEmptyDays; i++) cells.push(<span key={`e-${i}`} className="sk-cal-day is-empty" aria-hidden="true" />);
+    for (let d = 1; d <= totalDays; d++) {
+        const h = highlightDays.find((x) => x.day === d);
+        const key = h ? TYPE_KEY[h.type] : null;
+        cells.push(
+            <span
+                key={d}
+                className={`sk-cal-day${key ? ` is-${key}` : ''}`}
+                title={key ? t(`calendar.hero.legend.${key}`) : undefined}
+            >
+                {d}
+            </span>,
+        );
+    }
     return (
-        <div className="cal-month-block">
-            <h3 className="cal-month-title">{monthName}</h3>
-            <div className="cal-month-grid">
-                <div className="cal-day-header">L</div>
-                <div className="cal-day-header">M</div>
-                <div className="cal-day-header">X</div>
-                <div className="cal-day-header">J</div>
-                <div className="cal-day-header">V</div>
-                <div className="cal-day-header">S</div>
-                <div className="cal-day-header">D</div>
-                {days}
+        <div className="sk-cal-month">
+            <h3 className="sk-cal-month-name">{monthName}</h3>
+            <div className="sk-cal-grid">
+                {WEEKDAYS.map((w, i) => <span key={i} className="sk-cal-weekday" aria-hidden="true">{w}</span>)}
+                {cells}
             </div>
         </div>
     );
 };
 
-const EventCard = ({ event, index }) => {
-    const { t } = useTranslation();
+const EventCard = ({ event, index, t }) => {
+    const key = TYPE_KEY[event.type.toLowerCase()] || 'road';
     return (
-        <div className="cal-event-card">
-            <div className="cal-event-img-container">
-                <img
-                    src={event.imgSrc}
-                    className="cal-event-img"
-                    alt={event.imgAlt}
-                />
-                <div className={`cal-event-tag cal-tag-${event.type.toLowerCase()}`}>{t(`calendar.eventsData.${index}.type`)}</div>
+        <motion.article
+            className="sk-event"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6, delay: (index % 3) * 0.08, ease: [0.22, 1, 0.36, 1] }}
+        >
+            <div className="sk-event-media">
+                <img src={event.imgSrc} alt={event.imgAlt} loading="lazy" decoding="async" />
+                <span className={`sk-event-tag is-${key}`}>{t(`calendar.eventsData.${index}.type`)}</span>
             </div>
-            <div className="cal-event-content">
-                <div>
-                    <span className="cal-event-date">{event.date}</span>
-                    <h4 className="cal-event-name">{t(`calendar.eventsData.${index}.title`)}</h4>
-                    <p className="cal-event-desc">{t(`calendar.eventsData.${index}.desc`)}</p>
-                </div>
-                <div className="cal-event-actions">
-                    <Link to="/contact" state={{ subject: 'event' }} className="cal-btn-primary">{t('calendar.btn')}</Link>
-                </div>
+            <div className="sk-event-body">
+                <p className="sk-event-date">{event.date}</p>
+                <h3 className="sk-event-title">{t(`calendar.eventsData.${index}.title`)}</h3>
+                <p className="sk-event-desc">{t(`calendar.eventsData.${index}.desc`)}</p>
+                <StoryButton to="/contact" state={{ subject: 'event', message: `${t(`calendar.eventsData.${index}.title`)} · ${event.date}` }}>
+                    {t('calendar.btn')}
+                </StoryButton>
             </div>
-        </div>
+        </motion.article>
     );
 };
 
@@ -138,7 +139,7 @@ const eventsData = [
         description: "Una salida matutina por los puertos clásicos. Velocidad controlada, café obligatorio al terminar."
     },
     {
-        imgSrc: "/stories/formacion.png",
+        imgSrc: "/stories/web/formacion.webp",
         imgAlt: "close up of bicycle gears",
         type: "Taller",
         date: "16 Abril",
@@ -213,59 +214,51 @@ const eventsData = [
 
 const Calendar = () => {
     const { t } = useTranslation();
+    const legend = ['road', 'gravel', 'workshop', 'weekend'];
 
     return (
-        <section className="cal-main">
-            {/* Hero Section */}
-            <section className="cal-first-section">
-                <section className="cal-max-width cal-hero-section">
-                    <div className="cal-hero-content">
-                        <h1 className="cal-hero-title">{t('calendar.hero.title')}</h1>
-                        <p className="cal-hero-desc">
-                            {t('calendar.hero.desc')}
-                        </p>
-                    </div>
-                    <div className="cal-hero-legend">
-                        <div className="cal-legend-item">
-                            <span className="cal-legend-dot val-bg-road"></span>
-                            <span className="cal-legend-text">{t('calendar.hero.legend.road')}</span>
-                        </div>
-                        <div className="cal-legend-item">
-                            <span className="cal-legend-dot val-bg-gravel"></span>
-                            <span className="cal-legend-text">{t('calendar.hero.legend.gravel')}</span>
-                        </div>
-                        <div className="cal-legend-item">
-                            <span className="cal-legend-dot val-bg-taller"></span>
-                            <span className="cal-legend-text">{t('calendar.hero.legend.workshop')}</span>
-                        </div>
-                        <div className="cal-legend-item">
-                            <span className="cal-legend-dot val-bg-weekend"></span>
-                            <span className="cal-legend-text">{t('calendar.hero.legend.weekend')}</span>
-                        </div>
-                    </div>
-                </section>
+        <StoryPage id="calendar">
+            <StoryHero
+                image="/vraivelo_berria/Girona/DSC00343.jpeg"
+                position="center 55%"
+                eyebrow={t('calendar.eyebrow')}
+                title={t('calendar.hero.title')}
+                desc={t('calendar.hero.desc')}
+            >
+                <StoryButton href="#calendar-events" light>{t('calendar.events_title')}</StoryButton>
+            </StoryHero>
 
-                {/* Calendar Grid Section */}
-                <section className="cal-max-width cal-grid-section">
-                    <div className="cal-grid-container">
-                        {calendarMonthsData.map((data, index) => (
-                            <MonthBlock key={index} {...data} monthName={t(`calendar.months.${data.monthName}`, { defaultValue: data.monthName })} />
-                        ))}
-                    </div>
-                </section>
-            </section>
-
-            {/* Event Details Section */}
-            <section className="cal-max-width cal-events-wrapper">
-                <h2 className="cal-events-title">{t('calendar.events_title')}</h2>
-
-                <div className="cal-event-list">
-                    {eventsData.map((event, index) => (
-                        <EventCard key={index} event={event} index={index} />
+            <StorySection tone="beige">
+                <StoryHeading
+                    eyebrow={t('calendar.year_eyebrow')}
+                    title={t('calendar.year_title')}
+                    aside={(
+                        <ul className="sk-cal-legend">
+                            {legend.map((k) => (
+                                <li key={k}><span className={`sk-cal-dot is-${k}`} aria-hidden="true" />{t(`calendar.hero.legend.${k}`)}</li>
+                            ))}
+                        </ul>
+                    )}
+                />
+                <div className="sk-cal-months">
+                    {calendarMonthsData.map((m) => (
+                        <MonthBlock key={m.monthName} {...m} t={t} monthName={t(`calendar.months.${m.monthName}`, { defaultValue: m.monthName })} />
                     ))}
                 </div>
-            </section>
-        </section>
+            </StorySection>
+
+            <StorySection id="calendar-events">
+                <StoryHeading eyebrow={t('calendar.events_eyebrow')} title={t('calendar.events_title')} />
+                <div className="sk-events">
+                    {eventsData.map((event, index) => <EventCard key={index} event={event} index={index} t={t} />)}
+                </div>
+            </StorySection>
+
+            <StoryCTA eyebrow={t('calendar.cta.eyebrow')} title={t('calendar.cta.title')} text={t('calendar.cta.text')}>
+                <StoryButton href="https://www.strava.com/clubs/1327818" light>Strava</StoryButton>
+                <StoryButton to="/contact" state={{ subject: 'event' }} light>{t('calendar.btn')}</StoryButton>
+            </StoryCTA>
+        </StoryPage>
     );
 };
 

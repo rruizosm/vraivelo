@@ -1,0 +1,37 @@
+{
+  "id": 333,
+  "name": "Giant Revolt Advanced 1",
+  "brand": "giant",
+  "family": "revolt",
+  "model": "revolt-advanced-1",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/revolt-advanced-1",
+      "title": "Revolt Advanced 1 (2026) | Gravel Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "midnight-moon",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/revolt-advanced-1",
+      "file": "studio/midnight-moon-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/z5miospretv3qt1ogbsw/MY26RevoltAdvanced1_ColorAMidnightMoon.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "midnight-moon.jpg",
+  "catalog": [
+    {
+      "color": "Midnight Moon",
+      "hex": "#747578",
+      "file": "midnight-moon.jpg"
+    }
+  ],
+  "cutouts": []
+}

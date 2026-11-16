@@ -1,0 +1,136 @@
+{
+  "brand": "giant",
+  "family": "revolt",
+  "sources": [
+    "https://www.giant-bicycles.com/es/revolt"
+  ],
+  "collected": "2026-11-15",
+  "lifestyle": [
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/01.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/peuzkxwyjb8nom7hip02/revolt_adv_sl_swiper01_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/02.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/dtkvtwloduio64va5iju/revolt_adv_sl_banner01_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/03.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/c8erf09svaysc2lmtmph/revolt_adv_sl_block_01.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/04.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/bf03xiplutltqusk64vv/revolt_adv_sl_block_02.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/05.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/j2hwyreeohsycqs24dvb/revolt_adv_sl_block_03.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/06.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/mssgjuao3moq1fvuhf88/revolt_adv_sl_block_04.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/07.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/rxb7uburo0sl0ptxvhgh/revolt_adv_sl_block_05.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/08.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/bfypq8evpycvlacbmdf2/revolt_adv_sl_block_06.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/09.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/jf69sdihjlde72qdwxtm/revolt_adv_sl_block_07.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/10.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/i5unhzwdodg18za8mqn6/revolt_adv_sl_block_08.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/11.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/xdexgrowz4haiqxrpvwz/revolt_adv_sl_block_09.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/12.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/fvbf6clu8ncglj49vcbr/revolt_adv_sl_block_10.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/13.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/wzncacnprxxjcua2vgy4/revolt_adv_sl_block_11.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/14.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/nvtkeqrrklxlkoalqzkf/revolt_adv_sl_block_12.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/15.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/vttxz8dsqmxntik5v0pb/revolt_adv_sl_block_14.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/16.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/ejp6nmym2svyzvlp4tro/revolt_adv_sl_block_13.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/17.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/ylnrbmgnkcwyvdivkwt7/revolt_block01.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/revolt",
+      "file": "lifestyle/18.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/t2vk9sfaz39czlydkoye/revolt_block02.jpg"
+    }
+  ]
+}

@@ -1,301 +1,339 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { ShoppingBag, Loader, Mail, ChevronDown, ChevronUp, Search } from 'lucide-react';
-import { useCart } from '../../context/CartContext';
-import { useNavigate, Link } from 'react-router-dom';
+import { useState, useEffect, useMemo, useRef } from 'react';
+import { ArrowUpRight, ChevronRight, Search, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { supabase } from '../../supabase';
 import { clothes } from '../../data/clothes';
 import { useTranslation } from 'react-i18next';
 import SEOHead from '../../components/SEOHead/SEOHead';
 import { productPath } from '../../lib/productUrl';
-import '../Shop/Shop.css'; // Reuse Shop styles
+import { parsePrice, formatPrice } from '../../lib/price';
+import { bikeImage } from '../../lib/bikeImages';
+import { buildSearchIndex, queryTokens, searchScore } from '../../lib/search';
+import '../Shop/Catalog.css';
 
-const ProductCard = ({ product, addToCart, navigate, t, isCartEnabled }) => {
-    // Local state for the displayed image to allow color preview
-    const [currentImage, setCurrentImage] = useState(product.image_url);
+// Header photo (Julbo helmets and glasses, also used on the Home "Equípate para rodar" box)
+const HERO_IMAGE = '/categorias/cascos-gafas-ciclismo-1000.webp';
 
-    const handleProductClick = () => {
-        navigate(productPath(product), { state: { from: 'other-products' } });
+// "Other Products" rows are clothes too (local data): they share the "Ropa" filter
+const sameCategory = (product, cat) =>
+    cat === 'All' || product.category === cat || (cat === 'Clothes' && product.category === 'Other Products');
+
+// ─── Product card: same markup and hover as the bike cards (Catalog.css) ─────
+const ProductCard = ({ product, index, t, categoryLabel }) => {
+    const variants = (product.variants || []).filter((v) => v.hex);
+    const [image, setImage] = useState(product.image_url || product.variants?.[0]?.images?.[0] || null);
+    const [activeColor, setActiveColor] = useState(null);
+    const price = parsePrice(product.price);
+    const to = productPath(product);
+
+    const preview = (v) => {
+        setActiveColor(v?.color || null);
+        setImage(v?.images?.[0] || product.image_url || product.variants?.[0]?.images?.[0] || null);
     };
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
+        <motion.article
+            className="sh-card"
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bike-card group"
-            onClick={handleProductClick}
-            style={{ cursor: 'pointer' }}
+            transition={{ duration: 0.5, delay: Math.min(index, 12) * 0.04, ease: [0.22, 1, 0.36, 1] }}
         >
-            <div className="bike-image-wrapper">
-                {currentImage ? (
-                    <img src={currentImage} alt={product.model} className="bike-image" />
+            <div className="sh-card-media">
+                {image ? (
+                    <img src={image} alt={product.model} loading={index < 6 ? 'eager' : 'lazy'} decoding="async" />
                 ) : (
-                    <span className="bike-placeholder-text">
-                        {product.model ? product.model.charAt(0) : '?'}
-                    </span>
+                    <span className="sh-card-placeholder" aria-hidden="true">{(product.model || '?').charAt(0)}</span>
                 )}
-                {product.is_new && (
-                    <span className="new-badge">
-                        {t('other_products.new')}
-                    </span>
-                )}
+                <span className="sh-card-badges">
+                    {product.quantity === 0 && <span className="sh-badge sh-badge--sold">{t('product.sold')}</span>}
+                    {product.is_new && product.quantity !== 0 && <span className="sh-badge sh-badge--new">{t('shop.new')}</span>}
+                </span>
+                <span className="sh-card-reveal" aria-hidden="true">
+                    {t('other_products.view_product')} <ArrowUpRight size={16} />
+                </span>
             </div>
-            <div className="bike-info">
-                {product.brand && <p className="bike-brand">{product.brand}</p>}
-                <h3 className="bike-model">
-                    <Link to={productPath(product)} state={{ from: 'other-products' }} onClick={(e) => e.stopPropagation()} style={{ color: 'inherit', textDecoration: 'none' }}>
-                        {product.model}
-                    </Link>
-                </h3>
 
-                {/* Color Options Preview */}
-                {product.variants && (
-                    <div className="flex flax-wrap gap-2 mt-2 mb-2 items-center">
-                        <span className="text-xs text-gray-500 mr-1">{t('other_products.colors')}</span>
-                        {product.variants.map(variant => (
-                            <div
-                                key={variant.color}
-                                className="w-5 h-5 rounded-full border-2 border-gray-200 shadow-sm hover:border-[var(--primary)] hover:scale-110 transition-all cursor-pointer"
-                                style={{ backgroundColor: variant.hex }}
-                                title={variant.colorName}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    if (variant.images && variant.images.length > 0) {
-                                        setCurrentImage(variant.images[0]);
-                                    }
-                                }}
-                            />
-                        ))}
-                    </div>
-                )}
+            <div className="sh-card-body">
+                <p className="sh-card-meta">
+                    {product.brand && <span className="sh-card-brand">{product.brand}</span>}
+                    {categoryLabel && <span>{categoryLabel}</span>}
+                </p>
 
-                <div className="bike-price-row">
-                    <div className="flex flex-col justify-center">
-                        {product.old_price && (
-                            <span style={{ textDecoration: 'line-through', color: '#9ca3af', fontSize: '1rem', lineHeight: '1', marginBottom: '0.2rem' }}>
-                                {product.old_price}
-                            </span>
-                        )}
-                        <span className="bike-price-new" style={product.old_price ? { lineHeight: '1' } : {}}>{product.price}</span>
-                    </div>
-                    {isCartEnabled && (
-                        <button
-                            className="add-cart-btn-small"
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                navigate(productPath(product), { state: { from: 'other-products' } });
-                            }}
-                        >
-                            <ShoppingBag size={18} />
-                        </button>
+                <h2 className="sh-card-title">
+                    <Link to={to} state={{ from: 'other-products' }} className="sh-card-link">{product.model}</Link>
+                </h2>
+
+                <div className="sh-card-foot">
+                    <p className="sh-card-price">
+                        {product.old_price && <s className="sh-card-price-old">{product.old_price}</s>}
+                        {price ? formatPrice(price) : product.price}
+                    </p>
+
+                    {variants.length > 1 && (
+                        <ul className="sh-swatches" aria-label={t('shop.colors', { count: variants.length })}>
+                            {variants.map((v) => (
+                                <li key={v.color}>
+                                    <button
+                                        type="button"
+                                        className={`sh-swatch${activeColor === v.color ? ' is-active' : ''}`}
+                                        style={{ backgroundColor: v.hex }}
+                                        aria-label={v.colorName}
+                                        title={v.colorName}
+                                        onMouseEnter={() => preview(v)}
+                                        onFocus={() => preview(v)}
+                                        onMouseLeave={() => preview(null)}
+                                        onBlur={() => preview(null)}
+                                    />
+                                </li>
+                            ))}
+                        </ul>
                     )}
+
+                    <span className="sh-card-arrow" aria-hidden="true">
+                        <ArrowUpRight size={18} />
+                    </span>
                 </div>
             </div>
-        </motion.div>
+        </motion.article>
     );
 };
 
-const OtherProducts = () => {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [activeCategory, setActiveCategory] = useState(() => sessionStorage.getItem('otherProducts_activeCategory') || 'All');
-    const [expandedFilters, setExpandedFilters] = useState({ category: true });
-    const [searchQuery, setSearchQuery] = useState('');
+// Products already fetched in this session: coming back to the list renders at once with
+// the right counts, then refreshes quietly in the background.
+let productsCache = null;
 
-    const toggleSection = (section) => {
-        setExpandedFilters(prev => ({ ...prev, [section]: !prev[section] }));
-    };
+const OtherProducts = () => {
+    const { t } = useTranslation();
+    const [products, setProducts] = useState(() => productsCache || []);
+    const [loading, setLoading] = useState(() => !productsCache);
+    const [activeCategory, setActiveCategory] = useState(() => {
+        try { return sessionStorage.getItem('otherProducts_activeCategory') || 'All'; } catch { return 'All'; }
+    });
+    const [searchQuery, setSearchQuery] = useState('');
+    const [sortBy, setSortBy] = useState('featured');
+    const catsRef = useRef(null);
 
     useEffect(() => {
-        sessionStorage.setItem('otherProducts_activeCategory', activeCategory);
+        try { sessionStorage.setItem('otherProducts_activeCategory', activeCategory); } catch { /* not persisted */ }
     }, [activeCategory]);
-    const { addToCart, isCartEnabled } = useCart();
-    const navigate = useNavigate();
-    const { t } = useTranslation();
 
-    // Fetch products from Supabase
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                setLoading(true);
                 const { data, error } = await supabase
                     .from('products')
                     .select('*')
                     .eq('Active', true)
                     .order('id', { ascending: true });
-
                 if (error) throw error;
 
-                // Normalize Supabase column names to component format
-                // Handle both PascalCase and lowercase column names
-                const normalized = (data || []).map(p => {
+                // Normalize Supabase column names (PascalCase or lowercase) to the component format
+                productsCache = (data || []).map((p) => {
                     const category = p.Type || p.type;
                     let specs = p.Specs || p.specs || [];
-
                     if (typeof specs === 'string') {
                         try { specs = JSON.parse(specs.replace(/'/g, '"')); } catch { specs = [specs]; }
                     }
-                    if (category === 'Wheels') {
-                        specs = [...specs, 'Hub: DT SWISS'];
-                    }
-
+                    if (category === 'Wheels') specs = [...specs, 'Hub: DT SWISS'];
                     return {
                         id: p.id,
                         model: p.Product || p.product,
-                        category: category,
+                        category,
                         price: p.Price || p.price,
                         old_price: p.OldPrice || p.oldprice || null,
                         size: p.Size || p.size,
                         description: p.Description || p.description,
-                        image_url: p["Image URL"] || p["image url"] || p.image_url,
+                        image_url: bikeImage(p['Image URL'] || p['image url'] || p.image_url),
                         color: p.Color || p.color,
-                        specs: specs,
-                        // Localization Schema
-                        description_spanish: p.description_spanish,
-                        description_english: p.description_english,
-                        description_catalan: p.description_catalan,
-                        specs_spanish: p.specs_spanish,
-                        specs_english: p.specs_english,
-                        specs_catalan: p.specs_catalan,
+                        quantity: p.quantity,
+                        specs,
+                        // only used by the search: the specs in the other languages
+                        search_specs: [p.specs_english, p.specs_catalan],
                     };
                 });
-
-                setProducts(normalized);
+                setProducts(productsCache);
             } catch (error) {
                 console.error('Error fetching products:', error);
             } finally {
                 setLoading(false);
             }
         };
-
         fetchProducts();
     }, []);
 
-    // Combine Supabase products with local clothes data
-    const allProducts = [...products, ...clothes];
+    const allProducts = useMemo(() => [...products, ...clothes], [products]);
 
-    // Category key mapping for translation
-    const categoryKeyMap = {
-        'All': 'other_products.all',
-        'Clothes': 'other_products.clothes',
-        'Wheels': 'other_products.wheels',
-    };
-
-    // Helper to dynamically translate category names from DB if needed
+    // Category names from the DB, translated when there is a key (other_products.<name>)
+    const categoryKeyMap = { All: 'other_products.all', Clothes: 'other_products.clothes', Wheels: 'other_products.wheels' };
     const translateCategory = (cat) => {
+        if (!cat) return '';
+        if (cat === 'Other Products') return t('other_products.clothes');
         if (categoryKeyMap[cat]) return t(categoryKeyMap[cat]);
-        const dynamicKey = `other_products.${cat.toLowerCase().replace(/\s+/g, '_')}`;
-        const translated = t(dynamicKey);
-        // If translation is the key itself (meaning it was not found), return the original category text
-        return translated !== dynamicKey ? translated : cat;
+        const key = `other_products.${cat.toLowerCase().replace(/\s+/g, '_')}`;
+        const translated = t(key);
+        return translated !== key ? translated : cat;
     };
 
-    // We only define 'All' as fixed. The rest come dynamically from the data
-    const baseCategories = ['All'];
-    const dataCategories = allProducts.map(p => p.category).filter(c => c && c !== 'Other Products');
-    const categories = [...new Set([...baseCategories, ...dataCategories])];
+    const categories = useMemo(() => {
+        const fromData = allProducts.map((p) => p.category).filter((c) => c && c !== 'Other Products');
+        return ['All', ...new Set(fromData)];
+    }, [allProducts]);
+    const countFor = (cat) => allProducts.filter((p) => sameCategory(p, cat)).length;
 
-    const filteredProducts = allProducts.filter(product => {
-        const matchCategory = activeCategory === 'All' ||
-            product.category === activeCategory ||
-            (activeCategory === 'Clothes' && product.category === 'Other Products');
+    // the saved category may no longer exist
+    useEffect(() => {
+        if (!loading && !categories.includes(activeCategory)) setActiveCategory('All');
+    }, [loading, categories, activeCategory]);
 
-        const q = searchQuery.trim().toLowerCase();
-        const matchSearch = !q ||
-            (product.brand || '').toLowerCase().includes(q) ||
-            (product.model || '').toLowerCase().includes(q);
+    // narrow screens: keep the selected pill in view
+    useEffect(() => {
+        const row = catsRef.current;
+        const active = row?.querySelector('.is-active');
+        if (row && active) row.scrollLeft = active.offsetLeft - (row.clientWidth - active.offsetWidth) / 2;
+    }, [activeCategory, loading]);
 
-        return matchCategory && matchSearch;
-    });
+    // searchable text per product: brand, model and category rank first; then colours,
+    // sizes and specs
+    const searchIndex = useMemo(() => {
+        const map = new Map();
+        allProducts.forEach((p) => {
+            map.set(p.id, buildSearchIndex(
+                [p.brand, p.model, p.category, translateCategory(p.category)],
+                [
+                    p.color, p.size,
+                    (p.variants || []).map((v) => [v.color, v.colorName]),
+                    p.specs, p.search_specs,
+                ],
+            ));
+        });
+        return map;
+        // translateCategory only depends on t
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [allProducts, t]);
 
-    if (loading) {
-        return (
-            <div className="flex items-center justify-center min-h-[60vh]">
-                <Loader className="animate-spin text-[var(--primary)]" size={48} />
-            </div>
-        );
-    }
+    const filtered = useMemo(() => {
+        const tokens = queryTokens(searchQuery);
+        const scores = new Map();
+        const list = allProducts.filter((p) => {
+            if (!sameCategory(p, activeCategory)) return false;
+            const score = searchScore(searchIndex.get(p.id), tokens);
+            scores.set(p.id, score);
+            return score > 0;
+        });
+        const priceOf = (p) => parsePrice(p.price);
+        if (sortBy === 'price_asc') return [...list].sort((a, b) => (priceOf(a) ?? Infinity) - (priceOf(b) ?? Infinity));
+        if (sortBy === 'price_desc') return [...list].sort((a, b) => (priceOf(b) ?? -1) - (priceOf(a) ?? -1));
+        // best search matches (brand/model) first, otherwise keep the original order
+        return [...list].sort((a, b) => scores.get(b.id) - scores.get(a.id));
+    }, [allProducts, activeCategory, searchQuery, sortBy, searchIndex]);
 
     return (
-        <div className="shop-container">
+        <div className="sh-page">
             <SEOHead titleKey="seo.other_products.title" descriptionKey="seo.other_products.description" path="/other-products" />
-            <div className="shop-content">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="shop-header"
-                >
-                    <span className="shop-badge">
-                        {t('other_products.badge')}
-                    </span>
-                    <h1 className="shop-title">
-                        {t('other_products.title_prefix')} <span className="text-[var(--primary)]">{t('other_products.title_highlight')}</span>
-                    </h1>
-                </motion.div>
 
-                <div className="shop-layout">
-                    {/* SIDEBAR FILTERS */}
-                    <aside className="shop-sidebar">
-                        {/* Category Filter */}
-                        <div className="filter-group accordion-group">
-                            <button className="filter-accordion-header" onClick={() => toggleSection('category')}>
-                                <h3 className="filter-title">{t('other_products.category')}</h3>
-                                {expandedFilters.category ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            <header className="sh-header">
+                <nav className="sh-breadcrumb" aria-label={t('shop.breadcrumb_label')}>
+                    <ol>
+                        <li><Link to="/">{t('shop.breadcrumb_home')}</Link></li>
+                        <li>
+                            <ChevronRight size={14} aria-hidden="true" />
+                            <span aria-current="page">{t('footer.other_products')}</span>
+                        </li>
+                    </ol>
+                </nav>
+
+                <div className="sh-hero">
+                    <img className="sh-hero-img" src={HERO_IMAGE} alt="" style={{ objectPosition: 'center 35%' }} fetchPriority="high" decoding="async" />
+                    <span className="sh-hero-shade" aria-hidden="true" />
+                    <motion.div
+                        className="sh-intro"
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                        <p className="sh-eyebrow">
+                            <span className="sh-eyebrow-bar" aria-hidden="true" />
+                            {t('other_products.eyebrow')}
+                        </p>
+                        <h1 className="sh-title">{t('other_products.h1')}</h1>
+                        <p className="sh-lead">{t('other_products.intro')}</p>
+                    </motion.div>
+                </div>
+
+                <nav className="sh-cats" ref={catsRef} aria-label={t('other_products.category')}>
+                    {categories.map((cat) => (
+                        <button
+                            key={cat}
+                            type="button"
+                            className={`sh-cat${activeCategory === cat ? ' is-active' : ''}`}
+                            aria-pressed={activeCategory === cat}
+                            onClick={() => setActiveCategory(cat)}
+                        >
+                            {translateCategory(cat)} <small>{loading ? '' : countFor(cat)}</small>
+                        </button>
+                    ))}
+                </nav>
+            </header>
+
+            <section className="sh-results sh-results--wide" aria-label={t('footer.other_products')}>
+                <div className="sh-toolbar">
+                    <label className="sh-search">
+                        <Search size={18} aria-hidden="true" />
+                        <span className="sr-only">{t('other_products.search_placeholder')}</span>
+                        <input
+                            type="search"
+                            placeholder={t('other_products.search_placeholder')}
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                        {searchQuery && (
+                            <button type="button" className="sh-search-clear" onClick={() => setSearchQuery('')} aria-label={t('shop.clear_filters')}>
+                                <X size={16} />
                             </button>
-                            {expandedFilters.category && (
-                                <div className="filter-options-content">
-                                    {categories.map((cat) => (
-                                        <button
-                                            key={cat}
-                                            onClick={() => setActiveCategory(cat)}
-                                            className={`sidebar-filter-btn ${activeCategory === cat ? 'active' : ''}`}
-                                        >
-                                            <div className={`checkbox ${activeCategory === cat ? 'checked' : ''}`} />
-                                            {translateCategory(cat)}
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                    </aside>
+                        )}
+                    </label>
 
-                    {/* PRODUCTS GRID */}
-                    <div style={{ width: '100%' }}>
-                        {/* Search Bar */}
-                        <div className="shop-search-bar">
-                            <Search size={18} className="shop-search-icon" />
-                            <input
-                                id="shop-search-input"
-                                type="text"
-                                className="shop-search-input"
-                                placeholder={t('other_products.search_placeholder')}
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                            />
-                            {searchQuery && (
-                                <button className="shop-search-clear" onClick={() => setSearchQuery('')} aria-label="Clear search">
-                                    ✕
-                                </button>
-                            )}
-                        </div>
-                        <div style={{ paddingBottom: '1rem', marginBottom: '1rem', borderBottom: '1px solid #e2e8f0', color: '#64748b', fontSize: '0.875rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                            {filteredProducts.length} {filteredProducts.length === 1 ? t('other_products.product_listed') : t('other_products.products_listed')}
-                        </div>
-                        <div className="bikes-grid">
-                            {filteredProducts.map((product) => (
-                                <ProductCard
-                                    key={product.id}
-                                    product={product}
-                                    addToCart={addToCart}
-                                    navigate={navigate}
-                                    t={t}
-                                    isCartEnabled={isCartEnabled}
-                                />
-                            ))}
-                        </div>
+                    <div className="sh-toolbar-row">
+                        <p className="sh-count" aria-live="polite">
+                            {loading ? ' ' : t('other_products.count', { count: filtered.length })}
+                        </p>
+                        <label className="sh-sort">
+                            <span className="sh-sort-label">{t('shop.sort.label')}</span>
+                            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                                <option value="featured">{t('other_products.sort_default')}</option>
+                                <option value="price_asc">{t('shop.sort.price_asc')}</option>
+                                <option value="price_desc">{t('shop.sort.price_desc')}</option>
+                            </select>
+                        </label>
                     </div>
                 </div>
-            </div>
+
+                {loading ? (
+                    <div className="sh-grid" aria-hidden="true">
+                        {Array.from({ length: 8 }, (_, i) => <div key={i} className="sh-skeleton" />)}
+                    </div>
+                ) : filtered.length === 0 ? (
+                    <div className="sh-empty">
+                        <p className="sh-empty-title">{t('other_products.empty')}</p>
+                        <button type="button" className="sh-clear sh-clear--big" onClick={() => { setSearchQuery(''); setActiveCategory('All'); }}>
+                            {t('shop.clear_filters')}
+                        </button>
+                    </div>
+                ) : (
+                    <div className="sh-grid">
+                        {filtered.map((product, index) => (
+                            <ProductCard
+                                key={product.id}
+                                product={product}
+                                index={index}
+                                t={t}
+                                categoryLabel={translateCategory(product.category)}
+                            />
+                        ))}
+                    </div>
+                )}
+            </section>
         </div>
     );
 };

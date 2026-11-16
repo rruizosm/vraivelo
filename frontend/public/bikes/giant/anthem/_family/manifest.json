@@ -1,0 +1,122 @@
+{
+  "brand": "giant",
+  "family": "anthem",
+  "sources": [
+    "https://www.giant-bicycles.com/es/anthem"
+  ],
+  "collected": "2026-11-15",
+  "lifestyle": [
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/01.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/uakzhumcmgnou0ekjhq5/anthem_range_swiper10_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/02.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/xuldqv5u6duyzknqdkru/anthem_range_swiper01_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/03.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/jzohi2eluhyqnr3icbpc/anthem_range_swiper03_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/04.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/rtuonfn6sppayyuioiji/anthem_se_banner_elevated_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/05-2.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/ft0dunekbn2pnye7yulb/anthem_se_banner_elevated_d1.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/06.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/m1nvbnshmhxswvvsbamw/anthem_range_swiper2_03_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/07-2.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/biv3g6yjkrx8dl9yrxw7/anthem_range_swiper2_05_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/08.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/yeh4bwwjuraxijbpfift/anthem_range_5050_20.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/09.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/b3sqfhbrse139aepjzsb/anthem_range_5050_21.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/10.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/cmcznqfp1g7fv2r85wla/anthem_range_5050_04.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/11.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/mgdllwuvowx7l6u8x6wg/anthem_range_block_20.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/12.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/n9o9su2jfxniotozohx4/anthem_range_5050_06.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/13.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/u0cvtmauqrufssfjllkp/anthem_range_block_21.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/14.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/j4tr2wyf8e3pizjuh9w2/anthem_range_block_22.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/15.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/ejqollisggg8rfpj7823/anthem_range_5050_09.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/anthem",
+      "file": "lifestyle/16.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/yhl6cyd8pzjtfkc36uzw/anthem_range_5050_11.jpg"
+    }
+  ]
+}

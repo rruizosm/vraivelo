@@ -1,0 +1,387 @@
+/* Workshop service pages (tune-up, forks, rear shocks).
+   Price cards reuse .mp-* and buttons .ws-member from Workshop.css; this file adds the
+   hero, the how-we-work section and the closing CTA. */
+
+.sp-page {
+    background: #fff;
+    color: var(--ink);
+}
+
+/* ───────── Hero ───────── */
+.sp-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: #F4F2EE;
+}
+
+@media (min-width: 900px) {
+    .sp-hero {
+        grid-template-columns: 1.1fr 1fr;
+        min-height: min(92vh, 56rem);
+    }
+}
+
+.sp-hero-copy {
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5rem;
+    padding: calc(var(--nav-h) + clamp(1rem, 2.5vh, 1.75rem)) clamp(1.25rem, 5vw, 4.5rem) clamp(2rem, 5vh, 3rem);
+}
+
+.sp-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.sp-back svg { transition: transform 0.3s ease; }
+.sp-back:hover svg,
+.sp-back:focus-visible svg { transform: translateX(-4px); }
+
+.sp-back:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 4px;
+}
+
+.sp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 0 1.25rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #A35F00;
+}
+
+.sp-eyebrow--light { color: var(--amber); }
+
+.sp-title {
+    max-width: 12ch;
+    margin: 0;
+    /* sized to the copy column, so long words (AMORTIGUADORES) never run into the photo */
+    font-size: clamp(2rem, 9.5cqi, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+
+.sp-desc {
+    max-width: 34rem;
+    margin: 1.5rem 0 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #2D3036;
+}
+
+.sp-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.75rem;
+}
+
+.ws-member { border: 0; font-family: inherit; cursor: pointer; }
+
+.sp-link {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--amber);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+    transition: text-underline-offset 0.3s ease;
+}
+
+.sp-link:hover,
+.sp-link:focus-visible { text-underline-offset: 9px; }
+
+.sp-fact {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(11, 13, 16, 0.14);
+    color: var(--ink);
+}
+
+.sp-fact-value {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+}
+
+.sp-fact-label {
+    max-width: 22rem;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #4A4F57;
+}
+
+.sp-hero-media {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: var(--ink);
+}
+
+@media (min-width: 900px) {
+    .sp-hero-media { aspect-ratio: auto; }
+}
+
+.sp-hero-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* on phones the photo goes first, under the navbar */
+@media (max-width: 899px) {
+    .sp-hero-media { order: -1; margin-top: var(--nav-h); }
+    .sp-hero-copy { padding-top: 1.5rem; }
+}
+
+/* ───────── Prices (layout tweaks on top of .mp-*) ───────── */
+@media (min-width: 900px) {
+    .sp-grid--2 { grid-template-columns: 1fr 1.12fr; }
+    .sp-grid--1 { grid-template-columns: minmax(0, 36rem); justify-content: center; }
+}
+
+.sp-from {
+    order: -1;
+    margin-right: 0.25rem;
+}
+
+.sp-price-extra {
+    margin: -1rem 0 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #4A4F57;
+}
+
+.mp-card--featured .sp-price-extra { color: rgba(255, 255, 255, 0.65); }
+
+.sp-feature--off { opacity: 0.45; }
+.sp-feature--off span { text-decoration: line-through; }
+
+/* ───────── How we work ───────── */
+.sp-process {
+    background: var(--ink);
+    color: #fff;
+    padding: clamp(4rem, 10vh, 6.5rem) clamp(1.25rem, 5vw, 4.5rem);
+}
+
+.sp-process-inner {
+    display: grid;
+    gap: clamp(2.5rem, 6vh, 3.5rem);
+}
+
+@media (min-width: 900px) {
+    .sp-process-inner {
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+.sp-process-header {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .sp-process-header {
+        grid-template-columns: 1fr 24rem;
+        align-items: end;
+        column-gap: 3rem;
+    }
+
+    .sp-process-header .sp-eyebrow { grid-column: 1 / -1; margin: 0; }
+}
+
+.sp-process-title {
+    margin: 0;
+    font-size: clamp(2.25rem, 4.5vw, 4.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.sp-process-desc {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.sp-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@media (min-width: 640px) {
+    .sp-steps { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1100px) {
+    .sp-steps { grid-template-columns: repeat(4, 1fr); }
+}
+
+.sp-step {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem 0 2rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.sp-step-index {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--amber);
+}
+
+.sp-step-value {
+    font-size: clamp(2.25rem, 3.5vw, 3.25rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--amber);
+}
+
+.sp-step-title {
+    margin: 0;
+    font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
+.sp-step-desc {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.sp-notes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .sp-notes { grid-template-columns: 1.4fr 1fr; }
+}
+
+.sp-note {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: clamp(1.5rem, 2.5vw, 2rem);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sp-note-title {
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+}
+
+.sp-note-value {
+    margin: 0;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+.sp-note-desc {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+/* ───────── CTA ───────── */
+.sp-cta {
+    display: grid;
+    gap: 2rem;
+    padding: clamp(3.5rem, 9vh, 5.5rem) clamp(1.25rem, 5vw, 4.5rem);
+    background: #F4F2EE;
+}
+
+@media (min-width: 900px) {
+    .sp-cta {
+        grid-template-columns: 1fr auto;
+        align-items: end;
+    }
+}
+
+.sp-cta-title {
+    margin: 0;
+    font-size: clamp(2.5rem, 6.5vw, 6.5rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+
+.sp-cta-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    max-width: 22rem;
+}
+
+.sp-cta-text {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: #2D3036;
+}
+
+/* visually hidden, still read by screen readers (e.g. "not included" on struck-through lines) */
+.sp-page .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

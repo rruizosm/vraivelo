@@ -13,7 +13,72 @@
             "on_sale": "On Sale",
             "coming_soon": "Coming Soon"
         },
-        "search_placeholder": "Search by brand or model…"
+        "search_placeholder": "Search by brand, model or component (e.g. Di2, carbon)…",
+        "badge": "BIKE CATALOGUE",
+        "h1": "Giant & Berria Bikes in Girona",
+        "intro": "Road, gravel, MTB, e-bikes and kids' bikes. Check models, sizes and prices at our shop in Girona.",
+        "all": "All",
+        "filters_btn": "Filters",
+        "clear_filters": "Clear filters",
+        "filter": {
+            "material": "Frame material",
+            "carbon": "Carbon",
+            "aluminum": "Aluminium",
+            "brands": "Brands",
+            "price": "Price range"
+        },
+        "sort": {
+            "label": "Sort by",
+            "featured": "Featured",
+            "price_asc": "Price: low to high",
+            "price_desc": "Price: high to low"
+        },
+        "count_one": "1 bike",
+        "count_other": "{{count}} bikes",
+        "empty": "No bikes match these filters.",
+        "cat": {
+            "carretera": {
+                "name": "Road",
+                "h1": "Road bikes in Girona",
+                "intro": "Giant and Berria road bikes, from entry-level to carbon with electronic shifting. Compare models, sizes and prices at our shop in Girona."
+            },
+            "gravel": {
+                "name": "Gravel",
+                "h1": "Gravel bikes in Girona",
+                "intro": "Gravel bikes to leave the tarmac without giving up speed: Giant Revolt, Berria Naii and more. Check models and prices at our shop in Girona."
+            },
+            "mtb": {
+                "name": "MTB",
+                "h1": "Mountain bikes (MTB) in Girona",
+                "intro": "Giant and Berria mountain bikes for riding off the tarmac. Check models, sizes and prices at our shop in Girona."
+            },
+            "electricas": {
+                "name": "E-bikes",
+                "h1": "Electric bikes in Girona",
+                "intro": "Electric bikes from Berria and other brands. Check models, sizes and prices at our shop in Girona."
+            },
+            "infantiles": {
+                "name": "Kids",
+                "h1": "Kids' bikes in Girona",
+                "intro": "Kids' bikes so the little ones can start riding. Check models and prices at our shop in Girona."
+            }
+        },
+        "eyebrow": "Bike catalogue · Girona",
+        "breadcrumb_label": "Breadcrumb",
+        "breadcrumb_home": "Home",
+        "breadcrumb_bikes": "Bikes",
+        "categories_label": "Bike types",
+        "results_label": "Bikes",
+        "filters_title": "Filters",
+        "view_bike": "View bike",
+        "new": "New",
+        "colors_one": "1 colour available",
+        "colors_other": "{{count}} colours available",
+        "price_min": "Minimum price",
+        "price_max": "Maximum price",
+        "remove_filter": "Remove filter: {{name}}",
+        "show_results_one": "Show 1 bike",
+        "show_results_other": "Show {{count}} bikes"
     },
     "vraivelo": {
         "read_story": "Read Story",
@@ -34,7 +99,9 @@
         "team": {
             "ruben_role": "Founder & Lead Mechanic",
             "ruben_desc": "Master craftsman with over 10 years of experience in bike restoration and custom builds."
-        }
+        },
+        "more_stories": "More stories",
+        "all_stories": "See all stories"
     },
     "product": {
         "specifications": "Specifications",
@@ -77,74 +144,156 @@
             "cassette": "Cassette",
             "bottom_bracket": "Bottom Bracket",
             "brakes": "Brakes"
+        },
+        "price_label": "Price",
+        "call_us": "Call the shop",
+        "official_dealer": "Official Giant & Berria dealer",
+        "own_workshop": "Own workshop in Girona",
+        "related_title": "Other bikes you may like",
+        "view_all_bikes": "See all bikes",
+        "not_found": "Product not found",
+        "gallery": "Photos",
+        "prev_image": "Previous photo",
+        "next_image": "Next photo",
+        "open_image": "Open the photo full size",
+        "show_image": "Show photo {{n}}",
+        "color": "Colour",
+        "size": "Size",
+        "size_help": "Not sure about the size? We'll advise you in store based on your height and riding style.",
+        "ask_availability": "Check availability",
+        "about": "About this bike",
+        "about_product": "About this product",
+        "specs_eyebrow": "Technical sheet",
+        "on_the_road": "On the road",
+        "on_the_road_alt": "{{name}} on the road",
+        "highlight": {
+            "groupset": "Groupset",
+            "brakes": "Brakes",
+            "wheels": "Wheels",
+            "motor": "Motor"
+        },
+        "spec_group": {
+            "frame": "Frame and suspension",
+            "drivetrain": "Drivetrain",
+            "brakes": "Brakes",
+            "wheels": "Wheels and tyres",
+            "cockpit": "Cockpit",
+            "electric": "Electric system",
+            "other": "Other"
         }
     },
     "home": {
         "hero": {
-            "badge": "AUTHORIZED DEALER • EXPERT WORKSHOP",
+            "badge": "OFFICIAL GIANT & BERRIA DEALER · GIRONA",
             "title": "RIDE",
             "title_highlight": "REALITY",
-            "subtitle": "Not just a bike shop. A sanctuary for performance, precision, and passion.",
-            "explore_btn": "Explore Bikes",
-            "book_btn": "Book Service",
+            "subtitle": "Road, gravel, MTB and e-bikes from Giant and Berria, with our own workshop in Girona.",
+            "explore_btn": "See bikes & prices",
+            "book_btn": "Book the workshop",
             "scroll": "Scroll",
-            "partners_prefix": "Official partner of"
+            "partners_prefix": "Official partner of",
+            "from": "from",
+            "image_alt": "Vraivelo bike workshop in Girona: mechanic servicing a Berria road bike"
         },
         "brands": {
-            "title": "Trusted Partners"
+            "title": "Trusted partners",
+            "heading": "Official Giant and Berria dealer",
+            "subtitle": "Bikes with the manufacturer's official warranty, genuine parts and the backing of our Girona workshop.",
+            "official": "Official dealer",
+            "see_bikes": "See {{brand}} bikes",
+            "also": "We also work with",
+            "giant": {
+                "desc": "The world's largest bicycle manufacturer. Road, gravel and mountain."
+            },
+            "berria": {
+                "desc": "Carbon bikes designed and built in Spain. Road, gravel and e-bikes."
+            }
         },
         "values": {
+            "eyebrow": "How we work",
             "title": "Why",
             "title_highlight": "Vraivēlo?",
-            "subtitle": "We combine expert craftsmanship with genuine passion for cycling.",
+            "subtitle": "What we value most is giving you a high-level service and making sure you leave happy, every time.",
             "cards": {
-                "workshop": {
-                    "title": "Expert Workshop",
-                    "desc": "State-of-the-art tools and certified mechanics for top-tier maintenance and repairs."
+                "service": {
+                    "title": "High-level service",
+                    "desc": "Close, personal attention from your first question to the day you pick up your bike. Your satisfaction comes first."
                 },
-                "selection": {
-                    "title": "Premium Selection",
-                    "desc": "A careful selection of the world's finest bicycles and professional equipment."
+                "workshop": {
+                    "title": "Specialist workshop",
+                    "desc": "Latest-generation tools and meticulous work: we treat every tool and every bike with the utmost care."
+                },
+                "setup": {
+                    "title": "Perfect tune-up",
+                    "desc": "Before handing over your bike we check and adjust it thoroughly, so you get it in the best possible condition."
                 },
                 "guarantee": {
-                    "title": "Vraivēlo Guarantee",
-                    "desc": "We stand behind every service and sale. Quality and satisfaction, always."
+                    "title": "Vraivēlo guarantee",
+                    "desc": "Every workshop service is covered by our service guarantee. If something isn't right, we fix it.",
+                    "link": "Check the guarantee"
                 }
             }
         },
         "reviews": {
-            "title": "What Our Riders",
-            "title_highlight": "Say",
-            "subtitle": "Real experiences from our community of cyclists.",
-            "based_on": "Based on",
-            "reviews_text": "reviews",
-            "items": {
-                "1": {
-                    "text": "The customer service is excellent! David is very friendly. I've taken my bike in twice and he fixed the problem on the same day... I recommend him 100%.",
-                    "date": "2 months ago",
-                    "name": "Margarita M."
-                },
-                "2": {
-                    "text": "Excellent experience! The service in this store is top notch. They helped me choose the perfect bike without pressure and answered all my questions. Laura and David are super nice, a real pleasure to deal with. I recommend them 100%.",
-                    "date": "3 months ago",
-                    "name": "Paco C."
-                },
-                "3": {
-                    "text": "We were cycling along a route through La Garrotxa with my friends when we came across them. A group of cyclists with their support van. They didn't hesitate to offer us water and isotonic drinks at a time when we really needed them. You could tell they were passionate about cycling and wanted to help any cyclists, like us. I wouldn't hesitate to put my bikes in their hands and go on one of their well-organized rides. You guys are great! Thank you!",
-                    "date": "5 months ago",
-                    "name": "Pit"
-                },
-                "4": {
-                    "text": "Great place! They helped me find a nut that I couldn't find anywhere else. And everyone was so friendly! 🥰",
-                    "date": "3 months ago",
-                    "name": "Pablo R."
-                }
-            }
+            "eyebrow": "Google reviews",
+            "title": "What our",
+            "title_highlight": "riders say",
+            "average": "Average rating",
+            "reviews_on_google": "Reviews on Google"
         },
         "cta": {
-            "title": "Ready to Elevate Your Ride?",
-            "text": "Visit our workshop or explore our collection of premium bicycles.",
-            "button": "Get in Touch"
+            "eyebrow": "Vraivēlo · Girona",
+            "title": "Ready to level up?",
+            "text": "Visit the shop, bring your bike to the workshop or join our next group ride. We help you ride better.",
+            "button": "Contact us",
+            "image_alt": "Group of riders with Berria bikes in front of the Vraivēlo shop in Girona"
+        },
+        "categories": {
+            "title": "Find your bike",
+            "subtitle": "Pick a bike type and browse the models and prices at our Girona shop.",
+            "from": "From {{price}}",
+            "models_one": "1 model",
+            "models_other": "{{count}} models",
+            "eyebrow": "Shop by bike type",
+            "other_name": "Helmets, glasses & apparel",
+            "other_meta": "Helmets · Glasses · Apparel",
+            "tagline": {
+                "carretera": "Speed on tarmac",
+                "gravel": "Tarmac, trails and adventure",
+                "mtb": "Trails and mountains",
+                "electricas": "Ride further",
+                "infantiles": "Their first miles",
+                "other": "Gear up to ride"
+            },
+            "alt": {
+                "carretera": "Cyclist riding a Berria Mistral on the road",
+                "gravel": "Cyclist riding a Berria Naii X down a gravel track",
+                "mtb": "Mountain biker on a Berria Bravo on a trail",
+                "electricas": "Rider on a Berria Nexxen e-bike above a reservoir",
+                "infantiles": "Three kids wearing helmets riding Giant bikes",
+                "other": "Cyclist fastening a helmet, wearing Julbo cycling glasses"
+            }
+        },
+        "featured": {
+            "eyebrow": "Shop selection",
+            "title": "Featured bikes",
+            "subtitle": "A selection from our Girona shop catalogue.",
+            "view_all": "See all bikes"
+        },
+        "slogan": {
+            "eyebrow": "Vraivēlo / Girona — Costa Brava",
+            "line1": "Your next ride",
+            "line2": "starts here.",
+            "text": "Road, gravel or mountain.\nWe advise you, fit your bike\nand keep it running smoothly\nin our Girona workshop.",
+            "label": "Official dealer"
+        },
+        "fit": {
+            "eyebrow": "Vraivēlo / Workshop & care",
+            "line1": "Utmost care",
+            "line2": "for your bike.",
+            "text": "We look after every detail:\nwe check, adjust and pamper\nyour bike so it always\nperforms at its best.",
+            "label": "Our own workshop in Girona",
+            "cta": "Visit the workshop"
         }
     },
     "workshop": {
@@ -152,35 +301,45 @@
         "title": "Workshop",
         "title_highlight": "Services",
         "subtitle": "David treats every bike as if it were their own. Precision, care, and speed — every time.",
+        "care": {
+            "eyebrow": "Vraivēlo / Workshop & detail",
+            "line1": "We care about",
+            "line2": "every detail.",
+            "text": "We strip, clean and check\nevery part with care,\nso your bike gets\nthe excellent service it deserves.",
+            "label": "Precision mechanics",
+            "cta": "Book a visit"
+        },
         "discipline": {
-            "title_1": "Select your service",
-            "subtitle": "Choose a specialized service from the shop. David is certified to perform high-performance tune-ups on all major components of mountain, gravel, road, and electric bikes.",
-            "become_member": "Become a Vraivēlo Member",
-            "view_services": "View Services",
+            "eyebrow": "Vraivēlo workshop · Girona",
+            "title_1": "Workshop services",
+            "become_member": "Become a Vraivēlo member",
+            "view_services": "See services and prices",
             "cards": {
                 "mechanics": {
                     "badge": "Essential",
-                    "title": "Tune-up and Maintenance",
-                    "desc": "Comprehensive drivetrain cleaning, bolt torque verification, and precision shifting adjustments for daily performance."
+                    "title": "Tune-up and maintenance",
+                    "desc": "Full drivetrain cleaning, bolt torque checks and precise shifting and brake adjustment for everyday riding.",
+                    "image_alt": "Vraivēlo mechanic working on a road bike in the workshop"
                 },
                 "suspensions": {
                     "badge": "Advanced",
-                    "title": "Fork Maintenance",
-                    "desc": "Lower leg service, air spring volume tuning, and full damper rebuilds for Fox, RockShox, and Öhlins forks."
+                    "title": "Forks",
+                    "desc": "Fork servicing, air volume tuning and full cartridge rebuilds for Fox, RockShox and Öhlins.",
+                    "image_alt": "Rider descending a trail on a full-suspension mountain bike"
                 },
                 "rear_shock": {
                     "badge": "Expert",
-                    "title": "Shock Absorber Maintenance",
-                    "desc": "Air sleeve maintenance, nitrogen charging, and bespoke shim stack re-valving for absolute rear-end traction control."
+                    "title": "Rear shocks",
+                    "desc": "Air can servicing, nitrogen charging and custom re-valving for full control of rear traction.",
+                    "image_alt": "Mountain biker riding through the trees on a full-suspension bike"
                 }
             }
         },
         "membership": {
             "title_1": "Vraivēlo",
-            "title_2": "Membership Plans",
-            "join_now": "Join Now",
-            "recommended": "Recommended",
-            "premium": "Premium",
+            "title_2": "Membership plans",
+            "join_now": "Join now",
+            "recommended": "Recommended · Most popular",
             "plans": {
                 "peloton": {
                     "name": "Peloton Rider",
@@ -189,7 +348,8 @@
                     "f1": "Free basic adjustments",
                     "f2": "10% parts discount",
                     "f3": "Workshop priority booking",
-                    "f4": "Access to official events and a private group"
+                    "f4": "Access to official events and a private group",
+                    "tagline": "For riders who head out regularly."
                 },
                 "pro": {
                     "name": "Pro Performance",
@@ -200,7 +360,8 @@
                     "f3": "Discounts: 10% off labor + 10% off clothing and accessories",
                     "f4": "50% off Social Rides, including coffee",
                     "f5": "50% off training courses",
-                    "f6": "Exclusive discounts on bicycle insurance"
+                    "f6": "Exclusive discounts on bicycle insurance",
+                    "tagline": "The best balance of perks and price."
                 },
                 "elite": {
                     "name": "Elite Factory",
@@ -210,9 +371,12 @@
                     "f2": "VIP Priority at the 24-Hour Repair Shop",
                     "f3": "20% off labor, clothing, and parts",
                     "f4": "Priority on vraivēlo weekends and training sessions",
-                    "f5": "1 exclusive experience per year for FREE"
+                    "f5": "1 exclusive experience per year for FREE",
+                    "tagline": "For serious training, with no waiting."
                 }
-            }
+            },
+            "eyebrow": "Vraivēlo membership",
+            "subtitle": "A year of perks in the workshop and the shop. Pick the plan that fits the way you ride."
         },
         "categories": [
             {
@@ -303,7 +467,8 @@
             "hero": {
                 "category": "Mechanical Excellence",
                 "title": "Fork Maintenance",
-                "desc": "Elevating your ride through clinical precision. Our specialized fork workshop focuses on hydraulic integrity, friction reduction, and bespoke tuning for elite performance."
+                "desc": "Elevating your ride through clinical precision. Our specialized fork workshop focuses on hydraulic integrity, friction reduction, and bespoke tuning for elite performance.",
+                "image_alt": "Rider descending a trail on a full-suspension mountain bike"
             },
             "services": {
                 "basic": {
@@ -362,7 +527,8 @@
                 "category": "Suspension Excellence",
                 "title": "Rear Shock <br/>Engineering.",
                 "desc": "Precision tuning for high-performance damping. We treat every shock absorber as a unique mechanical masterpiece, restoring factory performance through clinical maintenance.",
-                "badge": "Certified Workshop"
+                "badge": "Certified Workshop",
+                "image_alt": "Mountain biker riding through the trees on a full-suspension bike"
             },
             "bento": {
                 "main": {
@@ -393,7 +559,7 @@
                 }
             },
             "specs": {
-                "title": "Service Matrix",
+                "title": "Step by step.",
                 "steps": {
                     "1": {
                         "step": "Step 01",
@@ -418,7 +584,8 @@
             "hero": {
                 "category": "Mechanical Excellence",
                 "title": "Tune-ups <br />& Maintenance",
-                "desc": "Our workshop specializes in high-performance maintenance. We treat every bicycle as a masterpiece of engineering, ensuring every gear shift is silent and every brake pull is surgical."
+                "desc": "Our workshop specializes in high-performance maintenance. We treat every bicycle as a masterpiece of engineering, ensuring every gear shift is silent and every brake pull is surgical.",
+                "image_alt": "Vraivēlo mechanic checking a road bike in the workshop"
             },
             "services": {
                 "basic": {
@@ -452,7 +619,8 @@
                 "tolerance": "Tolerance",
                 "turnaround": "Turnaround",
                 "certified": "Certified",
-                "parts": "Parts"
+                "parts": "Parts",
+                "parts_value": "Genuine"
             },
             "cta": {
                 "title": "Ready to Ride?",
@@ -464,9 +632,23 @@
             "title": "Need Something Custom?",
             "text": "We offer bespoke services for unique builds, vintage restorations, and competition preparation. Contact us for a personalized quote.",
             "button": "Request Custom Quote"
+        },
+        "service_page": {
+            "back": "Workshop",
+            "book": "Book a visit",
+            "see_prices": "See prices",
+            "prices_eyebrow": "Services and prices",
+            "prices_title": "Choose your service",
+            "prices_subtitle": "Pick the option your bike needs. If in doubt, we will advise you before we start.",
+            "from": "From",
+            "not_included": "not included",
+            "process_eyebrow": "How we work",
+            "cta_title": "Ready to ride?",
+            "cta_text": "Book your visit and leave your bike in the best hands."
         }
     },
     "contact": {
+        "photo_alt": "David from Vraivēlo with a Berria road bike outside the Girona shop",
         "badge": "GET IN TOUCH",
         "title": "Let's",
         "title_highlight": "Connect",
@@ -510,7 +692,10 @@
                 "default": "Select a detailed service",
                 "custom": "Custom / Not Listed"
             },
-            "submit": "Send Message"
+            "submit": "Send Message",
+            "sending": "Sending...",
+            "sent": "Message sent",
+            "sent_note": "Thank you. We'll get back to you as soon as possible."
         }
     },
     "footer": {
@@ -525,7 +710,11 @@
         "hours_label": "Monday to Friday:",
         "hours_morning": "9:00 - 13:00",
         "hours_afternoon": "16:00 - 19:00",
-        "copyright": "© {{year}} Vraivēlo. All rights reserved."
+        "copyright": "© {{year}} Vraivēlo. All rights reserved.",
+        "tagline": "Bike shop and workshop in Girona.",
+        "official": "Official dealer",
+        "contact_cta": "Write to us",
+        "hours_title": "Opening hours"
     },
     "cart": {
         "title": "Your Cart",
@@ -560,7 +749,7 @@
         "wheels": "Wheels",
         "new": "NEW",
         "colors": "Colors:",
-        "search_placeholder": "Search by brand or model (e.g. maillot, High Level)...",
+        "search_placeholder": "Search by brand, model or feature (e.g. maillot, Zipp, tubeless)…",
         "product_listed": "Product Listed",
         "products_listed": "Products Listed",
         "components": "Components",
@@ -569,7 +758,15 @@
         "frames": "Frames",
         "gear": "Gear",
         "maintenance": "Maintenance",
-        "food": "Nutrition"
+        "food": "Nutrition",
+        "eyebrow": "Clothing, components and accessories · Girona",
+        "h1": "Cycling clothing and accessories in Girona",
+        "intro": "Wheels, components, Vraivēlo clothing and accessories from the best brands. Check prices and availability at our Girona shop.",
+        "view_product": "View product",
+        "count_one": "1 product",
+        "count_other": "{{count}} products",
+        "sort_default": "Recommended",
+        "empty": "No products match this search."
     },
     "strava": {
         "badge": "The Official Community",
@@ -583,6 +780,7 @@
             "routes": "Routes"
         },
         "story": {
+            "photo_alt": "Vraivēlo club riders lined up for a ride outside the Girona shop",
             "subheading": "Our Club",
             "heading": "The digital heart of Vraivēlo",
             "p1": "The Vraivēlo Strava club is the starting point of every ride before the wheels hit the road. It's our shared space, where we organize, share and shape everything that happens outside the shop.",
@@ -711,6 +909,26 @@
         "story": {
             "title": "{{name}} | Vraivelo Girona",
             "description": "{{name}}: stories, events and cycling community from Vraivelo in Girona."
+        },
+        "shop_carretera": {
+            "title": "Road Bikes in Girona | Vraivelo",
+            "description": "Giant and Berria road bikes in Girona: aluminium and carbon, mechanical and electronic shifting. Check models, sizes and prices."
+        },
+        "shop_gravel": {
+            "title": "Gravel Bikes in Girona | Vraivelo",
+            "description": "Giant Revolt and Berria Naii gravel bikes in Girona. Check models, sizes and prices at our shop."
+        },
+        "shop_mtb": {
+            "title": "Mountain Bikes (MTB) in Girona | Vraivelo",
+            "description": "Giant and Berria mountain bikes in Girona: MTB models with prices and sizes. Visit us at Carrer Pau Vila i Dinarès 10."
+        },
+        "shop_electricas": {
+            "title": "Electric Bikes in Girona | Vraivelo",
+            "description": "Electric bikes in Girona: Berria models and more, with prices and sizes. Check availability at our shop."
+        },
+        "shop_infantiles": {
+            "title": "Kids' Bikes in Girona | Vraivelo",
+            "description": "Kids' bikes in Girona: models for boys and girls with prices and sizes. Check availability at Vraivelo."
         }
     },
     "origins": {
@@ -720,6 +938,7 @@
             "desc": "From competitive racing to precision mechanics. The story behind the workshop."
         },
         "intro": {
+            "photo_alt": "David, founder of Vraivēlo, celebrating a road race win",
             "title": "<vraiWhite>Vraivēlo</vraiWhite> was born from a lifetime spent on the bicycle.",
             "text": "David, founder of the workshop, grew up in Badalona and started pedaling barely three years later. What began as a childhood passion turned into a competitive career in mountain biking and later road cycling, moving through sub23 and elite categories to become part of a professional team."
         },
@@ -728,7 +947,8 @@
             "heading": "Pushing Limits on the Track",
             "text": "Competitive cycling demands more than just physical endurance; it requires a deep understanding of the machine. Years of pushing bikes to their limits in grueling conditions taught David the crucial relationship between rider and equipment.",
             "quote": "\"Every adjustment, every repair, and every recommendation comes from real experience in training, races, and long hours on the bike.\"",
-            "author": "— David, Founder"
+            "author": "— David, Founder",
+            "alt_mtb": "David racing mountain bike"
         },
         "quote_banner": {
             "title": "\"Having lived cycling from within marked the difference.\""
@@ -757,6 +977,14 @@
                 "Bike Shop"
             ],
             "badge": "Specialized Workshop"
+        },
+        "eyebrow": "Vraivēlo · Since 2023",
+        "cta": {
+            "eyebrow": "Vraivēlo workshop · Girona",
+            "title": "Come and meet us",
+            "text": "Drop by the shop or bring your bike to the workshop: we look after it with the same standards you train with to race.",
+            "workshop": "See the workshop",
+            "contact": "Contact"
         }
     },
     "calendar": {
@@ -833,6 +1061,15 @@
                 "title": "Road Social Ride",
                 "desc": "Explore backroads and forest trails on our monthly gravel excursion."
             }
+        },
+        "eyebrow": "Vraivēlo community",
+        "year_eyebrow": "Season",
+        "year_title": "The year on the bike",
+        "events_eyebrow": "Agenda",
+        "cta": {
+            "eyebrow": "Rides and events",
+            "title": "Ride with us",
+            "text": "We post every ride on our Strava club with distance, climbing and level. Any questions, write to us."
         }
     },
     "berria": {
@@ -842,6 +1079,8 @@
             "desc": "A retrospective look at our exclusive collaboration in the heart of Catalonia, where professional workshop expertise met high-performance bike engineering."
         },
         "article": {
+            "photo_alt": "Fitting a Berria bike during the Demo Tour at Vraivēlo",
+            "photo2_alt": "Riders testing Berria bikes on a gravel path near Girona",
             "subheading": "The Collaboration",
             "heading": "Berria Demo Tour in Vraivēlo",
             "p1": "There are days that perfectly sum up what we are, and the Berria Demo Tour at Vraivēlo was one of them.",
@@ -865,7 +1104,9 @@
             "f2_title": "Girona's Scenic Routes",
             "f2_desc": "Daily organized rides through medieval villages and coastal cliffs, guided by Vraivēlo experts.",
             "f3_title": "Workshop Expertise",
-            "f3_desc": "On-site mechanical support and personalized setup optimization by the Vraivēlo crew."
+            "f3_desc": "On-site mechanical support and personalized setup optimization by the Vraivēlo crew.",
+            "eyebrow": "The day",
+            "title": "What we lived that day"
         },
         "gallery": {
             "title": "Visual Journal",
@@ -875,14 +1116,23 @@
             "c3": "Morning in Girona",
             "c4": "The Girona Pelotón",
             "c5": "Last details",
-            "c6": "Talk before leaving"
+            "c6": "Talk before leaving",
+            "eyebrow": "Gallery"
         },
         "footer": {
             "quote": "\"Thank you to everyone who joined us for the Vraivēlo x Berria Girona Experience. We are proud to have shared these roads and these machines with you.\"",
             "copyright": "© 2025 Vraivēlo x Berria. All rights reserved."
+        },
+        "cta": {
+            "eyebrow": "Official Berria dealer",
+            "title": "Try a Berria",
+            "text": "Check the models we have in store or join one of our next rides.",
+            "bikes": "See Berria bikes",
+            "calendar": "See the calendar"
         }
     },
     "weekend": {
+        "photo_alt": "Vraivēlo Weekend riders passing a viaduct on the way to France",
         "headline": "Vraivēlo Weekend",
         "subtitle_1": "A weekend trip to France",
         "p1": "Last year we organized a different kind of ride from Vraivēlo. It wasn't just another route, but a little two-day adventure designed to enjoy cycling with calm, safety, and a great atmosphere.",
@@ -895,7 +1145,15 @@
         "gallery": {
             "title": "Event Gallery",
             "btn": "View All Photos"
-        }
+        },
+        "eyebrow": "Vraivēlo Weekend · 2 days",
+        "watch_video": "Watch the video",
+        "story_eyebrow": "The adventure",
+        "video_eyebrow": "On video",
+        "video_title": "How the weekend went",
+        "gallery_title": "The weekend in photos",
+        "gallery_alt": "Vraivēlo Weekend riders on the road",
+        "cta_title": "The next Vraivēlo Weekends"
     },
     "licenses": {
         "hero": {
@@ -905,7 +1163,8 @@
         },
         "grid": {
             "title": "2025 License Options",
-            "subtitle": "We manage your registration with the Catalan Cycling Federation (FCC) so you only have to worry about pedaling."
+            "subtitle": "We manage your registration with the Catalan Cycling Federation (FCC) so you only have to worry about pedaling.",
+            "eyebrow": "Catalan Cycling Federation"
         },
         "cards": {
             "competitive": {
@@ -969,12 +1228,14 @@
             "b3": {
                 "title": "Community & Perks",
                 "desc": "Join our official club and enjoy exclusive discounts in-store and on workshop services."
-            }
+            },
+            "eyebrow": "Why with us"
         },
         "cta": {
             "title": "Ready for your next adventure?",
             "desc": "Contact us and we will process your license in less than 48 business hours.",
             "btn": "APPLY NOW"
-        }
+        },
+        "eyebrow": "Cycling licences"
     }
 }

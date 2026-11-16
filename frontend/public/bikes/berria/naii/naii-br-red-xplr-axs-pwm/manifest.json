@@ -1,0 +1,79 @@
+{
+  "id": 122,
+  "name": "Berria Naii BR Red XPLR AXS PWM",
+  "brand": "berria",
+  "family": "naii",
+  "model": "naii-br-red-xplr-axs-pwm",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://berriabikes.com/products/naii-br-red-xplr-axs-pwm-2027",
+      "title": "NAII BR RED XPLR AXS PWM"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "brown-desert-storm-aquared",
+      "view": "side",
+      "page": "https://berriabikes.com/products/naii-br-red-xplr-axs-pwm-2027",
+      "file": "studio/brown-desert-storm-aquared-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Gravel-Naii-Br-Red-Xplr-Axs-Pwm-Berriabikes-001.png"
+    },
+    {
+      "color": "black-white-pearl-greycing",
+      "view": "side",
+      "page": "https://berriabikes.com/products/naii-br-red-xplr-axs-pwm-2027",
+      "file": "studio/black-white-pearl-greycing-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Gravel-Naii-Br-Red-Xplr-Axs-Pwm-Berriabikes-002.png"
+    },
+    {
+      "color": "naked-carbon-kerochalk",
+      "view": "side",
+      "page": "https://berriabikes.com/products/naii-br-red-xplr-axs-pwm-2027",
+      "file": "studio/naked-carbon-kerochalk-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Gravel-Naii-Br-Red-Xplr-Axs-Pwm-Berriabikes-003.png"
+    },
+    {
+      "color": "chalk-grey-white-pearl-tangray",
+      "view": "side",
+      "page": "https://berriabikes.com/products/naii-br-red-xplr-axs-pwm-2027",
+      "file": "studio/chalk-grey-white-pearl-tangray-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Gravel-Naii-Br-Red-Xplr-Axs-Pwm-Berriabikes-004.png"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "black.webp",
+  "catalog": [
+    {
+      "color": "BLACK-Collection",
+      "hex": "#000000",
+      "file": "black.webp"
+    },
+    {
+      "color": "BLUE OCEAN-IrisSelect",
+      "hex": "#0039b0",
+      "file": "blue.webp"
+    },
+    {
+      "color": "DESERT STORM-ALMAGRA-HYAWATTA-IrisSelect",
+      "hex": "#925106",
+      "file": "orange.webp"
+    },
+    {
+      "color": "DARK GREY-BLACK-CITRIC YELLOW-IrisSelect",
+      "hex": "#ffe900",
+      "file": "yellow.webp"
+    }
+  ],
+  "cutouts": []
+}

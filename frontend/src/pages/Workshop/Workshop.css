@@ -25,505 +25,626 @@
   background-color: var(--color-secondary-container);
 }
 
-.workshop-main {
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: clamp(4rem, 10vh, 6rem) 1.5rem;
+/* ───────── Services: big photo blocks, same language as the Home (cb-box) ───────── */
+.ws-services {
+    background: #fff;
+    color: var(--ink);
+    padding-top: calc(var(--nav-h) + clamp(1rem, 2.5vh, 1.75rem));
+    padding-bottom: clamp(3rem, 8vh, 5rem);
 }
 
-.workshop-header {
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-  max-width: 42rem;
-}
-
-.workshop-title {
-  font-size: clamp(2.25rem, 8vw, 3rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.25;
-  color: var(--primary);
-}
-
-.workshop-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .workshop-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.workshop-card {
-  position: relative;
-  background-color: var(--color-surface-container-lowest);
-  border-radius: 0.5rem;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(23, 29, 30, 0.05);
-  transition: all 0.3s;
-}
-
-.workshop-card-offset-1,
-.workshop-card-offset-2 {
-  margin-top: 0;
-}
-
-@media (min-width: 768px) {
-  .workshop-card-offset-1 {
-    margin-top: 2rem;
-  }
-  .workshop-card-offset-2 {
-    margin-top: 4rem;
-  }
-}
-
-.workshop-card-image-wrapper {
-  height: 12rem;
-  overflow: hidden;
-}
-
-.workshop-card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s;
-}
-
-.workshop-card:hover .workshop-card-image {
-  transform: scale(1.1);
-}
-
-.workshop-card-content {
-  padding: 2rem;
-}
-
-.workshop-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-.workshop-card-icon-wrapper {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.5rem;
-  background-color: var(--color-surface-container-low);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.workshop-card-icon {
-  color: var(--color-primary);
-  font-size: 1.875rem;
-  font-family: 'Material Symbols Outlined';
-  font-variation-settings: 'FILL' 1;
-}
-
-.workshop-badge {
-  font-size: 10px;
-  /* removed local font-family */
-  font-weight: 700;
-  padding: 0.25rem 0.5rem;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.workshop-badge-essential {
-  background-color: var(--color-tertiary-container);
-  color: var(--color-on-tertiary-container);
-}
-
-.workshop-badge-advanced,
-.workshop-badge-expert {
-  background-color: rgba(0, 172, 193, 0.1);
-  color: var(--color-primary);
-}
-
-.workshop-card-title {
-  /* removed local font-family */
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-}
-
-.workshop-card-desc {
-  color: var(--color-on-surface-variant);
-  /* removed local font-family */
-  font-size: 0.875rem;
-  margin-bottom: 2rem;
-  line-height: 1.625;
-}
-
-.workshop-card-button {
-  width: 100%;
-  background-color: var(--color-secondary-container);
-  color: var(--color-on-secondary-container);
-  padding: 0.75rem 0;
-  border-radius: 9999px;
-  /* removed local font-family */
-  font-weight: 700;
-  font-size: 0.875rem;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  border: none;
-}
-
-.workshop-card-button:hover {
-  background-color: var(--color-primary);
-  color: var(--color-on-primary);
-}
-
-.workshop-card-button:active {
-  transform: scale(0.95);
-}
-
-.workshop-card-button .material-symbols-outlined {
-  font-size: 0.875rem;
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-}
-
-/* Membership Plans Section */
-.workshop-membership {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  padding-bottom: 2.5rem;
-  margin-top: 1rem;
-  scroll-margin-top: 5rem;
-}
-
-.workshop-membership-hero {
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 2rem 1rem 2rem 1rem;
-  width: 100%;
-  position: relative;
-  z-index: 10;
-}
-
-@media (min-width: 640px) {
-  .workshop-membership-hero {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+.ws-header {
+    display: grid;
+    gap: 1rem;
+    padding: 0 clamp(1.25rem, 5vw, 4.5rem) clamp(2.5rem, 6vh, 3.5rem);
 }
 
 @media (min-width: 1024px) {
-  .workshop-membership-hero {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+    .ws-header {
+        grid-template-columns: 1fr 26rem;
+        align-items: end;
+        column-gap: 3rem;
+    }
+
+    .ws-eyebrow { grid-column: 1 / -1; }
 }
 
-.workshop-membership-title-container {
-  display: inline-block;
-  text-align: left;
-  margin-bottom: 1rem;
-}
-
-.workshop-membership-title {
-  /* removed local font-family */
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 0.5rem;
-  border-left: 4px solid var(--primary-deep);
-  padding-left: 1rem;
-  line-height: 1.25;
-}
-
-@media (min-width: 768px) {
-  .workshop-membership-title {
-    font-size: 3rem;
-  }
-}
-
-.workshop-membership-title-highlight {
-  color: var(--primary-deep);
-}
-
-.workshop-membership-btn-container {
-  margin-top: 2rem;
-}
-
-.workshop-membership-btn-main {
-  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold) 100%);
-  color: var(--text-main);
-  font-weight: 600;
-  /* removed local font-family */
-  font-size: 1.125rem;
-  padding: 1rem 2.5rem;
-  border-radius: 9999px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s;
-  width: 100%;
-  max-width: 28rem;
-  margin: 0 auto;
-  display: block;
-  border: none;
-  cursor: pointer;
-}
-
-.workshop-membership-btn-main:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.workshop-pricing-section {
-  position: relative;
-  width: 100%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.workshop-pricing-container {
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 1rem;
-  position: relative;
-  z-index: 10;
-}
-
-@media (min-width: 640px) {
-  .workshop-pricing-container {
-    padding: 0 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .workshop-pricing-container {
-    padding: 0 2rem;
-  }
-}
-
-.workshop-pricing-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-@media (min-width: 768px) {
-  .workshop-pricing-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .workshop-pricing-grid {
+.ws-eyebrow {
+    display: inline-flex;
     align-items: center;
-  }
+    gap: 0.75rem;
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #A35F00;
 }
 
-/* Shared Card Styles */
-.workshop-plan-card {
-  background-color: var(--global-white);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  position: relative;
+.ws-eyebrow-bar {
+    width: 2.25rem;
+    height: 3px;
+    background: var(--amber);
 }
 
-.workshop-plan-basic {
-  border-top: 8px solid var(--border-light);
+.ws-title {
+    margin: 0;
+    font-size: clamp(2.75rem, 7vw, 7rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+    color: var(--ink);
 }
 
-.workshop-plan-pro {
-  border-top: 8px solid var(--accent-gold);
+.ws-aside {
+    display: flex;
+    align-items: flex-end;
 }
 
 @media (min-width: 1024px) {
-  .workshop-plan-pro {
-    transform: translateY(-1rem);
-  }
+    .ws-aside { justify-content: flex-end; }
 }
 
-.workshop-plan-elite {
-  padding: 0;
-  border: none;
+/* "Hazte miembro" button: ink pill; on hover an amber fill sweeps in from the left,
+   the arrow disc turns ink and the arrow drops, hinting at the plans below */
+.ws-member {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+    border-radius: 999px;
+    background: var(--ink);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow: 0 10px 30px -12px rgba(11, 13, 16, 0.55);
+    transition: color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.workshop-plan-badge-pro {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold) 100%);
-  color: var(--text-main);
-  font-size: 0.75rem;
-  /* removed local font-family */
-  font-weight: 700;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+.ws-member::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--amber);
+    transform: translateX(-101%);
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.workshop-plan-badge-elite {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background-color: var(--text-main);
-  color: var(--border-light);
-  font-size: 0.75rem;
-  /* removed local font-family */
-  font-weight: 700;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.ws-member-icon {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: var(--amber);
+    color: var(--ink);
+    overflow: hidden;
+    transition: background 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Card Headers */
-/* .workshop-plan-header {
-  margin-bottom: 1.5rem;
-} */
-
-.workshop-plan-header-elite {
-  background-color: var(--global-black);
-  color: var(--global-white);
-  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
-  position: relative;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+.ws-member-icon svg {
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.workshop-plan-icon-wrapper {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+.ws-member:hover,
+.ws-member:focus-visible {
+    color: var(--ink);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px -14px rgba(255, 164, 27, 0.75);
 }
 
-.workshop-plan-icon-basic {
-  background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--border-light) 100%);
-  color: var(--text-secondary);
+.ws-member:hover::before,
+.ws-member:focus-visible::before {
+    transform: translateX(0);
 }
 
-.workshop-plan-icon-pro {
-  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold) 100%);
-  color: var(--text-main);
+.ws-member:hover .ws-member-icon,
+.ws-member:focus-visible .ws-member-icon {
+    background: var(--ink);
+    color: var(--amber);
 }
 
-.workshop-plan-icon-elite {
-  background-color: var(--text-main);
-  color: var(--global-white);
+/* the arrow slides out the bottom and comes back in from the top */
+.ws-member:hover .ws-member-icon svg,
+.ws-member:focus-visible .ws-member-icon svg {
+    animation: ws-arrow-drop 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.workshop-plan-name {
-  font-size: 1.5rem;
-  /* removed local font-family */
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 1rem;
+@keyframes ws-arrow-drop {
+    0% { transform: translateY(0); }
+    45% { transform: translateY(160%); }
+    46% { transform: translateY(-160%); }
+    100% { transform: translateY(0); }
 }
 
-.workshop-plan-name-elite {
-  color: var(--global-white);
-  margin-bottom: 0.5rem;
+.ws-member:active {
+    transform: translateY(-1px) scale(0.98);
 }
 
-.workshop-plan-price-wrap {
-  border-bottom: 1px solid var(--border-light);
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
+.ws-member:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
 }
 
-.workshop-plan-price-wrap-elite {
-  border-bottom: 1px solid var(--border-light);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-  padding-top: 0.5rem;
+@media (prefers-reduced-motion: reduce) {
+    .ws-member,
+    .ws-member::before,
+    .ws-member-icon { transition: none; }
+    .ws-member:hover .ws-member-icon svg,
+    .ws-member:focus-visible .ws-member-icon svg { animation: none; }
 }
 
-.workshop-plan-price {
-  font-size: 3rem;
-  /* removed local font-family */
-  font-weight: 700;
-  color: var(--text-main);
+/* three tall blocks edge to edge; one per row on phones */
+.ws-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+    background: #fff;
 }
 
-.workshop-plan-period {
-  font-size: 1.25rem;
-  /* removed local font-family */
-  color: var(--text-muted);
+/* desktop: the three blocks together take 75% of the screen width, centred;
+   the header lines up with them */
+@media (min-width: 900px) {
+    .ws-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    .ws-header {
+        width: 75%;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
-.workshop-plan-body-elite {
-  padding: 0 1.5rem 1.5rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  background-color: var(--global-white);
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+.ws-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    aspect-ratio: 4 / 5;
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+    isolation: isolate;
+    background: var(--ink);
 }
 
-/* Features List */
-.workshop-plan-features {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  list-style: none;
-  padding: 0;
+@media (min-width: 900px) {
+    .ws-box { aspect-ratio: 3 / 4; }
 }
 
-.workshop-plan-feature {
-  display: flex;
-  align-items: flex-start;
+.ws-box-img {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.workshop-plan-feature-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  color: var(--primary-deep);
-  margin-right: 0.75rem;
-  flex-shrink: 0;
-  margin-top: 0.125rem;
+.ws-box-shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(11, 13, 16, 0.94) 0%, rgba(11, 13, 16, 0.6) 38%, rgba(11, 13, 16, 0.05) 70%, rgba(11, 13, 16, 0.3) 100%);
+    transition: background 0.4s ease;
 }
 
-.workshop-plan-feature-text {
-  color: var(--text-secondary);
-  /* removed local font-family */
+.ws-box:hover .ws-box-img,
+.ws-box:focus-visible .ws-box-img {
+    transform: scale(1.06);
 }
 
-.workshop-plan-btn {
-  width: 100%;
-  background-color: var(--primary-deep);
-  color: var(--global-white);
-  padding: 0.75rem 0;
-  border-radius: 9999px;
-  font-weight: 500;
-  /* removed local font-family */
-  transition: background-color 0.3s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  margin-top: auto;
+.ws-box:focus-visible {
+    outline: 3px solid var(--amber);
+    outline-offset: -3px;
 }
 
-.workshop-plan-btn:hover {
-  background-color: var(--primary-deep);
+.ws-box-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
-.workshop-plan-btn-icon {
-  margin-left: 0.5rem;
+.ws-box-index {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--amber);
+}
+
+.ws-box-badge {
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(6px);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.ws-box-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ws-box-title {
+    font-size: clamp(1.75rem, 2.3vw, 2.6rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+}
+
+.ws-box-desc {
+    max-width: 28rem;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.ws-box-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.ws-box-arrow {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: var(--amber);
+    color: var(--ink);
+    transition: transform 0.3s ease;
+}
+
+.ws-box:hover .ws-box-arrow,
+.ws-box:focus-visible .ws-box-arrow {
+    transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ws-box-img,
+    .ws-box-arrow { transition: none; }
+}
+
+/* ───────── Membership plans: same type system; Pro Performance is dark, raised and ribboned ───────── */
+.mp-section {
+    background: #fff;
+    color: var(--ink);
+    padding: clamp(3.5rem, 9vh, 6rem) clamp(1.25rem, 5vw, 4.5rem) clamp(4rem, 10vh, 6.5rem);
+    scroll-margin-top: var(--nav-h);
+}
+
+.mp-header {
+    display: grid;
+    gap: 1rem;
+    margin: 0 auto clamp(3rem, 7vh, 4.5rem);
+}
+
+@media (min-width: 900px) {
+    .mp-header,
+    .mp-grid {
+        width: 75%;
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .mp-header {
+        grid-template-columns: 1fr 24rem;
+        align-items: end;
+        column-gap: 3rem;
+    }
+
+    .mp-eyebrow { grid-column: 1 / -1; }
+}
+
+.mp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #A35F00;
+}
+
+.mp-title {
+    margin: 0;
+    font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+
+.mp-subtitle {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: #2D3036;
+}
+
+.mp-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+@media (min-width: 900px) {
+    .mp-grid {
+        grid-template-columns: 1fr 1.12fr 1fr;
+        align-items: center;
+    }
+}
+
+.mp-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    height: 100%;
+    padding: clamp(1.75rem, 2.5vw, 2.25rem);
+    background: #F4F2EE;
+    color: var(--ink);
+}
+
+/* featured plan: dark, taller, amber accents */
+.mp-card--featured {
+    background: var(--ink);
+    color: #fff;
+    padding-top: clamp(3.25rem, 4vw, 3.75rem);
+    padding-bottom: clamp(2.5rem, 3.5vw, 3rem);
+    box-shadow: 0 30px 60px -30px rgba(11, 13, 16, 0.6);
+}
+
+/* stacked (phones/tablets): the recommended plan goes first */
+@media (max-width: 899px) {
+    .mp-card--featured { order: -1; }
+}
+
+@media (min-width: 900px) {
+    .mp-card { height: auto; }
+    .mp-card--featured { z-index: 1; }
+}
+
+.mp-ribbon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0.6rem 1rem;
+    background: var(--amber);
+    color: var(--ink);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.mp-card-head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mp-card-index {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #A35F00;
+}
+
+.mp-card--featured .mp-card-index { color: var(--amber); }
+
+.mp-card-name {
+    margin: 0;
+    font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: inherit;
+}
+
+.mp-card-tagline {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #4A4F57;
+}
+
+.mp-card--featured .mp-card-tagline { color: rgba(255, 255, 255, 0.7); }
+
+.mp-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin: 0;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(11, 13, 16, 0.12);
+    color: var(--ink); /* p elements get a grey from index.css */
+}
+
+.mp-card--featured .mp-price { color: #fff; }
+
+.mp-card--featured .mp-price { border-bottom-color: rgba(255, 255, 255, 0.16); }
+
+.mp-price-value {
+    font-size: clamp(3.25rem, 5vw, 4.75rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: inherit;
+}
+
+.mp-card--featured .mp-price-value { color: var(--amber); }
+
+.mp-price-period {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #4A4F57;
+}
+
+.mp-card--featured .mp-price-period { color: rgba(255, 255, 255, 0.65); }
+
+.mp-features {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mp-feature {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: #2D3036;
+}
+
+.mp-card--featured .mp-feature { color: rgba(255, 255, 255, 0.9); }
+
+.mp-feature svg {
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    color: #A35F00;
+}
+
+.mp-card--featured .mp-feature svg { color: var(--amber); }
+
+/* button: outline pill on the light cards, solid amber on the featured one;
+   on hover an ink/amber fill sweeps in and the arrow disc turns */
+.mp-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.45rem 0.45rem 0.45rem 1.5rem;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    isolation: isolate;
+    transition: color 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mp-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--ink);
+    transform: translateX(-101%);
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mp-btn-icon {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    transition: background 0.45s ease, color 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mp-btn:hover,
+.mp-btn:focus-visible {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.mp-btn:hover::before,
+.mp-btn:focus-visible::before {
+    transform: translateX(0);
+}
+
+.mp-btn:hover .mp-btn-icon,
+.mp-btn:focus-visible .mp-btn-icon {
+    background: var(--amber);
+    color: var(--ink);
+    transform: rotate(45deg);
+}
+
+.mp-card--featured .mp-btn {
+    border-color: var(--amber);
+    background: var(--amber);
+    color: var(--ink);
+}
+
+.mp-card--featured .mp-btn::before { background: #fff; }
+
+.mp-card--featured .mp-btn:hover,
+.mp-card--featured .mp-btn:focus-visible { color: var(--ink); }
+
+.mp-btn:active { transform: translateY(0) scale(0.98); }
+
+.mp-btn:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mp-btn,
+    .mp-btn::before,
+    .mp-btn-icon { transition: none; }
 }

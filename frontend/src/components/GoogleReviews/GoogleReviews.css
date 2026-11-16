@@ -1,137 +1,187 @@
-.google-reviews-section {
-    padding: 6rem 1.5rem;
-    background: transparent;
-    position: relative;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+/* Google reviews: big score + total, then an endless left-moving row of review cards
+   (same marquee as the featured bikes on the Home page) */
+.rv-section {
+    background: #F4F2EE;
+    color: var(--ink);
+    padding: clamp(3.5rem, 9vh, 6rem) 0;
+    overflow: hidden;
 }
 
-.google-reviews-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    justify-content: center;
-}
-
-.google-reviews-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.google-rating-summary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.google-score {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
-
-.google-stars {
-    display: flex;
-    gap: 0.25rem;
-}
-
-.google-count {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-}
-
-.google-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 0.5rem;
-}
-
-.google-reviews-grid {
+.rv-header {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
-    width: 80%;
-    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 4.5rem);
+    margin-bottom: clamp(2.5rem, 6vh, 3.5rem);
 }
 
-@media (min-width: 768px) {
-    .google-reviews-grid {
-        grid-template-columns: repeat(1, 1fr);
+@media (min-width: 1024px) {
+    .rv-header {
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        column-gap: 3rem;
     }
 }
 
-.google-review-card {
-    background-color: white;
-    border: 1px solid var(--border-subtle);
-    border-radius: 1.5rem;
-    padding: 2.5rem;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    box-shadow: var(--shadow-sm);
-}
-
-.google-review-card:hover {
-    border-color: var(--border-active);
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-}
-
-.review-header {
-    display: flex;
+.rv-eyebrow {
+    display: inline-flex;
     align-items: center;
-    gap: 1rem;
-    position: relative;
-}
-
-.reviewer-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--primary);
-    color: var(--bg-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 0.75rem;
+    margin: 0 0 1rem;
+    font-size: 0.72rem;
     font-weight: 600;
-    font-size: 1.2rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #A35F00;
 }
 
-.reviewer-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.reviewer-name {
-    font-weight: 600;
-    color: var(--text-primary);
-    font-size: 1rem;
-}
-
-.review-date {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-}
-
-.review-google-icon {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.8;
-}
-
-.review-stars {
-    display: flex;
-    gap: 0.15rem;
-}
-
-.review-text {
-    color: var(--text-secondary);
-    font-size: 1rem;
-    line-height: 1.6;
+.rv-title {
     margin: 0;
+    max-width: 14ch;
+    font-size: clamp(2.25rem, 4.5vw, 4.25rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+}
+
+.rv-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.rv-summary:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 6px;
+}
+
+.rv-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--ink);
+}
+
+.rv-stat-value {
+    font-size: clamp(4.5rem, 10vw, 9rem);
+    font-weight: 900;
+    line-height: 0.9; /* leaves room for the comma in "4,8" above the label */
+    letter-spacing: -0.05em;
+}
+
+.rv-stat-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.rv-stat-label > svg:last-child {
+    color: #A35F00;
+    transition: transform 0.3s ease;
+}
+
+.rv-summary:hover .rv-stat-label > svg:last-child {
+    transform: translate(3px, -3px);
+}
+
+.rv-stars {
+    display: inline-flex;
+    gap: 2px;
+}
+
+/* marquee */
+.rv-marquee {
+    --rv-width: clamp(18rem, 30vw, 26rem);
+    --rv-gap: 1rem;
+    overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    .rv-marquee { --rv-width: 80vw; }
+}
+
+.rv-track {
+    display: flex;
+    width: max-content;
+    animation: rv-slide var(--rv-duration, 45s) linear infinite;
+}
+
+.rv-marquee:hover .rv-track,
+.rv-track:focus-within {
+    animation-play-state: paused;
+}
+
+@keyframes rv-slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.rv-list {
+    display: flex;
+    gap: var(--rv-gap);
+    margin: 0;
+    padding: 0 var(--rv-gap) 0 0;
+    list-style: none;
+}
+
+.rv-item {
+    display: flex;
+    width: var(--rv-width);
+}
+
+.rv-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+    margin: 0;
+    padding: clamp(1.5rem, 2.5vw, 2rem);
+    background: #fff;
+    border: 1px solid rgba(11, 13, 16, 0.08);
+}
+
+.rv-text {
+    margin: 0;
+    flex: 1;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: #2D3036;
+}
+
+.rv-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(11, 13, 16, 0.1);
+}
+
+.rv-avatar {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    font-weight: 800;
+}
+
+.rv-name {
+    flex: 1;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rv-track { animation: none; }
+    .rv-marquee { overflow-x: auto; }
+    .rv-list[aria-hidden] { display: none; }
 }

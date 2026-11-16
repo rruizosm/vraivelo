@@ -1,0 +1,37 @@
+{
+  "id": 321,
+  "name": "Giant TCR Advanced SL 0 Red",
+  "brand": "giant",
+  "family": "tcr",
+  "model": "tcr-advanced-sl-0-red",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/tcr-advanced-sl-0--red-",
+      "title": "TCR Advanced SL 0 (RED) (2026) | Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "turbo-teal",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-sl-0--red-",
+      "file": "studio/turbo-teal-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ublvsbczxtoqy1yroux5/MY26TCRAdvancedSL0-Red_ColorATurboTeal.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "turbo-teal.jpg",
+  "catalog": [
+    {
+      "color": "Turbo Teal",
+      "hex": "#3B7B95",
+      "file": "turbo-teal.jpg"
+    }
+  ],
+  "cutouts": []
+}

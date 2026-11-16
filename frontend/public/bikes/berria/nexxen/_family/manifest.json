@@ -1,0 +1,38 @@
+{
+  "brand": "berria",
+  "family": "nexxen",
+  "sources": [
+    "https://berriabikes.com/pages/new-nexxen-avinox"
+  ],
+  "collected": "2026-11-15",
+  "lifestyle": [
+    {
+      "page": "https://berriabikes.com/pages/new-nexxen-avinox",
+      "file": "lifestyle/01.webp",
+      "width": 2000,
+      "height": 1166,
+      "source": "https://berriabikes.com/cdn/shop/files/BannerHero_nexxen_AFondo.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/new-nexxen-avinox",
+      "file": "lifestyle/02.webp",
+      "width": 1920,
+      "height": 1080,
+      "source": "https://berriabikes.com/cdn/shop/files/preview_images/85bd12b7074f48ba95aab277e3d06e61.thumbnail.0000000000.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/new-nexxen-avinox",
+      "file": "lifestyle/03.webp",
+      "width": 2000,
+      "height": 1167,
+      "source": "https://berriabikes.com/cdn/shop/files/AVINOX_M2S_Drive_Unit_Blanco.jpg"
+    },
+    {
+      "page": "https://berriabikes.com/pages/new-nexxen-avinox",
+      "file": "lifestyle/04.webp",
+      "width": 2000,
+      "height": 1000,
+      "source": "https://berriabikes.com/cdn/shop/files/preview_images/925164abbc7e46d5bce45d4bfbfd40b1.thumbnail.0000000000.jpg"
+    }
+  ]
+}

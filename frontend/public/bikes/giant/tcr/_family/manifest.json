@@ -1,0 +1,206 @@
+{
+  "brand": "giant",
+  "family": "tcr",
+  "sources": [
+    "https://www.giant-bicycles.com/es/tcr"
+  ],
+  "collected": "2026-11-15",
+  "lifestyle": [
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/01.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/c75zxmhxg3ybdlruilyl/tcr_main_banner1_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/02.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/kprm413amyt5pvj8usf9/Slider_Banner1_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/03.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/n2gpzpnpovbx1ytzwqkt/Slider_Banner1b_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/04.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/iovvkowtn89tl2wde7et/Slider_Banner2_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/05.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/xssygkt6pdvg9b6mv8aa/Slider_Banner8_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/06.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/rhvvyvrqkw33wclsxjw4/Slider_Banner3_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/07.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/htoibpqy5hy49nulvce4/Slider_Banner4_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/08.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/hwdxq0hryxeszfmw9rts/Slider_Banner5_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/09.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/cw2lbm5nthppvmvcy02m/Slider_Banner9_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/10.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/lw5e9atvnookdbkpti7v/Slider_Banner6_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/11.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/ekmqxabbrvsmuddeprzs/Slider_Banner7_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/12.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/we9f9nibyizahrwalzfu/Slider_Banner10_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/13.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/zhqbej44c4wgglyybh4k/tcr_kpf_banner1_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/14.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/xrtknzz91ktvv7vx6cac/tcr_Block1_Banner1a.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/15.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/bcp1cqtmpfsxde5066nh/tcr_Block1_Banner2a.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/16.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/jphh52uuuywvuymq61si/tcr_Block1_Banner3a.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/17.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/wbnvxpxeexw8nhopbbxj/optimization_block01.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/18.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/vnewgygr0bffmcxzcjzt/optimization_block02.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/19.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/xg57bsua1xiteomfgddb/optimization_block03.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/20.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/jongfzwbnsrvtewxwlpp/optimization_block04.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/21.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/f6nkb67h57ujuiwf08vn/Slider_Banner5_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/22.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/ok8j8vvnknsipj4p2hj2/Slider_Banner6_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/23.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/lie2pnd5tuzpuie9exao/Slider_Banner2_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/24.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/uu21w90vd4sz1ddtpnx1/Slider_Banner3_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/25.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/mzohcgckh8ol9ctkvejz/Slider_Banner4_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/26.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/fbiio3yubmn0flbj4y3d/Slider_Banner7_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/27.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/tae6ahmt196fm3yf1wiu/testing_5050.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/tcr",
+      "file": "lifestyle/28.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/unlpkmdoutmylkhj1me5/tcr_bottom_banner_d.jpg"
+    }
+  ]
+}

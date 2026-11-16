@@ -1,58 +1,30 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight } from 'lucide-react';
-import { useNavigate, Link } from 'react-router-dom';
 import { stories } from '../../data/stories';
 import SEOHead from '../../components/SEOHead/SEOHead';
+import { StoryCard } from './stories/StoryKit';
 import './Vraivelo.css';
 
+// Vraivēlo stories: the same grid of square / tall blocks as before; each block is a real link
+// (StoryCard) with the site's hover (photo zoom, darker shade, "Leer historia" sliding up).
 const Vraivelo = () => {
     const { t, i18n } = useTranslation();
-    const navigate = useNavigate();
-    
-    const currentStories = stories[i18n.language] || stories.en;
-
-    const handleStoryClick = (story) => {
-        if (story.content) {
-            navigate(`/vraivelo/${story.id}`);
-        }
-    };
+    const currentStories = (stories[i18n.language] || stories.en).filter((s) => s.content);
 
     return (
         <div className="vraivelo-page">
             <SEOHead titleKey="seo.vraivelo.title" descriptionKey="seo.vraivelo.description" path="/vraivelo" />
+            <h1 className="vraivelo-sr-only">{t('vraivelo.title')}</h1>
             <div className="stories-grid">
                 {currentStories.map((story, index) => (
                     <motion.div
                         key={story.id}
-                        initial={{ opacity: 0, y: 20 }}
+                        className={`story-cell ${story.size}`}
+                        initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                        className={`story-card ${story.size}`}
-                        onClick={() => handleStoryClick(story)}
-                        style={{
-                            backgroundImage: `url(${story.image})`,
-                            backgroundPosition: story.backgroundPosition || 'center',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundSize: story.backgroundSize || 'cover'
-                        }}
+                        transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <div className="story-overlay">
-                            <span className="story-category">{story.category}</span>
-                            <h2 className="story-title">
-                                {story.content ? (
-                                    <Link to={`/vraivelo/${story.id}/`} onClick={(e) => e.stopPropagation()} style={{ color: 'inherit', textDecoration: 'none' }}>
-                                        {story.title}
-                                    </Link>
-                                ) : story.title}
-                            </h2>
-                            {story.content && (
-                                <button className="read-more-btn">
-                                    {t('vraivelo.read_story', 'Read Story')} <ArrowRight size={16} />
-                                </button>
-                            )}
-                        </div>
+                        <StoryCard story={story} />
                     </motion.div>
                 ))}
             </div>

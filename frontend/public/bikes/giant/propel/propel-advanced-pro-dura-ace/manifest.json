@@ -1,0 +1,212 @@
+{
+  "id": 327,
+  "name": "Giant Propel Advanced PRO Dura-Ace",
+  "brand": "giant",
+  "family": "propel",
+  "model": "propel-advanced-pro-dura-ace",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/propel-advanced-pro-da-2027",
+      "title": "Propel Advanced Pro-DA (2027) | Aero Race Bici | Giant Bicycles España"
+    },
+    {
+      "url": "https://www.giant-bicycles.com/es/propel-advanced-pro--dura-ace-",
+      "title": "Propel Advanced Pro (Dura-Ace) (2026) | Aero Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "supernova-grey",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-da-2027",
+      "file": "studio/supernova-grey-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/r6mp77dp5uotb9rxjyh2/MY27PropelAdvancedPro-DA_ColorASupernovaGrey.jpg"
+    },
+    {
+      "color": "supernova-grey",
+      "view": "three-quarter-front",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-da-2027",
+      "file": "studio/supernova-grey-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/mbuitabmnbn2apri7ipt/MY27PropelAdvancedPro-DA_ColorASupernovaGrey-Front.jpg"
+    },
+    {
+      "color": "supernova-grey",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-da-2027",
+      "file": "studio/supernova-grey-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/meoyhbtjzk3u3ejxq472/MY27PropelAdvancedPro-DA_ColorASupernovaGrey-D3.jpg"
+    },
+    {
+      "color": "supernova-grey",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-da-2027",
+      "file": "studio/supernova-grey-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/xa1l7ekfbjkhm1ksb2oz/MY27PropelAdvancedPro-DA_ColorASupernovaGrey-D1.jpg"
+    },
+    {
+      "color": "supernova-grey",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-da-2027",
+      "file": "studio/supernova-grey-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/sknqapizkz4fnesryca5/MY27PropelAdvancedPro-DA_ColorASupernovaGrey-D2.jpg"
+    },
+    {
+      "color": "supernova-grey",
+      "view": "detail-10",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-da-2027",
+      "file": "studio/supernova-grey-detail-10.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/eg2ijdyzocjpiu4jrzrj/MY27PropelAdvancedPro-DA_ColorASupernovaGrey-D-10.jpg"
+    },
+    {
+      "color": "supernova-grey",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-da-2027",
+      "file": "studio/supernova-grey-detail-3-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/r2dlo690dqus4zstmert/MY27PropelAdvancedPro-DA_ColorASupernovaGrey-D-3.jpg"
+    },
+    {
+      "color": "supernova-grey",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-da-2027",
+      "file": "studio/supernova-grey-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/h4rw0e4rreg2splakyqp/MY27PropelAdvancedPro-DA_ColorASupernovaGrey-D4.jpg"
+    },
+    {
+      "color": "supernova-grey",
+      "view": "detail-12",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-da-2027",
+      "file": "studio/supernova-grey-detail-12.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/snvi1rbhwqqctey1ne84/MY27PropelAdvancedPro-DA_ColorASupernovaGrey-D-12.jpg"
+    },
+    {
+      "color": "supernova-grey",
+      "view": "detail-7",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-da-2027",
+      "file": "studio/supernova-grey-detail-7.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/bbuwp0bfmj0j5yflzpyh/MY27PropelAdvancedPro-DA_ColorASupernovaGrey-D-7.jpg"
+    },
+    {
+      "color": "supernova-grey",
+      "view": "detail-8",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-da-2027",
+      "file": "studio/supernova-grey-detail-8.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/cqq31piq7u9ypofz1oho/MY27PropelAdvancedPro-DA_ColorASupernovaGrey-D-8.jpg"
+    },
+    {
+      "color": "supernova-grey",
+      "view": "detail-7",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-da-2027",
+      "file": "studio/supernova-grey-detail-7-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/cacjhmrp9xvs2je00sdz/MY27PropelAdvancedPro-DA_ColorASupernovaGrey-D7.jpg"
+    },
+    {
+      "color": "rosso-corsa",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro--dura-ace-",
+      "file": "studio/rosso-corsa-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/xiaoqn6p8z01k4v6fsrc/MY26PropelAdvancedPro-DA_ColorARossoCorsa.jpg"
+    },
+    {
+      "color": "rosso-corsa",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro--dura-ace-",
+      "file": "studio/rosso-corsa-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/in6xikc0lgmwyhus5b1c/MY26PropelAdvancedPro-DA_ColorARossoCorsa-D3.jpg"
+    },
+    {
+      "color": "rosso-corsa",
+      "view": "detail-7",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro--dura-ace-",
+      "file": "studio/rosso-corsa-detail-7.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/u1jfwptp7rhffbtx3gl0/MY26PropelAdvancedPro-DA_ColorARossoCorsa-D7.jpg"
+    },
+    {
+      "color": "rosso-corsa",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro--dura-ace-",
+      "file": "studio/rosso-corsa-detail-5.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/v0vgerazmxyoxm128xtf/MY26PropelAdvancedPro-DA_ColorARossoCorsa-D5.jpg"
+    },
+    {
+      "color": "rosso-corsa",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro--dura-ace-",
+      "file": "studio/rosso-corsa-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/lmdxweiqcj9cvlf7uirt/MY26PropelAdvancedPro-DA_ColorARossoCorsa-D4.jpg"
+    },
+    {
+      "color": "rosso-corsa",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro--dura-ace-",
+      "file": "studio/rosso-corsa-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ej4bfbm5fhwpn30jdgoq/MY26PropelAdvancedPro-DA_ColorARossoCorsa-D1.jpg"
+    },
+    {
+      "color": "rosso-corsa",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro--dura-ace-",
+      "file": "studio/rosso-corsa-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/tntuh5bxx4tqbxzf3hro/MY26PropelAdvancedPro-DA_ColorARossoCorsa-D2.jpg"
+    },
+    {
+      "color": "rosso-corsa",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro--dura-ace-",
+      "file": "studio/rosso-corsa-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/syuvywpnc6zgsjfkzi7c/MY26PropelAdvancedPro-DA_ColorARossoCorsa-D6.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "supernova-grey.jpg",
+  "catalog": [
+    {
+      "color": "Supernova Grey",
+      "hex": "#A2AAAB",
+      "file": "supernova-grey.jpg"
+    }
+  ],
+  "cutouts": []
+}

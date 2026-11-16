@@ -1,0 +1,27 @@
+{
+  "id": 116,
+  "name": "Berria BR Force AXS PWM",
+  "brand": "berria",
+  "family": "belador",
+  "model": "belador-br-force-axs-pwm",
+  "match": "family",
+  "sources": [],
+  "collected": "2026-11-15",
+  "studio": [],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "black.webp",
+  "catalog": [
+    {
+      "color": "BLACK-Collection",
+      "hex": "#000000",
+      "file": "black.webp"
+    },
+    {
+      "color": "RED FIRE-IrisSelect",
+      "hex": "#ba0c2f",
+      "file": "red.webp"
+    }
+  ],
+  "cutouts": []
+}

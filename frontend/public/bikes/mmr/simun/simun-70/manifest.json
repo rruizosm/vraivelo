@@ -1,0 +1,127 @@
+{
+  "id": 515,
+  "name": "MMR Simun 70",
+  "brand": "mmr",
+  "family": "simun",
+  "model": "simun-70",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://mmrbikes.com/products/simun-70-dark-grey",
+      "title": "SIMUN 70"
+    },
+    {
+      "url": "https://mmrbikes.com/products/simun-70-soft-beige",
+      "title": "SIMUN 70"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "dark-grey",
+      "view": "profile",
+      "page": "https://mmrbikes.com/products/simun-70-dark-grey",
+      "file": "studio/dark-grey-profile.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/SIMUN_70_DARK_GREY_081793_P_943ae2cd-1a82-4fd6-a616-2a44b042ad8c.jpg"
+    },
+    {
+      "color": "dark-grey",
+      "view": "three-quarter-front",
+      "page": "https://mmrbikes.com/products/simun-70-dark-grey",
+      "file": "studio/dark-grey-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1224,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/SIMUN_70_DARK_GREY_081793_3.4D_f94d4cd1-4499-4af7-b6f9-6f956106f6d4.jpg"
+    },
+    {
+      "color": "dark-grey",
+      "view": "three-quarter-rear",
+      "page": "https://mmrbikes.com/products/simun-70-dark-grey",
+      "file": "studio/dark-grey-three-quarter-rear.webp",
+      "width": 2000,
+      "height": 1224,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/SIMUN_70_DARK_GREY_081793_3.4T_89bdec45-8eac-4f4b-afcb-b56e06a9e122.jpg"
+    },
+    {
+      "color": "dark-grey",
+      "view": "detail",
+      "page": "https://mmrbikes.com/products/simun-70-dark-grey",
+      "file": "studio/dark-grey-detail.webp",
+      "width": 2000,
+      "height": 1172,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/SIMUN_70_DARK_GREY_081793_2_c03207e9-49f9-4750-bdc8-4f75e587b313.jpg"
+    },
+    {
+      "color": "dark-grey",
+      "view": "side",
+      "page": "https://mmrbikes.com/products/simun-70-dark-grey",
+      "file": "studio/dark-grey-side.webp",
+      "width": 2000,
+      "height": 1203,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/SIMUN_70_DARK_GREY_081793_1_74127c3d-2b74-42ad-bd54-c5db68739908.jpg"
+    },
+    {
+      "color": "soft-beige",
+      "view": "profile",
+      "page": "https://mmrbikes.com/products/simun-70-soft-beige",
+      "file": "studio/soft-beige-profile.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/SIMUN_70_SOFT_BEIGE_082106_P_f4ca85c8-8612-4621-878a-cb45e918b7c1.jpg"
+    },
+    {
+      "color": "soft-beige",
+      "view": "three-quarter-front",
+      "page": "https://mmrbikes.com/products/simun-70-soft-beige",
+      "file": "studio/soft-beige-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1224,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/SIMUN_70_SOFT_BEIGE_082106_3.4D_dc395a96-c411-4d45-926c-0b93011fa855.jpg"
+    },
+    {
+      "color": "soft-beige",
+      "view": "three-quarter-rear",
+      "page": "https://mmrbikes.com/products/simun-70-soft-beige",
+      "file": "studio/soft-beige-three-quarter-rear.webp",
+      "width": 2000,
+      "height": 1224,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/SIMUN_70_SOFT_BEIGE_082106_3.4T_7d38c3ac-b7b6-4c4f-b823-7e3e6a5cd809.jpg"
+    },
+    {
+      "color": "soft-beige",
+      "view": "detail",
+      "page": "https://mmrbikes.com/products/simun-70-soft-beige",
+      "file": "studio/soft-beige-detail.webp",
+      "width": 2000,
+      "height": 1172,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/SIMUN_70_SOFT_BEIGE_082106_2_83ed081f-1d7b-4757-83c4-ce5cc0a0b1f5.jpg"
+    },
+    {
+      "color": "soft-beige",
+      "view": "side",
+      "page": "https://mmrbikes.com/products/simun-70-soft-beige",
+      "file": "studio/soft-beige-side.webp",
+      "width": 2000,
+      "height": 1203,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/SIMUN_70_SOFT_BEIGE_082106_1_db6a88b5-a8ea-4992-bd5d-bbce1fa0e569.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "black.webp",
+  "catalog": [
+    {
+      "color": "Black",
+      "hex": "#676765",
+      "file": "black.webp"
+    },
+    {
+      "color": "Yellow",
+      "hex": "#ede8d0",
+      "file": "yellow.webp"
+    }
+  ],
+  "cutouts": []
+}

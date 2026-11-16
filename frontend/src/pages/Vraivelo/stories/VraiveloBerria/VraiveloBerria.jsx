@@ -1,195 +1,83 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
-import { useTranslation, Trans } from 'react-i18next';
-import './VraiveloBerria.css';
+import { useTranslation } from 'react-i18next';
+import {
+    StoryPage, StoryHero, StorySection, StoryHeading, StoryProse, StoryStats, StorySplit, StoryPhoto,
+    StoryPoints, StoryGallery, StoryQuote, StoryCTA, StoryButton,
+} from '../StoryKit';
+
+const G = '/vraivelo_berria/Girona/';
 
 const VraiveloBerria = () => {
     const { t } = useTranslation();
 
-    // Smooth scroll for anchor links
-    const handleScroll = (e, id) => {
-        e.preventDefault();
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     return (
-        <div className="berria-page">
-            <div className="relative flex w-full flex-col">
-                <main className="berria-main">
-                    <section className="berria-hero-section">
-                        <div className="berria-hero-bg-wrapper">
-                            <img
-                                alt="Girona Experience Hero"
-                                className="berria-hero-img"
-                                src="/vraivelo_berria/Girona/DSC00196.jpeg"
-                            />
-                            <div className="berria-hero-overlay"></div>
-                        </div>
-                        <div className="berria-hero-content">
-                            <Link to="/vraivelo" className="berria-back-link">
-                                <ArrowLeft /> {t('origins.hero.back')}
-                            </Link>
-                            <span className="berria-badge">{t('berria.hero.badge')}</span>
-                            <h1 className="berria-hero-title">
-                                {t('berria.hero.title')}
-                            </h1>
-                            <p className="berria-hero-desc">
-                                {t('berria.hero.desc')}
-                            </p>
-                        </div>
-                    </section>
+        <StoryPage id="berria">
+            <StoryHero
+                image={`${G}DSC00196.jpeg`}
+                position="center 55%"
+                eyebrow={t('berria.hero.badge')}
+                title={t('berria.hero.title')}
+                desc={t('berria.hero.desc')}
+            />
 
-                    <div id="story" className="berria-story-container">
-                        <article className="berria-article">
-                            <div className="berria-article-header">
-                                <h2 className="berria-subheading">{t('berria.article.subheading')}</h2>
-                                <h3 className="berria-heading">
-                                    {t('berria.article.heading')}
-                                </h3>
-                                <div className="berria-divider"></div>
-                            </div>
-                            <div className="berria-prose">
-                                <p>
-                                    {t('berria.article.p1')}
-                                    <br /><br />{t('berria.article.p2')}
-                                    <br /><br />{t('berria.article.p3')}
-                                </p>
-                                <div className="berria-stats-grid">
-                                    <div className="berria-stat-card">
-                                        <span className="material-symbols-outlined berria-stat-icon">directions_bike</span>
-                                        <span className="berria-stat-value">{t('berria.stats.s1_val')}</span>
-                                        <span className="berria-stat-label">{t('berria.stats.s1_label')}</span>
-                                    </div>
-                                    <div className="berria-stat-card">
-                                        <span className="material-symbols-outlined berria-stat-icon">explore</span>
-                                        <span className="berria-stat-value">{t('berria.stats.s2_val')}</span>
-                                        <span className="berria-stat-label">{t('berria.stats.s2_label')}</span>
-                                    </div>
-                                    <div className="berria-stat-card">
-                                        <span className="material-symbols-outlined berria-stat-icon">settings_suggest</span>
-                                        <span className="berria-stat-value">{t('berria.stats.s3_val')}</span>
-                                        <span className="berria-stat-label">{t('berria.stats.s3_label')}</span>
-                                    </div>
-                                </div>
-                                <p>
-                                    {t('berria.article.p4')}
-                                    <br /><br />
-                                    {t('berria.article.p5')}
-                                    <br /><br />
-                                    {t('berria.article.p6')}
-                                </p>
-                            </div>
-                        </article>
+            <StorySection>
+                <StorySplit
+                    reverse
+                    sticky
+                    media={<StoryPhoto src="/stories/web/berria-ajuste-bici.webp" alt={t('berria.article.photo_alt')} position="center 40%" />}
+                >
+                    <StoryHeading eyebrow={t('berria.article.subheading')} title={t('berria.article.heading')} />
+                    <StoryProse lead>
+                        <p>{t('berria.article.p1')}</p>
+                        <p>{t('berria.article.p2')}</p>
+                        <p>{t('berria.article.p3')}</p>
+                    </StoryProse>
+                </StorySplit>
+            </StorySection>
 
-                        <div className="berria-features-container">
-                            <div className="berria-feature-row">
-                                <div className="berria-feature-icon-box">
-                                    <span className="material-symbols-outlined berria-feature-icon">biotech</span>
-                                </div>
-                                <div className="berria-feature-content">
-                                    <h4>{t('berria.features.f1_title')}</h4>
-                                    <p>{t('berria.features.f1_desc')}</p>
-                                </div>
-                            </div>
-                            <div className="berria-feature-row">
-                                <div className="berria-feature-icon-box">
-                                    <span className="material-symbols-outlined berria-feature-icon">map</span>
-                                </div>
-                                <div className="berria-feature-content">
-                                    <h4>{t('berria.features.f2_title')}</h4>
-                                    <p>{t('berria.features.f2_desc')}</p>
-                                </div>
-                            </div>
-                            <div className="berria-feature-row">
-                                <div className="berria-feature-icon-box">
-                                    <span className="material-symbols-outlined berria-feature-icon">build_circle</span>
-                                </div>
-                                <div className="berria-feature-content">
-                                    <h4>{t('berria.features.f3_title')}</h4>
-                                    <p>{t('berria.features.f3_desc')}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <StorySection tone="dark">
+                <StoryStats
+                    items={[1, 2, 3].map((n) => ({ value: t(`berria.stats.s${n}_val`), label: t(`berria.stats.s${n}_label`) }))}
+                />
+                <StorySplit
+                    sticky
+                    media={<StoryPhoto src="/stories/web/berria-ruta-gravel.webp" alt={t('berria.article.photo2_alt')} position="center 65%" tall={false} />}
+                >
+                    <StoryProse>
+                        <p>{t('berria.article.p4')}</p>
+                        <p>{t('berria.article.p5')}</p>
+                        <p>{t('berria.article.p6')}</p>
+                    </StoryProse>
+                </StorySplit>
+            </StorySection>
 
-                    <section id="gallery" className="berria-gallery-section">
-                        <div className="berria-gallery-container">
-                            <div className="berria-gallery-header">
-                                <h2 className="berria-gallery-title">{t('berria.gallery.title')}</h2>
-                                <p className="berria-gallery-subtitle">{t('berria.gallery.subtitle')}</p>
-                            </div>
-                            <div className="berria-gallery-grid">
-                                <div className="berria-gallery-item">
-                                    <div className="berria-img-card aspect-4-5">
-                                        <img alt={t('berria.gallery.c1')} src="/vraivelo_berria/Girona/DSC00322.jpeg" />
-                                    </div>
-                                    <p className="berria-img-caption">{t('berria.gallery.c1')}</p>
-                                </div>
-                                <div className="berria-gallery-item md-offset">
-                                    <div className="berria-img-card aspect-4-5">
-                                        <img alt={t('berria.gallery.c2')} src="/vraivelo_berria/Girona/DSC00346.jpeg" />
-                                    </div>
-                                    <p className="berria-img-caption">{t('berria.gallery.c2')}</p>
-                                </div>
-                                <div className="berria-gallery-item md-span-2">
-                                    <div className="berria-img-card aspect-video">
-                                        <img alt={t('berria.gallery.c3')} src="/vraivelo_berria/Girona/DSC00343.jpeg" />
-                                    </div>
-                                    <p className="berria-img-caption">{t('berria.gallery.c3')}</p>
-                                </div>
-                                <div className="berria-gallery-item">
-                                    <div className="berria-img-card aspect-square">
-                                        <img alt={t('berria.gallery.c4')} src="/vraivelo_berria/Girona/DSC00369.jpeg" />
-                                    </div>
-                                    <p className="berria-img-caption">{t('berria.gallery.c4')}</p>
-                                </div>
-                                <div className="berria-gallery-item">
-                                    <div className="berria-img-card aspect-square">
-                                        <img alt={t('berria.gallery.c5')} src="/vraivelo_berria/Girona/DSC00245.jpeg" />
-                                    </div>
-                                    <p className="berria-img-caption">{t('berria.gallery.c5')}</p>
-                                </div>
-                                <div className="berria-gallery-item md-span-2">
-                                    <div className="berria-img-card fixed-h-600">
-                                        <img alt={t('berria.gallery.c6')} src="/vraivelo_berria/Girona/DSC00329.jpeg" />
-                                    </div>
-                                    <p className="berria-img-caption">{t('berria.gallery.c6')}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </main>
+            <StorySection>
+                <StoryHeading eyebrow={t('berria.features.eyebrow')} title={t('berria.features.title')} />
+                <StoryPoints
+                    items={[1, 2, 3].map((n) => ({ title: t(`berria.features.f${n}_title`), desc: t(`berria.features.f${n}_desc`) }))}
+                />
+            </StorySection>
 
-                <footer className="berria-footer">
-                    <div className="berria-footer-content">
-                        <div className="berria-brand-row">
-                            <div className="berria-brand-item">
-                                <span className="material-symbols-outlined berria-brand-icon">home_repair_service</span>
-                                <span className="berria-brand-text">VRAIVELO</span>
-                            </div>
-                            <div className="berria-vl"></div>
-                            <div className="berria-brand-item">
-                                <span className="material-symbols-outlined berria-brand-icon">bolt</span>
-                                <span className="berria-brand-text">BERRIA</span>
-                            </div>
-                        </div>
-                        <div className="berria-footer-text-group">
-                            <p className="berria-footer-quote">
-                                {t('berria.footer.quote')}
-                            </p>
+            <StorySection tone="beige">
+                <StoryHeading eyebrow={t('berria.gallery.eyebrow')} title={t('berria.gallery.title')} aside={t('berria.gallery.subtitle')} />
+                <StoryGallery
+                    images={[
+                        { src: `${G}DSC00322.jpeg`, caption: t('berria.gallery.c1'), span: 'tall' },
+                        { src: `${G}DSC00343.jpeg`, caption: t('berria.gallery.c3'), span: 'big' },
+                        { src: `${G}DSC00346.jpeg`, caption: t('berria.gallery.c2'), span: 'tall' },
+                        { src: `${G}DSC00369.jpeg`, caption: t('berria.gallery.c4'), span: 'tall' },
+                        { src: `${G}DSC00329.jpeg`, caption: t('berria.gallery.c6'), span: 'big' },
+                        { src: `${G}DSC00245.jpeg`, caption: t('berria.gallery.c5'), span: 'tall' },
+                    ]}
+                />
+            </StorySection>
 
-                            <p className="berria-copyright">
-                                {t('berria.footer.copyright')}
-                            </p>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>
+            <StoryQuote image={`${G}DSC00339.jpeg`} position="center 60%" quote={t('berria.footer.quote')} author="Vraivēlo × Berria · Girona" />
+
+            <StoryCTA eyebrow={t('berria.cta.eyebrow')} title={t('berria.cta.title')} text={t('berria.cta.text')}>
+                <StoryButton to="/shop/?marca=Berria" light>{t('berria.cta.bikes')}</StoryButton>
+                <StoryButton to="/vraivelo/calendar/" light>{t('berria.cta.calendar')}</StoryButton>
+            </StoryCTA>
+        </StoryPage>
     );
 };
 

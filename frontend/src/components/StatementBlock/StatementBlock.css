@@ -1,0 +1,155 @@
+/* Statement block: full-width eyebrow, big two-line title, short text and a footer row.
+   Used on the Home ("Tu próxima salida…", "Máximo cuidado…") and on the Workshop page. */
+.sl-section {
+    background: #F4F2EE;
+    color: var(--ink);
+    border-bottom: 1px solid rgba(11, 13, 16, 0.08);
+}
+
+.sl-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(1.25rem, 3vh, 2rem);
+    min-height: min(39vh, 380px);
+    padding: clamp(1.5rem, 3.5vh, 2.25rem) clamp(1.25rem, 5vw, 4.5rem) clamp(1rem, 2.5vh, 1.5rem);
+}
+
+.sl-eyebrow,
+.sl-label {
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+
+.sl-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: end;
+    gap: 2rem;
+}
+
+/* desktop: short text on the left, slogan on the right */
+@media (min-width: 1024px) {
+    .sl-main {
+        grid-template-columns: 17rem 1fr;
+        gap: 3rem;
+    }
+
+    .sl-aside { order: -1; }
+    .sl-title { text-align: right; }
+}
+
+.sl-title {
+    margin: 0;
+    font-size: clamp(2.75rem, 6.8vw, 8rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    word-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+
+/* each line is a mask; the text slides up into it */
+.sl-line {
+    display: block;
+    overflow: hidden;
+    /* room inside the mask for capital accents (Á, Ó) and descenders; the negative
+       margin keeps the lines as tight as before */
+    padding: 0.14em 0 0.08em;
+    margin: -0.14em 0 -0.02em;
+}
+
+.sl-line-inner {
+    display: block;
+}
+
+.sl-aside {
+    padding-bottom: 0.6rem;
+}
+
+.sl-text {
+    margin: 0;
+    white-space: pre-line;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #2D3036;
+}
+
+.sl-dash {
+    display: block;
+    width: 2.25rem;
+    height: 3px;
+    margin-top: 1.5rem;
+    background: var(--amber);
+}
+
+.sl-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid rgba(11, 13, 16, 0.12);
+}
+
+.sl-brands {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.sl-brands-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--amber);
+}
+
+/* mirrored variant: title on the left, text on the right (footer swapped too) */
+@media (min-width: 1024px) {
+    .sl-section--flip .sl-main { grid-template-columns: 1fr 17rem; }
+    .sl-section--flip .sl-aside { order: 0; }
+    .sl-section--flip .sl-title { text-align: left; }
+}
+
+.sl-section--flip .sl-footer { flex-direction: row-reverse; }
+
+/* footer link variant (care block): same type as the brand names, arrow nudges on hover */
+.sl-cta {
+    gap: 0.5rem;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.sl-cta svg {
+    color: var(--amber);
+    transition: transform 0.3s ease;
+}
+
+.sl-cta:hover svg,
+.sl-cta:focus-visible svg {
+    transform: translate(3px, -3px);
+}
+
+.sl-cta:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 4px;
+}
+
+@media (max-width: 767px) {
+    .sl-inner { min-height: 0; }
+    .sl-eyebrow, .sl-label { letter-spacing: 0.16em; }
+    .sl-text { font-size: 1rem; }
+}
+

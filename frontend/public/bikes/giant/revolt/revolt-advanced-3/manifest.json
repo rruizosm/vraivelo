@@ -1,0 +1,73 @@
+{
+  "id": 331,
+  "name": "Giant Revolt Advanced 3",
+  "brand": "giant",
+  "family": "revolt",
+  "model": "revolt-advanced-3",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/revolt-advanced-3",
+      "title": "Revolt Advanced 3 (2026) | Gravel Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "aquarium",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/revolt-advanced-3",
+      "file": "studio/aquarium-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ingsprcoxwn7clbi90xn/MY26RevoltAdvanced3_ColorAAquarium.jpg"
+    },
+    {
+      "color": "aquarium",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/revolt-advanced-3",
+      "file": "studio/aquarium-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ea8qk8nrd8pplu72ttny/MY26RevoltAdvanced3_ColorAAquarium-D3.jpg"
+    },
+    {
+      "color": "aquarium",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/revolt-advanced-3",
+      "file": "studio/aquarium-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/zl4ga7qoc8nif1isae5y/MY26RevoltAdvanced3_ColorAAquarium-D4.jpg"
+    },
+    {
+      "color": "aquarium",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/revolt-advanced-3",
+      "file": "studio/aquarium-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ga0hbkw3u3lrk6iquyxa/MY26RevoltAdvanced3_ColorAAquarium-D1.jpg"
+    },
+    {
+      "color": "aquarium",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/revolt-advanced-3",
+      "file": "studio/aquarium-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/gkiojk1avcx7rieasokj/MY26RevoltAdvanced3_ColorAAquarium-D2.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "aquarium.jpg",
+  "catalog": [
+    {
+      "color": "Aquarium",
+      "hex": "#3C7E8E",
+      "file": "aquarium.jpg"
+    }
+  ],
+  "cutouts": []
+}

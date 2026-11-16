@@ -1,0 +1,136 @@
+{
+  "id": 329,
+  "name": "Giant Propel Advanced SL 0-DA",
+  "brand": "giant",
+  "family": "propel",
+  "model": "propel-advanced-sl-0-dura-ace",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-da-2027",
+      "title": "Propel Advanced SL 0-DA (2027) | Aero Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "prism-pearl",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-da-2027",
+      "file": "studio/prism-pearl-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ooeoyqudeemy7y27vw84/MY27PropelAdvancedSL0-DA_ColorAPrismPearl1.jpg"
+    },
+    {
+      "color": "prism-pearl",
+      "view": "three-quarter-front",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-da-2027",
+      "file": "studio/prism-pearl-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/dfilr8jkklva1wassuqq/MY27PropelAdvancedSL0-DA_ColorAPrismPearl-Front.jpg"
+    },
+    {
+      "color": "prism-pearl",
+      "view": "three-quarter-rear",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-da-2027",
+      "file": "studio/prism-pearl-three-quarter-rear.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/mf0vfdnnjux7mcj4xt6z/MY27PropelAdvancedSL0-DA_ColorAPrismPearl-Rear.jpg"
+    },
+    {
+      "color": "prism-pearl",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-da-2027",
+      "file": "studio/prism-pearl-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/obhd9xnpkd2zp9xcu1mr/MY27PropelAdvancedSL0-DA_ColorAPrismPearl-D1.jpg"
+    },
+    {
+      "color": "prism-pearl",
+      "view": "detail-14",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-da-2027",
+      "file": "studio/prism-pearl-detail-14.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ghlggv3xz7ikcssuwvqt/MY27PropelAdvancedSL0-DA_ColorAPrismPearl-D-14.jpg"
+    },
+    {
+      "color": "prism-pearl",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-da-2027",
+      "file": "studio/prism-pearl-detail-5.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/pot1rcfv92gvqlpl3jax/MY27PropelAdvancedSL0-DA_ColorAPrismPearl-D-5.jpg"
+    },
+    {
+      "color": "prism-pearl",
+      "view": "detail-12",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-da-2027",
+      "file": "studio/prism-pearl-detail-12.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/zo7kfi2hrwgaioyu6gzb/MY27PropelAdvancedSL0-DA_ColorAPrismPearl-D-12.jpg"
+    },
+    {
+      "color": "prism-pearl",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-da-2027",
+      "file": "studio/prism-pearl-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/b8lxgrrekwlaehv6dt0e/MY27PropelAdvancedSL0-DA_ColorAPrismPearl-D-3.jpg"
+    },
+    {
+      "color": "prism-pearl",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-da-2027",
+      "file": "studio/prism-pearl-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/vo0h1xz42ghmp1i9kgb8/MY27PropelAdvancedSL0-DA_ColorAPrismPearl-D-2.jpg"
+    },
+    {
+      "color": "prism-pearl",
+      "view": "detail-7",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-da-2027",
+      "file": "studio/prism-pearl-detail-7.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/vdu1vpj9gpb8ygl55air/MY27PropelAdvancedSL0-DA_ColorAPrismPearl-D-7.jpg"
+    },
+    {
+      "color": "prism-pearl",
+      "view": "detail-11",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-da-2027",
+      "file": "studio/prism-pearl-detail-11.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/fwjnbui8k3urdu924mxi/MY27PropelAdvancedSL0-DA_ColorAPrismPearl-D-11.jpg"
+    },
+    {
+      "color": "prism-pearl",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-0-da-2027",
+      "file": "studio/prism-pearl-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/bnfmswsrclq7kwapjjfb/MY27PropelAdvancedSL0-DA_ColorAPrismPearl-D-6.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "prism-pearl.jpg",
+  "catalog": [
+    {
+      "color": "Prism Pearl",
+      "hex": "#BAC4C6",
+      "file": "prism-pearl.jpg"
+    }
+  ],
+  "cutouts": []
+}

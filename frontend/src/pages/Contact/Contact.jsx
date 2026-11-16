@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Clock, Send } from 'lucide-react';
+import { ArrowUpRight, Check, ChevronDown } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import SEOHead from '../../components/SEOHead/SEOHead';
+import '../Workshop/Workshop.css';
 import './Contact.css';
 import emailjs from '@emailjs/browser';
+
+const ease = [0.22, 1, 0.36, 1];
+const MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=Carrer+Pau+Vila+i+Dinar%C3%A8s+10%2C+17003+Girona';
 
 const Contact = () => {
     const { t } = useTranslation();
@@ -96,17 +100,12 @@ const Contact = () => {
         };
 
         emailjs.send(serviceID, templateID, templateParams, publicKey)
-            .then((result) => {
+            .then(() => {
                 setIsSubmitting(false);
                 setIsSuccess(true);
                 e.target.reset();
                 setSubject("");
                 setWorkshopService("");
-
-                // Redirect after 2 seconds to show success message
-                /* setTimeout(() => {
-                    navigate('/');
-                }, 2000); */
             }, (error) => {
                 setIsSubmitting(false);
                 alert("Failed to send message. Please try again later.");
@@ -114,193 +113,210 @@ const Contact = () => {
             });
     };
 
+    const hours = t('contact.info.hours_text', { returnObjects: true });
+    const hoursLines = Array.isArray(hours) ? hours : [];
+
     return (
-        <div className="contact-container">
+        <div className="ct-page">
             <SEOHead titleKey="seo.contact.title" descriptionKey="seo.contact.description" path="/contact" />
-            <div className="contact-content">
+
+            {/* HERO: big title on the left, short intro on the right */}
+            <section className="ct-hero" aria-labelledby="ct-title">
                 <motion.div
+                    className="ct-hero-inner"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="contact-header"
+                    transition={{ duration: 0.8, ease }}
                 >
-                    <span className="contact-badge">
+                    <p className="ct-eyebrow">
+                        <span className="ws-eyebrow-bar" aria-hidden="true" />
                         {t('contact.badge')}
-                    </span>
-                    <h1 className="contact-title">
-                        {t('contact.title')} <span className="text-[var(--primary)]">{t('contact.title_highlight')}</span>
-                    </h1>
-                    <p className="contact-description">
-                        {t('contact.description')}
                     </p>
+                    <h1 id="ct-title" className="ct-title">
+                        {t('contact.title')}{' '}
+                        <span className="ct-title-accent">{t('contact.title_highlight')}</span>
+                    </h1>
+                    <p className="ct-desc">{t('contact.description')}</p>
                 </motion.div>
+            </section>
 
-                <div className="contact-grid">
-                    {/* Contact Info */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="contact-info-col"
+            {/* BODY: photo + form (contact info sits above the form) */}
+            <section className="ct-body">
+                <div className="ct-grid">
+                    <motion.figure
+                        className="ct-photo"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.1, ease }}
                     >
-                        <ContactCard
-                            icon={<MapPin size={24} strokeWidth={1.5} />}
-                            title={t('contact.info.visit')}
-                            lines={["Carrer Pau vila i dinares 10,", "17003 Girona"]}
+                        <img
+                            src="/david_vraivelo/local_2.jpeg"
+                            alt={t('contact.photo_alt')}
+                            width="1200"
+                            height="1600"
+                            loading="eager"
+                            decoding="async"
                         />
-                        <ContactCard
-                            icon={<Phone size={24} strokeWidth={1.5} />}
-                            title={t('contact.info.call')}
-                            lines={["+34 657 317 270"]}
-                        />
+                    </motion.figure>
 
-                        <ContactCard
-                            icon={<Clock size={24} strokeWidth={1.5} />}
-                            title={t('contact.info.hours')}
-                            lines={t('contact.info.hours_text', { returnObjects: true })}
-                        />
-                    </motion.div>
-
-                    {/* Contact Form */}
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="contact-form-col"
+                        className="ct-form-col"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2, ease }}
                     >
-                        <h3 className="contact-form-title">{t('contact.form.title')}</h3>
-                        <form className="contact-form" onSubmit={handleSubmit}>
-                            <div className="form-group-row">
-                                <div className="form-group">
-                                    <label className="form-label">{t('contact.form.first_name')}</label>
-                                    <input
-                                        type="text"
-                                        name="firstName"
-                                        className="form-input"
-                                        placeholder={t('contact.form.placeholders.first_name')}
-                                        required
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <label className="form-label">{t('contact.form.last_name')}</label>
-                                    <input
-                                        type="text"
-                                        name="lastName"
-                                        className="form-input"
-                                        placeholder={t('contact.form.placeholders.last_name')}
-                                        required
-                                    />
-                                </div>
+                        <h2 className="ct-form-title">{t('contact.form.title')}</h2>
+
+                        <form className="ct-form" onSubmit={handleSubmit}>
+                            <div className="ct-row">
+                                <Field label={t('contact.form.first_name')} htmlFor="ct-first">
+                                    <input id="ct-first" type="text" name="firstName" autoComplete="given-name"
+                                        className="ct-input" placeholder={t('contact.form.placeholders.first_name')} required />
+                                </Field>
+                                <Field label={t('contact.form.last_name')} htmlFor="ct-last">
+                                    <input id="ct-last" type="text" name="lastName" autoComplete="family-name"
+                                        className="ct-input" placeholder={t('contact.form.placeholders.last_name')} required />
+                                </Field>
                             </div>
 
-                            <div className="form-group">
-                                <label className="form-label">{t('contact.form.email')}</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    className="form-input"
-                                    placeholder={t('contact.form.placeholders.email')}
-                                    required
-                                />
-                            </div>
+                            <Field label={t('contact.form.email')} htmlFor="ct-email">
+                                <input id="ct-email" type="email" name="email" autoComplete="email"
+                                    className="ct-input" placeholder={t('contact.form.placeholders.email')} required />
+                            </Field>
 
-                            <div className="form-group">
-                                <label className="form-label">{t('contact.form.subject')}</label>
-                                <select
-                                    name="subject"
-                                    className="form-input"
-                                    style={{ appearance: 'none', cursor: 'pointer' }}
-                                    value={subject}
-                                    onChange={(e) => setSubject(e.target.value)}
-                                    required
-                                >
-                                    <option value="">{t('contact.form.subjects.default')}</option>
-                                    <option value="workshop">{t('contact.form.subjects.workshop')}</option>
-                                    <option value="bikes">{t('contact.form.subjects.bikes')}</option>
-                                    <option value="parts">{t('contact.form.subjects.parts')}</option>
-                                    <option value="member">{t('contact.form.subjects.member')}</option>
-                                    <option value="licenses">{t('contact.form.subjects.licenses')}</option>
-                                    <option value="berria_event">{t('contact.form.subjects.berria_event')}</option>
-                                    <option value="other">{t('contact.form.subjects.other')}</option>
-                                </select>
-                            </div>
+                            <Field label={t('contact.form.subject')} htmlFor="ct-subject">
+                                <div className="ct-select">
+                                    <select
+                                        id="ct-subject"
+                                        name="subject"
+                                        className="ct-input"
+                                        value={subject}
+                                        onChange={(e) => setSubject(e.target.value)}
+                                        required
+                                    >
+                                        <option value="">{t('contact.form.subjects.default')}</option>
+                                        <option value="workshop">{t('contact.form.subjects.workshop')}</option>
+                                        <option value="bikes">{t('contact.form.subjects.bikes')}</option>
+                                        <option value="parts">{t('contact.form.subjects.parts')}</option>
+                                        <option value="member">{t('contact.form.subjects.member')}</option>
+                                        <option value="licenses">{t('contact.form.subjects.licenses')}</option>
+                                        <option value="other">{t('contact.form.subjects.other')}</option>
+                                    </select>
+                                    <ChevronDown size={18} aria-hidden="true" />
+                                </div>
+                            </Field>
 
                             {subject === 'workshop' && (
                                 <motion.div
                                     initial={{ opacity: 0, height: 0 }}
                                     animate={{ opacity: 1, height: 'auto' }}
-                                    exit={{ opacity: 0, height: 0 }}
-                                    className="form-group"
+                                    transition={{ duration: 0.4, ease }}
                                 >
-                                    <label className="form-label">{t('contact.form.service')}</label>
-                                    <select
-                                        name="service"
-                                        className="form-input"
-                                        style={{ appearance: 'none', cursor: 'pointer' }}
-                                        value={workshopService}
-                                        onChange={(e) => setWorkshopService(e.target.value)}
-                                    >
-                                        <option value="">{t('contact.form.services.default')}</option>
-                                        {getAllServices().map((service, index) => (
-                                            <option key={index} value={service.title}>
-                                                {service.title} - {service.price}
-                                            </option>
-                                        ))}
-                                        <option value="custom">{t('contact.form.services.custom')}</option>
-                                    </select>
+                                    <Field label={t('contact.form.service')} htmlFor="ct-service">
+                                        <div className="ct-select">
+                                            <select
+                                                id="ct-service"
+                                                name="service"
+                                                className="ct-input"
+                                                value={workshopService}
+                                                onChange={(e) => setWorkshopService(e.target.value)}
+                                            >
+                                                <option value="">{t('contact.form.services.default')}</option>
+                                                {getAllServices().map((service, index) => (
+                                                    <option key={index} value={service.title}>
+                                                        {service.title} - {service.price}
+                                                    </option>
+                                                ))}
+                                                <option value="custom">{t('contact.form.services.custom')}</option>
+                                            </select>
+                                            <ChevronDown size={18} aria-hidden="true" />
+                                        </div>
+                                    </Field>
                                 </motion.div>
                             )}
 
-                            <div className="form-group">
-                                <label className="form-label">{t('contact.form.message')}</label>
+                            <Field label={t('contact.form.message')} htmlFor="ct-message">
                                 <textarea
+                                    id="ct-message"
                                     name="message"
                                     rows="4"
-                                    className="form-textarea"
+                                    className="ct-input ct-textarea"
                                     placeholder={t('contact.form.placeholders.message')}
                                     defaultValue={initialMessage}
                                     required
                                 />
-                            </div>
+                            </Field>
 
-                            <motion.button
-                                type="submit"
-                                disabled={isSubmitting || isSuccess}
-                                whileHover={{ scale: (isSubmitting || isSuccess) ? 1 : 1.01 }}
-                                whileTap={{ scale: (isSubmitting || isSuccess) ? 1 : 0.99 }}
-                                className="btn-submit"
-                                style={{
-                                    backgroundColor: isSuccess ? '#22c55e' : undefined,
-                                    cursor: (isSubmitting || isSuccess) ? 'default' : 'pointer'
-                                }}
-                            >
-                                {isSuccess ? (
-                                    <>Message Successfully Sent</>
-                                ) : isSubmitting ? (
-                                    <>Sending...</>
-                                ) : (
-                                    <>{t('contact.form.submit')} <Send size={18} /></>
-                                )}
-                            </motion.button>
+                            <div className="ct-submit-row">
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting || isSuccess}
+                                    className={`ws-member ct-submit${isSuccess ? ' ct-submit--sent' : ''}`}
+                                >
+                                    <span className="ws-member-label">
+                                        {isSuccess
+                                            ? t('contact.form.sent')
+                                            : isSubmitting
+                                                ? t('contact.form.sending')
+                                                : t('contact.form.submit')}
+                                    </span>
+                                    <span className="ws-member-icon" aria-hidden="true">
+                                        {isSuccess ? <Check size={20} /> : <ArrowUpRight size={20} />}
+                                    </span>
+                                </button>
+                                <p className="ct-status" role="status" aria-live="polite">
+                                    {isSuccess ? t('contact.form.sent_note') : ''}
+                                </p>
+                            </div>
                         </form>
+
+                        <div className="ct-info">
+                            <div className="ct-info-col">
+                                <InfoItem index="01" label={t('contact.info.visit')}>
+                                    <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="ct-info-link">
+                                        <span>Carrer Pau Vila i Dinarès{' '}10<br />17003 Girona</span>
+                                        <ArrowUpRight size={18} aria-hidden="true" />
+                                    </a>
+                                </InfoItem>
+                                <InfoItem index="02" label={t('contact.info.call')}>
+                                    <a href="tel:+34657317270" className="ct-info-link">
+                                        <span>+34 657 317 270</span>
+                                        <ArrowUpRight size={18} aria-hidden="true" />
+                                    </a>
+                                </InfoItem>
+                            </div>
+                            <div className="ct-info-col">
+                                <InfoItem index="03" label={t('contact.info.hours')}>
+                                    <p className="ct-info-value">
+                                        {hoursLines[0]}
+                                        {hoursLines.slice(1).map((line, i) => (
+                                            <span key={i} className="ct-info-hours">{line}</span>
+                                        ))}
+                                    </p>
+                                </InfoItem>
+                            </div>
+                        </div>
                     </motion.div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 };
 
-const ContactCard = ({ icon, title, lines }) => (
-    <div className="contact-card">
-        <div className="contact-card-icon">
-            {icon}
-        </div>
-        <div className="contact-card-content">
-            <h4 className="contact-card-title">{title}</h4>
-            {lines.map((line, i) => (
-                <p key={i} className="contact-card-line">{line}</p>
-            ))}
-        </div>
+const InfoItem = ({ index, label, children }) => (
+    <div className="ct-info-item">
+        <p className="ct-info-label">
+            <span className="ct-info-index">{index}</span>
+            {label}
+        </p>
+        {children}
+    </div>
+);
+
+const Field = ({ label, htmlFor, children }) => (
+    <div className="ct-field">
+        <label className="ct-label" htmlFor={htmlFor}>{label}</label>
+        {children}
     </div>
 );
 

@@ -14,16 +14,16 @@ export const clothes = [
                 hex: "#FFFFFF",
                 sizes: ["S", "M", "L", "XL"],
                 images: [
-                    "/clothes_images/maillot_blanc/1.png",
-                    "/clothes_images/maillot_blanc/2.png",
-                    "/clothes_images/maillot_blanc/3.png",
-                    "/clothes_images/maillot_blanc/4.png",
-                    "/clothes_images/maillot_blanc/5.png",
-                    "/clothes_images/maillot_blanc/6.png",
-                    "/clothes_images/maillot_blanc/7.png",
-                    "/clothes_images/maillot_blanc/8.png",
-                    "/clothes_images/maillot_blanc/9.png",
-                    "/clothes_images/maillot_blanc/10.png"
+                    "/clothes_images/maillot_blanc/1.webp",
+                    "/clothes_images/maillot_blanc/2.webp",
+                    "/clothes_images/maillot_blanc/3.webp",
+                    "/clothes_images/maillot_blanc/4.webp",
+                    "/clothes_images/maillot_blanc/5.webp",
+                    "/clothes_images/maillot_blanc/6.webp",
+                    "/clothes_images/maillot_blanc/7.webp",
+                    "/clothes_images/maillot_blanc/8.webp",
+                    "/clothes_images/maillot_blanc/9.webp",
+                    "/clothes_images/maillot_blanc/10.webp"
 
                 ]
             },
@@ -33,16 +33,16 @@ export const clothes = [
                 hex: "#EC4899",
                 sizes: ["S", "M", "L", "XL"],
                 images: [
-                    "/clothes_images/maillot_rosa/1.png",
-                    "/clothes_images/maillot_rosa/2.png",
-                    "/clothes_images/maillot_rosa/3.png",
-                    "/clothes_images/maillot_rosa/4.png",
-                    "/clothes_images/maillot_rosa/5.png",
-                    "/clothes_images/maillot_rosa/6.png",
-                    "/clothes_images/maillot_rosa/7.png",
-                    "/clothes_images/maillot_rosa/8.png",
-                    "/clothes_images/maillot_rosa/9.png",
-                    "/clothes_images/maillot_rosa/10.png"
+                    "/clothes_images/maillot_rosa/1.webp",
+                    "/clothes_images/maillot_rosa/2.webp",
+                    "/clothes_images/maillot_rosa/3.webp",
+                    "/clothes_images/maillot_rosa/4.webp",
+                    "/clothes_images/maillot_rosa/5.webp",
+                    "/clothes_images/maillot_rosa/6.webp",
+                    "/clothes_images/maillot_rosa/7.webp",
+                    "/clothes_images/maillot_rosa/8.webp",
+                    "/clothes_images/maillot_rosa/9.webp",
+                    "/clothes_images/maillot_rosa/10.webp"
                 ]
             },
             {
@@ -51,16 +51,16 @@ export const clothes = [
                 hex: "#10B981",
                 sizes: ["M", "L"],
                 images: [
-                    "/clothes_images/maillot_verd/1.png",
-                    "/clothes_images/maillot_verd/2.png",
-                    "/clothes_images/maillot_verd/3.png",
-                    "/clothes_images/maillot_verd/4.png",
-                    "/clothes_images/maillot_verd/5.png",
-                    "/clothes_images/maillot_verd/6.png",
-                    "/clothes_images/maillot_verd/7.png",
-                    "/clothes_images/maillot_verd/8.png",
-                    "/clothes_images/maillot_verd/9.png",
-                    "/clothes_images/maillot_verd/10.png"
+                    "/clothes_images/maillot_verd/1.webp",
+                    "/clothes_images/maillot_verd/2.webp",
+                    "/clothes_images/maillot_verd/3.webp",
+                    "/clothes_images/maillot_verd/4.webp",
+                    "/clothes_images/maillot_verd/5.webp",
+                    "/clothes_images/maillot_verd/6.webp",
+                    "/clothes_images/maillot_verd/7.webp",
+                    "/clothes_images/maillot_verd/8.webp",
+                    "/clothes_images/maillot_verd/9.webp",
+                    "/clothes_images/maillot_verd/10.webp"
                 ]
             },
             {
@@ -69,16 +69,16 @@ export const clothes = [
                 hex: "#000000",
                 sizes: ["S", "M", "L", "XL"],
                 images: [
-                    "/clothes_images/vraivelo negro/1.png",
-                    "/clothes_images/vraivelo negro/2.png",
-                    "/clothes_images/vraivelo negro/3.png",
-                    "/clothes_images/vraivelo negro/4.png",
-                    "/clothes_images/vraivelo negro/5.png",
-                    "/clothes_images/vraivelo negro/6.png",
-                    "/clothes_images/vraivelo negro/7.png",
-                    "/clothes_images/vraivelo negro/8.png",
-                    "/clothes_images/vraivelo negro/9.png",
-                    "/clothes_images/vraivelo negro/10.png"
+                    "/clothes_images/vraivelo negro/1.webp",
+                    "/clothes_images/vraivelo negro/2.webp",
+                    "/clothes_images/vraivelo negro/3.webp",
+                    "/clothes_images/vraivelo negro/4.webp",
+                    "/clothes_images/vraivelo negro/5.webp",
+                    "/clothes_images/vraivelo negro/6.webp",
+                    "/clothes_images/vraivelo negro/7.webp",
+                    "/clothes_images/vraivelo negro/8.webp",
+                    "/clothes_images/vraivelo negro/9.webp",
+                    "/clothes_images/vraivelo negro/10.webp"
                 ]
             }
         ],
@@ -91,7 +91,7 @@ export const clothes = [
         ],
         quantity: 50,
         is_new: true,
-        image_url: "/clothes_images/maillot_blanc/1.png" // Default image
+        image_url: "/clothes_images/maillot_blanc/1.webp" // Default image
     },
     {
         id: "cullote-pro-2025",
@@ -108,16 +108,16 @@ export const clothes = [
                 hex: "#000000",
                 sizes: ["L", "XL"],
                 images: [
-                    "/clothes_images/cullote_negro/1.png",
-                    "/clothes_images/cullote_negro/2.png",
-                    "/clothes_images/cullote_negro/3.png",
-                    "/clothes_images/cullote_negro/4.png",
-                    "/clothes_images/cullote_negro/5.png",
-                    "/clothes_images/cullote_negro/6.png",
-                    "/clothes_images/cullote_negro/7.png",
-                    "/clothes_images/cullote_negro/8.png",
-                    "/clothes_images/cullote_negro/9.png",
-                    "/clothes_images/cullote_negro/10.png"
+                    "/clothes_images/cullote_negro/1.webp",
+                    "/clothes_images/cullote_negro/2.webp",
+                    "/clothes_images/cullote_negro/3.webp",
+                    "/clothes_images/cullote_negro/4.webp",
+                    "/clothes_images/cullote_negro/5.webp",
+                    "/clothes_images/cullote_negro/6.webp",
+                    "/clothes_images/cullote_negro/7.webp",
+                    "/clothes_images/cullote_negro/8.webp",
+                    "/clothes_images/cullote_negro/9.webp",
+                    "/clothes_images/cullote_negro/10.webp"
                 ]
             },
             {
@@ -126,16 +126,16 @@ export const clothes = [
                 hex: "#9CA3AF", // Main color grey, could add secondary color dot if needed
                 sizes: ["S", "M", "L"],
                 images: [
-                    "/clothes_images/cullote_gris_rosa/1.png",
-                    "/clothes_images/cullote_gris_rosa/2.png",
-                    "/clothes_images/cullote_gris_rosa/3.png",
-                    "/clothes_images/cullote_gris_rosa/4.png",
-                    "/clothes_images/cullote_gris_rosa/5.png",
-                    "/clothes_images/cullote_gris_rosa/6.png",
-                    "/clothes_images/cullote_gris_rosa/7.png",
-                    "/clothes_images/cullote_gris_rosa/8.png",
-                    "/clothes_images/cullote_gris_rosa/9.png",
-                    "/clothes_images/cullote_gris_rosa/10.png"
+                    "/clothes_images/cullote_gris_rosa/1.webp",
+                    "/clothes_images/cullote_gris_rosa/2.webp",
+                    "/clothes_images/cullote_gris_rosa/3.webp",
+                    "/clothes_images/cullote_gris_rosa/4.webp",
+                    "/clothes_images/cullote_gris_rosa/5.webp",
+                    "/clothes_images/cullote_gris_rosa/6.webp",
+                    "/clothes_images/cullote_gris_rosa/7.webp",
+                    "/clothes_images/cullote_gris_rosa/8.webp",
+                    "/clothes_images/cullote_gris_rosa/9.webp",
+                    "/clothes_images/cullote_gris_rosa/10.webp"
                 ]
             }
         ],
@@ -148,6 +148,6 @@ export const clothes = [
         ],
         quantity: 45,
         is_new: true,
-        image_url: "/clothes_images/cullote_negro/1.png" // Default image
+        image_url: "/clothes_images/cullote_negro/1.webp" // Default image
     }
 ];

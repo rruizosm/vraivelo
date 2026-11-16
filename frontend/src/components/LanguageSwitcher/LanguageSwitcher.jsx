@@ -1,13 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { changeLanguage as loadAndChangeLanguage } from '../../i18n';
 import './LanguageSwitcher.css';
 
 const LanguageSwitcher = () => {
     const { i18n } = useTranslation();
 
+    // Catalan / English texts are downloaded the first time they are chosen
     const changeLanguage = (lang) => {
-        i18n.changeLanguage(lang);
+        loadAndChangeLanguage(lang);
     };
 
     return (

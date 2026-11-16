@@ -13,7 +13,72 @@
             "on_sale": "En oferta",
             "coming_soon": "Aviat"
         },
-        "search_placeholder": "Cerca per marca o model…"
+        "search_placeholder": "Cerca per marca, model o component (ex: Di2, carboni)…",
+        "badge": "CATÀLEG DE BICICLETES",
+        "h1": "Bicicletes Giant i Berria a Girona",
+        "intro": "Bicicletes de carretera, gravel, MTB, elèctriques i infantils. Consulta models, talles i preus a la nostra botiga de Girona.",
+        "all": "Totes",
+        "filters_btn": "Filtres",
+        "clear_filters": "Treure filtres",
+        "filter": {
+            "material": "Material del quadre",
+            "carbon": "Carboni",
+            "aluminum": "Alumini",
+            "brands": "Marques",
+            "price": "Rang de preu"
+        },
+        "sort": {
+            "label": "Ordenar per",
+            "featured": "Destacades",
+            "price_asc": "Preu: de menor a major",
+            "price_desc": "Preu: de major a menor"
+        },
+        "count_one": "1 bicicleta",
+        "count_other": "{{count}} bicicletes",
+        "empty": "No hi ha bicicletes amb aquests filtres.",
+        "cat": {
+            "carretera": {
+                "name": "Carretera",
+                "h1": "Bicicletes de carretera a Girona",
+                "intro": "Bicicletes de carretera de Giant i Berria, des de models d'iniciació fins a carboni amb canvi electrònic. Compara models, talles i preus a la nostra botiga de Girona."
+            },
+            "gravel": {
+                "name": "Gravel",
+                "h1": "Bicicletes gravel a Girona",
+                "intro": "Bicicletes gravel per sortir de l'asfalt sense renunciar a la velocitat: Giant Revolt, Berria Naii i més. Consulta models i preus a la nostra botiga de Girona."
+            },
+            "mtb": {
+                "name": "MTB",
+                "h1": "Bicicletes de muntanya (MTB) a Girona",
+                "intro": "Bicicletes de muntanya de Giant i Berria per rodar fora de l'asfalt. Consulta models, talles i preus a la nostra botiga de Girona."
+            },
+            "electricas": {
+                "name": "Elèctriques",
+                "h1": "Bicicletes elèctriques a Girona",
+                "intro": "Bicicletes elèctriques de Berria i altres marques. Consulta models, talles i preus a la nostra botiga de Girona."
+            },
+            "infantiles": {
+                "name": "Infantils",
+                "h1": "Bicicletes infantils a Girona",
+                "intro": "Bicicletes infantils perquè els més petits comencin a pedalar. Consulta models i preus a la nostra botiga de Girona."
+            }
+        },
+        "eyebrow": "Catàleg de bicicletes · Girona",
+        "breadcrumb_label": "Ruta de navegació",
+        "breadcrumb_home": "Inici",
+        "breadcrumb_bikes": "Bicicletes",
+        "categories_label": "Tipus de bicicleta",
+        "results_label": "Bicicletes",
+        "filters_title": "Filtres",
+        "view_bike": "Veure bicicleta",
+        "new": "Nou",
+        "colors_one": "1 color disponible",
+        "colors_other": "{{count}} colors disponibles",
+        "price_min": "Preu mínim",
+        "price_max": "Preu màxim",
+        "remove_filter": "Treure filtre: {{name}}",
+        "show_results_one": "Veure 1 bicicleta",
+        "show_results_other": "Veure {{count}} bicicletes"
     },
     "vraivelo": {
         "read_story": "Llegir història",
@@ -34,7 +99,9 @@
         "team": {
             "ruben_role": "Fundador i Mecànic Principal",
             "ruben_desc": "Mestre artesà amb més de 10 anys d'experiència en restauració de bicicletes i muntatges personalitzats."
-        }
+        },
+        "more_stories": "Més històries",
+        "all_stories": "Veure totes les històries"
     },
     "product": {
         "specifications": "Especificacions",
@@ -77,74 +144,155 @@
             "cassette": "Cassette",
             "bottom_bracket": "Eix de pedaler",
             "brakes": "Frens"
+        },
+        "price_label": "Preu",
+        "call_us": "Trucar a la botiga",
+        "official_dealer": "Distribuïdor oficial Giant i Berria",
+        "own_workshop": "Taller propi a Girona",
+        "related_title": "Altres bicicletes que et poden interessar",
+        "view_all_bikes": "Veure totes les bicicletes",
+        "not_found": "Producte no trobat",
+        "gallery": "Fotos",
+        "prev_image": "Foto anterior",
+        "next_image": "Foto següent",
+        "open_image": "Obrir la foto a mida completa",
+        "show_image": "Veure foto {{n}}",
+        "color": "Color",
+        "size": "Talla",
+        "size_help": "Dubtes amb la talla? T’assessorem a la botiga segons la teva alçada i la teva manera de rodar.",
+        "ask_availability": "Consultar disponibilitat",
+        "about": "Sobre aquesta bicicleta",
+        "specs_eyebrow": "Fitxa tècnica",
+        "on_the_road": "En ruta",
+        "on_the_road_alt": "{{name}} en ruta",
+        "highlight": {
+            "groupset": "Grup",
+            "brakes": "Frens",
+            "wheels": "Rodes",
+            "motor": "Motor"
+        },
+        "spec_group": {
+            "frame": "Quadre i suspensió",
+            "drivetrain": "Transmissió",
+            "brakes": "Frens",
+            "wheels": "Rodes i cobertes",
+            "cockpit": "Lloc de conducció",
+            "electric": "Sistema elèctric",
+            "other": "Altres"
         }
     },
     "home": {
         "hero": {
-            "badge": "DISTRIBUÏDOR AUTORITZAT • TALLER EXPERT",
+            "badge": "DISTRIBUÏDOR OFICIAL GIANT I BERRIA · GIRONA",
             "title": "PEDALA LA",
             "title_highlight": "REALITAT",
-            "subtitle": "Més que una botiga de bicicletes. Un santuari per al rendiment, la precisió i la passió.",
-            "explore_btn": "Explorar Bicicletes",
-            "book_btn": "Reservar Taller",
+            "subtitle": "Bicicletes de carretera, gravel, MTB i elèctriques de Giant i Berria, amb taller propi a Girona.",
+            "explore_btn": "Veure bicicletes i preus",
+            "book_btn": "Reservar taller",
             "scroll": "Lliscar",
-            "partners_prefix": "Partner oficial de"
+            "partners_prefix": "Partner oficial de",
+            "from": "des de",
+            "image_alt": "Taller de bicicletes Vraivelo a Girona: mecànic revisant una bicicleta de carretera Berria"
         },
         "brands": {
-            "title": "Partners de Confiança"
+            "title": "Partners de confiança",
+            "heading": "Distribuïdor oficial de Giant i Berria",
+            "subtitle": "Bicicletes amb la garantia oficial del fabricant, recanvis originals i el suport del nostre taller de Girona.",
+            "official": "Distribuïdor oficial",
+            "see_bikes": "Veure bicicletes {{brand}}",
+            "also": "També treballem amb",
+            "giant": {
+                "desc": "El fabricant de bicicletes més gran del món. Carretera, gravel i muntanya."
+            },
+            "berria": {
+                "desc": "Bicicletes de carboni dissenyades i fabricades a Espanya. Carretera, gravel i elèctriques."
+            }
         },
         "values": {
+            "eyebrow": "La nostra manera de treballar",
             "title": "Per què",
             "title_highlight": "Vraivēlo?",
-            "subtitle": "Combinem artesania experta amb una autèntica passió pel ciclisme.",
+            "subtitle": "El que més valorem és oferir-te un servei d’alt nivell i que en surtis content, cada vegada.",
             "cards": {
-                "workshop": {
-                    "title": "Taller Expert",
-                    "desc": "Eines d'última generació i mecànics certificats per a manteniment i reparacions de primer nivell."
+                "service": {
+                    "title": "Servei d’alt nivell",
+                    "desc": "T’atenem de manera propera i personal, de la primera consulta a l’entrega. La teva satisfacció és la nostra prioritat."
                 },
-                "selection": {
-                    "title": "Selecció Premium",
-                    "desc": "Una selecció acurada de les millors bicicletes del món i de l'equipament professional."
+                "workshop": {
+                    "title": "Taller especialitzat",
+                    "desc": "Eines d’última generació i una feina meticulosa: tractem cada eina i cada bici amb la màxima cura."
+                },
+                "setup": {
+                    "title": "Posada a punt perfecta",
+                    "desc": "Abans d’entregar-te la bici la revisem i l’ajustem a fons, perquè la rebis en el millor estat possible."
                 },
                 "guarantee": {
                     "title": "Garantia Vraivēlo",
-                    "desc": "Recolzem cada servei i venda. Qualitat i satisfacció, sempre."
+                    "desc": "Cada servei del taller està cobert per la nostra garantia de servei. Si alguna cosa no va com cal, ho solucionem.",
+                    "link": "Consulta la garantia"
                 }
             }
         },
         "reviews": {
+            "eyebrow": "Ressenyes de Google",
             "title": "El que diuen",
             "title_highlight": "els nostres ciclistes",
-            "subtitle": "Experiències reals de la nostra comunitat.",
-            "based_on": "Basat en",
-            "reviews_text": "ressenyes",
-            "items": {
-                "1": {
-                    "text": "L'atenció al client és excel·lent! En David és molt amable. Hi he portat la meva bicicleta dues vegades i ha solucionat el problema el mateix dia... El recomano al 100%.",
-                    "date": "Fa 2 setmanes",
-                    "name": "Margarita M."
-                },
-                "2": {
-                    "text": "Experiència excel·lent! El servei d'aquesta botiga és de primera. Em van ajudar a triar la bicicleta perfecta sense cap mena de pressió i van respondre totes les meves preguntes. La Laura i en David són encantadors, un veritable plaer tractar-hi. Els recomano al 100%.",
-                    "date": "Fa 3 setmanes",
-                    "name": "Paco C."
-                },
-                "3": {
-                    "text": "Vam estar pedalant per una ruta per la Garrotxa amb els meus amics quan els vam trobar. Un grup de ciclistes amb la seva furgoneta de suport. No van dubtar a oferir-nos aigua i begudes isotòniques en un moment en què realment les necessitàvem. Es podia veure que eren apassionats pel ciclisme i volien ajudar qualsevol ciclista, com nosaltres. No dubtaria a confiar-los les meves bicicletes i a participar en una de les seves rutes tan ben organitzades. Sou genials! Gràcies!",
-                    "date": "fa 5 mesos",
-                    "name": "Pit"
-                },
-                "4": {
-                    "text": "Un lloc fantàstic! Em van ajudar a trobar un cargol que no podia trobar enlloc més. I tothom era tan amable! 🥰",
-                    "date": "fa 3 mesos",
-                    "name": "Pablo R."
-                }
-            }
+            "average": "Valoració mitjana",
+            "reviews_on_google": "Ressenyes a Google"
         },
         "cta": {
-            "title": "A punt per Elevar el teu Nivell?",
-            "text": "Visita el nostre taller o explora la nostra col·lecció de bicicletes prèmium.",
-            "button": "Contacta'ns"
+            "eyebrow": "Vraivēlo · Girona",
+            "title": "A punt per pujar de nivell?",
+            "text": "Vine a la botiga, porta la bici al taller o uneix-te a la nostra propera sortida. T’ajudem a rodar millor.",
+            "button": "Contacta’ns",
+            "image_alt": "Grup de ciclistes amb bicicletes Berria davant la botiga Vraivēlo a Girona"
+        },
+        "categories": {
+            "title": "Troba la teva bicicleta",
+            "subtitle": "Tria el tipus de bici i mira els models i preus de la nostra botiga de Girona.",
+            "from": "Des de {{price}}",
+            "models_one": "1 model",
+            "models_other": "{{count}} models",
+            "eyebrow": "Compra per tipus de bici",
+            "other_name": "Cascos, ulleres i roba",
+            "other_meta": "Cascos · Ulleres · Roba",
+            "tagline": {
+                "carretera": "Velocitat sobre asfalt",
+                "gravel": "Asfalt, pista i aventura",
+                "mtb": "Corriols i muntanya",
+                "electricas": "Arriba més lluny",
+                "infantiles": "Els seus primers quilòmetres",
+                "other": "Equipa't per rodar"
+            },
+            "alt": {
+                "carretera": "Ciclista rodant per carretera amb una Berria Mistral",
+                "gravel": "Ciclista amb una Berria Naii X baixant per una pista de gravel",
+                "mtb": "Ciclista de muntanya amb una Berria Bravo en un corriol",
+                "electricas": "Ciclista amb una Berria Nexxen elèctrica al costat d’un embassament",
+                "infantiles": "Tres nens amb casc anant amb les seves bicicletes Giant",
+                "other": "Ciclista cordant-se el casc amb ulleres de ciclisme Julbo"
+            }
+        },
+        "featured": {
+            "eyebrow": "Selecció de la botiga",
+            "title": "Bicicletes destacades",
+            "subtitle": "Una selecció del catàleg de la nostra botiga de Girona.",
+            "view_all": "Veure totes les bicicletes"
+        },
+        "slogan": {
+            "eyebrow": "Vraivēlo / Girona — Costa Brava",
+            "line1": "La teva propera sortida",
+            "line2": "comença aquí.",
+            "text": "Carretera, gravel o muntanya.\nT’assessorem, ajustem la teva bici\ni la mantenim a punt\nal nostre taller de Girona.",
+            "label": "Distribuïdor oficial"
+        },
+        "fit": {
+            "eyebrow": "Vraivēlo / Taller i cura",
+            "line1": "Màxima cura",
+            "line2": "per la teva bici.",
+            "text": "Cuidem cada detall:\nrevisem, ajustem i mimem\nla teva bicicleta perquè rendeixi\nsempre en la seva millor versió.",
+            "label": "Taller propi a Girona",
+            "cta": "Coneix el taller"
         }
     },
     "workshop": {
@@ -152,35 +300,45 @@
         "title": "Serveis de",
         "title_highlight": "Taller",
         "subtitle": "David tracta cada bicicleta com si fos la seva. Precisió, cura i velocitat — sempre.",
+        "care": {
+            "eyebrow": "Vraivēlo / Taller i detall",
+            "line1": "Cuidem cada",
+            "line2": "detall.",
+            "text": "Desmuntem, netegem\ni revisem cada peça amb cura,\nperquè la teva bici rebi\nel servei excel·lent que es mereix.",
+            "label": "Mecànica de precisió",
+            "cta": "Demana cita"
+        },
         "discipline": {
-            "title_1": "Selecciona el teu servei",
-            "subtitle": "Tria un servei especialitzat del taller. En David està certificat per realitzar preparacions d'alt rendiment en tots els components principals de bicicletes de muntanya, de grava, de carretera i elèctriques.",
-            "become_member": "Fes-te Membre Vraivēlo",
-            "view_services": "Veure Serveis",
+            "eyebrow": "Taller Vraivēlo · Girona",
+            "title_1": "Serveis de taller",
+            "become_member": "Fes-te membre Vraivēlo",
+            "view_services": "Veure serveis i preus",
             "cards": {
                 "mechanics": {
                     "badge": "Essencial",
-                    "title": "Posada a Punt i Manteniment",
-                    "desc": "Neteja integral de la transmissió, verificació de parell de collament i ajustos precisos del canvi per al rendiment diari."
+                    "title": "Posada a punt i manteniment",
+                    "desc": "Neteja integral de la transmissió, revisió de l’estrenyiment dels cargols i ajust precís del canvi i els frens per al dia a dia.",
+                    "image_alt": "Mecànic de Vraivēlo treballant en una bicicleta de carretera al taller"
                 },
                 "suspensions": {
                     "badge": "Avançat",
-                    "title": "Manteniment Forquilles",
-                    "desc": "Manteniment de botelles, ajust de volum d'aire i reconstruccions completes de cartutxos per a forquilles Fox, RockShox i Öhlins."
+                    "title": "Forquilles",
+                    "desc": "Manteniment de forquilles, ajust del volum d’aire i reconstrucció completa de cartutxos Fox, RockShox i Öhlins.",
+                    "image_alt": "Ciclista baixant per un corriol amb una bicicleta de muntanya de doble suspensió"
                 },
                 "rear_shock": {
                     "badge": "Expert",
-                    "title": "Manteniment Amortidors",
-                    "desc": "Manteniment de cambra d'aire, càrrega de nitrogen i re-valvulat de sistemes a mida per un control absolut de la tracció posterior."
+                    "title": "Amortidors",
+                    "desc": "Manteniment de la cambra d’aire, càrrega de nitrogen i revalvulat a mida per a un control total de la tracció posterior.",
+                    "image_alt": "Ciclista de muntanya rodant entre arbres amb una bicicleta de doble suspensió"
                 }
             }
         },
         "membership": {
             "title_1": "vraivēlo",
-            "title_2": "Plans de Subscripció",
-            "join_now": "Uneix-te Ara",
-            "recommended": "Recomanat",
-            "premium": "Premium",
+            "title_2": "Plans de membres",
+            "join_now": "Uneix-te ara",
+            "recommended": "Recomanat · El més triat",
             "plans": {
                 "peloton": {
                     "name": "Pelotón Rider",
@@ -189,7 +347,8 @@
                     "f1": "Ajustaments bàsics gratuïts",
                     "f2": "10% de descompte en peces",
                     "f3": "Reserva prioritària al taller",
-                    "f4": "Accés a esdeveniments oficials i grup privat"
+                    "f4": "Accés a esdeveniments oficials i grup privat",
+                    "tagline": "Per a qui surt a rodar amb regularitat."
                 },
                 "pro": {
                     "name": "Pro Performance",
@@ -200,7 +359,8 @@
                     "f3": "Descomptes: 10% mà d'obra + 10% accessoris",
                     "f4": "50% de descompte en Social Rides, cafè inclòs",
                     "f5": "50% de descompte en cursos de formació",
-                    "f6": "Descomptes exclusius per a assegurança de bicicleta"
+                    "f6": "Descomptes exclusius per a assegurança de bicicleta",
+                    "tagline": "L’equilibri perfecte entre avantatges i preu."
                 },
                 "elite": {
                     "name": "Elite Factory",
@@ -210,9 +370,12 @@
                     "f2": "Prioritat VIP al taller de 24 hores",
                     "f3": "20% de descompte en mà d'obra, roba i peces",
                     "f4": "Prioritat en caps de setmana vraivēlo i sessions d'entrenament",
-                    "f5": "1 experiència exclusiva a l'any GRATIS"
+                    "f5": "1 experiència exclusiva a l'any GRATIS",
+                    "tagline": "Per a qui entrena seriosament i no vol esperar."
                 }
-            }
+            },
+            "eyebrow": "Membres Vraivēlo",
+            "subtitle": "Un any d’avantatges al taller i a la botiga. Tria el pla que encaixa amb la teva manera de rodar."
         },
         "categories": [
             {
@@ -303,7 +466,8 @@
             "hero": {
                 "category": "Mecànica d'Excel·lència",
                 "title": "Manteniment de Forquilles.",
-                "desc": "Elevant la teva experiència de conducció amb precisió clínica. El nostre taller especialitzat en forquilles se centra en la integritat hidràulica, reducció de friccions i configuracions a mida per a un rendiment d'elit."
+                "desc": "Elevant la teva experiència de conducció amb precisió clínica. El nostre taller especialitzat en forquilles se centra en la integritat hidràulica, reducció de friccions i configuracions a mida per a un rendiment d'elit.",
+                "image_alt": "Ciclista baixant per un corriol amb una bicicleta de muntanya de doble suspensió"
             },
             "services": {
                 "basic": {
@@ -362,7 +526,8 @@
                 "category": "Excel·lència en Suspensió",
                 "title": "Manteniment <br/> d'Amortidors",
                 "desc": "Ajust de precisió per a un rendiment d'alt nivell. Tractem cada amortidor com una obra mestra mecànica única, restaurant el rendiment de fàbrica a través d'un manteniment clínic.",
-                "badge": "Taller Certificat"
+                "badge": "Taller Certificat",
+                "image_alt": "Ciclista de muntanya rodant entre arbres amb una bicicleta de doble suspensió"
             },
             "bento": {
                 "main": {
@@ -393,7 +558,7 @@
                 }
             },
             "specs": {
-                "title": "Matriu de Servei",
+                "title": "Pas a pas.",
                 "steps": {
                     "1": {
                         "step": "Pas 01",
@@ -418,7 +583,8 @@
             "hero": {
                 "category": "Mecànica d'Excel·lència",
                 "title": "Posades a Punt<br />i Manteniment",
-                "desc": "El nostre taller s'especialitza en manteniment d'alt rendiment. Tractem cada bicicleta com una obra mestra de l'enginyeria, assegurant que cada canvi de marxa sigui silenciós i cada frenada quirúrgica."
+                "desc": "El nostre taller s'especialitza en manteniment d'alt rendiment. Tractem cada bicicleta com una obra mestra de l'enginyeria, assegurant que cada canvi de marxa sigui silenciós i cada frenada quirúrgica.",
+                "image_alt": "Mecànic de Vraivēlo revisant una bicicleta de carretera al taller"
             },
             "services": {
                 "basic": {
@@ -452,7 +618,8 @@
                 "tolerance": "Tolerància",
                 "turnaround": "Entrega",
                 "certified": "Certificat",
-                "parts": "Recanvis"
+                "parts": "Recanvis",
+                "parts_value": "Originals"
             },
             "cta": {
                 "title": "A punt per Rodar?",
@@ -464,9 +631,23 @@
             "title": "Necessites Alguna Cosa Personalitzada?",
             "text": "Oferim serveis a mida per a muntatges únics, restauracions vintage i preparació per a competició. Contacta amb nosaltres per a un pressupost personalitzat.",
             "button": "Demanar Pressupost"
+        },
+        "service_page": {
+            "back": "Taller",
+            "book": "Reservar cita",
+            "see_prices": "Veure preus",
+            "prices_eyebrow": "Serveis i preus",
+            "prices_title": "Tria el teu servei",
+            "prices_subtitle": "Tria l’opció que necessita la teva bici. Si tens dubtes, t’assessorem abans de començar.",
+            "from": "Des de",
+            "not_included": "no inclòs",
+            "process_eyebrow": "Com treballem",
+            "cta_title": "A punt per rodar?",
+            "cta_text": "Reserva la teva cita i deixa la bici en les millors mans."
         }
     },
     "contact": {
+        "photo_alt": "En David, de Vraivēlo, amb una Berria de carretera davant la botiga de Girona",
         "badge": "CONTACTA'NS",
         "title": "Anem a",
         "title_highlight": "Connectar",
@@ -510,7 +691,10 @@
                 "default": "Selecciona un servei detallat",
                 "custom": "Personalitzat / No llistat"
             },
-            "submit": "Enviar Missatge"
+            "submit": "Enviar Missatge",
+            "sending": "Enviant...",
+            "sent": "Missatge enviat",
+            "sent_note": "Gràcies. Et respondrem al més aviat possible."
         }
     },
     "footer": {
@@ -525,7 +709,11 @@
         "hours_label": "Dilluns a Divendres:",
         "hours_morning": "9:00 - 13:00",
         "hours_afternoon": "16:00 - 19:00",
-        "copyright": "© {{year}} Vraivēlo. Tots els drets reservats."
+        "copyright": "© {{year}} Vraivēlo. Tots els drets reservats.",
+        "tagline": "Botiga i taller de bicicletes a Girona.",
+        "official": "Distribuïdor oficial",
+        "contact_cta": "Escriu-nos",
+        "hours_title": "Horari"
     },
     "cart": {
         "title": "El teu Carretó",
@@ -560,7 +748,7 @@
         "wheels": "Rodes",
         "new": "NOU",
         "colors": "Colors:",
-        "search_placeholder": "Cerca per marca o model (ex: maillot, High Level)...",
+        "search_placeholder": "Cerca per marca, model o característica (ex: maillot, Zipp, tubeless)…",
         "product_listed": "Producte Llistat",
         "products_listed": "Productes Llistats",
         "components": "Components",
@@ -569,7 +757,15 @@
         "frames": "Quadres",
         "gear": "Equipament",
         "maintenance": "Manteniment",
-        "food": "Nutrició"
+        "food": "Nutrició",
+        "eyebrow": "Roba, components i accessoris · Girona",
+        "h1": "Roba i accessoris de ciclisme a Girona",
+        "intro": "Rodes, components, la roba Vraivēlo i accessoris de les millors marques. Consulta preus i disponibilitat a la nostra botiga de Girona.",
+        "view_product": "Veure producte",
+        "count_one": "1 producte",
+        "count_other": "{{count}} productes",
+        "sort_default": "Recomanats",
+        "empty": "No hi ha productes amb aquesta cerca."
     },
     "strava": {
         "badge": "La Comunitat Oficial",
@@ -583,6 +779,7 @@
             "routes": "Rutes"
         },
         "story": {
+            "photo_alt": "Ciclistes del club Vraivēlo a punt per a la sortida davant la botiga de Girona",
             "subheading": "El Nostre Club",
             "heading": "El cor digital de Vraivēlo",
             "p1": "El club de Strava de Vraivēlo és el punt on comença cada sortida abans que la roda toqui l'asfalt. És el nostre espai comú, on organitzem, compartim i donem forma a tot el que passa fora de la botiga.",
@@ -711,6 +908,26 @@
         "story": {
             "title": "{{name}} | Vraivelo Girona",
             "description": "{{name}}: històries, esdeveniments i comunitat ciclista de Vraivelo a Girona."
+        },
+        "shop_carretera": {
+            "title": "Bicicletes de Carretera a Girona | Vraivelo",
+            "description": "Bicicletes de carretera Giant i Berria a Girona: alumini i carboni, canvi mecànic i electrònic. Consulta models, talles i preus."
+        },
+        "shop_gravel": {
+            "title": "Bicicletes Gravel a Girona | Vraivelo",
+            "description": "Bicicletes gravel Giant Revolt i Berria Naii a Girona. Consulta models, talles i preus a la nostra botiga."
+        },
+        "shop_mtb": {
+            "title": "Bicicletes de Muntanya (MTB) a Girona | Vraivelo",
+            "description": "Bicicletes de muntanya Giant i Berria a Girona: models MTB amb preus i talles. Visita'ns al Carrer Pau Vila i Dinarès 10."
+        },
+        "shop_electricas": {
+            "title": "Bicicletes Elèctriques a Girona | Vraivelo",
+            "description": "Bicicletes elèctriques a Girona: models Berria i més, amb preus i talles. Consulta disponibilitat a la nostra botiga."
+        },
+        "shop_infantiles": {
+            "title": "Bicicletes Infantils a Girona | Vraivelo",
+            "description": "Bicicletes infantils a Girona: models per a nens i nenes amb preus i talles. Consulta disponibilitat a Vraivelo."
         }
     },
     "origins": {
@@ -720,6 +937,7 @@
             "desc": "De la competició al detall mecànic. La història darrere del taller."
         },
         "intro": {
+            "photo_alt": "En David, fundador de Vraivēlo, celebrant una victòria en carretera",
             "title": "<vraiWhite>Vraivēlo</vraiWhite> neix de tota una vida sobre la bicicleta.",
             "text": "En David, fundador del taller, va créixer a Badalona i va començar a pedalar amb només tres anys. El que va començar com una afició a la infància es va convertir en una carrera competitiva en mountain bike i després en ciclisme de carretera, passant per categories sub23 i elit fins a formar part d'un equip professional."
         },
@@ -728,7 +946,8 @@
             "heading": "Al Límit a la Ruta",
             "text": "El ciclisme de competició no només exigeix resistència física; requereix entendre profundament la màquina. Anys de portar les bicicletes al límit en condicions exigents van ensenyar a en David la relació crucial entre el ciclista i el seu equip.",
             "quote": "\"Cada ajust, cada reparació i cada recomanació neix de l'experiència real als entrenaments, carreres i llargues hores sobre el selló.\"",
-            "author": "— David, Fundador"
+            "author": "— David, Fundador",
+            "alt_mtb": "En David competint en bicicleta de muntanya"
         },
         "quote_banner": {
             "title": "\"Haver viscut el ciclisme des de dins va marcar la diferència.\""
@@ -757,6 +976,14 @@
                 "Boutique Ciclista"
             ],
             "badge": "Taller Especialitzat"
+        },
+        "eyebrow": "Vraivēlo · Des del 2023",
+        "cta": {
+            "eyebrow": "Taller Vraivēlo · Girona",
+            "title": "Vine a conèixer-nos",
+            "text": "Passa per la botiga o porta la bici al taller: t’atenem amb la mateixa exigència amb què s’entrena per competir.",
+            "workshop": "Veure el taller",
+            "contact": "Contacte"
         }
     },
     "calendar": {
@@ -833,6 +1060,15 @@
                 "title": "Social Ride Carretera",
                 "desc": "Explora camins secundaris i pistes forestals a la nostra sortida mensual de gravel."
             }
+        },
+        "eyebrow": "Comunitat Vraivēlo",
+        "year_eyebrow": "Temporada",
+        "year_title": "L’any sobre la bici",
+        "events_eyebrow": "Agenda",
+        "cta": {
+            "eyebrow": "Sortides i esdeveniments",
+            "title": "Roda amb nosaltres",
+            "text": "Publiquem cada sortida al nostre club d’Strava amb la distància, el desnivell i el nivell. Si tens dubtes, escriu-nos."
         }
     },
     "berria": {
@@ -842,6 +1078,8 @@
             "desc": "Una mirada retrospectiva a la nostra col·laboració exclusiva al cor de Catalunya, on l'experiència del taller professional es va trobar amb l'enginyeria de bicicletes d'alt rendiment."
         },
         "article": {
+            "photo_alt": "Ajust d’una bicicleta Berria durant el Demo Tour a Vraivēlo",
+            "photo2_alt": "Ciclistes provant bicicletes Berria per un camí de gravel a prop de Girona",
             "subheading": "La Col·laboració",
             "heading": "Berria Demo Tour a Vraivēlo",
             "p1": "Hi ha dies que resumeixen molt bé què som, el Berria Demo Tour a Vraivēlo va ser un d'ells.",
@@ -865,7 +1103,9 @@
             "f2_title": "Rutes Escèniques a Girona",
             "f2_desc": "Rutes organitzades diàries a través de pobles medievals i penya-segats costaners, guiades per experts de Vraivēlo.",
             "f3_title": "Experiència de Taller",
-            "f3_desc": "Suport mecànic in situ i optimització de configuració personalitzada per l'equip de Vraivēlo."
+            "f3_desc": "Suport mecànic in situ i optimització de configuració personalitzada per l'equip de Vraivēlo.",
+            "eyebrow": "La jornada",
+            "title": "Què vam viure aquell dia"
         },
         "gallery": {
             "title": "Diari Visual",
@@ -875,14 +1115,23 @@
             "c3": "Matí a Girona",
             "c4": "El Pelotó de Girona",
             "c5": "Últims detalls",
-            "c6": "Xerrada abans de sortir"
+            "c6": "Xerrada abans de sortir",
+            "eyebrow": "Galeria"
         },
         "footer": {
             "quote": "\"Gràcies a tothom qui ens ha acompanyat en l'Experiència Vraivēlo x Berria Girona. Estem orgullosos d'haver compartit aquestes carreteres i aquestes màquines amb vosaltres.\"",
             "copyright": "© 2025 Vraivēlo x Berria. Tots els drets reservats."
+        },
+        "cta": {
+            "eyebrow": "Distribuïdor oficial Berria",
+            "title": "Prova una Berria",
+            "text": "Consulta els models que tenim a la botiga o apunta’t a les nostres properes sortides.",
+            "bikes": "Veure bicicletes Berria",
+            "calendar": "Veure calendari"
         }
     },
     "weekend": {
+        "photo_alt": "Grup del Vraivēlo Weekend rodant al costat d’un viaducte camí de França",
         "headline": "Vraivēlo Weekend",
         "subtitle_1": "Un cap de setmana rumb a França",
         "p1": "L'any passat vam organitzar una sortida diferent des de Vraivēlo. No es tractava d'una ruta més, sinó d'una petita aventura en dos dies, pensada per gaudir del ciclisme amb calma, seguretat i bon ambient.",
@@ -895,7 +1144,15 @@
         "gallery": {
             "title": "Galeria de l'Esdeveniment",
             "btn": "Veure Totes les Fotos"
-        }
+        },
+        "eyebrow": "Vraivēlo Weekend · 2 dies",
+        "watch_video": "Veure el vídeo",
+        "story_eyebrow": "L’aventura",
+        "video_eyebrow": "En vídeo",
+        "video_title": "Així va ser el cap de setmana",
+        "gallery_title": "El cap de setmana en fotos",
+        "gallery_alt": "Ciclistes del Vraivēlo Weekend en ruta",
+        "cta_title": "Els propers Vraivēlo Weekends"
     },
     "licenses": {
         "hero": {
@@ -905,7 +1162,8 @@
         },
         "grid": {
             "title": "Opcions de Llicència 2025",
-            "subtitle": "Gestionem la teva alta a la Federació Catalana de Ciclisme perquè tu només hagis de preocupar-te de pedalar."
+            "subtitle": "Gestionem la teva alta a la Federació Catalana de Ciclisme perquè tu només hagis de preocupar-te de pedalar.",
+            "eyebrow": "Federació Catalana de Ciclisme"
         },
         "cards": {
             "competitive": {
@@ -969,12 +1227,14 @@
             "b3": {
                 "title": "Comunitat i Avantatges",
                 "desc": "Forma part del nostre club oficial i gaudeix de descomptes exclusius a la botiga i serveis de taller."
-            }
+            },
+            "eyebrow": "Per què amb nosaltres"
         },
         "cta": {
             "title": "Llest per a la teva propera aventura?",
             "desc": "Escriu-nos i tramitarem la teva llicència en menys de 48 hores laborals.",
             "btn": "SOL·LICITAR ARA"
-        }
+        },
+        "eyebrow": "Llicències federatives"
     }
 }

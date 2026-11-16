@@ -1,0 +1,46 @@
+{
+  "id": 323,
+  "name": "Giant Propel Advanced 1",
+  "brand": "giant",
+  "family": "propel",
+  "model": "propel-advanced-1",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/propel-advanced-1",
+      "title": "Propel Advanced 1 (2026) | Aero Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "icicle-white",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-1",
+      "file": "studio/icicle-white-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/z9e4eicvzxkoecobkcmx/MY26PropelAdvanced1_ColorBIcicleWhite.jpg"
+    },
+    {
+      "color": "icicle-white",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-1",
+      "file": "studio/icicle-white-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/pv7pd1piovsyomp6veiw/MY26PropelAdvanced1_ColorBIcicleWhite-D1.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "icicle-white.jpg",
+  "catalog": [
+    {
+      "color": "Icicle White",
+      "hex": "#B3C2C7",
+      "file": "icicle-white.jpg"
+    }
+  ],
+  "cutouts": []
+}

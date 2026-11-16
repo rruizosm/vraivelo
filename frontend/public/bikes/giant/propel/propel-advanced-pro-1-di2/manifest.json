@@ -1,0 +1,37 @@
+{
+  "id": 324,
+  "name": "Giant Propel Advanced PRO 1 Di2",
+  "brand": "giant",
+  "family": "propel",
+  "model": "propel-advanced-pro-1-di2",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/propel-advanced-pro-1-di2-2027",
+      "title": "Propel Advanced Pro 1-Di2 (2027) | Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "cryo-silver",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-1-di2-2027",
+      "file": "studio/cryo-silver-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/l3u1izj5fwc74bmi47rv/MY27PropelAdvancedPro1-Di2_ColorACryoSilver.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "abyss-teal-fluorescent-mint-obsidian-pulse.jpg",
+  "catalog": [
+    {
+      "color": "Abyss Teal/Fluorescent Mint, Obsidian Pulse",
+      "hex": "#312927",
+      "file": "abyss-teal-fluorescent-mint-obsidian-pulse.jpg"
+    }
+  ],
+  "cutouts": []
+}

@@ -1,353 +1,415 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { Loader, ChevronDown, ChevronUp, Search } from 'lucide-react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useState, useEffect, useMemo, useRef } from 'react';
+import { ArrowUpRight, Search, SlidersHorizontal, X, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { supabase } from '../../supabase';
 import { useTranslation } from 'react-i18next';
 import SEOHead from '../../components/SEOHead/SEOHead';
-import { productPath } from '../../lib/productUrl';
-import './Shop.css';
+import { parsePrice } from '../../lib/price';
+import { BIKE_CATEGORIES, categoryByKey } from '../../lib/categories';
+import { FEATURED_BIKE_IDS } from '../../config';
+import { withBikeImages } from '../../lib/bikeImages';
+import BikeCard from './BikeCard';
+import { MATERIALS } from '../../lib/bikes';
+import { buildSearchIndex, queryTokens, searchScore } from '../../lib/search';
+import './Catalog.css';
 
-const categories = ['All', 'Road', 'MTB', 'Gravel', 'eBike', 'Kids'];
+const PRICE_MAX = 15000;
+const PRICE_STEP = 500;
 
-// ─── Per-card component so each card has its own hover-color state ────────────
-const BikeCard = ({ bike, index, navigate, t }) => {
-    const variants = (bike.bike_variants || []).map(bv => ({
-        color: bv.color_name,
-        hex: bv.color_hex,
-        image: bv.image_url,
-    }));
-    const hasVariants = variants.length > 1;
-
-    const [previewImage, setPreviewImage] = useState(bike.image_url || null);
-    const [activeVariant, setActiveVariant] = useState(null);
-
-    const handleSwatchEnter = (v) => {
-        setActiveVariant(v.color);
-        if (v.image) setPreviewImage(v.image);
-    };
-
-    const handleSwatchLeave = () => {
-        setActiveVariant(null);
-        setPreviewImage(bike.image_url || null);
-    };
-
-    return (
-        <motion.div
-            key={bike.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.05 }}
-            className="bike-card group"
-            onClick={() => navigate(productPath(bike))}
-        >
-            <div className="bike-image-wrapper">
-                {bike.quantity === 0 && (
-                    <span className="sold-badge-card">{t('product.sold')}</span>
-                )}
-                {previewImage ? (
-                    <img src={previewImage} alt={bike.model} className="bike-image" />
-                ) : (
-                    <span className="bike-placeholder-text">{bike.brand.charAt(0)}</span>
-                )}
-                {bike.is_new && bike.quantity !== 0 && (
-                    <span className="new-badge">NEW</span>
-                )}
-            </div>
-
-            <div className="bike-info">
-                <p className="bike-brand">{bike.brand}</p>
-                <h3 className="bike-model">
-                    <Link to={productPath(bike)} onClick={(e) => e.stopPropagation()} style={{ color: 'inherit', textDecoration: 'none' }}>
-                        {bike.model}
-                    </Link>
-                </h3>
-
-                <div className="bike-price-row">
-                    <span className="bike-price-new">{bike.price}</span>
-
-                    {/* Color swatches */}
-                    {hasVariants && (
-                        <div
-                            className="bike-card-swatches"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            {variants.map((v) => (
-                                <div
-                                    key={v.color}
-                                    className={`bike-card-swatch ${activeVariant === v.color ? 'active' : ''
-                                        }`}
-                                    style={{ backgroundColor: v.hex || '#ccc' }}
-                                    title={v.color}
-                                    onMouseEnter={() => handleSwatchEnter(v)}
-                                    onMouseLeave={handleSwatchLeave}
-                                />
-                            ))}
-                        </div>
-                    )}
-                </div>
-            </div>
-        </motion.div>
-    );
+// Header photo per page (official Giant / Berria imagery from public/bikes/, see its README).
+// `position` keeps the riders in frame when the photo is cropped to the wide header.
+const HERO_IMAGES = {
+    all: { src: '/bikes/berria/belador/_family/lifestyle/02.webp', position: 'center 60%' },
+    carretera: { src: '/bikes/giant/tcr/_family/lifestyle/09.webp', position: 'center 55%' },
+    gravel: { src: '/bikes/giant/revolt/_family/lifestyle/02.webp', position: 'center 22%' },
+    mtb: { src: '/bikes/giant/anthem/_family/lifestyle/04.webp', position: 'center 50%' },
+    electricas: { src: '/bikes/berria/nexxen/_family/lifestyle/01.webp', position: 'center 55%' },
+    infantiles: { src: '/categorias/bicicleta-infantil-1000.webp', position: 'center 22%' },
 };
 
-const Shop = () => {
+const readStored = (key) => {
+    try {
+        const saved = sessionStorage.getItem(key);
+        return saved ? JSON.parse(saved) : [];
+    } catch {
+        return [];
+    }
+};
+
+// ─── Filter checkbox ─────────────────────────────────────────────────────────
+const FilterOption = ({ label, count, checked, onChange }) => (
+    <label className={`sh-option${checked ? ' is-checked' : ''}${count === 0 && !checked ? ' is-empty' : ''}`}>
+        <input type="checkbox" checked={checked} onChange={onChange} />
+        <span className="sh-check" aria-hidden="true" />
+        <span className="sh-option-label">{label}</span>
+        <span className="sh-option-count">{count}</span>
+    </label>
+);
+
+// Bikes already fetched in this session: coming back to the list (or switching category)
+// renders at once with the right counts, then refreshes quietly in the background.
+let bikesCache = null;
+
+// `category` comes from the route: /shop/ (all) or /shop/carretera/, /shop/gravel/ ...
+const Shop = ({ category = null }) => {
     const { t } = useTranslation();
-    const navigate = useNavigate();
-    const [bikes, setBikes] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [activeCategory, setActiveCategory] = useState(() => sessionStorage.getItem('shop_activeCategory') || 'All');
+    const [bikes, setBikes] = useState(() => bikesCache || []);
+    const [loading, setLoading] = useState(() => !bikesCache);
     const [activeBrands, setActiveBrands] = useState(() => {
-        const saved = sessionStorage.getItem('shop_activeBrands');
-        return saved ? JSON.parse(saved) : [];
+        // a link like /shop/?marca=Giant (home partner cards) opens the shop filtered by that brand
+        const fromUrl = new URLSearchParams(window.location.search).get('marca');
+        return fromUrl ? [fromUrl] : readStored('shop_activeBrands');
     });
-    const [priceRange, setPriceRange] = useState([0, 15000]);
-    const [activeMaterials, setActiveMaterials] = useState(() => {
-        const saved = sessionStorage.getItem('shop_activeMaterials');
-        return saved ? JSON.parse(saved) : [];
-    });
-    const [expandedFilters, setExpandedFilters] = useState({
-        price: true,
-        material: true,
-        category: true,
-        brand: true
-    });
+    const [activeMaterials, setActiveMaterials] = useState(() => readStored('shop_activeMaterials'));
+    const [priceRange, setPriceRange] = useState([0, PRICE_MAX]);
+    const [showFilters, setShowFilters] = useState(false); // phones/tablets only
+    const [sortBy, setSortBy] = useState('featured');
     const [searchQuery, setSearchQuery] = useState('');
 
-    useEffect(() => {
-        sessionStorage.setItem('shop_activeCategory', activeCategory);
-        sessionStorage.setItem('shop_activeBrands', JSON.stringify(activeBrands));
-        sessionStorage.setItem('shop_activeMaterials', JSON.stringify(activeMaterials));
-    }, [activeCategory, activeBrands, activeMaterials]);
+    const currentCategory = category ? categoryByKey(category) : null;
+    const catSlug = currentCategory?.slug;
+    const catsRef = useRef(null);
 
-    // Fetch bikes from Supabase
+    // on narrow screens the category row scrolls sideways: bring the current one into view
+    useEffect(() => {
+        const row = catsRef.current;
+        const active = row?.querySelector('.is-active');
+        if (row && active) row.scrollLeft = active.offsetLeft - (row.clientWidth - active.offsetWidth) / 2;
+    }, [category, loading]);
+
+    useEffect(() => {
+        try {
+            sessionStorage.setItem('shop_activeBrands', JSON.stringify(activeBrands));
+            sessionStorage.setItem('shop_activeMaterials', JSON.stringify(activeMaterials));
+        } catch { /* storage unavailable: filters just won't persist */ }
+    }, [activeBrands, activeMaterials]);
+
     useEffect(() => {
         const fetchBikes = async () => {
             try {
-                setLoading(true);
                 const { data, error } = await supabase
                     .from('bikes')
                     .select('*, bike_variants(*)')
                     .eq('Active', true)
                     .order('brand', { ascending: true });
-
                 if (error) throw error;
-                setBikes(data || []);
+                bikesCache = (data || []).map(withBikeImages);
+                setBikes(bikesCache);
             } catch (error) {
                 console.error('Error fetching bikes:', error);
             } finally {
                 setLoading(false);
             }
         };
-
         fetchBikes();
     }, []);
 
-    // Derive detailed brands list from fetched data
-    const brandsList = [...new Set(bikes.map(bike => bike.brand))];
+    const categoryCounts = useMemo(() => {
+        const counts = {};
+        bikes.forEach((b) => { counts[b.category] = (counts[b.category] || 0) + 1; });
+        return counts;
+    }, [bikes]);
 
-    const toggleBrand = (brand) => {
-        if (activeBrands.includes(brand)) {
-            setActiveBrands(activeBrands.filter(b => b !== brand));
-        } else {
-            setActiveBrands([...activeBrands, brand]);
-        }
+    // bikes of this page's category: the base for the brand/material counts
+    const inCategory = useMemo(
+        () => bikes.filter((b) => !category || b.category === category),
+        [bikes, category],
+    );
+    const brandsList = useMemo(() => [...new Set(bikes.map((b) => b.brand))].sort(), [bikes]);
+    const countBy = (fn) => inCategory.filter(fn).length;
+
+    const toggle = (list, setList, value) =>
+        setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
+
+    const priceActive = priceRange[0] > 0 || priceRange[1] < PRICE_MAX;
+    const hasActiveFilters = activeBrands.length > 0 || activeMaterials.length > 0 || priceActive || searchQuery.trim() !== '';
+
+    const clearFilters = () => {
+        setActiveBrands([]);
+        setActiveMaterials([]);
+        setPriceRange([0, PRICE_MAX]);
+        setSearchQuery('');
     };
 
-    const toggleMaterial = (material) => {
-        if (activeMaterials.includes(material)) {
-            setActiveMaterials(activeMaterials.filter(m => m !== material));
-        } else {
-            setActiveMaterials([...activeMaterials, material]);
-        }
-    };
+    // searchable text per bike: brand, model, category and material rank first; then colours
+    // and components (specs in every language, so "cuadro", "frame" or "quadre" all work)
+    const searchIndex = useMemo(() => {
+        const map = new Map();
+        bikes.forEach((bike) => {
+            const slug = categoryByKey(bike.category)?.slug;
+            const materialKey = MATERIALS.find(([v]) => v.toLowerCase() === (bike.Material || '').toLowerCase())?.[1];
+            map.set(bike.id, buildSearchIndex(
+                [
+                    bike.brand, bike.model,
+                    bike.category, slug && t(`shop.cat.${slug}.name`),
+                    bike.Material, materialKey && t(`shop.filter.${materialKey}`),
+                ],
+                [
+                    (bike.bike_variants || []).map((v) => v.color_name),
+                    bike.specs, bike.specs_es, bike.specs_cat,
+                ],
+            ));
+        });
+        return map;
+    }, [bikes, t]);
 
-    const toggleSection = (section) => {
-        setExpandedFilters(prev => ({ ...prev, [section]: !prev[section] }));
-    };
+    const filteredBikes = useMemo(() => {
+        const tokens = queryTokens(searchQuery);
+        const scores = new Map();
+        const list = inCategory.filter((bike) => {
+            const matchBrand = activeBrands.length === 0 || activeBrands.includes(bike.brand);
+            const matchMaterial = activeMaterials.length === 0
+                || activeMaterials.some((m) => (bike.Material || '').toLowerCase() === m.toLowerCase());
+            const bikePrice = parsePrice(bike.price) ?? 0;
+            const matchPrice = bikePrice >= priceRange[0] && bikePrice <= priceRange[1];
+            const score = searchScore(searchIndex.get(bike.id), tokens);
+            scores.set(bike.id, score);
+            return matchBrand && matchMaterial && matchPrice && score > 0;
+        });
 
-    const parsePrice = (priceStr) => {
-        if (!priceStr) return 0;
-        const s = String(priceStr).replace(/[^\d.,]/g, '');
-        return Number(s.replace(/\./g, '').replace(/,/g, ''));
-    };
+        const priceOf = (b) => parsePrice(b.price) ?? Infinity;
+        const featuredRank = (b) => {
+            const i = FEATURED_BIKE_IDS.indexOf(b.id);
+            return i === -1 ? Infinity : i;
+        };
+        if (sortBy === 'price_asc') return [...list].sort((a, b) => priceOf(a) - priceOf(b));
+        if (sortBy === 'price_desc') return [...list].sort((a, b) => (parsePrice(b.price) ?? -1) - (parsePrice(a.price) ?? -1));
+        // best search matches (brand/model) first, then featured (config order),
+        // the rest keep the brand order from the query
+        return [...list].sort((a, b) =>
+            (scores.get(b.id) - scores.get(a.id)) || (featuredRank(a) - featuredRank(b)));
+    }, [inCategory, activeBrands, activeMaterials, priceRange, searchQuery, sortBy, searchIndex]);
 
-    const filteredBikes = bikes.filter(bike => {
-        const matchCategory = activeCategory === 'All' || bike.category === activeCategory;
-        const matchBrand = activeBrands.length === 0 || activeBrands.includes(bike.brand);
-        const matchMaterial = activeMaterials.length === 0 || activeMaterials.some(mat =>
-            (bike.Material || '').toLowerCase() === mat.toLowerCase()
-        );
-        const bikePrice = parsePrice(bike.price);
-        const matchPrice = bikePrice >= priceRange[0] && bikePrice <= priceRange[1];
-        const q = searchQuery.trim().toLowerCase();
-        const matchSearch = !q ||
-            (bike.brand || '').toLowerCase().includes(q) ||
-            (bike.model || '').toLowerCase().includes(q);
+    const seoKey = catSlug ? `seo.shop_${catSlug}` : 'seo.shop';
+    const h1 = catSlug ? t(`shop.cat.${catSlug}.h1`) : t('shop.h1');
+    const intro = catSlug ? t(`shop.cat.${catSlug}.intro`) : t('shop.intro');
+    const hero = HERO_IMAGES[catSlug] || HERO_IMAGES.all;
+    const euro = (n) => `${n.toLocaleString('de-DE')} €`;
 
-        return matchCategory && matchBrand && matchMaterial && matchPrice && matchSearch;
-    });
-
-    if (loading) {
-        return (
-            <div className="flex items-center justify-center min-h-[60vh]">
-                <Loader className="animate-spin text-[var(--primary)]" size={48} />
-            </div>
-        );
-    }
+    // chips for the filters in use, each one removable
+    const activeChips = [
+        ...activeBrands.map((b) => ({ key: `b-${b}`, label: b, remove: () => toggle(activeBrands, setActiveBrands, b) })),
+        ...activeMaterials.map((m) => {
+            const key = MATERIALS.find(([v]) => v === m)?.[1];
+            return { key: `m-${m}`, label: key ? t(`shop.filter.${key}`) : m, remove: () => toggle(activeMaterials, setActiveMaterials, m) };
+        }),
+        ...(priceActive ? [{ key: 'price', label: `${euro(priceRange[0])} – ${euro(priceRange[1])}`, remove: () => setPriceRange([0, PRICE_MAX]) }] : []),
+        ...(searchQuery.trim() ? [{ key: 'q', label: `“${searchQuery.trim()}”`, remove: () => setSearchQuery('') }] : []),
+    ];
 
     return (
-        <div className="shop-container">
-            <SEOHead titleKey="seo.shop.title" descriptionKey="seo.shop.description" path="/shop" />
-            <div className="shop-content">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="shop-header"
-                >
-                    <span className="shop-badge">
-                        PREMIUM COLLECTION
-                    </span>
-                    <h1 className="shop-title">
-                        Our <span className="text-[var(--primary)]">Bikes</span>
-                    </h1>
-                </motion.div>
+        <div className="sh-page">
+            <SEOHead
+                titleKey={`${seoKey}.title`}
+                descriptionKey={`${seoKey}.description`}
+                path={catSlug ? `/shop/${catSlug}` : '/shop'}
+            />
 
-                <div className="shop-layout">
-                    {/* SIDEBAR FILTERS */}
-                    <aside className="shop-sidebar">
+            {/* HEADER: breadcrumb, eyebrow, H1 + intro, category navigation */}
+            <header className="sh-header">
+                <nav className="sh-breadcrumb" aria-label={t('shop.breadcrumb_label')}>
+                    <ol>
+                        <li><Link to="/">{t('shop.breadcrumb_home')}</Link></li>
+                        <li>
+                            <ChevronRight size={14} aria-hidden="true" />
+                            {catSlug
+                                ? <Link to="/shop/">{t('shop.breadcrumb_bikes')}</Link>
+                                : <span aria-current="page">{t('shop.breadcrumb_bikes')}</span>}
+                        </li>
+                        {catSlug && (
+                            <li>
+                                <ChevronRight size={14} aria-hidden="true" />
+                                <span aria-current="page">{t(`shop.cat.${catSlug}.name`)}</span>
+                            </li>
+                        )}
+                    </ol>
+                </nav>
 
-                        {/* Frame Material Filter */}
-                        <div className="filter-group accordion-group">
-                            <button className="filter-accordion-header" onClick={() => toggleSection('material')}>
-                                <h3 className="filter-title">Frame Material</h3>
-                                {expandedFilters.material ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                            </button>
-                            {expandedFilters.material && (
-                                <div className="filter-options-content">
-                                    {['Carbon', 'Aluminum'].map((mat) => (
-                                        <button
-                                            key={mat}
-                                            onClick={() => toggleMaterial(mat)}
-                                            className={`sidebar-filter-btn ${activeMaterials.includes(mat) ? 'active' : ''}`}
-                                        >
-                                            <div className={`checkbox ${activeMaterials.includes(mat) ? 'checked' : ''}`} />
-                                            {mat}
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
+                {/* photo panel: brand photo + dark gradient so the white text always reads */}
+                <div className="sh-hero">
+                    <img
+                        className="sh-hero-img"
+                        src={hero.src}
+                        alt=""
+                        style={{ objectPosition: hero.position }}
+                        fetchPriority="high"
+                        decoding="async"
+                    />
+                    <span className="sh-hero-shade" aria-hidden="true" />
 
-                        {/* Category Filter */}
-                        <div className="filter-group accordion-group">
-                            <button className="filter-accordion-header" onClick={() => toggleSection('category')}>
-                                <h3 className="filter-title">Category</h3>
-                                {expandedFilters.category ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                            </button>
-                            {expandedFilters.category && (
-                                <div className="filter-options-content">
-                                    {categories.map((cat) => (
-                                        <button
-                                            key={cat}
-                                            onClick={() => setActiveCategory(cat)}
-                                            className={`sidebar-filter-btn ${activeCategory === cat ? 'active' : ''}`}
-                                        >
-                                            <div className={`checkbox ${activeCategory === cat ? 'checked' : ''}`} />
-                                            {cat}
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
+                    <motion.div
+                        className="sh-intro"
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                        <p className="sh-eyebrow">
+                            <span className="sh-eyebrow-bar" aria-hidden="true" />
+                            {t('shop.eyebrow')}
+                        </p>
+                        <h1 className="sh-title">{h1}</h1>
+                        <p className="sh-lead">{intro}</p>
+                    </motion.div>
+                </div>
 
-                        {/* Brands Filter */}
-                        <div className="filter-group accordion-group">
-                            <button className="filter-accordion-header" onClick={() => toggleSection('brand')}>
-                                <h3 className="filter-title">Brands</h3>
-                                {expandedFilters.brand ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                            </button>
-                            {expandedFilters.brand && (
-                                <div className="filter-options-content">
-                                    {brandsList.map((brand) => (
-                                        <button
-                                            key={brand}
-                                            onClick={() => toggleBrand(brand)}
-                                            className={`sidebar-filter-btn ${activeBrands.includes(brand) ? 'active' : ''}`}
-                                        >
-                                            <div className={`checkbox ${activeBrands.includes(brand) ? 'checked' : ''}`} />
-                                            {brand}
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
+                <nav className="sh-cats" ref={catsRef} aria-label={t('shop.categories_label')}>
+                    <Link to="/shop/" className={`sh-cat${!category ? ' is-active' : ''}`} aria-current={!category ? 'page' : undefined}>
+                        {t('shop.all')} <small>{bikes.length || ''}</small>
+                    </Link>
+                    {BIKE_CATEGORIES.filter((c) => categoryCounts[c.key] || loading).map((c) => (
+                        <Link
+                            key={c.key}
+                            to={`/shop/${c.slug}/`}
+                            className={`sh-cat${category === c.key ? ' is-active' : ''}`}
+                            aria-current={category === c.key ? 'page' : undefined}
+                        >
+                            {t(`shop.cat.${c.slug}.name`)} <small>{categoryCounts[c.key] || ''}</small>
+                        </Link>
+                    ))}
+                </nav>
+            </header>
 
-                        {/* Price Range Filter */}
-                        <div className="filter-group accordion-group">
-                            <button className="filter-accordion-header" onClick={() => toggleSection('price')}>
-                                <h3 className="filter-title">Price Range</h3>
-                                {expandedFilters.price ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                            </button>
-                            {expandedFilters.price && (
-                                <div className="filter-options-content">
-                                    <div className="range-slider-container">
-                                        <div className="range-slider-track">
-                                            <div className="range-slider-fill" style={{ left: `${(priceRange[0] / 15000) * 100}%`, width: `${((priceRange[1] - priceRange[0]) / 15000) * 100}%` }}></div>
-                                        </div>
-                                        <input type="range" min="0" max="15000" step="500" value={priceRange[0]} onChange={(e) => {
-                                            const val = Math.min(Number(e.target.value), priceRange[1] - 500);
-                                            setPriceRange([val, priceRange[1]]);
-                                        }} />
-                                        <input type="range" min="0" max="15000" step="500" value={priceRange[1]} onChange={(e) => {
-                                            const val = Math.max(Number(e.target.value), priceRange[0] + 500);
-                                            setPriceRange([priceRange[0], val]);
-                                        }} />
-                                    </div>
-                                    <div className="range-slider-labels">
-                                        <span>{priceRange[0].toLocaleString('de-DE')} €</span>
-                                        <span>{priceRange[1].toLocaleString('de-DE')} €</span>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    </aside>
+            <div className="sh-layout">
+                {/* FILTERS */}
+                <aside className={`sh-filters${showFilters ? ' is-open' : ''}`} aria-label={t('shop.filters_title')}>
+                    <div className="sh-filters-head">
+                        <p className="sh-filters-title">{t('shop.filters_title')}</p>
+                        {hasActiveFilters && (
+                            <button type="button" className="sh-clear" onClick={clearFilters}>{t('shop.clear_filters')}</button>
+                        )}
+                    </div>
 
-                    {/* BIKES GRID AREA */}
-                    <div style={{ width: '100%' }}>
-                        {/* Search Bar */}
-                        <div className="shop-search-bar">
-                            <Search size={18} className="shop-search-icon" />
+                    <fieldset className="sh-group">
+                        <legend className="sh-group-title">{t('shop.filter.brands')}</legend>
+                        {brandsList.map((brand) => (
+                            <FilterOption
+                                key={brand}
+                                label={brand}
+                                count={countBy((b) => b.brand === brand)}
+                                checked={activeBrands.includes(brand)}
+                                onChange={() => toggle(activeBrands, setActiveBrands, brand)}
+                            />
+                        ))}
+                    </fieldset>
+
+                    <fieldset className="sh-group">
+                        <legend className="sh-group-title">{t('shop.filter.material')}</legend>
+                        {MATERIALS.map(([value, key]) => (
+                            <FilterOption
+                                key={value}
+                                label={t(`shop.filter.${key}`)}
+                                count={countBy((b) => (b.Material || '').toLowerCase() === value.toLowerCase())}
+                                checked={activeMaterials.includes(value)}
+                                onChange={() => toggle(activeMaterials, setActiveMaterials, value)}
+                            />
+                        ))}
+                    </fieldset>
+
+                    <fieldset className="sh-group">
+                        <legend className="sh-group-title">{t('shop.filter.price')}</legend>
+                        <div className="sh-range">
+                            <div className="sh-range-track">
+                                <div
+                                    className="sh-range-fill"
+                                    style={{
+                                        left: `${(priceRange[0] / PRICE_MAX) * 100}%`,
+                                        width: `${((priceRange[1] - priceRange[0]) / PRICE_MAX) * 100}%`,
+                                    }}
+                                />
+                            </div>
                             <input
-                                id="shop-search-input"
-                                type="text"
-                                className="shop-search-input"
+                                type="range" min="0" max={PRICE_MAX} step={PRICE_STEP} value={priceRange[0]}
+                                aria-label={t('shop.price_min')}
+                                onChange={(e) => setPriceRange([Math.min(Number(e.target.value), priceRange[1] - PRICE_STEP), priceRange[1]])}
+                            />
+                            <input
+                                type="range" min="0" max={PRICE_MAX} step={PRICE_STEP} value={priceRange[1]}
+                                aria-label={t('shop.price_max')}
+                                onChange={(e) => setPriceRange([priceRange[0], Math.max(Number(e.target.value), priceRange[0] + PRICE_STEP)])}
+                            />
+                        </div>
+                        <p className="sh-range-labels">
+                            <span>{euro(priceRange[0])}</span>
+                            <span>{priceRange[1] >= PRICE_MAX ? `${euro(PRICE_MAX)}+` : euro(priceRange[1])}</span>
+                        </p>
+                    </fieldset>
+
+                    <button type="button" className="sh-filters-done" onClick={() => setShowFilters(false)}>
+                        {t('shop.show_results', { count: filteredBikes.length })}
+                    </button>
+                </aside>
+
+                {/* RESULTS */}
+                <section className="sh-results" aria-label={t('shop.results_label')}>
+                    <div className="sh-toolbar">
+                        <label className="sh-search">
+                            <Search size={18} aria-hidden="true" />
+                            <span className="sr-only">{t('shop.search_placeholder')}</span>
+                            <input
+                                type="search"
                                 placeholder={t('shop.search_placeholder')}
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                             />
-                            {searchQuery && (
-                                <button className="shop-search-clear" onClick={() => setSearchQuery('')} aria-label="Clear search">
-                                    ✕
-                                </button>
+                        </label>
+
+                        <div className="sh-toolbar-row">
+                            <p className="sh-count" aria-live="polite">
+                                {loading ? ' ' : t('shop.count', { count: filteredBikes.length })}
+                            </p>
+                            <button
+                                type="button"
+                                className="sh-filters-toggle"
+                                onClick={() => setShowFilters((v) => !v)}
+                                aria-expanded={showFilters}
+                            >
+                                <SlidersHorizontal size={16} aria-hidden="true" />
+                                {t('shop.filters_btn')}
+                                {activeChips.length > 0 && <span className="sh-filters-badge">{activeChips.length}</span>}
+                            </button>
+                            <label className="sh-sort">
+                                <span className="sh-sort-label">{t('shop.sort.label')}</span>
+                                <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                                    <option value="featured">{t('shop.sort.featured')}</option>
+                                    <option value="price_asc">{t('shop.sort.price_asc')}</option>
+                                    <option value="price_desc">{t('shop.sort.price_desc')}</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        {activeChips.length > 0 && (
+                            <ul className="sh-chips">
+                                {activeChips.map((c) => (
+                                    <li key={c.key}>
+                                        <button type="button" className="sh-chip" onClick={c.remove} aria-label={t('shop.remove_filter', { name: c.label })}>
+                                            {c.label} <X size={14} aria-hidden="true" />
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </div>
+
+                    {loading ? (
+                        <div className="sh-grid" aria-hidden="true">
+                            {Array.from({ length: 6 }, (_, i) => <div key={i} className="sh-skeleton" />)}
+                        </div>
+                    ) : filteredBikes.length === 0 ? (
+                        <div className="sh-empty">
+                            <p className="sh-empty-title">{t('shop.empty')}</p>
+                            {hasActiveFilters && (
+                                <button type="button" className="sh-clear sh-clear--big" onClick={clearFilters}>{t('shop.clear_filters')}</button>
                             )}
                         </div>
-                        <div style={{ paddingBottom: '1rem', marginBottom: '1rem', borderBottom: '1px solid #e2e8f0', color: '#64748b', fontSize: '0.875rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                            {filteredBikes.length} {filteredBikes.length === 1 ? 'Bike' : 'Bikes'} Listed
-                        </div>
-                        <div className="bikes-grid">
+                    ) : (
+                        <div className="sh-grid">
                             {filteredBikes.map((bike, index) => (
-                                <BikeCard
-                                    key={bike.id}
-                                    bike={bike}
-                                    index={index}
-                                    navigate={navigate}
-                                    t={t}
-                                />
+                                <BikeCard key={bike.id} bike={bike} index={index} t={t} />
                             ))}
                         </div>
-                    </div>
-                </div>
+                    )}
+                </section>
             </div>
         </div>
     );

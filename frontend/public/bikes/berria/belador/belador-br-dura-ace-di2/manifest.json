@@ -1,0 +1,60 @@
+{
+  "id": 117,
+  "name": "Berria BR Dura-Ace Di2",
+  "brand": "berria",
+  "family": "belador",
+  "model": "belador-br-dura-ace-di2",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://berriabikes.com/products/belador-br-dura-ace-di2-2027",
+      "title": "BELADOR BR DURA-ACE Di2"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "naked-carbon-hunter-green-cuprum-rs",
+      "view": "side",
+      "page": "https://berriabikes.com/products/belador-br-dura-ace-di2-2027",
+      "file": "studio/naked-carbon-hunter-green-cuprum-rs-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Carretera-Belador-Br-Dura-Ace-Di2-Berriabikes-001.png"
+    },
+    {
+      "color": "naked-carbon-brushed-chrome",
+      "view": "side",
+      "page": "https://berriabikes.com/products/belador-br-dura-ace-di2-2027",
+      "file": "studio/naked-carbon-brushed-chrome-side.webp",
+      "width": 1790,
+      "height": 1248,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Carretera-Belador-Br-Dura-Ace-Di2-Berriabikes-002.png"
+    },
+    {
+      "color": "naked-carbon-cuprum-rs",
+      "view": "side",
+      "page": "https://berriabikes.com/products/belador-br-dura-ace-di2-2027",
+      "file": "studio/naked-carbon-cuprum-rs-side.webp",
+      "width": 1790,
+      "height": 1248,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Carretera-Belador-Br-Dura-Ace-Di2-Berriabikes-003.png"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "red.webp",
+  "catalog": [
+    {
+      "color": "BLACK-Collection",
+      "hex": "#000000",
+      "file": "black.webp"
+    },
+    {
+      "color": "RED FIRE-IrisSelect",
+      "hex": "#ba0c2f",
+      "file": "red.webp"
+    }
+  ],
+  "cutouts": []
+}

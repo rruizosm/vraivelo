@@ -1,0 +1,109 @@
+{
+  "id": 328,
+  "name": "Giant Propel Advanced SL1",
+  "brand": "giant",
+  "family": "propel",
+  "model": "propel-advanced-sl-1",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/propel-advanced-sl-1-2027",
+      "title": "Propel Advanced SL 1 (2027) | Aero Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "raw-carbon",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-1-2027",
+      "file": "studio/raw-carbon-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/rs13npnlw1eu57w9mtya/MY27PropelAdvancedSL1_ColorARawCarbon.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "three-quarter-rear",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-1-2027",
+      "file": "studio/raw-carbon-three-quarter-rear.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/v83cllkzckbjrrfgpr2s/MY27PropelAdvancedSL1_ColorARawCarbon-Rear.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-1-2027",
+      "file": "studio/raw-carbon-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/s1vl3hv3zdwbsv3siagu/MY27PropelAdvancedSL1_ColorARawCarbon-D2.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-1-2027",
+      "file": "studio/raw-carbon-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/fn1btqxevyqeaps7s7js/MY27PropelAdvancedSL1_ColorARawCarbon-D3.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-1-2027",
+      "file": "studio/raw-carbon-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/fslz2v9kmbwqandzkqm0/MY27PropelAdvancedSL1_ColorARawCarbon-D1.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-1-2027",
+      "file": "studio/raw-carbon-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/pjzh4ovfq7bgjg5gnyjk/MY27PropelAdvancedSL1_ColorARawCarbon-D4.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-1-2027",
+      "file": "studio/raw-carbon-detail-5.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/gnji7nt0k2eampjhpmjd/MY27PropelAdvancedSL1_ColorARawCarbon-D5.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-1-2027",
+      "file": "studio/raw-carbon-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/vy4ldopc7lqui5gubgfs/MY27PropelAdvancedSL1_ColorARawCarbon-D6.jpg"
+    },
+    {
+      "color": "raw-carbon",
+      "view": "detail-7",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-sl-1-2027",
+      "file": "studio/raw-carbon-detail-7.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/hygmfse0bfmiif1igunk/MY27PropelAdvancedSL1_ColorARawCarbon-D7.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "raw-carbon.jpg",
+  "catalog": [
+    {
+      "color": "Raw Carbon",
+      "hex": "#2C2C2C",
+      "file": "raw-carbon.jpg"
+    }
+  ],
+  "cutouts": []
+}

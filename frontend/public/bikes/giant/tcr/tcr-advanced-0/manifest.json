@@ -1,0 +1,73 @@
+{
+  "id": 315,
+  "name": "Giant TCR Advanced 0",
+  "brand": "giant",
+  "family": "tcr",
+  "model": "tcr-advanced-0",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/tcr-advanced-0--pro-compact-",
+      "title": "TCR Advanced 0 (Pro Compact) (2026) | Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "alpine-green",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-0--pro-compact-",
+      "file": "studio/alpine-green-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/qegkalhbdbo8mr6x8p8o/MY26TCRAdvanced0-PC_ColorAAlpineGreen.jpg"
+    },
+    {
+      "color": "alpine-green",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-0--pro-compact-",
+      "file": "studio/alpine-green-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/j7fcrllik5hh8tjt8fkj/MY26TCRAdvanced0-PC_ColorAAlpineGreen-D4.jpg"
+    },
+    {
+      "color": "alpine-green",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-0--pro-compact-",
+      "file": "studio/alpine-green-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/jonaekcwjkn1qk6elzv0/MY26TCRAdvanced0-PC_ColorAAlpineGreen-D1.jpg"
+    },
+    {
+      "color": "alpine-green",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-0--pro-compact-",
+      "file": "studio/alpine-green-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ha15yhs4ljuvr7twkczr/MY26TCRAdvanced0-PC_ColorAAlpineGreen-D2.jpg"
+    },
+    {
+      "color": "alpine-green",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/tcr-advanced-0--pro-compact-",
+      "file": "studio/alpine-green-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/pnvfak72bfrutxdpsdy6/MY26TCRAdvanced0-PC_ColorAAlpineGreen-D3.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "alpine-green.jpg",
+  "catalog": [
+    {
+      "color": "Alpine Green",
+      "hex": "#7D9497",
+      "file": "alpine-green.jpg"
+    }
+  ],
+  "cutouts": []
+}

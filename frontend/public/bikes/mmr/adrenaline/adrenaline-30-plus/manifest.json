@@ -1,0 +1,111 @@
+{
+  "id": 502,
+  "name": "MMR Adrenaline 30 PLUS",
+  "brand": "mmr",
+  "family": "adrenaline",
+  "model": "adrenaline-30-plus",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://mmrbikes.com/products/new-adrenaline-30-plus-carbon",
+      "title": "Adrenaline 30 PLUS"
+    },
+    {
+      "url": "https://mmrbikes.com/products/adrenaline-30-plus-seawater",
+      "title": "Adrenaline 30 PLUS"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "carbon",
+      "view": "side",
+      "page": "https://mmrbikes.com/products/new-adrenaline-30-plus-carbon",
+      "file": "studio/carbon-side.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/081801_1_3a09376a-3ad6-47d5-a58e-84cd8ab12353.jpg"
+    },
+    {
+      "color": "carbon",
+      "view": "three-quarter-front",
+      "page": "https://mmrbikes.com/products/new-adrenaline-30-plus-carbon",
+      "file": "studio/carbon-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1224,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/081801_3.4D.jpg"
+    },
+    {
+      "color": "carbon",
+      "view": "three-quarter-rear",
+      "page": "https://mmrbikes.com/products/new-adrenaline-30-plus-carbon",
+      "file": "studio/carbon-three-quarter-rear.webp",
+      "width": 2000,
+      "height": 1224,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/081801_3.4T.jpg"
+    },
+    {
+      "color": "carbon",
+      "view": "detail",
+      "page": "https://mmrbikes.com/products/new-adrenaline-30-plus-carbon",
+      "file": "studio/carbon-detail.webp",
+      "width": 2000,
+      "height": 1150,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/081801_2.jpg"
+    },
+    {
+      "color": "seawater",
+      "view": "side",
+      "page": "https://mmrbikes.com/products/adrenaline-30-plus-seawater",
+      "file": "studio/seawater-side.webp",
+      "width": 2000,
+      "height": 1333,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/081810_1_76ea1b28-ba72-4254-9f62-1af674c1bb12.jpg"
+    },
+    {
+      "color": "seawater",
+      "view": "three-quarter-front",
+      "page": "https://mmrbikes.com/products/adrenaline-30-plus-seawater",
+      "file": "studio/seawater-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1224,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/081810_3.4D.jpg"
+    },
+    {
+      "color": "seawater",
+      "view": "three-quarter-rear",
+      "page": "https://mmrbikes.com/products/adrenaline-30-plus-seawater",
+      "file": "studio/seawater-three-quarter-rear.webp",
+      "width": 2000,
+      "height": 1224,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/081810_3.4T.jpg"
+    },
+    {
+      "color": "seawater",
+      "view": "detail",
+      "page": "https://mmrbikes.com/products/adrenaline-30-plus-seawater",
+      "file": "studio/seawater-detail.webp",
+      "width": 2000,
+      "height": 1107,
+      "source": "https://cdn.shopify.com/s/files/1/0730/9036/7761/files/081810_2.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "black.webp",
+  "catalog": [
+    {
+      "color": "Black",
+      "hex": "#414141",
+      "file": "black.webp"
+    },
+    {
+      "color": "Blue",
+      "hex": "#67787f",
+      "file": "blue.webp"
+    }
+  ],
+  "cutouts": [
+    "cutout-carbon.png"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": 336,
+  "name": "Giant Revolt Advanced PRO 0",
+  "brand": "giant",
+  "family": "revolt",
+  "model": "revolt-advanced-pro-0",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/revolt-advanced-pro-0",
+      "title": "Revolt Advanced Pro 0 (2026) | Gravel Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "cyber-lime",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/revolt-advanced-pro-0",
+      "file": "studio/cyber-lime-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/kairpcniftfft4yaxy4h/MY26RevoltAdvancedPro0_ColorACyberLime.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "cyber-lime.jpg",
+  "catalog": [
+    {
+      "color": "Cyber Lime",
+      "hex": "#AFA946",
+      "file": "cyber-lime.jpg"
+    }
+  ],
+  "cutouts": []
+}

@@ -1,0 +1,79 @@
+{
+  "id": 112,
+  "name": "Berria Belador Pro 105 Di2",
+  "brand": "berria",
+  "family": "belador",
+  "model": "belador-pro-105-di2",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://berriabikes.com/products/belador-pro-105-di2-2027",
+      "title": "BELADOR PRO 105 Di2"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "black-white-pearl-red-racing",
+      "view": "side",
+      "page": "https://berriabikes.com/products/belador-pro-105-di2-2027",
+      "file": "studio/black-white-pearl-red-racing-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Carretera-Belador-Pro-105-Di2-Berriabikes-001.png"
+    },
+    {
+      "color": "black-liquid-metal",
+      "view": "side",
+      "page": "https://berriabikes.com/products/belador-pro-105-di2-2027",
+      "file": "studio/black-liquid-metal-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Carretera-Belador-Pro-105-Di2-Berriabikes-002.png"
+    },
+    {
+      "color": "miami-blue-skyfall-red-racing",
+      "view": "side",
+      "page": "https://berriabikes.com/products/belador-pro-105-di2-2027",
+      "file": "studio/miami-blue-skyfall-red-racing-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Carretera-Belador-Pro-105-Di2-Berriabikes-003.png"
+    },
+    {
+      "color": "white-pearl-chalk-grey-red-racing",
+      "view": "side",
+      "page": "https://berriabikes.com/products/belador-pro-105-di2-2027",
+      "file": "studio/white-pearl-chalk-grey-red-racing-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/Bikes-Carretera-Belador-Pro-105-Di2-Berriabikes-004.png"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "cover.webp",
+  "catalog": [
+    {
+      "color": "CHALK GREY-IrisSelect",
+      "hex": "#969992",
+      "file": "grey.webp"
+    },
+    {
+      "color": "BLUE OCEAN-IrisSelect",
+      "hex": "#0039b0",
+      "file": "blue.webp"
+    },
+    {
+      "color": "BLACK-Collection",
+      "hex": "#000000",
+      "file": "black.webp"
+    },
+    {
+      "color": "WHITE PEARL-IrisSelect",
+      "hex": "#f2f0eb",
+      "file": "white.webp"
+    }
+  ],
+  "cutouts": []
+}

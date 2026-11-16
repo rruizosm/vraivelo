@@ -1,0 +1,82 @@
+{
+  "id": 339,
+  "name": "Giant Propel Advanced PRO 1 AXS",
+  "brand": "giant",
+  "family": "propel",
+  "model": "propel-advanced-pro-1-axs",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/propel-advanced-pro-1-axs-2027",
+      "title": "Propel Advanced Pro 1-AXS (2027) | Aero Race Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "cryo-silver",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-1-axs-2027",
+      "file": "studio/cryo-silver-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/bgsmdocwzrftmbne6lhm/MY27PropelAdvancedPro1-AXS_ColorACryoSilver.jpg"
+    },
+    {
+      "color": "cryo-silver",
+      "view": "three-quarter-front",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-1-axs-2027",
+      "file": "studio/cryo-silver-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/b2gvtmmusrcdzdpjmbf3/MY27PropelAdvancedPro1-AXS_ColorACryoSilver-Front.jpg"
+    },
+    {
+      "color": "cryo-silver",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-1-axs-2027",
+      "file": "studio/cryo-silver-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/cw9pvrelsr5icoqsey1h/MY27PropelAdvancedPro1-AXS_ColorACryoSilver-D2.jpg"
+    },
+    {
+      "color": "cryo-silver",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-1-axs-2027",
+      "file": "studio/cryo-silver-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/mmtbizd44ypuwrvx5zex/MY27PropelAdvancedPro1-AXS_ColorACryoSilver-D3.jpg"
+    },
+    {
+      "color": "cryo-silver",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-1-axs-2027",
+      "file": "studio/cryo-silver-detail-5.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/uytinl4edoon6jr4flfe/MY27PropelAdvancedPro1-AXS_ColorACryoSilver-D5.jpg"
+    },
+    {
+      "color": "cryo-silver",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/propel-advanced-pro-1-axs-2027",
+      "file": "studio/cryo-silver-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/kznwxssw7dyqrtedprot/MY27PropelAdvancedPro1-AXS_ColorACryoSilver-D6.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "cryo-silver.jpg",
+  "catalog": [
+    {
+      "color": "Cryo Silver",
+      "hex": "#A1B6BC",
+      "file": "cryo-silver.jpg"
+    }
+  ],
+  "cutouts": []
+}

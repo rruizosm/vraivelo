@@ -1,0 +1,143 @@
+{
+  "brand": "giant",
+  "family": "propel",
+  "sources": [
+    "https://www.giant-bicycles.com/es/propel"
+  ],
+  "collected": "2026-11-15",
+  "lifestyle": [
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/01.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/cexfwozjt1epftnkus7g/propel_lp_swiper01_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/02.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/ang6rbajnevzdkmrmugl/propel_lp_swiper02_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/03.webp",
+      "width": 1920,
+      "height": 1000,
+      "source": "https://images2.giant-bicycles.com/pulsu2vii1j8jdnzectg/propel_lp_banner2_d.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/04.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/jnnvnlnsl4acpnsh8r70/propel_lp_kpf1.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/05.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/qhao8bmdrerw7velcmfe/propel_lp_kpf2.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/06.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/peqhtwxvy3a4vmchlyok/propel_lp_kpf3.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/07.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/fmfyz2ojxihyqzscwx3b/propel_lp_kpf4.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/08.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/umlwowu3dvrit0pnyybu/propel_lp_kpf5.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/09.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/xpktnu6zvcmk1y4vgtyz/propel_lp_kpf6.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/10.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/qkocwqaie4lwtndjsv4s/propel_lp_kpf7.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/11.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/vgh5iq1ggszzbg9hux9r/propel_lp_kpf8.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/12.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/t5qlc11pn0gipyojqwsf/propel_lp_kpf9.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/13.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/i7ya3vwocozx8jq5setp/propel_lp_kpf10.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/14.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/mkf1z4dsjf0hcil33uq4/propel_lp_kpf11.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/15.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/tc6nef1fzmqhclsyndd9/propel_lp_kpf12.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/16.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/kie6fltvhtmfzaw3uaie/propel_lp_kpf13.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/17.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/dizl1tqxlchqj7zxlg4u/propel_lp_kpf14.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/18.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/rum5pormbfikeszaynpq/propel_lp_kpf15.jpg"
+    },
+    {
+      "page": "https://www.giant-bicycles.com/es/propel",
+      "file": "lifestyle/19.webp",
+      "width": 1000,
+      "height": 750,
+      "source": "https://images2.giant-bicycles.com/zg6zus2rpjaxkebrj2vv/propel_lp_kpf16.jpg"
+    }
+  ]
+}

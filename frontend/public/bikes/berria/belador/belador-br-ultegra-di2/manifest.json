@@ -1,0 +1,51 @@
+{
+  "id": 115,
+  "name": "Berria Belador BR Ultegra Di2",
+  "brand": "berria",
+  "family": "belador",
+  "model": "belador-br-ultegra-di2",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://berriabikes.com/products/belador-br-ultegra-di2-2027",
+      "title": "BELADOR BR ULTEGRA Di2"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "naked-carbon-cuprum-rs",
+      "view": "side",
+      "page": "https://berriabikes.com/products/belador-br-ultegra-di2-2027",
+      "file": "studio/naked-carbon-cuprum-rs-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/BELADORULTEGRA-ORO-GRANDE.png"
+    },
+    {
+      "color": "naked-carbon-hunter-green-cuprum-rs",
+      "view": "side",
+      "page": "https://berriabikes.com/products/belador-br-ultegra-di2-2027",
+      "file": "studio/naked-carbon-hunter-green-cuprum-rs-side.webp",
+      "width": 1790,
+      "height": 1193,
+      "source": "https://cdn.shopify.com/s/files/1/0586/1615/2163/files/BELADOR_BR_ULTEGRA_DI2.png"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "red.webp",
+  "catalog": [
+    {
+      "color": "RED FIRE-IrisSelect",
+      "hex": "#ba0c2f",
+      "file": "red.webp"
+    },
+    {
+      "color": "NAKED CARBON-IrisSelect",
+      "hex": "#696969",
+      "file": "black.webp"
+    }
+  ],
+  "cutouts": []
+}

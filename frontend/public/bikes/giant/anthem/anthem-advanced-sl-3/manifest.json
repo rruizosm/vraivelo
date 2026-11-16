@@ -1,0 +1,100 @@
+{
+  "id": 308,
+  "name": "Giant Anthem SL3",
+  "brand": "giant",
+  "family": "anthem",
+  "model": "anthem-advanced-sl-3",
+  "match": "exact",
+  "sources": [
+    {
+      "url": "https://www.giant-bicycles.com/es/anthem-advanced-sl-3",
+      "title": "Anthem Advanced SL 3 (2026) | XC Bici | Giant Bicycles España"
+    }
+  ],
+  "collected": "2026-11-15",
+  "studio": [
+    {
+      "color": "rainbow-cobalt",
+      "view": "side",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-3",
+      "file": "studio/rainbow-cobalt-side.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/hztzve9z8fe1mkvyb37k/MY26AnthemAdvancedSL3_ColorARainbowCobalt.jpg"
+    },
+    {
+      "color": "rainbow-cobalt",
+      "view": "three-quarter-front",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-3",
+      "file": "studio/rainbow-cobalt-three-quarter-front.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/giugud5gcnvsp2dsxlcy/MY26AnthemAdvancedSL3_ColorARainbowCobalt-Front.jpg"
+    },
+    {
+      "color": "rainbow-cobalt",
+      "view": "detail-4",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-3",
+      "file": "studio/rainbow-cobalt-detail-4.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/i5lksknfwovp2qsw5epl/MY26AnthemAdvancedSL3_ColorARainbowCobalt-D4.jpg"
+    },
+    {
+      "color": "rainbow-cobalt",
+      "view": "detail-5",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-3",
+      "file": "studio/rainbow-cobalt-detail-5.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/jc5yflhcjyaz1bg4w75e/MY26AnthemAdvancedSL3_ColorARainbowCobalt-D5.jpg"
+    },
+    {
+      "color": "rainbow-cobalt",
+      "view": "detail-1",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-3",
+      "file": "studio/rainbow-cobalt-detail-1.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/onrj0yqghigunr0bq2c7/MY26AnthemAdvancedSL3_ColorARainbowCobalt-D1.jpg"
+    },
+    {
+      "color": "rainbow-cobalt",
+      "view": "detail-3",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-3",
+      "file": "studio/rainbow-cobalt-detail-3.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/acikkk2hnnsxmvv8p6mn/MY26AnthemAdvancedSL3_ColorARainbowCobalt-D3.jpg"
+    },
+    {
+      "color": "rainbow-cobalt",
+      "view": "detail-2",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-3",
+      "file": "studio/rainbow-cobalt-detail-2.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/ig88qbwl4nimwe1ckqoj/MY26AnthemAdvancedSL3_ColorARainbowCobalt-D2.jpg"
+    },
+    {
+      "color": "rainbow-cobalt",
+      "view": "detail-6",
+      "page": "https://www.giant-bicycles.com/es/anthem-advanced-sl-3",
+      "file": "studio/rainbow-cobalt-detail-6.webp",
+      "width": 2000,
+      "height": 1500,
+      "source": "https://images2.giant-bicycles.com/xm29wfe45bbcomrtkil4/MY26AnthemAdvancedSL3_ColorARainbowCobalt-D6.jpg"
+    }
+  ],
+  "lifestyle": [],
+  "family_lifestyle": "../_family/manifest.json",
+  "cover": "carbon-moon-dust.jpg",
+  "catalog": [
+    {
+      "color": "Carbon/Moon Dust",
+      "hex": "#033C8B",
+      "file": "carbon-moon-dust.jpg"
+    }
+  ],
+  "cutouts": []
+}
