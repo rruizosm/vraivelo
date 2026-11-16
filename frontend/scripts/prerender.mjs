@@ -167,7 +167,17 @@ function buildPages({ bikes, products }) {
     ];
     const storyLinks = storiesEs.filter((s) => s.content).map((s) => [`/vraivelo/${s.id}/`, titleCase(s.title)]);
 
-    staticPage('/', 'home', { links: [...categoryLinks, ...featuredLinks], priority: '1.0', changefreq: 'weekly' });
+    staticPage('/', 'home', {
+        links: [...categoryLinks, ...featuredLinks],
+        priority: '1.0',
+        changefreq: 'weekly',
+        // hero photo of Home.jsx: fetched with the HTML instead of after the JavaScript runs
+        preloadImage: {
+            href: '/david_vraivelo/taller-1920.webp',
+            srcset: '/david_vraivelo/taller-960.webp 960w, /david_vraivelo/taller-1920.webp 1920w',
+            sizes: '100vw',
+        },
+    });
     staticPage('/shop/', 'shop', {
         h1: es.shop.h1,
         intro: es.shop.intro,
@@ -349,6 +359,10 @@ function headFor(page) {
         `<meta name="twitter:description" content="${esc(page.description)}" data-rh="true" />`,
         `<meta name="twitter:image" content="${esc(image)}" data-rh="true" />`,
     ];
+    if (page.preloadImage) {
+        const { href, srcset, sizes } = page.preloadImage;
+        tags.push(`<link rel="preload" as="image" href="${esc(href)}"${srcset ? ` imagesrcset="${esc(srcset)}"` : ''}${sizes ? ` imagesizes="${esc(sizes)}"` : ''} fetchpriority="high" />`);
+    }
     const ld = [];
     if (page.jsonLd) ld.push(page.jsonLd);
     if (page.breadcrumb) {

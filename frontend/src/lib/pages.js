@@ -1,13 +1,26 @@
 // Each page is its own JavaScript file, downloaded only when that page is visited
 // (instead of one ~875 KB bundle with the whole site on the first visit).
-import { lazy } from 'react';
+import { createElement, lazy } from 'react';
 import { matchPath } from 'react-router-dom';
 import { BIKE_CATEGORIES } from './categories';
 
+// A page whose file has already been downloaded (see preloadPage) renders directly.
+// React.lazy alone would still pause it for one round on its first render, showing an
+// empty page between the header and the footer.
 const page = (load) => {
-    const Component = lazy(load);
-    Component.preload = load;
-    return Component;
+    let Loaded = null;
+    let promise = null;
+    const preload = () => {
+        promise ??= load().then((module) => {
+            Loaded = module.default;
+            return module;
+        });
+        return promise;
+    };
+    const Lazy = lazy(preload);
+    const Page = (props) => createElement(Loaded || Lazy, props);
+    Page.preload = preload;
+    return Page;
 };
 
 export const Home = page(() => import('../pages/Home/Home'));
