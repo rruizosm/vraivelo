@@ -308,7 +308,7 @@ const ProductDetail = () => {
                 ogImage={bike.image_url}
                 tOptions={{ name: bike.model }}
                 description={
-                    (bike[`description_${i18n.language}`] || (i18n.language === 'en' ? bike.description : null) || '')
+                    (displayDescription || '')
                         .replace(/\s+/g, ' ').trim().slice(0, 160) || undefined
                 }
             />

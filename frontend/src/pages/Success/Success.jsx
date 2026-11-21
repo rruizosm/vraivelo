@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import './Success.css';
+import { Link } from 'react-router-dom';
 
 const Success = () => {
     const { clearCart } = useCart();
@@ -26,7 +27,7 @@ const Success = () => {
                 </div>
                 <h1>{t('success.title')}</h1>
                 <p>{t('success.message')}</p>
-                <a href="/shop" className="btn-primary">{t('success.continue')}</a>
+                <Link to="/shop" className="btn-primary">{t('success.continue')}</Link>
             </motion.div>
         </div>
     );

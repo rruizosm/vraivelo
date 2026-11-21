@@ -12,7 +12,9 @@
  *  - puts a lightweight static version of the page (H1, intro, internal links) inside
  *    #root so crawlers see real content and links before JavaScript runs. React replaces
  *    it as soon as the app mounts;
- *  - regenerates dist/sitemap.xml with every URL.
+ *  - does it once per language: Spanish at the root (/shop/), Catalan under /ca/ and
+ *    English under /en/, each page with hreflang links to its two translations;
+ *  - regenerates dist/sitemap.xml with every URL and its alternates.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -22,6 +24,9 @@ import dotenv from 'dotenv';
 
 import { clothes } from '../src/data/clothes.js';
 import { storiesEs } from '../src/data/stories_es.js';
+import { storiesCa } from '../src/data/stories_ca.js';
+import { storiesEn } from '../src/data/stories_en.js';
+import { LANGS, DEFAULT_LANG, OG_LOCALE, localizePath } from '../src/lib/lang.js';
 import { productPath } from '../src/lib/productUrl.js';
 import { BIKE_CATEGORIES } from '../src/lib/categories.js';
 import { parsePrice as parseNumber, formatPrice } from '../src/lib/price.js';
@@ -36,8 +41,10 @@ const DEFAULT_IMAGE = `${SITE}/vv_logo_2.png`;
 
 dotenv.config({ path: path.join(ROOT, '.env'), quiet: true });
 
-const es = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/locales/es.json'), 'utf8'));
-const seo = es.seo;
+const LOCALES = Object.fromEntries(
+    LANGS.map((l) => [l, JSON.parse(fs.readFileSync(path.join(ROOT, `src/locales/${l}.json`), 'utf8'))]),
+);
+const STORIES = { es: storiesEs, ca: storiesCa, en: storiesEn };
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 const esc = (s = '') =>
@@ -76,27 +83,77 @@ const toList = (value) => {
     }
     return [text];
 };
-const CATEGORY_ES = {
-    Road: 'Bicicleta de carretera',
-    MTB: 'Bicicleta de montaña (MTB)',
-    Gravel: 'Bicicleta gravel',
-    eBike: 'Bicicleta eléctrica',
-    Kids: 'Bicicleta infantil',
-    Wheels: 'Ruedas',
-    Clothes: 'Ropa de ciclismo',
+// Texts of the static fallback page (the real page comes from src/locales once React runs)
+const STRINGS = {
+    es: {
+        category: {
+            Road: 'Bicicleta de carretera', MTB: 'Bicicleta de montaña (MTB)', Gravel: 'Bicicleta gravel',
+            eBike: 'Bicicleta eléctrica', Kids: 'Bicicleta infantil', Wheels: 'Ruedas', Clothes: 'Ropa de ciclismo',
+        },
+        nav: ['Inicio', 'Taller de bicicletas', 'Reparación y puesta a punto', 'Mantenimiento de horquillas',
+            'Mantenimiento de amortiguadores', 'Bicicletas', 'Recambios y accesorios', 'Nuestra historia', 'Contacto'],
+        home: 'Inicio', bikes: 'Bicicletas', other: 'Recambios y accesorios', story: 'Nuestra historia',
+        sizes: 'Tallas', specs: 'Especificaciones', mainNav: 'principal',
+        cta: 'Disponible en Vraivelo, tienda de bicicletas en Girona. <a href="{{contact}}">Consulta disponibilidad o reserva una prueba</a>.',
+    },
+    ca: {
+        category: {
+            Road: 'Bicicleta de carretera', MTB: 'Bicicleta de muntanya (MTB)', Gravel: 'Bicicleta gravel',
+            eBike: 'Bicicleta elèctrica', Kids: 'Bicicleta infantil', Wheels: 'Rodes', Clothes: 'Roba de ciclisme',
+        },
+        nav: ['Inici', 'Taller de bicicletes', 'Reparació i posada a punt', 'Manteniment de forquilles',
+            "Manteniment d'amortidors", 'Bicicletes', 'Recanvis i accessoris', 'La nostra història', 'Contacte'],
+        home: 'Inici', bikes: 'Bicicletes', other: 'Recanvis i accessoris', story: 'La nostra història',
+        sizes: 'Talles', specs: 'Especificacions', mainNav: 'principal',
+        cta: 'Disponible a Vraivelo, botiga de bicicletes a Girona. <a href="{{contact}}">Consulta disponibilitat o reserva una prova</a>.',
+    },
+    en: {
+        category: {
+            Road: 'Road bike', MTB: 'Mountain bike (MTB)', Gravel: 'Gravel bike',
+            eBike: 'Electric bike', Kids: 'Kids bike', Wheels: 'Wheels', Clothes: 'Cycling clothing',
+        },
+        nav: ['Home', 'Bike workshop', 'Bike repair and tune-up', 'Fork service',
+            'Rear shock service', 'Bikes', 'Parts and accessories', 'Our story', 'Contact'],
+        home: 'Home', bikes: 'Bikes', other: 'Parts and accessories', story: 'Our story',
+        sizes: 'Sizes', specs: 'Specifications', mainNav: 'main',
+        cta: 'Available at Vraivelo, bike shop in Girona. <a href="{{contact}}">Check availability or book a test ride</a>.',
+    },
 };
+const NAV_ROUTES = ['/', '/workshop/', '/workshop/mechanics/', '/workshop/suspensions/', '/workshop/rear-shock/',
+    '/shop/', '/other-products/', '/vraivelo/', '/contact/'];
 
-const NAV = [
-    ['/', 'Inicio'],
-    ['/workshop/', 'Taller de bicicletas'],
-    ['/workshop/mechanics/', 'Reparación y puesta a punto'],
-    ['/workshop/suspensions/', 'Mantenimiento de horquillas'],
-    ['/workshop/rear-shock/', 'Mantenimiento de amortiguadores'],
-    ['/shop/', 'Bicicletas'],
-    ['/other-products/', 'Recambios y accesorios'],
-    ['/vraivelo/', 'Nuestra historia'],
-    ['/contact/', 'Contacto'],
-];
+// Product texts in each language, Spanish as fallback (the columns ProductDetail reads)
+const pick = (obj, keys) => keys.map((k) => obj[k]).find((v) => v != null && String(v).trim() !== '');
+const BIKE_FIELDS = {
+    es: { description: ['description_es', 'description'], long: ['long_description_es'], specs: ['specs_es', 'specs'] },
+    ca: {
+        description: ['description_cat', 'description_ca', 'description_es'],
+        long: ['long_description_cat', 'long_description_ca', 'long_description_es'],
+        specs: ['specs_cat', 'specs_ca', 'specs_es', 'specs'],
+    },
+    en: {
+        description: ['description_en', 'description', 'description_es'],
+        long: ['long_description_en', 'long_description_es'],
+        specs: ['specs_en', 'specs', 'specs_es'],
+    },
+};
+const PRODUCT_FIELDS = {
+    es: {
+        description: ['description_spanish', 'description_es', 'Description', 'description'],
+        long: ['long_description_es', 'Long_description_es'],
+        specs: ['Specs', 'specs'],
+    },
+    ca: {
+        description: ['description_catalan', 'description_ca', 'description_spanish', 'Description', 'description'],
+        long: ['long_description_ca', 'Long_description_ca', 'long_description_es'],
+        specs: ['specs_catalan', 'Specs_catalan', 'Specs', 'specs'],
+    },
+    en: {
+        description: ['description_english', 'description_en', 'Description', 'description', 'description_spanish'],
+        long: ['long_description_en', 'long_description_es'],
+        specs: ['specs_english', 'Specs_english', 'Specs', 'specs'],
+    },
+};
 
 const linkList = (items) =>
     `<ul>${items.map(([href, label]) => `<li><a href="${esc(href)}">${esc(label)}</a></li>`).join('')}</ul>`;
@@ -120,7 +177,13 @@ async function loadCatalog() {
 }
 
 // ─── page model ─────────────────────────────────────────────────────────────
-function buildPages({ bikes, products }) {
+// Pages of one language. `route` is the language-neutral path ("/shop/"); the URL in this
+// language ("/ca/shop/") is added at the end. Links inside the pages are already localized.
+function buildPages({ bikes, products }, lang) {
+    const loc = LOCALES[lang];
+    const seo = loc.seo;
+    const str = STRINGS[lang];
+    const L = (route) => localizePath(route, lang);
     const pages = [];
     const staticPage = (route, key, extra = {}) =>
         pages.push({
@@ -130,6 +193,7 @@ function buildPages({ bikes, products }) {
             h1: seo[key].h1 || h1From(seo[key].title),
             ...extra,
         });
+    const crumb = ([name, href]) => [name, href && L(href)];
 
     // Only what the shop actually shows (Active = true), like Shop.jsx / OtherProducts.jsx
     // image_url resolved to public/bikes/ (old DB paths still work via src/lib/bikeImages.js)
@@ -153,19 +217,24 @@ function buildPages({ bikes, products }) {
         const n = parseNumber(price);
         return n ? `${name} – ${formatPrice(n)}` : name;
     };
-    const bikeLinks = activeBikes.map((b) => [productPath(b), withPrice(b.model, b.price)]);
+    const bikeLinks = activeBikes.map((b) => [L(productPath(b)), withPrice(b.model, b.price)]);
     const categoryLinks = BIKE_CATEGORIES
         .filter((c) => activeBikes.some((b) => b.category === c.key))
-        .map((c) => [`/shop/${c.slug}/`, es.shop.cat[c.slug].h1]);
+        .map((c) => [L(`/shop/${c.slug}/`), loc.shop.cat[c.slug].h1]);
     const featuredLinks = FEATURED_BIKE_IDS
         .map((id) => activeBikes.find((b) => b.id === id))
         .filter(Boolean)
-        .map((b) => [productPath(b), withPrice(b.model, b.price)]);
+        .map((b) => [L(productPath(b)), withPrice(b.model, b.price)]);
     const productLinks = [
-        ...reachableProducts.map((p) => [productPath(p), p.Product || p.product]),
-        ...clothes.map((c) => [productPath(c), c.model]),
+        ...reachableProducts.map((p) => [L(productPath(p)), p.Product || p.product]),
+        ...clothes.map((c) => [L(productPath(c)), c.model]),
     ];
-    const storyLinks = storiesEs.filter((s) => s.content).map((s) => [`/vraivelo/${s.id}/`, titleCase(s.title)]);
+    // Story routes come from the Spanish list so every language has the same URLs; the text
+    // is the translation when there is one (StoryDetail does the same in the browser).
+    const stories = storiesEs
+        .filter((s) => s.content)
+        .map((s) => STORIES[lang].find((x) => x.id === s.id && x.content) || s);
+    const storyLinks = stories.map((s) => [L(`/vraivelo/${s.id}/`), titleCase(s.title)]);
 
     staticPage('/', 'home', {
         links: [...categoryLinks, ...featuredLinks],
@@ -179,8 +248,8 @@ function buildPages({ bikes, products }) {
         },
     });
     staticPage('/shop/', 'shop', {
-        h1: es.shop.h1,
-        intro: es.shop.intro,
+        h1: loc.shop.h1,
+        intro: loc.shop.intro,
         links: [...categoryLinks, ...bikeLinks],
         priority: '0.9',
         changefreq: 'weekly',
@@ -190,7 +259,7 @@ function buildPages({ bikes, products }) {
     for (const c of BIKE_CATEGORIES) {
         const list = activeBikes.filter((b) => b.category === c.key);
         if (!list.length) continue;
-        const text = es.shop.cat[c.slug];
+        const text = loc.shop.cat[c.slug];
         pages.push({
             route: `/shop/${c.slug}/`,
             title: seo[`shop_${c.slug}`].title,
@@ -199,7 +268,7 @@ function buildPages({ bikes, products }) {
             intro: text.intro,
             image: list.find((b) => b.image_url)?.image_url,
             links: list.map((b) => [productPath(b), withPrice(b.model, b.price)]),
-            breadcrumb: [['Bicicletas', '/shop/'], [text.name]],
+            breadcrumb: [crumb([str.bikes, '/shop/']), [text.name]],
             priority: '0.8',
             changefreq: 'weekly',
         });
@@ -212,7 +281,7 @@ function buildPages({ bikes, products }) {
     staticPage('/contact/', 'contact', { priority: '0.7', changefreq: 'monthly' });
     staticPage('/vraivelo/', 'vraivelo', { links: storyLinks, priority: '0.6', changefreq: 'monthly' });
 
-    for (const s of storiesEs.filter((x) => x.content)) {
+    for (const s of stories) {
         const name = titleCase(s.title);
         pages.push({
             route: `/vraivelo/${s.id}/`,
@@ -221,7 +290,7 @@ function buildPages({ bikes, products }) {
             h1: name,
             image: s.image,
             ogType: 'article',
-            breadcrumb: [['Nuestra historia', '/vraivelo/'], [name]],
+            breadcrumb: [crumb([str.story, '/vraivelo/']), [name]],
             priority: '0.5',
             changefreq: 'monthly',
         });
@@ -231,7 +300,7 @@ function buildPages({ bikes, products }) {
         const route = productPath(item);
         // main photo + one per colour, for the Product schema and the image sitemap
         const images = [...new Set([image, ...gallery].filter(Boolean).map(abs))];
-        const typeLabel = CATEGORY_ES[category] || category;
+        const typeLabel = str.category[category] || category;
         const desc = description
             ? clip(`${name}: ${description}`)
             : fill(seo.product_detail.description, name);
@@ -248,7 +317,7 @@ function buildPages({ bikes, products }) {
                 ? {
                     offers: {
                         '@type': 'Offer',
-                        url: `${SITE}${route}`,
+                        url: `${SITE}${L(route)}`,
                         priceCurrency: 'EUR',
                         price: priceValue,
                         availability: inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
@@ -278,11 +347,11 @@ function buildPages({ bikes, products }) {
         });
     };
 
-    const BIKES = ['Bicicletas', '/shop/'];
-    const OTHER = ['Recambios y accesorios', '/other-products/'];
+    const BIKES = crumb([str.bikes, '/shop/']);
+    const OTHER = crumb([str.other, '/other-products/']);
     const categoryCrumb = (key) => {
         const c = BIKE_CATEGORIES.find((x) => x.key === key);
-        return c ? [es.shop.cat[c.slug].name, `/shop/${c.slug}/`] : null;
+        return c ? crumb([loc.shop.cat[c.slug].name, `/shop/${c.slug}/`]) : null;
     };
 
     for (const b of activeBikes) {
@@ -292,9 +361,9 @@ function buildPages({ bikes, products }) {
             brand: b.brand,
             category: b.category,
             price: b.price,
-            description: b.description_es || b.description,
-            longDescription: b.long_description_es,
-            specs: b.specs_es || b.specs,
+            description: pick(b, BIKE_FIELDS[lang].description),
+            longDescription: pick(b, BIKE_FIELDS[lang].long),
+            specs: pick(b, BIKE_FIELDS[lang].specs),
             sizes: b.sizes,
             image: b.image_url,
             gallery: (b.bike_variants || []).map((v) => v.image_url),
@@ -309,9 +378,9 @@ function buildPages({ bikes, products }) {
             brand: p.Brand || p.brand,
             category: p.Type || p.type,
             price: p.Price || p.price,
-            description: p.description_spanish || p.description_es || p.Description || p.description,
-            longDescription: p.long_description_es || p.Long_description_es,
-            specs: p.Specs || p.specs,
+            description: pick(p, PRODUCT_FIELDS[lang].description),
+            longDescription: pick(p, PRODUCT_FIELDS[lang].long),
+            specs: pick(p, PRODUCT_FIELDS[lang].specs),
             sizes: p.Size || p.size,
             image: p['Image URL'] || p['image url'] || p.image_url,
             inStock: p.quantity !== 0,
@@ -336,24 +405,33 @@ function buildPages({ bikes, products }) {
         });
     }
 
-    return pages;
+    const nav = NAV_ROUTES.map((r, i) => [L(r), str.nav[i]]);
+    return pages.map((p) => ({ ...p, key: p.route, route: L(p.route), lang, str, nav }));
 }
 
 // ─── rendering ──────────────────────────────────────────────────────────────
-function headFor(page) {
+// URL of the same page in another language (only languages where it exists)
+const alternatesOf = (page, byKey) =>
+    LANGS.filter((l) => byKey.get(l).has(page.key)).map((l) => [l, `${SITE}${canonicalPath(localizePath(page.key, l))}`]);
+
+function headFor(page, alternates) {
     const url = `${SITE}${canonicalPath(page.route)}`;
     const image = abs(page.image);
     const tags = [
         `<title>${esc(page.title)}</title>`,
         `<meta name="description" content="${esc(page.description)}" data-rh="true" />`,
         `<link rel="canonical" href="${url}" data-rh="true" />`,
+        ...alternates.map(([l, href]) => `<link rel="alternate" hreflang="${l}" href="${href}" data-rh="true" />`),
+        ...alternates
+            .filter(([l]) => l === DEFAULT_LANG)
+            .map(([, href]) => `<link rel="alternate" hreflang="x-default" href="${href}" data-rh="true" />`),
         `<meta property="og:type" content="${page.ogType || 'website'}" data-rh="true" />`,
         `<meta property="og:site_name" content="Vraivelo" data-rh="true" />`,
         `<meta property="og:url" content="${url}" data-rh="true" />`,
         `<meta property="og:title" content="${esc(page.title)}" data-rh="true" />`,
         `<meta property="og:description" content="${esc(page.description)}" data-rh="true" />`,
         `<meta property="og:image" content="${esc(image)}" data-rh="true" />`,
-        `<meta property="og:locale" content="es_ES" data-rh="true" />`,
+        `<meta property="og:locale" content="${OG_LOCALE[page.lang]}" data-rh="true" />`,
         `<meta name="twitter:card" content="summary_large_image" data-rh="true" />`,
         `<meta name="twitter:title" content="${esc(page.title)}" data-rh="true" />`,
         `<meta name="twitter:description" content="${esc(page.description)}" data-rh="true" />`,
@@ -366,7 +444,7 @@ function headFor(page) {
     const ld = [];
     if (page.jsonLd) ld.push(page.jsonLd);
     if (page.breadcrumb) {
-        const items = [['Inicio', '/'], ...page.breadcrumb];
+        const items = [[page.str.home, localizePath('/', page.lang)], ...page.breadcrumb];
         ld.push({
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
@@ -390,34 +468,36 @@ function productBody(page) {
         ? `<img src="${esc(abs(page.image))}" alt="${esc(page.imageAlt)}" width="640" style="max-width:100%;height:auto" />`
         : '';
     const text = page.paragraphs.map((p) => `<p>${esc(p)}</p>`).join('');
-    const sizes = page.sizes.length ? `<h2>Tallas</h2><p>${page.sizes.map(esc).join(', ')}</p>` : '';
-    const specs = page.specs.length ? `<h2>Especificaciones</h2><ul>${page.specs.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '';
-    const cta = '<p>Disponible en Vraivelo, tienda de bicicletas en Girona. <a href="/contact/">Consulta disponibilidad o reserva una prueba</a>.</p>';
+    const { str } = page;
+    const sizes = page.sizes.length ? `<h2>${str.sizes}</h2><p>${page.sizes.map(esc).join(', ')}</p>` : '';
+    const specs = page.specs.length ? `<h2>${str.specs}</h2><ul>${page.specs.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '';
+    const cta = `<p>${str.cta.replace('{{contact}}', localizePath('/contact/', page.lang))}</p>`;
     return img + text + sizes + specs + cta;
 }
 
 function shellFor(page) {
     const crumbs = page.breadcrumb
-        ? `<nav aria-label="breadcrumb"><a href="/">Inicio</a>${page.breadcrumb
+        ? `<nav aria-label="breadcrumb"><a href="${localizePath('/', page.lang)}">${esc(page.str.home)}</a>${page.breadcrumb
             .map(([name, href]) => ` › ${href ? `<a href="${href}">${esc(name)}</a>` : esc(name)}`)
             .join('')}</nav>`
         : '';
     return `<div class="seo-shell" style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">
-<header><a href="/" style="color:#0f172a;font-weight:700;text-decoration:none">Vraivelo</a><nav aria-label="principal">${linkList(NAV)}</nav></header>
+<header><a href="${localizePath('/', page.lang)}" style="color:#0f172a;font-weight:700;text-decoration:none">Vraivelo</a><nav aria-label="${page.str.mainNav}">${linkList(page.nav)}</nav></header>
 <main>${crumbs}<h1 style="color:#0f172a">${esc(page.h1)}</h1>${page.intro ? `<p>${esc(page.intro)}</p>` : ''}${page.paragraphs ? productBody(page) : `<p>${esc(page.description)}</p>`}${page.links?.length ? linkList(page.links) : ''}</main>
 <footer><p>Vraivelo · Carrer Pau Vila i Dinarès 10, 17003 Girona · <a href="tel:+34657317270">+34 657 317 270</a> · <a href="mailto:info@vraivelo.com">info@vraivelo.com</a></p></footer>
 </div>`;
 }
 
-function render(template, page) {
+function render(template, page, alternates) {
     const html = template
-        .replace(/<!--seo:start-->[\s\S]*?<!--seo:end-->/, headFor(page))
+        .replace(/<html lang="[^"]*">/, `<html lang="${page.lang}">`)
+        .replace(/<!--seo:start-->[\s\S]*?<!--seo:end-->/, headFor(page, alternates))
         .replace('<!--seo:shell-->', shellFor(page));
     if (html === template) throw new Error('SEO markers not found in dist/index.html');
     return html;
 }
 
-function sitemap(pages) {
+function sitemap(pages, byKey) {
     const today = new Date().toISOString().slice(0, 10);
     const urls = pages
         .map(
@@ -425,7 +505,9 @@ function sitemap(pages) {
     <loc>${SITE}${canonicalPath(p.route)}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
-    <priority>${p.priority}</priority>${(p.images || (p.image ? [abs(p.image)] : []))
+    <priority>${p.priority}</priority>${alternatesOf(p, byKey)
+        .map(([l, href]) => `\n    <xhtml:link rel="alternate" hreflang="${l}" href="${esc(href)}" />`)
+        .join('')}${(p.images || (p.image ? [abs(p.image)] : []))
         .map((src) => `\n    <image:image><image:loc>${esc(src)}</image:loc></image:image>`)
         .join('')}
   </url>`
@@ -433,7 +515,7 @@ function sitemap(pages) {
         .join('\n');
     // image:image entries help product photos show up in Google Images
     return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urls}
 </urlset>
 `;
@@ -446,12 +528,15 @@ if (!template.includes('<!--seo:start-->') || !template.includes('<!--seo:shell-
     throw new Error('dist/index.html has no SEO markers: was it already prerendered?');
 }
 
-const pages = buildPages(await loadCatalog());
+const catalog = await loadCatalog();
+const pages = LANGS.flatMap((lang) => buildPages(catalog, lang));
+const byKey = new Map(LANGS.map((l) => [l, new Set(pages.filter((p) => p.lang === l).map((p) => p.key))]));
 for (const page of pages) {
     const out = page.route === '/' ? templatePath : path.join(DIST, page.route, 'index.html');
     fs.mkdirSync(path.dirname(out), { recursive: true });
-    fs.writeFileSync(out, render(template, page));
+    fs.writeFileSync(out, render(template, page, alternatesOf(page, byKey)));
 }
-fs.writeFileSync(path.join(DIST, 'sitemap.xml'), sitemap(pages));
+fs.writeFileSync(path.join(DIST, 'sitemap.xml'), sitemap(pages, byKey));
 
-console.log(`[prerender] ${pages.length} pages written, sitemap.xml updated.`);
+const perLang = LANGS.map((l) => `${l}: ${byKey.get(l).size}`).join(', ');
+console.log(`[prerender] ${pages.length} pages written (${perLang}), sitemap.xml updated.`);

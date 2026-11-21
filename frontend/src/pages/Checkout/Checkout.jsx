@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Loader, Lock } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import './Checkout.css';
+import { Link } from 'react-router-dom';
 
 const Checkout = () => {
     const { cartItems, cartTotal } = useCart();
@@ -52,7 +53,7 @@ const Checkout = () => {
         return (
             <div className="checkout-container empty">
                 <h2>{t('checkout_page.empty_title')}</h2>
-                <a href="/shop" className="btn-primary">{t('checkout_page.return_shop')}</a>
+                <Link to="/shop" className="btn-primary">{t('checkout_page.return_shop')}</Link>
             </div>
         );
     }

@@ -17,6 +17,7 @@
     font-size: inherit;
     font-weight: 600;
     color: var(--text-secondary);
+    text-decoration: none;
     transition: color 0.3s ease;
     padding: 0;
 }

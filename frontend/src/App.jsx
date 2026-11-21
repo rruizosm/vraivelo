@@ -14,11 +14,16 @@ import Cart from './components/Cart/Cart';
 
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import { BIKE_CATEGORIES } from './lib/categories';
+import { basenameFor, langFromPath } from './lib/lang';
+
+// /ca/... and /en/... are the same app under a prefix: every <Link to="/shop"> keeps the
+// visitor in their language. Switching language is a full page load (LanguageSwitcher).
+const BASENAME = basenameFor(langFromPath(window.location.pathname));
 
 function App() {
   return (
     <CartProvider>
-      <Router>
+      <Router basename={BASENAME}>
         <ScrollToTop />
         <div className="app flex flex-col min-h-screen">
           <Navbar />

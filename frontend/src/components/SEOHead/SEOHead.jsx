@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { DEFAULT_LANG, LANGS, OG_LOCALE, localizePath } from '../../lib/lang';
 
 const SITE_NAME = 'Vraivelo';
 const SITE_URL = 'https://vraivelo.com';
@@ -18,26 +19,33 @@ const absoluteUrl = (url) => {
     return `${SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
 };
 
+// `path` is the route path without language prefix ("/shop/gravel"); the canonical URL and
+// the hreflang alternates add /ca or /en. Must match the tags of scripts/prerender.mjs.
 const SEOHead = ({ titleKey, descriptionKey, title: rawTitle, description: rawDescription, path = '', ogImage, ogType = 'website', tOptions = {}, noindex = false }) => {
     const { t, i18n } = useTranslation();
+    const lang = LANGS.includes(i18n.language) ? i18n.language : DEFAULT_LANG;
 
     const title = rawTitle || t(titleKey, tOptions);
     const description = rawDescription || t(descriptionKey, tOptions);
-    const canonicalUrl = `${SITE_URL}${canonicalPath(path)}`;
+    const route = canonicalPath(path);
+    const urlFor = (l) => `${SITE_URL}${localizePath(route, l)}`;
+    const canonicalUrl = urlFor(lang);
     const image = absoluteUrl(ogImage);
 
     return (
         <Helmet>
             {/* Language */}
-            <html lang={i18n.language} />
+            <html lang={lang} />
 
             {/* Primary Meta Tags */}
             <title>{title}</title>
             <meta name="description" content={description} />
             {noindex && <meta name="robots" content="noindex, follow" />}
 
-            {/* Canonical */}
+            {/* Canonical + the same page in the other languages */}
             <link rel="canonical" href={canonicalUrl} />
+            {LANGS.map((l) => <link key={l} rel="alternate" hrefLang={l} href={urlFor(l)} />)}
+            <link rel="alternate" hrefLang="x-default" href={urlFor(DEFAULT_LANG)} />
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={ogType} />
@@ -46,7 +54,7 @@ const SEOHead = ({ titleKey, descriptionKey, title: rawTitle, description: rawDe
             <meta property="og:description" content={description} />
             <meta property="og:image" content={image} />
             <meta property="og:site_name" content={SITE_NAME} />
-            <meta property="og:locale" content={i18n.language === 'ca' ? 'ca_ES' : i18n.language === 'es' ? 'es_ES' : 'en_US'} />
+            <meta property="og:locale" content={OG_LOCALE[lang]} />
 
             {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />
